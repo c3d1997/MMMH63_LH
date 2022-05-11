@@ -1,0 +1,52 @@
+body {
+    background-color: #F4F4F4;
+}
+
+.x-search-list {
+    margin-top: 80px;
+}
+
+.x-search-list-state {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.x-search-list-state-left svg {
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.x-search-list-state-right {
+    display: flex;
+    align-items: center;
+}
+
+.x-search-list-state-right div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.x-search-list-state-right div:nth-child(1),
+.x-search-list-state-right div:nth-child(2) {
+    margin-right: 60px;
+}
+
+.x-up {
+    display: none;
+}
+
+.x-search-list-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.S-lg-card-wrap {
+    width: 390px;
+    height: 359px;
+    margin-bottom: 30px;
+}

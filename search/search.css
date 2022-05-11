@@ -1,0 +1,201 @@
+/* 搜尋選單 */
+
+.x-search {
+    width: 100%;
+    max-width: 1920px;
+    height: 100vh;
+    max-height: 1080px;
+    margin: auto;
+    background: url(../imgs/spacejoy-YI2YkyaREHk-unsplash\ 1.jpg) no-repeat center/cover;
+    padding-top: 35vh;
+}
+
+.x-search-all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.x-search-keyword-input {
+    border: none;
+    width: 564px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+    background-color: white;
+}
+
+.x-search-options {
+    width: 564px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.x-search-keyword-input input {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 70px;
+    font-size: 24px;
+    padding-left: 15px;
+}
+
+::placeholder {
+    font-weight: bold;
+    font-size: 24px;
+    color: #0E2E3D;
+    opacity: 50%;
+}
+
+.x-search-keyword-input svg {
+    cursor: pointer;
+}
+
+.x-search-price-bar {
+    height: 84px;
+    border: 1px solid;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.x-search-price-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.x-search-price-switch-onoff {
+    position: relative;
+    width: 54px;
+    margin-top: 3px;
+}
+
+.onoffswitch-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    height: 27px;
+    padding: 0;
+    line-height: 27px;
+    border: 2px solid #E3E3E3;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    transition: background-color 0.3s ease-in;
+}
+
+.onoffswitch-label:before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 2;
+    right: 25px;
+    border: 2px solid #E3E3E3;
+    border-radius: 27px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label {
+    background-color: #75BBE3;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label,
+.onoffswitch-checkbox:checked+.onoffswitch-label:before {
+    border-color: #75BBE3;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label:before {
+    right: 2px;
+    top: 1px;
+}
+
+
+/* 本月本週精選 */
+
+.x-search-month-best {
+    margin-bottom: 60px;
+}
+
+.x-search-month-best-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 60px;
+}
+
+.x-search-month-best-content {
+    display: flex;
+}
+
+.x-search-month-best-content-img {
+    width: 674px;
+    height: 460px;
+}
+
+.x-search-month-best-content-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.x-search-month-best-content-txt {
+    width: 556px;
+    padding: 65px 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F1EDEA;
+}
+
+.x-search-month-best-content-re {
+    flex-direction: row-reverse;
+}
+
+.x-search-month-best-content-txt h3,
+.x-search-month-best-content-txt p {
+    margin-bottom: 20px;
+}
+
+.x-search-month-best-content-txt p:nth-child(2) {
+    font-weight: bold;
+}
+
+
+/* 精選房屋 */
+
+.x-search-month-nice-object {
+    margin-bottom: 40px;
+}
+
+.x-search-month-nice-object-title {
+    margin-bottom: 30px;
+}
+
+.S-lg-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.x-search-month-nice-object-product {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.S-lg-card-wrap {
+    margin-bottom: 30px;
+}

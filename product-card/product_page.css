@@ -1,0 +1,377 @@
+.body {
+    margin: 0;
+}
+
+
+/* --------------lg-card 卡片-------------------------------- */
+
+.S-lg-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.S-lg-card-wrap {
+    width: 390px;
+    height: 359px;
+    overflow: hidden;
+    position: relative;
+    /* border: 1px solid blue; */
+}
+
+.S-lg-share {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-size: 1.3em;
+    color: #0E2E3D;
+    background-color: #F1EDEA;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    right: 20%;
+}
+
+.S-lg-share i {
+    font-size: 1.2em;
+}
+
+.S-lg-like {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    color: #0E2E3D;
+    background-color: #F1EDEA;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+}
+
+.S-lg-like svg {
+    width: 30px;
+    height: 30px;
+    fill: #0E2E3D;
+}
+
+.S-lg-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+
+.S-lg-card-img {
+    width: 100%;
+    height: 100%;
+    background: url(../old_house/1521821703_54177.jpg) 70% center/ cover;
+}
+
+.S-lg-card-info {
+    padding: 10px 10px;
+    /* border: 1px solid rgb(45, 95, 112); */
+    background-color: #F1EDEA;
+    margin: 0;
+}
+
+.S-lg-card-info h4 {
+    margin: 0;
+    font-size: 12px;
+}
+
+.S-lg-card-info h4 span {
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.S-lg-card-info-2 {
+    margin-top: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.S-lg-card-info p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.S-lg-card-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline;
+}
+
+
+/* --------------md-card 卡片-------------------------------- */
+
+.S-md-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.S-md-card-wrap {
+    margin-top: 50px;
+    width: 335px;
+    height: 314px;
+    overflow: hidden;
+    position: relative;
+    /* border: 1px solid blue; */
+}
+
+.S-md-share {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    color: #0E2E3D;
+    background-color: #F1EDEA;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    right: 18%;
+}
+
+.S-md-share i {
+    font-size: 1.2em;
+}
+
+.S-md-like {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    color: #0E2E3D;
+    background-color: #F1EDEA;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+}
+
+.S-md-like svg {
+    width: 25px;
+    height: 25px;
+    fill: #0E2E3D;
+}
+
+.S-md-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+
+.S-md-card-img {
+    width: 100%;
+    height: 100%;
+    background: url(../old_house/1521821703_54177.jpg) 70% center/ cover;
+}
+
+.S-md-card-info {
+    padding: 10px 10px;
+    /* border: 1px solid rgb(45, 95, 112); */
+    background-color: #F1EDEA;
+    margin: 0;
+}
+
+.S-md-card-info h4 {
+    margin: 0;
+    font-size: 12px;
+}
+
+.S-md-card-info h4 span {
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.S-md-card-info-2 {
+    margin-top: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.S-md-card-info p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.S-md-card-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline;
+}
+
+
+/* --------------xs-card 卡片-------------------------------- */
+
+.S-xs-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.S-xs-card-wrap {
+    margin-top: 50px;
+    width: 250px;
+    height: 247px;
+    overflow: hidden;
+    position: relative;
+    /* border: 1px solid blue; */
+}
+
+.S-xs-share {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    color: #0E2E3D;
+    background-color: #F1EDEA;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    right: 22%;
+}
+
+.S-xs-share i {
+    font-size: 1.2em;
+}
+
+.S-xs-like {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    color: #0E2E3D;
+    background-color: #F1EDEA;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+}
+
+.S-xs-like svg {
+    width: 25px;
+    height: 25px;
+    fill: #0E2E3D;
+}
+
+.S-xs-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+
+.S-xs-card-img {
+    width: 100%;
+    height: 100%;
+    background: url(../old_house/1521821703_54177.jpg) 70% center/ cover;
+}
+
+.S-xs-card-info {
+    padding: 9px 10px;
+    /* border: 1px solid rgb(45, 95, 112); */
+    background-color: #F1EDEA;
+    margin: 0;
+}
+
+.S-xs-card-info h4 {
+    margin: 0;
+    font-size: 12px;
+}
+
+.S-xs-card-info h4 span {
+    font-size: 16px;
+    font-weight: 900;
+    padding-right: 10px;
+}
+
+.S-xs-card-info-2 {
+    margin-top: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.S-xs-card-info p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.S-xs-card-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline;
+}
+
+
+/* --------------------------------------------------------------------------*/
+
+
+/* 分享icon卡片  */
+
+.share-wrap {
+    margin-top: 700px;
+    z-index: 999;
+    width: 250px;
+    height: 70px;
+    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+    /* border: 1px solid red; */
+}
+
+.share {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.share svg {
+    width: 30px;
+    margin: 0 15px;
+}
+
+@media screen and(max-width:376px) {
+    /* --------------------------------------------------------------------------*/
+    /* 分享icon卡片  */
+    .share-wrap {
+        margin-top: 700px;
+        z-index: 999;
+        width: 100px;
+        height: 70px;
+        box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+        /* border: 10px solid red; */
+    }
+    .share {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    .share svg {
+        width: 30px;
+        margin: 0 15px;
+    }
+}

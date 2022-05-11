@@ -1,0 +1,692 @@
+                * {
+                    margin: 0px;
+                    padding: 0px;
+                    box-sizing: border-box;
+                    font-family: 'Josefin Sans', sans-serif;
+                    font-family: 'Noto Sans TC', sans-serif;
+                }
+                /* 以上是文字 ----------------------------*/
+                
+                .container {
+                    margin: auto;
+                    width: 1280px;
+                    padding: 0 25px;
+                }
+                
+                body {
+                    background-color: #F4F4F4;
+                }
+                /* 首頁第一頁開始 */
+                
+                .x-home-page-slogan {
+                    width: 100%;
+                    max-width: 1920px;
+                    height: 100vh;
+                    max-height: 1080px;
+                    margin: auto;
+                    background: url(../imgs/cut-patrick-perkins-3wylDrjxH-E-unsplash\ 3.jpg) no-repeat center/cover;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 60px;
+                }
+                
+                .x-home-page-slogan .container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .x-slogan {
+                    margin-top: 180px;
+                }
+                
+                .x-slogan h1 {
+                    font-size: 120px;
+                    font-weight: 900;
+                    color: #FEAC00;
+                    text-shadow: 4px 4px #F4F4F4;
+                }
+                
+                .x-slogan h1:nth-child(1) {
+                    margin-bottom: -50px;
+                    margin-top: -100px;
+                }
+                
+                .x-slogan h1:nth-child(2) {
+                    margin-bottom: 10px;
+                }
+                
+                .x-slogan-small p {
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: #F1EDEA;
+                }
+                
+                .x-slogan-small p {
+                    margin-bottom: 40px;
+                }
+                
+                .x-search-post button:nth-child(1) {
+                    margin-right: 30px;
+                }
+                
+                .mobile-button-FEAC00-162,
+                .mobile-button-F4F4F4-162 {
+                    display: none;
+                }
+                
+                @media screen and (max-width:376px) {
+                    .x-home-page-slogan {
+                        width: 100%;
+                        max-width: 375px;
+                        height: 100vh;
+                        max-height: 667px;
+                        margin-bottom: 40px;
+                        background: url(../imgs/mobile-patrick-perkins-3wylDrjxH-E-unsplash\ 3.jpg) center/contain;
+                    }
+                    .x-home-page-slogan .container {
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-top: 120px;
+                    }
+                    .x-slogan h1 {
+                        font-size: 38px;
+                        font-weight: 900;
+                        color: #FEAC00;
+                        text-shadow: 2px 2px #F4F4F4;
+                    }
+                    .x-slogan h1:nth-child(1) {
+                        margin-bottom: -10px;
+                        margin-top: -100px;
+                    }
+                    .x-slogan h1:nth-child(2) {
+                        margin-bottom: 10px;
+                    }
+                    .x-slogan-small p {
+                        font-size: 20px;
+                    }
+                    .mobile-button-FEAC00-162,
+                    .mobile-button-F4F4F4-162 {
+                        display: block;
+                    }
+                    .mobile-button-FEAC00-162 {
+                        margin-right: 10px;
+                    }
+                    .pc-button-FEAC00-280,
+                    .pc-button-F4F4F4-280 {
+                        display: none;
+                    }
+                    .x-search-post {
+                        display: flex;
+                    }
+                }
+                /* 首頁共租介紹開始 */
+                
+                .x-home-page-introduce-symbiosis {
+                    width: 100%;
+                    max-width: 1920px;
+                    height: 800px;
+                    margin: auto;
+                    background: url(../imgs/cut-espolon-tequila-xCsalofaxw4-unsplash\ 1.jpg) no-repeat center/cover;
+                    padding-top: 188px;
+                    margin-bottom: 136px;
+                }
+                /* 首頁分租介紹開始 */
+                
+                .x-home-page-introduce-sublease {
+                    width: 100%;
+                    max-width: 1920px;
+                    height: 800px;
+                    margin: auto;
+                    background: url(../imgs/living-room-1835923_1920.jpg) no-repeat center/cover;
+                    padding-top: 188px;
+                    margin-bottom: 136px;
+                }
+                /* 首頁共租以及分租的內文格式 */
+                
+                .x-container-x-home-page {
+                    margin: auto;
+                    width: 1280px;
+                    padding: 0 25px;
+                }
+                
+                .x-introduce-right {
+                    width: 570px;
+                    min-height: 668px;
+                    height: 100%;
+                    background-color: #F1EDEA;
+                    padding: 80px 100px 80px 100px;
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+                
+                .x-introduce-left {
+                    width: 570px;
+                    min-height: 668px;
+                    height: 100%;
+                    background-color: #F1EDEA;
+                    padding: 80px 100px 80px 100px;
+                    margin-right: auto;
+                    margin-left: 0;
+                }
+                
+                .x-introduce-right h2,
+                .x-introduce-left h2 {
+                    margin-bottom: 40px;
+                }
+                
+                .x-introduce-right p,
+                .x-introduce-left p {
+                    letter-spacing: 0%;
+                }
+                
+                .x-introduce-left img,
+                .x-introduce-right img {
+                    display: none;
+                }
+                
+                .x-introduce-left p,
+                .x-introduce-right p {
+                    margin-bottom: 16px;
+                    text-align: justify;
+                    line-height: 32px;
+                }
+                
+                @media screen and (max-width:376px) {
+                    .x-home-page-introduce-symbiosis,
+                    .x-home-page-introduce-sublease {
+                        width: 100%;
+                        max-width: 1280px;
+                        margin: auto;
+                        background: none;
+                        padding-top: 0px;
+                        margin-bottom: 0px;
+                    }
+                    .x-introduce-left img,
+                    .x-introduce-right img {
+                        display: block;
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+                    .x-introduce-left,
+                    .x-introduce-right {
+                        width: 375px;
+                        background-color: #F1EDEA;
+                        padding: 40px 20px 40px 20px;
+                        margin-left: -20px;
+                    }
+                    .x-introduce-left p,
+                    .x-introduce-right p {
+                        overflow-wrap: break-word;
+                        margin-bottom: 16px;
+                    }
+                    .x-introduce-left h2,
+                    .x-introduce-right h2 {
+                        text-align: center;
+                        margin-bottom: 10px;
+                    }
+                }
+                /* 刊登房屋/清潔服務開始 */
+                
+                .x-home-page-post-clean {
+                    width: 1230px;
+                    height: 696px;
+                    display: flex;
+                    margin: auto;
+                    margin-bottom: 195px;
+                }
+                
+                .x-home-page-post-clean-left-post {
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                .x-home-page-post-clean-right-clean {
+                    display: flex;
+                    flex-direction: column-reverse;
+                }
+                
+                .x-home-page-post-clean-left-post div:nth-child(1),
+                .x-home-page-post-clean-right-clean div:nth-child(1) {
+                    width: 615px;
+                    height: 166px;
+                    background-color: #F1EDEA;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                
+                .x-home-page-post-clean-left-post div:nth-child(2) {
+                    width: 615px;
+                    height: 530px;
+                    background: url(../imgs/cut-spacejoy-umAXneH4GhA-unsplash\ 1.jpg) no-repeat center/100%;
+                }
+                
+                .x-home-page-post-clean-right-clean div:nth-child(2) {
+                    width: 615px;
+                    height: 530px;
+                    background: url(../imgs/cut-ashwini-chaudhary-monty-Iu6parQAO-U-unsplash\ 1.jpg) no-repeat center/100%;
+                }
+                
+                @media screen and (max-width:376px) {
+                    .x-home-page-post-clean {
+                        width: 335px;
+                        height: 850px;
+                        display: block;
+                        margin: auto;
+                        margin-bottom: 0px;
+                    }
+                    .x-home-page-post-clean-left-post,
+                    .x-home-page-post-clean-right-clean {
+                        display: block
+                    }
+                    .x-home-page-post-clean-left-post div:nth-child(1),
+                    .x-home-page-post-clean-right-clean div:nth-child(1) {
+                        width: 335px;
+                        height: 90px;
+                        background-color: #F1EDEA;
+                    }
+                    .x-home-page-post-clean-left-post div:nth-child(1) {
+                        margin-top: 40px;
+                    }
+                    .x-home-page-post-clean-left-post h2,
+                    .x-home-page-post-clean-right-clean h2 {
+                        font-size: 24px;
+                    }
+                    .x-home-page-post-clean-left-post div:nth-child(2) {
+                        width: 335px;
+                        height: 335px;
+                        background: url(../imgs/spacejoy-umAXneH4GhA-unsplash.jpg) no-repeat center/cover;
+                    }
+                    .x-home-page-post-clean-right-clean div:nth-child(2) {
+                        width: 335px;
+                        height: 335px;
+                        background: url(../imgs/ashwini-chaudhary-monty-Iu6parQAO-U-unsplash.jpg) no-repeat center/cover;
+                    }
+                }
+                /* 首頁卡片版 */
+                
+                .x-home-page-hover-card {
+                    width: 100%;
+                    max-width: 1750px;
+                    min-width: 1230px;
+                    height: 580px;
+                    margin: auto;
+                    margin-bottom: 40px;
+                }
+                
+                .x-home-page-hover-card div {
+                    margin: auto;
+                    float: left;
+                    width: 19%;
+                    margin: 30px 0.5%;
+                    height: 0px;
+                    padding-bottom: 24.98%;
+                }
+                
+                .x-home-page-hover-card div:nth-child(1) {
+                    transform: rotate(-15deg) translateX(160px);
+                    background: url(../imgs/rendy-novantino-_3Pyr85zcE8-unsplash.jpg) no-repeat center/cover;
+                }
+                
+                .x-home-page-hover-card div:nth-child(2) {
+                    transform: rotate(15deg) translateX(40px);
+                    background: url(../imgs/toa-heftiba-l_ExpFwwOEg-unsplash\ \(1\).jpg) no-repeat center/cover;
+                }
+                
+                .x-home-page-hover-card div:nth-child(3) {
+                    transform: rotate(0deg) translateX(-10px);
+                    background: url(../imgs/katarzyna-grabowska-oA1-rirIJ2E-unsplash.jpg) no-repeat center/cover;
+                }
+                
+                .x-home-page-hover-card div:nth-child(4) {
+                    transform: rotate(-6deg) translateX(-40px);
+                    background: url(../imgs/jaco-pretorius-aGZeHyx-jfo-unsplash.jpg) no-repeat center/cover;
+                }
+                
+                .x-home-page-hover-card div:nth-child(5) {
+                    transform: rotate(15deg) translateX(-160px);
+                    background: url(../imgs/20220404001923_79-scaled.jpg) no-repeat center/cover;
+                }
+                
+                @media screen and (max-width:376px) {
+                    .x-home-page-hover-card {
+                        display: none;
+                    }
+                }
+                /* 首頁三特點介紹 */
+                
+                .x-home-page-three-element-bg {
+                    margin: auto;
+                    width: 100%;
+                    max-width: 1920px;
+                    height: 350px;
+                    background: url(../imgs/living-room-1835923_1920.jpg) no-repeat 100% 80%/cover;
+                }
+                
+                .x-home-page-three-element {
+                    margin-bottom: 80px;
+                    margin-top: -175px;
+                }
+                
+                .x-home-page-three-element-out {
+                    margin: auto;
+                    width: 1230px;
+                    background-color: #F1EDEA;
+                    padding: 100px 93px 133px 93px;
+                }
+                
+                .x-home-page-three-element-out h2 {
+                    font-weight: bold;
+                    text-align: center;
+                    margin-bottom: 80px;
+                }
+                
+                .x-home-page-three-element-txt {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                
+                .x-home-page-three-element-txt-single {
+                    padding: 20px;
+                }
+                
+                .x-home-page-three-element-txt-single div,
+                .x-home-page-three-element-txt-single h3 {
+                    text-align: center;
+                    margin-bottom: 30px;
+                    font-weight: bold;
+                }
+                
+                @media screen and (max-width:376px) {
+                    .x-home-page-three-element-bg {
+                        display: none;
+                    }
+                    .x-home-page-three-element {
+                        margin-bottom: 0px;
+                        margin-top: 40px;
+                        background-color: #F1EDEA;
+                    }
+                    .x-home-page-three-element-out {
+                        margin: auto;
+                        width: 100%;
+                        background-color: #F1EDEA;
+                        padding: 50px 0px;
+                    }
+                    .x-home-page-three-element-out h2 {
+                        margin-bottom: 20px;
+                    }
+                    .x-home-page-three-element-txt {
+                        display: inline-block;
+                    }
+                    .x-home-page-three-element-txt-single {
+                        margin-bottom: 20px;
+                        padding: 0;
+                    }
+                    .x-home-page-three-element-txt p {
+                        overflow-wrap: break-word;
+                        text-align: justify;
+                        line-height: 32px;
+                    }
+                    .x-home-page-three-element-txt-single div,
+                    .x-home-page-three-element-txt-single h3 {
+                        margin-bottom: 20px;
+                    }
+                }
+                /* 四步驟 */
+                
+                .x-home-page-step-slogan-out {
+                    margin-bottom: 80px;
+                }
+                
+                .x-home-page-step-slogan {
+                    width: 100%;
+                    background-color: #F1EDEA;
+                    padding: 73px 245px 73px 245px;
+                }
+                
+                .x-home-page-step-slogan h2 {
+                    text-align: center;
+                    font-weight: bold;
+                    margin-bottom: 30px;
+                }
+                
+                .x-home-page-step-1-2 {
+                    width: 100%;
+                    height: 546px;
+                    display: flex;
+                }
+                
+                .x-home-page-step-2-4 {
+                    width: 100%;
+                    height: 546px;
+                    display: flex;
+                    flex-direction: row-reverse;
+                }
+                
+                .x-home-page-step-1-2-txt,
+                .x-home-page-step-1-2-img {
+                    width: 50%;
+                    height: 100%;
+                }
+                
+                .x-home-page-step-1-2-txt p {
+                    text-align: justify;
+                }
+                
+                .x-home-page-step-1-2-img {
+                    background: url(../imgs/arkan-perdana-eKTLh4_u7Ao-unsplash.jpg) no-repeat center/cover;
+                }
+                
+                .x-home-page-step-2-4-img {
+                    width: 50%;
+                    height: 100%;
+                }
+                
+                .x-home-page-step-2-4-img {
+                    background: url(../imgs/tierra-mallorca-rgJ1J8SDEAY-unsplash.jpg) no-repeat center/cover;
+                }
+                
+                .x-home-page-step-1-2-txt div {
+                    width: 50%;
+                    height: 50%;
+                    float: left;
+                    margin: 0px;
+                }
+                
+                .x-home-page-step-1-2-txt div:nth-child(2),
+                .x-home-page-step-1-2-txt div:nth-child(5) {
+                    padding: 70px 80px;
+                    background-color: #F1EDEA;
+                }
+                
+                .x-home-page-step-1-2-txt div:nth-child(2) h3,
+                .x-home-page-step-1-2-txt div:nth-child(5) h3 {
+                    text-align: center;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                }
+                
+                .x-home-page-step-1-2-txt div:nth-child(1),
+                .x-home-page-step-1-2-txt div:nth-child(3),
+                .x-home-page-step-1-2-txt div:nth-child(4),
+                .x-home-page-step-1-2-txt div:nth-child(6) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 0px;
+                }
+                
+                .x-home-page-step-1-2-txt div:nth-child(3) img,
+                .x-home-page-step-1-2-txt div:nth-child(1) img,
+                .x-home-page-step-1-2-txt div:nth-child(4) img,
+                .x-home-page-step-1-2-txt div:nth-child(6) img {
+                    width: 150px;
+                    height: 150px;
+                }
+                
+                .x-home-page-step-slogan h2:nth-child(2) {
+                    display: none;
+                }
+                
+                .x-home-page-step-1-2-txt div:nth-child(1) {
+                    display: none;
+                }
+                
+                @media screen and (max-width:376px) {
+                    .x-home-page-step-slogan-out .container {
+                        padding-bottom: 50px;
+                        padding-top: 50px;
+                    }
+                    .x-home-page-step-slogan h2:nth-child(1) {
+                        display: none;
+                    }
+                    .x-home-page-step-slogan h2:nth-child(2) {
+                        display: block;
+                    }
+                    .x-home-page-step-2-4-img,
+                    .x-home-page-step-1-2-img {
+                        display: none;
+                    }
+                    .x-home-page-step-slogan-out {
+                        margin-top: 40px;
+                        background-color: #F1EDEA;
+                        margin-bottom: 40px;
+                    }
+                    .x-home-page-step-slogan {
+                        display: inline-block;
+                        background-color: #F1EDEA;
+                        padding: 0;
+                    }
+                    .x-home-page-step-slogan h3 {
+                        overflow-wrap: break-word;
+                        font-size: 16px;
+                        font-weight: normal;
+                        line-height: 32px;
+                        text-align: justify;
+                    }
+                    .x-home-page-step-slogan h2 {
+                        text-align: center;
+                        font-weight: bold;
+                        margin-bottom: 15px;
+                        font-size: 24px;
+                    }
+                    .x-home-page-step-1-2,
+                    .x-home-page-step-2-4,
+                    .x-home-page-step-1-2-txt {
+                        display: inline-block;
+                        height: 100px;
+                    }
+                    .x-home-page-step-1-2-txt {
+                        width: 100%;
+                        height: 100%;
+                        display: inline-block;
+                        margin: 0px;
+                    }
+                    .x-home-page-step-1-2-txt div {
+                        width: 100%;
+                        height: 100%;
+                        float: none;
+                    }
+                    .x-home-page-step-1-2-txt div:nth-child(2),
+                    .x-home-page-step-1-2-txt div:nth-child(5) {
+                        padding: 0px 0px;
+                        background-color: #F1EDEA;
+                    }
+                    .x-home-page-step-1-2-txt div:nth-child(2) h3,
+                    .x-home-page-step-1-2-txt div:nth-child(5) h3 {
+                        text-align: center;
+                        font-weight: bold;
+                        margin-bottom: 20px;
+                    }
+                    .x-home-page-step-1-2-txt div:nth-child(1),
+                    .x-home-page-step-1-2-txt div:nth-child(3),
+                    .x-home-page-step-1-2-txt div:nth-child(4),
+                    .x-home-page-step-1-2-txt div:nth-child(6) {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-top: 20px;
+                    }
+                    .x-home-page-step-1-2-txt div:nth-child(3),
+                    .x-home-page-step-1-2-txt div:nth-child(6) {
+                        display: none;
+                    }
+                    .x-home-page-step-1-2-txt div:nth-child(3) img,
+                    .x-home-page-step-1-2-txt div:nth-child(1) img,
+                    .x-home-page-step-1-2-txt div:nth-child(4) img,
+                    .x-home-page-step-1-2-txt div:nth-child(6) img {
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+                /* 瀑布流排版 */
+                
+                .x-home-page-waterfall-img-out {
+                    margin-bottom: 80px;
+                    width: 100%;
+                }
+                
+                .x-home-page-waterfall-img {
+                    width: 100%;
+                    display: flex;
+                }
+                
+                .x-home-page-waterfall-img img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                
+                .x-home-page-waterfall-img-left {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: start;
+                }
+                
+                .x-home-page-waterfall-img-right {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: start;
+                }
+                
+                .x-home-page-waterfall-img-left div {
+                    width: 600px;
+                    height: 520px;
+                    margin-bottom: 30px;
+                    overflow: hidden;
+                }
+                
+                .x-home-page-waterfall-img-left div:nth-child(1) {
+                    margin-top: 100px;
+                }
+                
+                .x-home-page-waterfall-img-left div:nth-child(3) {
+                    width: 600px;
+                    height: 890px;
+                    margin-bottom: 0px;
+                }
+                
+                .x-home-page-waterfall-img-right div {
+                    width: 600px;
+                    height: 520px;
+                    margin-bottom: 30px;
+                }
+                
+                .x-home-page-waterfall-img-right div:nth-child(2) {
+                    width: 600px;
+                    height: 890px;
+                }
+                
+                @media screen and (max-width:376px) {
+                    .x-home-page-waterfall-img-out {
+                        display: none;
+                    }
+                }

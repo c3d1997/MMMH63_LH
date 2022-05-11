@@ -1,0 +1,176 @@
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 48px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+}
+
+.small {
+    font-size: 12px;
+}
+
+.slogan {
+    font-size: 128px;
+}
+
+.time {
+    font-size: 48px;
+}
+
+.alert {
+    color: red;
+}
+
+
+/* 以上是文字 */
+
+.pc-button-FEAC00-280 {
+    width: 280px;
+    height: 60px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+    background-color: #FEAC00;
+}
+
+.pc-button-F4F4F4-280 {
+    width: 280px;
+    height: 60px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+    background-color: #F1EDEA;
+}
+
+
+/* 電腦版長板按鈕 */
+
+.pc-button-FEAC00-180 {
+    width: 180px;
+    height: 60px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+    background-color: #FEAC00;
+}
+
+.pc-button-F4F4F4-180 {
+    width: 180px;
+    height: 60px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+    background-color: #F1EDEA;
+}
+
+
+/* 電腦版短版按鈕 */
+
+.pc-button-FEAC00-272 {
+    width: 272px;
+    height: 70px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+    background-color: #FEAC00;
+}
+
+.pc-button-F4F4F4-272 {
+    width: 272px;
+    height: 70px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+    background-color: #F1EDEA;
+}
+
+
+/* 電腦版進階搜尋按鈕 */
+
+.mobile-button-FEAC00-335 {
+    width: 335px;
+    height: 60px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    background-color: #FEAC00;
+}
+
+
+/* 手機滿版按鈕 */
+
+.mobile-button-FEAC00-162 {
+    width: 162.5px;
+    height: 45px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    background-color: #FEAC00;
+}
+
+.mobile-button-F4F4F4-162 {
+    width: 162.5px;
+    height: 45px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    background-color: #F1EDEA;
+}
+
+
+/* 手機搜尋和進階搜尋按鈕 */
+
+.mobile-button-FEAC00-162 {
+    width: 162.5px;
+    height: 60px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    background-color: #FEAC00;
+}
+
+.mobile-button-F4F4F4-162 {
+    width: 162.5px;
+    height: 60px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    background-color: #F1EDEA;
+}
+
+
+/* 手機的半版按鈕 */

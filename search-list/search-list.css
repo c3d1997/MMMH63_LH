@@ -1,0 +1,158 @@
+.x-search-list {
+    margin-top: 80px;
+}
+
+.x-search-list-state {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.x-search-list-state-left svg {
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.x-search-list-state-right {
+    display: flex;
+    align-items: center;
+}
+
+.x-search-list-state-right div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.x-search-list-state-right div:nth-child(1),
+.x-search-list-state-right div:nth-child(2) {
+    margin-right: 60px;
+}
+
+.x-up {
+    display: none;
+}
+
+
+/* 以下是列表 */
+
+.x-search-list-content {
+    display: flex;
+    background-color: #F1EDEA;
+}
+
+.x-search-list-content-img {
+    width: 320px;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.x-search-list-content-img-train {
+    width: 300%;
+    height: 100%;
+    display: flex;
+    list-style: none;
+}
+
+.x-search-list-content-img-train img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.x-right-arrow,
+.x-left-arrow {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    bottom: 0;
+    width: 10%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.x-left-arrow {
+    left: 5px;
+    right: 0px;
+}
+
+.x-search-list-content-txt {
+    padding: 42px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.x-search-list-content-txt p,
+.x-search-list-content-txt h3 {
+    display: flex;
+    align-items: center;
+}
+
+.x-search-list-content-txt div {
+    display: flex;
+}
+
+.x-search-list-content-txt div p {
+    margin: 0;
+}
+
+.x-search-list-content-txt div p:nth-child(1) {
+    margin-right: 35px;
+}
+
+.x-search-list-content-txt svg {
+    margin-right: 5px;
+}
+
+.x-search-list-content-icon {
+    padding: 95px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.x-search-list-content-icon div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 60px;
+}
+
+.x-search-list-content-price {
+    padding: 15px 15px 15px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.x-search-list-content-price-top {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.x-search-list-content-price-down div {
+    display: flex;
+    align-items: center;
+}
+
+.x-search-list-content-price-down div p {
+    margin-left: 8px;
+}
+
+.x-search-list-content-price-down h3 {
+    margin-left: 26px;
+}
+
+.x-search-list-content {
+    margin-bottom: 30px;
+}
