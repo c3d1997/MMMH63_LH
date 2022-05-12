@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./button-fonts.css">
+    <!-- <link rel="stylesheet" href="../input_container.css"> -->
+</head>
+<body style="background-color: #f4f4f4;">
+    <section>
+        <!-- 只有輸入框 -->
+        <div class="input_option">
+            <div class="fullinput_container ">
+                    <input type="text" name="" id="" placeholder="詳細地址">                        
+            </div>
+        </div>
+<br>
+        <!-- 標題+輸入框 -->
+        <div class="input_option">
+            <p class="option_name">選項標題</p>
+            <div class="fullinput_container ">
+                    <input type="text" name="" id="" placeholder="詳細地址">                        
+            </div>
+        </div>
+<br>
+        <!-- 下拉選單 -->
+        <div class="dropdown_container">
+            <button id="areaListBtn">
+                <div class="dropdown">
+                    <span>縣市</span> 
+                    <img src="../imgs/down-arrow.svg" alt="">
+                </div>
+            </button>
+            <div id="areaList" class="dropdown_list" hidden>
+                <p class="" >台北市</p>
+                <p class="" >新北市</p>
+                <p class="" >基隆市</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script>
+        $("button").click(function(){
+            $(this).next(".dropdown_list").toggle()
+            $(this).find("img").toggleClass("downArrow")
+        })
+
+
+
+
+
+
+    </script>
+</body>
+</html>

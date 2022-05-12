@@ -49,12 +49,11 @@ p {
 }
 
 .alert {
+    line-height: 30px;
     color: red;
 }
 
-.alert {
-    color: red;
-}
+
 
 
 /* 以上文字 */
