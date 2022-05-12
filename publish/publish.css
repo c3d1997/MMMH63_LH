@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+}
+.display-n {
+    display: none;
+}
+.testborder {
+    outline: 1px solid green;
+}
+
+h1,h2,h3,p,span {
+    margin: 0;
+    color: #0E2E3D;
+}
+.bold {
+    font-weight: bold;
+}
+h1 {
+    font-weight: normal;
+    font-size: 48px;
+}
+h2 {
+    font-weight: normal;
+    font-size: 32px;
+}
+h3 {
+    font-weight: normal;
+    font-size: 24px;
+}
+p {
+    font-size: 16px;
+}
+span {
+    font-size: 16px;
+}
+a, a:hover, a:visited, a:link, a:active {
+    color: #0E2E3D;
+    text-decoration:none;
+    outline: none;
+}
+
+.small {
+    font-size: 12px;
+}
+.slogan {
+    font-size: 128px;
+}
+.time {
+    font-size: 48px;
+}
+.alert {
+    color: red;
+}
+ul {
+    list-style-type: none;
+}
+button {
+    cursor: pointer;
+    border: none;
+    
+}
+input[type=text]  {
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    border: none;
+    /* text-indent: 15px; */
+}
+input[type=checkbox] {
+    display: none;
+}
+input[type=checkbox]+span {
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 30px;
+    /* line-height: 24px; */
+    background: url(../imgs/unchecked.svg) no-repeat left top;
+    user-select: none;
+}
+input[type=checkbox]:checked+span {
+    display: inline-block;
+    padding-left: 30px;
+    /* line-height: 24px; */
+    background-image: url(../imgs/checked.svg);
+}
+body {
+    margin: 0;
+    background-color: #f4f4f4;
+}
+.z_container {
+    margin: auto;
+    width: 1280px;
+    padding: 0 25px;
+    margin-bottom: 90px;
+    /* height: 980px; */
+    margin-top: 80px;
+}
+.z_publish_container {
+    padding: 0 50px;
+}
+.z_step_title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.z_img_reviewcontainer {
+    margin: auto;
+    background-color: #EEF1F4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+    border: 3px solid #0E2E3D;
+}
+.uploadimg_before > *{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.uploadimg_after {
+    width: 100%;
+    height: 100%;
+}
+.uploadimg_after img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.z_upload_item_img_btn {
+    background-color: #EEF1F4;
+}
+.z_upload_item_img_btn > button {
+    font-size: 16px;
+    font-weight: bold;
+    color: #75BBE3;
+}
+.z_clickupload {
+    font-size: 16px;
+    font-weight: bold;
+    color: #75BBE3;
+}
+.z_step1imgs_container {
+    padding: 0 3px;
+    margin-top: 30px;
+    height: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.z_review_card {
+    position: relative;
+    width: 18%;
+    height: 46%;
+    background-color: #EEF1F4;
+    outline: 3px solid #0E2E3D;
+}
+.z_close_icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url(../imgs/closeicon.svg);
+    background-position: center;
+}
+.z_review_card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.z_publish_btnY { 
+    display: block;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.z_publish_text_container {
+    width: 1145px;
+    margin: auto;
+
+}
+
+.z_d_flex {
+    display: flex;
+}
+
+
+
+.z_fullinput_container {
+    width: 1065px;
+}
+
+.z_input_container {
+    width: 525px;
+    display: flex;
+    justify-content: space-between;
+}
+.z_publish_input_option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.z_publish_input_twooption {
+    display: flex;
+    align-items: center;
+}
+.z_two_input {
+    width: 1065px;
+    display: flex;
+    justify-content: space-between;
+}
+.z_option_name {
+    /* width: 60px; */
+    margin-right: 15px;
+}
+.z_fullinput_container input,.z_input_container input {
+    width: 100%;
+    text-indent: 15px;
+}
+.z_fullinput_container input[placeholder],.z_input_container input[placeholder] {
+    font-size: 16px;
+}
+.z_publish_alert {
+    margin-left: 75px;
+}
+.z_chebox_intput {
+    width: 600px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+.z_text_intput {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.z_text_intput_last {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.z_check_container {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.z_checkbox_container {
+    width: 190px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.z_checkbox_option_container {
+    display: flex;
+    align-items: center;
+}
+.z_checkbox_option {
+    margin-right: 15px;
+}
+.z_input_medium {
+    width: 255px;
+    text-align: center;
+}
+.z_input_small {
+    width: 120px;
+    text-align: center;
+}
+
+.z_publish_dropdown_container {
+    width: 100%;
+    position: relative;
+}
+.z_publish_dropdown_container>button {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    padding: 0;
+}
+.z_publish_dropdown {
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.z_publish_dropdown>span {
+    opacity: .7;
+}
+.z_publish_dropdown_list {
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    text-indent: 15px;
+}
+.z_publish_checkbox_title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.z_pay_alert {
+    height: 30px;
+    margin-left: 75px;
+    display: flex;
+    align-items: center;
+}
+.z_payagree {
+    display: flex;
+    margin-bottom: 30px;
+}
+.z_twobtn {
+    width: 390px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin: auto;
+}
+.downArrow {
+    transform: rotateX(180deg);
+}
+
+
+@media screen and (max-width:375px) {
+    
+  
+}
