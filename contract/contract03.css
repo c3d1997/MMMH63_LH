@@ -1,15 +1,14 @@
 body{
     margin: 0px;
 }
-
-
 .c_container_stepbar{
     width: 100%;
     max-width: 1280px;
-    margin: 100px auto 0 auto;
-    padding: 50px 50px;
+    margin: 160px auto 0 auto;
+    padding: 0px 25px;
     /* background-color: blue; */
 }
+
 
 ul {
     list-style-type: none;
@@ -143,7 +142,6 @@ ul {
     color: #0E2E3D;
     padding: 20px 20px;
     font-size: 16px;
-    font-family: 'Noto Sans TC', sans-serif;
 }
 .c_content_box::-webkit-scrollbar{
     background:#E0F1FC; 
@@ -199,6 +197,13 @@ input[type=checkbox]:checked+span {
 }
 
 /* ---------------------------button--------------------- */
+.container-button{
+    margin-top: 30px;
+    background-color: red;
+}
+
+
+
 
 .pc-button-FEAC00-180 {
     width: 180px;
@@ -223,8 +228,12 @@ input[type=checkbox]:checked+span {
 .c_button_section{
     display: flex;
     justify-content: center;
-    margin: 30px 0 50px 0;
+    margin: 90px 0 60px 0;
 }
 .c_button_right{
     margin-left: 30px;
+}
+
+.footer_container{
+    margin-top: 60px;
 }

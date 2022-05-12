@@ -134,6 +134,7 @@
 
 .x-search-ex {
     margin-top: 20px;
+    z-index: 5;
 }
 
 .x-search-ex-both {
@@ -182,6 +183,10 @@
     background-color: #F1EDEA;
     cursor: pointer;
     margin: 5px 5px;
+}
+
+.x-search-ex-tag-wrap button p {
+    font-weight: normal;
 }
 
 .x-search-ex-tag-wrap .x-tag-on-click {

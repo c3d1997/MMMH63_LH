@@ -1,9 +1,8 @@
 .c_container_stepbar{
     width: 100%;
     max-width: 1280px;
-    margin: 100px auto 0 auto;
-    padding: 50px 50px;
-    /* background-color: blue; */
+    margin: 160px auto 0 auto;
+    padding: 0px 25px;
 }
 
 
@@ -92,6 +91,7 @@ ul {
 
 /*---------step-minder--------*/
 .step_mider{
+    margin-top: 30px;
     text-align: center;
     color: #0E2E3D;
 }
@@ -99,9 +99,10 @@ ul {
 
 /*---------step-bar2 --------*/
 .step-bar2{
+    width: 100%;
     max-width: 1280px;
-    margin: 0 320px 0 320px;
-    padding: 50px 50px; 
+    margin: 30px auto;
+    padding: 25px 25px; 
 }
 .step-bar2 p{
     width: 100%;
@@ -124,26 +125,25 @@ ul {
 
 
 /* ---------------minder-------------- */
+.c-minder-wrap{
+    display: flex;
+    width: 100%;
+    max-width: 1280px;
+    margin: 30px auto;
+    padding: 0px 25px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+.c-select{
+    margin-left: 20px;
+    
+}
 
 
 
 
 /* --- 表單地獄--------- */
 .container-form{
-    margin: 30px 20px;
+    margin: 30px auto;
     width: 100%;
     display: flex;
 }
@@ -228,7 +228,8 @@ select {
 
 /* ---------button---------- */
 .container-button{
-    margin-top: 30px;
+    margin: 30px 0 60px 0;
+
 }
 .button-row{
     text-align: center;
@@ -249,4 +250,8 @@ select {
 }
 .button2 {
     background-color:#f2ae00;
+}
+
+.footer_container{
+    margin-top: 60px;
 }
