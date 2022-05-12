@@ -1,0 +1,140 @@
+.world{
+    display: flex;
+    margin-top: 9%;
+    margin-bottom:7%;
+    margin-right:9% ;
+}
+
+
+/* 左邊選單開始 */
+.mylist{
+    /* outline: 1px solid red;  */
+    width: 30%;
+    text-align: center;
+}
+
+ul{
+    padding-left: 0;
+}
+
+li{
+    list-style: none;
+}
+
+
+.listword{
+    font-size: 24px;
+    text-decoration: none;
+    margin-top:5%;
+}
+
+
+.listword a{
+    text-decoration: none;
+    color: rgba(14, 46, 61, 0.527);
+}
+/* 左邊選單結束 */
+
+
+/* 右邊標題開始 */
+.mytitle{
+    /* outline: 1px solid rgb(0, 255, 136);  */
+    width: 70%;
+    position: relative;
+    margin-top: 1.5%;
+}
+
+.title{
+    /* outline: 1px solid red; */
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.titletitle{
+    display: flex;
+    margin-right: 0%;
+}
+
+
+.push{
+    margin-right: 10px;
+} 
+/* 右邊標題結束 */
+
+.square{
+    width: 100%;
+    /* outline: 1px solid rgb(92, 5, 70); */
+    /* height: 382px; */
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    /* background-color: aqua; */
+   
+
+}
+
+.squareA{
+    height: 100%;
+    width: 397px;
+    /* outline: 1px solid rgb(59, 140, 172); */
+    background-color: rgba(241, 237, 234, 1);
+    position: relative;
+    margin-bottom: 3%;
+
+}
+
+.squarepicture{
+    width: 397px;
+    height: 293px;
+    overflow: hidden;
+}
+
+.pture{
+    object-fit: cover;
+}
+
+.oneline{
+    display: flex;
+    margin-left: 6%;
+    margin-top: 4%;
+    
+}
+
+.oneone{
+    margin-left: 5%;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.twoline{
+    display: flex;
+    margin-left: 6%;
+    margin-top: 3%;
+    justify-content: space-between
+}
+
+.twotwo{
+    margin-right: 5%;
+}
+
+.xx{
+    position: absolute;
+    background-color: aliceblue;
+    border-radius: 50%;
+    top: 6%;
+    right: 7%;
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
