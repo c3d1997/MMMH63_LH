@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../button-fonts.css">
+    <link rel="stylesheet" href="./publish.css">
+</head>
+<body>
+    <section>
+        <div class="z_container">
+            <div class="z_row">
+                <div class="z_publish_container">
+                    <h3 class="z_step_title bold">step2.房屋詳細資料</h3>
+                    <div class="z_publish_text_container">
+                        <div class="z_input_row">
+                            <div class="z_publish_input_twooption">
+                                <p class="z_option_name">　　地址</p>
+                                <div class="z_two_input">
+                                    <div class="z_input_container ">
+                                        <div class="z_publish_dropdown_container">
+                                            <button id="z_areaListBtn">
+                                                <div class="z_publish_dropdown">
+                                                    <span>縣市</span> 
+                                                    <img src="../imgs/down-arrow.svg" alt="">
+                                                </div>
+                                            </button>
+                                            <div id="z_areaList" class="z_publish_dropdown_list" hidden>
+                                                <p class="" >台北市</p>
+                                                <p class="" >新北市</p>
+                                                <p class="" >基隆市</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="z_input_container ">
+                                        <div class="z_publish_dropdown_container">
+                                            <button id="z_distListBtn">
+                                                <div class="z_publish_dropdown">
+                                                    <span>行政區</span> 
+                                                    <img src="../imgs/down-arrow.svg" alt="">
+                                                </div>
+                                            </button>
+                                            <div id="z_distList" class="z_publish_dropdown_list" hidden>
+                                                <p class="" >大安區</p>
+                                                <p class="" >信義區</p>
+                                                <p class="" >松山區</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="z_publish_alert">
+                                <p class="alert">！　請選擇縣市與行政區</p>
+                             </div>
+                            <div class="z_publish_input_option">
+                                <p class="z_option_name">　　　　</p>
+                                <div class="z_fullinput_container ">
+                                        <input type="text" name="" id="" placeholder="詳細地址">                        
+                                </div>
+                            </div>
+                            <div class="z_publish_alert">
+                                <p class="alert">！　您的資料格式錯誤（不能為空）</p>
+                             </div>
+                            <div class="z_publish_input_option">
+                                <p class="z_option_name">　　坪數</p>
+                                <div class="z_fullinput_container ">
+                                        <input type="text" name="" id="" placeholder="輸入坪數">                        
+                                </div>
+                            </div>
+                            <div class="z_publish_alert">
+                                <p class="alert">！　您的資料格式錯誤（不能為空）</p>
+                             </div>
+                            <div class="z_publish_input_option">
+                                <p class="z_option_name">　　樓層</p>
+                                <div class="z_fullinput_container ">
+                                        <input type="text" name="" id="" placeholder="輸入樓層">                        
+                                </div>
+                            </div>
+                            <div class="z_publish_alert">
+                                <p class="alert">！　您的資料格式錯誤（不能為空）</p>
+                             </div>
+                            <div class="z_publish_input_option">
+                                <p class="z_option_name">　　房型</p>
+                                <div class="z_fullinput_container ">
+                                    <div class="z_publish_dropdown_container">
+                                        <button id="z_typeListBtn">
+                                            <div class="z_publish_dropdown">
+                                                <span>房型</span> 
+                                                <img  src="../imgs/down-arrow.svg" alt="">
+                                            </div>
+                                        </button>
+                                        <div id="z_typeList" class="z_publish_dropdown_list" hidden>
+                                            <p class="" >共生</p>
+                                            <p class="" >分租</p>
+                                        </div>
+                                    </div>        
+                                </div>
+                            </div>
+                            <div class="z_publish_alert">
+                                <p class="alert">！　請選擇房間類型</p>
+                             </div>
+                            <div class="z_publish_input_option">
+                                <p class="z_option_name">房間數量</p>
+                                <div class="z_fullinput_container ">
+                                        <input type="text" name="" id="" placeholder="輸入房間數量">                        
+                                </div>
+                            </div>
+                            <div class="z_publish_alert">
+                                <p class="alert">！　您的資料格式錯誤（不能為空）</p>
+                             </div>
+                            <div class="z_publish_input_option">
+                                <p class="z_option_name">物件名稱</p>
+                                <div class="z_fullinput_container ">
+                                        <input type="text" name="" id="" placeholder="輸入出租名稱">                        
+                                </div>
+                            </div>
+                            <div class="z_publish_alert">
+                                <p class="alert">！　您的資料格式錯誤（不能為空）</p>
+                             </div>
+                            <div class="z_publish_input_option">
+                                <p class="z_option_name">　　價格</p>
+                                <div class="z_fullinput_container ">
+                                        <input type="text" name="" id="" placeholder="輸入想收取的租金">                        
+                                </div>
+                            </div>
+                            <div class="z_publish_alert">
+                                <p class="alert">！　您的資料格式錯誤（不能為空）</p>
+                             </div>
+                            <div class="z_publish_input_option">
+                                <p class="z_option_name">託管時間</p>
+                                <div class="z_fullinput_container ">
+                                        <input type="text" name="" id="" placeholder="選擇想交由本公司代理出租的時間">                        
+                                </div>
+                            </div>
+                            <div class="z_publish_alert">
+                                <p class="alert">！　您的資料格式錯誤（不能為空）</p>
+                             </div>
+                            <div class="z_publish_input_option">
+                                <p class="z_option_name">出租時間</p>
+                                <div class="z_fullinput_container ">
+                                        <input type="text" name="" id="" placeholder="欲讓房客使用時間">                        
+                                </div>
+                            </div>
+                            <div class="z_publish_alert">
+                                <p class="alert">！　您的資料格式錯誤（不能為空）</p>
+                             </div>
+                        </div>
+                        
+                    </div>
+                    <div class="z_twobtn">                      
+                        <button class="pc-button-F4F4F4-180 z_publish_btnY">上一步</button>
+                        <button class="pc-button-FEAC00-180 z_publish_btnY">下一步</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script>
+        $("button").click(function(){
+            $(this).next(".z_publish_dropdown_list").toggle()
+            $(this).find("img").toggleClass("downArrow")
+        })
+
+
+
+
+
+        // $("button").click(function(){
+        //     $(this).next().toggle()
+            // if ((downarrowcount%2) == 0) {
+            //     $(this).find(".downArrow").css("transform","rotateX(0deg)")
+            // }else {
+            //     $(this).find(".downArrow").css("transform","rotateX(180deg)")
+            // }
+            // downarrowcount++;
+        // })
+        // $("#z_areaListBtn").click(function(){
+        //     $("#z_areaList").toggle()
+        //     // let downarrowcount = 1;
+        //     if ((downarrowcount%2) == 0) {
+        //         $("#z_areaListBtn .downArrow").css("transform","rotateX(0deg)")
+        //     }else {
+        //         $("#z_areaListBtn .downArrow").css("transform","rotateX(180deg)")
+        //     }
+        //     downarrowcount++;
+        // })
+        // $("#z_distListBtn").click(function(){
+        //     $("#z_distList").toggle()
+        //     // let downarrowcount = 1;
+        //     if ((downarrowcount%2) == 0) {
+        //         $("#z_distListBtn .downArrow").css("transform","rotateX(0deg)")
+        //     }else {
+        //         $("#z_distListBtn .downArrow").css("transform","rotateX(180deg)")
+        //     }
+        //     downarrowcount++;
+        // })
+        // $("#z_typeListBtn").click(function(){
+        //     $("#z_typeList").toggle()
+        //     if ((downarrowcount%2) == 0) {
+        //         $("#z_typeListBtn .downArrow").css("transform","rotateX(0deg)")
+        //     }else {
+        //         $("#z_typeListBtn .downArrow").css("transform","rotateX(180deg)")
+        //     }
+        //     downarrowcount++;
+        // })
+    </script>
+</body>
+</html>
