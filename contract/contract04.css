@@ -6,8 +6,8 @@ body{
 .c_container_stepbar{
     width: 100%;
     max-width: 1280px;
-    margin: 100px auto 0 auto;
-    padding: 50px 50px;
+    margin: 160px auto 0 auto;
+    padding: 0px 25px;
     /* background-color: blue; */
 }
 
@@ -122,7 +122,6 @@ ul {
 
 
 /* ---------------section sign------------- */
-
 .c_container_sign{
         width: 100%;
         max-width: 1280px;
@@ -149,6 +148,8 @@ ul {
     opacity: 0.3;
 }
 
+
+/* ----------點此上傳----------------- */
 .c_upload_sign{
     width: 100%;
     max-width: 960px;
@@ -164,7 +165,7 @@ ul {
 a{
     text-decoration: none;
     color: #75BBE3;
-    font-family: 'Noto Sans TC', sans-serif;
+    
 }
 
 /* ---------------------------button--------------------- */
@@ -192,7 +193,7 @@ a{
 .c_button_section{
     display: flex;
     justify-content: center;
-    margin: 30px 0 50px 0;
+    margin: 30px 0 60px 0;
 }
 .c_button_right{
     margin-left: 30px;

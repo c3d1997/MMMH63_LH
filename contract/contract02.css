@@ -2,8 +2,8 @@
 .c_container_stepbar{
     width: 100%;
     max-width: 1280px;
-    margin: 100px auto 0 auto;
-    padding: 50px 50px;
+    margin: 160px auto 0px;
+    padding: 0px 25px;
     /* background-color: blue; */
 }
 
@@ -91,11 +91,15 @@ ul {
     justify-content: space-around;
 }
 /*---------step-bar2 --------*/
+
 .step-bar2{
+    width: 100%;
     max-width: 1280px;
-    margin: 0 320px 0 320px;
-    padding: 50px 50px; 
+    margin: auto;
+    padding: 25px 25px; 
 }
+
+
 .step-bar2 p{
     width: 100%;
     font-weight: normal;
@@ -121,6 +125,7 @@ ul {
     margin: auto;
     padding: 25px 25px;
     display: flex;
+    position: relative;
 }
     
 .c_upload_row{
@@ -131,9 +136,14 @@ ul {
     width: 328px;
     height: 218px;
     border: 1px solid #0E2E3D;
+    padding: 80px 50px;
+    
 }
-.c_front_box{
-    margin-left: 30px;
+.c_text_wrap{
+    margin-top: 23px;
+}
+.c_text_wrap1{
+    margin-top: 30px;
 }
 
 .c_back_box{
@@ -142,12 +152,12 @@ ul {
 
 .c_upload_row_sample{
     width: 40%;
+    margin-top: 40px;
 }
 .c_sample_block{
     width: 506px;
-    height: 480px;
+    height: 491px;
     padding: 20px;
-    
     justify-content: center;
     background-color: #F1EDEA;
 }
@@ -167,6 +177,27 @@ ul {
     border: 1px solid #0E2E3D;
 }
 
+
+/* 點此上傳---------- */
+.c_upload_sign{
+    width: 100%;
+    padding: 0px 0px;
+    margin: auto;
+    display: flex;
+    justify-content:center;
+    align-items: baseline;
+
+}
+.c_upload_heretext{
+    margin-left:10px;
+    color: #75BBE3;
+
+}
+a{
+    text-decoration: none;
+    color: #75BBE3;
+    font-family: 'Noto Sans TC', sans-serif;
+}
 
 /* --------- */
 
@@ -197,4 +228,13 @@ ul {
 }
 .c_button_right{
     margin-left: 30px;
+}
+
+.footer_container{
+    margin-top: 60px;
+}
+
+
+@media screen and (max-width:375px){
+
 }
