@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./signin.css">
+    <link rel="stylesheet" href="../nav-footer.css">
+    <link rel="stylesheet" href="../../button-fonts.css">
+    <link rel="stylesheet" href="../warning_card.css">
+    <title>signin</title>
+</head>
+
+<body>
+    <div class="container1">
+        <div class="blueBg">
+            <div class="box signin">
+                <!-- <h2>已經是會員?</h2> -->
+                <button class="signinBtn">登入</button>
+            </div>
+            <div class="box signup">
+                <!-- <h2>還不是會員?</h2> -->
+                <button class="signupBtn">註冊</button>
+            </div>
+        </div>
+        <div class="formBx">
+            <div class="form signinForm">
+                <form>
+                    <h3>登入</h3>
+                    <input name="mobile" type="text" placeholder="請輸入您的手機">
+                    <input name="password" type="password" placeholder="請輸入您的密碼">
+                    <input type="submit" name="submit" id="" value="登入">
+                    <a href="#" class="forgot">忘記密碼</a>
+                </form>
+            </div>
+
+            <div class="form signupForm">
+                <form>
+                    <h3>註冊</h3>
+                    <input name="name" type="text" placeholder="請輸入您的姓名">
+                    <input name="mobile" type="text" placeholder="請輸入您的手機">
+                    <input name="email" type="text" placeholder="請輸入您的信箱">
+                    <div class="CAPTCHA-g">
+                        <input name="CAPTCHA" type="text" placeholder="請輸入驗證碼" class="CAPTCHA">
+                        <!-- 驗證碼按鈕 -->
+                        <button class="CAPTCHA-Btn">寄送驗證碼</button>
+                    </div>
+                    <input name="password" type="password" placeholder="請輸入您的密碼">
+                    <input name="password" type="password" placeholder="請再次輸入您的密碼">
+
+                    <div class="checkbox-info"><input name="checkbox" type="checkbox">
+                        我同意 隱私條款 與 租客平台公約， 我已閱讀完 租賃法.</div>
+                    <input type="submit" name="submit" id="" value="註冊">
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const signinBtn = document.querySelector('.signinBtn');
+        const signupBtn = document.querySelector('.signupBtn');
+        const formBx = document.querySelector('.formBx');
+        const body = document.querySelector('body');
+
+        signupBtn.onclick = function () {
+            formBx.classList.add('active');
+            body.classList.add('active');
+        }
+        signinBtn.onclick = function () {
+            formBx.classList.remove('active');
+            body.classList.remove('active');
+
+        }
+    </script>
+</body>
+
+</html>

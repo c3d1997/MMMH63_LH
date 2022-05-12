@@ -1,0 +1,551 @@
+
+.body{
+    margin: 0;
+}
+.container{
+    width: 100%;
+    height: 500px;
+    /* border: 1px solid red; */
+
+}
+
+
+
+
+/* 
+ ----------------------------------------------------------------------------- 
+ ---------彈跳視窗------------------------------------------------------------------ 
+ */
+
+
+
+/* 電腦版短版按鈕 */
+.pc-button-FEAC00-272{
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*  以下是"發布成功" */
+.PostSuccess-wrap{
+    position: relative;
+    height: 280px;
+    width: 400px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #0E2E3D;
+    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+}
+.PostSuccess{
+    margin: auto;
+}
+
+.PostSuccess-icon{
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0;
+}
+.PostSuccess h2{
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 36px;
+}
+
+/* XXXXXXXx */
+.PostSuccess-x{
+    width: 50px;
+    height: 50px;
+    background-color: #F1EDEA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: #0E2E3D;
+
+}
+
+.PostSuccess-x i{
+    font-size: 40px;
+}
+
+
+
+
+/*  以下是"預約成功" ReservationSuccess */
+.ReservationSuccess-wrap{
+    position: relative;
+    height: 280px;
+    width: 400px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #0E2E3D;
+    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+}
+.ReservationSuccess{
+    margin: auto;
+}
+
+.ReservationSuccess-icon{
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0;
+}
+.ReservationSuccess h2{
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 36px;
+}
+
+/* XXXXXXXx */
+.ReservationSuccess-x{
+    width: 50px;
+    height: 50px;
+    background-color: #F1EDEA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: #0E2E3D;
+
+}
+
+.ReservationSuccess-x i{
+    font-size: 40px;
+}
+
+
+
+
+ /*  以下是
+    "請成為會員
+    才能使用收藏功能" */
+
+/* ------------按鈕置中------------------------- */
+.Center{
+    margin: auto;
+
+}
+.NotCollect-wrap{
+    position: relative;
+    margin-top: 50px;
+    height: 280px;
+    width: 400px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+}
+
+.NotCollect-icon{
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0;
+    color: #FF0000;
+
+}
+.NotCollect h2{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 36px;
+    color: #FF0000;
+
+}
+
+
+/* XXXXXXXx */
+.NotCollect-x{
+    width: 50px;
+    height: 50px;
+    background-color: #F1EDEA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: #0E2E3D;
+
+}
+
+.NotCollect-x i{
+    font-size: 40px;
+}
+
+
+
+
+ /*  以下是
+    "請成為會員
+    才能使用預約看房功能" */
+.NoReservation-wrap{
+    position: relative;
+    margin-top: 50px;
+    height: 280px;
+    width: 400px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+}
+
+.NoReservation-icon{
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0;
+    color: #FF0000;
+
+}
+.NoReservation h2{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 36px;
+    color: #FF0000;
+
+}
+
+/* XXXXXXXx */
+.NoReservation-x{
+    width: 50px;
+    height: 50px;
+    background-color: #F1EDEA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: #0E2E3D;
+
+}
+
+.NoReservation-x i{
+    font-size: 40px;
+}
+ /*  以下是
+    "請成為會員
+    才能使用聯絡我們功能" */
+.NoConnection-wrap{
+    position: relative;
+    margin-top: 50px;
+    height: 280px;
+    width: 400px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+}
+
+.NoConnection-icon{
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0;
+    color: #FF0000;
+
+}
+.NoConnection h2{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 36px;
+    color: #FF0000;
+
+}
+
+/* XXXXXXXx */
+.NoConnection-x{
+    width: 50px;
+    height: 50px;
+    background-color: #F1EDEA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: #0E2E3D;
+
+}
+
+.NoConnection-x i{
+    font-size: 40px;
+}
+
+
+
+
+
+@media screen and (max-width: 376px) {
+
+    /* 
+    ----------------------------------------------------------------------------- 
+    ---------彈跳視窗------------------------------------------------------------------ 
+    */
+
+
+    /*  以下是"發布成功" */
+    .PostSuccess-wrap{
+        position: absolute;
+        top: 0px;
+        height: 208px;
+        width: 270px;
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+    }
+    .PostSuccess{
+        margin: auto;
+    }
+
+    .PostSuccess-icon{
+        font-size: 30px;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .PostSuccess h2{
+        font-size: 24px;
+        font-weight: 900;
+    }
+    .PostSuccess-x{
+        display: none;
+    }
+    .pc-button-FEAC00-272{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /*  以下是"預約成功" */
+    .ReservationSuccess-wrap{
+        position: absolute;
+        top: 260px;
+        height: 208px;
+        width: 270px;
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+    }
+    .ReservationSuccess{
+        margin: auto;
+    }
+
+    .ReservationSuccess-icon{
+        font-size: 30px;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .ReservationSuccess h2{
+        font-size: 24px;
+        font-weight: 900;
+    }
+    .ReservationSuccess-x{
+        display: none;
+    }
+
+     
+
+     /*  以下是
+    "請成為會員才能使用收藏功能" */
+
+/* ------------按鈕置中------------------------- */
+.Center{
+    margin: auto;
+
+}
+.NotCollect-wrap{
+    position: relative;
+    padding: 20px 0;
+    margin-top: 500px;
+    height: 208px;
+    width: 270px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+}
+
+.NotCollect-icon{
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0;
+    color: #FF0000;
+
+}
+.NotCollect h2{
+    font-size: 24px;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 36px;
+    color: #FF0000;
+
+}
+.NotCollect .mobile-button-FEAC00-162 {
+    width: 162.5px;
+    height: 45px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    /* border: 1px solid rebeccapurple; */
+    background-color: #FEAC00;
+}
+/* XXXXXXXx */
+.NotCollect-x{
+    display: none;
+
+}
+
+.NotCollect-x i{
+    font-size: 40px;
+}
+     /*  以下是
+    "請成為會員才能使用預約看房功能" */
+
+
+.NoReservation-wrap{
+    position: relative;
+    padding: 20px 0;
+    margin-top: 50px;
+    height: 208px;
+    width: 270px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+}
+
+.NoReservation-icon{
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0;
+    color: #FF0000;
+
+}
+.NoReservation h2{
+    font-size: 24px;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 36px;
+    color: #FF0000;
+
+}
+.NoReservation .mobile-button-FEAC00-162 {
+    width: 162.5px;
+    height: 45px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    /* border: 1px solid rebeccapurple; */
+    background-color: #FEAC00;
+}
+/* XXXXXXXx */
+.NoReservation-x{
+    display: none;
+
+}
+
+.NoReservation-x i{
+    font-size: 40px;
+}
+     /*  以下是
+    "請成為會員才能使用預約看房功能" */
+
+
+.NoConnection-wrap{
+    position: relative;
+    padding: 20px 0;
+    margin-top: 50px;
+    height: 208px;
+    width: 270px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+}
+
+.NoConnection-icon{
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0;
+    color: #FF0000;
+
+}
+.NoConnection h2{
+    font-size: 24px;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 36px;
+    color: #FF0000;
+
+}
+.NoConnection .mobile-button-FEAC00-162 {
+    width: 162.5px;
+    height: 45px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    /* border: 1px solid rebeccapurple; */
+    background-color: #FEAC00;
+}
+/* XXXXXXXx */
+.NoConnection-x{
+    display: none;
+
+}
+
+.NoConnection-x i{
+    font-size: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
