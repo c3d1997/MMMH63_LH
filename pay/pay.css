@@ -103,7 +103,9 @@ input[type=checkbox]:checked+span {
 .z_d_flex {
     display: flex;
 }
-
+.z_justify-content_center {
+    justify-content: center;
+}
 
 .z_input_text {
     text-align: center;
@@ -126,7 +128,7 @@ input[type=checkbox]:checked+span {
     background: #FEAC00;
     left: 50%;
     transform:translateX(-50%);
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .z_radio {
     position: relative;
@@ -136,7 +138,7 @@ input[type=checkbox]:checked+span {
     background: #b1b1b1;
     left: 50%;
     transform:translateX(-50%);
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .z_all-center {
@@ -225,81 +227,6 @@ body {
     bottom: 22px;
 }
 
-.z_radio_finish {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #FEAC00;
-    left: 50%;
-    transform:translateX(-50%);
-    margin-top: 40px;
-}
-.z_radio {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #b1b1b1;
-    left: 50%;
-    transform:translateX(-50%);
-    margin-top: 40px;
-}
-
-.z_progress {
-    z-index: -1;
-    position: relative;
-    height: 100px;
-    margin-bottom: 50px;
-}
-.z_progress_bar {
-    z-index: -2;
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    background-color:#b1b1b1;
-    bottom: 22px;
-}
-.z_progress_bar_step1 {
-    z-index: -1;
-    position: absolute;
-    width: 10%;
-    height: 1px;
-    background-color:#ffae00;
-    bottom: 22px;
-}
-.z_progress_bar_step2 {
-    z-index: -1;
-    position: absolute;
-    width: 30%;
-    height: 1px;
-    background-color:#ffae00;
-    bottom: 22px;
-}
-.z_progress_bar_step3 {
-    z-index: -1;
-    position: absolute;
-    width: 50%;
-    height: 1px;
-    background-color:#ffae00;
-    bottom: 22px;
-}
-.z_progress_bar_step4 {
-    z-index: -1;
-    position: absolute;
-    width: 70%;
-    height: 1px;
-    background-color:#ffae00;
-    bottom: 22px;
-}
-.z_progress_bar_step5 {
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    background-color:#ffae00;
-    bottom: 22px;
-}
 .z_barcontainer {
     width: 100%;
     display: flex;
@@ -509,8 +436,21 @@ body {
 .downArrow {
     transform: rotateX(180deg);
 }
+.z_maxbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 @media screen and (max-width:375px) {
 
+    input[type=text]  {
+        margin: 0;
+        padding: 0;
+        height: 45px;
+        border: none;
+        /* text-indent: 15px; */
+    }
     .z_section {
         margin-top: 110px;
         margin-bottom: 40px;
@@ -542,6 +482,9 @@ body {
     .z_input_container {
         width: 100%;
     }
+    .z_check_container {
+        height: 45px;
+    }
     .z_chebox_intput,.z_text_intput,.z_text_intput_last {
         width: 100%;
     }
@@ -555,6 +498,7 @@ body {
         display: none;
     }
     .z_paydropdown>button {
+        height: 45px;
         width: 100%;
     }
     .z_pay_alert {
@@ -663,5 +607,11 @@ body {
     }
     .z_icon_type_nomr {
         margin: 0;
+    }
+    .z_maxbtn {
+        width: 100%;
+    }
+    .z_phone_162 {
+        width: 162.5px;
     }
 }
