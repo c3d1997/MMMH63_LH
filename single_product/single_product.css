@@ -1,134 +1,35 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Josefin Sans', sans-serif;
-    font-family: 'Noto Sans TC', sans-serif;
-}
+/* ----------------viewer------------------------- */
 
-.nav-log-out {
-    margin: auto;
-    width: 100%;
-    max-width: 1920px;
-    height: 100px;
-    display: flex;
-    background-color: #F1EDEA;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0% 200px;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-.nav-log-out a {
-    font-weight: normal;
-    font-size: 24px;
-    color: #0E2E3D;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.nav-log-out div {
-    width: 33.3%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.nav-log-out div:nth-child(2) {
-    justify-content: center;
-}
-
-.nav-log-out a img {
-    width: 100%;
-    height: 81px;
-}
-
-
-/*登出狀態*/
-
-.nav-log-in {
-    margin: auto;
-    width: 100%;
-    max-width: 1920px;
-    height: 100px;
-    display: flex;
-    background-color: #F1EDEA;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0% 200px;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-.nav-log-in a {
-    font-weight: normal;
-    font-size: 24px;
-    color: #0E2E3D;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.nav-log-in div:nth-child(2) {
-    justify-content: center;
-}
-
-.nav-log-in div {
-    display: flex;
-    justify-content: space-between;
-    width: 33.3%;
-}
-
-.nav-log-in a img {
-    width: 100%;
-    height: 81px;
-}
-
-
-/* 登入狀態*/
-
-
-/* 以上是nav ----------------------------*/
-
-
-
-
-.container{
-    /* width: 80%; */
-    max-width: 1280px;
-    min-height: 1500px;
-    margin: 120px auto;
-    /* border: 1px solid red; */
-}
-
-.S-viewer-wrap{
+.S-viewer-wrap {
     width: 100%;
     height: 50px;
-    padding: 20px 0;
+    /* padding: 20px 0; */
     margin-bottom: 30px;
+    margin-top: 180px;
     /* border: 1px solid red; */
     /* background-color: #fca; */
     position: relative;
 }
-.S-lg-viewer-g{
+
+.S-lg-viewer-g {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     color: #0E2E3D;
     fill: #0E2E3D;
 }
-.S-lg-viewer{
+
+.S-lg-viewer {
     display: flex;
-    /* justify-content:flex-end; */
     align-items: center;
 }
-.S-lg-viewer i{
+
+.S-lg-viewer i {
     margin-right: 10px;
     font-size: 16px;
 }
 
-.S-viewer-wrap .S-lg-share{
+.S-viewer-wrap .S-lg-share {
     font-size: 1.5em;
     margin: 0 20px;
     display: flex;
@@ -136,33 +37,43 @@
     background-color: #F1EDEA;
     padding: 10px;
     border-radius: 50%;
-}
-.S-viewer-wrap .S-lg-like{
-    display: flex;
-    background-color: #F1EDEA;
-    padding: 10px;
-    border-radius: 50%;
-}
-.S-viewer-wrap .S-lg-like svg{
-    width: 25px;
-    /* position: absolute; */
-    /* top: 0; */
-    /* right: 6%; */
+    position: relative;
+    right: 0;
 }
 
-.S-product-img{
+.S-viewer-wrap .S-lg-like {
+    position: relative;
+    display: flex;
+    right: 0;
+    background-color: #F1EDEA;
+    border-radius: 50%;
+}
+
+.S-viewer-wrap .S-lg-like svg {
+    width: 25px;
+}
+
+
+/* ------------------------------------------- */
+
+
+/* 照片區 */
+
+.S-product-img {
     width: 100%;
     height: 600px;
     /* border: 1px solid blue; */
     display: flex;
 }
-.S-product-img-left{
+
+.S-product-img-left {
     width: 50%;
     /* height: 820px; */
     /* border: 1px solid green; */
-    background: url(../new_house/brian-babb-XbwHrt87mQ0-unsplash.jpg)center center/cover no-repeat;
+    background: url(../imgs/paul-hanaoka-Dl6H4_nzBpE-unsplash.jpg)center center/cover no-repeat;
 }
-.S-product-img-right{
+
+.S-product-img-right {
     width: 50%;
     /* height: 820px; */
     /* border: 1px solid purple; */
@@ -170,71 +81,77 @@
     flex-direction: column;
     margin-left: 10px;
 }
-.S-product-img-right-up{
+
+.S-product-img-right-up {
     margin-bottom: 10px;
     width: 100%;
     height: 50%;
     /* border: 1px solid purple; */
-    background: url(../new_house/house-1172352.jpg)center center/cover no-repeat;
+    background: url(../imgs/paul-hanaoka-Dl6H4_nzBpE-unsplash.jpg)center center/cover no-repeat;
 }
-.S-product-img-right-down{
+
+.S-product-img-right-down {
     width: 100%;
     height: 50%;
     /* border: 1px solid purple; */
-    background: url(../new_house/house-interior_WDVIQZEXML.jpg)center center/cover no-repeat;
+    background: url(../imgs/paul-hanaoka-Dl6H4_nzBpE-unsplash.jpg)center center/cover no-repeat;
 }
 
 
+/* 商品資訊 info */
 
-
-
-/* info */
-.S-product-info{
-    margin-top: 50px;
+.S-product-info {
+    /* margin-top: 50px; */
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
-.S-product-info-right{
+
+.S-product-info-right {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
 }
-.S-btn-order{
-    font-weight: 900;
-    font-size: 32px;
-    height: 96px;
-    width: 328px;
-    background-color: #FEAC00;
-    border: transparent;
-    margin: 10px 0;
-}
-.S-btn-conect{
-    font-weight: 900;
 
-    font-size: 32px;
-    height: 96px;
-    width: 328px;
-    background-color: #F1EDEA;
-    border: transparent;
-    margin: 10px 0;
-
+.S-product-info-right button {
+    margin: 5px 0;
 }
 
+h2 {
+    color: #0E2E3D;
+}
 
-/* S-menu */
-.S-menu-wrap{
+h2.name {
+    padding: 0 0 10px 0;
+}
+
+h2.price {
+    padding: 30px 0;
+}
+
+h3.location {
+    padding: 0 0 30px 0;
+}
+
+
+/* 8個選項的選單 S-menu */
+
+.S-menu-wrap {
     margin-top: 50px;
     width: 100%;
     min-height: 400px;
     /* border: 1px solid red; */
 }
-.S-menu{
+
+.S-menu {
     width: 100%;
     min-height: 80px;
     background-color: #ccc;
     display: flex;
 }
-.S-menu-btn{
+
+.S-menu-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -245,226 +162,98 @@
     background-color: #F1EDEA;
 }
 
-.S-menu-title{
+.S-menu-title {
     margin-top: 30px;
     text-align: center;
     font-size: 32px;
     font-weight: 900;
+    position: relative;
+    z-index: 1;
+}
 
+.S-menu-title2 {
+    margin-top: 80px;
+}
+
+.S-menu-title-bg {
+    position: relative;
+    top: -20px;
+    left: 72%;
+    transform: scale(1.5);
+}
+
+.S-menu-wrap p {
+    margin-top: 10px;
 }
 
 
+/* -----------------8個項目menu------------------------------ */
+
+.step-on {
+    background: #FEAC00;
+}
 
 
+/* 租屋資訊 S-menu-RentInfo */
 
-.S-menu-icon-wrap{
+.S-d-none {
+    display: none;
+}
+
+.S-menu-icon-wrap {
+    width: 37%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 50px;
+    padding-top: 30px;
+    margin: auto;
+    /* text-align: left; */
 }
-.S-menu-icon{
-    width: 80%;
-    height: 100px;
+
+.S-menu-icon {
+    width: 100%;
+    flex-wrap: wrap;
     /* border: 1px solid blue; */
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     font-size: 16px;
+    margin-bottom: 50px;
+    position: relative;
 }
-.S-menu-icon i{
-    margin: 0 30px;
-    font-size: 50px;
+
+.S-menu-icon i {
+    margin: 10px 30px;
+    font-size: 30px;
 }
-.S-menu-info{
-    margin-top: 50px;
+
+.S-menu-icon img {
+    margin: 10px 30px;
+}
+
+.S-menu-info {
     line-height: 2em;
     padding: 0 110px;
 }
 
-/* --------------lg-card 卡片-------------------------------- */
-.S-lg-card-wrap-top{
-    display: flex;
-    margin-top: 50px;
+.S-menu-map {
+    margin-top: 30px;
 }
-.S-lg-card-wrap{
-    width: 487px;
-    height: 447px;
-    overflow: hidden;
-    position: relative;
-    margin: 0 10px;
-    /* border: 1px solid blue; */
-}
-.S-lg-card-wrap .S-lg-share{
+
+.S-lg-card-wrap-top {
+    margin-top: 30px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    font-size: 1.3em;
-    color: #0E2E3D;
-    background-color: #F1EDEA;
-    border-radius: 50%;
-    position: absolute;
-    top: 3%;
-    right: 3%;
 }
-.S-lg-card-wrap .S-lg-share i{
-    font-size: 1.2em;
-}
-.S-lg-card-wrap .S-lg-like{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    color: #0E2E3D;
-    background-color: #F1EDEA;
-    border-radius: 50%;
-    position: absolute;
-    top: 3%;
-    right: 20%;
-}
-.S-lg-card-wrap .S-lg-like svg{
-    width: 30px;
-    height: 30px;
-    fill: #0E2E3D;
+
+.S-lg-card-wrap {
+    margin: 0 15px;
 }
 
 
-.S-lg-card{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    /* border: 1px solid red; */
-}
-.S-lg-card-img{
-    width: 100%;
-    height: 100%;
-    background: url(../old_house/1521821703_54177.jpg) 70% center/ cover ;
-}
-.S-lg-card-info{
-    padding: 0 20px;
-    /* border: 1px solid rgb(45, 95, 112); */
-    background-color: #F1EDEA;
-    margin: 0;
-}
-.S-lg-card-info h4{
-    height: 1em;
-    font-size: 12px;
-}
-.S-lg-card-info h4 span{
-    font-size: 16px;
-    font-weight: 900;
-    padding-right: 10px;
-}
-.S-lg-card-info-2{
-    height: 2em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.S-lg-card-info p{
-    font-size: .8em;
-}
-.S-lg-card-info h3{
-    display: inline;
-}
+/* footer */
 
-
-
-
-/* 以下是footer-------------------------------- */
-
-.footer {
-    width: 100%;
-    max-width: 1920px;
-    margin: 100px auto;
-    font-weight: normal;
-    font-size: 24px;
-    color: #0E2E3D;
+.footer_container {
+    margin-top: 266px;
 }
-
-.footer-up {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    padding: 0 200px;
-    background-color: #F1EDEA;
-    justify-content: space-between;
-}
-
-.footer-left {
-    width: 390px;
-    height: 260px;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-left-up p {
-    margin-bottom: 30px;
-}
-
-.footer-left-down a {
-    text-decoration: none;
-    color: #0E2E3D;
-}
-
-.footer-left-down a:nth-child(1),
-.footer-left-down a:nth-child(2) {
-    margin-right: 30px;
-}
-
-.footer-right img {
-    width: 497px;
-    height: 394px;
-}
-
-.footer-down div img {
-    width: 30px;
-    height: 28px;
-}
-
-.footer-down {
-    width: 100%;
-    max-width: 1920px;
-    height: 80px;
-    padding: 0 200px;
-    background-color: #F4F4F4;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.footer-down div {
-    display: flex;
-    width: 30%;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-down div:nth-child(2) {
-    display: flex;
-    width: 40%;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-down div:nth-child(3) {
-    justify-content: flex-end;
-}
-
-.footer-down div:nth-child(1) {
-    justify-content: flex-start;
-}
-
-.footer-down div:nth-child(1) p,
-.footer-down div:nth-child(1) img {
-    margin-right: 24px;
-}
-
-
-/* footer---------------------------------- */
