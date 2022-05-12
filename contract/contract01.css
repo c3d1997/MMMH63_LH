@@ -1,0 +1,252 @@
+.c_container_stepbar{
+    width: 100%;
+    max-width: 1280px;
+    margin: 100px auto 0 auto;
+    padding: 50px 50px;
+    /* background-color: blue; */
+}
+
+
+ul {
+    list-style-type: none;
+}
+.z_radio_finish {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #FEAC00;
+    left: 50%;
+    transform:translateX(-50%);
+    margin-top: 40px;
+}
+.z_radio {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #b1b1b1;
+    left: 50%;
+    transform:translateX(-50%);
+    margin-top: 40px;
+}
+.z_progress {
+    z-index: -1;
+    position: relative;
+    height: 100px;
+    margin-bottom: 50px;
+}
+.z_progress_bar {
+    z-index: -2;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color:#b1b1b1;
+    bottom: 11px;
+}
+.z_progress_bar_step1 {
+    z-index: -1;
+    position: absolute;
+    width: 10%;
+    height: 1px;
+    background-color:#ffae00;
+    bottom: 11px;
+}
+.z_progress_bar_step2 {
+    z-index: -1;
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    background-color:#ffae00;
+    bottom: 11px;
+}
+.z_progress_bar_step3 {
+    z-index: -1;
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    background-color:#ffae00;
+    bottom: 11px;
+}
+.z_progress_bar_step4 {
+    z-index: -1;
+    position: absolute;
+    width: 70%;
+    height: 1px;
+    background-color:#ffae00;
+    bottom: 11px;
+}
+.z_progress_bar_step5 {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color:#ffae00;
+    bottom: 11px;
+}
+.z_barcontainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/*---------step-minder--------*/
+.step_mider{
+    text-align: center;
+    color: #0E2E3D;
+}
+
+
+/*---------step-bar2 --------*/
+.step-bar2{
+    max-width: 1280px;
+    margin: 0 320px 0 320px;
+    padding: 50px 50px; 
+}
+.step-bar2 p{
+    width: 100%;
+    font-weight: normal;
+    font-size: 32px;
+    color: #0E2E3D;
+    font-weight: bold;
+}
+.progress2{
+    width: 100%;
+    margin-top: 30px;
+    height: 2px;
+    background-color: #E0F1F3;
+}
+.progress-bar2{
+    width: 33.32%;
+    height: 2px;
+    background-color: #f2ae00;
+}
+
+
+/* ---------------minder-------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- 表單地獄--------- */
+.container-form{
+    margin: 30px 20px;
+    width: 100%;
+    display: flex;
+}
+
+.form-row2{
+    margin-left: 20px;
+}
+.form-row3{
+    margin-left: 20px;
+}
+input[type="text"], input[type="phone"]{
+  display:block;
+  width: 400px;
+  height: 50px;
+}
+
+select {
+    width: 400px;
+    height: 50px;
+    padding: 12px 20px;
+    margin: 0 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .time{
+      margin-left: 20px;
+  }
+
+/* --- 表單地獄--------- */
+
+/* ---------租屋期限 */
+.container-time{
+    display: flex;
+    position: relative;
+}
+
+.container-form2{
+    margin-top: 20px;
+    width: 100%;
+    
+}
+.ValidFrom-row2{
+    margin-left: 20px;
+    display: flex;
+}
+
+.ValidFrom_Y  select{
+    width: 158px;
+    height: 60px;
+}
+.ValidFrom_M {
+    margin-left: 20px;
+}
+.ValidFrom_M select{
+    width: 158px;
+    height: 60px;
+}
+.ValidFrom_D {
+    margin-left: 20px;
+}
+.ValidFrom_D select{
+    width: 158px;
+    height: 60px;
+}
+
+.time2{
+    width: 24px;
+    height: 28px;
+    left: 580px;
+    top:55px;
+    position: absolute;
+}
+
+/* ---------租屋期限 */
+.time3{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+/* ---------button---------- */
+.container-button{
+    margin-top: 30px;
+}
+.button-row{
+    text-align: center;
+}
+.button {
+    width: 180px;
+    height: 60px;
+    background-color:#F1EDEA;
+    border: none;
+    color: #000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button2 {
+    background-color:#f2ae00;
+}
