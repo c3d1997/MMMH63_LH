@@ -187,10 +187,6 @@ input[type=text] {
     outline: none;
     font-size: 16px;
 }
-.input_container {
-    display: flex;
-    justify-content: space-between;
-}
 .fullinput_container {
     flex-grow: 1;
 }
