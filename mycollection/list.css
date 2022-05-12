@@ -3,7 +3,7 @@
     margin-top: 180px;
     margin-bottom:80px;
     margin-right:345px ;
-    /* outline: 1px solid rgb(134, 63, 31);  */
+    outline: 1px solid rgb(134, 63, 31); 
     margin-left: 300px;
     width: 1230px;
 }
@@ -11,7 +11,7 @@
 
 /* 左邊選單開始 */
 .mylist{
-    /* outline: 1px solid rgb(156, 32, 109);  */
+    outline: 1px solid rgb(156, 32, 109); 
     width: 97px;
     text-align: center;
     margin-right: 80px;
@@ -72,16 +72,18 @@ li{
     width: 1053px;
     margin-top: 30px;
     display: flex;
+    justify-content: space-between;
+    flex-direction: row;
     height: 250px;
     background-color: rgba(241, 237, 234, 1);
 }
 
 /* 輪播牆開始 */
 .carousel{
-    height: 250px;
+    min-height: 250px;
     width:321px;
-    /* outline: 1px solid rgb(187, 255, 0); */
-    background-image: url('./imgs/test.png');
+    outline: 1px solid rgb(187, 255, 0);
+    background-image: url('../imgs/arkan-perdana-eKTLh4_u7Ao-unsplash.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -92,15 +94,15 @@ li{
 
 /* 租屋資訊開始 */
 .character{
-    height: 166px;
+    width: 50%;
+    /* height: 166px; */
     /* outline: 1px solid red; */
-    margin-left: 30px;
+    /* margin-left: 30px; */
     display: flex;
     align-items: center;
-    margin-right: 195px;
+    justify-content: center;
     flex-direction: column;
-    align-items: flex-start;
-    margin-top: 42px;
+    /* margin-top: 42px; */
 
 }
 
@@ -149,13 +151,14 @@ li{
 
 .left{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: relative;
-    margin-right: 20px;
-    margin: 0;
+    flex-direction:column-reverse;
+    justify-content:space-between;
+    align-items: flex-end;
+    margin-right: 30px;
 }
-
+.x{
+    padding-top: 13px;
+}
 
 .leftleftB{
     width: 139px;
@@ -186,14 +189,6 @@ li{
    
 }
 
-.x{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    /* outline: 1px solid red; */
-    margin-top: 13px;
-    
-}
 
 .x a{
     list-style: none;
@@ -282,14 +277,14 @@ li{
     /* 輪播牆開始 */
     .carousel{
         height: 241px;
-        width:335px;
+        width: 100%;
         outline: 1px solid rgb(187, 255, 0);
         /* background-image: url('./imgs/test.png');
         background-repeat: no-repeat;
         background-size: cover; */
         overflow: hidden;
-        position: absolute;
-        display: none;
+        /* position: absolute; */
+        /* display: none; */
         
     }
 
