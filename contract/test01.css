@@ -1,0 +1,17 @@
+body{
+    margin: 8px;
+    padding: 10px 10px;
+    background-color: pink;
+}
+.scroll-bg{
+    background: lightskyblue;
+    width: 400px;
+    margin: 10% auto;
+}
+.scroll-div{
+    width: 400px;
+    background: lightskyblue;
+    height: 200px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
