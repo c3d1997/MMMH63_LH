@@ -1,0 +1,170 @@
+
+/* 主要區域 */
+.container{
+    padding: 0 20px;
+    position: relative;
+}
+.S-lg-d-none{
+    display: none;
+}
+.S-Reservation-area{
+    /* border: 1px solid red; */
+    /* position: absolute; */
+    margin-top: 240px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #0E2E3D;
+
+
+}
+.S-Reservation-area h2{
+    font-weight: 700;
+    font-size: 32px;
+    color: #0E2E3D;
+}
+.S-Reservation-area h3{
+    font-weight: 700;
+    font-size: 24px;
+    color: #0E2E3D;
+}
+.S-Reservation-title{
+    font-weight: 900;
+    font-size: 32px;
+    padding: 0 0 30px 0;
+}
+.S-Reservation-img{
+    width: 908px;
+    height: 320px;
+    background: url(../imgs/bedroom-5646321_1920.jpg)center center/cover no-repeat;
+}
+.S-Reservation-name{
+    font-weight: 900;
+    padding: 30px 0 10px 0;
+}
+.S-Reservation-location{
+    padding: 0 0 30px 0;
+}
+
+/* --------------------------------btn---------------------------------------------------- */
+/* 電腦版長板按鈕 */
+.S-Reservation-btn{
+    display: flex;
+    justify-content: center;
+    margin: 60px 0 140px;
+}
+.pc-button-FEAC00-180 {
+    
+    margin-right: 10px;
+}
+
+.pc-button-F4F4F4-180 {
+    
+    margin-left: 10px;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+/* 手機版 小於375 */
+@media screen and (max-width:376px) {
+    
+    .S-xs-d-block{
+        display: block;
+    }
+    .S-Reservation-area{
+        margin: auto;
+        /* border: 1px solid red; */
+        width: 100%;
+        margin-top: 100px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    
+    }
+    /* .S-Reservation-area h2{
+        width: 100%;
+        font-weight: 700;
+        font-size: 20px;
+        color: #0E2E3D;
+        color: red;
+    
+    }
+    .S-Reservation-area h3{
+        width: 100%;
+        font-weight: 700;
+        font-size: 16px;
+        color: #0E2E3D;
+    } */
+    .S-Reservation-title{
+        font-weight: 900;
+        font-size: 32px;
+        padding: 0 0 30px 0;
+    }
+    .S-Reservation-img{
+        padding: 0 20px;
+        margin: auto;
+        width: 100%;
+        height: 215 px;
+        background: url(../imgs/bedroom-5646321_1920.jpg)center center/cover no-repeat;
+    }
+    .S-Reservation-info{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: flex-start; */
+        /* align-items: flex-start; */
+    }
+    .S-Reservation-price{
+        font-size: 24px;
+        padding: 20px 0 20px 0;
+        text-align: left;
+
+    }
+    h2.S-Reservation-name{
+        font-weight: 900;
+        font-size: 20px;
+        padding: 0px 0 20px 0;
+        text-align: left;
+
+    }
+    h3.S-Reservation-location{
+        font-size: 16px;
+        padding: 0 0 20px 0;
+        text-align: center;
+        text-align: left;
+
+    }
+    h2.S-Reservation-date{
+        font-size: 20px;
+        /* padding: 0 0 0px 0; */
+        text-align: center;
+
+    }
+
+    /* --------------------------------btn---------------------------------------------------- */
+    /* 暫時版按鈕 */
+    .S-Reservation-btn{
+        display: flex;
+        /* flex-direction: row-reverse; */
+        justify-content: center;
+        margin: 20px 0 40px;
+    }
+    .pc-button-FEAC00-180 {
+        width: 45%;
+        margin-left: 5px;
+    }
+
+    .pc-button-F4F4F4-180 {
+        width: 45%;
+        margin-right: 5px;
+
+    }
+    
+
+}

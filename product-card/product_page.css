@@ -5,12 +5,6 @@
 
 /* --------------lg-card 卡片-------------------------------- */
 
-.S-lg-card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .S-lg-card-wrap {
     width: 390px;
     height: 359px;
@@ -112,12 +106,6 @@
 
 
 /* --------------md-card 卡片-------------------------------- */
-
-.S-md-card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 .S-md-card-wrap {
     margin-top: 50px;
@@ -222,12 +210,6 @@
 
 /* --------------xs-card 卡片-------------------------------- */
 
-.S-xs-card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .S-xs-card-wrap {
     margin-top: 50px;
     width: 250px;
@@ -328,50 +310,51 @@
     display: inline;
 }
 
-
 /* --------------------------------------------------------------------------*/
-
-
-/* 分享icon卡片  */
-
-.share-wrap {
-    margin-top: 700px;
-    z-index: 999;
-    width: 250px;
-    height: 70px;
-    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
-    /* border: 1px solid red; */
-}
-
-.share {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-.share svg {
-    width: 30px;
-    margin: 0 15px;
-}
-
-@media screen and(max-width:376px) {
-    /* --------------------------------------------------------------------------*/
     /* 分享icon卡片  */
-    .share-wrap {
+
+
+    .share-wrap{
         margin-top: 700px;
         z-index: 999;
-        width: 100px;
+        width: 250px;
         height: 70px;
-        box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
-        /* border: 10px solid red; */
+        box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);   
+        /* border: 1px solid red; */
     }
-    .share {
+    .share{
         display: flex;
         justify-content: center;
         padding: 20px;
     }
-    .share svg {
+    .share svg{
         width: 30px;
         margin: 0 15px;
     }
-}
+    
+    
+    @media screen and(max-width:376px){
+    
+        /* --------------------------------------------------------------------------*/
+        /* 分享icon卡片  */
+    
+    
+    .share-wrap{
+        margin-top: 700px;
+        z-index: 999;
+        width: 100px;
+        height: 70px;
+        box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);   
+        /* border: 10px solid red; */
+    }
+    .share{
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    .share svg{
+        width: 30px;
+        margin: 0 15px;
+    }
+        
+    }
