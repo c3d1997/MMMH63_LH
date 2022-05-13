@@ -54,8 +54,6 @@ p {
 }
 
 
-
-
 /* 以上文字 */
 
 .container {
@@ -153,8 +151,8 @@ p {
 }
 
 .footer-right img {
-    width: 378px;
-    height: 300px;
+    width: 80%;
+    height: 80%;
 }
 
 .footer-down {
@@ -191,7 +189,7 @@ p {
 }
 
 */ .copyright {
-    margin-right: 250px;
+    margin-right: 5%;
 }
 
 .tw {
