@@ -38,6 +38,22 @@ body {
     display: none;
 }
 
+@media screen and (max-width:376px) {
+    .x-search-list {
+        margin-top: 30px;
+    }
+    .x-search-list-state-left {
+        display: none;
+    }
+    .x-search-list-state-right h3 {
+        font-size: 20px;
+    }
+    .x-search-list-state-right div:nth-child(1),
+    .x-search-list-state-right div:nth-child(2) {
+        margin-right: 22px;
+    }
+}
+
 .x-search-list-card {
     display: flex;
     flex-wrap: wrap;

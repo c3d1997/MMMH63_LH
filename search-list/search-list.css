@@ -9,7 +9,7 @@
     margin-bottom: 30px;
 }
 
-.x-search-list-state-left svg {
+.x-search-list-state-left img {
     margin-right: 30px;
     cursor: pointer;
 }
@@ -17,6 +17,11 @@
 .x-search-list-state-right {
     display: flex;
     align-items: center;
+}
+
+.x-search-list-state-right img {
+    width: 30px;
+    height: 30px;
 }
 
 .x-search-list-state-right div {
@@ -32,6 +37,22 @@
 
 .x-up {
     display: none;
+}
+
+@media screen and (max-width:376px) {
+    .x-search-list {
+        margin-top: 30px;
+    }
+    .x-search-list-state-left {
+        display: none;
+    }
+    .x-search-list-state-right h3 {
+        font-size: 20px;
+    }
+    .x-search-list-state-right div:nth-child(1),
+    .x-search-list-state-right div:nth-child(2) {
+        margin-right: 22px;
+    }
 }
 
 
@@ -105,7 +126,7 @@
     margin-right: 35px;
 }
 
-.x-search-list-content-txt svg {
+.x-search-list-content-txt img {
     margin-right: 5px;
 }
 
@@ -155,4 +176,39 @@
 
 .x-search-list-content {
     margin-bottom: 30px;
+}
+
+.x-search-list-card {
+    display: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.S-lg-card-wrap {
+    width: 390px;
+    height: 359px;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width:376px) {
+    .x-search-list {
+        margin-top: 30px;
+    }
+    .x-search-list-state-right h3 {
+        font-size: 20px;
+    }
+    .x-search-list-state-right div:nth-child(1),
+    .x-search-list-state-right div:nth-child(2) {
+        margin-right: 22px;
+    }
+    .x-search-list-card {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .x-search-list-content-all {
+        display: none;
+    }
 }
