@@ -88,11 +88,13 @@ body {
 .z_container {
     margin: auto;
     max-width: 1280px;
-    margin-bottom: 90px;
-    margin-top: 80px;
+    /* margin-bottom: 90px; */
+    /* margin-top: 80px; */
 }
 .z_publish_container {
     padding: 0 50px;
+    margin-top: 180px;
+    margin-bottom: 90px;
 }
 .z_step_title {
     text-align: center;
@@ -110,11 +112,22 @@ body {
     height: 550px;
     border: 3px solid #0E2E3D;
 }
+.z_img_reviewcontainer_02 {
+    margin: auto;
+    background-color: #EEF1F4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+    border: 3px solid #0E2E3D;
+}
 .uploadimg_before > *{
     margin-bottom: 10px;
     text-align: center;
 }
 .uploadimg_after {
+    position: relative;
     width: 100%;
     height: 100%;
 }
@@ -157,8 +170,8 @@ body {
     position: absolute;
     top: 5px;
     right: 5px;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     background-color: rgba(255, 255, 255, 0);
     background-image: url(../imgs/closeicon.svg);
     background-position: center;
@@ -253,20 +266,24 @@ body {
     justify-content: center;
 }
 .z_publish_check_container {
-    min-height: 60px;
+    min-height:20px;
     display: flex;
     align-items: center;
+    padding: 10px 0 10px;
     padding-left: 15%;
     margin-bottom: 30px;
     flex-wrap: wrap;
+    background-color: #fff;
 }
 .z_publish_check_container_s {
-    min-height: 120px;
+    min-height: 80px;
     display: flex;
     align-items: center;
+    padding: 20px 0 20px;
     padding-left: 15%;
     margin-bottom: 30px;
     flex-wrap: wrap;
+    background-color: #fff;
 }
 .z_publish_item_detail_title {
     font-size: 24px;
@@ -277,13 +294,15 @@ body {
     flex-wrap: wrap;
 }
 .z_publish_longer_check_container {
-    height: 60px;
+    min-height: 40px;
     background-color: #fff;
     display: flex;
+    /* justify-content: space-between; */
     align-items: center;
-    /* justify-content: center; */
-    padding-left: 10%;
+    padding: 20px  10% 20px 15% ;
+    /* padding-left: 10%; */
     margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 .z_mb_0 {
     margin-bottom: 0;
@@ -293,7 +312,10 @@ body {
     margin-right: 15px;
 }
 .z_publish_check_container input[type=checkbox]+span,.z_publish_check_container_s input[type=checkbox]+span {
-    width: 80px;
+    width: 100px;
+}
+.z_publish_longer_check_container input[type=checkbox]+span{
+    width: 60px;
 }
 .z_checkbox_container {
     width: 190px;
@@ -358,7 +380,7 @@ body {
     margin-bottom: 30px;
 }
 .z_twobtn {
-    width: 390px;
+    max-width: 390px;
     margin-top: 30px;
     margin-bottom: 30px;
     justify-content: space-between;
@@ -381,7 +403,21 @@ body {
 .z_phone_input_alert {
     display: none;
 }
+.z_publish_small {
+    line-height: 25px;
+}
+.z_step4imgs_container {
+    display: none;
+}
+.z_publish_checkbox_option_container {
+    padding: 10px 0;
+}
+
 @media screen and (max-width:376px) {
+    .z_publish_container {
+        margin-top: 90px;
+        margin-bottom:160px;
+    }
     input[type=text]  {
         height: 45px;
         width: 100%;
@@ -438,6 +474,7 @@ body {
     .z_img_reviewcontainer {
         display: none;
     }
+
     .z_phone_view {
         margin-left: 30px; 
         /* width: 120%; */
@@ -493,6 +530,8 @@ body {
         min-height: 60px;
         display: flex;
         align-items: center;
+        padding:0 ;
+        padding-top: 15px;
         padding-left: 15%;
         margin-bottom: 30px;
         flex-wrap: wrap;
@@ -502,6 +541,8 @@ body {
         min-height: 120px;
         display: flex;
         align-items: center;
+        padding:0 ;
+        padding-top: 15px;
         padding-left: 15%;
         margin-bottom: 30px;
         flex-wrap: wrap;
@@ -513,11 +554,41 @@ body {
     .z_publish_check_container input[type=checkbox]+span,.z_publish_check_container_s input[type=checkbox]+span {
         width: 100px;
     }
+    .z_publish_longer_check_container input[type=checkbox]+span {
+        width: 60px;
+    }
     .z_publish_item_detail_title {
         font-size: 16px;
     }
     .z_publish_small {
         font-size: 12px;
-        line-height: 12px;
+        line-height: 15px;
     }
+    .z_otherinfo_flex {
+        display: flex;
+        flex-direction: column;
+    }
+    .z_otherinfo_order1 {
+        order: -1;
+    }
+    .z_publish_longer_check_container {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 20px 10% 20px 20%
+    }
+    .z_publish_text_container textarea {
+        margin-bottom: 0;
+    }
+    .z_step4imgs_container {
+        display: flex;
+        justify-content: center;
+    }
+    .z_img_reviewcontainer_02 {
+        width: 275px;
+        height: 250px;
+    }
+    .z_publish_checkbox_option_container {
+        padding:  0;
+    }
+    
 }
