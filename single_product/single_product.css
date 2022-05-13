@@ -172,22 +172,44 @@ h3.S-location {
     font-weight: 900;
     position: relative;
     z-index: 1;
+    
 }
 
 .S-menu-title2 {
     margin-top: 80px;
 }
-
+ 
 .S-menu-title-bg {
     position: relative;
     top: -20px;
-    left: 72%;
+    left: 47%;
     transform: scale(1.5);
+    width: 0%;
+}
+.S-menu-title-bg-blue {
+    position: relative;
+    top: -20px;
+    left: 45%;
+    transform: scale(1.5);
+    width: 0%;
+}
+.S-menu-title-bg-2 {
+    position: relative;
+    top: -20px;
+    left: 49%;
+    transform: scale(1.5);
+    width: 0%;
+}
+.S-menu-title-bg-3 {
+    position: relative;
+    top: -20px;
+    left: 51%;
+    transform: scale(1.5);
+    width: 0%;
 }
 
-.S-menu-wrap p {
-    margin-top: 10px;
-}
+
+
 
 
 /* -----------------8個項目menu------------------------------ */
@@ -207,38 +229,45 @@ h3.S-location {
 }
 /* --------------------------------------------------------------------------------------------- */
 
+.S-menu-wrap{
+    /* background: pink; */
+    margin: 54px auto 0;
+}
 .S-menu-icon-wrap {
-    width: 37%;
+    /* background: pink; */
+    width: 97%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 30px;
+    padding: 30px 0 0px;
     margin: auto;
-    /* text-align: left; */
-}
-
-.S-menu-icon {
-    width: 100%;
-    flex-wrap: wrap;
-    /* border: 1px solid blue; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
     text-align: center;
-    font-size: 16px;
-    margin-bottom: 50px;
-    position: relative;
 }
 
-.S-menu-icon i {
-    margin: 10px 30px;
-    font-size: 30px;
+.S-menu-icon{
+    width: 49.5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.S-menu-icon-c{
+    /* background: purple; */
+    /* width: 49.5%; */
+    display: flex;
+    justify-content: center;
+    /* flex-wrap: wrap; */
 }
 
 .S-menu-icon img {
     margin: 10px 30px;
 }
+.S-menu-icon-c img{
+    margin: 10px 30px;
 
+}
+.S-menu-icon p ,.S-menu-icon-c p {
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
 .S-menu-info {
     line-height: 2em;
     padding: 0 110px;
@@ -248,6 +277,13 @@ h3.S-location {
     margin-top: 30px;
 }
 
+
+
+
+
+
+
+/* ----------------------------------------------- */
 .S-lg-card-wrap-top {
     margin-top: 30px;
     display: flex;
@@ -365,8 +401,21 @@ h3.S-location {
 
 
     /* -----------------------------------單一物件的下拉式選單------------------ */
+    .dropdown_container{
+        background-color: #F1EDEA;
+        /* background-color: #ccc; */
+        /* border:1px solid #5D8DC1; */
+    }
+    #areaList{
+        z-index: 888;
+        background-color: #F1EDEA;
+        text-align: center;
+        /* border:1px solid #5D8DC1; */
+    }
     .S-mobile-dropdown{
         margin-top: 40px;
+        background: #fff;
+        /* z-index: 8888; */
     }
     .S-mobile-dropdown button .dropdown{
         height: 45px;
@@ -379,14 +428,17 @@ h3.S-location {
 
 
     /* 租屋資訊 */
+    .S-menu-wrap{
+        margin: 0px auto 0;
+    }
     .S-menu-icon-wrap {
-        width: 100%;
+        width: 97%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         padding-top: 30px;
         margin: auto;
-        /* text-align: left; */
+        text-align: center;
     }
     
     .S-menu-icon {
@@ -394,15 +446,12 @@ h3.S-location {
         flex-wrap: wrap;
         /* border: 1px solid blue; */
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        text-align: center;
-        font-size: 16px;
-        margin-bottom: 50px;
-        position: relative;
     }
-
+    .S-menu-icon-group img{
+        width: 20px;
+    }
     .S-menu-icon-wrap p{
+        margin-top: 0;
         font-size: 12px;
     }
 
@@ -506,14 +555,6 @@ h3.S-location {
         margin-left: 5px;
     }
 
-    /* 小標題*/
-    /* .S-menu-title {
-        margin: 30px 0 0 0;
-        text-align: center;
-        font-size: 24px;
-        font-weight: 900;
-        background: url(../imgs/watercolor.svg) 60% 12px / 30% no-repeat;
-    } */
 
     /* 下拉式選單 */
     .S-xs-menu-wrap{
@@ -536,16 +577,7 @@ h3.S-location {
         margin-top: 4px;
         font-size: 1.2em;
     }
-    .S-menu-icon {
-        width: 80%;
-        height: 100px;
-        /* border: 1px solid blue; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-size: 12px;
-    }
+
     
     .S-menu-icon i {
         margin: 10px 20px;
@@ -553,10 +585,23 @@ h3.S-location {
     }
     
     .S-menu-info {
-        margin-top: 30px;
+        /* margin-top: 30px; */
         margin-bottom: 80px;
         line-height: 2em;
         padding: 0 0px;
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+        align-items: flex-end;
+
+    }
+    .S-menu-info p:nth-child(1){
+        height: 200px;
+        overflow: hidden;
+        /* border: 2px solid #0E2E3D; */
+    }
+    .S-menu-info-more{
+        color: #5D8DC1;
     }
     .S-menu-info a{
         text-decoration: none;
@@ -570,6 +615,10 @@ h3.S-location {
 
     /* --------------xs-card 卡片輪播牆-------------------------------- */
 
+    .container{
+        overflow: hidden;
+
+    }
     .S-xs-train-wrap{
         /* border: 1px solid #0E2E3D; */
         width: 100%;
@@ -579,6 +628,7 @@ h3.S-location {
         transform: translateX(30px);
         width: 300%;
         display: flex;
+
     }
 
 
@@ -672,5 +722,9 @@ h3.S-location {
         display: inline;
     }
     
+    /* footer */
 
+    .footer_container {
+        margin-top: 40px;
+    }
 }

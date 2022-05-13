@@ -151,11 +151,14 @@
                 </section>
 
             </div>
-            <!-- ----------------PC 下拉式選單------------------------------------>
-            <div class="S-pc-dropdown">
+            <!-- ----------------下拉式選單------------------------------------>
+            <div class="S-dropdown">
 
+
+                <!-- S-d-none S-xs-d-none  
+                    電腦版消失 手機版消失-->
                 <!-- 下拉式選單 租屋資訊 -->
-                <div class="S-menu-wrap S-menu-RentInfo S-d-none S-xs-d-block">
+                <div class="S-menu-wrap S-menu-RentInfo  S-d-none S-xs-d-none">
                     <div class="S-menu S-xs-d-none">
                         <div class="S-menu-btn step-on">租屋資訊</div>
                         <div class="S-menu-btn btn2">物件設備</div>
@@ -177,37 +180,40 @@
 
 
                     <div class="S-menu-icon-wrap">
-                        <div class="S-menu-icon">
+                        <div class="S-menu-icon-c">
                             <div class="S-menu-icon-group col-lg-3">
-                                <i class="fa-solid fa-house-user"></i>
-                                <p>共生租屋</p>
+                                <img src="../imgs/refrigerator.svg" alt="">
+                                <p>冰箱</p>
                             </div>
                             <div class="S-menu-icon-group col-lg-3">
-                                <i class="fa-solid fa-bed"></i>
-                                <p>共生租屋</p>
+                                <img src="../imgs/refrigerator.svg" alt="">
+                                <p>飲水機</p>
                             </div>
                             <div class="S-menu-icon-group col-lg-3">
-                                <i class="fa-solid fa-door-open"></i>
-                                <p>共生租屋</p>
+                                <img src="../imgs/refrigerator.svg" alt="">
+                                <p>沙發</p>
                             </div>
                             <div class="S-menu-icon-group col-lg-3">
-                                <i class="fa-solid fa-snowflake"></i>
-                                <p>共生租屋</p>
+                                <img src="../imgs/refrigerator.svg" alt="">
+                                <p>洗衣機</p>
                             </div>
-
+                            
                         </div>
                     </div>
 
+                    <!-- 手機版調整高度做收合 -->
                     <div class="S-menu-info">
                         <p>問題的關鍵看似不明確，但想必在諸位心中已有了明確
                             的答案。這種事實對本人來說意義重大，相信對這個世界也是有一定意義的。若發現問題比我們想像的還要深奧，那肯定不簡單。世界上若沒有租屋，對於人類的改變可想而知。俞吾金講過一段耐人尋思的話，科學就是對常識的不斷衝擊、突破和超越。這句話反映了問題的急切性。需要考慮周詳租屋的影響及因應對策。那麼，問題的關鍵究竟為何？我們要從本質思考，從根本解決問題。在人類的歷史中，我們總是盡了一切努力想搞懂租屋。
                         </p>
+                        <a href="#" class="S-menu-info-more S-d-none S-xs-d-block">查看更多</a>
+
                     </div>
                 </div>
 
                 <!-- 下拉式選單 物件設備 -->
                 <div class="S-menu-wrap S-menu-Equipment S-d-none S-xs-d-none">
-                    <div class="S-menu">
+                    <div class="S-menu S-xs-d-none">
                         <div class="S-menu-btn">租屋資訊</div>
                         <div class="S-menu-btn btn2 step-on">物件設備</div>
                         <div class="S-menu-btn btn3">物件公設</div>
@@ -221,8 +227,8 @@
 
 
 
-                    <div class="S-menu-title">物件設備</div>
-                    <div class="S-menu-title-bg">
+                    <div class="S-menu-title S-xs-d-none">物件設備</div>
+                    <div class="S-menu-title-bg S-xs-d-none">
                         <img src="../imgs/water-color-yellow.svg" alt="">
                     </div>
 
@@ -280,8 +286,8 @@
                 </div>
 
                 <!-- 下拉式選單 物件公設 -->
-                <div class="S-menu-wrap S-menu-PublicFacilities S-d-none S-xs-d-non">
-                    <div class="S-menu">
+                <div class="S-menu-wrap S-menu-PublicFacilities S-d-none S-xs-d-none">
+                    <div class="S-menu S-xs-d-none">
                         <div class="S-menu-btn">租屋資訊</div>
                         <div class="S-menu-btn btn2">物件設備</div>
                         <div class="S-menu-btn btn3  step-on">物件公設</div>
@@ -295,8 +301,8 @@
 
 
 
-                    <div class="S-menu-title">物件公設</div>
-                    <div class="S-menu-title-bg">
+                    <div class="S-menu-title S-xs-d-none">物件公設</div>
+                    <div class="S-menu-title-bg S-xs-d-none">
                         <img src="../imgs/water-color-yellow.svg" alt="">
                     </div>
 
@@ -352,8 +358,8 @@
                 </div>
 
                 <!-- 下拉式選單 物件特色 -->
-                <div class="S-menu-wrap S-menu-Features S-d-none S-xs-d-non">
-                    <div class="S-menu">
+                <div class="S-menu-wrap S-menu-Features S-d-none S-xs-d-none">
+                    <div class="S-menu S-xs-d-none">
                         <div class="S-menu-btn">租屋資訊</div>
                         <div class="S-menu-btn btn2">物件設備</div>
                         <div class="S-menu-btn btn3">物件公設</div>
@@ -367,8 +373,8 @@
 
 
 
-                    <div class="S-menu-title">物件特色</div>
-                    <div class="S-menu-title-bg">
+                    <div class="S-menu-title S-xs-d-none">物件特色</div>
+                    <div class="S-menu-title-bg S-xs-d-none">
                         <img src="../imgs/water-color-yellow.svg" alt="">
                     </div>
 
@@ -423,8 +429,8 @@
                     </div>
                 </div>
                 <!-- 下拉式選單 物件安全設備 -->
-                <div class="S-menu-wrap S-menu-SafetyEquipment S-d-none S-xs-d-non">
-                    <div class="S-menu">
+                <div class="S-menu-wrap S-menu-SafetyEquipment S-d-none S-xs-d-none">
+                    <div class="S-menu S-xs-d-none">
                         <div class="S-menu-btn">租屋資訊</div>
                         <div class="S-menu-btn btn2">物件設備</div>
                         <div class="S-menu-btn btn3">物件公設</div>
@@ -438,8 +444,8 @@
 
 
 
-                    <div class="S-menu-title">物件安全設備</div>
-                    <div class="S-menu-title-bg">
+                    <div class="S-menu-title S-xs-d-none">物件安全設備</div>
+                    <div class="S-menu-title-bg-2 S-xs-d-none">
                         <img src="../imgs/water-color-yellow.svg" alt="">
                     </div>
 
@@ -494,8 +500,8 @@
                     </div>
                 </div>
                 <!-- 下拉式選單 物件其他費用 -->
-                <div class="S-menu-wrap S-menu-OtherFee S-d-none S-xs-d-non">
-                    <div class="S-menu">
+                <div class="S-menu-wrap S-menu-OtherFee S-d-none S-xs-d-none">
+                    <div class="S-menu S-xs-d-none">
                         <div class="S-menu-btn">租屋資訊</div>
                         <div class="S-menu-btn btn2">物件設備</div>
                         <div class="S-menu-btn btn3">物件公設</div>
@@ -509,8 +515,8 @@
 
 
 
-                    <div class="S-menu-title">物件其他費用</div>
-                    <div class="S-menu-title-bg">
+                    <div class="S-menu-title S-xs-d-none">物件其他費用</div>
+                    <div class="S-menu-title-bg-2 S-xs-d-none">
                         <img src="../imgs/water-color-yellow.svg" alt="">
                     </div>
 
@@ -566,8 +572,8 @@
                 </div>
 
                 <!-- 下拉式選單 周邊機能 -->
-                <div class="S-menu-wrap S-menu-Environment S-d-none S-xs-d-non">
-                    <div class="S-menu">
+                <div class="S-menu-wrap S-menu-Environment S-xs-d-block">
+                    <div class="S-menu S-xs-d-none">
                         <div class="S-menu-btn">租屋資訊</div>
                         <div class="S-menu-btn btn2">物件設備</div>
                         <div class="S-menu-btn btn3">物件公設</div>
@@ -579,8 +585,8 @@
                     </div>
 
 
-                    <div class="S-menu-title">周邊機能</div>
-                    <div class="S-menu-title-bg">
+                    <div class="S-menu-title S-xs-d-none">周邊機能</div>
+                    <div class="S-menu-title-bg S-xs-d-none">
                         <img src="../imgs/water-color-yellow.svg" alt="">
                     </div>
 
@@ -647,8 +653,8 @@
 
                 </div>
                 <!-- 下拉式選單 室友簡介與喜好 -->
-                <div class="S-menu-wrap S-menu-Roommates S-xs-d-none">
-                    <div class="S-menu">
+                <div class="S-menu-wrap S-menu-Roommates S-d-none S-xs-d-none">
+                    <div class="S-menu S-xs-d-none">
                         <div class="S-menu-btn">租屋資訊</div>
                         <div class="S-menu-btn btn2">物件設備</div>
                         <div class="S-menu-btn btn3">物件公設</div>
@@ -660,8 +666,8 @@
                     </div>
 
 
-                    <div class="S-menu-title">室友簡介與喜好</div>
-                    <div class="S-menu-title-bg">
+                    <div class="S-menu-title S-xs-d-none">室友簡介與喜好</div>
+                    <div class="S-menu-title-bg-3 S-xs-d-none">
                         <img src="../imgs/water-color-yellow.svg" alt="">
                     </div>
 
@@ -716,10 +722,12 @@
                     </div>
 
 
+                    <!-- 手機版調整高度做收合 -->
                     <div class="S-menu-info">
                         <p>問題的關鍵看似不明確，但想必在諸位心中已有了明確
                             的答案。這種事實對本人來說意義重大，相信對這個世界也是有一定意義的。若發現問題比我們想像的還要深奧，那肯定不簡單。世界上若沒有租屋，對於人類的改變可想而知。俞吾金講過一段耐人尋思的話，科學就是對常識的不斷衝擊、突破和超越。這句話反映了問題的急切性。需要考慮周詳租屋的影響及因應對策。那麼，問題的關鍵究竟為何？我們要從本質思考，從根本解決問題。在人類的歷史中，我們總是盡了一切努力想搞懂租屋。
                         </p>
+                        <a href="#" class="S-menu-info-more S-d-none S-xs-d-block">查看更多</a>
                     </div>
 
 
@@ -737,7 +745,7 @@
             <!-- ----------------推薦租屋------------------------------------>
 
             <div class="S-menu-title S-menu-title2">推薦租屋</div>
-            <div class="S-menu-title-bg">
+            <div class="S-menu-title-bg-blue">
                 <img src="../imgs/water-color-blue.svg" alt="">
             </div>
 

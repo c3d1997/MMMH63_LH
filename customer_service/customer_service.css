@@ -1,0 +1,108 @@
+/* .filter{
+    width: 100%;
+    height: 1080px;
+    background: #000;
+} */
+.S-customer_service-bg{
+    z-index: 0;
+    /* padding: 0 -50px; */
+    /* margin: 0 -200px; */
+    height: 1080px;
+    width: 100%;
+    background: url(../imgs/living-room-1835923_1920.jpg)center center /cover no-repeat;
+    /* background-color: black; */
+    /* filter: brightness(.5); */
+}
+.S-wrap{
+    margin-top: 100px;
+    width: 100%;
+    height: 1080px;
+    display: flex;
+    align-items: center;
+    
+}
+.S-info{
+    z-index: 1;
+    color: #fff;
+    width: 602px;
+    height: 980px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 38px;
+}
+.S-q{
+    color: #fff;
+    display: flex;
+    padding: 60px 0;
+}
+.S-q img{
+    margin-right: 20px;
+}
+.S-q1 img{
+    margin-right: 40px;
+}
+.S-q-word h3,.S-q-word p{
+    color: #fff;
+    padding: 3px 0 0;
+}
+
+.S-list{
+    padding: 40px 70px;
+    width: 590px;
+    height: 816px;
+    background: #F1EDEA;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.S-list-title{
+    /* padding: 30px 0 15px; */
+    margin-bottom: 15px;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+}
+.S-list img{
+    width: 30px;
+    margin-right: 10px;
+}
+.input_option{
+    padding: 15px 0;
+}
+.dropdown_container{
+    padding: 15px 0;
+}
+.input_option.S-big input{
+    width: 100%;
+    height: 300px;
+    /* line-height: 2rem; */
+}
+/* .input_option.S-big input::placeholder{
+    transform: translateX(-.5rem);
+    white-space: normal;
+} */
+
+
+.z_upload_item_img_btn button{
+    background: transparent;
+}
+.z_upload_item_img_btn img{
+    width: 16px;
+}
+.z_upload_item_img_btn > button {
+    font-size: 16px;
+    font-weight: bold;
+    color: #75BBE3;
+}
+.S-btn{
+    margin-top: 10px;
+    display: flex;
+}
+.pc-button-F4F4F4-272{
+    margin-right: 15px;
+}
+.pc-button-FEAC00-272{
+    margin-left: 15px;
+}
