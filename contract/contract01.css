@@ -1,4 +1,4 @@
-.c_container_stepbar{
+.c_container_stepbar {
     width: 100%;
     max-width: 1280px;
     margin: 160px auto 0 auto;
@@ -9,6 +9,7 @@
 ul {
     list-style-type: none;
 }
+
 .z_radio_finish {
     position: relative;
     width: 30px;
@@ -16,9 +17,10 @@ ul {
     border-radius: 50%;
     background: #FEAC00;
     left: 50%;
-    transform:translateX(-50%);
+    transform: translateX(-50%);
     margin-top: 40px;
 }
+
 .z_radio {
     position: relative;
     width: 30px;
@@ -26,63 +28,71 @@ ul {
     border-radius: 50%;
     background: #b1b1b1;
     left: 50%;
-    transform:translateX(-50%);
+    transform: translateX(-50%);
     margin-top: 40px;
 }
+
 .z_progress {
     z-index: -1;
     position: relative;
     height: 100px;
     margin-bottom: 50px;
 }
+
 .z_progress_bar {
     z-index: -2;
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color:#b1b1b1;
+    background-color: #b1b1b1;
     bottom: 11px;
 }
+
 .z_progress_bar_step1 {
     z-index: -1;
     position: absolute;
     width: 10%;
     height: 1px;
-    background-color:#ffae00;
+    background-color: #ffae00;
     bottom: 11px;
 }
+
 .z_progress_bar_step2 {
     z-index: -1;
     position: absolute;
     width: 30%;
     height: 1px;
-    background-color:#ffae00;
+    background-color: #ffae00;
     bottom: 11px;
 }
+
 .z_progress_bar_step3 {
     z-index: -1;
     position: absolute;
     width: 50%;
     height: 1px;
-    background-color:#ffae00;
+    background-color: #ffae00;
     bottom: 11px;
 }
+
 .z_progress_bar_step4 {
     z-index: -1;
     position: absolute;
     width: 70%;
     height: 1px;
-    background-color:#ffae00;
+    background-color: #ffae00;
     bottom: 11px;
 }
+
 .z_progress_bar_step5 {
     z-index: -1;
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color:#ffae00;
+    background-color: #ffae00;
     bottom: 11px;
 }
+
 .z_barcontainer {
     width: 100%;
     display: flex;
@@ -90,7 +100,7 @@ ul {
 }
 
 /*---------step-minder--------*/
-.step_mider{
+.step_mider {
     margin-top: 30px;
     text-align: center;
     color: #0E2E3D;
@@ -98,26 +108,29 @@ ul {
 
 
 /*---------step-bar2 --------*/
-.step-bar2{
+.step-bar2 {
     width: 100%;
     max-width: 1280px;
     margin: 30px auto;
-    padding: 25px 25px; 
+    padding: 25px 25px;
 }
-.step-bar2 p{
+
+.step-bar2 p {
     width: 100%;
     font-weight: normal;
     font-size: 32px;
     color: #0E2E3D;
     font-weight: bold;
 }
-.progress2{
+
+.progress2 {
     width: 100%;
     margin-top: 30px;
     height: 2px;
     background-color: #E0F1F3;
 }
-.progress-bar2{
+
+.progress-bar2 {
     width: 33.32%;
     height: 2px;
     background-color: #f2ae00;
@@ -125,40 +138,88 @@ ul {
 
 
 /* ---------------minder-------------- */
-.c-minder-wrap{
+.c-minder-wrap {
     display: flex;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0px 25px;
+}
+
+.c-select {
+    margin-left: 20px;
+
+}
+
+/* --- 表單地獄--------- */
+.section2 {
     width: 100%;
     max-width: 1280px;
     margin: 30px auto;
     padding: 0px 25px;
 }
 
-.c-select{
-    margin-left: 20px;
-    
-}
-
-
-
-
-/* --- 表單地獄--------- */
-.container-form{
+.container-form {
     margin: 30px auto;
     width: 100%;
+    max-width: 1280px;
+    padding: 0 25px;
     display: flex;
+    justify-content: space-between;
+
 }
 
-.form-row2{
+.form-row2 {
     margin-left: 20px;
+    width: 100%;
+    max-width: 390px;
 }
-.form-row3{
+
+.c-dropdown {
+    padding: 0 15px;
+    text-align: right;
+}
+
+
+.c-dropdown_container>button {
+    width: 390px;
+    height: 60px;
+    background-color: #fff;
+    padding: 0;
+
+}
+
+.testfrom1 {
+    margin-top: 30px;
+}
+
+.testfrom2 {
+    margin-top: 30px;
+}
+
+.form-row {
+    max-width: 390px;
+    width: 100%;
+}
+
+.form-row3 {
     margin-left: 20px;
+    max-width: 390px;
+    width: 100%;
 }
-input[type="text"], input[type="phone"]{
-  display:block;
-  width: 400px;
-  height: 50px;
+
+input[type="text"],
+input[type="phone"] {
+    display: block;
+    width: 100%;
+    max-width: 390px;
+
 }
+
+
+
+
+
 
 select {
     width: 400px;
@@ -169,89 +230,106 @@ select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
+}
 
-  .time{
-      margin-left: 20px;
-  }
+.time {
+    width: 100%;
+    max-width: 1280px;
+    padding: 20px 25px;
+    margin: auto;
+}
 
 /* --- 表單地獄--------- */
 
-/* ---------租屋期限 */
-.container-time{
-    display: flex;
-    position: relative;
-}
 
-.container-form2{
-    margin-top: 20px;
+/* ---------租屋期限 */
+.container-time {
     width: 100%;
-    
-}
-.ValidFrom-row2{
-    margin-left: 20px;
+    max-width: 1280px;
+    padding: 0 25px;
+    margin: auto;
+    position: relative;
     display: flex;
 }
 
-.ValidFrom_Y  select{
-    width: 158px;
-    height: 60px;
-}
-.ValidFrom_M {
-    margin-left: 20px;
-}
-.ValidFrom_M select{
-    width: 158px;
-    height: 60px;
-}
-.ValidFrom_D {
-    margin-left: 20px;
-}
-.ValidFrom_D select{
-    width: 158px;
-    height: 60px;
+.ValidFrom-row2 {
+    display: flex;
+
 }
 
-.time2{
-    width: 24px;
-    height: 28px;
-    left: 580px;
-    top:55px;
-    position: absolute;
+.testform2 {
+    display: flex;
+    justify-content: space-around;
+
 }
+
+.form2 {
+    margin-left: 20px;
+}
+
+
+.dropdown_container-short>button {
+    width: 158px;
+    height: 60px;
+    background-color: #fff;
+    padding: 0;
+}
+
+.time3 {
+    display: flex;
+
+    margin-left: 30px;
+    align-items: center;
+}
+
+
+
+/* --------租屋期限止------- */
+
+
 
 /* ---------租屋期限 */
-.time3{
-    margin-top: 20px;
-    margin-left: 20px;
+
+
+.total_container {
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 25px;
+    margin: auto;
+}
+
+.year {
+    display: flex;
+    align-items: center;
+}
+
+.year h3 {
+    margin: 0 15px;
+}
+
+.year input {
+    width: 100%;
+    max-width: 158px;
+}
+
+.input-year {
+    width: 100%;
+    max-width: 158px;
 }
 
 /* ---------button---------- */
-.container-button{
-    margin: 30px 0 60px 0;
 
-}
-.button-row{
-    text-align: center;
-}
-.button {
-    width: 180px;
-    height: 60px;
-    background-color:#F1EDEA;
-    border: none;
-    color: #000;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 24px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-.button2 {
-    background-color:#f2ae00;
+.c_button_section {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0 60px 0;
 }
 
-.footer_container{
+.c_button_right {
+    margin-left: 30px;
+}
+
+
+.footer_container {
     margin-top: 60px;
 }

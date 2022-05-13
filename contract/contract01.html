@@ -8,7 +8,9 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="contract01.css">
     <link rel="stylesheet" href="../nav-footer/nav-footer.css">
@@ -104,16 +106,16 @@
                 <div class="z_progress_bar_step3"></div>
             </div>
         </div>
-        </section>
+    </section>
 
 
-<!----step-minder--------------------->
+    <!----step-minder--------------------->
 
-        <div class="step_mider">
-    <h2>只需要六步驟， 即可快速完成簽約流程！</h2>
-</div>
+    <div class="step_mider">
+        <h2>只需要六步驟， 即可快速完成簽約流程！</h2>
+    </div>
 
-<!-------------------------step-bar2 ---------------->
+    <!-------------------------step-bar2 ---------------->
     <div class="step-bar2">
         <p>Step1.契約資料填寫</p>
         <div class="progress2">
@@ -136,9 +138,9 @@
     </section>
 
 
-<!-- -----------基本資料--------- -->
+    <!-- -----------基本資料--------- -->
 
-    <section classe="section2">
+    <section class="section2">
         <h3>基本資料</h3>
     </section>
     <!----------------- 表單地獄---------------------->
@@ -146,27 +148,27 @@
         <!-----------------第一排 ---------------->
         <div class="form-row">
             <form class="form" action="#">
-                <label for="person">姓名</label>
-                <input type="text" name="person">
+                <label for="person">
+                    <p>姓名</p>
+                </label>
+                <input type="text" name="Name" id="" placeholder="">
             </form>
-
+            <p class="alert">格式錯誤</p>
             <form class="form" action="#"></form>
-            <label for="phone">電話</label>
-            <input type="phone" name="phone">
+            <label for="phone">
+                <p>英文姓名</p>
+            </label>
+            <input type="text" name="EngName" id="" placeholder="">
             </form>
-
+            <p class="alert">格式錯誤</p>
             <form class="form" action="#"></form>
-            <label for="phone">電話</label>
-            <input type="phone" name="phone">
+            <label for="phone">
+                <p>身分證/護照號碼 擇一</p>
+            </label>
+            <input type="text" name="Id_number" id="" placeholder="">
             </form>
+            <p class="alert">格式錯誤</p>
         </div>
-
-
-
-
-
-
-
 
 
 
@@ -174,40 +176,95 @@
         <!-----------------第2排 ---------------->
         <div class="form-row2">
             <form class="form" action="#">
-                <label for="person">姓名</label>
-                <input type="text" name="person">
-            </form>
 
-            <form class="form" action="#"></form>
-            <label for="phone">電話</label>
-            <input type="phone" name="phone">
+                <label for="person">
+                    <p>戶籍縣市</p>
+                </label>
+                <div class="c-dropdown_container">
+                    <button id="areaListBtn">
+                        <div class="c-dropdown">
+                            <img src="../imgs/down-arrow.svg" alt="">
+                        </div>
+                    </button>
+                    <div id="areaList" class="dropdown_list" hidden>
+                        <p class="">台北市</p>
+                        <p class="">新北市</p>
+                        <p class="">基隆市</p>
+                    </div>
+                </div>
             </form>
+            <div class="testfrom1">
+                <form class="form" action="#">
+                    <div class="testfrom">
+                        <label for="person">
+                            <p>行政區</p>
+                        </label>
 
-            <form class="form" action="#"></form>
-            <label for="phone">電話</label>
-            <input type="phone" name="phone">
-            </form>
+                        <div class="dropdown_container">
+                            <button id="areaListBtn">
+                                <div class="c-dropdown">
+                                    <img src="../imgs/down-arrow.svg" alt="">
+                                </div>
+                            </button>
+                            <div id="areaList" class="dropdown_list" hidden>
+                                <p class="">大安區</p>
+                                <p class="">松山區</p>
+                                <p class="">大同區</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="testfrom2">
+                <form class="form" action="#">
+
+                    <label for="person">
+                        <p>付款方式</p>
+                    </label>
+
+                    <div class="dropdown_container">
+                        <button id="areaListBtn">
+                            <div class="c-dropdown">
+                                <img src="../imgs/down-arrow.svg" alt="">
+                            </div>
+                        </button>
+                        <div id="areaList" class="dropdown_list" hidden>
+                            <p class="">現金</p>
+                            <p class="">匯款</p>
+                            <p class="">信用卡</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
+
+
 
         <!-----------------第三排 ---------------->
         <div class="form-row3">
+
             <form class="form" action="#">
-                <label for="person">姓名</label>
-                <input type="text" name="person">
+                <label for="person">
+                    <p>電子郵件</p>
+                </label>
+                <input type="text" name="Name" id="" placeholder="">
             </form>
-
-            <form class="form" action="#"></form>
-            <label for="phone">電話</label>
-            <input type="phone" name="phone">
+            <p class="alert">格式錯誤</p>
+            <form class="form" action="#">
+                <label for="person">
+                    <p>手機
+                    </p>
+                </label>
+                <input type="text" name="Name" id="" placeholder="">
             </form>
-
-            <label for="country">地址</label>
-            <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
-    </select>
-
+            <p class="alert">格式錯誤</p>
+            <form class="form" action="#">
+                <label for="person">
+                    <p>電子郵件</p>
+                </label>
+                <input type="text" name="Name" id="" placeholder="">
+            </form>
+            <p class="alert">格式錯誤</p>
         </div>
     </div>
 
@@ -219,118 +276,171 @@
 
     <!-------------- 租屋期限_起------------------->
     <div class="container-time">
-        <div class="container-form2">
+        <div class="testform2">
             <div class="ValidFrom-row2">
-                <div class="ValidFrom_Y">
-                    <label for="country">起年</label>
-                    <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-                </div>
+                <form class="form1" action="#">
+                    <label for="person">
+                        <p>入住當年起/</p>
+                    </label>
 
+                    <div class="dropdown_container-short">
+                        <button id="areaListBtn">
+                            <div class="c-dropdown">
+                                <img src="../imgs/down-arrow.svg" alt="">
+                            </div>
+                        </button>
+                        <div id="areaList" class="dropdown_list" hidden>
+                            <p class="">現金</p>
+                            <p class="">匯款</p>
+                            <p class="">信用卡</p>
+                        </div>
+                    </div>
+                </form>
 
-                <div class="ValidFrom_M">
-                    <label for="country">起月</label>
-                    <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-                </div>
+                <form class="form2" action="#">
+                    <label for="person">
+                        <p>入住當月起/</p>
+                    </label>
 
+                    <div class="dropdown_container-short">
+                        <button id="areaListBtn">
+                            <div class="c-dropdown">
+                                <img src="../imgs/down-arrow.svg" alt="">
+                            </div>
+                        </button>
+                        <div id="areaList" class="dropdown_list" hidden>
+                            <p class="">現金</p>
+                            <p class="">匯款</p>
+                            <p class="">信用卡</p>
+                        </div>
+                    </div>
+                </form>
 
-                <div class="ValidFrom_D">
-                    <label for="country">起日</label>
-                    <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-                </div>
+                <form class="form2" action="#">
+
+                    <label for="person">
+                        <p>入住當日起/</p>
+                    </label>
+
+                    <div class="dropdown_container-short">
+                        <button id="areaListBtn">
+                            <div class="c-dropdown">
+                                <img src="../imgs/down-arrow.svg" alt="">
+                            </div>
+                        </button>
+                        <div id="areaList" class="dropdown_list" hidden>
+                            <p class="">現金</p>
+                            <p class="">匯款</p>
+                            <p class="">信用卡</p>
+                        </div>
+                    </div>
+                </form>
 
 
             </div>
+
         </div>
-
-
 
         <!-------------- 租屋期限_起------------------->
 
-        <div class="time2">
+        <div class="time3">
             <h3>至</h3>
         </div>
 
         <!-------------- 租屋期限_止------------------->
 
 
-        <div class="container-form2">
-            <div class="ValidFrom-row2">
-                <div class="ValidFrom_Y">
-                    <label for="country">起年</label>
-                    <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
+        <div class="container-time">
+
+            <div class="container-form2">
+                <div class="ValidFrom-row2">
+                    <form class="form" action="#">
+
+                        <label for="person">
+                            <p>入住之年止/</p>
+                        </label>
+
+                        <div class="dropdown_container-short">
+                            <button id="areaListBtn">
+                                <div class="c-dropdown">
+                                    <img src="../imgs/down-arrow.svg" alt="">
+                                </div>
+                            </button>
+                            <div id="areaList" class="dropdown_list" hidden>
+                                <p class="">現金</p>
+                                <p class="">匯款</p>
+                                <p class="">信用卡</p>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form class="form2" action="#">
+
+                        <label for="person">
+                            <p>入住當月止/</p>
+                        </label>
+
+                        <div class="dropdown_container-short">
+                            <button id="areaListBtn">
+                                <div class="c-dropdown">
+                                    <img src="../imgs/down-arrow.svg" alt="">
+                                </div>
+                            </button>
+                            <div id="areaList" class="dropdown_list" hidden>
+                                <p class="">現金</p>
+                                <p class="">匯款</p>
+                                <p class="">信用卡</p>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form class="form2" action="#">
+
+                        <label for="person">
+                            <p>入住當日止/</p>
+                        </label>
+
+                        <div class="dropdown_container-short">
+                            <button id="areaListBtn">
+                                <div class="c-dropdown">
+                                    <img src="../imgs/down-arrow.svg" alt="">
+                                </div>
+                            </button>
+                            <div id="areaList" class="dropdown_list" hidden>
+                                <p class="">現金</p>
+                                <p class="">匯款</p>
+                                <p class="">信用卡</p>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-
-
-                <div class="ValidFrom_M">
-                    <label for="country">起月</label>
-                    <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-                </div>
-
-
-                <div class="ValidFrom_D">
-                    <label for="country">起日</label>
-                    <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-                </div>
-
-
             </div>
         </div>
     </div>
-
     <!-------------- 租屋期限_止------------------->
 
-    <div class="time3">
+    <div class="time">
         <h3>租屋期限共</h3>
     </div>
 
 
     <!-------------------total time--------- -->
-    <div class="container-form">
-        <div class="form-row">
-            <form class="form" action="#">
-                <label for="person">年</label>
-                <input type="text" name="person">
-            </form>
-
-            <form class="form" action="#"></form>
-            <label for="phone">月</label>
-            <input type="phone" name="phone">
-            </form>
-
+    <div class="total_container">
+        <div class="year">
+            <input type="text" name="" id="">
+            <h3>年</h3>
+            <input type="text" name="" id="">
+            <h3>月</h3>
         </div>
     </div>
 
     <!------------------button--------- -->
-    <div class="container-button">
-        <div class="button-row">
-
-            <button class="button">清除資料</button>
-            <button class="button button2">送出</button>
-
+    <div class="c_button_section">
+        <div class="c_button_left">
+            <button class="pc-button-FEAC00-180">清除資料</button>
+        </div>
+        <div class="c_button_right">
+            <button class="pc-button-F4F4F4-180">送出</button>
         </div>
     </div>
 
@@ -401,6 +511,7 @@
     </div>
 
     <!-- FOOTER--------------------------------------------------- -->
+
 
 
 </body>
