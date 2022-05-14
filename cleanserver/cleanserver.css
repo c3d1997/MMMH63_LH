@@ -1,0 +1,139 @@
+.x-cleanserver {
+    width: 100%;
+    max-width: 1920px;
+    height: 1080px;
+    background: url(../imgs/pillows-820149.jpg) no-repeat center/cover;
+}
+
+.x-cleanserver .container {
+    text-align: center;
+}
+
+.x-cleanserver-slogn {
+    padding-top: 350px;
+}
+
+.x-cleanserver-slogn h2,
+.x-cleanserver-slogn h3 {
+    margin-bottom: 30px;
+}
+
+
+/* 預約看房 */
+
+.x-cleanserver-price-title {
+    margin-top: 80px;
+    margin-bottom: 30px;
+    height: 60px;
+    background: url(../imgs/五大區域清潔.svg) no-repeat center/contain;
+}
+
+.x-cleanserver-price-content-object {
+    width: 100%;
+    max-width: 600px;
+    height: 578px;
+    margin-bottom: 30px;
+}
+
+.x-cleanserver-price-content-object-img {
+    width: 100%;
+    height: 355px;
+}
+
+.x-cleanserver-price-content-object-img img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.x-cleanserver-price-content-object-txt {
+    background-color: #F1EDEA;
+    padding: 21px 200px;
+    text-align: center;
+}
+
+.x-cleanserver-price-content-object-txt h3,
+.x-cleanserver-price-content-object-txt p {
+    margin-bottom: 10px;
+}
+
+.x-cleanserver-price-content {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+
+/* 價目表 */
+
+@media screen and (max-width:376px) {
+    .x-cleanserver {
+        width: 100%;
+        max-width: 375px;
+        height: 667px;
+        background: url(../imgs/pillows-820149.jpg) no-repeat center/cover;
+    }
+    .x-cleanserver .container {
+        text-align: center;
+    }
+    .x-cleanserver-slogn {
+        padding-top: 200px;
+    }
+    .x-cleanserver-slogn h2,
+    .x-cleanserver-slogn h3 {
+        margin-bottom: 10px;
+    }
+    .x-cleanserver-slogn h2 {
+        font-size: 24px;
+    }
+    .x-cleanserver-slogn h3 {
+        font-size: 16px;
+        font-weight: normal;
+    }
+    .pc-button-FEAC00-280 {
+        width: 335px;
+        height: 60px;
+        color: #0E2E3D;
+        font-weight: bold;
+        font-size: 20px;
+        border: none;
+        background-color: #FEAC00;
+        margin-top: 30px;
+    }
+    /* 搜尋 */
+    .x-cleanserver-price-title {
+        margin-top: 40px;
+        margin-bottom: 10px;
+        height: 30px;
+        background: url(../imgs/五大區域清潔.svg) no-repeat center/contain;
+    }
+    .x-cleanserver-price-content-object {
+        width: 100%;
+        max-width: 375px;
+        height: 479px;
+        margin-bottom: 0px;
+    }
+    .x-cleanserver-price-content-object-img {
+        width: 100%;
+        height: 224px;
+    }
+    .x-cleanserver-price-content-object-img img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+    }
+    .x-cleanserver-price-content-object-txt {
+        padding: 40px 60px;
+    }
+    .x-cleanserver-price-content-object-txt h3,
+    .x-cleanserver-price-content-object-txt p {
+        margin-bottom: 10px;
+    }
+    .x-cleanserver-price-content-object-txt h3 {
+        font-size: 20px;
+    }
+    .x-cleanserver-price-content {
+        margin-bottom: 40px;
+    }
+}
