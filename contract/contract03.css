@@ -186,7 +186,6 @@ ul {
 
 
 
-
 input[type=text] {
     margin: 0;
     padding: 0;
@@ -224,10 +223,6 @@ input[type=checkbox]:checked+span {
 }
 
 /* ---------------------------button--------------------- */
-.container-button {
-    margin-top: 30px;
-    background-color: red;
-}
 
 
 
@@ -273,10 +268,12 @@ input[type=checkbox]:checked+span {
 
     .c_progress2 {
         display: none;
+        
     }
 
     .c_step-bar2 p {
         text-align: center;
+        padding: 10px 25px;
     }
 
     .c_scroll-object {
@@ -285,6 +282,9 @@ input[type=checkbox]:checked+span {
 
     .c_content_box {
         width: auto;
+    }
+    .c_container_stepbar{
+        margin-top: 110px;
     }
 
 }

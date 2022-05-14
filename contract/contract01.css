@@ -147,8 +147,12 @@ ul {
 }
 
 .c-select {
+    display: flex;
     margin-left: 20px;
-
+}
+input[type=radio]{
+    text-align: center;
+    margin: 15px 15px;
 }
 
 /* --- 表單地獄--------- */
@@ -182,6 +186,7 @@ ul {
 
 
 .c-dropdown_container>button {
+    width: 100%;
     width: 390px;
     height: 60px;
     background-color: #fff;
@@ -295,7 +300,6 @@ select {
     width: 100%;
     max-width: 1280px;
     padding: 0 25px;
-    margin: auto;
 }
 
 .year {
@@ -316,6 +320,9 @@ select {
     width: 100%;
     max-width: 158px;
 }
+.year-month{
+    display: none;
+}
 
 /* ---------button---------- */
 
@@ -332,4 +339,118 @@ select {
 
 .footer_container {
     margin-top: 60px;
+}
+
+
+@media screen and (max-width:376px) {
+    .c_sample_block {
+        display: none;
+    }
+
+    .c_upload_row {
+        flex-direction: column;
+    }
+    .step_mider{
+        display: none;
+    }
+
+    .c-minder-wrap{
+        flex-direction: column;
+    }
+    .c-minder_text h3{
+        font-size: 20px;
+    }
+
+    .c-select{
+        display: flex;
+    }
+    .c-select h3{
+        font-size: 20px;
+    }
+    .c-select{
+        justify-content: space-around;
+    }
+
+
+    .c_back_box {
+        margin-left: 0px;
+    }
+
+    .c_button_right {
+        margin-left: 0px;
+    }
+
+    .z_progress {
+        display: none;
+    }
+
+    .progress2 {
+        display: none;
+    }
+    .c_container_stepbar {
+        margin-top: 110px;
+    }
+    .c_step-bar2 {
+        text-align: center;
+    }
+
+    .pc-button-FEAC00-180{
+        width: 162.5px;
+        height: 45px;
+        font-size: 20px;
+    }
+    .pc-button-F4F4F4-180{
+        width: 162.5px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .container-form{
+        flex-direction: column;
+    }
+    .form-row2{
+        margin-left: 0px;
+    }
+    .form-row3{
+        margin-left: 0px;
+    }
+
+
+    input[type=radio]{
+        text-align: center;
+    }
+    .c-select{
+        flex-direction: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    .container-time{
+        flex-direction: column;
+    }
+    .testfrom2{
+        flex-direction: column;
+        margin: auto;
+    }
+    .time3{
+        display: none;
+    }
+    .container-time{
+            width: 375px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .year-month{
+          display: block;
+        }
+        .total_container h3{
+            display: none;
+        }
+        .year {
+            border: 1px solid red;
+            margin-left: 20px;
+            align-items: center;
+            
+        }
 }
