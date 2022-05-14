@@ -79,12 +79,10 @@
                                 <div class="z_two_input">
                                     <div class="input_container z_input_container ">
                                         <div class="dropdown_container">
-                                            <button id="z_areaListBtn">
-                                                <div class="dropdown">
-                                                    <span>縣市</span> 
-                                                    <img src="../imgs/down-arrow.svg" alt="">
-                                                </div>
-                                            </button>
+                                            <div class="dropdown">
+                                                <span>縣市</span> 
+                                                <img src="../imgs/down-arrow.svg" alt="">
+                                            </div>
                                             <div id="z_areaList" class="z_publish_dropdown_list" hidden>
                                                 <p class="" >台北市</p>
                                                 <p class="" >新北市</p>
@@ -97,12 +95,10 @@
                                      </div>
                                     <div class="input_container z_input_container ">
                                         <div class="dropdown_container">
-                                            <button id="z_distListBtn">
-                                                <div class="dropdown">
-                                                    <span>行政區</span> 
-                                                    <img src="../imgs/down-arrow.svg" alt="">
-                                                </div>
-                                            </button>
+                                            <div class="dropdown">
+                                                <span>行政區</span> 
+                                                <img src="../imgs/down-arrow.svg" alt="">
+                                            </div>
                                             <div id="z_distList" class="z_publish_dropdown_list" hidden>
                                                 <p class="" >大安區</p>
                                                 <p class="" >信義區</p>
@@ -146,12 +142,10 @@
                                 <p class="option_name">　　房型</p>
                                 <div class="fullinput_container z_fullinput_container">
                                     <div class="dropdown_container">
-                                        <button id="z_typeListBtn">
-                                            <div class="z_publish_dropdown">
+                                            <div class="dropdown">
                                                 <span>房型</span> 
                                                 <img  src="../imgs/down-arrow.svg" alt="">
                                             </div>
-                                        </button>
                                         <div id="z_typeList" class="z_publish_dropdown_list" hidden>
                                             <p class="" >共生</p>
                                             <p class="" >分租</p>
@@ -284,53 +278,10 @@
         </div>
     <script src="../js/jquery-3.6.0.js"></script>
     <script>
-        $("button").click(function(){
-            $(this).next(".z_publish_dropdown_list").toggle()
+        $(".dropdown_container").click(function(){
+            $(this).find(".z_publish_dropdown_list").toggle()
             $(this).find("img").toggleClass("downArrow")
         })
-
-
-
-
-
-        // $("button").click(function(){
-        //     $(this).next().toggle()
-            // if ((downarrowcount%2) == 0) {
-            //     $(this).find(".downArrow").css("transform","rotateX(0deg)")
-            // }else {
-            //     $(this).find(".downArrow").css("transform","rotateX(180deg)")
-            // }
-            // downarrowcount++;
-        // })
-        // $("#z_areaListBtn").click(function(){
-        //     $("#z_areaList").toggle()
-        //     // let downarrowcount = 1;
-        //     if ((downarrowcount%2) == 0) {
-        //         $("#z_areaListBtn .downArrow").css("transform","rotateX(0deg)")
-        //     }else {
-        //         $("#z_areaListBtn .downArrow").css("transform","rotateX(180deg)")
-        //     }
-        //     downarrowcount++;
-        // })
-        // $("#z_distListBtn").click(function(){
-        //     $("#z_distList").toggle()
-        //     // let downarrowcount = 1;
-        //     if ((downarrowcount%2) == 0) {
-        //         $("#z_distListBtn .downArrow").css("transform","rotateX(0deg)")
-        //     }else {
-        //         $("#z_distListBtn .downArrow").css("transform","rotateX(180deg)")
-        //     }
-        //     downarrowcount++;
-        // })
-        // $("#z_typeListBtn").click(function(){
-        //     $("#z_typeList").toggle()
-        //     if ((downarrowcount%2) == 0) {
-        //         $("#z_typeListBtn .downArrow").css("transform","rotateX(0deg)")
-        //     }else {
-        //         $("#z_typeListBtn .downArrow").css("transform","rotateX(180deg)")
-        //     }
-        //     downarrowcount++;
-        // })
     </script>
 </body>
 </html>
