@@ -237,5 +237,14 @@ ul {
     .c_container_stepbar{
         margin-top: 110px;
     }
-
+    .c_button_section {
+        padding: 0 20px;
+        width: 100%;
+    }
+    .c_button_left {
+        width: 100%;
+    }
+    .z_full_btn {
+        width: 100%;
+    }
 }

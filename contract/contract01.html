@@ -11,10 +11,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
-
-    <link rel="stylesheet" href="contract01.css">
-    <link rel="stylesheet" href="../nav-footer/nav-footer.css">
-    <link rel="stylesheet" href="../button-fonts.css">
+        <link rel="stylesheet" href="../nav-footer/nav-footer.css">
+        <link rel="stylesheet" href="../button-fonts.css">
+        <link rel="stylesheet" href="contract01.css">
 </head>
 
 <body>
@@ -101,8 +100,6 @@
                     </ul>
                 </div>
                 <div class="z_progress_bar"></div>
-                <div class="z_progress_bar_step1"></div>
-                <div class="z_progress_bar_step2"></div>
                 <div class="z_progress_bar_step3"></div>
             </div>
         </div>
@@ -127,16 +124,17 @@
         <div class="c-minder_text">
             <h3>是否自動帶入已填寫之會員資料</h3>
         </div>
-        <div class="c-select">
-            <label for="">
-                <h3>是</h3></label>
-            <input type="radio" name="gender" id="yes">
+        <div class="c-select_container">
+            <div class="c-select">
+                <label for="">
+                    <h3>是</h3></label>
+                <input type="radio" name="gender" id="yes">
 
-            <label for="">
-                <h3>否</h3></label>
-            <input type="radio" name="gender" id="no">
+                <label for="">
+                    <h3>否</h3></label>
+                <input type="radio" name="gender" id="no">
+            </div>
         </div>
-
     </section>
 
 
@@ -176,9 +174,9 @@
 
 
         <!-----------------第2排 ---------------->
-        <div class="form-row2">
+        <div class="form-row2 ">
+            <div class="cz_mb">
             <form class="form" action="#">
-
                 <label for="person">
                     <p>戶籍縣市</p>
                 </label>
@@ -193,7 +191,8 @@
                     </div>
                 </div>
             </form>
-            <div class="testfrom1">
+            </div>
+            <div class="testfrom1 cz_mb">
                 <form class="form" action="#">
                     <div class="testfrom">
                         <label for="person">
@@ -215,13 +214,11 @@
                     </div>
                 </form>
             </div>
-            <div class="testfrom2">
+            <div class="testfrom2 cz_mb">
                 <form class="form" action="#">
-
                     <label for="person">
                         <p>付款方式</p>
                     </label>
-
                     <div class="c-dropdown_container">
                         <span id="areaListBtn">
                             <div class="c-dropdown">
@@ -242,7 +239,6 @@
 
         <!-----------------第三排 ---------------->
         <div class="form-row3">
-
             <form class="form" action="#">
                 <label for="person">
                     <p>電子郵件</p>
@@ -260,7 +256,7 @@
             <p class="alert">格式錯誤</p>
             <form class="form" action="#">
                 <label for="person">
-                    <p>電子郵件</p>
+                    <p>職業</p>
                 </label>
                 <input type="text" name="Name" id="" placeholder="">
             </form>
@@ -270,97 +266,19 @@
 
     <!-------------- 表單地獄------------------->
 
-    <div class="time">
-        <h3>租屋期限</h3>
-    </div>
-
-    <!-------------- 租屋期限_起------------------->
-    <div class="container-time">
-        <div class="testform2">
-            <div class="ValidFrom-row2">
-                <form class="form1" action="#">
-                    <label for="person">
-                        <p>入住當年起/</p>
-                    </label>
-
-                    <div class="c-dropdown_container-short">
-                        <span id="areaListBtn">
-                            <div class="c-dropdown">
-                                <img src="../imgs/down-arrow.svg" alt="">
-                            </div>
-                        </span>
-                        <div id="areaList" class="dropdown_list" hidden>
-                            <p class="">現金</p>
-                            <p class="">匯款</p>
-                            <p class="">信用卡</p>
+    <div class="z_time">
+        <h3>選擇租屋期限</h3>
+        <div class="z_time_begin_container">
+            <form action="" >
+                <div class="z_time_container">
+                    <div class="z_time_list">
+                        <div class="z_time_begintitle">
+                            <p>入住之年起/</p>
                         </div>
-                    </div>
-                </form>
-
-                <form class="form2" action="#">
-                    <label for="person">
-                        <p>入住當月起/</p>
-                    </label>
-
-                    <div class="c-dropdown_container-short">
-                        <sapn id="areaListBtn">
-                            <div class="c-dropdown">
-                                <img src="../imgs/down-arrow.svg" alt="">
-                            </div>
-                        </sapn>
-                        <div id="areaList" class="dropdown_list" hidden>
-                            <p class="">現金</p>
-                            <p class="">匯款</p>
-                            <p class="">信用卡</p>
+                        <div class="z_time_begintitle_phone">
+                            <p></p>
                         </div>
-                    </div>
-                </form>
-
-                <form class="form2" action="#">
-
-                    <label for="person">
-                        <p>入住當日起/</p>
-                    </label>
-
-                    <div class="c-dropdown_container-short">
-                        <span id="areaListBtn">
-                            <div class="c-dropdown">
-                                <img src="../imgs/down-arrow.svg" alt="">
-                            </div>
-                        </span>
-                        <div id="areaList" class="dropdown_list" hidden>
-                            <p class="">現金</p>
-                            <p class="">匯款</p>
-                            <p class="">信用卡</p>
-                        </div>
-                    </div>
-                </form>
-
-
-            </div>
-
-        </div>
-
-        <!-------------- 租屋期限_起------------------->
-
-        <div class="time3">
-            <h3>至</h3>
-        </div>
-
-        <!-------------- 租屋期限_止------------------->
-
-
-        <div class="container-time">
-
-            <div class="container-form2">
-                <div class="ValidFrom-row2">
-                    <form class="form" action="#">
-
-                        <label for="person">
-                            <p>入住之年止/</p>
-                        </label>
-
-                        <div class="dropdown_container-short">
+                        <div class="c-dropdown_container">
                             <span id="areaListBtn">
                                 <div class="c-dropdown">
                                     <img src="../imgs/down-arrow.svg" alt="">
@@ -372,15 +290,15 @@
                                 <p class="">信用卡</p>
                             </div>
                         </div>
-                    </form>
-
-                    <form class="form2" action="#">
-
-                        <label for="person">
-                            <p>入住當月止/</p>
-                        </label>
-
-                        <div class="dropdown_container-short">
+                    </div>
+                    <div class="z_time_list">
+                        <div class="z_time_begintitle">
+                            <p>入住之月起/</p>
+                        </div>
+                        <div class="z_time_begintitle_phone">
+                            <p>入住起</p>
+                        </div>
+                        <div class="c-dropdown_container">
                             <span id="areaListBtn">
                                 <div class="c-dropdown">
                                     <img src="../imgs/down-arrow.svg" alt="">
@@ -392,15 +310,15 @@
                                 <p class="">信用卡</p>
                             </div>
                         </div>
-                    </form>
-
-                    <form class="form2" action="#">
-
-                        <label for="person">
-                            <p>入住當日止/</p>
-                        </label>
-
-                        <div class="dropdown_container-short">
+                    </div>
+                    <div class="z_time_list">
+                        <div class="z_time_begintitle">
+                            <p>入住之日起/</p>
+                        </div>
+                        <div class="z_time_begintitle_phone">
+                            <p></p>
+                        </div>
+                        <div class="c-dropdown_container">
                             <span id="areaListBtn">
                                 <div class="c-dropdown">
                                     <img src="../imgs/down-arrow.svg" alt="">
@@ -412,12 +330,77 @@
                                 <p class="">信用卡</p>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
+                <h3 class="z_b_to_e">至</h3>
+                <div class="z_time_container">
+                    <div class="z_time_list">
+                        <div class="z_time_begintitle">
+                            <p>入住之年迄/</p>
+                        </div>
+                        <div class="z_time_begintitle_phone">
+                            <p></p>
+                        </div>
+                        <div class="c-dropdown_container">
+                            <span id="areaListBtn">
+                                <div class="c-dropdown">
+                                    <img src="../imgs/down-arrow.svg" alt="">
+                                </div>
+                            </span>
+                            <div id="areaList" class="dropdown_list" hidden>
+                                <p class="">現金</p>
+                                <p class="">匯款</p>
+                                <p class="">信用卡</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="z_time_list">
+                        <div class="z_time_begintitle">
+                            <p>入住之月迄/</p>
+                        </div>
+                        <div class="z_time_begintitle_phone">
+                            <p>入住迄</p>
+                        </div>
+                        <div class="c-dropdown_container">
+                            <span id="areaListBtn">
+                                <div class="c-dropdown">
+                                    <img src="../imgs/down-arrow.svg" alt="">
+                                </div>
+                            </span>
+                            <div id="areaList" class="dropdown_list" hidden>
+                                <p class="">現金</p>
+                                <p class="">匯款</p>
+                                <p class="">信用卡</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="z_time_list">
+                        <div class="z_time_begintitle">
+                            <p>入住之日迄/</p>
+                        </div>
+                        <div class="z_time_begintitle_phone">
+                            <p></p>
+                        </div>
+                        <div class="c-dropdown_container">
+                            <span id="areaListBtn">
+                                <div class="c-dropdown">
+                                    <img src="../imgs/down-arrow.svg" alt="">
+                                </div>
+                            </span>
+                            <div id="areaList" class="dropdown_list" hidden>
+                                <p class="">現金</p>
+                                <p class="">匯款</p>
+                                <p class="">信用卡</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
+
     </div>
-    <!-------------- 租屋期限_止------------------->
+
+    
 
     <div class="time">
         <h3>租屋期限共</h3>
@@ -438,10 +421,10 @@
     <!------------------button--------- -->
     <div class="c_button_section">
         <div class="c_button_left">
-            <button class="pc-button-FEAC00-180">清除資料</button>
+            <button class="pc-button-FEAC00-180 z_phone-button-162">清除資料</button>
         </div>
         <div class="c_button_right">
-            <button class="pc-button-F4F4F4-180">送出</button>
+            <button class="pc-button-F4F4F4-180 z_phone-button-162">送出</button>
         </div>
     </div>
 

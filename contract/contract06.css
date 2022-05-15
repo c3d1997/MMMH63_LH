@@ -201,7 +201,7 @@ ul {
         font-weight: bold;
         font-size: 20px;
         border: none;
-        background-color: #161084;
+        background-color: #FEAC00;
     }
     .pc-button-F4F4F4-180{
         width: 162.5px;
@@ -212,6 +212,9 @@ ul {
         border: none;
         background-color: #F1EDEA;
     }
-
+    .c_button_section {
+        padding: 0 20px;
+        justify-content: space-between;
+    }
 
 }

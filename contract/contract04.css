@@ -238,14 +238,14 @@ a {
     }
 
     .c_container_sign {
-        width: 375px;
+        max-width: 375px;
         margin: auto;
         padding: 0 20px;
 
     }
 
     .c_sign_box {
-        width: 375px;
+        max-width: 375px;
         margin: auto;
         padding: 0 20px;
         background-color: #F1EDEA;
@@ -256,10 +256,11 @@ a {
     .c_container_stepbar {
         margin: 110px auto 0 auto;
         width: 375px;
-        margin: auto;
         padding: 0 20px;
     }
-
+    .c_upload_sign {
+        padding: 0 20px;
+    }
     .pc-button-FEAC00-180 {
         width: 162.5px;
         height: 45px;
@@ -282,8 +283,9 @@ a {
 
     .c_button_section {
         display: flex;
-        justify-content: center;
-        margin: 30px 0 60px 0;
+        justify-content: space-between;
+        margin: 30px auto 60px auto;
+        padding: 0 20px;
     }
 
     .c_button_right {
