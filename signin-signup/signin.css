@@ -8,8 +8,8 @@ body{
 }
 .container1{
     position: relative;
-    width: 800px;
-    height: 600px;
+    width: 1080px;
+    height: 764px;
     /* margin: 20px; */
     /* background-color: #fa0f; */
 
@@ -18,7 +18,7 @@ body{
     position: absolute;
     top: 0;
     width: 100%;
-    height: 600px;
+    height: 764px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,7 +111,7 @@ body.active{
 .formBx .form form input{
     width: 100%;
     margin-bottom: 20px;
-    padding: 10px;
+    /* padding: 10px; */
     outline: none;
     font-size: 16px;
 }
@@ -121,7 +121,7 @@ body.active{
 .formBx .form form input.CAPTCHA{
     width: 65%;
     margin-bottom: 20px;
-    padding: 10px;
+    /* padding: 10px; */
     outline: none;
     font-size: 16px;
 }

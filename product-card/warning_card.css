@@ -20,6 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* margin: 0; */
 }
 
 /*  以下是"發布成功" */
@@ -118,6 +119,58 @@
 }
 
 .ReservationSuccess-x i{
+    font-size: 40px;
+}
+/*  以下是"客服送出成功" CustomerService */
+.CustomerService-wrap{
+    position: relative;
+    height: 280px;
+    width: 400px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #0E2E3D;
+    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+}
+.CustomerService{
+    text-align: center;
+    margin: auto;
+}
+
+.pc-button-FEAC00-180{
+    margin: 0;
+
+}
+.CustomerService-icon{
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0;
+}
+.CustomerService h3{
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 36px;
+}
+
+/* XXXXXXXx */
+.CustomerService-x{
+    width: 50px;
+    height: 50px;
+    background-color: #F1EDEA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: #0E2E3D;
+
+}
+
+.CustomerService-x i{
     font-size: 40px;
 }
 
@@ -366,6 +419,35 @@
     .ReservationSuccess-x{
         display: none;
     }
+    /*  以下是"客服送出成功"CustomerService */
+    .CustomerService-wrap{
+        position: absolute;
+        top: 500px;
+        height: 250px;
+        width: 270px;
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+    }
+    .CustomerService{
+        margin: auto;
+    }
+
+    .CustomerService-icon{
+        font-size: 30px;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .CustomerService h2{
+        font-size: 24px;
+        font-weight: 900;
+    }
+    .CustomerService-x{
+        display: none;
+    }
 
      
 
@@ -380,7 +462,7 @@
 .NotCollect-wrap{
     position: relative;
     padding: 20px 0;
-    margin-top: 500px;
+    margin-top: 800px;
     height: 208px;
     width: 270px;
     /* border: 1px solid red; */
