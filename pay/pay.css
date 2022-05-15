@@ -350,7 +350,8 @@ body {
     flex-grow: 1;
     position: relative;
 }
-.z_paydropdown>button {
+.z_paydropdown>span {
+    
     width: 100%;
     height: 60px;
     background-color: #fff;
@@ -358,8 +359,8 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-#bankListBtn span {
-    opacity: 50%;
+#z_bankListBtn span {
+    opacity: .7;
 }
 .banklist {
     width: 100%;

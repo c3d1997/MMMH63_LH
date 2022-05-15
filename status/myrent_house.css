@@ -1,0 +1,101 @@
+.c-world {
+    display: flex;
+    width: 100%;
+    min-height: 911px;
+    justify-content: space-between;
+    margin-top: 190px;
+    margin-bottom: 60px;
+
+}
+
+/* 左邊選單開始 */
+.c-mylist {
+    text-align: center;
+}
+
+.c-list {
+    text-decoration: none;
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.c-list a {
+    text-decoration: none;
+    opacity: 0.5;
+}
+
+.c-list a:hover {
+    text-decoration: none;
+    opacity: 1;
+}
+
+/* 左邊選單結束 */
+
+
+/* 右邊標題開始 */
+.c-mytitle {
+    max-width: 1053px;
+    width: 100%;
+}
+
+
+
+
+/* --------------------我的租屋------------ */
+
+
+
+
+.c-table {
+    max-width: 1053px;
+    width: 100%;
+
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 30px 0;
+    width: 100%;
+    max-width: 1053px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.content-table thead tr {
+    background-color: #FEAC00;
+}
+
+.content-table th,
+.content-table td {
+    padding: 25px 25px;
+}
+
+.content-table tbody tr {
+    /* border-bottom: 1px solid #dddddd; */
+}
+
+.content-table tbody tr a{
+    text-decoration: none;
+    
+}
+.check{
+    color: #5D8DC1;
+}
+
+.content-table tbody tr:nth-of-type(odd) {
+    background-color: #F1EDEA;
+}
+
+.content-table tbody tr:last-of-type {
+    /* border-bottom: 2px solid #009879; */
+}
+
+.content-table tbody tr.active-row {
+    /* font-weight: bold; */
+}
+
+
+
+
+
+/* 右邊標題結束 */
