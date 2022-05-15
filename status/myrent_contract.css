@@ -29,7 +29,6 @@
     opacity: 1;
 }
 
-
 /* 左邊選單結束 */
 
 
@@ -44,16 +43,14 @@
 
 /* --------------------我的租屋------------ */
 
-
 .c-table {
     max-width: 1053px;
     width: 100%;
-
 }
 
 .content-table {
     border-collapse: collapse;
-    margin: 30px 0;
+    margin: 30px 0px;
     width: 100%;
     max-width: 1053px;
     overflow: hidden;
@@ -67,19 +64,23 @@
 .content-table th,
 .content-table td {
     padding: 25px 25px;
+    width: 208px;
+
 }
 
 .content-table tbody tr {
     /* border-bottom: 1px solid #dddddd; */
 }
 
-.content-table tbody tr a {
+.content-table tbody tr a{
     text-decoration: none;
-
+}
+.c-icon{
+    margin-left: 5px;
 }
 
-.check {
-    color: #FF0000;
+.check{
+    color:#FF0000;  
 }
 
 .content-table tbody tr:nth-of-type(odd) {
@@ -93,7 +94,6 @@
 .content-table tbody tr.active-row {
     /* font-weight: bold; */
 }
-
 
 
 /* 右邊標題結束 */

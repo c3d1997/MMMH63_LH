@@ -5,10 +5,10 @@
     justify-content: space-between;
     margin-top: 190px;
     margin-bottom: 60px;
-
+    
 }
 
-/* 左邊選單開始 */
+/* ---------左邊選單開始--------- */
 .c-mylist {
     text-align: center;
 }
@@ -29,27 +29,46 @@
     opacity: 1;
 }
 
-/* 左邊選單結束 */
-
-
-/* 右邊標題開始 */
-.c-mytitle {
-    max-width: 1053px;
-    width: 100%;
+@media screen and (max-width:376px){
+    .c-mylist{
+        display: none;
+    }
+    
 }
 
 
 
+/*----------- 左邊選單結束-------------- */
+
+
+/* --------右邊標題開始---------------- */
+.c-mytitle {
+    max-width: 1053px;
+    width: 100%;
+    
+}
+
+@media screen and (max-width:376px){
+    .c-mytitle {
+        max-width: 376px;
+        text-align: center;
+    }
+    .c-mytitle h3 {
+        margin-top: -110px;
+        font-size: 20px; 
+    }
+    .c-table{
+        display: none;
+    }
+}
+
+
 
 /* --------------------我的租屋------------ */
-
-
-
-
 .c-table {
     max-width: 1053px;
     width: 100%;
-
+    border:1px solid red;
 }
 
 .content-table {
@@ -95,7 +114,56 @@
 }
 
 
-
-
-
 /* 右邊標題結束 */
+
+/* --------------------pages--------------- */
+.c-pages {
+    text-align: center;
+}
+
+ul.pagination {
+    display: inline-block;
+}
+
+ul.pagination li {
+    display: inline;
+}
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 10px 20px;
+    text-decoration: none;
+    opacity: 0.5;
+}
+
+ul.pagination li a:hover{
+    opacity: 1;
+}
+
+/* --------------------pages---------------- */
+
+@media screen and (max-width:376px){
+    .c-pages{
+        display: none;
+    }
+}
+
+
+/* -----------------------手機板的下拉------- */
+.dropdown_container{
+    display: none;
+    /* border: 1px solid red; */
+}
+
+@media screen and (max-width:376px){
+    .dropdown_container{
+        display: flex;
+        margin-top: 10px;
+    }
+
+}
+
+
+
+/* --------------------手機板的下拉------- */
+/* https://www.youtube.com/watch?v=RvpYnUZRquw */
