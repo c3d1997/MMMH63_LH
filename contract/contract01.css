@@ -69,7 +69,7 @@ ul {
 .z_progress_bar_step3 {
     z-index: -1;
     position: absolute;
-    width: 50%;
+    width: 52%;
     height: 1px;
     background-color: #ffae00;
     bottom: 11px;
@@ -145,7 +145,9 @@ ul {
     margin: 0 auto;
     padding: 0px 25px;
 }
+.c-select_container {
 
+}
 .c-select {
     display: flex;
     margin-left: 20px;
@@ -178,8 +180,13 @@ input[type=radio]{
     width: 100%;
     max-width: 390px;
 }
+.cz_mb {
+    margin-bottom: 30px;
+}
 
 .c-dropdown {
+    background-color: #fff;
+    width: 100%;
     height: 60px;
     padding: 0 15px;
     text-align: right;
@@ -196,7 +203,7 @@ input[type=radio]{
 .c-dropdown_container>span {
     display: block;
     width: 100%;
-    width: 390px;
+    /* width: 390px; */
     height: 60px;
     background-color: #fff;
     padding: 0;
@@ -209,11 +216,11 @@ input[type=radio]{
 }
 
 .testfrom1 {
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .testfrom2 {
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .form-row {
@@ -257,38 +264,64 @@ select {
     padding: 20px 25px;
     margin: auto;
 }
+.z_time {
+    /* width: 100%; */
+    max-width: 1280px;
+    padding: 20px 25px;
+    margin: auto;
+}
+.z_time_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.z_time_begin_container > form {
+    display: flex;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+}
+.z_time_list {
+    width: 30%;
+}
+.z_time_begin {
+    width: 13%;
+}
+.z_b_to_e {
+    top: 0;
+    bottom: 0;
+    margin: auto 40px;
+}
 
 /* --- 表單地獄--------- */
 
 
 /* ---------租屋期限 */
 .container-time {
-    width: 100%;
     max-width: 1280px;
     padding: 0 25px;
     margin: auto;
     position: relative;
-    display: flex;
 }
 
 .ValidFrom-row2 {
     display: flex;
-
+    
 }
 
 .testform2 {
     display: flex;
-    justify-content: space-around;
 
 }
 
 .form2 {
     margin-left: 20px;
 }
+.dropdown_container-short {
+}
 
-
-.dropdown_container-short>button {
-    width: 158px;
+.dropdown_container-short>span {
+    /* width: 158px; */
     height: 60px;
     background-color: #fff;
     padding: 0;
@@ -297,7 +330,7 @@ select {
 .time3 {
     display: flex;
 
-    margin-left: 30px;
+    margin: 0 15px;
     align-items: center;
 }
 
@@ -314,6 +347,7 @@ select {
     width: 100%;
     max-width: 1280px;
     padding: 0 25px;
+    margin: auto;
 }
 
 .year {
@@ -343,18 +377,19 @@ select {
 .c_button_section {
     display: flex;
     justify-content: center;
-    margin: 60px 0 60px 0;
+    margin: 60px 0;
 }
 
 .c_button_right {
     margin-left: 30px;
 }
 
-
 .footer_container {
     margin-top: 60px;
 }
-
+.z_time_begintitle_phone {
+    display: none;
+}
 
 @media screen and (max-width:376px) {
     .c_sample_block {
@@ -373,6 +408,7 @@ select {
     }
     .c-minder_text h3{
         font-size: 20px;
+        text-align: center;
     }
 
     .c-select{
@@ -444,7 +480,6 @@ select {
     }
     .testfrom2{
         flex-direction: column;
-        margin: auto;
     }
     .time3{
         display: none;
@@ -453,18 +488,83 @@ select {
             width: 375px;
             margin: auto;
             padding: 0 20px;
-        }
-
-        .year-month{
-          display: block;
-        }
-        .total_container h3{
-            display: none;
-        }
-        .year {
-            border: 1px solid red;
-            margin-left: 20px;
-            align-items: center;
-            
-        }
+    }
+    .year-month{
+        display: block;
+    }
+    .total_container {
+        padding: 0 20px;
+    }
+    .total_container h3{
+        display: none;
+    }
+    .year {
+        align-items: center;
+        justify-content: space-between;
+    }
+    .z_time {
+        padding: 0 20px;
+        text-align: center;
+    }
+    .z_time_begin_container > form {
+        flex-direction: column;
+    }
+    .z_time_list {
+        width: 30%;
+    }
+    .z_phone-button-162 {
+        width: 162.5px;
+    }
+    .c_button_right {
+        margin-left: 10px;
+    }
+    .c_button_section {
+        padding:0 30px;
+        /* justify-content: space-between; */
+    }
+    .time {
+        text-align: center;
+    }
+    .z_b_to_e {
+        display: none;
+    }
+    .c-dropdown {
+        height: 45px;
+    }
+    .c-dropdown_container>span {
+        height: 45px;
+    }
+    input[type=text] {
+        height: 45px;
+    }
+    .z_time_begintitle {
+        display: none;
+    }
+    .z_time_begintitle_phone {
+        height: 24px;
+        display: block;
+    }
+    .section2 {
+        display: none;
+    }
+    .c-select_container {
+        background-color: #fff;
+    }
+    .step-bar2 {
+        text-align: center;
+    }
+    .c_container_stepbar {
+        padding: 0 20px;
+    }
+    .container-form {
+        padding: 0 20px;
+    }.container-time {
+        padding: 0 20px;
+    }
+    .c-minder-wrap {
+        padding: 0 20px;
+    }
+    .c-minder_text {
+        margin-bottom: 10px;
+    }
 }

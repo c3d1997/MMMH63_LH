@@ -70,7 +70,7 @@ ul {
 .z_progress_bar_step3 {
     z-index: -1;
     position: absolute;
-    width: 50%;
+    width: 52%;
     height: 1px;
     background-color: #ffae00;
     bottom: 11px;
@@ -236,13 +236,15 @@ a {
     font-weight: bold;
     font-size: 24px;
     border: none;
-    background-color: #F4F4F4;
+    background-color: #F1EDEA;
 }
 
 .c_button_section {
     display: flex;
     justify-content: center;
     margin: 30px 0 50px 0;
+    flex-direction: row-reverse;
+    
 }
 
 .c_button_right {
@@ -253,10 +255,7 @@ a {
     margin-top: 60px;
 }
 
-.c_button_section {
-    flex-direction: row-reverse;
 
-}
 
 
 @media screen and (max-width:376px) {
@@ -300,6 +299,12 @@ a {
         height: 45px;
         font-size: 20px;
     }
-
+    .c_button_section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .step-bar2 {
+        text-align: center;
+    }
 
 }
