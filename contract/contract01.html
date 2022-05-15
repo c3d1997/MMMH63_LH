@@ -183,11 +183,9 @@
                     <p>戶籍縣市</p>
                 </label>
                 <div class="c-dropdown_container">
-                    <button id="areaListBtn">
                         <div class="c-dropdown">
                             <img src="../imgs/down-arrow.svg" alt="">
                         </div>
-                    </button>
                     <div id="areaList" class="dropdown_list" hidden>
                         <p class="">台北市</p>
                         <p class="">新北市</p>
@@ -202,12 +200,12 @@
                             <p>行政區</p>
                         </label>
 
-                        <div class="dropdown_container">
-                            <button id="areaListBtn">
+                        <div class="c-dropdown_container">
+                            <span id="areaListBtn">
                                 <div class="c-dropdown">
                                     <img src="../imgs/down-arrow.svg" alt="">
                                 </div>
-                            </button>
+                            </span>
                             <div id="areaList" class="dropdown_list" hidden>
                                 <p class="">大安區</p>
                                 <p class="">松山區</p>
@@ -224,12 +222,12 @@
                         <p>付款方式</p>
                     </label>
 
-                    <div class="dropdown_container">
-                        <button id="areaListBtn">
+                    <div class="c-dropdown_container">
+                        <span id="areaListBtn">
                             <div class="c-dropdown">
                                 <img src="../imgs/down-arrow.svg" alt="">
                             </div>
-                        </button>
+                        </span>
                         <div id="areaList" class="dropdown_list" hidden>
                             <p class="">現金</p>
                             <p class="">匯款</p>
@@ -285,12 +283,12 @@
                         <p>入住當年起/</p>
                     </label>
 
-                    <div class="dropdown_container-short">
-                        <button id="areaListBtn">
+                    <div class="c-dropdown_container-short">
+                        <span id="areaListBtn">
                             <div class="c-dropdown">
                                 <img src="../imgs/down-arrow.svg" alt="">
                             </div>
-                        </button>
+                        </span>
                         <div id="areaList" class="dropdown_list" hidden>
                             <p class="">現金</p>
                             <p class="">匯款</p>
@@ -304,12 +302,12 @@
                         <p>入住當月起/</p>
                     </label>
 
-                    <div class="dropdown_container-short">
-                        <button id="areaListBtn">
+                    <div class="c-dropdown_container-short">
+                        <sapn id="areaListBtn">
                             <div class="c-dropdown">
                                 <img src="../imgs/down-arrow.svg" alt="">
                             </div>
-                        </button>
+                        </sapn>
                         <div id="areaList" class="dropdown_list" hidden>
                             <p class="">現金</p>
                             <p class="">匯款</p>
@@ -324,12 +322,12 @@
                         <p>入住當日起/</p>
                     </label>
 
-                    <div class="dropdown_container-short">
-                        <button id="areaListBtn">
+                    <div class="c-dropdown_container-short">
+                        <span id="areaListBtn">
                             <div class="c-dropdown">
                                 <img src="../imgs/down-arrow.svg" alt="">
                             </div>
-                        </button>
+                        </span>
                         <div id="areaList" class="dropdown_list" hidden>
                             <p class="">現金</p>
                             <p class="">匯款</p>
@@ -363,11 +361,11 @@
                         </label>
 
                         <div class="dropdown_container-short">
-                            <button id="areaListBtn">
+                            <span id="areaListBtn">
                                 <div class="c-dropdown">
                                     <img src="../imgs/down-arrow.svg" alt="">
                                 </div>
-                            </button>
+                            </span>
                             <div id="areaList" class="dropdown_list" hidden>
                                 <p class="">現金</p>
                                 <p class="">匯款</p>
@@ -383,11 +381,11 @@
                         </label>
 
                         <div class="dropdown_container-short">
-                            <button id="areaListBtn">
+                            <span id="areaListBtn">
                                 <div class="c-dropdown">
                                     <img src="../imgs/down-arrow.svg" alt="">
                                 </div>
-                            </button>
+                            </span>
                             <div id="areaList" class="dropdown_list" hidden>
                                 <p class="">現金</p>
                                 <p class="">匯款</p>
@@ -403,11 +401,11 @@
                         </label>
 
                         <div class="dropdown_container-short">
-                            <button id="areaListBtn">
+                            <span id="areaListBtn">
                                 <div class="c-dropdown">
                                     <img src="../imgs/down-arrow.svg" alt="">
                                 </div>
-                            </button>
+                            </span>
                             <div id="areaList" class="dropdown_list" hidden>
                                 <p class="">現金</p>
                                 <p class="">匯款</p>
@@ -514,7 +512,14 @@
     </div>
 
     <!-- FOOTER--------------------------------------------------- -->
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script>
+        $(".c-dropdown_container").click(function(){
+            $(this).find(".dropdown_list").toggle()
+            $(this).find("img").toggleClass("downArrow")
+        })
 
+    </script>
 
 
 </body>
