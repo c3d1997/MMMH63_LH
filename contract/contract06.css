@@ -1,9 +1,8 @@
-body{
+body {
     margin: 0px;
 }
 
-
-.c_container_stepbar{
+.c_container_stepbar {
     width: 100%;
     max-width: 1280px;
     margin: 160px auto 0 auto;
@@ -14,6 +13,7 @@ body{
 ul {
     list-style-type: none;
 }
+
 .z_radio_finish {
     position: relative;
     width: 30px;
@@ -21,9 +21,10 @@ ul {
     border-radius: 50%;
     background: #FEAC00;
     left: 50%;
-    transform:translateX(-50%);
+    transform: translateX(-50%);
     margin-top: 40px;
 }
+
 .z_radio {
     position: relative;
     width: 30px;
@@ -31,90 +32,103 @@ ul {
     border-radius: 50%;
     background: #b1b1b1;
     left: 50%;
-    transform:translateX(-50%);
+    transform: translateX(-50%);
     margin-top: 40px;
 }
+
 .z_progress {
     z-index: -1;
     position: relative;
     height: 100px;
     margin-bottom: 50px;
 }
+
 .z_progress_bar {
     z-index: -2;
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color:#b1b1b1;
+    background-color: #b1b1b1;
     bottom: 11px;
 }
+
 .z_progress_bar_step1 {
     z-index: -1;
     position: absolute;
     width: 10%;
     height: 1px;
-    background-color:#ffae00;
+    background-color: #ffae00;
     bottom: 11px;
 }
+
 .z_progress_bar_step2 {
     z-index: -1;
     position: absolute;
     width: 30%;
     height: 1px;
-    background-color:#ffae00;
+    background-color: #ffae00;
     bottom: 11px;
 }
+
 .z_progress_bar_step3 {
     z-index: -1;
     position: absolute;
     width: 52%;
     height: 1px;
-    background-color:#ffae00;
+    background-color: #ffae00;
     bottom: 11px;
 }
+
 .z_progress_bar_step4 {
     z-index: -1;
     position: absolute;
     width: 70%;
     height: 1px;
-    background-color:#ffae00;
+    background-color: #ffae00;
     bottom: 11px;
 }
+
 .z_progress_bar_step5 {
     z-index: -1;
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color:#ffae00;
+    background-color: #ffae00;
     bottom: 11px;
 }
+
 .z_barcontainer {
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
+
+
 /*---------step-bar2 --------*/
-.c_step-bar2{
+
+.c_step-bar2 {
     width: 100%;
     max-width: 1280px;
     margin: auto;
-    padding: 0px 25px; 
+    padding: 0px 25px;
 }
 
-.c_step-bar2 p{
+.c_step-bar2 p {
     width: 100%;
     font-weight: normal;
     font-size: 32px;
     color: #0E2E3D;
     font-weight: bold;
 }
-.c_progress2{
+
+.c_progress2 {
     width: 100%;
     margin-top: 30px;
     height: 2px;
     background-color: #E0F1F3;
 }
-.c_progress-bar2{
+
+.c_progress-bar2 {
     width: 100%;
     height: 2px;
     background-color: #f2ae00;
@@ -122,32 +136,34 @@ ul {
 
 
 /* ---------------section contract finish------------- */
-.c_container_finish{
-    max-width: 1280px;
+
+.c_container_finish {
     width: 100%;
     padding: 0 25px;
     margin-top: 40px;
-    
 }
-.c_finish_text{
+
+.c_finish_text {
     width: 100%;
     color: #0E2E3D;
     margin: auto;
     padding: 20px 20px;
     text-align: center;
-
 }
 
+
 /* ---------------------------button--------------------- */
-.c_button_section{
+
+.c_button_section {
     display: flex;
     margin: 40px auto 60px;
     justify-content: center;
 }
 
-.c_button_right{
+.c_button_right {
     margin-left: 10px;
 }
+
 .pc-button-FEAC00-180 {
     width: 180px;
     height: 60px;
@@ -170,31 +186,28 @@ ul {
 
 
 /* -----------------手機-------------- */
+
 @media screen and (max-width:376px) {
     .z_progress {
         display: none;
     }
-
     .c_progress2 {
         display: none;
-        
     }
-
     .c_step-bar2 p {
         text-align: center;
     }
-    .c_container_stepbar{
+    .c_container_stepbar {
         margin-top: 110px;
     }
-
-    .c_finish_text h3{
+    .c_finish_text h3 {
         font-size: 12px;
         color: #0E2E3D;
     }
-    .c_button_right{
+    .c_button_right {
         margin-left: 0px;
     }
-    .pc-button-FEAC00-180{
+    .pc-button-FEAC00-180 {
         width: 162.5px;
         height: 45px;
         color: #0E2E3D;
@@ -203,7 +216,7 @@ ul {
         border: none;
         background-color: #FEAC00;
     }
-    .pc-button-F4F4F4-180{
+    .pc-button-F4F4F4-180 {
         width: 162.5px;
         height: 45px;
         color: #0E2E3D;
@@ -216,5 +229,4 @@ ul {
         padding: 0 20px;
         justify-content: space-between;
     }
-
 }

@@ -5,7 +5,6 @@
     padding: 0px 25px;
 }
 
-
 ul {
     list-style-type: none;
 }
@@ -99,7 +98,9 @@ ul {
     justify-content: space-around;
 }
 
+
 /*---------step-minder--------*/
+
 .step_mider {
     margin-top: 30px;
     text-align: center;
@@ -108,6 +109,7 @@ ul {
 
 
 /*---------step-bar2 --------*/
+
 .step-bar2 {
     width: 100%;
     max-width: 1280px;
@@ -138,6 +140,7 @@ ul {
 
 
 /* ---------------minder-------------- */
+
 .c-minder-wrap {
     display: flex;
     width: 100%;
@@ -145,19 +148,22 @@ ul {
     margin: 0 auto;
     padding: 0px 25px;
 }
-.c-select_container {
 
-}
+.c-select_container {}
+
 .c-select {
     display: flex;
     margin-left: 20px;
 }
-input[type=radio]{
+
+input[type=radio] {
     text-align: center;
     margin: 15px 15px;
 }
 
+
 /* --- 表單地獄--------- */
+
 .section2 {
     width: 100%;
     max-width: 1280px;
@@ -172,7 +178,6 @@ input[type=radio]{
     padding: 0 25px;
     display: flex;
     justify-content: space-between;
-
 }
 
 .form-row2 {
@@ -180,6 +185,7 @@ input[type=radio]{
     width: 100%;
     max-width: 390px;
 }
+
 .cz_mb {
     margin-bottom: 30px;
 }
@@ -194,6 +200,7 @@ input[type=radio]{
     justify-content: end;
     align-items: center;
 }
+
 .c-dropdown_container {
     position: relative;
     width: 100%;
@@ -207,8 +214,8 @@ input[type=radio]{
     height: 60px;
     background-color: #fff;
     padding: 0;
-
 }
+
 .dropdown_list {
     position: absolute;
     width: 100%;
@@ -239,13 +246,7 @@ input[type="phone"] {
     display: block;
     width: 100%;
     max-width: 390px;
-
 }
-
-
-
-
-
 
 select {
     width: 400px;
@@ -264,39 +265,47 @@ select {
     padding: 20px 25px;
     margin: auto;
 }
+
 .z_time {
     /* width: 100%; */
     max-width: 1280px;
     padding: 20px 25px;
     margin: auto;
 }
+
 .z_time_container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.z_time_begin_container > form {
+
+.z_time_begin_container>form {
     display: flex;
     /* justify-content: space-between; */
     /* align-items: center; */
 }
+
 .z_time_list {
     width: 30%;
 }
+
 .z_time_begin {
     width: 13%;
 }
+
 .z_b_to_e {
     top: 0;
     bottom: 0;
     margin: auto 40px;
 }
 
+
 /* --- 表單地獄--------- */
 
 
 /* ---------租屋期限 */
+
 .container-time {
     max-width: 1280px;
     padding: 0 25px;
@@ -306,19 +315,17 @@ select {
 
 .ValidFrom-row2 {
     display: flex;
-    
 }
 
 .testform2 {
     display: flex;
-
 }
 
 .form2 {
     margin-left: 20px;
 }
-.dropdown_container-short {
-}
+
+.dropdown_container-short {}
 
 .dropdown_container-short>span {
     /* width: 158px; */
@@ -329,19 +336,15 @@ select {
 
 .time3 {
     display: flex;
-
     margin: 0 15px;
     align-items: center;
 }
 
 
-
 /* --------租屋期限止------- */
 
 
-
 /* ---------租屋期限 */
-
 
 .total_container {
     width: 100%;
@@ -368,9 +371,11 @@ select {
     width: 100%;
     max-width: 158px;
 }
-.year-month{
+
+.year-month {
     display: none;
 }
+
 
 /* ---------button---------- */
 
@@ -387,53 +392,49 @@ select {
 .footer_container {
     margin-top: 60px;
 }
+
 .z_time_begintitle_phone {
     display: none;
 }
 
 @media screen and (max-width:376px) {
+    .c-dropdown {
+        padding: 0 5px;
+    }
     .c_sample_block {
         display: none;
     }
-
     .c_upload_row {
         flex-direction: column;
     }
-    .step_mider{
+    .step_mider {
         display: none;
     }
-
-    .c-minder-wrap{
+    .c-minder-wrap {
         flex-direction: column;
     }
-    .c-minder_text h3{
+    .c-minder_text h3 {
         font-size: 20px;
         text-align: center;
     }
-
-    .c-select{
+    .c-select {
         display: flex;
     }
-    .c-select h3{
+    .c-select h3 {
         font-size: 20px;
     }
-    .c-select{
+    .c-select {
         justify-content: space-around;
     }
-
-
     .c_back_box {
         margin-left: 0px;
     }
-
     .c_button_right {
         margin-left: 0px;
     }
-
     .z_progress {
         display: none;
     }
-
     .progress2 {
         display: none;
     }
@@ -443,59 +444,55 @@ select {
     .c_step-bar2 {
         text-align: center;
     }
-
-    .pc-button-FEAC00-180{
+    .pc-button-FEAC00-180 {
         width: 162.5px;
         height: 45px;
         font-size: 20px;
     }
-    .pc-button-F4F4F4-180{
+    .pc-button-F4F4F4-180 {
         width: 162.5px;
         height: 45px;
         font-size: 20px;
     }
-
-    .container-form{
+    .container-form {
         flex-direction: column;
     }
-    .form-row2{
+    .form-row2 {
         margin-left: 0px;
     }
-    .form-row3{
+    .form-row3 {
         margin-left: 0px;
     }
-
-
-    input[type=radio]{
+    input[type=radio] {
         text-align: center;
     }
-    .c-select{
+    .c-select {
         flex-direction: flex;
         justify-content: center;
         align-items: center;
         margin: auto;
     }
-    .container-time{
+    .container-time {
         flex-direction: column;
     }
-    .testfrom2{
+    .testfrom2 {
         flex-direction: column;
     }
-    .time3{
+    .time3 {
         display: none;
     }
-    .container-time{
-            width: 375px;
-            margin: auto;
-            padding: 0 20px;
+    .container-time {
+        width: 375px;
+        margin: auto;
+        padding: 0 20px;
     }
-    .year-month{
+    .year-month {
         display: block;
     }
     .total_container {
         padding: 0 20px;
     }
-    .total_container h3{
+    .total_container h3 {
         display: none;
     }
     .year {
@@ -506,7 +503,7 @@ select {
         padding: 0 20px;
         text-align: center;
     }
-    .z_time_begin_container > form {
+    .z_time_begin_container>form {
         flex-direction: column;
     }
     .z_time_list {
@@ -519,7 +516,7 @@ select {
         margin-left: 10px;
     }
     .c_button_section {
-        padding:0 30px;
+        padding: 0 30px;
         /* justify-content: space-between; */
     }
     .time {
@@ -530,6 +527,10 @@ select {
     }
     .c-dropdown {
         height: 45px;
+    }
+    .c-dropdown img {
+        height: 30px;
+        width: 30px;
     }
     .c-dropdown_container>span {
         height: 45px;
@@ -558,7 +559,8 @@ select {
     }
     .container-form {
         padding: 0 20px;
-    }.container-time {
+    }
+    .container-time {
         padding: 0 20px;
     }
     .c-minder-wrap {
