@@ -5,32 +5,32 @@
     font-family: 'Josefin Sans', sans-serif;
     font-family: 'Noto Sans TC', sans-serif;
 }
-.S-lg-d-none{
+
+.S-lg-d-none {
     display: none;
 }
 
 
 /* water-color-yellow */
-.water-color-yellow{
+
+.water-color-yellow {
     margin: 30px 0;
     text-align: center;
     font-size: 24px;
     font-weight: 900;
     background: url(../imgs/watercolor.svg) 53% 10px / 10% no-repeat;
 }
+
+
 /* water-color-blue */
-.water-color-blue{
+
+.water-color-blue {
     margin: 30px 0;
     text-align: center;
     font-size: 24px;
     font-weight: 900;
     background: url(../imgs/watercolor-blue.svg) 53% 10px / 10% no-repeat;
 }
-
-
-
-
-
 
 .nav-log-out {
     margin: auto;
@@ -119,15 +119,8 @@
 /* 以上是nav ----------------------------*/
 
 
-
-
-
-
-
-
-
-
 /* -----------------單一物件的內容------------------ */
+
 .container {
     margin: auto;
     width: 1280px;
@@ -158,9 +151,11 @@
     /* justify-content:flex-end; */
     align-items: center;
 }
-.S-lg-icons{
+
+.S-lg-icons {
     display: flex;
 }
+
 .S-lg-viewer i {
     margin-right: 10px;
     font-size: 16px;
@@ -190,7 +185,9 @@
     /* right: 6%; */
 }
 
+
 /* -----------------單一物件的照片區塊------------------ */
+
 .S-product-img {
     width: 100%;
     height: 600px;
@@ -239,21 +236,21 @@
     justify-content: space-between;
     align-items: center;
 }
-.S-product-info-left h1{
+
+.S-product-info-left h1 {
     padding: 15px 0;
     /* font-size: 32px; */
     color: #0E2E3D;
 }
-.S-product-info-left p{
+
+.S-product-info-left p {
     padding: 5px 0;
     color: #000;
 }
-.S-product-info-left p i{
+
+.S-product-info-left p i {
     margin-right: 10px;
 }
-
-
-
 
 .S-product-info-right {
     display: flex;
@@ -280,7 +277,10 @@
     margin: 10px 0;
 }
 
+
 /* -----------------單一物件的下拉式選單--------------- */
+
+
 /* S-menu */
 
 .S-menu-wrap {
@@ -308,6 +308,7 @@
     background-color: #F1EDEA;
 }
 
+
 /* .S-menu-title {
     margin: 30px 0;
     text-align: center;
@@ -316,11 +317,10 @@
     background: url(../imgs/watercolor.svg) 53% 10px / 10% no-repeat;
 } */
 
-
 .S-menu-icon-wrap {
     display: flex;
     justify-content: center;
- }
+}
 
 .S-menu-icon {
     width: 80%;
@@ -345,14 +345,16 @@
     padding: 0 110px;
 }
 
-
-.S-lg-card-wrap-top{
+.S-lg-card-wrap-top {
     width: 1280px;
     margin: auto;
     display: flex;
 }
+
+
 /* --------------lg-card 卡片-------------------------------- */
-.S-lg-card-wrap{
+
+.S-lg-card-wrap {
     padding: 0 10px;
     width: 487px;
     height: 447px;
@@ -360,7 +362,8 @@
     position: relative;
     /* border: 1px solid blue; */
 }
-.S-lg-card-wrap .S-lg-share{
+
+.S-lg-card-wrap .S-lg-share {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -374,10 +377,12 @@
     top: 3%;
     right: 5%;
 }
-.S-lg-card-wrap .S-lg-share i{
+
+.S-lg-card-wrap .S-lg-share i {
     font-size: 1.2em;
 }
-.S-lg-card-wrap .S-lg-like{
+
+.S-lg-card-wrap .S-lg-like {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -390,51 +395,58 @@
     top: 3%;
     right: 20%;
 }
-.S-lg-card-wrap .S-lg-like svg{
+
+.S-lg-card-wrap .S-lg-like svg {
     width: 30px;
     height: 30px;
     fill: #0E2E3D;
 }
 
-
-.S-lg-card{
+.S-lg-card {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     /* border: 1px solid red; */
 }
-.S-lg-card-img{
+
+.S-lg-card-img {
     width: 100%;
     height: 100%;
-    background: url(../imgs/bedroom-6778193_1920.jpg) 70% center/ cover ;
+    background: url(../imgs/bedroom-6778193_1920.jpg) 70% center/ cover;
 }
-.S-lg-card-info{
+
+.S-lg-card-info {
     padding: 10px 20px;
     /* border: 1px solid rgb(45, 95, 112); */
     background-color: #F1EDEA;
     margin: 0;
 }
-.S-lg-card-info h4{
+
+.S-lg-card-info h4 {
     height: 1em;
     font-size: 12px;
 }
-.S-lg-card-info h4 span{
+
+.S-lg-card-info h4 span {
     font-size: 16px;
     font-weight: 900;
     padding-right: 20px;
 }
-.S-lg-card-info-2{
+
+.S-lg-card-info-2 {
     margin-top: 10px;
     height: 2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.S-lg-card-info p{
+
+.S-lg-card-info p {
     font-size: .8em;
 }
-.S-lg-card-info h3{
+
+.S-lg-card-info h3 {
     display: inline;
 }
 
@@ -539,17 +551,15 @@
 
 /* 手機版 小於375 */
 
-@media screen and (max-width:376px){
-
-    .S-xs-d-block{
-        display:block;
+@media screen and (max-width:376px) {
+    .S-xs-d-block {
+        display: block;
     }
-    .S-xs-d-none{
-        display:none;
+    .S-xs-d-none {
+        display: none;
     }
-
     /* water-color-yellow */
-    .water-color-yellow{
+    .water-color-yellow {
         margin: 30px 0 0 0;
         text-align: center;
         font-size: 24px;
@@ -557,17 +567,13 @@
         background: url(../imgs/watercolor.svg) 60% 12px / 30% no-repeat;
     }
     /* water-color-blue */
-    .water-color-blue{
+    .water-color-blue {
         margin: 30px 0 0 0;
         text-align: center;
         font-size: 24px;
         font-weight: 900;
         background: url(../imgs/watercolor-blue.svg) 60% 12px / 30% no-repeat;
     }
-    
-    
-
-
     /* ----------- nav ------------------------------------------ */
     .nav-log-out {
         margin: auto;
@@ -582,34 +588,24 @@
         top: 0;
         left: 0;
     }
-    
     .nav-log-out a {
         display: none;
     }
-    
     .nav-log-out div {
         width: 33.3%;
         display: flex;
         justify-content: space-between;
     }
-    
     .nav-log-out div:nth-child(2) {
         justify-content: center;
     }
-    
     .nav-log-out a img {
         width: 100%;
         /* height: 81px; */
     }
-    
-    
-    
     /* 以上是nav ----------------------------*/
-
-
-
     /* -----------------單一物件的內容------------------ */
-    body{
+    body {
         min-height: 2200px;
     }
     .container {
@@ -618,7 +614,6 @@
         padding: 0;
         min-height: 1000px;
     }
-
     .S-viewer-wrap {
         width: 100%;
         height: 50px;
@@ -629,28 +624,25 @@
         /* background-color: #fca; */
         position: relative;
     }
-
     .S-lg-viewer-g {
         display: flex;
-        justify-content:space-between;
+        justify-content: space-between;
         align-items: center;
         color: #0E2E3D;
         fill: #0E2E3D;
     }
-
     .S-lg-viewer {
         display: flex;
         /* justify-content:flex-end; */
         align-items: center;
     }
-    .S-lg-icons{
+    .S-lg-icons {
         display: flex;
     }
     .S-lg-viewer i {
         margin-right: 10px;
         font-size: 14.4px;
     }
-
     .S-viewer-wrap .S-lg-share {
         font-size: 14.4px;
         /* margin: 0 20px; */
@@ -660,18 +652,15 @@
         /* padding: 10px; */
         border-radius: 50%;
     }
-
     .S-viewer-wrap .S-lg-like {
         display: flex;
         background-color: #F1EDEA;
         padding: 10px;
         border-radius: 50%;
     }
-
     .S-viewer-wrap .S-lg-like svg {
         width: 14.4px;
     }
-
     /* -----------------------------------單一物件的照片區塊------------------ */
     .S-product-img {
         width: 100%;
@@ -679,18 +668,15 @@
         /* border: 1px solid blue; */
         display: flex;
     }
-
     .S-product-img-left {
         width: 100%;
         /* height: 820px; */
         /* border: 1px solid green; */
         background: url(../imgs/spacejoy-sh6Aj176NAQ-unsplash.jpg)center center/cover no-repeat;
     }
-
     .S-product-img-right {
         display: none;
     }
-
     .S-product-img-right-up {
         margin-bottom: 16px;
         width: 100%;
@@ -698,18 +684,13 @@
         /* border: 1px solid purple; */
         background: url(../imgs/spacejoy-sh6Aj176NAQ-unsplash.jpg)center center/cover no-repeat;
     }
-
     .S-product-img-right-down {
         width: 100%;
         height: 50%;
         /* border: 1px solid purple; */
         background: url(../imgs/spacejoy-sh6Aj176NAQ-unsplash.jpg)center center/cover no-repeat;
     }
-
-
-
     /* -----------------單一物件的資訊info------------------ */
-
     .S-product-info {
         margin-top: 30px;
         width: 100%;
@@ -719,28 +700,26 @@
         /* justify-content: space-between; */
         /* align-items: center; */
     }
-    .S-product-info-left h1{
+    .S-product-info-left h1 {
         font-size: 24px;
         padding: 10px 0;
         /* font-size: 32px; */
         color: #0E2E3D;
     }
-    .S-product-info-left h1.S-product-name{
+    .S-product-info-left h1.S-product-name {
         font-size: 20px;
     }
-    .S-product-info-left p{
+    .S-product-info-left p {
         font-size: 16px;
         padding: 5px 0;
         color: #0E2E3D;
-
     }
     .S-product-info-right {
         margin-top: 30px;
         display: flex;
-        flex-direction:row;
+        flex-direction: row;
         justify-content: space-between;
     }
-
     .S-btn-order {
         font-weight: 900;
         font-size: 20px;
@@ -748,10 +727,10 @@
         width: 50%;
         background-color: #FEAC00;
         border: transparent;
-        margin: 10px 5px;
+        margin: 0px 0px;
+        margin-right: 10px;
         padding: 10px 30px;
     }
-
     .S-btn-conect {
         font-weight: 900;
         font-size: 20px;
@@ -759,9 +738,8 @@
         width: 50%;
         background-color: #F1EDEA;
         border: transparent;
-        margin: 10px 5px;
+        margin: 0px 0px;
     }
-
     /* 小標題*/
     /* .S-menu-title {
         margin: 30px 0 0 0;
@@ -770,9 +748,8 @@
         font-weight: 900;
         background: url(../imgs/watercolor.svg) 60% 12px / 30% no-repeat;
     } */
-
     /* 下拉式選單 */
-    .S-xs-menu-wrap{
+    .S-xs-menu-wrap {
         font-weight: 900;
         width: 100%;
         background-color: #FEAC00;
@@ -781,14 +758,13 @@
         justify-content: space-between;
         padding: 10px 8px;
     }
-    .S-xs-menu{
+    .S-xs-menu {
         display: flex;
         /* align-items: center; */
         font-size: 20px;
         font-weight: 900;
-
     }
-    .S-xs-menu-wrap i{
+    .S-xs-menu-wrap i {
         margin-top: 4px;
         font-size: 1.2em;
     }
@@ -802,45 +778,36 @@
         text-align: center;
         font-size: 12px;
     }
-    
     .S-menu-icon i {
         margin: 10px 20px;
         font-size: 20px;
     }
-    
     .S-menu-info {
         margin-top: 30px;
         margin-bottom: 80px;
         line-height: 2em;
         padding: 0 0px;
     }
-    .S-menu-info a{
+    .S-menu-info a {
         text-decoration: none;
         display: flex;
         justify-content: flex-end;
         padding: 0 10px;
         color: #0E2E3D;
     }
-
-
-
     /* --------------xs-card 卡片輪播牆-------------------------------- */
-
-    .S-xs-train-wrap{
+    .S-xs-train-wrap {
         /* border: 1px solid #0E2E3D; */
         width: 100%;
         overflow: hidden;
     }
-    .S-xs-train{
+    .S-xs-train {
         transform: translateX(30px);
         width: 300%;
         display: flex;
     }
-
-
     /* --------------xs-card 卡片-------------------------------- */
-   
-    .S-xs-card-wrap{
+    .S-xs-card-wrap {
         margin-top: 30px;
         padding: 5px;
         width: 250px;
@@ -849,7 +816,7 @@
         position: relative;
         /* border: 1px solid blue; */
     }
-    .S-xs-share{
+    .S-xs-share {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -863,10 +830,10 @@
         top: 5%;
         right: 5%;
     }
-    .S-xs-share i{
+    .S-xs-share i {
         font-size: 1.2em;
     }
-    .S-xs-like{
+    .S-xs-like {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -880,92 +847,63 @@
         top: 5%;
         right: 25%;
     }
-    .S-xs-like svg{
+    .S-xs-like svg {
         width: 25px;
         height: 25px;
         fill: #0E2E3D;
     }
-    
-    
-    .S-xs-card{
+    .S-xs-card {
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: column;
         /* border: 1px solid red; */
     }
-    .S-xs-card-img{
+    .S-xs-card-img {
         width: 100%;
         height: 100%;
-        background: url(../imgs/bedroom-6778193_1920.jpg) 70% center/ cover ;
+        background: url(../imgs/bedroom-6778193_1920.jpg) 70% center/ cover;
     }
-    .S-xs-card-info{
+    .S-xs-card-info {
         padding: 10px 20px;
         /* border: 1px solid rgb(45, 95, 112); */
         background-color: #F1EDEA;
         margin: 0;
     }
-    .S-xs-card-info h4{
+    .S-xs-card-info h4 {
         height: 1em;
         font-size: 12px;
     }
-    .S-xs-card-info h4 span{
+    .S-xs-card-info h4 span {
         font-size: 16px;
         font-weight: 900;
         padding-right: 10px;
     }
-    .S-xs-card-info-2{
+    .S-xs-card-info-2 {
         margin-top: 10px;
         height: 2em;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .S-xs-card-info p{
+    .S-xs-card-info p {
         font-size: .8em;
     }
-    .S-xs-card-info h3{
+    .S-xs-card-info h3 {
         display: inline;
     }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-/* 以下是footer-------------------------------- */
-.footer-fake{
-    padding: 30px;
-    font-size: 50px;
-    text-align: center;
-    margin-top: 80px;
-    width: 100%;
-    height: 500px;
-    background-color: #ccc;
-}
-.footer {
-    display: none;
-}
-/* footer 結束---------------------------------- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    /* 以下是footer-------------------------------- */
+    .footer-fake {
+        padding: 30px;
+        font-size: 50px;
+        text-align: center;
+        margin-top: 80px;
+        width: 100%;
+        height: 500px;
+        background-color: #ccc;
+    }
+    .footer {
+        display: none;
+    }
+    /* footer 結束---------------------------------- */
 }

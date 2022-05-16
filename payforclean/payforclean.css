@@ -1,73 +1,98 @@
 * {
     margin: 0;
 }
+
 .display-n {
     display: none;
 }
+
 .testborder {
     border: 1px solid green;
 }
 
-h1,h2,h3,p,span {
+h1,
+h2,
+h3,
+p,
+span {
     margin: 0;
     color: #0E2E3D;
 }
+
 .bold {
     font-weight: bold;
 }
+
 h1 {
     font-weight: normal;
     font-size: 48px;
 }
+
 h2 {
     font-weight: normal;
     font-size: 32px;
 }
+
 h3 {
     font-weight: normal;
     font-size: 24px;
 }
+
 p {
     font-size: 16px;
 }
+
 span {
     font-size: 16px;
 }
-a, a:hover, a:visited, a:link, a:active {
+
+a,
+a:hover,
+a:visited,
+a:link,
+a:active {
     color: #0E2E3D;
-    text-decoration:none;
+    text-decoration: none;
     outline: none;
 }
 
 .small {
     font-size: 12px;
 }
+
 .slogan {
     font-size: 128px;
 }
+
 .time {
     font-size: 48px;
 }
+
 .alert {
     color: red;
 }
+
 ul {
     list-style-type: none;
 }
+
 button {
     cursor: pointer;
     border: none;
 }
-input[type=text]  {
+
+input[type=text] {
     margin: 0;
     padding: 0;
     height: 60px;
     border: none;
     /* text-indent: 15px; */
 }
+
 input[type=checkbox] {
     display: none;
 }
+
 input[type=checkbox]+span {
     cursor: pointer;
     display: inline-block;
@@ -76,6 +101,7 @@ input[type=checkbox]+span {
     background: url(../imgs/unchecked.svg) no-repeat left top;
     user-select: none;
 }
+
 input[type=checkbox]:checked+span {
     display: inline-block;
     padding-left: 30px;
@@ -87,22 +113,24 @@ input[type=checkbox]:checked+span {
     width: 180px;
     height: 60px;
     background-color: #FEAC00;
-
 }
-.z_button_correct>p,.z_button_cancel>p {
+
+.z_button_correct>p,
+.z_button_cancel>p {
     font-size: 24px;
     font-weight: bold;
 }
+
 .z_button_cancel {
     width: 180px;
     height: 60px;
     background-color: #F1EDEA;
-
 }
 
 .z_d_flex {
     display: flex;
 }
+
 .z_justify-content_center {
     justify-content: center;
 }
@@ -111,6 +139,7 @@ input[type=checkbox]:checked+span {
     text-align: center;
     flex-grow: 1;
 }
+
 .z_bank_name {
     width: 100%;
     text-align: center;
@@ -127,9 +156,10 @@ input[type=checkbox]:checked+span {
     border-radius: 50%;
     background: #FEAC00;
     left: 50%;
-    transform:translateX(-50%);
+    transform: translateX(-50%);
     margin-top: 30px;
 }
+
 .z_radio {
     position: relative;
     width: 30px;
@@ -137,7 +167,7 @@ input[type=checkbox]:checked+span {
     border-radius: 50%;
     background: #b1b1b1;
     left: 50%;
-    transform:translateX(-50%);
+    transform: translateX(-50%);
     margin-top: 30px;
 }
 
@@ -148,100 +178,117 @@ input[type=checkbox]:checked+span {
     bottom: 0;
     margin: auto;
 }
+
 .z_margin-center {
     left: 0;
     right: 0;
     margin: auto;
 }
+
 body {
     margin: 0;
     background-color: #f4f4f4;
 }
+
 .z_section {
     margin-top: 160px;
     margin-bottom: 45px;
 }
+
 .z_paycontainer {
     margin: auto;
     max-width: 1280px;
     padding: 0 25px;
 }
+
 .z_input_container {
     flex-grow: 1;
 }
+
 .z_input_medium_container {
     display: flex;
     justify-content: space-between;
     flex-grow: 1;
 }
-.z_input_medium_container input[type=text]{
+
+.z_input_medium_container input[type=text] {
     width: 100%;
     max-width: 255px;
 }
+
 .z_input_small_container {
     display: flex;
     justify-content: space-between;
     flex-grow: 1;
 }
-.z_input_small_container  input[type=text]{
+
+.z_input_small_container input[type=text] {
     width: 100%;
     max-width: 120px;
 }
-.z_input_container input[type=text]{
+
+.z_input_container input[type=text] {
     width: 100%;
 }
+
 .z_progress {
     z-index: -1;
     position: relative;
     height: 100px;
     margin-bottom: 50px;
 }
+
 .z_progress_bar {
     z-index: -2;
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color:#b1b1b1;
+    background-color: #b1b1b1;
     bottom: 22px;
 }
+
 .z_progress_bar_step1 {
     z-index: -1;
     position: absolute;
     width: 10%;
     height: 1px;
-    background-color:#ffae00;
+    background-color: #ffae00;
     bottom: 22px;
 }
+
 .z_progress_bar_step2 {
     z-index: -1;
     position: absolute;
     width: 30%;
     height: 1px;
-    background-color:#ffae00;
+    background-color: #ffae00;
     bottom: 22px;
 }
+
 .z_progress_bar_step3 {
     z-index: -1;
     position: absolute;
     width: 50%;
     height: 1px;
-    background-color:#ffae00;
+    background-color: #ffae00;
     bottom: 22px;
 }
+
 .z_progress_bar_step4 {
     z-index: -1;
     position: absolute;
     width: 70%;
     height: 1px;
-    background-color:#ffae00;
+    background-color: #ffae00;
     bottom: 22px;
 }
+
 .z_progress_bar_step5 {
     z-index: -1;
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color:#ffae00;
+    background-color: #ffae00;
     bottom: 22px;
 }
 
@@ -256,36 +303,47 @@ body {
     display: flex;
     margin-bottom: 30px;
 }
+
 .z_payforcleantitle {
     text-align: center;
 }
+
 .z_paytitle_detail {
     margin-left: 50px;
 }
+
 .z_paydata_container {
     max-width: 730px;
     left: 0;
     right: 0;
     margin: 0 auto;
 }
+
+.z_title_data_container {
+    margin-left: 80px;
+}
+
 .z_chebox_intput {
     width: 100%;
     display: flex;
     align-items: center;
     height: 60px;
 }
+
 .z_text_intput {
     /* width: 100%; */
     display: flex;
     align-items: center;
     /* justify-content: space-between; */
 }
+
 .z_text_intput_last {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    margin: auto;
 }
+
 .z_check_container {
     height: 60px;
     background-color: #fff;
@@ -294,6 +352,7 @@ body {
     justify-content: center;
     flex-grow: 1;
 }
+
 .z_checkbox_container {
     width: 190px;
     height: 35px;
@@ -301,20 +360,25 @@ body {
     align-items: center;
     justify-content: space-between;
 }
+
 .z_checkbox_option_container {
     display: flex;
     align-items: center;
 }
+
 .z_checkbox_option {
     width: 65px;
     margin-right: 10px;
 }
+
 .z_input_medium {
     text-align: center;
 }
+
 .z_input_small {
     text-align: center;
 }
+
 .z_paycard_img {
     width: 110px;
     height: 30px;
@@ -323,15 +387,17 @@ body {
     margin: auto 0;
     margin-left: 20px;
 }
+
 .z_paycard_phone_img {
-    display: none;  
+    display: none;
     width: 110px;
     height: 30px;
     top: 0;
     bottom: 0;
     margin: auto auto;
-    margin-left: 20px; 
+    margin-left: 20px;
 }
+
 .z_creditcard_img {
     width: 45px;
     height: 30px;
@@ -341,18 +407,22 @@ body {
     margin-left: 20px;
     margin-right: 65px;
 }
+
 .z_creditcard_phone_img {
     display: none;
 }
+
 .z_payghost {
     width: 130px;
     /* height: 60px; */
     /* background-color: red; */
 }
+
 .z_paydropdown {
     flex-grow: 1;
     position: relative;
 }
+
 .z_paydropdown>button {
     width: 100%;
     height: 60px;
@@ -361,25 +431,30 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
 #bankListBtn span {
     opacity: 50%;
 }
+
 .banklist {
     width: 100%;
     background-color: #fff;
     position: absolute;
     text-align: center;
 }
+
 .z_pay_alert {
     height: 30px;
     margin-left: 75px;
     display: flex;
     align-items: center;
 }
+
 .z_payagree {
     /* display: flex; */
     margin-bottom: 30px;
 }
+
 .z_twobtn {
     max-width: 390px;
     margin-top: 30px;
@@ -389,84 +464,104 @@ body {
     display: flex;
     margin: auto;
 }
+
 .z_pay_detail_title {
     margin-bottom: 40px;
     text-align: center;
     font-weight: bold;
 }
+
 .z_pay_success_container {
     margin-top: 255px;
     margin-bottom: 340px;
     text-align: center;
 }
+
 .z_pay_success_title {
     font-weight: bold;
     margin-bottom: 30px;
 }
+
 .z_pay_success_tip {
     font-weight: bold;
     margin-bottom: 30px;
     font-size: 24px;
 }
+
 .z_pay_detail_container {
     display: flex;
     margin-bottom: 50px;
 }
+
 .z_people_info_container {
     order: 0;
     margin-top: 40px;
 }
+
 .z_pay_info_container {
     order: 0;
     margin-top: 40px;
 }
+
 .z_detail_info_container {
     order: 0;
     margin-top: 40px;
 }
+
 .z_detail_icon_items_center {
     display: flex;
     align-items: center;
 }
+
 .z_detail_mb {
     margin-bottom: 5px;
 }
+
 .z_pay_detail_img {
     width: 50%;
 }
-.z_pay_detail_img img{
+
+.z_pay_detail_img img {
     width: 100%;
 }
+
 .z_pay_detail_text {
     margin-left: 75px;
 }
+
 .z_detail_items_name {
     font-size: 24px;
     font-weight: bold;
 }
+
 .z_detail_cost {
     font-size: 24px;
     display: inline;
     font-weight: bold;
 }
+
 .z_detail_cost_phone {
     display: none;
 }
+
 .z_pay_detail_text span {
     color: #0E2E3D;
 }
+
 .z_icon_type_mr {
     margin-right: 50px;
 }
+
 .downArrow {
     transform: rotateX(180deg);
 }
+
 .z_maxbtn {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
+
 
 /* @media screen and (max-width:580px){
     .z_progress_bar {
@@ -514,20 +609,24 @@ body {
     }
 
 } */
-@media screen and (max-width:376px) {
 
-    input[type=text]  {
+@media screen and (max-width:376px) {
+    input[type=text] {
         margin: 0;
         padding: 0;
         height: 45px;
         border: none;
         /* text-indent: 15px; */
     }
+    .z_title_data_container {
+        margin-left: 0px;
+    }
     .z_section {
         margin-top: 110px;
         margin-bottom: 40px;
     }
-    .z_button_correct>p,.z_button_cancel>p {
+    .z_button_correct>p,
+    .z_button_cancel>p {
         font-size: 20px;
         font-weight: bold;
     }
@@ -557,7 +656,9 @@ body {
     .z_check_container {
         height: 45px;
     }
-    .z_chebox_intput,.z_text_intput,.z_text_intput_last {
+    .z_chebox_intput,
+    .z_text_intput,
+    .z_text_intput_last {
         width: 100%;
     }
     .z_chebox_intput>p {
@@ -585,15 +686,13 @@ body {
     }
     .z_paycard_img {
         display: none;
-
     }
     .z_paycard_phone_img {
-        display: block;  
+        display: block;
         height: 30px;
-
         margin-left: 0;
         margin: 0 auto;
-        margin-bottom: 30px; 
+        margin-bottom: 30px;
     }
     .z_paycard_phone_img img {
         width: 110px;
@@ -606,9 +705,8 @@ body {
         height: 30px;
         margin-left: 0;
         margin: 0 auto;
-        margin-bottom: 30px; 
+        margin-bottom: 30px;
         text-align: center;
-
     }
     .z_creditcard_phone_img img {
         width: 45px;
@@ -636,7 +734,8 @@ body {
     .z_twobtn {
         width: 335px;
     }
-    .z_button_cancel,.z_button_correct {
+    .z_button_cancel,
+    .z_button_correct {
         width: 160px;
     }
     .z_pay_detail_container {

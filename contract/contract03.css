@@ -10,7 +10,6 @@ body {
     /* background-color: blue; */
 }
 
-
 ul {
     list-style-type: none;
 }
@@ -104,7 +103,9 @@ ul {
     justify-content: space-around;
 }
 
+
 /*---------step-bar2 --------*/
+
 .c_step-bar2 {
     width: 100%;
     max-width: 1280px;
@@ -141,7 +142,6 @@ ul {
     width: 100%;
     padding: 0 25px;
     margin: auto;
-
 }
 
 .c_content_box {
@@ -162,7 +162,6 @@ ul {
 
 .c_content_box::-webkit-scrollbar {
     background: #E0F1FC;
-
 }
 
 .c_content_box::-webkit-scrollbar-thumb {
@@ -173,18 +172,16 @@ ul {
     background: hsla(211, 45%, 56%, 0.766)
 }
 
+
 /* --------------confirm bar----------------- */
+
 .c_confirm_bar {
     max-width: 1280px;
     width: 100%;
     padding: 0 25px;
     margin: 30px auto;
     text-align: center;
-
-
 }
-
-
 
 input[type=text] {
     margin: 0;
@@ -222,10 +219,8 @@ input[type=checkbox]:checked+span {
     background-image: url(../imgs/checked.svg);
 }
 
+
 /* ---------------------------button--------------------- */
-
-
-
 
 .pc-button-FEAC00-180 {
     width: 180px;
@@ -250,7 +245,7 @@ input[type=checkbox]:checked+span {
 .c_button_section {
     display: flex;
     justify-content: center;
-    margin: 90px 0 60px 0;
+    margin: 60px 0 60px 0;
 }
 
 .c_button_right {
@@ -265,26 +260,20 @@ input[type=checkbox]:checked+span {
     .z_progress {
         display: none;
     }
-
     .c_progress2 {
         display: none;
-        
     }
-
     .c_step-bar2 p {
         text-align: center;
         padding: 10px 25px;
     }
-
     .c_scroll-object {
         word-break: break-all;
     }
-
     .c_content_box {
         width: auto;
     }
-    .c_container_stepbar{
+    .c_container_stepbar {
         margin-top: 110px;
     }
-
 }
