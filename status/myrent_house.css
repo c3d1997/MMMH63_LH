@@ -157,6 +157,7 @@ ul.pagination li a:hover{
     background: #F1EDEA;
     cursor: pointer;
     text-align: left;
+    display: none;
 }
 
 .panel {
@@ -166,17 +167,7 @@ ul.pagination li a:hover{
     background: #F1EDEA;
     border: solid 1px #000000;
     display: none;
-    font-family: 'Arial';
 }
-
-.flip{
-    display: none;
-    /* border: 1px solid red; */
-}
-.panel{
-    display: none;
-}
-
 
 
 @media screen and (max-width:376px){
@@ -185,9 +176,9 @@ ul.pagination li a:hover{
         align-items: center;
         justify-content: space-between;
         margin-top: 5px;
+        
     }
     .panel{
-
         /* 一樣display none */
         /* display: flex; */
         flex-direction: column;
