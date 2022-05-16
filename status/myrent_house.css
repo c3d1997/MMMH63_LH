@@ -68,7 +68,6 @@
 .c-table {
     max-width: 1053px;
     width: 100%;
-    border:1px solid red;
 }
 
 .content-table {
@@ -150,20 +149,54 @@ ul.pagination li a:hover{
 
 
 /* -----------------------手機板的下拉------- */
-.dropdown_container{
+
+.flip {
+    margin: 0px;
+    padding: 10px;
+    text-align: left;
+    background: #F1EDEA;
+    cursor: pointer;
+    text-align: left;
+}
+
+.panel {
+    margin: 0px;
+    padding: 15px;
+    text-align: center;
+    background: #F1EDEA;
+    border: solid 1px #000000;
+    display: none;
+    font-family: 'Arial';
+}
+
+.flip{
     display: none;
     /* border: 1px solid red; */
 }
+.panel{
+    display: none;
+}
+
+
 
 @media screen and (max-width:376px){
-    .dropdown_container{
+    .flip{
         display: flex;
-        margin-top: 10px;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 5px;
     }
-
+    .panel{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    .panel a{
+        color: #5D8DC1;
+        text-decoration: none;
+    }
 }
 
 
 
 /* --------------------手機板的下拉------- */
-/* https://www.youtube.com/watch?v=RvpYnUZRquw */
