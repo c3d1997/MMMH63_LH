@@ -106,7 +106,7 @@
     <img src="../imgs/down-arrow.svg" alt="">
 
 </div>
-<div class="panel">
+<div class="panel" hidden>
     <p>合約期限一年</p>
     <p>合約內容 : <a href="">點擊查看</a></p>
     <p>繳費期限:2022/06/01</p>
@@ -270,14 +270,24 @@
 
     <script>
 
+        // $(function () {
+        //     $(".flip").click(function () {
+        //         $(".panel").slideToggle("slow");
+        //         $(".xs1").toggle();
+        //         $(".xs2").toggle();
+        //     });
+        // });
+
+
+        // 改寫
         $(function () {
             $(".flip").click(function () {
-                $(".panel").slideToggle("slow");
-                $(".xs1").toggle();
-                $(".xs2").toggle();
+                console.log((this));
+                $(this).next().slideToggle("slow");
+                // $(".xs1").toggle();
+                // $(".xs2").toggle();
             });
         });
-
     </script>
 
 
