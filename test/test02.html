@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flip {
+            margin: 0px;
+            padding: 10px;
+            text-align: center;
+            background: #F1EDEA;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .panel {
+            margin: 0px;
+            padding: 15px;
+            text-align: left;
+            background: #F1EDEA;
+            border: solid 1px #000000;
+            display: none;
+            font-family: 'Arial';
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flip">
+        <p>士林夜市近士林劍潭捷運小套房</p>
+
+    </div>
+    <div class="panel">
+        <p>合約期限一年</p>
+        <p>合約內容 : <a href="">點擊查看</a></p>
+        <p>繳費期限:2022/06/01</p>
+    </div>
+
+    <script src="../js/jquery-3.6.0.js"></script>
+
+    <script>
+
+        $(function () {
+            $(".flip").click(function () {
+                $(".panel").slideToggle("slow");
+                $(".xs1").toggle();
+                $(".xs2").toggle();
+            });
+        });
+
+    </script>
+
+
+
+
+</body>
+
+</html>
