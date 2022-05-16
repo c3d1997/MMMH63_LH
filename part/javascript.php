@@ -1,4 +1,4 @@
-    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="js/jquery-3.6.0.js"></script>
     <script>
         $("#z_bankListBtn").click(function(){
             $(this).next().toggle()

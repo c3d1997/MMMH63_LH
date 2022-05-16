@@ -464,7 +464,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
+}
+.card_area,.bank_area {
+    display: none;
 }
 
 /* @media screen and (max-width:580px){
