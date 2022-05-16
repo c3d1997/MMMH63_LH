@@ -1,0 +1,31 @@
+.c-content-mobile{
+    width: 100%;
+    margin: 140px 0 60px 0;
+    text-align: center;
+}
+
+.c-content{
+    
+    width: 100%;
+    border: 2px solid black;
+    align-items: center;
+    display: flex;
+    min-height: 400px;
+    margin: 10px auto 20px;
+}
+
+.text{
+    margin: 5px auto 5px;
+    width: 100%;
+    min-height: 354px;
+    text-align: left;
+}
+
+.text p:nth-child(1){
+    margin: 20px auto 20px;
+    text-align: center;
+}
+.c_button_section{
+    margin-bottom: 60px;
+    text-align: center;
+}
