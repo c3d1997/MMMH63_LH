@@ -99,11 +99,10 @@
                 </div>
             </div>
         </div>
-
-
-
-
         </div>
+
+
+        <!-- 大的切換button -->
         <div class="blueBg">
             <div class="box signin S-d-none">
                 <!-- <h2>已經是會員?</h2> -->
@@ -116,6 +115,9 @@
                 <button class="signupBtn S-d-none">註冊</button>
             </div>
         </div>
+
+
+
         <!-- 登入表格 -->
 
         <div class="formBx">
@@ -130,7 +132,7 @@
                     </div>
                     
                 </div>
-                <div class="alert" style="margin-left: 50px;">*帳號或密碼錯誤 </div>
+                <div class="alert" style="margin-left: 50px;">!帳號或密碼錯誤 </div>
                     <!-- 標題+輸入框 -->
                 <div class="input_option">
                     <p class="option_name">密碼</p>
@@ -141,7 +143,13 @@
                     <a href="#" class="forgot">忘記密碼</a>
                 </form>
                 <button class="pc-button-FEAC00-180">登入</button>
+                <a href="#" class="font-color-blue">尚未註冊？點此註冊</a>
             </div>
+
+
+
+        <!-- 註冊表格 -->
+
 
             <div class="form signupForm S-d-none">
                 <form>
@@ -152,21 +160,21 @@
                                 <input type="text" name="" id="" placeholder="請輸入您的姓名">                
                         </div>
                     </div>
-                    <div class="alert">*姓名輸入格式錯誤 </div>
+                    <div class="alert">!姓名輸入格式錯誤 </div>
                     <div class="input_option">
                         <p class="option_name">手機/帳號</p>
                         <div class="fullinput_container ">
                                 <input type="text" name="" id="" placeholder="請輸入您的手機">                        
                         </div>
                     </div>
-                    <div class="alert">*手機格式錯誤 </div>
+                    <div class="alert">!手機格式錯誤 </div>
                     <div class="input_option">
                         <p class="option_name">電子郵件</p>
                         <div class="fullinput_container ">
                                 <input type="text" name="" id="" placeholder="請輸入您的信箱">                       
                         </div>
                     </div>
-                    <div class="alert">*郵件格式錯誤 </div>
+                    <div class="alert">!郵件格式錯誤 </div>
                     <div class="CAPTCHA-g">
                     <div class="input_option">
                         <p class="option_name mr-1word" style="margin-right: 30px;">驗證碼</p>
@@ -177,38 +185,49 @@
                         <!-- 驗證碼按鈕 -->
                         <button class="CAPTCHA-Btn S-d-none">寄送驗證碼</button>
                     </div>
-                    <div class="alert">*驗證碼輸入錯誤 </div>
+                    <div class="alert">!驗證碼輸入錯誤 </div>
                     <div class="input_option">
                         <p class="option_name" style="margin-right: 45px;">密碼</p>
                         <div class="fullinput_container ">
                                 <input type="text" name="" id="" placeholder="請輸入您的密碼">                        
                         </div>
                     </div>
-                    <div class="alert">*密碼格式錯誤 </div>
+                    <div class="alert">!密碼格式錯誤 </div>
                     <div class="input_option">
                         <p class="option_name">密碼確認</p>
                         <div class="fullinput_container ">
                                 <input type="text" name="" id="" placeholder="請再次輸入您的密碼">                     
                         </div>
                     </div>
-                    <div class="alert">*密碼與前一次不同 </div>
+                    <div class="alert">!密碼與前一次不同 </div>
 
 
 
-                    <div class="checkbox-info"><input name="checkbox" type="checkbox"style="width: 10%;">
-                        我同意 隱私條款 與 租客平台公約， 我已閱讀完 租賃法.</div>
-                        
+                    <div class="checkbox-info">
+                        <div class="c_confirm_bar">
+                        <label>
+                            <input type="checkbox" name="" id="">
+                            <span class="z_all-center">我同意<a href="#"> 隱私條款 </a>與<a href="#">租客平台公約</a>,我已閱讀完<a href="#">租賃法.</a></span>  
+                            </label>
+                        </div> 
                 </form>
-                <button class="pc-button-FEAC00-180">註冊</button>
             </div>
+            <button class="pc-button-FEAC00-180">註冊</button>
+            <p>您已經註冊了嗎？<a href="#">由此進入</a></p>
         </div>
     </div>
-
-    
 </div>
 
-<!-- 以下是footer---------------------------------------------  -->
-<div class="footer_container">
+
+
+
+
+
+
+
+
+   <!-- 以下是footer---------------------------------------------  -->
+   <div class="footer_container S-lg-d-none S-d-block">
     <div class="footer">
         <div class="container">
             <div class="footer-up">
@@ -273,6 +292,9 @@
 </div>
 
 <!-- FOOTER--------------------------------------------------- -->
+
+
+
 <!-- 
     <script>
         const signinBtn = document.querySelector('.signinBtn');

@@ -1,0 +1,169 @@
+
+
+
+/* 卡片加大 card biger  */
+.card-wrap.card-biger{
+    height: 450px;
+}
+.card-wrap.card-biger .input_option{
+    margin: 0px 0;
+}
+
+
+
+/*  正常大小 */
+
+.card-wrap {
+    position: relative;
+    height: 345px;
+    width: 502px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #0E2E3D;
+    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+}
+
+.card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* text-align: center; */
+    margin: auto;
+}
+
+.card-icon {
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.card h2 {
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+
+/* XXXXXXXx */
+
+.card-x {
+    width: 50px;
+    height: 50px;
+    background-color: #F1EDEA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: #0E2E3D;
+}
+
+.card-x i {
+    font-size: 40px;
+}
+
+
+.input_option{
+    margin: 20px 0;
+    width: 70%;
+    height: 100px;
+}
+
+
+
+.fullinput_container{
+    height: 100%;
+}
+
+
+.card-wrap p{
+    margin-bottom: 30px;
+}
+
+
+
+/* 電腦版短版按鈕 */
+
+button.pc-button-FEAC00-272 {
+    height: 60px;
+    width: 180px;
+    font-size: 24px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 376px) {
+
+
+
+    .card-wrap {
+        position: relative;
+        height: 378px;
+        width: 375px;
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #0E2E3D;
+        box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+        padding: 20px 0 10px;
+    }
+
+
+
+
+    /* XXXXXXXx */
+
+    .card-x {
+        margin: 10px;
+        width: 30px;
+        height: 30px;
+        
+    }
+
+    .card-x i {
+        font-size: 40px;
+    }
+
+
+    /* 電腦版短版按鈕 */
+
+    button.pc-button-FEAC00-272 {
+        height: 60px;
+        width: 70%;
+        font-size: 24px;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
