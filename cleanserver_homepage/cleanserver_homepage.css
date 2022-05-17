@@ -1,4 +1,5 @@
 .x-cleanserver {
+    margin: auto;
     width: 100%;
     max-width: 1920px;
     height: 1080px;
@@ -74,8 +75,10 @@
         height: 667px;
         background: url(../imgs/pillows-820149.jpg) no-repeat center/cover;
     }
-    .x-cleanserver .container {
+    .container {
         text-align: center;
+        width: 375px;
+        padding: 0px 0px;
     }
     .x-cleanserver-slogn {
         padding-top: 200px;

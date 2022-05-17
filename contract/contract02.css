@@ -6,7 +6,6 @@
     /* background-color: blue; */
 }
 
-
 ul {
     list-style-type: none;
 }
@@ -100,6 +99,7 @@ ul {
     justify-content: space-around;
 }
 
+
 /*---------step-bar2 --------*/
 
 .step-bar2 {
@@ -108,7 +108,6 @@ ul {
     margin: auto;
     padding: 25px 25px;
 }
-
 
 .step-bar2 p {
     width: 100%;
@@ -131,7 +130,9 @@ ul {
     background-color: #f2ae00;
 }
 
+
 /* --------section ready to upload imgs--------- */
+
 .c_container_upload {
     width: 100%;
     max-width: 1280px;
@@ -151,24 +152,20 @@ ul {
     height: 218px;
     border: 1px solid #0E2E3D;
     padding: 80px 50px;
-
 }
-
-
 
 .c_back_box {
     margin-left: 20px;
-
 }
 
 .c_upload_row_sample {
     width: 40%;
-    margin-top: 35px;
+    margin-top: 0px;
 }
 
 .c_sample_block {
     width: 506px;
-    height: 502px;
+    height: 483px;
     padding: 20px;
     justify-content: center;
     background-color: #F1EDEA;
@@ -195,6 +192,7 @@ ul {
 
 
 /* 點此上傳---------- */
+
 .c_upload_sign {
     width: 100%;
     padding: 0px 0px;
@@ -202,13 +200,11 @@ ul {
     display: flex;
     justify-content: center;
     align-items: baseline;
-
 }
 
 .c_upload_heretext {
     margin-left: 10px;
     color: #75BBE3;
-
 }
 
 a {
@@ -216,6 +212,7 @@ a {
     color: #75BBE3;
     font-family: 'Noto Sans TC', sans-serif;
 }
+
 
 /* --------- */
 
@@ -244,7 +241,6 @@ a {
     justify-content: center;
     margin: 30px 0 50px 0;
     flex-direction: row-reverse;
-    
 }
 
 .c_button_right {
@@ -255,30 +251,22 @@ a {
     margin-top: 60px;
 }
 
-
-
-
 @media screen and (max-width:376px) {
     .c_sample_block {
         display: none;
     }
-
     .c_upload_row {
         flex-direction: column;
     }
-
     .c_back_box {
         margin-left: 0px;
     }
-
     .c_button_right {
         margin-left: 0px;
     }
-
     .z_progress {
         display: none;
     }
-
     .progress2 {
         display: none;
     }
@@ -288,13 +276,12 @@ a {
     .c_step-bar2 p {
         text-align: center;
     }
-
-    .pc-button-FEAC00-180{
+    .pc-button-FEAC00-180 {
         width: 162.5px;
         height: 45px;
         font-size: 20px;
     }
-    .pc-button-F4F4F4-180{
+    .pc-button-F4F4F4-180 {
         width: 162.5px;
         height: 45px;
         font-size: 20px;
@@ -306,5 +293,4 @@ a {
     .step-bar2 {
         text-align: center;
     }
-
 }

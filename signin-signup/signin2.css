@@ -1,0 +1,389 @@
+
+.container-wrap{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: .5s;
+    background-color: #ccc ;
+}
+.container1{
+    position: relative;
+    width: 1080px;
+    height: 850px;
+    margin-top: 100px;
+    /* background-color: #fa0f; */
+
+}
+.InfoBx{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.InfoBx h2{
+    color: #fff;
+    padding: 10px 0;
+
+}
+.S-info-wrap{
+    width: 100%;
+    margin-top: 30px;
+}
+.InfoBx img{
+    width: 50px;
+    margin-right: 30px;
+}
+.S-info3 img{
+    width: 40px;
+}
+
+.InfoBx .S-info {
+    color: #fff;
+    z-index: 1;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    margin-left: 30px;
+}
+.S-info-word{
+    color: #fff;
+    width: 50%;
+}
+.S-info-word h3,.S-info-word p{
+    color: #fff;
+}
+
+.blueBg{
+    background: pink;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 850px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
+    /* padding: 60px 128px; */
+}
+.blueBg .box{
+    /* background: rgb(252, 252, 146); */
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* flex-direction: column; */
+}
+
+
+.blueBg .box button{
+    padding: 10px 20px;
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 32px;
+    padding: 60px 50px 0;
+    /* color: #0E2E3D; */
+    color: rgba(0, 0, 0, 0.2);
+    border: transparent;
+    background: transparent;
+}
+.blueBg .box button.S-blue{
+    color: #0E2E3D;
+}
+.InfoBx{
+    position: absolute;
+    z-index: 8888;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #5D8DC1;
+}
+
+
+.formBx{
+    position:absolute;
+    top: 0;
+    /* left: -50%; */
+    width: 50%;
+    height: 100%;
+    /* background-color: #5D8DC1; */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25); */
+    transition: .5s ease-in-out;
+    /* overflow: hidden; */
+}
+.formBx.active{
+    left: 50%;
+}
+body.active{
+    background: #0E2E3D;
+}
+.formBx .form{
+    /* padding: 20px; */
+    position: absolute;
+    left: 0;
+    width: 100%;
+    /* padding: 50px; */
+    transition: .5s;
+}
+.formBx .signinForm{
+    left: 100%;
+    transition-delay: 0.25s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formBx.active .signinForm{
+    left: -100%;
+    transition-delay: 0s;
+
+}
+
+.S-phone{
+    display: flex;
+    align-items: center;
+}
+.S-phone p{
+    width: 20%;
+}
+
+
+/* 註冊表格 */
+.formBx .signupForm{
+    top: 20%;
+    /* left: 15%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition-delay: 0s;
+
+}
+.formBx.active .signupForm{
+    left: 0;
+    transition-delay: 0.25s;
+
+}
+
+
+.formBx .form form{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.formBx .form form h3{
+    font-size: 32px;
+    /* color: #0E2E3D; */
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+.formBx .form form input{
+    width: 100%;
+    /* margin-bottom: 20px; */
+    /* padding: 10px; */
+    outline: none;
+    font-size: 16px;
+}
+.CAPTCHA-g{
+    display: flex;
+    align-items: center;
+}
+.formBx .form form input.CAPTCHA{
+    width: 65%;
+    margin-bottom: 20px;
+    /* padding: 10px; */
+    outline: none;
+    font-size: 16px;
+}
+.formBx .form form button{
+    font-weight: 900;
+    font-size: 20px;
+    width: 50%;
+    height: 60px;
+    padding: 6px;
+    margin-left: 10px;
+    background: #FEAC00;
+    border: none;
+    color: #0E2E3D;
+}
+.formBx .form form input[type="submit"]{
+    font-weight: 900;
+    color: #FEAC00;
+    border: none;
+    max-width: 100px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.formBx.active .signupForm input[type="submit"]{
+    font-weight: 900;
+    color: #FEAC00;
+
+}
+.checkbox-info{
+    display: flex;
+    /* width: 100%; */
+}
+.formBx .form .checkbox-info input{
+    width: 20%;
+}
+.formBx .form form .forgot{
+    padding: 10px 0;
+    text-align: right;
+    color: #0E2E3D;
+    text-decoration: none;
+}
+
+.input_option{
+    width: 100%;
+}
+
+.alert{
+    margin-left: 80px;
+}
+.checkbox-info input{
+    width: 10px;
+}
+.pc-button-FEAC00-180{
+    margin-top: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+@media screen and (max-width:376px) {
+
+/* ---------------------------註冊--------------------------- */
+
+    .container-wrap{
+        min-height: 0;
+        background-color: #F1EDEA ;
+        margin-top: 40px;
+    }
+    .container1{
+        max-width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+    }
+    .container1 .blueBg{
+        top: 0;
+        /* height: 500px; */
+        height: 100%;
+    }
+    
+    .formBx{
+        width: 100%;
+        top: 0;
+        box-shadow: none;
+    }
+
+    .formBx .signinForm{
+        left: 0%;
+    }
+
+
+
+    .blueBg{
+        background: #F1EDEA;
+        box-shadow: 0 5px 45px rgba(0, 0, 0, 0);
+    }
+    .blueBg .box{
+        position: absolute;
+        width: 100%;
+        /* height: 150px; */
+        /* bottom: 0; */
+    }
+
+    .signupForm{
+        margin-top: -40px;
+    }
+
+
+
+
+
+
+    .box.signin{
+        top: 0;
+    }
+    .formBx.active{
+        left: 0;
+        top: 150px;
+    }
+
+
+
+    /* ---------------------------- */
+    .S-d-none{
+        display: none;
+    }
+
+
+    /* 隱藏登入表格 */
+    /* .signinForm.S-d-none{
+        display: none;
+    } */
+
+
+    /* 隱藏註冊表格 */
+    .form.signupForm.S-d-none{
+        display: none;
+    }
+
+
+
+    
+    .show{
+        display: block;
+        
+    }
+    /* ----------------------------- */
+}
+
+
+
+
+
+
+
+
+
+/* ---------------------------登入--------------------------- */

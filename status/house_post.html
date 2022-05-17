@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fefe</title>
-    <link href="./fontawesome-free-6.0.0-web/css/all.css" rel="stylesheet">
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/nav-footer/nav-footer.css">
-    <link rel="stylesheet" href="/mycollection/in.css">
+    <link rel="stylesheet" href="../nav-footer/nav-footer.css">
+    <link rel="stylesheet" href="../button-fonts.css">
+    <link rel="stylesheet" href="house_post.css">
 </head>
 
 <body>
@@ -73,76 +72,127 @@
     <!-- 以上NAV--------------------------------------------------- -->
 
     <div class="container">
-       
-
-            <div class="n-world">
+            <div class="c-world">
 
                 <!-- 左邊選單開始 -->
-                <div class="n-mylist">
+                <div class="c-mylist">
                     <ul>
-                        <li class="n-listword"><a href="">會員資料</a></li>
-                        <li class="n-listword"><a href="">刊登物件</a></li>
-                        <li class="n-listword"><a href="">我的租屋</a> </li>
-                        <li class="n-listword"><a href="">我的收藏</a></li>
-                        <li class="n-listword"><a href="">我的優惠</a> </li>
-                        <li class="n-listword"><a href="">我的預約</a> </li>
-                        <li class="n-listword"><a href="">租屋契約</a></li>
-                        <li class="n-listword"><a href="">租金支付</a> </li>
-                        <li class="n-listword"><a href="">清潔服務</a> </li>
+                        <li class="c-list">
+                            <a href=""><h3>會員資料</h3></a></li>
+                        <li class="c-list"><a href=""><h3>刊登物件</h3></a></li>
+                        <li class="c-list"><a href=""><h3>我的租屋</h3></a> </li>
+                        <li class="c-list"><a href=""><h3>我的收藏</h3>
+                        </a></li>
+                        <li class="c-list"><a href=""><h3>我的優惠</h3></a> </li>
+                        <li class="c-list"><a href=""><h3>我的預約</h3></a> </li>
+                        <li class="c-list"><a href=""><h3>租屋契約</h3></a></li>
+                        <li class="c-list"><a href=""><h3>租金支付</h3></a> </li>
+                        <li class="c-list"><a href=""><h3>清潔服務</h3></a> </li>
                     </ul>
                 </div>
                 <!-- 左邊選單結束 -->
         
         
                 <!-- 右邊開始 -->
-                <div class="n-mytitle">
-        
-                    <!-- 右邊標題開始 -->
-                    <div class="n-title">
-                        <div class="n-titletitletitle">我的收藏</div>
+                <div class="c-mytitle">
+                    <h3>刊登物件</h3>
+
+<!-- --------------手機板的下拉--- -->
+
+<div class="flip">
+    <p>士林夜市近士林劍潭捷運小套房</p>
+    <img src="../imgs/down-arrow.svg" alt="">
+
+</div>
+<div class="panel" hidden>
+    <p>合約期限一年</p>
+    <p>房屋狀態 : <span>未出租</span></p>
+    <p>合約內容 : <a href="">點擊查看</a></p>
+    
+</div>
+
+
+<!-- 2 -->
+<div class="flip">
+    <p>士林夜市近士林劍潭捷運小套房</p>
+    <img src="../imgs/down-arrow.svg" alt="">
+
+</div>
+<div class="panel">
+    <p>合約期限一年</p>
+    <p>房屋狀態 : 已出租</p>
+    <p>合約內容 : <a href="">點擊查看</a></p>
+    
+</div>
+
+<!-- 3 -->
+<div class="flip">
+    <p>士林夜市近士林劍潭捷運小套房</p>
+    <img src="../imgs/down-arrow.svg" alt="">
+
+</div>
+<div class="panel">
+    <p>合約期限一年</p>
+    <p>房屋狀態 : 已出租</p>
+    <p>合約內容 : <a href="">點擊查看</a></p>
+</div>
+
+
+<!-----------------------手機板的下拉-------- -->
+
+                    <div class="c-table">
+                        <table class="content-table">
+                            <thead>
+                                <tr>
+                                    <th><p>物件名稱</p></th>
+                                    <th><p>合約期限</p></th>
+                                    <th><p>合約內容</p></th>
+                                    <th><p>房屋狀態</p></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><p>士林夜市近士林劍潭捷運小套房</p></td>
+                                    <td><p>一年</p></td>
+                                    <td><a href=""><p class="check">點擊查看</p></a></td>
+                                    <td><p class="notyet">未出租</p></td>
+                                </tr>
+
+                                <tr class="active-row">
+                                        <td><p>士林夜市近士林劍潭捷運小套房</p></td>
+                                        <td><p>一年</p></td>
+                                        <td><a href=""><p class="check">點擊查看</p></a></td>
+                                        <td><p>已出租</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>士林夜市近士林劍潭捷運小套房</p></td>
+                                    <td><p>一年</p></td>
+                                    <td><a href=""><p class="check">點擊查看</p></a></td>
+                                    <td><p>已出租</p></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <!-- 右邊標題結束 -->
 
-                    <div class="n-in">
-
-                        <div class="as">
-                            <input class="n-inp" type="text" placeholder="請輸入您的姓氏">
-
-                            <div class="n-Oh">！您的姓氏格式錯誤（不能為空)</div>
-
-                            <input class="n-inp" type="text" placeholder="請輸入您的手機">
-
-                            <div class="n-Oh">！您的手機格式錯誤</div>
-
-                            <input class="n-inp" type="text" placeholder="請輸入您的郵件">
-
-                            <div class="n-Oh">！您的郵件格式錯誤</div>
-
-                            <input class="n-inp s" type="text" placeholder="請多多介紹您自己（選填）">
-                            
-                            <div class="n-Oh">！您的自介格式錯誤（不能超過250字）</div>
-
-                            <!-- 修改  -->
-                            <!-- <div class="n-m">
-                                <button class="n-inb">修改</button>
-                            </div> -->
-                            <!-- 修改 -->
-
-                            <!--取消修改 兩個按鈕-->
-                            <div class="twobutton">
-                                <button class="n-inb su">取消修改</button>
-                                <button class="n-inb">修改</button>
-                            </div>
-                            <!--取消修改-->
-                            
-                        </div>
-                        
+<!----------------pages------------------>
+                    <div class="c-pages">
+                        <ul class="pagination">
+                            <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❮</a></li>
+    
+                            <li><a href="#">1</a></li>
+                            <li><a class="active" href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+    
+                            <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❯</a></li>
+                        </ul>
                     </div>
+                
+            <!--------------pages------------------->
 
                 </div>
 
             </div>
-        
         
     </div>
 
@@ -213,7 +263,35 @@
         </div>
     </div> -->
 
-    <!-- FOOTER---------------------------------------------------
+    <!-- FOOTER--------------------------------------------------- -->
+
+
+    <script src="../js/jquery-3.6.0.js"></script>
+
+    <script>
+
+        // $(function () {
+        //     $(".flip").click(function () {
+        //         $(".panel").slideToggle("slow");
+        //         $(".xs1").toggle();
+        //         $(".xs2").toggle();
+        //     });
+        // });
+
+
+        // 改寫
+        $(function () {
+            $(".flip").click(function () {
+                console.log((this));
+                $(this).next().slideToggle("slow");
+                // $(".xs1").toggle();
+                // $(".xs2").toggle();
+            });
+        });
+    </script>
+
+
+    
 </body>
 
 </html>

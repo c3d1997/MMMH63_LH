@@ -5,18 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="./fontawesome-free-6.0.0-web/css/all.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/nav-footer/nav-footer.css">
-    <link rel="stylesheet" href="/mycollection/white.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../../nav-footer/nav-footer.css">
+    <link rel="stylesheet" href="../button-fonts.css">
+    <link rel="stylesheet" href="./Reservation_page.css">
+    <title>Reservation_page</title>
 </head>
 
 <body>
-
+    <!-- navbar -->
     <div class="nav-log-out">
         <div class="container">
             <div class="row">
@@ -42,7 +40,6 @@
             </div>
         </div>
     </div>
-
     <!-- 登出狀態 -->
     <!-- <div class="nav-log-in">
         <div class="container">
@@ -72,62 +69,43 @@
     <!-- 登入狀態 -->
     <!-- 以上NAV--------------------------------------------------- -->
 
+    <!-- 間距140px -->
+
     <div class="container">
-       
-
-            <div class="n-world">
-
-                <!-- 左邊選單開始 -->
-                <div class="n-mylist">
-                    <ul>
-                        <li class="n-listword"><a href="">會員資料</a></li>
-                        <li class="n-listword"><a href="">刊登物件</a></li>
-                        <li class="n-listword"><a href="">我的租屋</a> </li>
-                        <li class="n-listword"><a href="">我的收藏</a></li>
-                        <li class="n-listword"><a href="">我的優惠</a> </li>
-                        <li class="n-listword"><a href="">我的預約</a> </li>
-                        <li class="n-listword"><a href="">租屋契約</a></li>
-                        <li class="n-listword"><a href="">租金支付</a> </li>
-                        <li class="n-listword"><a href="">清潔服務</a> </li>
-                    </ul>
+        <div class="row">
+            <div class="S-Reservation-area">
+                <div class="S-title">
+                    <h1 class="S-Reservation-title">預約資訊</h1>
                 </div>
-                <!-- 左邊選單結束 -->
-        
-        
-                <!-- 右邊開始 -->
-                <div class="n-mytitle">
-        
-                    <!-- 右邊標題開始 -->
-                    <div class="n-title">
-                        <div class="n-titletitletitle">我的收藏</div>
-                        <div class="n-titletitle">
-                            <div class="n-push">
-                                <a href="">
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0 2.5C0 1.11953 0.959598 0 2.14286 0H27.8571C29.0424 0 30 1.11953 30 2.5C30 3.88281 29.0424 5 27.8571 5H2.14286C0.959598 5 0 3.88281 0 2.5ZM0 15C0 13.6172 0.959598 12.5 2.14286 12.5H27.8571C29.0424 12.5 30 13.6172 30 15C30 16.3828 29.0424 17.5 27.8571 17.5H2.14286C0.959598 17.5 0 16.3828 0 15ZM27.8571 30H2.14286C0.959598 30 0 28.8828 0 27.5C0 26.1172 0.959598 25 2.14286 25H27.8571C29.0424 25 30 26.1172 30 27.5C30 28.8828 29.0424 30 27.8571 30Z" fill="black"/>
-                                    </svg>
-                                </a>
-                            </div>
-        
-                            <div class="n-push">
-                                <a href="">
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M25.7143 0C28.0781 0 30 1.91853 30 4.28571V25.7143C30 28.0781 28.0781 30 25.7143 30H4.28571C1.91853 30 0 28.0781 0 25.7143V4.28571C0 1.91853 1.91853 0 4.28571 0H25.7143ZM25.7143 4.28571H17.1429V12.8571H25.7143V4.28571ZM25.7143 17.1429H17.1429V25.7143H25.7143V17.1429ZM12.8571 12.8571V4.28571H4.28571V12.8571H12.8571ZM4.28571 25.7143H12.8571V17.1429H4.28571V25.7143Z" fill="black"/>
-                                    </svg>
-                                </a>
-                            </div> 
-                            
+                <!-- 間距30px -->
+                <div class="S-Reservation-wrap">
+                    <div class="S-Reservation">
+                        <div class="S-Reservation-img"></div>
+                        <div class="S-Reservation-info">
+                            <h3 class="S-Reservation-price S-lg-d-none S-xs-d-block">$20,000</h3>
+                            <h2 class="S-Reservation-name">士林夜市近士林劍潭捷運小套房</h2>
+                            <h3 class="S-Reservation-location">
+                                <i class="fa-solid fa-location-dot"></i> 台北市士林區劍潭路100號35巷1弄3樓
+                            </h3>
+                            <h2 class="S-Reservation-date">
+                                2022 年 4 月 15 日
+                                <span class="S-Reservation-time">15:00</span>
+                            </h2>
                         </div>
                     </div>
-                    <!-- 右邊標題結束 -->
-                </div>
 
+                    <div class="S-Reservation-btn">
+
+                        <button class="pc-button-F4F4F4-180  ">聯絡我們</button>
+                        <button class="pc-button-FEAC00-180 ">確定預約</button>
+
+
+                    </div>
+                </div>
             </div>
-        
-        
+        </div>
     </div>
 
-    
 
     <!-- 以下是footer---------------------------------------------  -->
     <div class="footer_container">
@@ -192,9 +170,14 @@
                 Copyright © ICS COLLEGE OF ARTS. All rights reserved.
             </p>
         </div>
-    </div> -->
+    </div>
 
-    <!-- FOOTER---------------------------------------------------
+    <!-- FOOTER--------------------------------------------------- -->
+
+
+
+
+
 </body>
 
 </html>
