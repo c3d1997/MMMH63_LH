@@ -80,20 +80,19 @@ $title = '付款方式'
                     <div class="bank_area" hidden>
                         <div class="z_text_intput ">
                             <p class="z_checkbox_option ">銀行行號</p>
-                            <div class="z_paydropdown">
-                                <span id="z_bankListBtn">
-                                    <div class="z_bank_name">
-                                        <span></span>
-                                        <span>銀行行號</span> 
-                                        <img src="../imgs/down-arrow.svg" alt="">
-                                    </div>
-                                </span>
-                                <div id="z_bankList" class="banklist" hidden>
-                                        <p class="" >001-中央信託</p>
-                                        <p class="" >006-合庫商銀</p>
-                                        <p class="" >007-第一銀行</p>
+                            <div class="z_select_dropdown_container">
+                                <select id="bankSelect" name=”bankSelect” class="z_select_dropdown">
+                                    <option value=””>請選擇銀行</option>
+                                    <option value=””>001-中央信託</option>
+                                    <option value=””>006-合庫商銀</option>
+                                    <option value=””>007-第一銀行</option>
+                                </select>
+                                <div class="arrow_container">
+                                    <img src="imgs/down-arrow.svg" alt="">
                                 </div>
                             </div>
+
+                            
                             <div class="z_payghost"></div>
                         </div>
                         <div class="z_pay_alert">

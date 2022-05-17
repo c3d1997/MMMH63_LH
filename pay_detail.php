@@ -1,5 +1,8 @@
 <?php
-$title = '租屋明細'
+$title = '租屋明細';
+require './part/connect-db.php';
+
+$sql =  sprintf("SELECT * FROM address_book ORDER BY sid DESC LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
 ?>
 
 <?php include __DIR__ . './part/payhead.php'  ?>

@@ -3,7 +3,6 @@
         $(".z_checkbox_container :checkbox").click(function(){
             $(this).parent().siblings().find(":checkbox").prop('checked', false);
             if ($("#payBank").prop('checked')) {
-                console.log("hi");
                 $(".bank_area").css("display","block")
                 $(".card_area").css("display","none")
 
@@ -16,11 +15,11 @@
                 $(".card_area").css("display","none")
             }
         })
-        $("#z_bankListBtn").click(function(){
-            $(this).next().toggle()
-            $(this).find("img").toggleClass("downArrow")
-            // console.log($(this).find("img"));
+
+        $("#bankSelect").click(function(){
+            $(".arrow_container img").toggleClass("downArrow")
         })
+
     </script>
     </body>
 </html>
