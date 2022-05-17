@@ -11,7 +11,7 @@
 .container1{
     position: relative;
     width: 1080px;
-    height: 850px;
+    height: 900px;
     margin-top: 100px;
     /* background-color: #fa0f; */
 
@@ -61,7 +61,7 @@
     position: absolute;
     top: 0;
     width: 100%;
-    height: 850px;
+    height: 900px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,11 +95,16 @@
 .blueBg .box button.S-blue{
     color: #0E2E3D;
 }
+
+
+/* 藍色方框 */
+/* left:0 左 */
+/* left:50% 右 */
 .InfoBx{
     position: absolute;
     z-index: 8888;
     top: 0;
-    left: 0;
+    left: 0%;
     width: 50%;
     height: 100%;
     background: #5D8DC1;
@@ -159,13 +164,12 @@ body.active{
 
 /* 註冊表格 */
 .formBx .signupForm{
-    top: 20%;
+    top: 17%;
     /* left: 15%; */
     display: flex;
     flex-direction: column;
     align-items: center;
     transition-delay: 0s;
-
 }
 .formBx.active .signupForm{
     left: 0;
@@ -235,10 +239,12 @@ body.active{
 .formBx .form .checkbox-info input{
     width: 20%;
 }
+
+/* 忘記密碼 */
 .formBx .form form .forgot{
     padding: 10px 0;
     text-align: right;
-    color: #0E2E3D;
+    color: #5D8DC1;
     text-decoration: none;
 }
 
@@ -253,15 +259,77 @@ body.active{
     width: 10px;
 }
 .pc-button-FEAC00-180{
-    margin-top: 25px;
+    margin: 20px 0 10px;
 }
 
 
 
 
+/* 尚未註冊？點此註冊 */
+.formBx .font-color-blue{
+    color: #0E2E3D;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+
+/* --------------confirm bar----------------- */
+.c_confirm_bar {
+    max-width: 1280px;
+    width: 100%;
+    /* padding: 0 25px; */
+    margin: 0 auto 30px;
+    text-align: center;
+
+
+}
 
 
 
+input[type=text] {
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    border: none;
+    /* text-indent: 15px; */
+    color: #0E2E3D;
+}
+
+input[type=checkbox] {
+    display: none;
+    color: #0E2E3D;
+}
+
+input[type=checkbox]+span {
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 30px;
+    /* line-height: 24px; */
+    background: url(../imgs/unchecked.svg) no-repeat left center;
+    user-select: none;
+    color: #0E2E3D;
+}
+
+a {
+    text-decoration: none;
+    color: #75BBE3;
+}
+
+input[type=checkbox]:checked+span {
+    display: inline-block;
+    padding-left: 30px;
+    /* line-height: 24px; */
+    background-image: url(../imgs/checked.svg);
+}
+
+
+ /* --------------隱藏-------------- */
+/* --------------隱藏-------------- */
+/* --------------隱藏-------------- */
+/* --------------隱藏-------------- */
+    .S-lg-d-none{
+        display: none;
+    }
 
 
 
@@ -292,20 +360,21 @@ body.active{
 /* ---------------------------註冊--------------------------- */
 
     .container-wrap{
+        flex-direction: column;
         min-height: 0;
         background-color: #F1EDEA ;
         margin-top: 40px;
     }
     .container1{
-        max-width: 400px;
+        max-width: 375px;
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 0;
     }
     .container1 .blueBg{
+        width: 100%;
         top: 0;
-        /* height: 500px; */
         height: 100%;
     }
     
@@ -316,6 +385,8 @@ body.active{
     }
 
     .formBx .signinForm{
+        top: 20%;
+        width: 100%;
         left: 0%;
     }
 
@@ -328,14 +399,14 @@ body.active{
     .blueBg .box{
         position: absolute;
         width: 100%;
-        /* height: 150px; */
+        height: 150px;
         /* bottom: 0; */
     }
 
     .signupForm{
         margin-top: -40px;
     }
-
+    
 
 
 
@@ -348,10 +419,28 @@ body.active{
         left: 0;
         top: 150px;
     }
+    .formBx .signupForm{
+        top: 200%;
+        /* left: 15%; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition-delay: 0s;
+    }
+
+    /* .footer_container{
+        margin-top: 1000px;
+    } */
 
 
 
-    /* ---------------------------- */
+
+
+
+    /* --------------隱藏-------------- */
+    /* --------------隱藏-------------- */
+    /* --------------隱藏-------------- */
+    /* --------------隱藏-------------- */
     .S-d-none{
         display: none;
     }
@@ -371,12 +460,14 @@ body.active{
 
 
     
-    .show{
+    .S-d-block{
         display: block;
         
     }
     /* ----------------------------- */
 }
+
+
 
 
 
