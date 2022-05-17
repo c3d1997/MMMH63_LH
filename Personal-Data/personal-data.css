@@ -42,6 +42,10 @@
     margin-bottom: 30px;
 }
 
+.x-title-content div {
+    height: 30px;
+}
+
 .x-title-content-all {
     width: 100%;
     max-width: 525px;

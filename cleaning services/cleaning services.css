@@ -80,11 +80,9 @@ body {
 
 .n-ncader {
     width: 395px;
-    height: 260px;
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     /* outline: 1px solid blueviolet; */
 }
 
@@ -92,6 +90,12 @@ body {
     width: 100%;
     height: 211px;
     /* outline: 1px solid purple; */
+}
+
+.n-npetur img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .n-ncadrword {
@@ -129,7 +133,6 @@ body {
 .n-nmamu {
     width: 100%;
     height: 60px;
-    margin-bottom: 4.5px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -145,7 +148,7 @@ body {
 
 .n-nOh {
     width: 525px;
-    height: 21px;
+    height: 30px;
     font-size: 16px;
     display: flex;
     flex-direction: column;
@@ -153,7 +156,6 @@ body {
     align-items: flex-start;
     color: rgba(255, 0, 0, 1);
     /* outline: 1px solid rgb(197, 183, 55); */
-    margin: 2.25px 0;
 }
 
 
@@ -167,13 +169,12 @@ body {
 .n-mmaps {
     width: 522px;
     height: 375px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .n-nmamutwo {
     width: 100%;
     /* height: 60px; */
-    margin-bottom: 60px;
     display: flex;
     align-items: center;
     /* justify-content: space-between; */
@@ -181,10 +182,22 @@ body {
     /* outline: 1px solid purple; */
 }
 
+.n-nmamutwo input {
+    height: 250px;
+}
+
+.n-nmamu .dropdown_container {
+    width: 525px;
+}
+
 .n-nffont.two {
     width: 525px;
     height: 250px;
     margin-right: 0;
+}
+
+.pc-button-F4F4F4-180 {
+    margin-right: 30px;
 }
 
 
@@ -196,7 +209,7 @@ body {
     margin-top: 30px;
     display: flex;
     justify-content: center;
-    justify-content: space-between;
+    justify-content: center;
     /* outline: 1px solid rgb(230, 13, 13); */
 }
 
@@ -213,6 +226,10 @@ body {
 
 .n-ninb.nsu {
     background: #F1EDEA;
+}
+
+.n-nOh p {
+    display: none;
 }
 
 
@@ -262,7 +279,7 @@ body {
     .n-mmaps {
         width: 335px;
         height: 252px;
-        margin-bottom: 0px;
+        margin-bottom: 10px;
     }
     .n-mmaps iframe {
         width: 335px;
@@ -271,7 +288,7 @@ body {
     .n-nmamutwo {
         width: 335px;
         height: 230px;
-        margin-bottom: 0px;
+        margin-bottom: 20px;
         display: flex;
         align-items: unset;
         justify-content: unset;
@@ -279,6 +296,32 @@ body {
     }
     .n-nmamutwo input {
         width: 335px;
+    }
+    .pc-button-F4F4F4-180 {
+        width: 162.5px;
+        height: 45px;
+        color: #0E2E3D;
+        font-weight: bold;
+        font-size: 20px;
+        border: none;
+        background-color: #F1EDEA;
+        margin-right: 10px;
+    }
+    .pc-button-FEAC00-180 {
+        width: 162.5px;
+        height: 45px;
+        color: #0E2E3D;
+        font-weight: bold;
+        font-size: 20px;
+        border: none;
+        background-color: #FEAC00;
+    }
+    .n-ntwobutton {
+        margin-top: 0px;
+    }
+    .n-nwod {
+        margin-top: 100px;
+        margin-bottom: 30px;
     }
 }
 
@@ -294,118 +337,6 @@ body {
 
 .n-ninb {
     width: 162.5px;
-}
-
-
-/* --------------------------------------------- */
-
-.container {
-    width: 375px;
-    margin: auto;
-    padding: 0 20px;
-}
-
-.nav-log-out,
-.nav-log-in {
-    width: 100%;
-    max-width: 375px;
-    height: 70px;
-}
-
-.nav-log-out a img,
-.nav-log-in a img {
-    height: 70px;
-}
-
-.container {
-    width: 100%;
-    padding: 0 20px;
-}
-
-.pc_nav_left,
-.pc_nav_right,
-.pc_nav_center {
-    display: none;
-}
-
-.phone_nav_left {
-    display: block;
-}
-
-.phone_nav_center {
-    width: 100px;
-    display: block;
-}
-
-.phone_nav_right {
-    display: block;
-}
-
-.nav-log-out .container .row,
-.nav-log-in .container .row {
-    height: 70px;
-    justify-content: space-between;
-}
-
-.footer-up {
-    justify-content: center;
-    height: auto;
-}
-
-.footer-left {
-    margin-top: 50px;
-    width: 260px;
-    height: auto;
-    justify-content: flex-start;
-    margin-bottom: 60px;
-}
-
-.footer-right {
-    display: none;
-}
-
-.footer-left-up p {
-    margin-bottom: 20px;
-}
-
-.footer-left-down a:nth-child(1),
-.footer-left-down a:nth-child(2) {
-    margin-right: 15px;
-}
-
-.footer_icon {
-    display: none;
-}
-
-.tw {
-    display: none;
-}
-
-.footer_phone_icon {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-.footer-down {
-    display: none;
-}
-
-.phone_copyright {
-    display: block;
-    width: 85%;
-    height: 30px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.phone_copyright p {
-    text-align: center;
-    width: 100%;
-    font-size: 12px;
 }
 
 
