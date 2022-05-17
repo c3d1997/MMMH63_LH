@@ -1,70 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>paybank</title>
-    <link rel="stylesheet" href="../nav-footer/nav-footer.css">
-    <link rel="stylesheet" href="../button-fonts.css">
-    <link rel="stylesheet" href="./pay.css">
-    <style>
-    </style>
-</head>
-<body>
-    <div class="nav-log-out">
-        <div class="container">
-            <div class="row">
-                <div class="pc_nav_left">
-                    <a href="#">搜尋</a>
-                    <a href="#">刊登房屋</a>
-                </div>
-                <div class="phone_nav_left">
-                    <img src="../imgs/phone_logo.png" alt="">
-                </div>
-                <div>
-                    <a class="pc_nav_center" href="#"><img src="../imgs/LOGO.svg" alt=""></a>
-                    <a class="phone_nav_center" href="#"><img src="../imgs/phone_logo_text.svg" alt=""></a>
+<?php
+$title = '付款方式'
+?>
 
-                </div>
-                <div class="pc_nav_right">
-                    <a href="#">清潔服務</a>
-                    <a href="#">會員登入/註冊</a>
-                </div>
-                <div class="phone_nav_right">
-                    <img src="../imgs/Hamburger.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 登出狀態 -->
-    <!-- <div class="nav-log-in">
-        <div class="container">
-            <div class="row">
-                <div class="pc_nav_left">
-                    <a href="#">搜尋</a>
-                    <a href="#">刊登房屋</a>
-                </div>
-                <div class="phone_nav_left">
-                    <img src="../imgs/phone_logo.png" alt="">
-                </div>
-                <div>
-                    <a class="pc_nav_center" href="#"><img src="../imgs/LOGO.svg" alt=""></a>
-                    <a class="phone_nav_center" href="#"><img src="../imgs/phone_logo_text.svg" alt=""></a>
-                </div>
-                <div class="pc_nav_right">
-                    <a href="#">清潔服務</a>
-                    <a href="#">個人頁面</a>
-                    <a href="#">登出</a>
-                </div>
-                <div class="phone_nav_right">
-                    <img src="../imgs/Hamburger.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- 登入狀態 -->
-    <!-- 以上NAV--------------------------------------------------- -->
+<?php include __DIR__ . './part/payhead.php'  ?>
+<?php include __DIR__ . './part/nav.php'  ?>
     <section class="z_section">
         <div class="z_paycontainer">
             <div class="z_progress ">
@@ -106,7 +45,7 @@
                             <div class="z_check_container">
                                 <div class="z_checkbox_container">
                                     <label class="option_bank_container">
-                                        <input class="" type="checkbox" value="bank" name="" id="payBank" checked >
+                                        <input class="" type="checkbox" value="bank" name="" id="payBank" >
                                         <span>匯款</span>
                                     </label>
                                     <label class="option_card_container">
@@ -138,7 +77,7 @@
                     <div class="z_pay_alert">
                         <p class="alert" ></p>
                     </div>
-                    <div class="bank_area">
+                    <div class="bank_area" hidden>
                         <div class="z_text_intput ">
                             <p class="z_checkbox_option ">銀行行號</p>
                             <div class="z_paydropdown">
@@ -169,8 +108,7 @@
                             <p class="alert" >!　銀行帳號格式錯誤</p>
                         </div>
                     </div>
-                </div>
-                <div class="card_area">
+                    <div class="card_area " hidden>
                     <div class="z_text_intput" >
                         <p class="z_checkbox_option ">信用卡號</p>
                         <div class="z_input_small_container">
@@ -179,11 +117,11 @@
                             <input class="z_input_small " type="text" name="" id="" placeholder="XXXX">
                             <input class="z_input_small " type="text" name="" id="" placeholder="XXXX">
                         </div>
-                        <img class="z_paycard_img" src="../imgs/paycard.png" alt="">    
+                        <img class="z_paycard_img" src="imgs/paycard.png" alt="">    
                     </div>
                     <p class="alert z_pay_alert ">!　信用卡號格式錯誤</p>
                     <div class="z_paycard_phone_img">
-                        <img src="../imgs/paycard.png" alt="">
+                        <img src="imgs/paycard.png" alt="">
                     </div>
                         <div class="z_text_intput ">
                             <p class="z_checkbox_option ">有效月年</p>
@@ -200,14 +138,16 @@
                             <div class="z_input_container">
                                 <input class="z_input_text" type="text" name="" id="" placeholder="XXX">
                             </div>
-                            <img class="z_creditcard_img" src="../imgs/creditcardback.png" alt="">
+                            <img class="z_creditcard_img" src="imgs\creditcardback.png" alt="">
                         </div>
 
                     <p class="alert z_pay_alert ">!　末三碼格式錯誤</p>
                     <div class="z_creditcard_phone_img">
-                        <img src="../imgs/creditcardback.png" alt="">
+                        <img src="imgs\creditcardback.png" alt="">
                     </div>
                 </div>
+                </div>
+                
                 <div class="z_payagree">
                     <label>
                         <input type="checkbox" name="" id="">
@@ -224,95 +164,6 @@
             </div>
         </div>
     </section>
-    <!-- 以下是footer---------------------------------------------  -->
-    <div class="footer_container">
-        <div class="footer">
-            <div class="container">
-                <div class="footer-up">
-                    <div class="footer-left">
-                        <div class="footer_phone_icon">
-                            <img src="../imgs/facebook-square-brands.svg" alt="">
-                            <img src="../imgs/instagram-brands.svg" alt="">
-                            <img src="../imgs/twitter-brands.svg" alt="">
-                            <img src="../imgs/youtube-brands.svg" alt="">
-                        </div>
-                        <div class="footer-left-up">
-                            <p>
-                                地址：台北市大安區市民大道9巷9樓
-                            </p>
-                            <p>
-                                電話：02-2222-2222
-                            </p>
-                            <p>
-                                信箱：csdas@gmail.com
-                            </p>
-                        </div>
-                        <div class="footer-left-down">
-                            <a href="#">免責聲明</a>
-                            <a href="#">隱私權政策</a>
-                            <a href="#">服務條款</a>
-                        </div>
-                    </div>
-                    <div class="footer-right">
-                        <img src="../imgs/people.png" alt="">
-                    </div>
-                </div>
 
-            </div>
-            <div class="footer-down">
-                <div class="container">
-                    <div class="footer_icon">
-                        <p>Follow us</p>
-                        <img src="../imgs/facebook-square-brands.svg" alt="">
-                        <img src="../imgs/instagram-brands.svg" alt="">
-                        <img src="../imgs/twitter-brands.svg" alt="">
-                        <img src="../imgs/youtube-brands.svg" alt="">
-                    </div>
-                    <div class="copyright">
-                        <p>
-                            Copyright © ICS COLLEGE OF ARTS. All rights reserved.
-                        </p>
-                    </div>
-                    <div class="tw">
-                        <p>
-                            TW
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="phone_copyright">
-            <p>
-                Copyright © ICS COLLEGE OF ARTS. All rights reserved.
-            </p>
-        </div>
-    </div>
-    <script src="../js/jquery-3.6.0.js"></script>
-    <script>
-        $(".z_checkbox_container :checkbox").click(function(){
-            $(this).parent().siblings().find(":checkbox").prop('checked', false);
-            if ($("#payBank").prop('checked')) {
-                console.log("hi");
-                $(".bank_area").css("display","block")
-                $(".card_area").css("display","none")
-
-            } else if ($("#payCard").prop('checked')) {
-                $(".bank_area").css("display","none")
-                $(".card_area").css("display","block")
-
-            } else {
-                $(".bank_area").css("display","none")
-                $(".card_area").css("display","none")
-            }
-        })
-        $("#z_bankListBtn").click(function(){
-            $(this).next().toggle()
-            $(this).find("img").toggleClass("downArrow")
-            // console.log($(this).find("img"));
-        })
-
-    
-    </script>
-</body>
-</html>
+<?php include __DIR__ . './part/javascript_for_pay.php'  ?>
+<?php include __DIR__ . './part/footer.php'  ?>
