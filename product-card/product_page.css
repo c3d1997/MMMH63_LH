@@ -27,6 +27,9 @@
     top: 3%;
     right: 20%;
 }
+.S-lg-share:hover{
+    background-color: #d87122;
+}
 
 .S-lg-share i {
     font-size: 1.2em;
@@ -46,7 +49,10 @@
     top: 3%;
     right: 3%;
 }
+.S-lg-like:hover{
+    background-color: #d87122;
 
+}
 .S-lg-like svg {
     width: 30px;
     height: 30px;
@@ -130,7 +136,9 @@
     top: 3%;
     right: 18%;
 }
-
+.S-md-share:hover{
+    background-color: #d87122;
+}
 .S-md-share i {
     font-size: 1.2em;
 }
@@ -149,7 +157,9 @@
     top: 3%;
     right: 3%;
 }
-
+.S-md-like:hover{
+    background-color: #d87122;
+}
 .S-md-like svg {
     width: 25px;
     height: 25px;
@@ -233,7 +243,9 @@
     top: 3%;
     right: 22%;
 }
-
+.S-xs-share:hover{
+    background-color: #d87122;
+}
 .S-xs-share i {
     font-size: 1.2em;
 }
@@ -252,7 +264,9 @@
     top: 3%;
     right: 3%;
 }
-
+.S-xs-like:hover{
+    background-color: #d87122;
+}
 .S-xs-like svg {
     width: 25px;
     height: 25px;
