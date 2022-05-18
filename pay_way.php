@@ -851,5 +851,28 @@ $title = '付款方式'
         </div>
     </section>
 
-<?php include __DIR__ . './part/javascript_for_pay.php'  ?>
 <?php include __DIR__ . './part/footer.php'  ?>
+
+    <script>
+    $(".z_checkbox_container :checkbox").click(function(){
+    $(this).parent().siblings().find(":checkbox").prop('checked', false);
+    if ($("#payBank").prop('checked')) {
+        $(".bank_area").css("display","block")
+        $(".card_area").css("display","none")
+
+    } else if ($("#payCard").prop('checked')) {
+        $(".bank_area").css("display","none")
+        $(".card_area").css("display","block")
+
+    } else {
+        $(".bank_area").css("display","none")
+        $(".card_area").css("display","none")
+    }
+    })
+
+    $("#bankSelect").click(function(){
+        $(".arrow_container img").toggleClass("downArrow")
+    })
+    </script>
+    
+<?php include __DIR__ . './part/javascript.php' ?>
