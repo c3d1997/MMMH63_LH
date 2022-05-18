@@ -108,8 +108,8 @@ input[type=checkbox]:checked+span {
 }
 
 .z_input_text {
-    text-align: center;
     flex-grow: 1;
+    text-indent: 15px;
 }
 .z_bank_name {
     width: 100%;

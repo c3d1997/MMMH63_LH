@@ -1,5 +1,6 @@
 <?php
 $title = '付款方式'
+
 ?>
 
 <?php include __DIR__ . './part/payhead.php'  ?>
@@ -57,7 +58,7 @@ $title = '付款方式'
                         <div class="z_payghost"></div>
                     </div>
                     <div class="z_pay_alert">
-                        <p class="alert" >!　請選擇付款方式</p>
+                        <p class="alert" id="payWay"></p>
                     </div>
                     <div class="z_text_intput ">
                         <p class="z_checkbox_option ">付款金額</p>
@@ -96,7 +97,7 @@ $title = '付款方式'
                             <div class="z_payghost"></div>
                         </div>
                         <div class="z_pay_alert">
-                            <p class="alert" >!　請選擇銀行代碼</p>
+                            <p class="alert" id="bankCode"></p>
                         </div>
                         <div class="z_text_intput_last">
                             <p class="z_checkbox_option ">銀行帳號</p>
@@ -104,7 +105,7 @@ $title = '付款方式'
                             <div class="z_payghost"></div>
                         </div>
                         <div class="z_pay_alert">
-                            <p class="alert" >!　銀行帳號格式錯誤</p>
+                            <p class="alert" id="bankNumber"></p>
                         </div>
                     </div>
                     <div class="card_area " hidden>
@@ -118,7 +119,7 @@ $title = '付款方式'
                         </div>
                         <img class="z_paycard_img" src="imgs/paycard.png" alt="">    
                     </div>
-                    <p class="alert z_pay_alert ">!　信用卡號格式錯誤</p>
+                    <p class="alert z_pay_alert " id="cardNumber"></p>
                     <div class="z_paycard_phone_img">
                         <img src="imgs/paycard.png" alt="">
                     </div>
@@ -131,7 +132,7 @@ $title = '付款方式'
                             <div class="z_payghost"></div>
                         </div>
                         
-                    <p class="alert z_pay_alert">!　有效月年格式錯誤</p>
+                    <p class="alert z_pay_alert" id="yearDay"></p>
                         <div class="z_text_intput ">
                             <p class="z_checkbox_option ">　末三碼</p>
                             <div class="z_input_container">
@@ -140,7 +141,7 @@ $title = '付款方式'
                             <img class="z_creditcard_img" src="imgs\creditcardback.png" alt="">
                         </div>
 
-                    <p class="alert z_pay_alert ">!　末三碼格式錯誤</p>
+                    <p class="alert z_pay_alert " id="lastThree"></p>
                     <div class="z_creditcard_phone_img">
                         <img src="imgs\creditcardback.png" alt="">
                     </div>
@@ -154,7 +155,7 @@ $title = '付款方式'
                     </label>
                 </div>
                 <div class="z_pay_alert">
-                    <p class="alert" >!　請勾選再確認選項</p>
+                    <p class="alert" id="payCheck"></p>
                 </div>
                 <div class="z_twobtn">
                     <button class="pc-button-F4F4F4-180 z_phone_162 ">清除資料</button>
