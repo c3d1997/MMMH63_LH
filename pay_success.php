@@ -4,6 +4,7 @@ $title = '付款成功'
 
 <?php include __DIR__ . './part/payhead.php'  ?>
 <?php include __DIR__ . './part/nav.php'  ?>
+
 <section class="z_section">
         <div class="z_paycontainer">
             <div class="z_progress">
@@ -50,6 +51,7 @@ $title = '付款成功'
             </div>
         </div>
     </section>
+
 
 <?php include __DIR__ . './part/javascript.php'  ?>
 <?php include __DIR__ . './part/footer.php'  ?>
