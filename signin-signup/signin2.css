@@ -1,4 +1,13 @@
-
+.white{
+    z-index: 0;
+    position: absolute;
+    /* top: 300px; */
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    /* background: url(../imgs/cut-patrick-perkins-3wylDrjxH-E-unsplash\ 3.jpg) center center/cover no-repeat; */
+    opacity: .6;
+}
 .container-wrap{
     box-sizing: border-box;
     display: flex;
@@ -6,12 +15,18 @@
     align-items: center;
     min-height: 100vh;
     transition: .5s;
-    background-color: #ccc ;
+    background: url(../imgs/cut-patrick-perkins-3wylDrjxH-E-unsplash\ 3.jpg) center center/cover no-repeat;
+    
 }
+/* .backdrop-blur{
+    backdrop-filter: blur(5px);
+} */
+
 .container1{
+    z-index: 1;
     position: relative;
     width: 1080px;
-    height: 900px;
+    height: 764px;
     margin-top: 100px;
     /* background-color: #fa0f; */
 
@@ -61,11 +76,11 @@
     position: absolute;
     top: 0;
     width: 100%;
-    height: 900px;
+    height: 764px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.2);
+    background: #F4F4F4;
     box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
     /* padding: 60px 128px; */
 }
@@ -86,7 +101,7 @@
     font-weight: 900;
     cursor: pointer;
     font-size: 32px;
-    padding: 60px 50px 0;
+    padding: 40px 50px 0;
     /* color: #0E2E3D; */
     color: rgba(0, 0, 0, 0.2);
     border: transparent;
@@ -95,6 +110,34 @@
 .blueBg .box button.S-blue{
     color: #0E2E3D;
 }
+
+
+
+
+
+/* ----------------------buttom------------------------------------ */
+button.signinBtn{
+    z-index: 999;
+}
+button.signupBtn{
+    z-index: 999;
+
+}
+button.signinBtn:hover{
+    color: #5D8DC1;
+}
+button.signupBtn:hover{
+    color: #5D8DC1;
+}
+
+
+
+
+
+
+
+
+
 
 
 /* 藍色方框 */
@@ -114,30 +157,33 @@
 .formBx{
     position:absolute;
     top: 0;
-    /* left: -50%; */
     width: 50%;
     height: 100%;
-    /* background-color: #5D8DC1; */
-    z-index: 1000;
+    z-index: 998;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25); */
     transition: .5s ease-in-out;
-    /* overflow: hidden; */
 }
-.formBx.active{
+.InfoBx.active{
     left: 50%;
+    transition: .5s ease-in-out;
 }
-body.active{
+
+.InfoBx.inactive{
+    left: 0%;
+    transition: .5s ease-in-out;
+}
+
+
+
+/* body.active{
     background: #0E2E3D;
-}
+} */
 .formBx .form{
-    /* padding: 20px; */
     position: absolute;
     left: 0;
     width: 100%;
-    /* padding: 50px; */
     transition: .5s;
 }
 .formBx .signinForm{
@@ -148,9 +194,8 @@ body.active{
     align-items: center;
 }
 .formBx.active .signinForm{
-    left: -100%;
+    /* left: -100%; */
     transition-delay: 0s;
-
 }
 
 .S-phone{
@@ -164,8 +209,8 @@ body.active{
 
 /* 註冊表格 */
 .formBx .signupForm{
-    top: 17%;
-    /* left: 15%; */
+    top: 15%;
+    left: 0%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -249,17 +294,24 @@ body.active{
 }
 
 .input_option{
+    height: 48px;
     width: 100%;
 }
 
 .alert{
+    padding: 2px 0;
     margin-left: 80px;
 }
 .checkbox-info input{
     width: 10px;
 }
-.pc-button-FEAC00-180{
-    margin: 20px 0 10px;
+.signupForm .pc-button-FEAC00-180{
+    height: 41px;
+    margin: 0px 0 10px;
+}
+.signinForm .pc-button-FEAC00-180{
+    height: 41px;
+    margin: 10px 0 10px;
 }
 
 
@@ -289,7 +341,7 @@ body.active{
 input[type=text] {
     margin: 0;
     padding: 0;
-    height: 60px;
+    height: 48px;
     border: none;
     /* text-indent: 15px; */
     color: #0E2E3D;
@@ -364,6 +416,7 @@ input[type=checkbox]:checked+span {
         min-height: 0;
         background-color: #F1EDEA ;
         margin-top: 40px;
+        background: #F1EDEA ;
     }
     .container1{
         max-width: 375px;
@@ -420,7 +473,7 @@ input[type=checkbox]:checked+span {
         top: 150px;
     }
     .formBx .signupForm{
-        top: 200%;
+        top: 22%;
         /* left: 15%; */
         display: flex;
         flex-direction: column;
@@ -437,7 +490,7 @@ input[type=checkbox]:checked+span {
 
 
 
-    /* --------------隱藏-------------- */
+    /*.blueBg --------------隱藏-------------- */
     /* --------------隱藏-------------- */
     /* --------------隱藏-------------- */
     /* --------------隱藏-------------- */
@@ -447,9 +500,9 @@ input[type=checkbox]:checked+span {
 
 
     /* 隱藏登入表格 */
-    /* .signinForm.S-d-none{
+    .signinForm.S-d-none{
         display: none;
-    } */
+    }
 
 
     /* 隱藏註冊表格 */
@@ -462,7 +515,6 @@ input[type=checkbox]:checked+span {
     
     .S-d-block{
         display: block;
-        
     }
     /* ----------------------------- */
 }

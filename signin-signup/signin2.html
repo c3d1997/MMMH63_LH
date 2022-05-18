@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./signin2.css">
     <link rel="stylesheet" href="../nav-footer/nav-footer.css">
     <link rel="stylesheet" href="../../button-fonts.css">
-    <link rel="stylesheet" href="../warning_card.css">
+    <!-- <link rel="stylesheet" href="../warning_card.css"> -->
     <title>signin2</title>
 </head>
 
@@ -68,7 +68,8 @@
     <!-- 登入狀態 -->
     <!-- 以上NAV--------------------------------------------------- -->
     
-    <div class="container-wrap">
+    
+    <div class="container-wrap backdrop-blur">
     <div class="container1">
         <!-- info資訊板 -->
         <div class="InfoBx S-d-none">
@@ -104,14 +105,14 @@
 
         <!-- 大的切換button -->
         <div class="blueBg">
-            <div class="box signin S-d-none">
-                <!-- <h2>已經是會員?</h2> -->
-                <button class="signinBtn S-blue">登入</button>
-                <button class="signupBtn">註冊</button>
+            <div class="box signin">
+                <!-- 左側註冊按鈕區 -->
+                <button class="signinBtn">登入</button>
+                <button class="signupBtn S-blue">註冊</button>
             </div>
             <div class="box signup">
-                <!-- <h2>還不是會員?</h2> -->
-                <button class="signinBtn S-blue S-d-none">登入</button>
+                <!-- 右側註冊按鈕區 -->
+                <button class="signinBtn S-d-none S-blue" >登入</button>
                 <button class="signupBtn S-d-none">註冊</button>
             </div>
         </div>
@@ -151,7 +152,7 @@
         <!-- 註冊表格 -->
 
 
-            <div class="form signupForm S-d-none">
+            <div class="form signupForm">
                 <form>
                     <!-- <h3>註冊</h3> -->
                     <div class="input_option">
@@ -177,7 +178,7 @@
                     <div class="alert">!郵件格式錯誤 </div>
                     <div class="CAPTCHA-g">
                     <div class="input_option">
-                        <p class="option_name mr-1word" style="margin-right: 30px;">驗證碼</p>
+                        <p class="option_name mr-1word" style="margin-right: 15px;margin-left: 15px;">驗證碼</p>
                         <div class="fullinput_container ">
                                 <input type="text" name="" id="" placeholder="請輸入驗證碼">                 
                         </div>
@@ -187,7 +188,7 @@
                     </div>
                     <div class="alert">!驗證碼輸入錯誤 </div>
                     <div class="input_option">
-                        <p class="option_name" style="margin-right: 45px;">密碼</p>
+                        <p class="option_name" style="margin-right: 16px;margin-left: 30px;">密碼</p>
                         <div class="fullinput_container ">
                                 <input type="text" name="" id="" placeholder="請輸入您的密碼">                        
                         </div>
@@ -293,25 +294,56 @@
 
 <!-- FOOTER--------------------------------------------------- -->
 
+<div class="white backdrop-blur S-d-none"></div>
 
 
-<!-- 
+<script src="../js/jquery-3.6.0.js"></script>
+
     <script>
         const signinBtn = document.querySelector('.signinBtn');
-        const signupBtn = document.querySelector('.signupBtn');
-        const formBx = document.querySelector('.formBx');
+        // const signupBtn = document.querySelector('.signupBtn');
+        // const formBx = document.querySelector('.formBx');
+        const InfoBx = document.querySelector('.InfoBx');
         const body = document.querySelector('body');
 
-        signupBtn.onclick = function () {
-            formBx.classList.add('active');
-            body.classList.add('active');
-        }
-        signinBtn.onclick = function () {
-            formBx.classList.remove('active');
-            body.classList.remove('active');
 
-        }
-    </script> -->
+        $('.signupBtn').click(function(){
+            console.log('hi');
+            InfoBx.classList.add('active');
+            InfoBx.classList.remove('inactive');
+            signupBtn.classList.add('S-blue');
+            signinBtn.classList.remove('S-blue');
+
+
+        });
+
+        $('.signinBtn').click(function(){
+            console.log('hi');
+            InfoBx.classList.add('inactive');
+            InfoBx.classList.remove('active');
+            signinBtn.classList.add('S-blue');
+            signupBtn.classList.remove('S-blue');
+
+        });
+
+
+
+
+
+
+
+
+
+        // signupBtn.onclick = function () {
+        //     InfoBx.classList.add('active');
+        //     body.classList.add('active');
+        // }
+        // signinBtn.onclick = function () {
+        //     InfoBx.classList.remove('active');
+        //     body.classList.remove('active');
+        // }
+    </script>
+
 </body>
 
 </html>
