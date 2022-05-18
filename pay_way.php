@@ -300,7 +300,7 @@ $title = '付款方式'
             flex-grow: 1;
         }
         .z_checkbox_container {
-            width: 190px;
+            width: 100px;
             height: 35px;
             display: flex;
             align-items: center;

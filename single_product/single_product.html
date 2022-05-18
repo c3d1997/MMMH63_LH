@@ -17,60 +17,107 @@
 </head>
 
 <body>
-    123
-    <div class="nav-log-out">
+    <div class="nav">
         <div class="container">
-            <div class="row">
-                <div class="pc_nav_left">
-                    <a href="#">搜尋</a>
-                    <a href="#">刊登房屋</a>
+            <ul>
+                <div class="pc-link">
+                    <li class="x-log">
+                        <a href="
+                        ">搜尋</a>
+                    </li>
+                    <li class="x-log">
+                        <a href="">
+                        刊登房屋
+                    </a>
+                    </li>
                 </div>
-                <div class="phone_nav_left">
-                    <img src="../imgs/phone_logo.png" alt="">
-                </div>
-                <div>
-                    <a class="pc_nav_center" href="#"><img src="../imgs/LOGO.svg" alt=""></a>
-                    <a class="phone_nav_center" href="#"><img src="../imgs/phone_logo_text.svg" alt=""></a>
+                <li class="x-log-img">
+                    <a href=""><img src="../imgs/LOGO.svg" alt="">
+                    </a>
+                    <a href=""><img src="../imgs/phone_logo.png" alt="">
+                    </a>
+                </li>
+                <li class="x-log-phone-title">
+                    <a href="">Little House</a>
+                </li>
+                <div class="phone-nav-link">
+                    <li class="x-log x-phone">
+                        <a href="
+                        ">搜尋</a>
+                    </li>
+                    <li class="x-log x-phone">
+                        <a href="">
+                        刊登房屋
+                    </a>
+                    </li>
+                    <li class="x-log">
+                        <a href="">
+                        清潔服務
+                    </a>
+                    </li>
+                    <li class="log-in x-log">
+                        <a href="">
+                        會員登入/註冊
+                    </a>
+                    </li>
+                    <li class="log-out x-log x-hidden-flip">
+                        <a href="#">
+                        個人頁面 <img src="../imgs/down-arrow.svg" alt="">
+                        </a>
+                    </li>
+                    <div class="x-hidden-personaal x-hidden-click">
+                        <a href="">
+                            會員資料
+                        </a>
+                        <a href="">
+                            刊登物件
+                        </a>
+                        <a href="">
+                            我的租屋
+                        </a>
+                        <a href="">
+                            我的收藏
+                        </a>
+                        <a href="">
+                            我的優惠
+                        </a>
+                        <a href="">
+                            我的預約
+                        </a>
+                        <a href="">
+                            租金支付
+                        </a>
+                        <a href="">
+                            清潔服務
+                        </a>
+                        <a href="">
+                            租屋契約
+                        </a>
+                    </div>
+                    <li class="log-out x-log">
+                        <a href="">
+                            登出
+                        </a>
+                    </li>
 
                 </div>
-                <div class="pc_nav_right">
-                    <a href="#">清潔服務</a>
-                    <a href="#">會員登入/註冊</a>
-                </div>
-                <div class="phone_nav_right">
-                    <img src="../imgs/Hamburger.png" alt="">
+
+
+
+            </ul>
+            <div class="x-log-show">
+                <div class="x-log-show-navbar ">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
+
+
         </div>
     </div>
-    <!-- 登出狀態 -->
-    <!-- <div class="nav-log-in">
-        <div class="container">
-            <div class="row">
-                <div class="pc_nav_left">
-                    <a href="#">搜尋</a>
-                    <a href="#">刊登房屋</a>
-                </div>
-                <div class="phone_nav_left">
-                    <img src="../imgs/phone_logo.png" alt="">
-                </div>
-                <div>
-                    <a class="pc_nav_center" href="#"><img src="../imgs/LOGO.svg" alt=""></a>
-                    <a class="phone_nav_center" href="#"><img src="../imgs/phone_logo_text.svg" alt=""></a>
-                </div>
-                <div class="pc_nav_right">
-                    <a href="#">清潔服務</a>
-                    <a href="#">個人頁面</a>
-                    <a href="#">登出</a>
-                </div>
-                <div class="phone_nav_right">
-                    <img src="../imgs/Hamburger.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- 登入狀態 -->
     <!-- 以上NAV--------------------------------------------------- -->
+
     <div class="container">
         <div class="row">
 
@@ -153,13 +200,14 @@
             <div class="S-dropdown">
 
 
-                <!-- S-d-none S-xs-d-none  
-                    電腦版消失 手機版消失-->
+                <!------------------------------ S-d-none S-xs-d-none  
+                    -----------------------------電腦版消失 手機版消失---------------------------->
+
                 <!-- 下拉式選單 租屋資訊 -->
-                <div class="S-menu-wrap S-menu-RentInfo S-d-none S-xs-d-none">
+                <div class="S-menu-wrap S-menu-RentInfo S-xs-d-none">
 
                     <div class="S-menu S-xs-d-none">
-                        <div class="S-menu-btn step-on">租屋資訊</div>
+                        <div class="S-menu-btn btn1 step-on">租屋資訊</div>
                         <div class="S-menu-btn btn2">物件設備</div>
                         <div class="S-menu-btn btn3">物件公設</div>
                         <div class="S-menu-btn btn4">物件特色</div>
@@ -212,7 +260,7 @@
                 <!-- 下拉式選單 物件設備 -->
                 <div class="S-menu-wrap S-menu-Equipment S-d-none S-xs-d-none">
                     <div class="S-menu S-xs-d-none">
-                        <div class="S-menu-btn">租屋資訊</div>
+                        <div class="S-menu-btn btn1">租屋資訊</div>
                         <div class="S-menu-btn btn2 step-on">物件設備</div>
                         <div class="S-menu-btn btn3">物件公設</div>
                         <div class="S-menu-btn btn4">物件特色</div>
@@ -286,7 +334,7 @@
                 <!-- 下拉式選單 物件公設 -->
                 <div class="S-menu-wrap S-menu-PublicFacilities S-d-none S-xs-d-none">
                     <div class="S-menu S-xs-d-none">
-                        <div class="S-menu-btn">租屋資訊</div>
+                        <div class="S-menu-btn btn1">租屋資訊</div>
                         <div class="S-menu-btn btn2">物件設備</div>
                         <div class="S-menu-btn btn3  step-on">物件公設</div>
                         <div class="S-menu-btn btn4">物件特色</div>
@@ -357,7 +405,7 @@
                 <!-- 下拉式選單 物件特色 -->
                 <div class="S-menu-wrap S-menu-Features S-d-none S-xs-d-none">
                     <div class="S-menu S-xs-d-none">
-                        <div class="S-menu-btn">租屋資訊</div>
+                        <div class="S-menu-btn btn1">租屋資訊</div>
                         <div class="S-menu-btn btn2">物件設備</div>
                         <div class="S-menu-btn btn3">物件公設</div>
                         <div class="S-menu-btn btn4 step-on">物件特色</div>
@@ -497,7 +545,7 @@
                 <!-- 下拉式選單 物件其他費用 -->
                 <div class="S-menu-wrap S-menu-OtherFee S-d-none S-xs-d-none">
                     <div class="S-menu S-xs-d-none">
-                        <div class="S-menu-btn">租屋資訊</div>
+                        <div class="S-menu-btn btn1">租屋資訊</div>
                         <div class="S-menu-btn btn2">物件設備</div>
                         <div class="S-menu-btn btn3">物件公設</div>
                         <div class="S-menu-btn btn4">物件特色</div>
@@ -568,7 +616,7 @@
                 <!-- 下拉式選單 周邊機能 -->
                 <div class="S-menu-wrap S-menu-Environment S-d-none S-xs-d-block">
                     <div class="S-menu S-xs-d-none">
-                        <div class="S-menu-btn">租屋資訊</div>
+                        <div class="S-menu-btn btn1">租屋資訊</div>
                         <div class="S-menu-btn btn2">物件設備</div>
                         <div class="S-menu-btn btn3">物件公設</div>
                         <div class="S-menu-btn btn4">物件特色</div>
@@ -644,9 +692,9 @@
 
                 </div>
                 <!-- 下拉式選單 室友簡介與喜好 -->
-                <div class="S-menu-wrap S-menu-Roommates S-xs-d-none">
+                <div class="S-menu-wrap S-menu-Roommates S-d-none S-xs-d-none">
                     <div class="S-menu S-xs-d-none">
-                        <div class="S-menu-btn">租屋資訊</div>
+                        <div class="S-menu-btn btn1">租屋資訊</div>
                         <div class="S-menu-btn btn2">物件設備</div>
                         <div class="S-menu-btn btn3">物件公設</div>
                         <div class="S-menu-btn btn4">物件特色</div>
@@ -1023,6 +1071,25 @@
 
     <script src="../js/jquery-3.6.0.js"></script>
     <script>
+
+
+        $('.btn1').click(function(){
+            console.log('btn1');
+            $(this).toggleClass('step-on').siblings().removeClass('step-on');
+            $('.S-menu-RentInfo').removeClass('S-d-none');
+        })
+        $('.btn2').click(function(){
+            console.log('btn2');
+            $('.S-menu-Equipment').removeClass('S-d-none');
+            $('.S-menu-Equipment').siblings().addClass('S-d-none');
+        })
+        // $('.S-menu-btn').click(function(){
+        //     $(this).addClass('step-on').siblings().removeClass('step-on');
+        // }
+
+
+
+        // 手機版下拉式選單
         $("button").click(function() {
             $(this).next(".dropdown_list").toggle()
             $(this).find("img").toggleClass("downArrow")
