@@ -110,6 +110,9 @@
 .blueBg .box button.S-blue{
     color: #0E2E3D;
 }
+.blueBg .box button.in-S-blue{
+    color:rgba(0, 0, 0, 0.2);
+}
 
 
 
