@@ -28,7 +28,8 @@
     margin-right: 10px;
     font-size: 16px;
 }
-.S-lg-link-g{
+
+.S-lg-link-g {
     display: flex;
 }
 
@@ -54,6 +55,10 @@
 
 .S-viewer-wrap .S-lg-like svg {
     width: 25px;
+}
+
+.pc-button-F4F4F4-280 {
+    margin-bottom: 30px;
 }
 
 
@@ -118,7 +123,7 @@
 }
 
 .S-product-info-right button {
-    margin: 5px 0;
+    margin: 15px 0;
 }
 
 h2 {
@@ -136,11 +141,13 @@ h2.S-price {
 h3.S-location {
     padding: 30px 0 10px 0;
 }
-h3.S-location i{
+
+h3.S-location i {
     margin-right: 10px;
     /* padding: 0 0 30px 0; */
 }
-.S-date i{
+
+.S-date i {
     margin-right: 10px;
 }
 
@@ -179,13 +186,12 @@ h3.S-location i{
     font-weight: 900;
     position: relative;
     z-index: 1;
-    
 }
 
 .S-menu-title2 {
     margin-top: 80px;
 }
- 
+
 .S-menu-title-bg {
     /* margin: 20px; */
     margin-left: 50px;
@@ -193,13 +199,11 @@ h3.S-location i{
     text-align: center;
 }
 
-
-.S-lg-card-img img{
+.S-lg-card-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 
 
 /* -----------------8個項目menu------------------------------ */
@@ -212,17 +216,20 @@ h3.S-location i{
 /* 租屋資訊 S-menu-RentInfo */
 
 
-
 /* --------在桌機版消失display-none------------------------------------------------------------- */
+
 .S-d-none {
     display: none;
 }
+
+
 /* --------------------------------------------------------------------------------------------- */
 
-.S-menu-wrap{
+.S-menu-wrap {
     /* background: pink; */
     margin: 54px auto 0;
 }
+
 .S-menu-icon-wrap {
     /* background: pink; */
     width: 74%;
@@ -234,12 +241,13 @@ h3.S-location i{
     text-align: center;
 }
 
-.S-menu-icon{
+.S-menu-icon {
     width: 49.5%;
     display: flex;
     flex-wrap: wrap;
 }
-.S-menu-icon-c{
+
+.S-menu-icon-c {
     /* background: purple; */
     /* width: 49.5%; */
     display: flex;
@@ -250,14 +258,17 @@ h3.S-location i{
 .S-menu-icon img {
     margin: 10px 30px;
 }
-.S-menu-icon-c img{
-    margin: 10px 30px;
 
+.S-menu-icon-c img {
+    margin: 10px 30px;
 }
-.S-menu-icon p ,.S-menu-icon-c p {
+
+.S-menu-icon p,
+.S-menu-icon-c p {
     margin-top: 0px;
     margin-bottom: 30px;
 }
+
 .S-menu-info {
     line-height: 2em;
     padding: 0 110px;
@@ -268,12 +279,8 @@ h3.S-location i{
 }
 
 
-
-
-
-
-
 /* ----------------------------------------------- */
+
 .S-lg-card-wrap-top {
     margin-top: 30px;
     display: flex;
@@ -292,29 +299,21 @@ h3.S-location i{
 }
 
 
-
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 
 /* 手機版 小於375 */
 
-@media screen and (max-width:376px){
-
-
-/* --------在桌機版消失display-none------------------------------------------------------------- */
-    .S-xs-d-block{
-        display:block;
+@media screen and (max-width:376px) {
+    /* --------在桌機版消失display-none------------------------------------------------------------- */
+    .S-xs-d-block {
+        display: block;
     }
-    .S-xs-d-none{
-        display:none;
+    .S-xs-d-none {
+        display: none;
     }
-/* --------------------------------------------------------------------------------------------- */
-
-
-
-
+    /* --------------------------------------------------------------------------------------------- */
     /* -----------------單一物件的內容------------------ */
-   
     .S-viewer-wrap {
         width: 100%;
         height: 100%;
@@ -322,30 +321,27 @@ h3.S-location i{
         margin-bottom: 20px;
         position: relative;
     }
-
     .S-lg-viewer-g {
         display: flex;
-        justify-content:space-between;
+        justify-content: space-between;
         align-items: center;
         color: #0E2E3D;
         fill: #0E2E3D;
     }
-
     .S-lg-viewer {
         display: flex;
         /* justify-content:flex-end; */
         align-items: center;
     }
-    .S-lg-icons{
+    .S-lg-icons {
         display: flex;
     }
     .S-lg-viewer i {
         margin-right: 10px;
         font-size: 14.4px;
     }
-    .S-lg-link-g{
+    .S-lg-link-g {
         display: flex;
-
     }
     .S-viewer-wrap .S-lg-share {
         width: 30px;
@@ -358,7 +354,6 @@ h3.S-location i{
         /* padding: 10px; */
         border-radius: 50%;
     }
-
     .S-viewer-wrap .S-lg-like {
         width: 30px;
         height: 30px;
@@ -366,11 +361,9 @@ h3.S-location i{
         background-color: #F1EDEA;
         border-radius: 50%;
     }
-
     .S-viewer-wrap .S-lg-like svg {
         width: 15px;
     }
-
     /* 商品資訊info */
     h2.S-price {
         font-size: 24px;
@@ -384,47 +377,42 @@ h3.S-location i{
         font-size: 16px;
         padding: 0 0 10px 0;
     }
-    h3.S-location i{
+    h3.S-location i {
         margin-right: 5px;
     }
-    .S-date{
+    .S-date {
         font-size: 16px;
     }
-    .S-date i{
+    .S-date i {
         margin-right: 5px;
     }
-
-
-
     /* -----------------------------------單一物件的下拉式選單------------------ */
-    .dropdown_container{
+    .dropdown_container {
         background-color: #F1EDEA;
         /* background-color: #ccc; */
         /* border:1px solid #5D8DC1; */
     }
-    #areaList{
+    #areaList {
         z-index: 888;
         background-color: #F1EDEA;
         text-align: center;
         /* border:1px solid #5D8DC1; */
     }
-    .S-mobile-dropdown{
+    .S-mobile-dropdown {
         margin-top: 40px;
         background: #fff;
         /* z-index: 8888; */
     }
-    .S-mobile-dropdown button .dropdown{
+    .S-mobile-dropdown button .dropdown {
         height: 45px;
         color: #0E2E3D;
         background: #FEAC00;
     }
-    .S-mobile-dropdown button .dropdown span{
+    .S-mobile-dropdown button .dropdown span {
         color: #0E2E3D;
     }
-
-
     /* 租屋資訊 */
-    .S-menu-wrap{
+    .S-menu-wrap {
         margin: 0px auto 0;
     }
     .S-menu-icon-wrap {
@@ -436,44 +424,30 @@ h3.S-location i{
         margin: auto;
         text-align: center;
     }
-    
     .S-menu-icon {
         width: 100%;
         flex-wrap: wrap;
         /* border: 1px solid blue; */
         display: flex;
     }
-    .S-menu-icon-group img{
+    .S-menu-icon-group img {
         width: 20px;
     }
-    .S-menu-icon-wrap p{
+    .S-menu-icon-wrap p {
         margin-top: 0;
         font-size: 12px;
     }
-
-
     /* --------------xs-card 卡片輪播牆-------------------------------- */
-
-    .S-xs-train-wrap{
+    .S-xs-train-wrap {
         /* border: 10px solid #0E2E3D; */
         width: 100%;
         overflow: hidden;
     }
-    .S-xs-train{
+    .S-xs-train {
         /* transform: translateX(30px); */
         width: 300%;
         display: flex;
     }
-
-
-
-
-
-
-
-
-
-
     /* -----------------------------------單一物件的照片區塊------------------ */
     .S-product-img {
         width: 100%;
@@ -481,18 +455,15 @@ h3.S-location i{
         /* border: 1px solid blue; */
         display: flex;
     }
-
     .S-product-img-left {
         width: 100%;
         /* height: 820px; */
         /* border: 1px solid green; */
         background: url(../imgs/spacejoy-sh6Aj176NAQ-unsplash.jpg)center center/cover no-repeat;
     }
-
     .S-product-img-right {
         display: none;
     }
-
     .S-product-img-right-up {
         margin-bottom: 16px;
         width: 100%;
@@ -500,18 +471,13 @@ h3.S-location i{
         /* border: 1px solid purple; */
         background: url(../imgs/spacejoy-sh6Aj176NAQ-unsplash.jpg)center center/cover no-repeat;
     }
-
     .S-product-img-right-down {
         width: 100%;
         height: 50%;
         /* border: 1px solid purple; */
         background: url(../imgs/spacejoy-sh6Aj176NAQ-unsplash.jpg)center center/cover no-repeat;
     }
-
-
-
     /* -----------------單一物件的資訊info------------------ */
-
     .S-product-info {
         margin-top: 30px;
         width: 100%;
@@ -521,39 +487,34 @@ h3.S-location i{
         /* justify-content: space-between; */
         /* align-items: center; */
     }
-    .S-product-info-left h1{
+    .S-product-info-left h1 {
         font-size: 24px;
         padding: 10px 0;
         /* font-size: 32px; */
         color: #0E2E3D;
     }
-    .S-product-info-left h1.S-product-name{
+    .S-product-info-left h1.S-product-name {
         font-size: 20px;
     }
-    .S-product-info-left p{
+    .S-product-info-left p {
         font-size: 16px;
         padding: 5px 0;
         color: #0E2E3D;
-
     }
     .S-product-info-right {
         margin-top: 30px;
         display: flex;
-        flex-direction:row;
+        flex-direction: row;
         justify-content: space-between;
     }
-
     button.S-btn-order {
-        margin-right: 5px;
+        margin-right: 10px;
     }
-
     .S-btn-conect {
         margin-left: 5px;
     }
-
-
     /* 下拉式選單 */
-    .S-xs-menu-wrap{
+    .S-xs-menu-wrap {
         font-weight: 900;
         width: 100%;
         background-color: #FEAC00;
@@ -562,24 +523,20 @@ h3.S-location i{
         justify-content: space-between;
         padding: 10px 8px;
     }
-    .S-xs-menu{
+    .S-xs-menu {
         display: flex;
         /* align-items: center; */
         font-size: 20px;
         font-weight: 900;
-
     }
-    .S-xs-menu-wrap i{
+    .S-xs-menu-wrap i {
         margin-top: 4px;
         font-size: 1.2em;
     }
-
-    
     .S-menu-icon i {
         margin: 10px 20px;
         font-size: 20px;
     }
-    
     .S-menu-info {
         /* margin-top: 30px; */
         margin-bottom: 80px;
@@ -589,30 +546,24 @@ h3.S-location i{
         flex-direction: column;
         text-align: justify;
         align-items: flex-end;
-
     }
-    .S-menu-info p:nth-child(1){
+    .S-menu-info p:nth-child(1) {
         height: 200px;
         overflow: hidden;
         /* border: 2px solid #0E2E3D; */
     }
-    .S-menu-info-more{
+    .S-menu-info-more {
         color: #5D8DC1;
     }
-    .S-menu-info a{
+    .S-menu-info a {
         text-decoration: none;
         display: flex;
         justify-content: flex-end;
         padding: 0 10px;
         color: #0E2E3D;
     }
-
-
-
-
     /* --------------xs-card 卡片-------------------------------- */
-   
-    .S-xs-card-wrap{
+    .S-xs-card-wrap {
         margin-top: 30px;
         /* padding: 5px; */
         margin: 0 5px;
@@ -622,7 +573,7 @@ h3.S-location i{
         position: relative;
         /* border: 1px solid blue; */
     }
-    .S-xs-share{
+    .S-xs-share {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -636,10 +587,10 @@ h3.S-location i{
         top: 5%;
         right: 5%;
     }
-    .S-xs-share i{
+    .S-xs-share i {
         font-size: 1.2em;
     }
-    .S-xs-like{
+    .S-xs-like {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -653,73 +604,61 @@ h3.S-location i{
         top: 5%;
         right: 25%;
     }
-    .S-xs-like svg{
+    .S-xs-like svg {
         width: 25px;
         height: 25px;
         fill: #0E2E3D;
     }
-    
-    
-    .S-xs-card{
+    .S-xs-card {
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: column;
         /* border: 1px solid red; */
     }
-    .S-xs-card-img{
+    .S-xs-card-img {
         width: 100%;
         height: 100%;
         overflow: hidden;
     }
-    .S-xs-card-img img{
+    .S-xs-card-img img {
         width: 100%;
         object-fit: cover;
     }
-    .S-xs-card-info{
+    .S-xs-card-info {
         padding: 10px 20px;
         /* border: 1px solid rgb(45, 95, 112); */
         background-color: #F1EDEA;
         margin: 0;
     }
-    .S-xs-card-info h4{
+    .S-xs-card-info h4 {
         height: 1em;
         font-size: 12px;
     }
-    .S-xs-card-info h4 span{
+    .S-xs-card-info h4 span {
         font-size: 16px;
         font-weight: 900;
         padding-right: 10px;
     }
-    .S-xs-card-info-2{
+    .S-xs-card-info-2 {
         margin-top: 10px;
         height: 2em;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .S-xs-card-info p{
+    .S-xs-card-info p {
         font-size: .8em;
     }
-    .S-xs-card-info h3{
+    .S-xs-card-info h3 {
         display: inline;
     }
-    
     /* footer */
-
     .footer_container {
         margin-top: 40px;
     }
-
-    #areaListBtn{
+    #areaListBtn {
         background: transparent;
         height: 0;
     }
-
-
-
-
-
-
-
 }
