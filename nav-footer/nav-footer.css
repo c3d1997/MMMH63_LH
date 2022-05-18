@@ -57,6 +57,7 @@
      color: red;
  }
  /* 以上文字 */
+ /* 公版寬 */
  
  .container {
      width: 100%;
@@ -64,51 +65,73 @@
      padding: 0 25px;
      margin: auto;
  }
+ /* nav */
  
- .nav-log-out,
- .nav-log-in {
+ .nav .container ul {
      width: 100%;
-     height: 100px;
-     background-color: #F1EDEA;
-     margin: auto;
      display: flex;
-     position: fixed;
-     top: 0px;
-     z-index: 999999999999;
+     list-style: none;
+     align-items: center;
+     justify-content: space-between;
+     height: 100px;
  }
  
- .nav-log-out a,
- .nav-log-in a {
-     font-weight: normal;
-     font-size: 16px;
-     color: #0E2E3D;
+ .pc-link {
+     display: flex;
+     width: 100%;
+     justify-content: space-between;
+ }
+ 
+ .nav .container ul .phone-nav-link {
+     display: flex;
+     width: 100%;
+     justify-content: space-between;
+     align-items: center;
+ }
+ 
+ .x-log-img {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+ }
+ 
+ .nav .x-log-img a:nth-child(1) img {
+     width: 100px;
+     height: 80px;
+ }
+ 
+ .nav .container a {
      text-decoration: none;
      font-weight: bold;
- }
- 
- .nav-log-out .container .row,
- .nav-log-in .container .row {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
- }
- 
- .pc_nav_left,
- .pc_nav_right {
-     width: 33.333%;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
- }
- 
- .pc_nav_left a {
-     position: relative;
-     padding: 0 10px;
-     opacity: .9;
+     color: #0E2E3D;
      letter-spacing: 2px;
+     position: relative;
  }
  
- .pc_nav_left a:before {
+ .nav {
+     width: 100%;
+     background-color: #F1EDEA;
+     height: 100px;
+ }
+ 
+ .nav .container {
+     display: flex;
+     align-items: center;
+ }
+ 
+ .log-out {
+     /* display: none; */
+ }
+ 
+ .log-in {
+     display: none;
+ }
+ 
+ .x-log-show {
+     display: none;
+ }
+ 
+ .nav ul div a:before {
      content: '';
      width: 150%;
      height: 100px;
@@ -117,79 +140,201 @@
      left: -25%;
  }
  
- .pc_nav_left a:after {
+ .nav ul div a:after {
      content: '';
      position: absolute;
      background-color: #FEAC00;
-     border-radius: 30%;
+     border-radius: 25%;
      height: 3px;
      width: 0%;
-     left: 0px;
-     bottom: -10px;
-     transition: .3s;
- }
- 
- .pc_nav_left a:hover:after {
-     width: 100%;
- }
- /*  */
- 
- .pc_nav_right a {
-     position: relative;
-     padding: 0 10px;
-     opacity: .9;
-     letter-spacing: 2px;
- }
- 
- .pc_nav_right a:before {
-     content: '';
-     width: 150%;
-     height: 100px;
-     position: absolute;
-     top: -40px;
      left: -25%;
- }
- 
- .pc_nav_right a:after {
-     content: '';
-     position: absolute;
-     background-color: #FEAC00;
-     border-radius: 30%;
-     height: 3px;
-     width: 0%;
-     left: 0px;
      bottom: -10px;
      transition: .3s;
  }
  
- .pc_nav_right a:hover:after {
-     width: 100%;
+ .nav ul div a:hover:after {
+     width: 150%;
  }
  
- .pc_nav_center {
-     width: 33.33%;
- }
- 
- .phone_nav_left,
- .phone_nav_center,
- .phone_nav_right {
+ .x-log-img a:nth-child(2) {
      display: none;
  }
  
- .nav-log-out a img,
- .nav-log-in a img {
-     width: 100%;
-     height: 81px;
- }
- 
- .phone_copyright {
+ .nav .container ul .x-log-show {
      display: none;
  }
  
- .phone_copyright {
+ .x-log-phone-title {
      display: none;
  }
- /* 以上登入登出 */
+ 
+ .x-phone {
+     display: none;
+ }
+ 
+ .nav .container ul .phone-nav-link li:nth-child(5) img {
+     display: none;
+ }
+ 
+ .x-hidden-personaal {
+     display: none;
+ }
+ /* nav手機 */
+ 
+ @media screen and (max-width:376px) {
+     .nav ul div a:before {
+         content: '';
+         width: 150%;
+         height: 40px;
+         position: absolute;
+         top: -8px;
+         left: -25%;
+     }
+     .nav .container ul {
+         justify-content: space-between;
+         height: 70px;
+     }
+     .nav {
+         width: 100%;
+         background-color: #F1EDEA;
+         height: 70px;
+     }
+     .x-log-phone-title {
+         z-index: 2;
+         text-align: center;
+         width: 150%;
+         display: block;
+     }
+     .x-log-img {
+         justify-content: flex-start;
+         width: 60px;
+         z-index: 2;
+     }
+     .x-log-img a:nth-child(2) {
+         display: block;
+         width: 36px;
+         height: 51px;
+     }
+     .x-log-img a:nth-child(2) img {
+         width: 100%;
+         height: 100%;
+     }
+     .x-log-img a:nth-child(1) {
+         display: none;
+     }
+     .container {
+         width: 375px;
+         margin: auto;
+         padding: 0 20px;
+     }
+     .nav .container .x-log-show {
+         display: block;
+     }
+     .nav .container ul .phone-nav-link {
+         display: none;
+         width: auto;
+     }
+     .nav .container .x-log-show .x-log-show-navbar {
+         position: relative;
+         height: 30px;
+         width: 30px;
+         display: flex;
+         justify-content: flex-end;
+         align-items: center;
+         transform: scale(75%);
+     }
+     .nav .container .x-log-show .x-log-show-navbar span {
+         position: absolute;
+         width: 30px;
+         height: 3px;
+         background: black;
+         border-radius: 6px;
+         transition: .15s;
+     }
+     .x-log-show span:nth-child(1) {
+         transform: translateY(-12px);
+         /* margin-bottom: -10px; */
+     }
+     .x-log-show span:nth-child(2) {
+         transform: translateY(12px);
+         /* margin-bottom: 10px; */
+     }
+     .x-log-show.close span:nth-child(1) {
+         transform: rotate(45deg);
+     }
+     .x-log-show.close span:nth-child(2) {
+         transform: rotate(-45deg);
+     }
+     .x-log-show.close span:nth-child(3) {
+         opacity: 0;
+         transform: translateY(-30px);
+         transform: rotate(45deg);
+     }
+     .x-phone {
+         display: block;
+     }
+     .nav .container ul .phone-nav-link {
+         list-style-type: none;
+         display: flex;
+         align-items: center;
+         justify-content: flex-start;
+         padding: 80px 100px;
+         height: 100%;
+         max-height: 667px;
+         width: 100%;
+         position: fixed;
+         margin-left: -20px;
+         top: 0;
+         flex-direction: column;
+         /* display: none; */
+         transform: translateX(500px);
+         transition: .5s;
+         background-color: #ffffff;
+     }
+     .nav .container ul .phone-nav-link.open {
+         transform: translateX(0px);
+     }
+     .nav .container ul .phone-nav-link {
+         background-color: #F1EDEA;
+     }
+     .nav .container ul .phone-nav-link li {
+         margin: 15px 0;
+     }
+     .nav .container ul .phone-nav-link li:nth-child(5) img {
+         display: block;
+         width: 24px;
+         height: 24px;
+     }
+     .nav .container ul .phone-nav-link li:nth-child(5) a {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-left: 24px;
+         /* margin-bottom: 10px; */
+     }
+     .x-hidden-personaal {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         width: 375px;
+         background-color: #F4F4F4;
+         padding: 15px 0px 10px 0;
+     }
+     .x-hidden-personaal a {
+         margin: 4.25px 0;
+     }
+     .pc-link {
+         display: none;
+     }
+     .x-hidden-personaal.x-hidden-click {
+         display: none;
+     }
+     .nav ul div a:after {
+         content: none;
+     }
+ }
+ /* 結尾 */
  
  .footer {
      width: 100%;
@@ -307,45 +452,7 @@
  }
  
  @media screen and (max-width:376px) {
-     .container {
-         width: 375px;
-         margin: auto;
-         padding: 0 20px;
-     }
-     .nav-log-out,
-     .nav-log-in {
-         width: 100%;
-         max-width: 375px;
-         height: 70px;
-     }
-     .nav-log-out a img,
-     .nav-log-in a img {
-         height: 70px;
-     }
-     .container {
-         width: 100%;
-         padding: 0 20px;
-     }
-     .pc_nav_left,
-     .pc_nav_right,
-     .pc_nav_center {
-         display: none;
-     }
-     .phone_nav_left {
-         display: block;
-     }
-     .phone_nav_center {
-         width: 100px;
-         display: block;
-     }
-     .phone_nav_right {
-         display: block;
-     }
-     .nav-log-out .container .row,
-     .nav-log-in .container .row {
-         height: 70px;
-         justify-content: space-between;
-     }
+     /* 結尾 */
      .footer-up {
          justify-content: center;
          height: auto;
