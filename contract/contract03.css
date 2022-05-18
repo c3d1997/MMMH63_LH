@@ -173,6 +173,13 @@ ul {
     background: hsla(211, 45%, 56%, 0.766)
 }
 
+@media screen and (max-width:376px){
+    .c_content_box::-webkit-scrollbar {
+        width: 3px;
+    
+    }
+}
+
 /* --------------confirm bar----------------- */
 .c_confirm_bar {
     max-width: 1280px;
