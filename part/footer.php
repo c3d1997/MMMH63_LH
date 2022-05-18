@@ -1,4 +1,4 @@
-<div class="footer_container">
+    <div class="footer_container">
         <div class="footer">
             <div class="container">
                 <div class="footer-up">
@@ -61,3 +61,4 @@
             </p>
         </div>
     </div>
+    <script src="js/jquery-3.6.0.js"></script>

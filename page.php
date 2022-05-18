@@ -987,5 +987,6 @@
         </div>
     </div>
 
-<?php include __DIR__ . './part/javascript.php'  ?>
+
 <?php include __DIR__ . './part/footer.php'  ?>
+<?php include __DIR__ . './part/javascript.php'  ?>
