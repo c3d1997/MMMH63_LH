@@ -853,7 +853,6 @@ $title = '付款方式'
 
 <?php include __DIR__ . './part/footer.php'  ?>
 
-    <script>
     $(".z_checkbox_container :checkbox").click(function(){
     $(this).parent().siblings().find(":checkbox").prop('checked', false);
     if ($("#payBank").prop('checked')) {
@@ -873,6 +872,6 @@ $title = '付款方式'
     $("#bankSelect").click(function(){
         $(".arrow_container img").toggleClass("downArrow")
     })
-    </script>
+
     
 <?php include __DIR__ . './part/javascript.php' ?>

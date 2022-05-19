@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>FileReader</title>
+	<style>
+		.container {
+			position: relative;
+			width: 800px;
+			height: 600px;
+			background-color: #b0e9ff;
+			
+		}
+	</style>
+</head>
+<body>
+<input type="file" id="fileFiled" style="display: none;"
+	   multiple accept="image/*">
+<button>add image</button>
+<div class="container">
+	<!-- <img src="../imgs/57 1.jpg" alt="" width=""> -->
+</div>
+<script src="../js/jquery-3.6.0.js"></script>
+<script>
+	const container = $('.container');
+	const fileFiled = $('#fileFiled');
+	$('button').click(function(event){
+		fileFiled.click();
+	});
+	const readerLoaded = event=>{
+		let image = new Image();
+		image.width = container.width();
+		image.src = event.target.result; // 將結果設定給 img
+		// console.log(image);
+		container.append(image)
+	};
+	// fileFiled[0] 圖片陣列
+	fileFiled.on('change', function(event){
+		let file, reader;
+		for(let i=0; i<fileFiled[0].files.length; i++){
+			file = fileFiled[0].files[i];
+			// 檔案本人
+			console.log(file,"file");
+			// 上傳按鈕
+			console.log(fileFiled[0],"fileFiled");
+			// files[i] 上傳次數;
+
+			reader = new FileReader();
+			
+			// 監聽 readerLoaded 讀取
+			reader.addEventListener('load', readerLoaded);
+			console.log(reader);
+			// 預覽
+			reader.readAsDataURL(file);
+			console.log(reader);
+			
+		}
+	});
+</script>
+
+</body>
+</html>

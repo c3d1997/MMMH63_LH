@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上傳房屋圖片</title>
+    <link rel="stylesheet" href="../nav-footer/nav-footer.css">
+    <link rel="stylesheet" href="../button-fonts.css">
+    <link rel="stylesheet" href="./publish.css">
+    <style>
+        .z_upload_item_img_btn input {
+            display: none;
+        }
+        .z_img_reviewcontainer {
+            position: relative;
+        }
+        .z_img_reviewcontainer>img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+        .uploadimg_before {
+            position: absolute;
+        }
+        /* .uploadimg_before  * {
+            color: red;
+        } */
+        .z_upload_item_img_btn {
+            background-color:transparent;
+        }
+        .z_upload_item_img_btn > button {
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="z_container ">
+            <div class="z_row ">
+                <div class="z_publish_container">
+                    <div class="z_publish_phone_title">
+                        <img src="../imgs/backcolor.svg" alt="">
+                        <p>刊登物件</p>
+                    </div>
+                    <div class="z_step_title bold">step1.　上傳房屋圖片</div>
+                    <div class="z_img_reviewcontainer bold">
+                        <div class="uploadimg_before">
+                            <p>您可以拖拉圖片至此處</p>
+                            <div class="z_upload_item_img_btn">
+                                <input type="file" accept="image/*" id="mainUpload">
+                                <button id="upload_btn"><img src="../imgs/uploadicon.svg" alt="">或是點此上傳</button>
+                            </div>
+                            <p>提醒您！最多可以上傳10張照片，並且每張照片解析度請至少達到1280*920px</p>
+                        </div>
+                    </div>
+                    <div class="z_phone_view">
+                        <div class="z_step1imgs_container">
+                            <div class="z_review_card" id="review1">
+                                <button class="z_close_icon"></button>
+
+                            </div>
+                            <div class="z_review_card">
+                                <button class="z_close_icon"></button>
+                                <img src="" alt="">
+                            </div>
+                            <div class="z_review_card">
+                                <button class="z_close_icon"></button>
+                                <img src="" alt="">
+                            </div>
+                            <div class="z_review_card">
+                                <button class="z_close_icon"></button>
+                                <img src="" alt="">
+                            </div>
+                            <div class="z_review_card">
+                                <button class="z_close_icon"></button>
+                                <img src="" alt="">
+                            </div>
+                            <div class="z_review_card">
+                                <button class="z_close_icon"></button>
+                                <img src="" alt="">
+                            </div>
+                            <div class="z_review_card">
+                                <button class="z_close_icon"></button>
+                                <img src="" alt="">
+                            </div>
+                            <div class="z_review_card">
+                                <button class="z_close_icon"></button>
+                                <img src="" alt="">
+                            </div>
+                            <div class="z_review_card">
+                                <button class="z_close_icon"></button>
+                                <img src="" alt="">
+                            </div>
+                            <div class="z_review_card">
+                                <button class="z_close_icon"></button>
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="z_publish_phone_tip_container">
+                        <p>提醒您！</p>
+                        <p>最多可以上傳10張照片，並且每張照片解析度請至少達到1280*920px</p>
+                    </div>
+                    <button class="pc-button-FEAC00-180 z_publish_btnY z_maxbtn">下一步</button>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <script src="../js/jquery-3.6.0.js"></script>
+        <script>
+        const container = $('.z_img_reviewcontainer');
+        const removeimg = document.querySelector(".z_img_reviewcontainer")
+        const mainUpload = $('#mainUpload');
+        const review1 = $("#review1")
+        let nowimg = document.querySelectorAll(".z_img_reviewcontainer img")
+        let nowimglength = document.querySelectorAll(".z_img_reviewcontainer img").length
+
+        $('#upload_btn').click(function(event){
+            mainUpload.click();
+        });
+        const readerLoaded = event=>{
+            let image = new Image();
+            let image2 = new Image();
+            image.src = event.target.result; // 將結果設定給 img
+            image2.src = event.target.result; // 將結果設定給 img
+            const i = 3
+            if (i <= nowimglength) {
+                
+            }
+            container.append(image)
+            console.log(nowimglength,'總長');
+            console.log(nowimg) ;
+            // review1.append(image2)
+        };
+        mainUpload.on('change', function(event){
+            let file, reader;
+                // .files 當下的檔案 .files.length 檔案數量
+            for(let i=0; i<mainUpload[0].files.length; i++){
+                file = mainUpload[0].files[i];
+                // 檔案本人
+                console.log(file,"file");
+                // 上傳按鈕
+                console.log(mainUpload[0],"mainUpload");
+                // files[i] 上傳次數;
+                console.log(mainUpload[0]);
+
+                reader = new FileReader();
+                
+                // 監聽 readerLoaded 讀取
+                reader.addEventListener('load', readerLoaded);
+                // 預覽
+                reader.readAsDataURL(file);
+            }
+            $(".uploadimg_before").css("background","#eef1f47c")
+            }); 
+            $(".z_close_icon").click(function(){
+                $(this).next().remove("img")
+            })
+        
+</script>
+</body>
+</html>
