@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./single_product.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="../button-fonts.css">
@@ -148,7 +148,9 @@
                 <div class="S-product-img-left"></div>
                 <div class="S-product-img-right">
                     <div class="S-product-img-right-up"></div>
-                    <div class="S-product-img-right-down"></div>
+                    <div class="S-product-img-right-down">
+                        <button class="more-img">+7</button>
+                    </div>
                 </div>
             </div>
 
@@ -1075,17 +1077,19 @@
 
         $('.btn1').click(function(){
             console.log('btn1');
-            $(this).toggleClass('step-on').siblings().removeClass('step-on');
+            $(this).addClass('step-on');
+            $(this).siblings().removeClass('step-on');
             $('.S-menu-RentInfo').removeClass('S-d-none');
+            $('.S-menu-RentInfo').siblings().addClass('S-d-none');
         })
+
         $('.btn2').click(function(){
             console.log('btn2');
+            $(this).addClass('step-on').siblings().removeClass('step-on');
             $('.S-menu-Equipment').removeClass('S-d-none');
             $('.S-menu-Equipment').siblings().addClass('S-d-none');
         })
-        // $('.S-menu-btn').click(function(){
-        //     $(this).addClass('step-on').siblings().removeClass('step-on');
-        // }
+        
 
 
 
