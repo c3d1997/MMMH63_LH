@@ -114,6 +114,7 @@
      height: 100px;
      position: fixed;
      top: 0%;
+     z-index: 99999;
  }
  
  .nav .container {
@@ -202,6 +203,7 @@
          height: 70px;
          position: fixed;
          top: 0%;
+         z-index: 99999;
      }
      .x-log-phone-title {
          z-index: 2;
