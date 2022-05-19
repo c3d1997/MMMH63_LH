@@ -658,7 +658,7 @@
             <div class="z_row ">
                 <div class="z_publish_container">
                     <div class="z_publish_phone_title">
-                        <img src="../imgs/backcolor.svg" alt="">
+                        <img src="imgs/backcolor.svg" alt="">
                         <p>刊登物件</p>
                     </div>
                     <div class="z_step_title bold">step1.　上傳房屋圖片</div>
@@ -669,7 +669,7 @@
                         <div class="uploadimg_before">
                             <p>您可以拖拉圖片至此處</p>
                             <div class="z_upload_item_img_btn">
-                                <button><img src="../imgs/uploadicon.svg" alt="">或是點此上傳</button>
+                                <button><img src="imgs/uploadicon.svg" alt="">或是點此上傳</button>
                             </div>
                             <p>提醒您！最多可以上傳10張照片，並且每張照片解析度請至少達到1280*920px</p>
                         </div>
@@ -678,7 +678,7 @@
                         <div class="z_step1imgs_container">
                             <div class="z_review_card">
                                 <button class="z_close_icon"></button>
-                                <img src="../imgs/cut-spacejoy-umAXneH4GhA-unsplash 1.jpg" alt="">
+                                <img src="imgs/cut-spacejoy-umAXneH4GhA-unsplash 1.jpg" alt="">
                             </div>
                             <div class="z_review_card">
                                 <button class="z_close_icon"></button>
