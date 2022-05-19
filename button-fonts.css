@@ -69,6 +69,14 @@ body {
     border: none;
     background-color: #FEAC00;
     cursor: pointer;
+    transition: .5s;
+    transform: translateX(0);
+}
+
+.pc-button-FEAC00-280:hover {
+    transform: translateX(-5px);
+    transform: translateY(-5px);
+    background-color: #281f0c;
 }
 
 .pc-button-F4F4F4-280 {
