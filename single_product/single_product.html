@@ -225,6 +225,7 @@
                         <img src="../imgs/租屋資訊.svg" alt="">
                     </div>
 
+
                     <div class="S-menu-icon-wrap">
                         <div class="S-menu-icon-c">
                             <div class="S-menu-icon-group col-lg-3">
@@ -335,7 +336,7 @@
                     <div class="S-menu S-xs-d-none">
                         <div class="S-menu-btn btn1">租屋資訊</div>
                         <div class="S-menu-btn btn2">物件設備</div>
-                        <div class="S-menu-btn btn3 step-on">物件公設</div>
+                        <div class="S-menu-btn btn3  step-on">物件公設</div>
                         <div class="S-menu-btn btn4">物件特色</div>
                         <div class="S-menu-btn btn5">物件安全設備</div>
                         <div class="S-menu-btn btn6">物件其他費用</div>
@@ -1079,13 +1080,8 @@
         })
         $('.btn2').click(function(){
             console.log('btn2');
-            $('.S-menu-Equipment').siblings().addClass('S-d-none');
             $('.S-menu-Equipment').removeClass('S-d-none');
-        })
-        $('.btn3').click(function(){
-            console.log('btnRRRR');
-            $('.S-menu-PublicFacilities').removeClass('S-d-none');
-            $('.S-menu-PublicFacilities').siblings().addClass('S-d-none');
+            $('.S-menu-Equipment').siblings().addClass('S-d-none');
         })
         // $('.S-menu-btn').click(function(){
         //     $(this).addClass('step-on').siblings().removeClass('step-on');

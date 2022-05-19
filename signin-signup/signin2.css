@@ -94,19 +94,17 @@
     align-items: flex-start;
     /* flex-direction: column; */
 }
-
-
-.blueBg .box button{
-    padding: 10px 20px;
-    font-weight: 900;
+.signupBtn,.signinBtn{
+    font-weight: 900; 
     cursor: pointer;
     font-size: 32px;
-    padding: 40px 50px 0;
     /* color: #0E2E3D; */
     color: rgba(0, 0, 0, 0.2);
     border: transparent;
     background: transparent;
+    padding: 40px 50px 0px;
 }
+
 .blueBg .box button.S-blue{
     color: #0E2E3D;
 }
@@ -290,7 +288,7 @@ button.signupBtn:hover{
 
 /* 忘記密碼 */
 .formBx .form form .forgot{
-    padding: 10px 0;
+    padding: 0 0 10px;
     text-align: right;
     color: #5D8DC1;
     text-decoration: none;
@@ -304,6 +302,9 @@ button.signupBtn:hover{
 .alert{
     padding: 2px 0;
     margin-left: 80px;
+}
+.signinForm .alert{
+    margin-left: 50px;
 }
 .checkbox-info input{
     width: 10px;
@@ -418,7 +419,7 @@ input[type=checkbox]:checked+span {
         flex-direction: column;
         min-height: 0;
         background-color: #F1EDEA ;
-        margin-top: 40px;
+        /* margin-top: 40px; */
         background: #F1EDEA ;
     }
     .container1{
@@ -438,12 +439,30 @@ input[type=checkbox]:checked+span {
         width: 100%;
         top: 0;
         box-shadow: none;
+        align-items: flex-start;
     }
 
+
+    .form{
+        padding: 20px 0;
+        /* border: #75BBE3 10px solid; */
+    }
+    input[type=checkbox]+span {
+        
+        background: url(../imgs/unchecked.svg) no-repeat left top;
+        
+    }
+    .c_confirm_bar{
+        text-align: left;
+    }
+
+    /* ---------登入表單-------------------------------------------------- */
+
     .formBx .signinForm{
-        top: 20%;
+        top: 15%;
         width: 100%;
         left: 0%;
+        /* background: #75BBE3; */
     }
 
 
@@ -459,15 +478,6 @@ input[type=checkbox]:checked+span {
         /* bottom: 0; */
     }
 
-    .signupForm{
-        margin-top: -40px;
-    }
-    
-
-
-
-
-
     .box.signin{
         top: 0;
     }
@@ -475,47 +485,74 @@ input[type=checkbox]:checked+span {
         left: 0;
         top: 150px;
     }
+
+
+    /* ---------註冊表單-------------------------------------------------- */
     .formBx .signupForm{
-        top: 22%;
-        /* left: 15%; */
         display: flex;
         flex-direction: column;
         align-items: center;
         transition-delay: 0s;
+        /* background:#ffd069af ; */
     }
 
-    /* .footer_container{
-        margin-top: 1000px;
-    } */
 
 
 
+    /* 手機版 按鈕 */
+    .mobil-Btn-g{
+        display: flex;
+        margin-bottom: 30px;
+    }
+    
 
+    .mobile-signupBtn,.mobile-signinBtn{
+        font-weight: 900; 
+        cursor: pointer;
+        font-size: 32px;
+        /* color: #0E2E3D; */
+        color: rgba(0, 0, 0, 0.2);
+        border: transparent;
+        background: transparent;
+        padding: 40px 50px 0px;
+    }
+
+    .mobil-Btn-g button.S-blue{
+        color: #0E2E3D;
+    }
+
+
+    
+    .alert{
+        /* padding: 2px 0; */
+        margin-left: 0;
+    }
+
+    .signinForm .alert{
+        margin-left: 0px;
+    }
+
+    .z-all-center .input[type=checkbox]{
+        background: url(../imgs/unchecked.svg) no-repeat left top;
+        border: 5px solid red;
+    }
 
 
     /*.blueBg --------------隱藏-------------- */
     /* --------------隱藏-------------- */
     /* --------------隱藏-------------- */
     /* --------------隱藏-------------- */
+    .option_name{
+        display: none;
+    }
     .S-d-none{
         display: none;
     }
-
-
-    /* 隱藏登入表格 */
-    .signinForm.S-d-none{
-        display: none;
-    }
-
-
-    /* 隱藏註冊表格 */
-    .form.signupForm.S-d-none{
-        display: none;
-    }
-
-
-
     
+    .form.S-d-new-none{
+        display: none;
+    }
+   
     .S-d-block{
         display: block;
     }
@@ -524,7 +561,15 @@ input[type=checkbox]:checked+span {
 
 
 
+/* .InfoBx.mobile-active{
+    display: block;
+    transition: .5s ease-in-out;
+} */
 
+/* .InfoBx.mobile-inactive{
+    display: none;
+    transition: .5s ease-in-out;
+} */
 
 
 
@@ -533,3 +578,5 @@ input[type=checkbox]:checked+span {
 
 
 /* ---------------------------登入--------------------------- */
+
+
