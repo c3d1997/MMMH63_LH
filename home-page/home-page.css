@@ -18,18 +18,26 @@
                 }
                 /* 首頁第一頁開始 */
                 
-                .x-home-page-slogan {
+                .x-home-page-img-effect {
+                    position: relative;
                     width: 100%;
                     max-width: 1920px;
                     height: 100vh;
                     max-height: 1080px;
                     margin: auto;
-                    background: url(../imgs/cut-patrick-perkins-3wylDrjxH-E-unsplash\ 3.jpg) no-repeat center/cover;
+                    margin-bottom: 60px;
+                    overflow: hidden;
+                }
+                
+                .x-home-page-slogan {
+                    position: absolute;
+                    background: url(../imgs/cut-patrick-perkins-3wylDrjxH-E-unsplash\ 3.jpg) center center /cover no-repeat;
+                    width: 100%;
+                    height: 120%;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    margin-bottom: 60px;
                 }
                 
                 .x-home-page-slogan .container {
@@ -39,7 +47,7 @@
                 }
                 
                 .x-slogan {
-                    margin-top: 180px;
+                    margin-top: 60px;
                 }
                 
                 .x-slogan h1 {
@@ -153,6 +161,7 @@
                 }
                 
                 .x-introduce-right {
+                    margin-top: -240px;
                     width: 570px;
                     min-height: 668px;
                     height: 100%;
@@ -163,6 +172,7 @@
                 }
                 
                 .x-introduce-left {
+                    margin-top: -160px;
                     width: 570px;
                     min-height: 668px;
                     height: 100%;
@@ -243,6 +253,38 @@
                     flex-direction: column;
                 }
                 
+                .x-home-page-post-clean-left-post div:nth-child(1) {
+                    transition: .25s ease-in;
+                    box-shadow: inset 0px 0px 0 0 #FEAC00;
+                    z-index: 5;
+                }
+                
+                .x-home-page-post-clean-left-post:hover div:nth-child(1) {
+                    box-shadow: inset 0 166px 0 0 #FEAC00;
+                    z-index: 4;
+                }
+                
+                .x-home-page-post-clean-right-clean div:nth-child(1) {
+                    transition: .25s ease-in;
+                    box-shadow: inset 0px 0px 0 0 #FEAC00;
+                    z-index: 5;
+                }
+                
+                .x-home-page-post-clean-right-clean:hover div:nth-child(1) {
+                    box-shadow: inset 0 -166px 0 0 #FEAC00;
+                    z-index: 4;
+                }
+                
+                .x-home-page-post-clean-left-post:hover div:nth-child(2) {
+                    background: url(../imgs/cut-spacejoy-umAXneH4GhA-unsplash\ 1.jpg) no-repeat center/110%;
+                    z-index: 4;
+                }
+                
+                .x-home-page-post-clean-right-clean:hover div:nth-child(2) {
+                    background: url(../imgs/cut-ashwini-chaudhary-monty-Iu6parQAO-U-unsplash\ 1.jpg) no-repeat center/110%;
+                    z-index: 4;
+                }
+                
                 .x-home-page-post-clean-right-clean {
                     display: flex;
                     flex-direction: column-reverse;
@@ -261,12 +303,16 @@
                 .x-home-page-post-clean-left-post div:nth-child(2) {
                     width: 615px;
                     height: 530px;
+                    overflow: hidden;
+                    transition: 1s ease-out;
                     background: url(../imgs/cut-spacejoy-umAXneH4GhA-unsplash\ 1.jpg) no-repeat center/100%;
                 }
                 
                 .x-home-page-post-clean-right-clean div:nth-child(2) {
                     width: 615px;
                     height: 530px;
+                    overflow: hidden;
+                    transition: 1s ease-out;
                     background: url(../imgs/cut-ashwini-chaudhary-monty-Iu6parQAO-U-unsplash\ 1.jpg) no-repeat center/100%;
                 }
                 
