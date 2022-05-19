@@ -150,11 +150,11 @@
 
 
         <!-- 大的切換button -->
-        <div class="blueBg">
+        <div class="blueBg S-d-none">
             <div class="box signin">
                 <!-- 左側註冊按鈕區 -->
-                <button class="signinBtn">登入</button>
-                <button class="signupBtn S-blue">註冊</button>
+                <button class="signinBtn mobile-signinBtn">登入</button>
+                <button class="signupBtn mobile-signupBtn S-blue">註冊</button>
             </div>
             <div class="box signup">
                 <!-- 右側註冊按鈕區 -->
@@ -168,9 +168,13 @@
         <!-- 登入表格 -->
 
         <div class="formBx">
-            <div class="form signinForm S-d-none">
+            <!-- 登入手機按鈕mobile-signinBtn -->
+            <div class="mobil-Btn-g S-lg-d-none">
+                <button class="mobile-signinBtn S-blue">登入</button>
+                <button class="mobile-signupBtn">註冊</button>
+            </div>
+            <div class="form signinForm">
                 <form>
-                    <!-- <h3>登入</h3> -->
                     <!-- 標題+輸入框 -->
                 <div class="input_option">
                     <p class="option_name">手機</p>
@@ -179,7 +183,7 @@
                     </div>
                     
                 </div>
-                <div class="alert" style="margin-left: 50px;">!帳號或密碼錯誤 </div>
+                <div class="alert">!帳號或密碼錯誤 </div>
                     <!-- 標題+輸入框 -->
                 <div class="input_option">
                     <p class="option_name">密碼</p>
@@ -187,6 +191,7 @@
                             <input type="text" name="" id="" placeholder="輸入您的密碼"> 
                     </div>
                 </div>
+                <div class="alert">!帳號或密碼錯誤 </div>
                     <a href="#" class="forgot">忘記密碼</a>
                 </form>
                 <button class="pc-button-FEAC00-180">登入</button>
@@ -197,10 +202,10 @@
 
         <!-- 註冊表格 -->
 
-
-            <div class="form signupForm">
+        
+            <div class="form signupForm S-d-new-none">
                 <form>
-                    <!-- <h3>註冊</h3> -->
+                    <!-- 註冊手機按鈕mobile-signinBtn -->
                     <div class="input_option">
                         <p class="option_name">真實姓名</p>
                         <div class="fullinput_container ">
@@ -344,14 +349,21 @@
 
 
 <script src="../js/jquery-3.6.0.js"></script>
+<script src="../home-page/home-page.js"></script>
+<script src="../nav-footer/nav-footer.js"></script>
 
     <script>
         const signinBtn = document.querySelector('.signinBtn');
-        // const signupBtn = document.querySelector('.signupBtn');
+        const signupBtn = document.querySelector('.signupBtn');
         // const formBx = document.querySelector('.formBx');
         const InfoBx = document.querySelector('.InfoBx');
         const body = document.querySelector('body');
+        const signupForm = document.querySelector('.signupForm');
+        const signinForm = document.querySelector('.signinForm');
 
+        let signinClicked = $('.signinBtn').click();
+        let signupClicked = $('.signupBtn').click();
+        
 
 
         // 桌機版註冊&登入
@@ -360,21 +372,38 @@
             InfoBx.classList.add('active');
             InfoBx.classList.remove('inactive');
             signupBtn.classList.add('S-blue');
-            signinBtn.classList.remove('in-S-blue');
+            signinBtn.classList.remove('S-blue');
         });
 
         $('.signinBtn').click(function(){
             console.log('hi signin');
             InfoBx.classList.add('inactive');
             InfoBx.classList.remove('active');
-            signinBtn.classList.add('in-S-blue');
-            signupBtn.classList.remove('S-blue');
-
+            signinBtn.classList.add('S-blue');
+            signupBtn.classList.remove('S-blue');c
         });
 
-       
+
 
         
+        // 手機板註冊&登入
+
+        $('.mobile-signinBtn').click(function(){
+            $('.signupForm').addClass('S-d-new-none');
+            $('.signinForm').removeClass('S-d-new-none');
+            $('.mobile-signinBtn').addClass('S-blue');
+            $('.mobile-signupBtn').removeClass('S-blue');
+        })
+
+        $('.mobile-signupBtn').click(function(){
+            $('.signinForm').addClass('S-d-new-none');
+            $('.signupForm').removeClass('S-d-new-none');
+            $('.mobile-signupBtn').addClass('S-blue');
+            $('.mobile-signinBtn').removeClass('S-blue');
+        })
+
+        
+
 
 
 
