@@ -135,10 +135,6 @@ ul {
 
 
 /* ---------------section sign------------- */
-#myCanvas {
-    border: 1px solid red;
-
-}
 
 .c_sign_text::before{
     content: '簽名區 ( 你也可以上傳您的簽名 )';
