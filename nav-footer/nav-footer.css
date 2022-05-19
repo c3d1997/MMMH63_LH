@@ -112,6 +112,8 @@
      width: 100%;
      background-color: #F1EDEA;
      height: 100px;
+     position: fixed;
+     top: 0%;
  }
  
  .nav .container {
@@ -198,6 +200,8 @@
          width: 100%;
          background-color: #F1EDEA;
          height: 70px;
+         position: fixed;
+         top: 0%;
      }
      .x-log-phone-title {
          z-index: 2;
