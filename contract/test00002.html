@@ -1,14 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .select-time .form-group {
+            display: inline-flex;
+            align-items: center;
+        }
+    </style>
 </head>
-<body>
-    <canvas id="tutorial" width="150" height="150"></canvas>
 
-    
+<body>
+    <div class="form-group col-12">
+        <label>Select Time</label>
+        <div class="form-row align-items-center select-time">
+            <div class="form-group col-md-3 col-3">
+                <select name="meetDayYY" id="meetYear" class="form-control"
+                    onchange="setDays(this, meetMonth, meetDay); getDay(); changeYear();">
+                </select>
+                <span class="mx-md-3 mx-0">年</span>
+            </div>
+            <div class="form-group col-md-3 col-3">
+                <select name="meetDayMM" id="meetMonth" class="form-control"
+                    onchange="setDays(meetYear, this, meetDay); getDay(); changeMonth();">
+                </select>
+                <span class="mx-md-3 mx-0">月</span>
+            </div>
+            <div class="form-group col-md-3 col-3">
+                <select name="meetDayDD" id="meetDay" class="form-control" onchange="getDay()">
+                </select>
+                <span class="mx-md-3 mx-0">日</span>
+            </div>
+        </div>
+
+        <!-- -------------時間---------------- -->
+        <div class="form-group col-12" id="weekDaily">
+            <div class="cntr">
+                <label for="contact-time01" class="radio">
+                    <input type="radio" name="rdo" id="contact-time01" class="hidden" />
+                    <span class="label"></span>09:00-11:00
+                </label>
+                <label for="contact-time02" class="radio">
+                    <input type="radio" name="rdo" id="contact-time02" class="hidden" />
+                    <span class="label"></span>11:00-13:00
+                </label>
+                <label for="contact-time03" class="radio">
+                    <input type="radio" name="rdo" id="contact-time03" class="hidden" />
+                    <span class="label"></span>13:00-15:00
+                </label>
+                <label for="contact-time04" class="radio">
+                    <input type="radio" name="rdo" id="contact-time04" class="hidden" />
+                    <span class="label"></span>15:00-17:00
+                </label>
+                <label for="contact-time05" class="radio">
+                    <input type="radio" name="rdo" id="contact-time05" class="hidden" />
+                    <span class="label"></span>17:00-20:00
+                </label>
+            </div>
+        </div>
+
+
+
+        <div class="form-group col-12" id="weekend">
+            <div class="cntr">
+                <label for="contact-time11" class="radio">
+                    <input type="radio" name="rdo" id="contact-time11" class="hidden" />
+                    <span class="label"></span>10:00-12:00
+                </label>
+                <label for="contact-time12" class="radio">
+                    <input type="radio" name="rdo" id="contact-time12" class="hidden" />
+                    <span class="label"></span>12:00-14:00
+                </label>
+                <label for="contact-time13" class="radio">
+                    <input type="radio" name="rdo" id="contact-time13" class="hidden" />
+                    <span class="label"></span>14:00-17:00
+                </label>
+            </div>
+        </div>
+
+
+    </div>
+    </section>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="./test0002.js"></script>
+    <script src="./test0003.js"></script>
 </body>
+
 </html>
