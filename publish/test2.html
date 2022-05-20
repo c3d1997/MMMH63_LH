@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../nav-footer/nav-footer.css">
     <link rel="stylesheet" href="../button-fonts.css">
     <link rel="stylesheet" href="./publish.css">
+    <style>
+    </style>
 </head>
 <body>
     <section>
@@ -100,7 +102,7 @@
         console.log((smallcontainer.length)); 
         let i = 0
         function readURL(input){
-          if(input.files && input.files[0]){
+        //   if(input.files && input.files[0]){
             var reader = new FileReader();
             reader.onload = function (e) {
                 $("#nowimg").attr('src', e.target.result);
@@ -114,12 +116,38 @@
                 i++;
                 console.log(i);
             }
+            console.log(input.files[0])
             reader.readAsDataURL(input.files[0]);
           }
-        }
+        // }
         $(".z_close_icon").click(function(){
             $(this).next().removeAttr("src")
         })
+
+        const container = $('#nowimg');
+        container.on('dragover', function(event){
+            event.preventDefault();
+        });
+        container.on('dragenter', function(event){
+            // container.css('background-color','#ffe055');
+            $(".z_img_reviewcontainer").css('border','3px solid #ffe055');
+        });
+        container.on('dragleave', function(event){
+            // container.css('background-color','#b0e9ff');
+        });
+        container.on('drop', function(event){
+            // container.css('background-color','#b0e9ff');
+            $(".z_img_reviewcontainer").css('border','3px solid #0E2E3D');
+            event.preventDefault(); // 避免預設行為
+            var reader = new FileReader();
+            reader.onload = function (e){
+                $("#nowimg").attr('src', e.target.result);
+            }
+            
+
+
+        });
+
         </script>
 </body>
 </html> 

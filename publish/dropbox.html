@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" id="file">
+    <div id="dropbox"  style="background-color:#ffffaa ; width: 500px;height: 500px;"></div>
+
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script>
+    
+    var container = $('#dropbox').get(0);
+
+    $(document).on('dragenter', '#dropbox', function(event) {
+    if(event.target === container) {
+        console.log('dragenter');
+    }
+    });
+
+    </script>
+</body>
+</html>
