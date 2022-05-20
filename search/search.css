@@ -4,10 +4,10 @@
     width: 100%;
     max-width: 1920px;
     height: 1080px;
-    max-height: 1080px;
     margin: auto;
     background: url(../imgs/spacejoy-YI2YkyaREHk-unsplash\ 1.jpg) no-repeat center/cover;
-    padding-top: 360px;
+    padding-top: 320px;
+    transition: .5s;
 }
 
 .x-search-ex-ex {
@@ -40,6 +40,7 @@
     padding-right: 15px;
     background-color: white;
     margin-bottom: 20px;
+    transition: .25s;
 }
 
 .x-search-options {
@@ -142,6 +143,16 @@
 .onoffswitch-checkbox:checked+.onoffswitch-label:before {
     right: 2px;
     top: 1px;
+}
+
+.x-hidden-DisplayNone {
+    height: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: .5s;
 }
 
 @media screen and (max-width:376px) {
