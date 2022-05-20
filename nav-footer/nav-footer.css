@@ -457,6 +457,10 @@
      margin-right: 25px;
  }
  
+ .phone_copyright {
+     display: none;
+ }
+ 
  @media screen and (max-width:376px) {
      /* 結尾 */
      .footer-up {
