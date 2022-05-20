@@ -11,9 +11,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="../nav-footer/nav-footer.css">
-        <link rel="stylesheet" href="../button-fonts.css">
-        <link rel="stylesheet" href="contract01.css">
+    <link rel="stylesheet" href="../nav-footer/nav-footer.css">
+    <link rel="stylesheet" href="../button-fonts.css">
+    <link rel="stylesheet" href="contract01.css">
 </head>
 
 <body>
@@ -27,8 +27,8 @@
                     </li>
                     <li class="x-log">
                         <a href="">
-                        刊登房屋
-                    </a>
+                            刊登房屋
+                        </a>
                     </li>
                 </div>
                 <li class="x-log-img">
@@ -47,22 +47,22 @@
                     </li>
                     <li class="x-log x-phone">
                         <a href="">
-                        刊登房屋
-                    </a>
+                            刊登房屋
+                        </a>
                     </li>
                     <li class="x-log">
                         <a href="">
-                        清潔服務
-                    </a>
+                            清潔服務
+                        </a>
                     </li>
                     <li class="log-in x-log">
                         <a href="">
-                        會員登入/註冊
-                    </a>
+                            會員登入/註冊
+                        </a>
                     </li>
                     <li class="log-out x-log x-hidden-flip">
                         <a href="#">
-                        個人頁面 <img src="../imgs/down-arrow.svg" alt="">
+                            個人頁面 <img src="../imgs/down-arrow.svg" alt="">
                         </a>
                     </li>
                     <div class="x-hidden-personaal x-hidden-click">
@@ -174,11 +174,13 @@
         <div class="c-select_container">
             <div class="c-select">
                 <label for="">
-                    <h3>是</h3></label>
+                    <h3>是</h3>
+                </label>
                 <input type="radio" name="gender" id="yes">
 
                 <label for="">
-                    <h3>否</h3></label>
+                    <h3>否</h3>
+                </label>
                 <input type="radio" name="gender" id="no">
             </div>
         </div>
@@ -223,21 +225,21 @@
         <!-----------------第2排 ---------------->
         <div class="form-row2 ">
             <div class="cz_mb">
-            <form class="form" action="#">
-                <label for="person">
-                    <p>戶籍縣市</p>
-                </label>
-                <div class="c-dropdown_container">
+                <form class="form" action="#">
+                    <label for="person">
+                        <p>戶籍縣市</p>
+                    </label>
+                    <div class="c-dropdown_container">
                         <div class="c-dropdown">
                             <img src="../imgs/down-arrow.svg" alt="">
                         </div>
-                    <div id="areaList" class="dropdown_list" hidden>
-                        <p class="">台北市</p>
-                        <p class="">新北市</p>
-                        <p class="">基隆市</p>
+                        <div id="areaList" class="dropdown_list" hidden>
+                            <p class="">台北市</p>
+                            <p class="">新北市</p>
+                            <p class="">基隆市</p>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
             </div>
             <div class="testfrom1 cz_mb">
                 <form class="form" action="#">
@@ -312,10 +314,67 @@
     </div>
 
     <!-------------- 表單地獄------------------->
-
+    <!---------------- 租屋期限------------------ -->
     <div class="z_time">
         <h3>選擇租屋期限</h3>
-        <div class="z_time_begin_container">
+        <div class="">
+            <div class="form-row align-items-center select-time">
+                <div class="form-group col-md-3 col-3">
+                    <select name="meetDayYY" id="meetYear" class="form-control"
+                        onchange="setDays(this, meetMonth, meetDay); getDay(); changeYear();">
+                    </select>
+                    <span class="mx-md-3 mx-0">年</span>
+                </div>
+                <div class="form-group col-md-3 col-3">
+                    <select name="meetDayMM" id="meetMonth" class="form-control"
+                        onchange="setDays(meetYear, this, meetDay); getDay(); changeMonth();">
+                    </select>
+                    <span class="mx-md-3 mx-0">月</span>
+                </div>
+                <div class="form-group col-md-3 col-3">
+                    <select name="meetDayDD" id="meetDay" class="form-control" onchange="getDay()">
+                    </select>
+                    <span class="mx-md-3 mx-0">日</span>
+                </div>
+            </div>
+
+            <!-- -----------分隔線------------- -->
+
+            <div class="form-row align-items-center select-time">
+                <div class="form-group ">
+                    <select name="meetDayYY" id="meetYear2" class="form-control"
+                        onchange="setDays(this, meetMonth, meetDay); getDay(); changeYear();">
+                    </select>
+                    <span class="mx-md-3 mx-0">年</span>
+                </div>
+                <div class="form-group ">
+                    <select name="meetDayMM" id="meetMonth2" class="form-control"
+                        onchange="setDays(meetYear, this, meetDay); getDay(); changeMonth();">
+                    </select>
+                    <div class="arrow_container">
+                        <img src="../imgs/down-arrow.svg" alt="">
+                    </div>
+                    <!-- <div class="z_select_dropdown_container">
+                        <select id="bankSelect" name=”bankSelect” class="z_select_dropdown">
+                            <option value=””>請選擇銀行</option>
+                            <option value=””>001-中央信託</option>
+                            <option value=””>006-合庫商銀</option>
+                            <option value=””>007-第一銀行</option>
+                        </select>
+                        <div class="arrow_container">
+                            <img src="imgs/down-arrow.svg" alt="">
+                        </div>
+                    </div> -->
+                    <span class="mx-md-3 mx-0">月</span>
+                </div>
+                <div class="form-group">
+                    <select name="meetDayDD" id="meetDay2" class="form-control" onchange="getDay()">
+                    </select>
+                    <span class="mx-md-3 mx-0">日</span>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="z_time_begin_container">
             <form action="" >
                 <div class="z_time_container">
                     <div class="z_time_list">
@@ -443,11 +502,9 @@
                     </div>
                 </div>
             </form>
-        </div>
-
+        </div> -->
     </div>
-
-    
+    <!-- -----------------------------租屋期限共------ -->
 
     <div class="time">
         <h3>租屋期限共</h3>
@@ -545,6 +602,9 @@
     <script src="../js/jquery-3.6.0.js"></script>
     <script src="../nav-footer/nav-footer.js"></script>
     <script src="../contract/contract01.js"></script>
-    
+    <script src="./test0002.js"></script>
+    <script src="./test0003.js"></script>
+
 </body>
+
 </html>
