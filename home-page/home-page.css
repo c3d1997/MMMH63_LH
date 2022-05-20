@@ -97,7 +97,7 @@
                     .x-home-page-slogan .container {
                         justify-content: space-between;
                         align-items: center;
-                        margin-top: 120px;
+                        margin-top: 200px;
                     }
                     .x-slogan h1 {
                         font-size: 38px;
@@ -326,7 +326,12 @@
                     }
                     .x-home-page-post-clean-left-post,
                     .x-home-page-post-clean-right-clean {
-                        display: block
+                        display: block;
+                        transition: .25s;
+                    }
+                    .x-home-page-post-clean-left-post:active,
+                    .x-home-page-post-clean-right-clean:active {
+                        transform: scale(0.98);
                     }
                     .x-home-page-post-clean-left-post div:nth-child(1),
                     .x-home-page-post-clean-right-clean div:nth-child(1) {
@@ -346,10 +351,24 @@
                         height: 335px;
                         background: url(../imgs/spacejoy-umAXneH4GhA-unsplash.jpg) no-repeat center/cover;
                     }
+                    .x-home-page-post-clean-left-post:hover div:nth-child(2) {
+                        background: url(../imgs/spacejoy-umAXneH4GhA-unsplash.jpg) no-repeat center/cover;
+                    }
                     .x-home-page-post-clean-right-clean div:nth-child(2) {
                         width: 335px;
                         height: 335px;
                         background: url(../imgs/ashwini-chaudhary-monty-Iu6parQAO-U-unsplash.jpg) no-repeat center/cover;
+                    }
+                    .x-home-page-post-clean-right-clean:hover div:nth-child(2) {
+                        background: url(../imgs/ashwini-chaudhary-monty-Iu6parQAO-U-unsplash.jpg) no-repeat center/cover;
+                    }
+                    .x-home-page-post-clean-left-post:hover div:nth-child(1) {
+                        box-shadow: none;
+                        z-index: 4;
+                    }
+                    .x-home-page-post-clean-right-clean:hover div:nth-child(1) {
+                        box-shadow: none;
+                        z-index: 4;
                     }
                 }
                 /* 首頁卡片版 */

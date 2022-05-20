@@ -17,61 +17,108 @@
 </head>
 
 <body>
-    <div class="nav-log-out">
+    <div class="nav">
         <div class="container">
-            <div class="row">
-                <div class="pc_nav_left">
-                    <a href="#">搜尋</a>
-                    <a href="#">刊登房屋</a>
+            <ul>
+                <div class="pc-link">
+                    <li class="x-log">
+                        <a href="
+                        ">搜尋</a>
+                    </li>
+                    <li class="x-log">
+                        <a href="">
+                        刊登房屋
+                    </a>
+                    </li>
                 </div>
-                <div class="phone_nav_left">
-                    <img src="../imgs/phone_logo.png" alt="">
-                </div>
-                <div>
-                    <a class="pc_nav_center" href="#"><img src="../imgs/LOGO.svg" alt=""></a>
-                    <a class="phone_nav_center" href="#"><img src="../imgs/phone_logo_text.svg" alt=""></a>
+                <li class="x-log-img">
+                    <a href=""><img src="../imgs/LOGO.svg" alt="">
+                    </a>
+                    <a href=""><img src="../imgs/phone_logo.png" alt="">
+                    </a>
+                </li>
+                <li class="x-log-phone-title">
+                    <a href="">Little House</a>
+                </li>
+                <div class="phone-nav-link">
+                    <li class="x-log x-phone">
+                        <a href="
+                        ">搜尋</a>
+                    </li>
+                    <li class="x-log x-phone">
+                        <a href="">
+                        刊登房屋
+                    </a>
+                    </li>
+                    <li class="x-log">
+                        <a href="">
+                        清潔服務
+                    </a>
+                    </li>
+                    <li class="log-in x-log">
+                        <a href="">
+                        會員登入/註冊
+                    </a>
+                    </li>
+                    <li class="log-out x-log x-hidden-flip">
+                        <a href="#">
+                        個人頁面 <img src="../imgs/down-arrow.svg" alt="">
+                        </a>
+                    </li>
+                    <div class="x-hidden-personaal x-hidden-click">
+                        <a href="">
+                            會員資料
+                        </a>
+                        <a href="">
+                            刊登物件
+                        </a>
+                        <a href="">
+                            我的租屋
+                        </a>
+                        <a href="">
+                            我的收藏
+                        </a>
+                        <a href="">
+                            我的優惠
+                        </a>
+                        <a href="">
+                            我的預約
+                        </a>
+                        <a href="">
+                            租金支付
+                        </a>
+                        <a href="">
+                            清潔服務
+                        </a>
+                        <a href="">
+                            租屋契約
+                        </a>
+                    </div>
+                    <li class="log-out x-log">
+                        <a href="">
+                            登出
+                        </a>
+                    </li>
 
                 </div>
-                <div class="pc_nav_right">
-                    <a href="#">清潔服務</a>
-                    <a href="#">會員登入/註冊</a>
-                </div>
-                <div class="phone_nav_right">
-                    <img src="../imgs/Hamburger.png" alt="">
+
+
+
+            </ul>
+            <div class="x-log-show">
+                <div class="x-log-show-navbar ">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
+
+
         </div>
     </div>
-    <!-- 登出狀態 -->
-    <!-- <div class="nav-log-in">
-        <div class="container">
-            <div class="row">
-                <div class="pc_nav_left">
-                    <a href="#">搜尋</a>
-                    <a href="#">刊登房屋</a>
-                </div>
-                <div class="phone_nav_left">
-                    <img src="../imgs/phone_logo.png" alt="">
-                </div>
-                <div>
-                    <a class="pc_nav_center" href="#"><img src="../imgs/LOGO.svg" alt=""></a>
-                    <a class="phone_nav_center" href="#"><img src="../imgs/phone_logo_text.svg" alt=""></a>
-                </div>
-                <div class="pc_nav_right">
-                    <a href="#">清潔服務</a>
-                    <a href="#">個人頁面</a>
-                    <a href="#">登出</a>
-                </div>
-                <div class="phone_nav_right">
-                    <img src="../imgs/Hamburger.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- 登入狀態 -->
     <!-- 以上NAV--------------------------------------------------- -->
     <!-- 關鍵字搜尋 -->
-    <!-- <div class="x-search">
+    <div class="x-search">
         <div class="container">
             <div class="x-search-all">
                 <div class="x-search-options">
@@ -99,524 +146,492 @@
                         <h3>彈性</h3>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div> -->
-    <!--進階搜尋 -->
-    <div class="x-search">
-        <div class="container">
-            <div class="x-search-all x-search-all-ex">
-                <div class="x-search-options x-search-options-ex">
-                    <button class="pc-button-FEAC00-272">關鍵字搜尋</button>
-                    <button class="pc-button-F4F4F4-272">進階搜尋</button>
-                </div>
-                <div class="x-search-keyword-input x-search-keyword-input-ex">
-                    <input class="x-search-input-setting" type="text" name="name" placeholder="關鍵字搜尋">
-
-                    <svg width="30" height="30" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.647 24.3125C20.1698 24.3125 24.647 19.8353 24.647 14.3125C24.647 8.78965 20.1698 4.3125 14.647 4.3125C9.12413 4.3125 4.64697 8.78965 4.64697 14.3125C4.64697 19.8353 9.12413 24.3125 14.647 24.3125Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M27.147 26.8125L21.7095 21.375" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-
-                </div>
-                <div class="x-search-price-bar ">
-
-                </div>
-                <div class="x-search-price-switch ">
-                    <div class="x-search-price-switch-onoff">
-                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
-                        <label class="onoffswitch-label" for="myonoffswitch"></label>
-                    </div>
-                    <div>
-                        <h3>彈性</h3>
-                    </div>
-                </div>
-                <div class="x-hidden-scroll-bar">
-                    <div class="x-search-ex">
-                        <!-- 租屋類型---------------------------------------------------------------- -->
-                        <div class="x-search-ex-both">
-                            <div class="x-search-ex-title">
-                                <h3>
-                                    租屋類型
-                                </h3>
-                            </div>
-                            <div class="x-search-ex-tag">
-                                <div class="x-search-ex-tag-wrap">
-                                    <button class="x-tag-on-click"><p>
-                                        共生
-                                    </p></button>
-                                    <button><p>
-                                        分租
-                                    </p></button>
-                                    <button><p>
-                                        不限分類
-                                    </p></button>
+                <div class="x-hidden-DisplayNone">
+                    <div class="x-hidden-scroll-bar">
+                        <div class="x-search-ex">
+                            <!-- 租屋類型---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        租屋類型
+                                    </h3>
                                 </div>
-
-                            </div>
-                        </div>
-                        <!-- 地區---------------------------------------------------------------- -->
-                        <div class="x-search-ex-both">
-                            <div class="x-search-ex-title">
-                                <h3>
-                                    地區
-                                </h3>
-                            </div>
-                            <div class="x-search-ex-tag">
-                                <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                    <button class="x-tag-on-click"><p>
-                                        基隆
-                                    </p></button>
-                                    <button><p>
-                                        台北
-                                    </p></button>
-                                    <button><p>
-                                        新北
-                                    </p></button>
-                                    <button><p>
-                                        桃園
-                                    </p></button>
-                                    <button><p>
-                                        新竹
-                                    </p></button>
-                                    <button><p>
-                                        苗栗
-                                    </p></button>
-                                    <button><p>
-                                        南投
-                                    </p></button>
-                                    <button><p>
-                                        台中
-                                    </p></button>
-                                    <button><p>
-                                        彰化
-                                    </p></button>
-                                    <button><p>
-                                        雲林
-                                    </p></button>
-                                    <button><p>
-                                        嘉義
-                                    </p></button>
-                                    <button><p>
-                                        台南
-                                    </p></button>
-                                    <button><p>
-                                        高雄
-                                    </p></button>
-                                    <button><p>
-                                        屏東
-                                    </p></button>
-                                    <button><p>
-                                        台東
-                                    </p></button>
-                                    <button><p>
-                                        花蓮
-                                    </p></button>
-                                    <button><p>
-                                        宜蘭
-                                    </p></button>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap">
+                                        <button class="x-tag-on-click"><p>
+                                            共生
+                                        </p></button>
+                                        <button><p>
+                                            分租
+                                        </p></button>
+                                        <button><p>
+                                            不限分類
+                                        </p></button>
+                                    </div>
 
                                 </div>
-
                             </div>
-                        </div>
-                        <!-- 房型---------------------------------------------------------------- -->
-                        <div class="x-search-ex-both">
-                            <div class="x-search-ex-title">
-                                <h3>
-                                    房型
-                                </h3>
-                            </div>
-                            <div class="x-search-ex-tag">
-                                <div class="x-search-ex-tag-wrap">
-                                    <button class="x-tag-on-click"><p>
-                                        套房
-                                    </p></button>
-                                    <button><p>
-                                        雅房
-                                    </p></button>
-                                    <button><p>
-                                        整層
-                                    </p></button>
-                                    <button><p>
-                                        不限分類
-                                    </p></button>
+                            <!-- 地區---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        地區
+                                    </h3>
                                 </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                        <button class="x-tag-on-click"><p>
+                                            基隆
+                                        </p></button>
+                                        <button><p>
+                                            台北
+                                        </p></button>
+                                        <button><p>
+                                            新北
+                                        </p></button>
+                                        <button><p>
+                                            桃園
+                                        </p></button>
+                                        <button><p>
+                                            新竹
+                                        </p></button>
+                                        <button><p>
+                                            苗栗
+                                        </p></button>
+                                        <button><p>
+                                            南投
+                                        </p></button>
+                                        <button><p>
+                                            台中
+                                        </p></button>
+                                        <button><p>
+                                            彰化
+                                        </p></button>
+                                        <button><p>
+                                            雲林
+                                        </p></button>
+                                        <button><p>
+                                            嘉義
+                                        </p></button>
+                                        <button><p>
+                                            台南
+                                        </p></button>
+                                        <button><p>
+                                            高雄
+                                        </p></button>
+                                        <button><p>
+                                            屏東
+                                        </p></button>
+                                        <button><p>
+                                            台東
+                                        </p></button>
+                                        <button><p>
+                                            花蓮
+                                        </p></button>
+                                        <button><p>
+                                            宜蘭
+                                        </p></button>
 
-                            </div>
-                        </div>
-                        <!-- 房間數量---------------------------------------------------------------- -->
-                        <div class="x-search-ex-both">
-                            <div class="x-search-ex-title">
-                                <h3>
-                                    房間數量
-                                </h3>
-                            </div>
-                            <div class="x-search-ex-tag">
-                                <div class="x-search-ex-tag-wrap">
-                                    <button class="x-tag-on-click"><p>
-                                        1 - 5 間
-                                    </p></button>
-                                    <button><p>
-                                        5 - 10 間
-                                    </p></button>
-                                    <button><p>
-                                        10 以上
-                                    </p></button>
-                                    <button><p>
-                                        不限分類
-                                    </p></button>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- 詳細地區---------------------------------------------------------------- -->
-                        <div class="x-search-ex-both">
-                            <div class="x-search-ex-title">
-                                <h3>
-                                    詳細地區
-                                </h3>
-                            </div>
-                            <div class="x-search-ex-tag">
-                                <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                    <button class="x-tag-on-click "><p>
-                                        信義區
-                                    </p></button>
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-                                    </p>
-                                    </button>
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-                                    <button><p>
-                                        信義區
-                                    </p></button>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- 特色---------------------------------------------------------------- -->
-                        <div class="x-search-ex-both">
-                            <div class="x-search-ex-title">
-                                <h3>
-                                    特色
-                                </h3>
-                            </div>
-                            <div class="x-search-ex-tag">
-                                <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                    <button class="x-tag-on-click "><p>
-                                        可養寵物
-                                    </p></button>
-                                    <button><p>
-                                        限男性
-                                    </p></button>
-                                    <button><p>
-                                        限女性
-                                    </p></button>
-                                    <button><p>
-                                        可開伙
-                                    </p></button>
-                                    <button><p>
-                                        可抽菸
-                                    </p></button>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- 公設---------------------------------------------------------------- -->
-                        <div class="x-search-ex-both">
-                            <div class="x-search-ex-title">
-                                <h3>
-                                    公設
-                                </h3>
-                            </div>
-                            <div class="x-search-ex-tag">
-                                <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                    <button class="x-tag-on-click "><p>
-                                        廚房
-                                    </p></button>
-                                    <button><p>
-                                        陽台
-                                    </p></button>
-                                    <button><p>
-                                        電梯
-                                    </p></button>
-                                    <button><p>
-                                        客廳
-                                    </p></button>
-                                    <button><p>
-                                        車位
-                                    </p></button>
-
+                                    </div>
 
                                 </div>
-
                             </div>
-                        </div>
-                        <!-- 設備---------------------------------------------------------------- -->
-                        <div class="x-search-ex-both">
-                            <div class="x-search-ex-title">
-                                <h3>
-                                    設備
-                                </h3>
-                            </div>
-                            <div class="x-search-ex-tag">
-                                <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                    <button class="x-tag-on-click "><p>
-                                        床
-                                    </p></button>
-                                    <button><p>
-                                        無線網路
-                                    </p></button>
-                                    <button><p>
-                                        電視
-                                    </p></button>
-                                    <button><p>
-                                        浴缸
-                                    </p></button>
-                                    <button><p>
-                                        飲水機
-                                    </p></button>
-                                    <button><p>
-                                        光纖
-                                    </p></button>
-                                    <button><p>
-                                        沙發
-                                    </p></button>
-                                    <button><p>
-                                        洗衣機
-                                    </p></button>
-                                    <button><p>
-                                        冰箱
-                                    </p></button>
-                                    <button><p>
-                                        瓦斯
-                                    </p></button>
-                                    <button><p>
-                                        衣櫃
-                                    </p></button>
-                                    <button><p>
-                                        第四台
-                                    </p></button>
-                                    <button><p>
-                                        冷氣
-                                    </p></button>
+                            <!-- 房型---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        房型
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap">
+                                        <button class="x-tag-on-click"><p>
+                                            套房
+                                        </p></button>
+                                        <button><p>
+                                            雅房
+                                        </p></button>
+                                        <button><p>
+                                            整層
+                                        </p></button>
+                                        <button><p>
+                                            不限分類
+                                        </p></button>
+                                    </div>
 
                                 </div>
-
                             </div>
-                        </div>
-                        <!-- 安全設備---------------------------------------------------------------- -->
-                        <div class="x-search-ex-both">
-                            <div class="x-search-ex-title">
-                                <h3>
-                                    安全設備
-                                </h3>
-                            </div>
-                            <div class="x-search-ex-tag">
-                                <div class="x-search-ex-tag-wrap ">
-                                    <button class="x-tag-on-click "><p>
-                                        滅火器
-                                    </p></button>
-                                    <button><p>
-                                        煙霧警報
-                                    </p></button>
-                                    <button><p>
-                                        自動灑水器
-                                    </p></button>
-
+                            <!-- 房間數量---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        房間數量
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap">
+                                        <button class="x-tag-on-click"><p>
+                                            1 - 5 間
+                                        </p></button>
+                                        <button><p>
+                                            5 - 10 間
+                                        </p></button>
+                                        <button><p>
+                                            10 以上
+                                        </p></button>
+                                        <button><p>
+                                            不限分類
+                                        </p></button>
+                                    </div>
 
                                 </div>
-
                             </div>
-                        </div>
-                        <!-- 其他費用---------------------------------------------------------------- -->
-                        <div class="x-search-ex-both">
-                            <div class="x-search-ex-title">
-                                <h3>
-                                    額外費用
-                                </h3>
-                            </div>
-                            <div class="x-search-ex-tag">
-                                <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                    <button class="x-tag-on-click "><p>
-                                        瓦斯費
-                                    </p></button>
-                                    <button><p>
-                                        水費
-                                    </p></button>
-                                    <button><p>
-                                        電費
-                                    </p></button>
-                                    <button><p>
-                                        停車費
-                                    </p></button>
-                                    <button><p>
-                                        網路費
-                                    </p></button>
-                                    <button><p>
-                                        第四台
-                                    </p></button>
-                                    <button><p>
-                                        清潔費
-                                    </p></button>
+                            <!-- 詳細地區---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        詳細地區
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                        <button class="x-tag-on-click "><p>
+                                            信義區
+                                        </p></button>
+                                        <button><p>
+                                            信義區
+                                        </p></button>
+                                        <button><p>
+                                            信義區
+                                        </p></button>
+                                        <button><p>
+                                            信義區
+                                        </p></button>
+                                        <button><p>
+                                            信義區
+                                        </p></button>
+                                        <button><p>
+                                            信義區
+                                        </p></button>
+                                        <button><p>
+                                            信義區
+                                        </p></button>
+                                        <button><p>
+                                            信義區
+                                        </p></button>
+                                        <button><p>
+                                            信義區
+                                        </p></button>
 
+                                        <button><p>
+                                            信義區
+                                        </p></button>
+                                        <button><p>
+                                            信義區
+                                        </p></button>
+                                        <button><p>
+                                            信義區
+                                        </p></button>
+                                        <button><p>
+                                            信義區
+                                        </p></button>
+                                        </p>
+                                        </button>
+                                        <button><p>
+                                            信義區
+                                        </p></button>
+                                        <button><p>
+                                            信義區
+                                        </p></button>
+                                        <button><p>
+                                            信義區
+                                        </p></button>
+                                        <button><p>
+                                            信義區
+                                        </p></button>
+                                    </div>
 
                                 </div>
-
                             </div>
-                        </div>
-                        <!-- 周邊機能---------------------------------------------------------------- -->
-                        <div class="x-search-ex-both">
-                            <div class="x-search-ex-title">
-                                <h3>
-                                    周邊機能
-                                </h3>
-                            </div>
-                            <div class="x-search-ex-tag">
-                                <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                    <button class="x-tag-on-click "><p>
-                                        捷運站
-                                    </p></button>
-                                    <button><p>
-                                        火車站
-                                    </p></button>
-                                    <button><p>
-                                        高鐵站
-                                    </p></button>
-                                    <button><p>
-                                        公車站
-                                    </p></button>
-                                    <button><p>
-                                        醫院
-                                    </p></button>
-                                    <button><p>
-                                        國小
-                                    </p></button>
-                                    <button><p>
-                                        國中
-                                    </p></button>
-                                    <button><p>
-                                        高中
-                                    </p></button>
-                                    <button><p>
-                                        幼兒園
-                                    </p></button>
-                                    <button><p>
-                                        餐廳
-                                    </p></button>
-                                    <button><p>
-                                        菜市場
-                                    </p></button>
-                                    <button><p>
-                                        公園
-                                    </p></button>
-                                    <button><p>
-                                        機場
-                                    </p></button>
-                                    <button><p>
-                                        加油站
-                                    </p></button>
-
+                            <!-- 特色---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        特色
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                        <button class="x-tag-on-click "><p>
+                                            可養寵物
+                                        </p></button>
+                                        <button><p>
+                                            限男性
+                                        </p></button>
+                                        <button><p>
+                                            限女性
+                                        </p></button>
+                                        <button><p>
+                                            可開伙
+                                        </p></button>
+                                        <button><p>
+                                            可抽菸
+                                        </p></button>
+                                    </div>
 
                                 </div>
-
                             </div>
-                        </div>
-                        <!-- 室友喜好---------------------------------------------------------------- -->
-                        <div class="x-search-ex-both">
-                            <div class="x-search-ex-title">
-                                <h3>
-                                    室友喜好
-                                </h3>
-                            </div>
-                            <div class="x-search-ex-tag">
-                                <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                    <button class="x-tag-on-click "><p>
-                                        宅
-                                    </p></button>
-                                    <button><p>
-                                        旅遊
-                                    </p></button>
-                                    <button><p>
-                                        音樂
-                                    </p></button>
-                                    <button><p>
-                                        運動
-                                    </p></button>
-                                    <button><p>
-                                        電影
-                                    </p></button>
-                                    <button><p>
-                                        健身
-                                    </p></button>
-                                    <button><p>
-                                        閱讀
-                                    </p></button>
-                                    <button><p>
-                                        烹飪
-                                    </p></button>
-                                    <button><p>
-                                        手作
-                                    </p></button>
-                                    <button><p>
-                                        唱歌
-                                    </p></button>
-                                    <button><p>
-                                        文創
-                                    </p></button>
+                            <!-- 公設---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        公設
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                        <button class="x-tag-on-click "><p>
+                                            廚房
+                                        </p></button>
+                                        <button><p>
+                                            陽台
+                                        </p></button>
+                                        <button><p>
+                                            電梯
+                                        </p></button>
+                                        <button><p>
+                                            客廳
+                                        </p></button>
+                                        <button><p>
+                                            車位
+                                        </p></button>
 
 
+                                    </div>
 
                                 </div>
+                            </div>
+                            <!-- 設備---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        設備
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                        <button class="x-tag-on-click "><p>
+                                            床
+                                        </p></button>
+                                        <button><p>
+                                            無線網路
+                                        </p></button>
+                                        <button><p>
+                                            電視
+                                        </p></button>
+                                        <button><p>
+                                            浴缸
+                                        </p></button>
+                                        <button><p>
+                                            飲水機
+                                        </p></button>
+                                        <button><p>
+                                            光纖
+                                        </p></button>
+                                        <button><p>
+                                            沙發
+                                        </p></button>
+                                        <button><p>
+                                            洗衣機
+                                        </p></button>
+                                        <button><p>
+                                            冰箱
+                                        </p></button>
+                                        <button><p>
+                                            瓦斯
+                                        </p></button>
+                                        <button><p>
+                                            衣櫃
+                                        </p></button>
+                                        <button><p>
+                                            第四台
+                                        </p></button>
+                                        <button><p>
+                                            冷氣
+                                        </p></button>
 
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- 安全設備---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        安全設備
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap ">
+                                        <button class="x-tag-on-click "><p>
+                                            滅火器
+                                        </p></button>
+                                        <button><p>
+                                            煙霧警報
+                                        </p></button>
+                                        <button><p>
+                                            自動灑水器
+                                        </p></button>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- 其他費用---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        額外費用
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                        <button class="x-tag-on-click "><p>
+                                            瓦斯費
+                                        </p></button>
+                                        <button><p>
+                                            水費
+                                        </p></button>
+                                        <button><p>
+                                            電費
+                                        </p></button>
+                                        <button><p>
+                                            停車費
+                                        </p></button>
+                                        <button><p>
+                                            網路費
+                                        </p></button>
+                                        <button><p>
+                                            第四台
+                                        </p></button>
+                                        <button><p>
+                                            清潔費
+                                        </p></button>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- 周邊機能---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        周邊機能
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                        <button class="x-tag-on-click "><p>
+                                            捷運站
+                                        </p></button>
+                                        <button><p>
+                                            火車站
+                                        </p></button>
+                                        <button><p>
+                                            高鐵站
+                                        </p></button>
+                                        <button><p>
+                                            公車站
+                                        </p></button>
+                                        <button><p>
+                                            醫院
+                                        </p></button>
+                                        <button><p>
+                                            國小
+                                        </p></button>
+                                        <button><p>
+                                            國中
+                                        </p></button>
+                                        <button><p>
+                                            高中
+                                        </p></button>
+                                        <button><p>
+                                            幼兒園
+                                        </p></button>
+                                        <button><p>
+                                            餐廳
+                                        </p></button>
+                                        <button><p>
+                                            菜市場
+                                        </p></button>
+                                        <button><p>
+                                            公園
+                                        </p></button>
+                                        <button><p>
+                                            機場
+                                        </p></button>
+                                        <button><p>
+                                            加油站
+                                        </p></button>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- 室友喜好---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        室友喜好
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                        <button class="x-tag-on-click "><p>
+                                            宅
+                                        </p></button>
+                                        <button><p>
+                                            旅遊
+                                        </p></button>
+                                        <button><p>
+                                            音樂
+                                        </p></button>
+                                        <button><p>
+                                            運動
+                                        </p></button>
+                                        <button><p>
+                                            電影
+                                        </p></button>
+                                        <button><p>
+                                            健身
+                                        </p></button>
+                                        <button><p>
+                                            閱讀
+                                        </p></button>
+                                        <button><p>
+                                            烹飪
+                                        </p></button>
+                                        <button><p>
+                                            手作
+                                        </p></button>
+                                        <button><p>
+                                            唱歌
+                                        </p></button>
+                                        <button><p>
+                                            文創
+                                        </p></button>
+
+
+
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
                     <div class="x-search-button">
                         <button class="pc-button-FEAC00-180">開始搜尋</button>
                     </div>
@@ -625,6 +640,7 @@
             </div>
         </div>
     </div>
+
     <!-- 本月本週精選 -->
     <div class="x-search-month-best">
         <div class="container">
@@ -1400,7 +1416,8 @@
         </div>
     </div>
     <!-- FOOTER--------------------------------------------------- -->
-
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="./search.js"></script>
 </body>
 
 </html>
