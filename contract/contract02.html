@@ -175,9 +175,10 @@
                     <div class="c_text_wrap1">
                         <p>身分證/護照(正面)</p>
                     </div>
-                    <div class="c_idcard_wrap">
+                    <div class="c_idcard_wrap wrap_1">
                         <img src="" alt="">
-                        <div class="c_upload_sign">
+                        <input type="file" name="" id="pid_on_true" accept="image/*">
+                        <div class="c_upload_sign" id="pid_on">
                             <div class="c_upload_icon">
                                 <a href="#"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -188,16 +189,17 @@
                             </div>
 
                             <div class="c_upload_heretext">
-                                <a href="#">點此上傳</a>
+                                <a >點此上傳</a>
                             </div>
                         </div>
                     </div>
                     <div class="c_text_wrap1">
                         <p>身分證/護照(反面)</p>
                     </div>
-                    <div class="c_idcard_wrap">
+                    <div class="c_idcard_wrap wrap_2">
                         <img src="" alt="">
-                        <div class="c_upload_sign">
+                        <input type="file" name="" id="pid_in_true" accept="image/*">
+                        <div class="c_upload_sign" id="pid_in">
                             <div class="c_upload_icon">
                                 <a href="#"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -208,7 +210,8 @@
                             </div>
 
                             <div class="c_upload_heretext">
-                                <a href="#">點此上傳</a>
+
+                                <a >點此上傳</a>
                             </div>
                         </div>
                     </div>
@@ -220,9 +223,10 @@
                     <div class="c_text_wrap">
                         <p>健保卡(正面)</p>
                     </div>
-                    <div class="c_idcard_wrap">
+                    <div class="c_idcard_wrap wrap_3">
                         <img src="" alt="">
-                        <div class="c_upload_sign">
+                        <input type="file" name="" id="hid_on_true" accept="image/*">
+                        <div class="c_upload_sign" id="hid_on">
                             <div class="c_upload_icon">
                                 <a href="#"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -233,7 +237,8 @@
                             </div>
 
                             <div class="c_upload_heretext">
-                                <a href="#">點此上傳</a>
+
+                                <a>點此上傳</a>
                             </div>
                         </div>
                     </div>
@@ -243,9 +248,10 @@
                     <div class="c_text_wrap">
                         <p>健保卡(反面)</p>
                     </div>
-                    <div class="c_idcard_wrap">
+                    <div class="c_idcard_wrap wrap_4">
                         <img src="" alt="">
-                        <div class="c_upload_sign">
+                        <input type="file" name="" id="hid_in_true" accept="image/*">
+                        <div class="c_upload_sign" id='hid_in'>
                             <div class="c_upload_icon">
                                 <a href="#"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -256,7 +262,8 @@
                             </div>
 
                             <div class="c_upload_heretext">
-                                <a href="#">點此上傳</a>
+
+                                <a >點此上傳</a>
                             </div>
                         </div>
                     </div>
@@ -304,7 +311,6 @@
             </div>
         </div>
     </div>
-
 
 
 
@@ -378,7 +384,61 @@
     <!-- FOOTER--------------------------------------------------- -->
     <script src="../js/jquery-3.6.0.js"></script>
     <script src="../nav-footer/nav-footer.js"></script>
-    <script src="../contract/contract02.js"></script>
+    <!-- <script src="../contract/contract02.js"></script> -->
+    <script>
+        $(".c_upload_sign").click(function(){
+            // console.log("hi");
+            $(this).prev().click()
+        })
+        $("#pid_on_true").change(function(){
+            console.log(this);
+            readURL1(this);
+        });
+        function readURL1(input){
+        //   if(input.files && input.files[0]){
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $(".wrap_1 img").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+        $("#pid_in_true").change(function(){
+            console.log(this);
+            readURL2(this);
+        });
+        function readURL2(input){
+        //   if(input.files && input.files[0]){
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $(".wrap_2 img").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+        $("#hid_on_true").change(function(){
+            console.log(this);
+            readURL3(this);
+        });
+        function readURL3(input){
+        //   if(input.files && input.files[0]){
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $(".wrap_3 img").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+        $("#hid_in_true").change(function(){
+            console.log(this);
+            readURL4(this);
+        });
+        function readURL4(input){
+        //   if(input.files && input.files[0]){
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $(".wrap_4 img").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    </script>
 </body>
 
 </html>

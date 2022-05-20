@@ -150,8 +150,8 @@ ul {
     width: 328px;
     height: 218px;
     border: 1px solid #0E2E3D;
-    padding: 80px 50px;
-
+    /* padding: 80px 50px; */
+    display: flex;
 }
 
 
@@ -254,7 +254,27 @@ a {
 .footer_container {
     margin-top: 60px;
 }
-
+#pid_on,#pid_in,#hid_on,#hid_in {
+    cursor: pointer;
+}
+.c_idcard_wrap input {
+    display: none;
+}
+.con {
+    position: relative;
+}
+.wrap_1,.wrap_2,.wrap_3,.wrap_4  {
+    /* width: 100%; */
+    position: relative;
+}
+.wrap_1 img,.wrap_2 img ,.wrap_3 img,.wrap_4 img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* height: 100%; */
+    object-fit: cover;
+    z-index: -1;
+}
 
 
 

@@ -203,12 +203,12 @@
     }
 
     .z_upload_item_img_btn {
-        background-color: #EEF1F4;
     }
     .z_upload_item_img_btn > button {
         font-size: 16px;
         font-weight: bold;
         color: #75BBE3;
+        background-color:transparent;
     }
     .z_clickupload {
         font-size: 16px;
@@ -233,18 +233,21 @@
     }
     .z_close_icon {
         position: absolute;
+        z-index: 5;
         top: 5px;
         right: 5px;
         width: 25px;
         height: 25px;
         background-color: rgba(255, 255, 255, 0);
-        background-image: url(../imgs/closeicon.svg);
+        background-image: url(imgs/closeicon.svg);
         background-position: center;
     }
-    .z_review_card img {
+    .smallimg{
+        position: absolute;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        z-index: 1;
     }
     .z_publish_btnY { 
         display: block;
@@ -482,7 +485,14 @@
         padding: 30px;
         margin-bottom: 30px;
     }
-
+    .bgimg {
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-image: url(imgs\transparent.png);
+        z-index: 3;
+    }
 
 
 
@@ -684,7 +694,7 @@
                         <div class="uploadimg_before">
                             <p>您可以拖拉圖片至此處</p>
                             <div class="z_upload_item_img_btn">
-                                <input type="file" accept="image/*" id="mainUpload">
+                                <input type="file" accept="image/* " id="mainUpload">
                                 <button id="upload_btn"><img src="imgs/uploadicon.svg" alt="">或是點此上傳</button>
                             </div>
                             <p>提醒您！最多可以上傳10張照片，並且每張照片解析度請至少達到1280*920px</p>
@@ -695,43 +705,61 @@
                         <div class="z_step1imgs_container">
                             <div class="z_review_card">
                                 <button class="z_close_icon"></button>
-                                <img src="" alt=""  class="smallimg">
+                                <img  alt=""  class="smallimg">
+                                <img  alt=""  class="bgimg">
                             </div>
                             <div class="z_review_card">
                                 <button class="z_close_icon"></button>
-                                <img src="" alt="" class="smallimg">
+                                <img  alt="" class="smallimg">
+                                <img  alt=""  class="bgimg">
+
                             </div>
                             <div class="z_review_card">
                                 <button class="z_close_icon"></button>
-                                <img src="" alt="" class="smallimg">
+                                <img  alt="" class="smallimg">
+                                <img  alt=""  class="bgimg">
+
                             </div>
                             <div class="z_review_card">
                                 <button class="z_close_icon"></button>
-                                <img src="" alt="" class="smallimg">
+                                <img  alt="" class="smallimg">
+                                <img  alt=""  class="bgimg">
+
                             </div>
                             <div class="z_review_card">
                                 <button class="z_close_icon"></button>
-                                <img src="" alt="" class="smallimg">
+                                <img  alt="" class="smallimg">
+                                <img  alt=""  class="bgimg">
+
                             </div>
                             <div class="z_review_card">
                                 <button class="z_close_icon"></button>
-                                <img src="" alt="" class="smallimg">
+                                <img  alt="" class="smallimg">
+                                <img  alt=""  class="bgimg">
+
                             </div>
                             <div class="z_review_card">
                                 <button class="z_close_icon"></button>
-                                <img src="" alt="" class="smallimg">
+                                <img  alt="" class="smallimg">
+                                <img  alt=""  class="bgimg">
+
                             </div>
                             <div class="z_review_card">
                                 <button class="z_close_icon"></button>
-                                <img src="" alt="" class="smallimg">
+                                <img  alt="" class="smallimg">
+                                <img  alt=""  class="bgimg">
                             </div>
                             <div class="z_review_card">
                                 <button class="z_close_icon"></button>
-                                <img src="" alt="" class="smallimg">
+                                <img  alt="" class="smallimg">
+                                <img  alt=""  class="bgimg">
+                            
                             </div>
                             <div class="z_review_card">
                                 <button class="z_close_icon"></button>
-                                <img src="" alt="" class="smallimg">
+                                <img  alt="" class="smallimg">
+                                <img  alt=""  class="bgimg">
+                            
                             </div>
                         </div>
                     </div>
@@ -746,7 +774,8 @@
     </section>
 
 <?php include __DIR__ . './part/footer.php'  ?>
-
+        </script>
+        <script>
         $("#upload_btn").click(function(){
             $("#mainUpload").click()
         })
@@ -759,7 +788,7 @@
         console.log((smallcontainer.length)); 
         let i = 0
         function readURL(input){
-          if(input.files && input.files[0]){
+        //   if(input.files && input.files[0]){
             var reader = new FileReader();
             reader.onload = function (e) {
                 $("#nowimg").attr('src', e.target.result);
@@ -772,12 +801,22 @@
                 }
                 i++;
                 console.log(i);
-            }
+            // }
             reader.readAsDataURL(input.files[0]);
           }
         }
         $(".z_close_icon").click(function(){
-            $(this).next().removeAttr("src")
+            console.log(i);
+            if ($(this).next().attr("src")){
+                $(this).next().removeAttr("src")
+                i--;
+            } else {
+                console.log("none");
+                console.log(i);
+            }
+
         })
+        </script>
+        <script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>

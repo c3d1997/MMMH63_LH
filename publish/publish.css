@@ -200,7 +200,9 @@ body {
 }
 
 .z_upload_item_img_btn {
+    width: 70%;
     background-color: #EEF1F4;
+    margin: auto;
 }
 .z_upload_item_img_btn > button {
     font-size: 16px;
