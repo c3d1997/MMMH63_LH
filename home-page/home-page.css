@@ -806,17 +806,79 @@
                 .x-home-page-waterfall-img-left-img-hover-img img {
                     width: 100%;
                 }
+                /* 流水版面分割 */
                 
                 .x-home-page-waterfall-img-right-img {
                     width: 600px;
                     height: 520px;
                     margin-bottom: 30px;
+                    overflow: hidden;
+                    position: relative;
+                    background-color: black;
                 }
                 
                 .x-home-page-waterfall-img-right-img-H {
                     width: 600px;
                     height: 890px;
                     margin-bottom: 30px;
+                    position: relative;
+                    overflow: hidden;
+                    background-color: black;
+                }
+                
+                .x-home-page-waterfall-img-right-img .x-home-page-waterfall-img-right-img-only,
+                .x-home-page-waterfall-img-right-img-H .x-home-page-waterfall-img-right-img-only {
+                    transition: .5s;
+                    opacity: 1;
+                }
+                
+                .x-home-page-waterfall-img-right-img:hover .x-home-page-waterfall-img-right-img-only,
+                .x-home-page-waterfall-img-right-img-H:hover .x-home-page-waterfall-img-right-img-only {
+                    opacity: .5;
+                }
+                
+                .x-home-page-waterfall-img-right-img:nth-child(1) {
+                    margin-top: 0px;
+                }
+                
+                .x-home-page-waterfall-img-right-img-H {
+                    width: 600px;
+                    height: 890px;
+                    margin-bottom: 30px;
+                }
+                
+                .x-home-page-waterfall-img-right-img-hover {
+                    position: absolute;
+                    bottom: -200px;
+                    display: flex;
+                    width: 100%;
+                    padding: 0 30px;
+                    justify-content: space-between;
+                    transition: .5s;
+                }
+                
+                .x-home-page-waterfall-img-right-img:hover .x-home-page-waterfall-img-right-img-hover,
+                .x-home-page-waterfall-img-right-img-H:hover .x-home-page-waterfall-img-right-img-hover {
+                    bottom: 20px;
+                }
+                
+                .x-home-page-waterfall-img-right-img-hover-txt {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                }
+                
+                .x-home-page-waterfall-img-right-img-hover-txt h3 {
+                    color: white;
+                }
+                
+                .x-home-page-waterfall-img-right-img-hover-img {
+                    width: 98px;
+                    height: 98px;
+                }
+                
+                .x-home-page-waterfall-img-right-img-hover-img img {
+                    width: 100%;
                 }
                 
                 @media screen and (max-width:376px) {
