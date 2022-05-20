@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lightbox</title>
+    <link rel="stylesheet" href="./lightbox.css">
+</head>
+<body>
+    <div class="imgBox"><img src="../imgs/img1.jpg" alt=""></div>
+    <ul class="thumb">
+        <li><a href="../imgs/img1.jpg" target="imgBox"><img src="../imgs/img1.jpg" alt="" width="120px" height="80px"></a></li>
+        <li><a href="../imgs/img2.jpg" target="imgBox"><img src="../imgs/img2.jpg" alt="" width="120px" height="80px"></a></li>
+        <li><a href="../imgs/img3.jpg" target="imgBox"><img src="../imgs/img3.jpg" alt="" width="120px" height="80px"></a></li>
+        <li><a href="../imgs/img4.jpg" target="imgBox"><img src="../imgs/img4.jpg" alt="" width="120px" height="80px"></a></li>
+        <li><a href="../imgs/img5.jpg" target="imgBox"><img src="../imgs/img5.jpg" alt="" width="120px" height="80px"></a></li>
+    </ul>
+
+    <div class="S-x">
+        <img src="../imgs/X.svg" alt="">
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script>
+
+        $(document).ready(function(){
+            $('.thumb a').click(function(e){
+                // 阻止表單提交
+                e.preventDefault();
+                $('.imgBox img').attr("src",$(this).attr("href"));
+
+            })
+        })
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

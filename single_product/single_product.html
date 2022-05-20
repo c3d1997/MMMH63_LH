@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../product-card/product_page.css">
     <link rel="stylesheet" href="../product-card/warning_card.css">
     <link rel="stylesheet" href="../nav-footer/nav-footer.css">
+    <link rel="stylesheet" href="./lightbox2.css">
     <title>single_product</title>
 </head>
 
@@ -143,18 +144,86 @@
             </div>
 
 
+
+<!-- ---------------------------------燈箱效果------------------------------------------------- -->
+
             <!-- img -->
             <div class="S-product-img">
-                <div class="S-product-img-left"></div>
+                <div class="S-product-img-left column">
+                    <img src="../imgs/img1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                </div>
                 <div class="S-product-img-right">
-                    <div class="S-product-img-right-up"></div>
-                    <div class="S-product-img-right-down">
+                    <div class="S-product-img-right-up column">
+                        <img src="../imgs/img2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                    </div>
+                    <div class="S-product-img-right-down-g">
+                        <div class="S-product-img-right-down column">
+                            <img src="../imgs/img2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor"></div>
                         <button class="more-img">+7</button>
                     </div>
                 </div>
             </div>
 
 
+            <!-- --------demo大圖展示區域------------ -->
+            <div id="myModal" class="modal">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+              <div class="mySlides-wrap">
+                  <div class="mySlides">
+                    <img src="../imgs/img1.jpg" style="width:100%">
+                  </div>
+              
+                  <div class="mySlides">
+                    <img src="../imgs/img2.jpg" style="width:100%">
+                  </div>
+              
+                  <div class="mySlides">
+                    <img src="../imgs/img3.jpg" style="width:100%">
+                  </div>
+                  
+                  <div class="mySlides">
+                    <img src="../imgs/img4.jpg" style="width:100%">
+                  </div>
+                  <div class="mySlides">
+                    <img src="../imgs/ashwini-chaudhary-monty-Iu6parQAO-U-unsplash.jpg" style="width:100%">
+                  </div>
+                  <div class="mySlides">
+                    <img src="../imgs/bedroom-6778193_1920.jpg" style="width:100%">
+                  </div>
+                </div>
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              
+                  <!-- <div class="caption-container">
+                    <p id="caption"></p>
+                  </div> -->
+              
+              <!-- 下排圖片 -->
+              <div class="column-bottom">
+                  <div class="column">
+                    <img class="demo cursor" src="../imgs/img2.jpg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
+                  </div>
+                  <div class="column">
+                    <img class="demo cursor" src="../imgs/img2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Snow">
+                  </div>
+                  <div class="column">
+                    <img class="demo cursor" src="../imgs/img3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                  </div>
+                  <div class="column">
+                    <img class="demo cursor" src="../imgs/img4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                  </div>
+                  <div class="column">
+                    <img class="demo cursor" src="../imgs/ashwini-chaudhary-monty-Iu6parQAO-U-unsplash.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                  </div>
+                  <div class="column">
+                    <img class="demo cursor" src="../imgs/bedroom-6778193_1920.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                  </div>
+                </div>
+            </div>
+            </div>
+              
+              
             <!-- -----------------info---------------------------------------------------------------------------- -->
 
             <div class="S-product-info">
@@ -170,8 +239,11 @@
                     <p class="S-lg-d-none S-d-none"><i class="fa-solid fa-door-open"></i>整層住家 3 房 2 廳 2 衛浴</p>
                 </div>
                 <div class="S-product-info-right">
-                    <button type="button" class="pc-button-FEAC00-280 S-btn-order">預約看房</button>
+                    <button type="button" class="pc-button-FEAC00-280 S-btn-order"><input id="calender" type="text" name="datetimes" />預約看房</button>
+
                     <button type="button" class="pc-button-F4F4F4-280 S-btn-conect">聯絡我們</button>
+                    
+
                 </div>
             </div>
 
@@ -180,33 +252,51 @@
                 <div class="dropdown_container">
                     <button id="areaListBtn">
                         <div class="dropdown">
-                            <span>請選擇資訊</span>
+                            <span id="spanChange">請選擇資訊</span>
                             <img src="../imgs/down-arrow.svg" alt="">
                         </div>
                     </button>
-                    <div id="areaList" class="dropdown_list" hidden>
-                        <p class="">租屋資訊</p>
-                        <p class="">物件設備</p>
-                        <p class="">物件公設</p>
-                        <p class="">物件特色</p>
-                        <p class="">物件安全設備</p>
-                        <p class="">物件其他費用</p>
-                        <p class="">周邊機能</p>
-                        <p class="">室友簡介與喜好</p>
+                    <div id="areaList" class="dropdown_list S-d-none S-xs-d-none">
+                        <p class="S-menu-btn btn1 step-on">租屋資訊</p>
+                        <p class="S-menu-btn btn2 ">物件設備</p>
+                        <p class="S-menu-btn btn3 ">物件公設</p>
+                        <p class="S-menu-btn btn4 ">物件特色</p>
+                        <p class="S-menu-btn btn5 ">物件安全設備</p>
+                        <p class="S-menu-btn btn6 ">物件其他費用</p>
+                        <p class="S-menu-btn btn7 ">周邊機能</p>
+                        <p class="S-menu-btn btn8 ">室友簡介與喜好</p>
                     </div>
                 </div>
-                </section>
-
             </div>
-            <!-- ----------------下拉式選單------------------------------------>
+
+            <!-- 下拉選單 -->
+        <!-- <div class="dropdown_container">
+            <button id="areaListBtn">
+                <div class="dropdown">
+                    <span>縣市</span> 
+                    <img src="../imgs/down-arrow.svg" alt="">
+                </div>
+            </button>
+            <div id="areaList" class="dropdown_list" hidden>
+                <p class="" >台北市</p>
+                <p class="" >新北市</p>
+                <p class="" >基隆市</p>
+            </div>
+        </div> -->
+
+
+
+
+
+
+
+            <!-- ----------------電腦下拉式選單------------------------------------>
             <div class="S-dropdown">
-
-
                 <!------------------------------ S-d-none S-xs-d-none  
                     -----------------------------電腦版消失 手機版消失---------------------------->
 
                 <!-- 下拉式選單 租屋資訊 -->
-                <div class="S-menu-wrap S-menu-RentInfo S-xs-d-none">
+                <div class="S-menu-wrap S-menu-RentInfo S-xs-d-block">
 
                     <div class="S-menu S-xs-d-none">
                         <div class="S-menu-btn btn1 step-on">租屋資訊</div>
@@ -254,7 +344,7 @@
                     <div class="S-menu-info">
                         <p>問題的關鍵看似不明確，但想必在諸位心中已有了明確 的答案。這種事實對本人來說意義重大，相信對這個世界也是有一定意義的。若發現問題比我們想像的還要深奧，那肯定不簡單。世界上若沒有租屋，對於人類的改變可想而知。俞吾金講過一段耐人尋思的話，科學就是對常識的不斷衝擊、突破和超越。這句話反映了問題的急切性。需要考慮周詳租屋的影響及因應對策。那麼，問題的關鍵究竟為何？我們要從本質思考，從根本解決問題。在人類的歷史中，我們總是盡了一切努力想搞懂租屋。
                         </p>
-                        <a href="#" class="S-menu-info-more S-d-none S-xs-d-block">查看更多</a>
+                        <button href="#" class="S-menu-info-more S-d-none S-xs-d-block" id="more">查看更多</button>
 
                     </div>
                 </div>
@@ -616,7 +706,7 @@
                 </div>
 
                 <!-- 下拉式選單 周邊機能 -->
-                <div class="S-menu-wrap S-menu-Environment S-d-none S-xs-d-block">
+                <div class="S-menu-wrap S-menu-Environment S-d-none">
                     <div class="S-menu S-xs-d-none">
                         <div class="S-menu-btn btn1">租屋資訊</div>
                         <div class="S-menu-btn btn2">物件設備</div>
@@ -766,7 +856,7 @@
                     <div class="S-menu-info">
                         <p>問題的關鍵看似不明確，但想必在諸位心中已有了明確 的答案。這種事實對本人來說意義重大，相信對這個世界也是有一定意義的。若發現問題比我們想像的還要深奧，那肯定不簡單。世界上若沒有租屋，對於人類的改變可想而知。俞吾金講過一段耐人尋思的話，科學就是對常識的不斷衝擊、突破和超越。這句話反映了問題的急切性。需要考慮周詳租屋的影響及因應對策。那麼，問題的關鍵究竟為何？我們要從本質思考，從根本解決問題。在人類的歷史中，我們總是盡了一切努力想搞懂租屋。
                         </p>
-                        <a href="#" class="S-menu-info-more S-d-none S-xs-d-block">查看更多</a>
+                        <button href="#" class="S-menu-info-more S-d-none S-xs-d-block" id="more2">查看更多</button>
                     </div>
 
 
@@ -1072,24 +1162,99 @@
 
 
     <script src="../js/jquery-3.6.0.js"></script>
+    <script src="../nav-footer/nav-footer.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+    <!-- 日曆 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!-- 燈箱 -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script> -->
     <script>
-
-
         $('.btn1').click(function(){
             console.log('btn1');
-            $(this).addClass('step-on');
-            $(this).siblings().removeClass('step-on');
-            $('.S-menu-RentInfo').removeClass('S-d-none');
-            $('.S-menu-RentInfo').siblings().addClass('S-d-none');
+            $('.btn1').addClass('step-on').siblings().removeClass('step-on');
+            $('.S-menu-RentInfo').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
+            $('.S-menu-RentInfo').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+
+            var spanChange = document.getElementById('spanChange');
+            spanChange.innerHTML = '<span>租屋資訊</span>';
+
         })
 
         $('.btn2').click(function(){
             console.log('btn2');
-            $(this).addClass('step-on').siblings().removeClass('step-on');
-            $('.S-menu-Equipment').removeClass('S-d-none');
-            $('.S-menu-Equipment').siblings().addClass('S-d-none');
+            $('.btn2').addClass('step-on').siblings().removeClass('step-on');
+            $('.S-menu-Equipment').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
+            $('.S-menu-Equipment').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+
+            var spanChange = document.getElementById('spanChange');
+            spanChange.innerHTML = '<span>物件設備</span>';
         })
-        
+        $('.btn3').click(function(){
+            console.log('btn3');
+            $('.btn3').addClass('step-on').siblings().removeClass('step-on');
+            $('.S-menu-PublicFacilities').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
+            $('.S-menu-PublicFacilities').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+
+            var spanChange = document.getElementById('spanChange');
+            spanChange.innerHTML = '<span>物件公設</span>';
+        })
+        $('.btn4').click(function(){
+            console.log('btn4');
+            $('.btn4').addClass('step-on').siblings().removeClass('step-on');
+            $('.S-menu-Features').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
+            $('.S-menu-Features').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+
+            var spanChange = document.getElementById('spanChange');
+            spanChange.innerHTML = '<span>物件特色</span>';
+        })
+        $('.btn5').click(function(){
+            console.log('btn5');
+            $('.btn5').addClass('step-on').siblings().removeClass('step-on');
+            $('.S-menu-SafetyEquipment').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
+            $('.S-menu-SafetyEquipment').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+
+            var spanChange = document.getElementById('spanChange');
+            spanChange.innerHTML = '<span>物件安全設備</span>';
+        })
+        // S-menu-OtherFee
+        $('.btn6').click(function(){
+            console.log('btn6');
+            $('.btn6').addClass('step-on').siblings().removeClass('step-on');
+            $('.S-menu-OtherFee').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
+            $('.S-menu-OtherFee').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+
+            var spanChange = document.getElementById('spanChange');
+            spanChange.innerHTML = '<span>物件其他費用</span>';
+        })
+        // S-menu-Environment
+        $('.btn7').click(function(){
+            console.log('btn7');
+            $('.btn7').addClass('step-on').siblings().removeClass('step-on');
+            $('.S-menu-Environment').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
+            $('.S-menu-Environment').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+
+            var spanChange = document.getElementById('spanChange');
+            spanChange.innerHTML = '<span>周邊機能</span>';
+        })
+
+        // S-menu-Roommates
+        $('.btn8').click(function(){
+            console.log('btn8');
+            $('.btn8').addClass('step-on').siblings().removeClass('step-on');
+            $('.S-menu-Roommates').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
+            $('.S-menu-Roommates').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+
+            var spanChange = document.getElementById('spanChange');
+            spanChange.innerHTML = '<span>室友簡介與喜好</span>';
+        })
+
+
 
 
 
@@ -1098,7 +1263,78 @@
             $(this).next(".dropdown_list").toggle()
             $(this).find("img").toggleClass("downArrow")
         })
+
+        // 查看更多
+        $('.S-menu-info-more').click(function(){
+            console.log('more');
+            if($('.S-menu-info-more').html() === "查看更多"){
+                $('.S-menu-info p').css('height','100%');
+                $('.S-menu-info-more').html("查看更少");
+            }
+            else{
+                $('.S-menu-info p').css('height','100px');
+                $('.S-menu-info-more').html("查看更多");
+            }
+
+        })
+// ----------------------------------------------------------------
+              function openModal() {
+                document.getElementById("myModal").style.display = "block";
+              }
+              
+              function closeModal() {
+                document.getElementById("myModal").style.display = "none";
+              }
+              
+              var slideIndex = 1;
+              showSlides(slideIndex);
+              
+              function plusSlides(n) {
+                showSlides(slideIndex += n);
+              }
+              
+              function currentSlide(n) {
+                showSlides(slideIndex = n);
+              }
+              
+              function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                var captionText = document.getElementById("caption");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+                captionText.innerHTML = dots[slideIndex-1].alt;
+              }
+              
+            
+
+// --------------------------------------------------------------
+
+      
     </script>
+
+    <script>
+    $(function() {
+      $('input[name="datetimes"]').daterangepicker({
+        timePicker: true,
+        startDate: moment().startOf('hour'),
+        endDate: moment().startOf('hour').add(32, 'hour'),
+        locale: {
+          format: 'M/DD hh:mm A'
+        }
+      });
+    });
+    </script>
+    
 </body>
 
 </html>
