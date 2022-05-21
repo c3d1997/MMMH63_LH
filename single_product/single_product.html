@@ -186,6 +186,12 @@
                     <img src="../imgs/img4.jpg" style="width:100%">
                   </div>
                   <div class="mySlides">
+                    <img src="../imgs/img5.jpg" style="width:100%">
+                  </div>
+                  <div class="mySlides">
+                    <img src="../imgs/img6.jpg" style="width:100%">
+                  </div>
+                  <div class="mySlides">
                     <img src="../imgs/ashwini-chaudhary-monty-Iu6parQAO-U-unsplash.jpg" style="width:100%">
                   </div>
                   <div class="mySlides">
@@ -214,10 +220,10 @@
                     <img class="demo cursor" src="../imgs/img4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
                   </div>
                   <div class="column">
-                    <img class="demo cursor" src="../imgs/ashwini-chaudhary-monty-Iu6parQAO-U-unsplash.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                    <img class="demo cursor" src="../imgs/img5.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
                   </div>
                   <div class="column">
-                    <img class="demo cursor" src="../imgs/bedroom-6778193_1920.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                    <img class="demo cursor" src="../imgs/img6.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
                   </div>
                 </div>
             </div>
@@ -1180,6 +1186,7 @@
             $('.btn1').addClass('step-on').siblings().removeClass('step-on');
             $('.S-menu-RentInfo').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
             $('.S-menu-RentInfo').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+            $('#areaList').css('display','none');
 
             var spanChange = document.getElementById('spanChange');
             spanChange.innerHTML = '<span>租屋資訊</span>';
@@ -1191,6 +1198,8 @@
             $('.btn2').addClass('step-on').siblings().removeClass('step-on');
             $('.S-menu-Equipment').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
             $('.S-menu-Equipment').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+            $('#areaList').css('display','none');
+
 
             var spanChange = document.getElementById('spanChange');
             spanChange.innerHTML = '<span>物件設備</span>';
@@ -1200,6 +1209,7 @@
             $('.btn3').addClass('step-on').siblings().removeClass('step-on');
             $('.S-menu-PublicFacilities').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
             $('.S-menu-PublicFacilities').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+            $('#areaList').css('display','none');
 
             var spanChange = document.getElementById('spanChange');
             spanChange.innerHTML = '<span>物件公設</span>';
@@ -1209,6 +1219,7 @@
             $('.btn4').addClass('step-on').siblings().removeClass('step-on');
             $('.S-menu-Features').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
             $('.S-menu-Features').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+            $('#areaList').css('display','none');
 
             var spanChange = document.getElementById('spanChange');
             spanChange.innerHTML = '<span>物件特色</span>';
@@ -1218,6 +1229,7 @@
             $('.btn5').addClass('step-on').siblings().removeClass('step-on');
             $('.S-menu-SafetyEquipment').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
             $('.S-menu-SafetyEquipment').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+            $('#areaList').css('display','none');
 
             var spanChange = document.getElementById('spanChange');
             spanChange.innerHTML = '<span>物件安全設備</span>';
@@ -1228,6 +1240,7 @@
             $('.btn6').addClass('step-on').siblings().removeClass('step-on');
             $('.S-menu-OtherFee').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
             $('.S-menu-OtherFee').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+            $('#areaList').css('display','none');
 
             var spanChange = document.getElementById('spanChange');
             spanChange.innerHTML = '<span>物件其他費用</span>';
@@ -1238,6 +1251,7 @@
             $('.btn7').addClass('step-on').siblings().removeClass('step-on');
             $('.S-menu-Environment').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
             $('.S-menu-Environment').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+            $('#areaList').css('display','none');
 
             var spanChange = document.getElementById('spanChange');
             spanChange.innerHTML = '<span>周邊機能</span>';
@@ -1249,6 +1263,7 @@
             $('.btn8').addClass('step-on').siblings().removeClass('step-on');
             $('.S-menu-Roommates').removeClass('S-d-none S-xs-d-none').addClass('S-xs-d-block');
             $('.S-menu-Roommates').siblings().addClass('S-d-none').removeClass('S-xs-d-block');
+            $('#areaList').css('display','none');
 
             var spanChange = document.getElementById('spanChange');
             spanChange.innerHTML = '<span>室友簡介與喜好</span>';
@@ -1317,7 +1332,7 @@
               
             
 
-// --------------------------------------------------------------
+// ------------------日曆--------------------------------------------
 
       
     </script>
