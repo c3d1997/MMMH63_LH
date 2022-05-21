@@ -179,6 +179,8 @@
                             </div>
                         </div>
                     </div>
+
+
                     <div class="x-title-content">
                         <div class="x-title-content-img">
                             <img src="../imgs/57 1.jpg" alt="">
@@ -202,6 +204,7 @@
                                 </p>
                             </div>
                         </div>
+                        
                         <div class="x-title-content-price">
                             <div class="x-title-content-price-top">
 
@@ -465,6 +468,37 @@
                             </div>
                         </div>
                     </div>
+
+
+
+                    <div class="S-xs-card-wrap">
+
+                        <div class="S-xs-like">
+                            <img src="../imgs/取消.svg" alt="">
+                        </div>
+
+                        <div class="S-xs-card">
+                            <div class="S-xs-card-img">
+
+                            </div>
+                            <div class="S-xs-card-info">
+                                <h4>
+                                    <span>三重大樓</span>
+                                </h4>
+                                <div class="S-xs-card-info-2">
+                                    <p>新北市三重區
+                                    </p>
+                                    <h3>
+                                        15,000/月
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
                     <div class="S-xs-card-wrap">
 
                         <div class="S-xs-like">
@@ -488,6 +522,10 @@
                             </div>
                         </div>
                     </div>
+
+
+
+
                     <div class="S-xs-card-wrap">
 
                         <div class="S-xs-like">
@@ -511,29 +549,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="S-xs-card-wrap">
 
-                        <div class="S-xs-like">
-                            <img src="../imgs/取消.svg" alt="">
-                        </div>
-                        <div class="S-xs-card">
-                            <div class="S-xs-card-img">
 
-                            </div>
-                            <div class="S-xs-card-info">
-                                <h4>
-                                    <span>三重大樓</span>
-                                </h4>
-                                <div class="S-xs-card-info-2">
-                                    <p>新北市三重區
-                                    </p>
-                                    <h3>
-                                        15,000/月
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="S-xs-card-wrap">
 
                         <div class="S-xs-like">
@@ -655,7 +673,42 @@
 
 
 
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+           $('.S-xs-card-wrap:first-child')
 
+           .click(function () {
+
+            $('.S-xs-card-wrap')
+            .css('height', '0')
+
+                             })
+
+           .end()
+           .parent()
+           .css('height', '0') 
+           
+           
+           $('.x-title-icon:nth-child(2)')
+               .click(function () {})
+               .end()
+               .parent()
+               .parent()
+               .siblings(x-title-content-all)
+               .css('display', 'none')
+               .show(x-title-card-all)
+           
+        
+
+            $('.x-title-icon:nth-child(1)')
+              .click(function () {})
+              .end()
+              .parent()
+              .parent()
+              .siblings(x-title-card-all)
+              .css('display', 'none')
+              .show(x-title-content-all)     
+    </script>
 </body>
 
 </html>
