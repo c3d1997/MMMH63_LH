@@ -466,9 +466,13 @@
     <!-------------------total time--------- -->
     <div class="total_container">
         <div class="year">
-            <input type="text" name="" id="">
+            <div class="totalYear_container">
+                <p id="totalYear"></p>
+            </div>
             <h3>年</h3>
-            <input type="text" name="" id="">
+            <div class="totalMonth_container">
+                <p id="totalMonth"></p>
+            </div>
             <h3>月</h3>
         </div>
     </div>
@@ -565,7 +569,32 @@
                 opens: 'left'
             }, function (start, end, label) {
                 console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-                $record.text(start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                // $record.text(start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+
+                let firstDay = parseInt(start.format('DD'));
+                let endDay = parseInt(end.format('DD'));
+
+                let Year = parseInt(end.format('YYYY') - parseInt(start.format('YYYY')));
+                let Month = parseInt(end.format('MM') - parseInt(start.format('MM')));
+                    // 當月大於0
+                    if (Month > 0) { 
+                        // 判斷 迄日 是否大於 起日 (是否多天數)
+                        if (endDay > firstDay){
+                            // 若有月+1
+                            Month = Month+1;
+                        }
+                            // 有 輸出月+1       沒有 直接輸出月
+                        $("#totalMonth").text(Month)
+                    } else {
+                    // 當月小於0 還是算一個月 =1
+                        $("#totalMonth").text(1)
+                    }
+
+                    if (Year>0){
+                        $("#totalYear").text(Year)
+                    } else {
+                        $("#totalYear").text("")
+                    }
             });
         });
 
