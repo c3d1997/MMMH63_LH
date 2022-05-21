@@ -319,7 +319,9 @@
     <div class="z_time">
         <h3>選擇租屋期限</h3>
 
-        <input type="text" name="daterange" value="06/08/2022 - 06/08/2023" />
+            <input type="text" name="daterange" value="06/08/2022 - 06/08/2023" />
+            <p id="record"></p>
+        
 
         <!-- <div class="z_time_begin_container">
             <form action="" >
@@ -544,7 +546,7 @@
             <p>
                 Copyright © ICS COLLEGE OF ARTS. All rights reserved.
             </p>
-            <p id="record" style="display:none;"></p>
+            
         </div>
     </div>
 
@@ -566,6 +568,11 @@
                 $record.text(start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
             });
         });
+
+
+
+
+
 
 
     </script>
