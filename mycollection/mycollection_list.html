@@ -204,7 +204,7 @@
                                 </p>
                             </div>
                         </div>
-                        
+
                         <div class="x-title-content-price">
                             <div class="x-title-content-price-top">
 
@@ -673,41 +673,20 @@
 
 
 
-    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="../js/jquery-3.6.0.js"></script>
     <script>
-           $('.S-xs-card-wrap:first-child')
-
-           .click(function () {
+        $('.S-xs-card-wrap').click(function() {
 
             $('.S-xs-card-wrap')
-            .css('height', '0')
+                .css('height', '0')
 
-                             })
+            $('.x-title-icon:nth-child(2)').css('display', 'none')
+                .show(x - title - card - all)
 
-           .end()
-           .parent()
-           .css('height', '0') 
-           
-           
-           $('.x-title-icon:nth-child(2)')
-               .click(function () {})
-               .end()
-               .parent()
-               .parent()
-               .siblings(x-title-content-all)
-               .css('display', 'none')
-               .show(x-title-card-all)
-           
-        
 
-            $('.x-title-icon:nth-child(1)')
-              .click(function () {})
-              .end()
-              .parent()
-              .parent()
-              .siblings(x-title-card-all)
-              .css('display', 'none')
-              .show(x-title-content-all)     
+            $('.x-title-icon:nth-child(1)').css('display', 'none')
+
+        });
     </script>
 </body>
 
