@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Drag and drop</title>
+
+	<style>
+		.container {
+			position: relative;
+			width: 800px;
+			height: 600px;
+			background-color: #b0e9ff;
+		}
+	</style>
+</head>
+<body>
+	<input type="file" id="file">
+	<div class="container">從檔案管理員拖檔案進來</div>
+	<div id="demo"></div>
+<script src="../js/jquery-3.6.0.js"></script>
+<script>
+	const container = $('.container');
+	container.on('dragover', function(event){
+		event.preventDefault();
+	});
+	container.on('dragenter', function(event){
+		container.css('background-color','#ffe055');
+	});
+	container.on('dragleave', function(event){
+		container.css('background-color','#b0e9ff');
+	});
+
+	const readerLoaded = event=>{
+		let image = new Image();
+		image.width = container.width();
+		image.src = event.target.result; // 將結果設定給 img
+		// console.log(image);
+		container.append(image)
+	};
+
+	container.on('drop', function(event){
+		container.css('background-color','#b0e9ff');
+		var file = $('#file')[0].files[0];
+		var reader = new FileReader;
+		reader.onload = function(e) {
+			$('#demo').attr('src', e.target.result);
+		};
+		reader.readAsDataURL(file);
+	});
+</script>
+
+</body>
+</html>

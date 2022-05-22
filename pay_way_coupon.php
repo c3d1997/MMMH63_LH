@@ -5,7 +5,7 @@ $title = '付款方式'
 
 <?php include __DIR__ . './part/head.php'  ?>
 
-    <style>
+<style>
         * {
         margin: 0;
         }
@@ -744,9 +744,38 @@ $title = '付款方式'
 
     <section class="z_section">
         <div class="z_paycontainer">
+            <div class="z_progress ">
+                <div class="z_progress_text">
+                    <ul class="z_barcontainer">
+                        <li>
+                            <h3 class="bold">選擇租屋</h3>
+                            <div class="z_radio_finish"></div>
+                        </li>
+                        <li>
+                            <h3 class="bold">確定租屋資訊</h3>
+                            <div class="z_radio_finish"></div>
+                        </li>
+                        <li>
+                            <h3 class="bold">線上合約</h3>
+                            <div class="z_radio_finish"></div>
+                        </li>
+                        <li>
+                            <h3 class="bold">確認付款</h3>
+                            <div class="z_radio_finish"></div>
+                        </li>
+                        <li>
+                            <h3 class="bold">租屋完成</h3>
+                            <div class="z_radio"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="z_progress_bar"></div>
+                <div class="z_progress_bar_step4 "></div>
+            </div>
             <div class="z_paydata_container ">
-                <div class="z_payforcleantitle_container">
-                    <h3 class="paytitle bold">清潔服務付款</h3>
+                <div class="z_paytitle_container">
+                    <h3 class="paytitle bold">租金支付</h3>
+                    <p class="z_paytitle_detail">我的租屋_XXXXXXXXX</p>
                 </div>
                 <div class="z_title_data_container">
                     <div class="z_chebox_intput">
@@ -817,6 +846,8 @@ $title = '付款方式'
                                     <img src="imgs/down-arrow.svg" alt="">
                                 </div>
                             </div>
+
+                            
                             <div class="z_payghost"></div>
                         </div>
                         <div class="z_pay_alert">
@@ -849,13 +880,13 @@ $title = '付款方式'
                         <div class="z_text_intput ">
                             <p class="z_checkbox_option ">有效月年</p>
                             <div class="z_input_medium_container">
-                                <input class="z_input_medium" type="text" name="" id="" placeholder="信用卡有效月">
-                                <input class="z_input_medium" type="text" name="" id="" placeholder="信用卡有效年">
+                                <input class="z_input_medium" type="text" name="" id="" placeholder="月">
+                                <input class="z_input_medium" type="text" name="" id="" placeholder="年">
                             </div>
                             <div class="z_payghost"></div>
                         </div>
                         
-                    <p class="alert z_pay_alert" id="yearDay"></p>
+                        <p class="alert z_pay_alert" id="yearDay"></p>
                         <div class="z_text_intput ">
                             <p class="z_checkbox_option ">　末三碼</p>
                             <div class="z_input_container">
@@ -891,23 +922,24 @@ $title = '付款方式'
 <?php include __DIR__ . './part/footer.php'  ?>
 
     $(".z_checkbox_container :checkbox").click(function(){
-        $(this).parent().siblings().find(":checkbox").prop('checked', false);
-        if ($("#payBank").prop('checked')) {
-            $(".bank_area").css("display","block")
-            $(".card_area").css("display","none")
+    $(this).parent().siblings().find(":checkbox").prop('checked', false);
+    if ($("#payBank").prop('checked')) {
+        $(".bank_area").css("display","block")
+        $(".card_area").css("display","none")
 
-        } else if ($("#payCard").prop('checked')) {
-            $(".bank_area").css("display","none")
-            $(".card_area").css("display","block")
+    } else if ($("#payCard").prop('checked')) {
+        $(".bank_area").css("display","none")
+        $(".card_area").css("display","block")
 
-        } else {
-            $(".bank_area").css("display","none")
-            $(".card_area").css("display","none")
-        }
-        })
-
-        $("#bankSelect").click(function(){
-            $(".arrow_container img").toggleClass("downArrow")
+    } else {
+        $(".bank_area").css("display","none")
+        $(".card_area").css("display","none")
+    }
     })
+
+    $("#bankSelect").click(function(){
+        $(".arrow_container img").toggleClass("downArrow")
+    })
+
     
 <?php include __DIR__ . './part/javascript.php' ?>
