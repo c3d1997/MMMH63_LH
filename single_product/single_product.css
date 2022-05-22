@@ -25,7 +25,6 @@
 
 
 
-
 /* ----------------viewer------------------------- */
 
 .S-viewer-wrap {
@@ -59,6 +58,15 @@
 
 .S-lg-link-g {
     display: flex;
+    position: relative;
+}
+
+/* ----------------share link------------------------- */
+.share-wrap{
+    position: absolute;
+    top: 35%;
+    left: 60%;
+
 }
 
 .S-viewer-wrap .S-lg-share {
@@ -96,6 +104,10 @@
 
 .pc-button-F4F4F4-280 {
     margin-bottom: 30px;
+}
+.pc-button-F4F4F4-280 a{
+    color: #0E2E3D;
+    text-decoration: none;
 }
 
 

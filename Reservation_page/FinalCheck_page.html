@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../nav-footer/nav-footer.css">
     <link rel="stylesheet" href="../button-fonts.css">
     <link rel="stylesheet" href="./FinalCheck_page.css">
@@ -14,59 +16,105 @@
 </head>
 
 <body>
-    <!-- navbar -->
-    <div class="nav-log-out">
+    <div class="nav">
         <div class="container">
-            <div class="row">
-                <div class="pc_nav_left">
-                    <a href="#">搜尋</a>
-                    <a href="#">刊登房屋</a>
+            <ul>
+                <div class="pc-link">
+                    <li class="x-log">
+                        <a href="
+                        ">搜尋</a>
+                    </li>
+                    <li class="x-log">
+                        <a href="">
+                            刊登房屋
+                        </a>
+                    </li>
                 </div>
-                <div class="phone_nav_left">
-                    <img src="../imgs/phone_logo.png" alt="">
-                </div>
-                <div>
-                    <a class="pc_nav_center" href="#"><img src="../imgs/LOGO.svg" alt=""></a>
-                    <a class="phone_nav_center" href="#"><img src="../imgs/phone_logo_text.svg" alt=""></a>
+                <li class="x-log-img">
+                    <a href=""><img src="../imgs/LOGO.svg" alt="">
+                    </a>
+                    <a href=""><img src="../imgs/phone_logo.png" alt="">
+                    </a>
+                </li>
+                <li class="x-log-phone-title">
+                    <a href="">Little House</a>
+                </li>
+                <div class="phone-nav-link">
+                    <li class="x-log x-phone">
+                        <a href="
+                        ">搜尋</a>
+                    </li>
+                    <li class="x-log x-phone">
+                        <a href="">
+                            刊登房屋
+                        </a>
+                    </li>
+                    <li class="x-log">
+                        <a href="">
+                            清潔服務
+                        </a>
+                    </li>
+                    <li class="log-in x-log">
+                        <a href="">
+                            會員登入/註冊
+                        </a>
+                    </li>
+                    <li class="log-out x-log x-hidden-flip">
+                        <a href="#">
+                            個人頁面 <img src="../imgs/down-arrow.svg" alt="">
+                        </a>
+                    </li>
+                    <div class="x-hidden-personaal x-hidden-click">
+                        <a href="">
+                            會員資料
+                        </a>
+                        <a href="">
+                            刊登物件
+                        </a>
+                        <a href="">
+                            我的租屋
+                        </a>
+                        <a href="">
+                            我的收藏
+                        </a>
+                        <a href="">
+                            我的優惠
+                        </a>
+                        <a href="">
+                            我的預約
+                        </a>
+                        <a href="">
+                            租金支付
+                        </a>
+                        <a href="">
+                            清潔服務
+                        </a>
+                        <a href="">
+                            租屋契約
+                        </a>
+                    </div>
+                    <li class="log-out x-log">
+                        <a href="">
+                            登出
+                        </a>
+                    </li>
 
                 </div>
-                <div class="pc_nav_right">
-                    <a href="#">清潔服務</a>
-                    <a href="#">會員登入/註冊</a>
-                </div>
-                <div class="phone_nav_right">
-                    <img src="../imgs/Hamburger.png" alt="">
+
+
+
+            </ul>
+            <div class="x-log-show">
+                <div class="x-log-show-navbar ">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
+
+
         </div>
     </div>
-    <!-- 登出狀態 -->
-    <!-- <div class="nav-log-in">
-        <div class="container">
-            <div class="row">
-                <div class="pc_nav_left">
-                    <a href="#">搜尋</a>
-                    <a href="#">刊登房屋</a>
-                </div>
-                <div class="phone_nav_left">
-                    <img src="../imgs/phone_logo.png" alt="">
-                </div>
-                <div>
-                    <a class="pc_nav_center" href="#"><img src="../imgs/LOGO.svg" alt=""></a>
-                    <a class="phone_nav_center" href="#"><img src="../imgs/phone_logo_text.svg" alt=""></a>
-                </div>
-                <div class="pc_nav_right">
-                    <a href="#">清潔服務</a>
-                    <a href="#">個人頁面</a>
-                    <a href="#">登出</a>
-                </div>
-                <div class="phone_nav_right">
-                    <img src="../imgs/Hamburger.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- 登入狀態 -->
     <!-- 以上NAV--------------------------------------------------- -->
 
     <!-- 間距140px -->
@@ -74,7 +122,7 @@
     <div class="container">
         <div class="row">
 
-    <!-- 以下是流程bar--------------------------------------------------- -->
+            <!-- 以下是流程bar--------------------------------------------------- -->
 
             <section>
                 <div class="z_container S-xs-d-none">
@@ -106,9 +154,9 @@
                         <div class="z_progress_bar" id="z_progress_bar"></div>
                         <div class="z_progress_bar_step2" id="z_progress_bar_step2"></div>
                     </div>
-                    
+
             </section>
-    <!-- 以上是流程bar--------------------------------------------------- -->
+            <!-- 以上是流程bar--------------------------------------------------- -->
 
 
 
@@ -136,7 +184,8 @@
                             <h2 class="S-FinalCheck-name">士林夜市近士林劍潭捷運小套房</h2>
                             <h3 class="S-FinalCheck-location">
                                 <i class="fa-solid fa-location-dot"></i>
-                                台北市士林區劍潭路100號35巷1弄3樓</h3>
+                                台北市士林區劍潭路100號35巷1弄3樓
+                            </h3>
                             <h2 class="S-FinalCheck-date">
                                 2022 年 4 月 15 日
                                 <span class="S-FinalCheck-time">15:00</span>
@@ -146,8 +195,10 @@
 
                     <div class="S-FinalCheck-btn">
 
-                        <button class="pc-button-F4F4F4-180  mobile-button-F4F4F4-162">聯絡我們</button>
-                        <button class="pc-button-FEAC00-180 mobile-button-FEAC00-162">確定租屋</button>
+                        <button class="pc-button-F4F4F4-180  mobile-button-F4F4F4-162"><a
+                                href="../customer_service/customer_service.html">聯絡我們</a></button>
+                        <button class="pc-button-FEAC00-180 mobile-button-FEAC00-162"><a
+                                href="../contract/contract01_calend.html">確定租屋</a></button>
 
 
                     </div>
@@ -157,8 +208,8 @@
     </div>
 
 
-       <!-- 以下是footer---------------------------------------------  -->
-       <div class="footer_container">
+    <!-- 以下是footer---------------------------------------------  -->
+    <div class="footer_container">
         <div class="footer">
             <div class="container">
                 <div class="footer-up">
@@ -224,7 +275,26 @@
 
     <!-- FOOTER--------------------------------------------------- -->
 
+    <!-- 彈出預約成功視窗 -->
 
+    <script>
+
+        let btn = document.querySelector("#show");
+        let infoModal = document.querySelector("#infoModal");
+        let close = document.querySelector("#close");
+        let close2 = document.querySelector("#close2");
+        btn.addEventListener("click", function () {
+            infoModal.showModal();
+        })
+        close.addEventListener("click", function () {
+            infoModal.close();
+        })
+        close2.addEventListener("click", function () {
+            infoModal.close();
+        })
+
+
+    </script>
 
 
 

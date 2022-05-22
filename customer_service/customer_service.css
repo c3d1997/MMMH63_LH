@@ -78,7 +78,11 @@
     width: 30px;
     margin-right: 10px;
 }
-
+.CustomerService-x img{
+    width: 50px;
+    height: 50px;
+    margin: 0;
+}
 .input_option {
     padding: 15px 0;
 }
@@ -137,6 +141,7 @@ textarea[type=text] {
 .S-btn {
     margin-top: 10px;
     display: flex;
+    justify-content: center;
 }
 
 .pc-button-F4F4F4-272 {
@@ -146,12 +151,17 @@ textarea[type=text] {
 button.pc-button-FEAC00-272 {
     font-size: 16px;
     margin-left: 15px;
+    width: 162.5px;
 }
 
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 @media screen and (max-width:376px) {
+    
+ 
+
+
     .S-customer_service-bg {
         position: relative;
         top: 0px;
