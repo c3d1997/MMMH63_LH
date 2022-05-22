@@ -8,10 +8,13 @@
     device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./warning_card.css">
     <link rel="stylesheet" href="../button-fonts.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <title>product_page</title>
+
 </head>
 
 <body>
@@ -23,66 +26,74 @@
             <!-- ----------------------------------------------------------------------------- -->
             <!-- ---------彈跳視窗------------------------------------------------------------------ -->
 
+            <!-- 使用方式: -->
+            <!-- 1. 點擊的button加上 id="show" -->
+            <!-- 2.<dialog>要出現的卡片</dialog> -->
+            <!-- 3.檔案中貼上JS程式碼 (需要的話) -->
+            <!-- 4.完成 -->
+
+
+
+
+
 
             <!-- 以下是"發布成功" -->
-
             <div class="PostSuccess-wrap">
                 <div class="PostSuccess">
                     <div class="PostSuccess-icon">
                         <i class="fa-solid fa-thumbs-up"></i>
                     </div>
                     <h2>發佈成功</h2>
-                    <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162">返回</div>
-            <div class="PostSuccess-x">
-                <img src="../imgs/X.svg" alt="">
+                    <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">返回
+                </div>
+                <button class="PostSuccess-x" id="close2">
+                    <img src="../imgs/X.svg" alt="">
+                </button>
             </div>
         </div>
-    </div>
-    <!-- 以上是"發布成功" -->
+        <!-- 以上是"發布成功" -->
 
 
 
-<!-- ------------------------------------------ -->
-    <!-- 以下是"預約成功"ReservationSuccess -->
-
-    <div class="ReservationSuccess-wrap">
-        <div class="ReservationSuccess">
-            <div class="ReservationSuccess-icon">
-                <i class="fa-solid fa-thumbs-up"></i>
+        <!-- ------------------------------------------ -->
+        <!-- 以下是"預約成功"ReservationSuccess -->
+        <div class="ReservationSuccess-wrap">
+            <div class="ReservationSuccess">
+                <div class="ReservationSuccess-icon">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                </div>
+                <h2>預約成功</h2>
+                <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">返回
             </div>
-            <h2>預約成功</h2>
-            <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162">返回</div>
-            <div class="ReservationSuccess-x">
+            <button class="ReservationSuccess-x" id="close2">
+                <img src="../imgs/X.svg" alt="">
+            </button>
+        </div>
+        <!-- 以上是"預約成功"ReservationSuccess -->
+
+        <!-- ------------------------------------------ -->
+        <!-- ------------------------------------------ -->
+        <!-- 以下是"客服送出成功"CustomerService -->
+        <div class="CustomerService-wrap">
+            <div class="CustomerService">
+                <div class="CustomerService-icon">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                </div>
+                <h3>送出成功<br>
+                    將會盡快以郵件回覆您</h3>
+                <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">返回
+            </div>
+            <div class="CustomerService-x" id="close2">
                 <img src="../imgs/X.svg" alt="">
             </div>
         </div>
     </div>
     <!-- 以上是"預約成功"ReservationSuccess -->
 
-<!-- ------------------------------------------ -->
-<!-- ------------------------------------------ -->
-    <!-- 以下是"客服送出成功"CustomerService -->
-
-    <div class="CustomerService-wrap">
-        <div class="CustomerService">
-            <div class="CustomerService-icon">
-                <i class="fa-solid fa-thumbs-up"></i>
-            </div>
-            <h3>送出成功<br>
-                將會盡快以郵件回復您</h3>
-            <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162">返回</div>
-            <div class="CustomerService-x">
-                <img src="../imgs/X.svg" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- 以上是"預約成功"ReservationSuccess -->
-
-<!-- ------------------------------------------ -->
+    <!-- ------------------------------------------ -->
 
     <!-- 以下是"請成為會員
         才能使用收藏功能"  NotcCollect-->
-
     <div class="NotCollect-wrap">
         <div class="NotCollect">
             <div class="NotCollect-icon">
@@ -90,46 +101,49 @@
             </div>
             <h2>請成為會員<br>
                 才能使用收藏功能</h2>
-            <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162 Center">註冊會員</button>
-                    <div class="NotCollect-x">
-                        <img src="../imgs/X.svg" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- 以上是"請成為會員
+            <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162 Center"><a
+                    href="../signin-signup/signin2.html">註冊會員</a></button>
+            <button class="NotCollect-x" id="close">
+                <img src="../imgs/X.svg" alt="">
+            </button>
+        </div>
+    </div>
+
+    <!-- 以上是"請成為會員
         才能使用收藏功能"  NotcCollect -->
 
 
-            <!-- ------------------------------------------ -->
+    <!-- ------------------------------------------ -->
 
 
-            <!-- 以下是"請成為會員
+    <!-- 以下是"請成為會員
         才能使用預約看房功能"  NoReservation-->
-
-            <div class="NoReservation-wrap">
-                <div class="NoReservation">
-                    <div class="NoReservation-icon">
-                        <i class="fa-solid fa-ban"></i>
-                    </div>
-                    <h2>請成為會員<br> 才能使用預約看房功能
-                    </h2>
-                    <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162 Center">註冊會員</div>
-            <div class="NoReservation-x">
-                <img src="../imgs/X.svg" alt="">
+    <div class="NoReservation-wrap">
+        <div class="NoReservation">
+            <div class="NoReservation-icon">
+                <i class="fa-solid fa-ban"></i>
             </div>
+            <h2>請成為會員<br> 才能使用預約看房功能
+            </h2>
+            <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162 Center"><a
+                    href="../signin-signup/signin2.html">註冊會員</a>
+            </button>
         </div>
+        <button class="NoReservation-x" id="close">
+            <img src="../imgs/X.svg" alt="">
+        </button>
+    </div>
     </div>
     <!-- 以上是"請成為會員
         才能使用預約看房功能"  NoReservation -->
 
 
 
-<!-- ------------------------------------------ -->
+    <!-- ------------------------------------------ -->
 
 
     <!-- 以下是"請成為會員
         才能使用聯絡我們功能"  NoConnection-->
-
     <div class="NoConnection-wrap">
         <div class="NoConnection">
             <div class="NoConnection-icon">
@@ -137,17 +151,44 @@
             </div>
             <h2>請成為會員<br>
                 才能使用聯絡我們功能</h2>
-            <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162 Center">註冊會員</div>
-            <div class="NoConnection-x">
-                <img src="../imgs/X.svg" alt="">
-            </div>
+            <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162 Center"><a
+                    href="../signin-signup/signin2.html">註冊會員</a>
+            </button>
         </div>
+        <div class="NoConnection-x" id="close">
+            <img src="../imgs/X.svg" alt="">
+        </div>
+    </div>
     </div>
     <!-- 以上是"請成為會員
         才能使用聯絡我們功能"  NoConnection -->
 
 
-    
+
+
+    <!-- 彈出成功視窗 -->
+
+    <script>
+
+        let btn = document.querySelector("#show");
+        let infoModal = document.querySelector("#infoModal");
+        let close = document.querySelector("#close");
+        let close2 = document.querySelector("#close2");
+        btn.addEventListener("click", function () {
+            infoModal.showModal();
+        })
+        close.addEventListener("click", function () {
+            infoModal.close();
+        })
+        close2.addEventListener("click", function () {
+            infoModal.close();
+        })
+
+
+    </script>
+
+
+
 
 
 

@@ -329,7 +329,8 @@
 
 
     .share-wrap{
-        margin-top: 700px;
+        background:#F4F4F4;
+        /* margin-top: 700px; */
         z-index: 999;
         width: 250px;
         height: 70px;

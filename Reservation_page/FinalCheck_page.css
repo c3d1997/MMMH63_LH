@@ -75,6 +75,10 @@ section {
 .pc-button-F4F4F4-180 {
     margin-right: 30px;
 }
+.pc-button-F4F4F4-180 a,.pc-button-FEAC00-180 a{
+    text-decoration: none;
+    color: #0E2E3D;
+}
 #z_progress_bar{
     bottom: 32px;
 }
@@ -185,5 +189,10 @@ section {
         font-size: 20px;
         border: none;
         background-color: #F1EDEA;
+    }
+
+    .pc-button-F4F4F4-180 a,.pc-button-FEAC00-180 a{
+        text-decoration: none;
+        color: #0E2E3D;
     }
 }
