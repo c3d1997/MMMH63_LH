@@ -1,13 +1,18 @@
-<?php
-$title = '付款方式'
+<?php 
+$title = '租屋明細';
+require './part/connect-db.php';
+
+$i_sql = "SELECT * FROM `items` WHERE `id` LIKE 1";
+
+
+
 
 ?>
 
 <?php include __DIR__ . './part/head.php'  ?>
-
     <style>
         * {
-        margin: 0;
+            margin: 0;
         }
         .display-n {
             display: none;
@@ -71,7 +76,6 @@ $title = '付款方式'
             padding: 0;
             height: 60px;
             border: none;
-            /* text-align: center; */
             /* text-indent: 15px; */
         }
         input[type=checkbox] {
@@ -81,15 +85,15 @@ $title = '付款方式'
             cursor: pointer;
             display: inline-block;
             padding-left: 30px;
-            line-height: 20px;
-            background: url(imgs/unchecked.svg) no-repeat left top;
+            /* line-height: 24px; */
+            background: url(../imgs/unchecked.svg) no-repeat left top;
             user-select: none;
         }
         input[type=checkbox]:checked+span {
             display: inline-block;
             padding-left: 30px;
-            line-height: 20px;
-            background-image: url(imgs/checked.svg);
+            /* line-height: 24px; */
+            background-image: url(../imgs/checked.svg);
         }
 
         .z_button_correct {
@@ -107,12 +111,6 @@ $title = '付款方式'
             height: 60px;
             background-color: #F1EDEA;
 
-        }
-
-        .z_payforcleantitle_container {
-            justify-content: center;
-            display: flex;
-            margin-bottom: 30px;
         }
 
         .z_d_flex {
@@ -183,8 +181,6 @@ $title = '付款方式'
         }
         .z_input_container {
             flex-grow: 1;
-            height: 60px;
-            background-color: #fff;
         }
         .z_input_medium_container {
             display: flex;
@@ -203,6 +199,9 @@ $title = '付款方式'
         .z_input_small_container  input[type=text]{
             width: 100%;
             max-width: 120px;
+        }
+        .z_input_container input[type=text]{
+            width: 100%;
         }
         .z_progress {
             z-index: -1;
@@ -360,12 +359,6 @@ $title = '付款方式'
             /* height: 60px; */
             /* background-color: red; */
         }
-        .z_coupon_container {
-            width: 130px;
-        }
-        .z_coupon_phone_container {
-            display: none;
-        }
         .z_paydropdown {
             flex-grow: 1;
             position: relative;
@@ -498,7 +491,7 @@ $title = '付款方式'
             display: flex;
         }
         .bank_area select{
-            color: #0E2E3D;
+            
             height: 60px;
             border: none;
             outline: none;
@@ -521,28 +514,6 @@ $title = '付款方式'
             right: 15px;
             position: absolute;
             pointer-events: none;
-        }
-        .z_input_container p{
-            position: relative;
-            width: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-            padding-left: 15px;
-        }
-        .coupon {
-            margin-left: 20px;
-            color: #0E2E3D;
-            height: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            background-color: #FEAC00;
-        }
-        #lastThree {
-            width: 100%;
-            text-align: center;
-            text-indent: 0;
         }
 
         @media screen and (max-width:376px) {
@@ -584,7 +555,6 @@ $title = '付款方式'
             }
             .z_input_container {
                 width: 100%;
-                height: 45px;
             }
             .z_check_container {
                 height: 45px;
@@ -721,193 +691,54 @@ $title = '付款方式'
             .z_payghost {
                 display: none;
             }
-            .z_coupon_container {
-                display: none;
-            }
-            .z_coupon_phone_container {
-                margin: auto;
-                width: 40%;
-                display: block;
-                margin-bottom: 30px;
-            }
-            .z_input_medium_container input[type=text]{ 
-
-                max-width: 158px;
-            }
-            .z_input_small_container input[type=text] {
-                max-width: 75px;
-            }
         }
     </style>
-
 <?php include __DIR__ . './part/nav.php'  ?>
 
     <section class="z_section">
-        <div class="z_paycontainer">
-            <div class="z_paydata_container ">
-                <div class="z_payforcleantitle_container">
-                    <h3 class="paytitle bold">清潔服務付款</h3>
+        <div class="z_paycontainer ">
+            <h2 class="z_pay_detail_title">租屋明細</h2>
+            <div class="z_pay_detail_container">
+                <div class="z_pay_detail_img">
+                    <img src="imgs/item_example.png" alt="">
                 </div>
-                <div class="z_title_data_container">
-                    <div class="z_chebox_intput">
-                        <p class="z_checkbox_option ">付款方式</p>
-                            <div class="z_check_container">
-                                <div class="z_checkbox_container">
-                                    <label class="option_bank_container">
-                                        <input class="" type="checkbox" value="bank" name="" id="payBank" >
-                                        <span>匯款</span>
-                                    </label>
-                                    <label class="option_card_container">
-                                        <input class="" type="checkbox" value="creditcard" name="" id="payCard" >
-                                        <span>信用卡</span>
-                                    </label>
-                                </div>
-                            </div>  
-                        <div class="z_payghost"></div>
+                <div class="z_pay_detail_text">
+                    <div class=" z_people_info_container">
+                        <h3 class="bold z_detail_mb">租屋人資訊</h3>
+                        <p class="z_detail_mb">姓名：里成溪</p>
+                        <p class="z_detail_mb">手機：0912-345-678</p>
+                        <p>身分證：F123456789</p>
                     </div>
-                    <div class="z_pay_alert">
-                        <p class="alert" id="payWay"></p>
+                    <div class="z_pay_info_container">
+                        <h3 class="bold z_detail_mb">付款資訊</h3>
+                        <p class="z_detail_mb">付款方式：信用卡</p>
                     </div>
-                    <div class="z_text_intput ">
-                        <p class="z_checkbox_option ">　優惠碼</p>
-                        <div class="z_input_container">
-                            <input class="z_input_text"   type="text" name="" id="" placeholder="請輸入優惠碼">
+                    <div class="z_detail_info_container">
+                        <p class="z_detail_cost_phone z_detail_mb">$15,000/月</p>
+                        <p class="z_detail_items_name z_detail_mb">士林夜市近士林劍潭捷運小套房</p>
+                        <div class="z_detail_mb z_detail_icon_items_center">
+                            <img class="z_mr-5" src="imgs/bus.svg" alt="">
+                            <span class="z_detail_mb">距離士林捷運站 500 公尺</span>
                         </div>
-                        <div class="z_coupon_container">
-                            <p class="coupon">帶入優惠碼</p>
+                        <div class="z_detail_mb z_detail_icon_items_center">
+                            <img class="z_mr-5" src="imgs/position.svg" alt="">
+                            <span class="z_detail_mb">新北市三重區碧華街 900 號</span>
                         </div>
-                    </div>
-                    <div class="z_pay_alert">
-                        <p class="alert" ></p>
-                    </div>
-                    <div class="z_coupon_phone_container">
-                        <p class="coupon">帶入優惠碼</p>
-                    </div>
-                    <div class="z_text_intput ">
-                        <p class="z_checkbox_option ">付款金額</p>
-                        <div class="z_input_container">
-                            <p>00000</p>
+                        <div class="z_detail_icon_items_center">
+                            <img class="z_mr-5" src="imgs/ping.svg" alt="">
+                            <span class="z_icon_type_mr z_mr-5">30 坪</span>
+                            <img src="imgs/type.svg" alt="">
+                            <span class="z_icon_type_mr z_icon_type_nomr z_mr-5">整層住家 6 樓 3房 2 廳 2衛浴</span>
+                            <p class="z_detail_cost z_mr-5">$15,000/月</p>
                         </div>
-                        <div class="z_payghost"></div>
-                    </div>
-                    <div class="z_pay_alert">
-                        <p class="alert" ></p>
-                    </div>
-                    <div class="z_text_intput ">
-                        <p class="z_checkbox_option ">繳費日期</p>
-                        <div class="z_input_container">
-                            <p>00000</p>
-                        </div>
-                        <div class="z_payghost"></div>
-                    </div>
-                    <div class="z_pay_alert">
-                        <p class="alert" ></p>
-                    </div>
-                    <div class="bank_area" hidden>
-                        <div class="z_text_intput ">
-                            <p class="z_checkbox_option ">銀行行號</p>
-                            <div class="z_select_dropdown_container">
-                                <select id="bankSelect" name=”bankSelect” class="z_select_dropdown">
-                                    <option value=””>請選擇銀行</option>
-                                    <option value=””>001-中央信託</option>
-                                    <option value=””>006-合庫商銀</option>
-                                    <option value=””>007-第一銀行</option>
-                                </select>
-                                <div class="arrow_container">
-                                    <img src="imgs/down-arrow.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="z_payghost"></div>
-                        </div>
-                        <div class="z_pay_alert">
-                            <p class="alert" id="bankCode"></p>
-                        </div>
-                        <div class="z_text_intput_last">
-                            <p class="z_checkbox_option ">銀行帳號</p>
-                            <input class="z_input_text" type="text" name="" id="" placeholder="請輸入銀行帳號">
-                            <div class="z_payghost"></div>
-                        </div>
-                        <div class="z_pay_alert">
-                            <p class="alert" id="bankNumber"></p>
-                        </div>
-                    </div>
-                    <div class="card_area " hidden>
-                    <div class="z_text_intput" >
-                        <p class="z_checkbox_option ">信用卡號</p>
-                        <div class="z_input_small_container">
-                            <input class="z_input_small " type="text" name="" id="" placeholder="XXXX">
-                            <input class="z_input_small " type="text" name="" id="" placeholder="XXXX">
-                            <input class="z_input_small " type="text" name="" id="" placeholder="XXXX">
-                            <input class="z_input_small " type="text" name="" id="" placeholder="XXXX">
-                        </div>
-                        <img class="z_paycard_img" src="imgs/paycard.png" alt="">    
-                    </div>
-                    <p class="alert z_pay_alert " id="cardNumber"></p>
-                    <div class="z_paycard_phone_img">
-                        <img src="imgs/paycard.png" alt="">
-                    </div>
-                        <div class="z_text_intput ">
-                            <p class="z_checkbox_option ">有效月年</p>
-                            <div class="z_input_medium_container">
-                                <input class="z_input_medium" type="text" name="" id="" placeholder="信用卡有效月">
-                                <input class="z_input_medium" type="text" name="" id="" placeholder="信用卡有效年">
-                            </div>
-                            <div class="z_payghost"></div>
-                        </div>
-                        
-                    <p class="alert z_pay_alert" id="yearDay"></p>
-                        <div class="z_text_intput ">
-                            <p class="z_checkbox_option ">　末三碼</p>
-                            <div class="z_input_container">
-                                <input class="z_input_text" type="text" name="" id="lastThree" placeholder="XXX">
-                            </div>
-                            <img class="z_creditcard_img" src="imgs\creditcardback.png" alt="">
-                        </div>
-
-                    <p class="alert z_pay_alert " id="lastThree_alret"></p>
-                    <div class="z_creditcard_phone_img">
-                        <img src="imgs\creditcardback.png" alt="">
                     </div>
                 </div>
-                </div>
-                
-                <div class="z_payagree">
-                    <label>
-                        <input type="checkbox" name="" id="">
-                        <span class="z_all-center">請再次確認您的<a href="#"> 訂單資訊 </a>及<a href="#"> 付款資訊 </a>付款完成後小房子房屋將會發送通知信至您的E-mail信箱</span>  
-                    </label>
-                </div>
-                <div class="z_pay_alert">
-                    <p class="alert" id="payCheck"></p>
-                </div>
-                <div class="z_twobtn">
-                    <button class="pc-button-F4F4F4-180 z_phone_162 ">清除資料</button>
-                    <button class="pc-button-FEAC00-180 z_phone_162 ">確認付款</button>
-                </div>
+            </div>
+            <div class="z_d_flex z_justify-content_center z_grow " >
+                <button class="z_maxbtn pc-button-FEAC00-180 z_phone_162 ">繼續</button>
             </div>
         </div>
     </section>
 
 <?php include __DIR__ . './part/footer.php'  ?>
-
-    $(".z_checkbox_container :checkbox").click(function(){
-        $(this).parent().siblings().find(":checkbox").prop('checked', false);
-        if ($("#payBank").prop('checked')) {
-            $(".bank_area").css("display","block")
-            $(".card_area").css("display","none")
-
-        } else if ($("#payCard").prop('checked')) {
-            $(".bank_area").css("display","none")
-            $(".card_area").css("display","block")
-
-        } else {
-            $(".bank_area").css("display","none")
-            $(".card_area").css("display","none")
-        }
-        })
-
-        $("#bankSelect").click(function(){
-            $(".arrow_container img").toggleClass("downArrow")
-    })
-    
-<?php include __DIR__ . './part/javascript.php' ?>
+<?php include __DIR__ . './part/javascript.php'  ?>

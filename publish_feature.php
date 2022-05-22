@@ -356,6 +356,7 @@
         .z_publish_check_container input[type=checkbox]+span, .z_publish_check_container_s input[type=checkbox]+span, .z_publish_longer_check_container input[type=checkbox]+span{
             padding-left: 20px;
             margin-right: 15px;
+            line-height: 20px;
         }
         .z_publish_check_container input[type=checkbox]+span,.z_publish_check_container_s input[type=checkbox]+span {
             width: 100px;
@@ -665,16 +666,10 @@
                     <div class="z_step_title z_display-n-phone">建議您盡可能填寫完整，以增加您房屋的曝光度！</div>
                     <div class="z_publish_text_container ">
                         <div class="z_publish_option_title">
-                            <div class="z_publish_item_detail_title">擁有設備</div>
+                            <div class="z_publish_item_detail_title">物件設備</div>
                             <p class="alert bold z_publish_small">（請至少填寫一項）</p>
                         </div>
                         <div class="z_publish_check_container_s ">
-                            <label>
-                                <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
-                                    <span>光纖</span>
-                                </div>
-                            </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
                                     <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
@@ -696,13 +691,25 @@
                             <label>
                                 <div class="z_publish_checkbox_option_container">
                                     <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
-                                    <span>無線網路</span>
+                                    <span>網路</span>
+                                </div>
+                            </label>
+                            <label>
+                                <div class="z_publish_checkbox_option_container">
+                                    <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
+                                    <span>床鋪</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_opti999999999on_container">
                                     <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
-                                    <span>床</span>
+                                    <span>桌椅</span>
+                                </div>
+                            </label>
+                            <label>
+                                <div class="z_publish_checkbox_option_container">
+                                    <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
+                                    <span>熱水器</span>
                                 </div>
                             </label>
                             <label>
@@ -749,7 +756,7 @@
                             </label>
                         </div>
                         <div class="z_publish_option_title">
-                            <div class="z_publish_item_detail_title">擁有的額外安全設備</div>
+                            <div class="z_publish_item_detail_title">物件安全設備</div>
                             <p class="alert bold z_publish_small">（請至少填寫一項）</p>
                         </div>
                         <div class="z_publish_check_container ">
@@ -771,9 +778,15 @@
                                     <span>煙霧警報</span>
                                 </div>
                             </label>
+                            <label>
+                                <div class="z_publish_checkbox_option_container">
+                                    <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
+                                    <span>安全門窗</span>
+                                </div>
+                            </label>
                         </div>
                         <div class="z_publish_option_title">
-                            <div class="z_publish_item_detail_title">特色</div>
+                            <div class="z_publish_item_detail_title">物件特色</div>
                             <p class="alert bold z_publish_small">（非必填）</p>
                         </div>
                         <div class="z_publish_check_container ">
@@ -781,12 +794,6 @@
                                 <div class="z_publish_checkbox_option_container">
                                     <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
                                     <span>可開伙</span>
-                                </div>
-                            </label>
-                            <label>
-                                <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
-                                    <span>限男性</span>
                                 </div>
                             </label>
                             <label>
@@ -803,7 +810,7 @@
                             </label>
                         </div>
                         <div class="z_publish_option_title">
-                            <div class="z_publish_item_detail_title">周遭生活機能</div>
+                            <div class="z_publish_item_detail_title">周遭機能</div>
                             <p class="alert bold z_publish_small">（非必填）</p>
                         </div>
                         <div class="z_publish_check_container ">
@@ -857,7 +864,7 @@
                             </label>
                         </div>
                         <div class="z_publish_option_title">
-                            <div class="z_publish_item_detail_title">擁有的公設</div>
+                            <div class="z_publish_item_detail_title">物件公設</div>
                             <p class="alert bold z_publish_small">（非必填）</p>
                         </div>
                         <div class="z_publish_check_container ">
@@ -887,38 +894,38 @@
                             </label>
                         </div>
                         <div class="z_publish_option_title">
-                            <div class="z_publish_item_detail_title">需額外支出費用</div>
+                            <div class="z_publish_item_detail_title">物件其他費用</div>
                             <p class="alert bold z_publish_small">（非必填）</p>
                         </div>
                         <div class="z_publish_check_container ">
                             <label>
                                 <div class="z_publish_checkbox_option_container">
                                     <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
-                                    <span>網路</span>
+                                    <span>水電費</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
                                     <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
-                                    <span>電費</span>
+                                    <span>網路費</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
                                     <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
-                                    <span>水費</span>
+                                    <span>第四台</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
                                     <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
-                                    <span>瓦斯費</span>
+                                    <span>清潔費</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
                                     <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
-                                    <span>冷氣費</span>
+                                    <span>停車費</span>
                                 </div>
                             </label>
                         </div>
