@@ -2,18 +2,13 @@
 $title = '租屋明細';
 require './part/connect-db.php';
 
-// $sql = "SELECT * FROM `items`";
-// $in_sql = "SELECT `item_name` FROM `items`";
-// $stmt = $pdo->query($in_sql);
-// $i = $stmt->fetch();
-// $i_name = implode(",",$i) ;
 
 
-$sql = "SELECT * FROM `items` WHERE `id` = 5;";
+
+$sql = "SELECT * FROM `items` WHERE `id` = 1;";
 $stmt = $pdo->query($sql);
 $i = $stmt->fetch();
-$i_name = implode(",",$i) ;
-echo $i_name;
+
 
 
 
@@ -27,6 +22,9 @@ echo $i_name;
     <style>
         * {
             margin: 0;
+        }
+        .z_ml-5 {
+            margin-left: 5px;
         }
         .display-n {
             display: none;
@@ -728,22 +726,22 @@ echo $i_name;
                         <p class="z_detail_mb">付款方式：信用卡</p>
                     </div>
                     <div class="z_detail_info_container">
-                        <p class="z_detail_cost_phone z_detail_mb">$15,000/月</p>
+                        <p class="z_detail_cost_phone z_detail_mb ">$<?= number_format($i['price'])?>/月</p>
                         <p class="z_detail_items_name z_detail_mb"><?= $i['item_name'] ?></p>
                         <div class="z_detail_mb z_detail_icon_items_center">
                             <img class="z_mr-5" src="imgs/bus.svg" alt="">
-                            <span class="z_detail_mb"><?= $i['item_name'] ?></span>
+                            <span class="z_detail_mb z_ml-5"><?= $i['close_station'] ?></span>
                         </div>
                         <div class="z_detail_mb z_detail_icon_items_center">
                             <img class="z_mr-5" src="imgs/position.svg" alt="">
-                            <span class="z_detail_mb">新北市三重區碧華街 900 號</span>
+                            <span class="z_detail_mb z_ml-5"><?= $i['area'], $i['dist'] ,$i['address'] ?></span>
                         </div>
                         <div class="z_detail_icon_items_center">
                             <img class="z_mr-5" src="imgs/ping.svg" alt="">
-                            <span class="z_icon_type_mr z_mr-5">30 坪</span>
+                            <span class="z_icon_type_mr z_ml-5"><?= $i['ping_number'] ?></span>
                             <img src="imgs/type.svg" alt="">
-                            <span class="z_icon_type_mr z_icon_type_nomr z_mr-5">整層住家 6 樓 3房 2 廳 2衛浴</span>
-                            <p class="z_detail_cost z_mr-5">$15,000/月</p>
+                            <span class="z_icon_type_mr z_icon_type_nomr z_ml-5"><?= $i['rentaltype'], $i['floor']?></span>
+                            <p class="z_detail_cost z_ml-5">$<?= number_format($i['price']) ?>/月</p>
                         </div>
                     </div>
                 </div>
