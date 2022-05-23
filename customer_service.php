@@ -1,14 +1,14 @@
 <?php include __DIR__ . './part/head.php'  ?>
 
-    <style>
-        /* 自己頁面的css */
-        .S-customer_service-bg {
+<style>
+    /* 自己頁面的css */
+    .S-customer_service-bg {
     z-index: 0;
     /* padding: 0 -50px; */
     /* margin: 0 -200px; */
     height: 1080px;
     width: 100%;
-    background: url(../imgs/living-room-1835923_1920.jpg)center center /cover no-repeat;
+    background: url(imgs/living-room-1835923_1920.jpg)center center /cover no-repeat;
     /* background-color: black; */
     /* filter: brightness(.5); */
 }
@@ -81,13 +81,11 @@
     height: 50px;
     margin: 0;
 }
-.input_option {
+/* .input_option {
     padding: 15px 0;
-}
+} */
 
-.dropdown_container {
-    padding: 15px 0;
-}
+
 
 .input_option.S-big input {
     width: 100%;
@@ -100,6 +98,7 @@
     outline: none;
     /* border: #75BBE3 1px solid; */
     font-size: 16px;
+    margin-top: 30px;
     /* line-height: 2rem; */
 }
 
@@ -122,20 +121,6 @@ textarea[type=text] {
     text-align: left;
 }
 
-.z_upload_item_img_btn button {
-    background: transparent;
-}
-
-.z_upload_item_img_btn img {
-    width: 16px;
-}
-
-.z_upload_item_img_btn>button {
-    font-size: 16px;
-    font-weight: bold;
-    color: #75BBE3;
-}
-
 .S-btn {
     margin-top: 10px;
     display: flex;
@@ -151,22 +136,87 @@ button.pc-button-FEAC00-272 {
     margin-left: 15px;
     width: 162.5px;
 }
+#cloth{
+    margin-left: 0px;
+}
+
+
+/* 點此上傳 */
+input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.custom-file-upload img{
+    width: 15px;
+}
+
+/* ---------下拉選單-------------------------- */
+.z_select_dropdown_container{
+    /* flex-grow: 1; */
+    position: relative;
+    display: flex;
+}
+.z_select_dropdown_container select{
+    color: rgba(0, 0, 0, 0.6);
+    height: 60px;
+    border: none;
+    outline: none;
+    appearance:none;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 15px;
+}
+.bank_area select option {
+    font-size: 16px;
+}
+.z_select_dropdown_container .arrow_container {
+    top:50%;
+    transform: translateY(-45%);
+    right: 10px;
+    position: absolute;
+    pointer-events: none;
+}
+.arrow_container img{
+    width: 30px;
+    height: 30px;
+}
+.downArrow {
+    transform: rotateX(180deg);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 @media screen and (max-width:376px) {
     
- 
-
-
     .S-customer_service-bg {
         position: relative;
         top: 0px;
         height: 800px;
         width: 100%;
         background: #F4F4F4;
-        background: url(../imgs/living-room-1835923_1920.jpg)center center /cover no-repeat;
+        background: url(imgs/living-room-1835923_1920.jpg)center center /cover no-repeat;
     }
     .S-wrap {
         margin-top: 0px;
@@ -175,7 +225,7 @@ button.pc-button-FEAC00-272 {
     .S-info {
         width: 100%;
         margin-top: 550px;
-        /* background: url(../imgs/living-room-1835923_1920.jpg)center center /cover no-repeat; */
+        /* background: url(imgs/living-room-1835923_1920.jpg)center center /cover no-repeat; */
         padding: 70px 40px;
     }
     .S-q {
@@ -226,7 +276,7 @@ button.pc-button-FEAC00-272 {
         font-size: 12px;
     }
     .S-list img {
-        width: 30px;
+        width: 15px;
         margin-right: 10px;
     }
     .mobile-button-F4F4F4-162 {
@@ -242,9 +292,9 @@ button.pc-button-FEAC00-272 {
         height: 60px;
         border: 5px solid purple;
     }
-    .input_option {
+    /* .input_option {
         padding: 15px 0;
-    }
+    } */
     .dropdown_container {
         padding: 15px 0;
     }
@@ -253,23 +303,9 @@ button.pc-button-FEAC00-272 {
         height: 300px;
         /* line-height: 2rem; */
     }
-    /* .input_option.S-big input::placeholder{
-        transform: translateX(-.5rem);
-        white-space: normal;
-    } */
-    .z_upload_item_img_btn {
-        text-align: right;
-    }
-    .z_upload_item_img_btn button {
-        background: transparent;
-    }
-    .z_upload_item_img_btn img {
-        width: 16px;
-    }
-    .z_upload_item_img_btn>button {
-        font-size: 16px;
-        font-weight: bold;
-        color: #75BBE3;
+    .arrow_container img{
+        width: 30px;
+        margin: 5px;
     }
     .S-btn {
         margin-top: 10px;
@@ -279,112 +315,12 @@ button.pc-button-FEAC00-272 {
         margin-top: 860px;
     }
 }
-    </style>
+</style>
 
 <?php include __DIR__ . './part/nav.php'  ?>
 
-    <!-- 自己頁面的html -->
-    <div class="nav">
-        <div class="container">
-            <ul>
-                <div class="pc-link">
-                    <li class="x-log">
-                        <a href="
-                        ">搜尋</a>
-                    </li>
-                    <li class="x-log">
-                        <a href="">
-                            刊登房屋
-                        </a>
-                    </li>
-                </div>
-                <li class="x-log-img">
-                    <a href=""><img src="../imgs/LOGO.svg" alt="">
-                    </a>
-                    <a href=""><img src="../imgs/phone_logo.png" alt="">
-                    </a>
-                </li>
-                <li class="x-log-phone-title">
-                    <a href="">Little House</a>
-                </li>
-                <div class="phone-nav-link">
-                    <li class="x-log x-phone">
-                        <a href="
-                        ">搜尋</a>
-                    </li>
-                    <li class="x-log x-phone">
-                        <a href="">
-                            刊登房屋
-                        </a>
-                    </li>
-                    <li class="x-log">
-                        <a href="">
-                            清潔服務
-                        </a>
-                    </li>
-                    <li class="log-in x-log">
-                        <a href="">
-                            會員登入/註冊
-                        </a>
-                    </li>
-                    <li class="log-out x-log x-hidden-flip">
-                        <a href="#">
-                            個人頁面 <img src="../imgs/down-arrow.svg" alt="">
-                        </a>
-                    </li>
-                    <div class="x-hidden-personaal x-hidden-click">
-                        <a href="">
-                            會員資料
-                        </a>
-                        <a href="">
-                            刊登物件
-                        </a>
-                        <a href="">
-                            我的租屋
-                        </a>
-                        <a href="">
-                            我的收藏
-                        </a>
-                        <a href="">
-                            我的優惠
-                        </a>
-                        <a href="">
-                            我的預約
-                        </a>
-                        <a href="">
-                            租金支付
-                        </a>
-                        <a href="">
-                            清潔服務
-                        </a>
-                        <a href="">
-                            租屋契約
-                        </a>
-                    </div>
-                    <li class="log-out x-log">
-                        <a href="">
-                            登出
-                        </a>
-                    </li>
-
-                </div>
-
-
-
-            </ul>
-            <div class="x-log-show">
-                <div class="x-log-show-navbar ">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-    <!-- 以上NAV--------------------------------------------------- -->
-    <div class="S-customer_service-bg">
+<!-- 自己頁面的html -->
+<div class="S-customer_service-bg">
         <div class="filter"></div>
         <div class="container">
             <div class="row">
@@ -395,19 +331,19 @@ button.pc-button-FEAC00-272 {
                     <div class="S-info">
                         <div class="S-q S-q1">
 
-                            <img src="../imgs/q1.svg" alt="">
+                            <img src="imgs/q1.svg" alt="">
                             <div class="S-q-word">
                                 <h3>無法搜尋到任何物件？</h3>
                                 <p>建議您可以降低搜尋條件，已增加搜尋數量！</p>
                             </div>
                         </div>
-                        <div class="S-q S-q2"><img src="../imgs/q2.svg" alt="">
+                        <div class="S-q S-q2"><img src="imgs/q2.svg" alt="">
                             <div class="S-q-word">
                                 <h3>付款時出現問題？</h3>
                                 <p>建議您可以再次確認資料輸入無誤，或是與銀行確認是否有相關金流發生問題！</p>
                             </div>
                         </div>
-                        <div class="S-q S-q3"><img src="../imgs/q3.svg" alt="">
+                        <div class="S-q S-q3"><img src="imgs/q3.svg" alt="">
 
                             <div class="S-q-word">
                                 <h3>對契約有所疑問？</h3>
@@ -420,7 +356,7 @@ button.pc-button-FEAC00-272 {
 
                     <div class="S-list">
 
-                        <h2 class="S-list-title"><img src="../imgs/conect.svg" alt="">聯絡我們</h2>
+                        <h2 class="S-list-title"><img src="imgs/conect.svg" alt="">聯絡我們</h2>
 
 
                         <!-- 請輸入您的姓名 -->
@@ -441,18 +377,16 @@ button.pc-button-FEAC00-272 {
                         </div>
                         <!-- 請選擇您遭遇的問題分類 -->
                         <!-- 下拉選單 -->
-                        <div class="dropdown_container">
-                            <button id="areaListBtn">
-                                <div class="dropdown">
-                                    <span>請選擇您遭遇的問題分類</span>
-                                    <img src="../imgs/down-arrow.svg" alt="">
-                                </div>
-                            </button>
-                            <div id="areaList" class="dropdown_list" hidden>
-                                <p class="">搜尋問題</p>
-                                <p class="">付款問題</p>
-                                <p class="">契約問題</p>
-                                <p class="">其他問題</p>
+                        <div class="z_select_dropdown_container">
+                            <select id="bankSelect" name=”bankSelect” class="z_select_dropdown">
+                                <option value=””>請選擇欲詢問的問題分類</option>
+                                <option value=””>搜尋問題</option>
+                                <option value=””>付款問題</option>
+                                <option value=””>契約問題</option>
+                                <option value=””>其他問題</option>
+                            </select>
+                            <div class="arrow_container">
+                                <img src="imgs/down-arrow.svg" alt="">
                             </div>
                         </div>
                         <!-- 請詳細描述您的問題或是上傳相關圖片，
@@ -465,11 +399,11 @@ button.pc-button-FEAC00-272 {
                                 </div>
                             </div>
                         </div>
-                        <div class="z_upload_item_img_btn">
-                            <input type="file" name="" id="hid_on_true" accept="image/*">
-                            <button>
-                                <img src="../imgs/uploadicon.svg" alt="">點此上傳</button>
-                        </div>
+                        
+                        <label for="file-upload" class="custom-file-upload">
+                            <img src="imgs/uploadicon.svg" alt=""> 點此上傳
+                        </label>
+                        <input id="file-upload" type="file"/>
 
                         <div class="S-btn">
                             <button class="pc-button-F4F4F4-272 mobile-button-F4F4F4-162">清除資料</button>
@@ -491,7 +425,7 @@ button.pc-button-FEAC00-272 {
                                     <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">返回
                                 </div>
                                 <div class="CustomerService-x" id="close2">
-                                    <img src="../imgs/X.svg" alt="">
+                                    <img src="imgs/X.svg" alt="">
                                 </div>
                             </div>
                     </div>
@@ -518,30 +452,26 @@ button.pc-button-FEAC00-272 {
 
 
 
-
 <?php include __DIR__ . './part/footer.php'  ?>
+// 自己頁面的script
+$("#bankSelect").click(function(){
+$(".arrow_container img").toggleClass("downArrow")
+})
 
-    <script>
-        // 自己頁面的script
-        $("button").click(function () {
-            $(this).next(".dropdown_list").toggle()
-            $(this).find("img").toggleClass("downArrow")
-        })
-    
-        // 客服送出成功 彈出視窗
-        let btn = document.querySelector("#show");
-        let infoModal = document.querySelector("#infoModal");
-        let close = document.querySelector("#close");
-        let close2 = document.querySelector("#close2");
-        btn.addEventListener("click", function () {
-            infoModal.showModal();
-        })
-        close.addEventListener("click", function () {
-            infoModal.close();
-        })
-        close2.addEventListener("click", function () {
-            infoModal.close();
-        })
-    </script>
+// 客服送出成功 彈出視窗
+let btn = document.querySelector("#show");
+let infoModal = document.querySelector("#infoModal");
+let close = document.querySelector("#close");
+let close2 = document.querySelector("#close2");
+btn.addEventListener("click", function () {
+infoModal.showModal();
+})
+close.addEventListener("click", function () {
+infoModal.close();
+})
+close2.addEventListener("click", function () {
+infoModal.close();
+})
+
 
 <?php include __DIR__ . './part/javascript.php'  ?>
