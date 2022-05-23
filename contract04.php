@@ -404,7 +404,7 @@ a {
 </div>
 
 <?php include __DIR__ . './part/footer.php'  ?>
-
+<script>
 const myCanvas = document.querySelector('#myCanvas'),
 pColor = document.querySelector('#pColor'),
 pSize = document.querySelector('#pSize'),
@@ -481,5 +481,5 @@ reader.readAsDataURL(input.files[0]);
 $(".z_close_icon").click(function(){
 $(this).next().removeAttr("src")
 })
-
+</script>
 <?php include __DIR__ . './part/javascript.php'  ?>

@@ -396,7 +396,7 @@ a {
                         <input type="file" name="" id="pid_on_true" accept="image/*">
                         <div class="c_upload_sign" id="pid_on">
                             <div class="c_upload_icon">
-                                <a href="#"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                <a href=""> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M13.7143 10.9999V13C13.7143 13.5522 13.2025 14 12.5714 14H3.42857C2.7975 14 2.28571 13.5522 2.28571 13V10.9999C2.28571 10.4477 1.77393 9.99992 1.14286 9.99992C0.511786 9.99992 0 10.4477 0 10.9999V13C0 14.6569 1.535 16 3.42857 16H12.5714C14.465 16 16 14.6569 16 13V10.9999C16 10.4477 15.4882 9.99992 14.8571 9.99992C14.2261 9.99992 13.7143 10.4468 13.7143 10.9999ZM7.19286 0.292758L2.62143 4.29281C2.17464 4.68375 2.17536 5.31658 2.62143 5.70689C3.06786 6.09752 3.79107 6.09752 4.2375 5.70689L6.85714 3.41546V9.99992C6.85714 10.5527 7.36821 10.9999 8 10.9999C8.63179 10.9999 9.14286 10.5527 9.14286 9.99992V3.41546L11.7636 5.70861C12.21 6.09924 12.9332 6.09924 13.3796 5.70861C13.8261 5.31798 13.8261 4.68516 13.3796 4.29453L8.80821 0.294477C8.36071 -0.0978721 7.63929 -0.0978721 7.19286 0.292758Z"
@@ -417,7 +417,7 @@ a {
                         <input type="file" name="" id="pid_in_true" accept="image/*">
                         <div class="c_upload_sign" id="pid_in">
                             <div class="c_upload_icon">
-                                <a href="#"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                <a href=""> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M13.7143 10.9999V13C13.7143 13.5522 13.2025 14 12.5714 14H3.42857C2.7975 14 2.28571 13.5522 2.28571 13V10.9999C2.28571 10.4477 1.77393 9.99992 1.14286 9.99992C0.511786 9.99992 0 10.4477 0 10.9999V13C0 14.6569 1.535 16 3.42857 16H12.5714C14.465 16 16 14.6569 16 13V10.9999C16 10.4477 15.4882 9.99992 14.8571 9.99992C14.2261 9.99992 13.7143 10.4468 13.7143 10.9999ZM7.19286 0.292758L2.62143 4.29281C2.17464 4.68375 2.17536 5.31658 2.62143 5.70689C3.06786 6.09752 3.79107 6.09752 4.2375 5.70689L6.85714 3.41546V9.99992C6.85714 10.5527 7.36821 10.9999 8 10.9999C8.63179 10.9999 9.14286 10.5527 9.14286 9.99992V3.41546L11.7636 5.70861C12.21 6.09924 12.9332 6.09924 13.3796 5.70861C13.8261 5.31798 13.8261 4.68516 13.3796 4.29453L8.80821 0.294477C8.36071 -0.0978721 7.63929 -0.0978721 7.19286 0.292758Z"
@@ -444,7 +444,7 @@ a {
                         <input type="file" name="" id="hid_on_true" accept="image/*">
                         <div class="c_upload_sign" id="hid_on">
                             <div class="c_upload_icon">
-                                <a href="#"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                <a href=""> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M13.7143 10.9999V13C13.7143 13.5522 13.2025 14 12.5714 14H3.42857C2.7975 14 2.28571 13.5522 2.28571 13V10.9999C2.28571 10.4477 1.77393 9.99992 1.14286 9.99992C0.511786 9.99992 0 10.4477 0 10.9999V13C0 14.6569 1.535 16 3.42857 16H12.5714C14.465 16 16 14.6569 16 13V10.9999C16 10.4477 15.4882 9.99992 14.8571 9.99992C14.2261 9.99992 13.7143 10.4468 13.7143 10.9999ZM7.19286 0.292758L2.62143 4.29281C2.17464 4.68375 2.17536 5.31658 2.62143 5.70689C3.06786 6.09752 3.79107 6.09752 4.2375 5.70689L6.85714 3.41546V9.99992C6.85714 10.5527 7.36821 10.9999 8 10.9999C8.63179 10.9999 9.14286 10.5527 9.14286 9.99992V3.41546L11.7636 5.70861C12.21 6.09924 12.9332 6.09924 13.3796 5.70861C13.8261 5.31798 13.8261 4.68516 13.3796 4.29453L8.80821 0.294477C8.36071 -0.0978721 7.63929 -0.0978721 7.19286 0.292758Z"
@@ -469,7 +469,7 @@ a {
                         <input type="file" name="" id="hid_in_true" accept="image/*">
                         <div class="c_upload_sign" id='hid_in'>
                             <div class="c_upload_icon">
-                                <a href="#"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                <a href=""> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M13.7143 10.9999V13C13.7143 13.5522 13.2025 14 12.5714 14H3.42857C2.7975 14 2.28571 13.5522 2.28571 13V10.9999C2.28571 10.4477 1.77393 9.99992 1.14286 9.99992C0.511786 9.99992 0 10.4477 0 10.9999V13C0 14.6569 1.535 16 3.42857 16H12.5714C14.465 16 16 14.6569 16 13V10.9999C16 10.4477 15.4882 9.99992 14.8571 9.99992C14.2261 9.99992 13.7143 10.4468 13.7143 10.9999ZM7.19286 0.292758L2.62143 4.29281C2.17464 4.68375 2.17536 5.31658 2.62143 5.70689C3.06786 6.09752 3.79107 6.09752 4.2375 5.70689L6.85714 3.41546V9.99992C6.85714 10.5527 7.36821 10.9999 8 10.9999C8.63179 10.9999 9.14286 10.5527 9.14286 9.99992V3.41546L11.7636 5.70861C12.21 6.09924 12.9332 6.09924 13.3796 5.70861C13.8261 5.31798 13.8261 4.68516 13.3796 4.29453L8.80821 0.294477C8.36071 -0.0978721 7.63929 -0.0978721 7.19286 0.292758Z"
@@ -530,34 +530,57 @@ a {
     <?php include __DIR__ . './part/footer.php'  ?>
 
     <script>
-$("#upload_btn").click(function(){
-    $("#mainUpload").click()
-})
-$("#mainUpload").change(function(){
-    console.log(this);
-    readURL(this);
-    $(".uploadimg_before").css("background","#eef1f47c")
-});
-smallcontainer = $(".smallimg")
-// console.log((smallcontainer.length)); 
-let i = 0
-function readURL(input){
-  if(input.files && input.files[0]){
-    var reader = new FileReader();
-    reader.onload = function (e) {
-        $("#nowimg").attr('src', e.target.result);
-        if (i<smallcontainer.length) {
-            $(smallcontainer[i]).attr('src', e.target.result);
-        }else{
-            i=0;
-            $(smallcontainer[i]).attr('src', e.target.result);
-            console.log("over");
+        $(".c_upload_sign").click(function(){
+            console.log("hi");
+            $(this).prev().click()
+        })
+        $("#pid_on_true").change(function(){
+            console.log(this);
+            readURL1(this);
+        });
+        function readURL1(input){
+        //   if(input.files && input.files[0]){
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $(".wrap_1 img").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
         }
-        i++;
-        console.log(i);
-    }
-    reader.readAsDataURL(input.files[0]);
-  }
-}
+        $("#pid_in_true").change(function(){
+            console.log(this);
+            readURL2(this);
+        });
+        function readURL2(input){
+        //   if(input.files && input.files[0]){
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $(".wrap_2 img").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+        $("#hid_on_true").change(function(){
+            console.log(this);
+            readURL3(this);
+        });
+        function readURL3(input){
+        //   if(input.files && input.files[0]){
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $(".wrap_3 img").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+        $("#hid_in_true").change(function(){
+            console.log(this);
+            readURL4(this);
+        });
+        function readURL4(input){
+        //   if(input.files && input.files[0]){
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $(".wrap_4 img").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
     </script>
 <?php include __DIR__ . './part/javascript.php'  ?>
