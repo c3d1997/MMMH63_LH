@@ -12,5 +12,6 @@
     <link rel="stylesheet" href="button-fonts.css">
     <link rel="stylesheet" href="product-card\product_page.css">
     <link rel="stylesheet" href="product-card\warning_card.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 <body>

@@ -163,15 +163,15 @@ ul {
 
 .c_upload_row_sample {
     width: 40%;
-    margin-top: 35px;
 }
 
 .c_sample_block {
     width: 506px;
-    height: 502px;
+    height: 486px;
     padding: 20px;
     justify-content: center;
     background-color: #F1EDEA;
+    
 }
 
 .c_sample_wrap {
@@ -191,6 +191,10 @@ ul {
     width: 215px;
     height: 143px;
     border: 1px solid #0E2E3D;
+    
+}
+.c_sample_idcard img{
+    width: 100%;
 }
 
 
