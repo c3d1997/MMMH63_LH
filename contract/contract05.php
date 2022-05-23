@@ -1,7 +1,13 @@
+<?php include __DIR__ . './part/head.php'  ?>
+<style>
+body {
+    margin: 0px;
+}
+
 .c_container_stepbar {
     width: 100%;
     max-width: 1280px;
-    margin: 160px auto 0px;
+    margin: 160px auto 0 auto;
     padding: 0px 25px;
     /* background-color: blue; */
 }
@@ -101,16 +107,14 @@ ul {
 }
 
 /*---------step-bar2 --------*/
-
-.step-bar2 {
+.c_step-bar2 {
     width: 100%;
     max-width: 1280px;
     margin: auto;
     padding: 25px 25px;
 }
 
-
-.step-bar2 p {
+.c_step-bar2 p {
     width: 100%;
     font-weight: normal;
     font-size: 32px;
@@ -118,110 +122,69 @@ ul {
     font-weight: bold;
 }
 
-.progress2 {
+.c_progress2 {
     width: 100%;
     margin-top: 30px;
     height: 2px;
     background-color: #E0F1F3;
 }
 
-.progress-bar2 {
-    width: 33.32%;
+.c_progress-bar2 {
+    width: 49.98%;
     height: 2px;
     background-color: #f2ae00;
 }
 
-/* --------section ready to upload imgs--------- */
-.c_container_upload {
-    width: 100%;
+
+/* ---------------section content------------- */
+
+.c_container_content {
     max-width: 1280px;
-    margin: auto;
-    padding: 25px 25px;
-    display: flex;
-    position: relative;
-}
-
-.c_upload_row {
-    width: 60%;
-    display: flex;
-}
-
-.c_idcard_wrap {
-    width: 328px;
-    height: 218px;
-    border: 1px solid #0E2E3D;
-    /* padding: 80px 50px; */
-    display: flex;
-}
-
-
-
-.c_back_box {
-    margin-left: 20px;
-
-}
-
-.c_upload_row_sample {
-    width: 40%;
-}
-
-.c_sample_block {
-    width: 506px;
-    height: 486px;
-    padding: 20px;
-    justify-content: center;
-    background-color: #F1EDEA;
-    
-}
-
-.c_sample_wrap {
-    margin: 30px 50px;
-}
-
-.c_sample_wrap1 {
-    margin-left: 50px;
-}
-
-.c_sample_wrap2 {
-    margin: 50px 50px;
-    margin-top: 20px;
-}
-
-.c_sample_idcard {
-    width: 215px;
-    height: 143px;
-    border: 1px solid #0E2E3D;
-    
-}
-.c_sample_idcard img{
     width: 100%;
-}
-
-
-/* 點此上傳---------- */
-.c_upload_sign {
-    width: 100%;
-    padding: 0px 0px;
+    padding: 0 25px;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
 
 }
 
-.c_upload_heretext {
-    margin-left: 10px;
-    color: #75BBE3;
+.c_content_box {
+    width: 1000px;
+    height: 500px;
+    background-color: white;
+    margin: auto;
+    padding: 20px 20px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.c_scroll-object {
+    color: #0E2E3D;
+    padding: 20px 20px;
+    font-size: 16px;
+}
+
+.c_content_box::-webkit-scrollbar {
+    background: #E0F1FC;
 
 }
 
-a {
-    text-decoration: none;
-    color: #75BBE3;
-    font-family: 'Noto Sans TC', sans-serif;
+.c_content_box::-webkit-scrollbar-thumb {
+    background: #5D8DC1;
 }
 
-/* --------- */
+.c_content_box::-webkit-scrollbar-thumb:hover {
+    background: hsla(211, 45%, 56%, 0.766)
+}
+
+@media screen and (max-width:376px){
+    .c_content_box::-webkit-scrollbar {
+        width: 3px;
+    }
+}
+
+/*---------------- button-------- */
+
+
+
 
 .pc-button-FEAC00-180 {
     width: 180px;
@@ -240,15 +203,13 @@ a {
     font-weight: bold;
     font-size: 24px;
     border: none;
-    background-color: #F1EDEA;
+    background-color: #F4F4F4;
 }
 
 .c_button_section {
     display: flex;
     justify-content: center;
-    margin: 30px 0 50px 0;
-    flex-direction: row-reverse;
-    
+    margin: 90px 0 60px 0;
 }
 
 .c_button_right {
@@ -258,77 +219,46 @@ a {
 .footer_container {
     margin-top: 60px;
 }
-#pid_on,#pid_in,#hid_on,#hid_in {
-    cursor: pointer;
-}
-.c_idcard_wrap input {
-    display: none;
-}
-.con {
-    position: relative;
-}
-.wrap_1,.wrap_2,.wrap_3,.wrap_4  {
-    /* width: 100%; */
-    position: relative;
-}
-.wrap_1 img,.wrap_2 img ,.wrap_3 img,.wrap_4 img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    /* height: 100%; */
-    object-fit: cover;
-    z-index: -1;
-}
-
-
 
 @media screen and (max-width:376px) {
-    .c_sample_block {
-        display: none;
-    }
-
-    .c_upload_row {
-        flex-direction: column;
-    }
-
-    .c_back_box {
-        margin-left: 0px;
-    }
-
-    .c_button_right {
-        margin-left: 0px;
-    }
-
     .z_progress {
         display: none;
     }
 
-    .progress2 {
+    .c_progress2 {
         display: none;
+        
     }
-    .c_container_stepbar {
-        margin-top: 110px;
-    }
+
     .c_step-bar2 p {
         text-align: center;
+        padding: 10px 25px;
     }
 
-    .pc-button-FEAC00-180{
-        width: 162.5px;
-        height: 45px;
-        font-size: 20px;
+    .c_scroll-object {
+        word-break: break-all;
     }
-    .pc-button-F4F4F4-180{
-        width: 162.5px;
-        height: 45px;
-        font-size: 20px;
+
+    .c_content_box {
+        width: auto;
+    }
+    .c_container_stepbar{
+        margin-top: 110px;
     }
     .c_button_section {
-        flex-direction: row;
-        justify-content: space-between;
+        padding: 0 20px;
+        width: 100%;
     }
-    .step-bar2 {
-        text-align: center;
+    .c_button_left {
+        width: 100%;
     }
-
+    .z_full_btn {
+        width: 100%;
+    }
 }
+</style>
+
+<?php include __DIR__ . './part/nav.php'  ?>
+    <!-- 自己頁面的html -->
+
+<?php include __DIR__ . './part/footer.php'  ?>   

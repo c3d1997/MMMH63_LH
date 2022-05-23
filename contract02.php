@@ -1,126 +1,342 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../button-fonts.css">
-    <link rel="stylesheet" href="contract02.css">
-    <link rel="stylesheet" href="../nav-footer/nav-footer.css">
+<?php include __DIR__ . './part/head.php'  ?>
+<style>
+        .c_container_stepbar {
+    width: 100%;
+    max-width: 1280px;
+    margin: 160px auto 0px;
+    padding: 0px 25px;
+    /* background-color: blue; */
+}
 
 
-</head>
+ul {
+    list-style-type: none;
+}
 
-<body>
-    <div class="nav">
-        <div class="container">
-            <ul>
-                <div class="pc-link">
-                    <li class="x-log">
-                        <a href="
-                        ">搜尋</a>
-                    </li>
-                    <li class="x-log">
-                        <a href="">
-                        刊登房屋
-                    </a>
-                    </li>
-                </div>
-                <li class="x-log-img">
-                    <a href=""><img src="../imgs/LOGO.svg" alt="">
-                    </a>
-                    <a href=""><img src="../imgs/phone_logo.png" alt="">
-                    </a>
-                </li>
-                <li class="x-log-phone-title">
-                    <a href="">Little House</a>
-                </li>
-                <div class="phone-nav-link">
-                    <li class="x-log x-phone">
-                        <a href="
-                        ">搜尋</a>
-                    </li>
-                    <li class="x-log x-phone">
-                        <a href="">
-                        刊登房屋
-                    </a>
-                    </li>
-                    <li class="x-log">
-                        <a href="">
-                        清潔服務
-                    </a>
-                    </li>
-                    <li class="log-in x-log">
-                        <a href="">
-                        會員登入/註冊
-                    </a>
-                    </li>
-                    <li class="log-out x-log x-hidden-flip">
-                        <a href="#">
-                        個人頁面 <img src="../imgs/down-arrow.svg" alt="">
-                        </a>
-                    </li>
-                    <div class="x-hidden-personaal x-hidden-click">
-                        <a href="">
-                            會員資料
-                        </a>
-                        <a href="">
-                            刊登物件
-                        </a>
-                        <a href="">
-                            我的租屋
-                        </a>
-                        <a href="">
-                            我的收藏
-                        </a>
-                        <a href="">
-                            我的優惠
-                        </a>
-                        <a href="">
-                            我的預約
-                        </a>
-                        <a href="">
-                            租金支付
-                        </a>
-                        <a href="">
-                            清潔服務
-                        </a>
-                        <a href="">
-                            租屋契約
-                        </a>
-                    </div>
-                    <li class="log-out x-log">
-                        <a href="">
-                            登出
-                        </a>
-                    </li>
+.z_radio_finish {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #FEAC00;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 40px;
+}
 
-                </div>
+.z_radio {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #b1b1b1;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 40px;
+}
+
+.z_progress {
+    z-index: -1;
+    position: relative;
+    height: 100px;
+    margin-bottom: 50px;
+}
+
+.z_progress_bar {
+    z-index: -2;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #b1b1b1;
+    bottom: 11px;
+}
+
+.z_progress_bar_step1 {
+    z-index: -1;
+    position: absolute;
+    width: 10%;
+    height: 1px;
+    background-color: #ffae00;
+    bottom: 11px;
+}
+
+.z_progress_bar_step2 {
+    z-index: -1;
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    background-color: #ffae00;
+    bottom: 11px;
+}
+
+.z_progress_bar_step3 {
+    z-index: -1;
+    position: absolute;
+    width: 52%;
+    height: 1px;
+    background-color: #ffae00;
+    bottom: 11px;
+}
+
+.z_progress_bar_step4 {
+    z-index: -1;
+    position: absolute;
+    width: 70%;
+    height: 1px;
+    background-color: #ffae00;
+    bottom: 11px;
+}
+
+.z_progress_bar_step5 {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #ffae00;
+    bottom: 11px;
+}
+
+.z_barcontainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/*---------step-bar2 --------*/
+
+.step-bar2 {
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+    padding: 25px 25px;
+}
+
+
+.step-bar2 p {
+    width: 100%;
+    font-weight: normal;
+    font-size: 32px;
+    color: #0E2E3D;
+    font-weight: bold;
+}
+
+.progress2 {
+    width: 100%;
+    margin-top: 30px;
+    height: 2px;
+    background-color: #E0F1F3;
+}
+
+.progress-bar2 {
+    width: 33.32%;
+    height: 2px;
+    background-color: #f2ae00;
+}
+
+/* --------section ready to upload imgs--------- */
+.c_container_upload {
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+    padding: 25px 25px;
+    display: flex;
+    position: relative;
+}
+
+.c_upload_row {
+    width: 60%;
+    display: flex;
+}
+
+.c_idcard_wrap {
+    width: 328px;
+    height: 218px;
+    border: 1px solid #0E2E3D;
+    /* padding: 80px 50px; */
+    display: flex;
+}
 
 
 
-            </ul>
-            <div class="x-log-show">
-                <div class="x-log-show-navbar ">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+.c_back_box {
+    margin-left: 20px;
+
+}
+
+.c_upload_row_sample {
+    width: 40%;
+}
+
+.c_sample_block {
+    width: 506px;
+    height: 486px;
+    padding: 20px;
+    justify-content: center;
+    background-color: #F1EDEA;
+    
+}
+
+.c_sample_wrap {
+    margin: 30px 50px;
+}
+
+.c_sample_wrap1 {
+    margin-left: 50px;
+}
+
+.c_sample_wrap2 {
+    margin: 50px 50px;
+    margin-top: 20px;
+}
+
+.c_sample_idcard {
+    width: 215px;
+    height: 143px;
+    border: 1px solid #0E2E3D;
+    
+}
+.c_sample_idcard img{
+    width: 100%;
+}
 
 
-        </div>
-    </div>
-    <!-- 以上NAV--------------------------------------------------- -->
+/* 點此上傳---------- */
+.c_upload_sign {
+    width: 100%;
+    padding: 0px 0px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
 
-    <section>
+}
+
+.c_upload_heretext {
+    margin-left: 10px;
+    color: #75BBE3;
+
+}
+
+a {
+    text-decoration: none;
+    color: #75BBE3;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+/* --------- */
+
+.pc-button-FEAC00-180 {
+    width: 180px;
+    height: 60px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+    background-color: #FEAC00;
+}
+
+.pc-button-F4F4F4-180 {
+    width: 180px;
+    height: 60px;
+    color: #0E2E3D;
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+    background-color: #F1EDEA;
+}
+
+.c_button_section {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 50px 0;
+    flex-direction: row-reverse;
+    
+}
+
+.c_button_right {
+    margin-left: 30px;
+}
+
+.footer_container {
+    margin-top: 60px;
+}
+#pid_on,#pid_in,#hid_on,#hid_in {
+    cursor: pointer;
+}
+.c_idcard_wrap input {
+    display: none;
+}
+.con {
+    position: relative;
+}
+.wrap_1,.wrap_2,.wrap_3,.wrap_4  {
+    /* width: 100%; */
+    position: relative;
+}
+.wrap_1 img,.wrap_2 img ,.wrap_3 img,.wrap_4 img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* height: 100%; */
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+
+@media screen and (max-width:376px) {
+    .c_sample_block {
+        display: none;
+    }
+
+    .c_upload_row {
+        flex-direction: column;
+    }
+
+    .c_back_box {
+        margin-left: 0px;
+    }
+
+    .c_button_right {
+        margin-left: 0px;
+    }
+
+    .z_progress {
+        display: none;
+    }
+
+    .progress2 {
+        display: none;
+    }
+    .c_container_stepbar {
+        margin-top: 110px;
+    }
+    .c_step-bar2 p {
+        text-align: center;
+    }
+
+    .pc-button-FEAC00-180{
+        width: 162.5px;
+        height: 45px;
+        font-size: 20px;
+    }
+    .pc-button-F4F4F4-180{
+        width: 162.5px;
+        height: 45px;
+        font-size: 20px;
+    }
+    .c_button_section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .step-bar2 {
+        text-align: center;
+    }
+
+}
+    </style>
+<?php include __DIR__ . './part/nav.php'  ?>
+<section>
         <div class="c_container_stepbar">
 
             <div class="z_progress z_margin-center ">
@@ -180,12 +396,12 @@
                         <input type="file" name="" id="pid_on_true" accept="image/*">
                         <div class="c_upload_sign" id="pid_on">
                             <div class="c_upload_icon">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                <a href=""> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M13.7143 10.9999V13C13.7143 13.5522 13.2025 14 12.5714 14H3.42857C2.7975 14 2.28571 13.5522 2.28571 13V10.9999C2.28571 10.4477 1.77393 9.99992 1.14286 9.99992C0.511786 9.99992 0 10.4477 0 10.9999V13C0 14.6569 1.535 16 3.42857 16H12.5714C14.465 16 16 14.6569 16 13V10.9999C16 10.4477 15.4882 9.99992 14.8571 9.99992C14.2261 9.99992 13.7143 10.4468 13.7143 10.9999ZM7.19286 0.292758L2.62143 4.29281C2.17464 4.68375 2.17536 5.31658 2.62143 5.70689C3.06786 6.09752 3.79107 6.09752 4.2375 5.70689L6.85714 3.41546V9.99992C6.85714 10.5527 7.36821 10.9999 8 10.9999C8.63179 10.9999 9.14286 10.5527 9.14286 9.99992V3.41546L11.7636 5.70861C12.21 6.09924 12.9332 6.09924 13.3796 5.70861C13.8261 5.31798 13.8261 4.68516 13.3796 4.29453L8.80821 0.294477C8.36071 -0.0978721 7.63929 -0.0978721 7.19286 0.292758Z"
                                             fill="#75BBE3" />
-                                </svg>
+                                    </svg></a>
                             </div>
 
                             <div class="c_upload_heretext">
@@ -201,7 +417,7 @@
                         <input type="file" name="" id="pid_in_true" accept="image/*">
                         <div class="c_upload_sign" id="pid_in">
                             <div class="c_upload_icon">
-                                <a href="#"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                <a href=""> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M13.7143 10.9999V13C13.7143 13.5522 13.2025 14 12.5714 14H3.42857C2.7975 14 2.28571 13.5522 2.28571 13V10.9999C2.28571 10.4477 1.77393 9.99992 1.14286 9.99992C0.511786 9.99992 0 10.4477 0 10.9999V13C0 14.6569 1.535 16 3.42857 16H12.5714C14.465 16 16 14.6569 16 13V10.9999C16 10.4477 15.4882 9.99992 14.8571 9.99992C14.2261 9.99992 13.7143 10.4468 13.7143 10.9999ZM7.19286 0.292758L2.62143 4.29281C2.17464 4.68375 2.17536 5.31658 2.62143 5.70689C3.06786 6.09752 3.79107 6.09752 4.2375 5.70689L6.85714 3.41546V9.99992C6.85714 10.5527 7.36821 10.9999 8 10.9999C8.63179 10.9999 9.14286 10.5527 9.14286 9.99992V3.41546L11.7636 5.70861C12.21 6.09924 12.9332 6.09924 13.3796 5.70861C13.8261 5.31798 13.8261 4.68516 13.3796 4.29453L8.80821 0.294477C8.36071 -0.0978721 7.63929 -0.0978721 7.19286 0.292758Z"
@@ -228,7 +444,7 @@
                         <input type="file" name="" id="hid_on_true" accept="image/*">
                         <div class="c_upload_sign" id="hid_on">
                             <div class="c_upload_icon">
-                                <a href="#"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                <a href=""> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M13.7143 10.9999V13C13.7143 13.5522 13.2025 14 12.5714 14H3.42857C2.7975 14 2.28571 13.5522 2.28571 13V10.9999C2.28571 10.4477 1.77393 9.99992 1.14286 9.99992C0.511786 9.99992 0 10.4477 0 10.9999V13C0 14.6569 1.535 16 3.42857 16H12.5714C14.465 16 16 14.6569 16 13V10.9999C16 10.4477 15.4882 9.99992 14.8571 9.99992C14.2261 9.99992 13.7143 10.4468 13.7143 10.9999ZM7.19286 0.292758L2.62143 4.29281C2.17464 4.68375 2.17536 5.31658 2.62143 5.70689C3.06786 6.09752 3.79107 6.09752 4.2375 5.70689L6.85714 3.41546V9.99992C6.85714 10.5527 7.36821 10.9999 8 10.9999C8.63179 10.9999 9.14286 10.5527 9.14286 9.99992V3.41546L11.7636 5.70861C12.21 6.09924 12.9332 6.09924 13.3796 5.70861C13.8261 5.31798 13.8261 4.68516 13.3796 4.29453L8.80821 0.294477C8.36071 -0.0978721 7.63929 -0.0978721 7.19286 0.292758Z"
@@ -253,7 +469,7 @@
                         <input type="file" name="" id="hid_in_true" accept="image/*">
                         <div class="c_upload_sign" id='hid_in'>
                             <div class="c_upload_icon">
-                                <a href="#"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                <a href=""> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M13.7143 10.9999V13C13.7143 13.5522 13.2025 14 12.5714 14H3.42857C2.7975 14 2.28571 13.5522 2.28571 13V10.9999C2.28571 10.4477 1.77393 9.99992 1.14286 9.99992C0.511786 9.99992 0 10.4477 0 10.9999V13C0 14.6569 1.535 16 3.42857 16H12.5714C14.465 16 16 14.6569 16 13V10.9999C16 10.4477 15.4882 9.99992 14.8571 9.99992C14.2261 9.99992 13.7143 10.4468 13.7143 10.9999ZM7.19286 0.292758L2.62143 4.29281C2.17464 4.68375 2.17536 5.31658 2.62143 5.70689C3.06786 6.09752 3.79107 6.09752 4.2375 5.70689L6.85714 3.41546V9.99992C6.85714 10.5527 7.36821 10.9999 8 10.9999C8.63179 10.9999 9.14286 10.5527 9.14286 9.99992V3.41546L11.7636 5.70861C12.21 6.09924 12.9332 6.09924 13.3796 5.70861C13.8261 5.31798 13.8261 4.68516 13.3796 4.29453L8.80821 0.294477C8.36071 -0.0978721 7.63929 -0.0978721 7.19286 0.292758Z"
@@ -286,12 +502,12 @@
                     <div class="c_sample_wrap">
                         <div class="c_sample_wrap1">
                             <div class="c_sample_idcard">
-                                <img src="../imgs/ROC_mibunsho.jpg" alt="">
+                                <img src="./imgs/ROC_mibunsho.jpg" alt="">
                             </div>
                         </div>
                         <div class="c_sample_wrap2">
                             <div class="c_sample_idcard">
-                                <img src="../imgs/ROC_mibunsho_ura.jpg" alt="">
+                                <img src="./imgs/ROC_mibunsho_ura.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -304,87 +520,15 @@
     <div class="container">
         <div class="c_button_section">
             <div class="c_button_right">
-                <button class="pc-button-FEAC00-180">送出</button>
+                <button class="pc-button-FEAC00-180"><a href="contract03.php" style="text-decoration: none; color:#0E2E3D;">送出</a></button>
             </div>
             <div class="c_button_left">
                 <button class="pc-button-F4F4F4-180">清除資料</button>
             </div>
         </div>
     </div>
+    <?php include __DIR__ . './part/footer.php'  ?>
 
-
-
-
-
-    <!-- 以下是footer---------------------------------------------  -->
-    <div class="footer_container">
-        <div class="footer">
-            <div class="container">
-                <div class="footer-up">
-                    <div class="footer-left">
-                        <div class="footer_phone_icon">
-                            <img src="../imgs/facebook-square-brands.svg" alt="">
-                            <img src="../imgs/instagram-brands.svg" alt="">
-                            <img src="../imgs/twitter-brands.svg" alt="">
-                            <img src="../imgs/youtube-brands.svg" alt="">
-                        </div>
-                        <div class="footer-left-up">
-                            <p>
-                                地址：台北市大安區市民大道9巷9樓
-                            </p>
-                            <p>
-                                電話：02-2222-2222
-                            </p>
-                            <p>
-                                信箱：csdas@gmail.com
-                            </p>
-                        </div>
-                        <div class="footer-left-down">
-                            <a href="#">免責聲明</a>
-                            <a href="#">隱私權政策</a>
-                            <a href="#">服務條款</a>
-                        </div>
-                    </div>
-                    <div class="footer-right">
-                        <img src="../imgs/people.png" alt="">
-                    </div>
-                </div>
-
-            </div>
-            <div class="footer-down">
-                <div class="container">
-                    <div class="footer_icon">
-                        <p>Follow us</p>
-                        <img src="../imgs/facebook-square-brands.svg" alt="">
-                        <img src="../imgs/instagram-brands.svg" alt="">
-                        <img src="../imgs/twitter-brands.svg" alt="">
-                        <img src="../imgs/youtube-brands.svg" alt="">
-                    </div>
-                    <div class="copyright">
-                        <p>
-                            Copyright © ICS COLLEGE OF ARTS. All rights reserved.
-                        </p>
-                    </div>
-                    <div class="tw">
-                        <p>
-                            TW
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="phone_copyright">
-            <p>
-                Copyright © ICS COLLEGE OF ARTS. All rights reserved.
-            </p>
-        </div>
-    </div>
-
-    <!-- FOOTER--------------------------------------------------- -->
-    <script src="../js/jquery-3.6.0.js"></script>
-    <script src="../nav-footer/nav-footer.js"></script>
-    <!-- <script src="../contract/contract02.js"></script> -->
     <script>
         $(".c_upload_sign").click(function(){
             console.log("hi");
@@ -439,6 +583,4 @@
             reader.readAsDataURL(input.files[0]);
         }
     </script>
-</body>
-
-</html>
+<?php include __DIR__ . './part/javascript.php'  ?>
