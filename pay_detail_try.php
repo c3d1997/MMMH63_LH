@@ -2,33 +2,23 @@
 $title = '租屋明細';
 require './part/connect-db.php';
 
-$sql = "SELECT * FROM `items`";
-$in_sql = "SELECT `item_name` FROM `items`";
-$stmt = $pdo->query($in_sql);
-$i = $stmt->fetch();
-// echo $i;
-// echo json_encode($i,JSON_UNESCAPED_UNICODE) ;
+// $sql = "SELECT * FROM `items`";
+// $in_sql = "SELECT `item_name` FROM `items`";
+// $stmt = $pdo->query($in_sql);
+// $i = $stmt->fetch();
+// $i_name = implode(",",$i) ;
 
-$i_name = json_encode($i,JSON_UNESCAPED_UNICODE);
+
+$sql = "SELECT * FROM `items` WHERE `id` = 5;";
+$stmt = $pdo->query($sql);
+$i = $stmt->fetch();
+$i_name = implode(",",$i) ;
 echo $i_name;
 
-// $rows = [];
-// $sids = [];
-// if (!empty($_SESSION['cart'])) {
-//     //  商品數量
-//     $sids = array_keys($_SESSION['cart']);
-//     //                                                             加上 , 回傳前面
-//     $sql = sprintf("SELECT * FROM products WHERE sid IN (%s)", implode(',', $sids));
 
 
 
-    
-//     $stmt = $pdo->query($sql);
 
-//     while ($r = $stmt->fetch()) {
-//         $r['quantity'] = $_SESSION['cart'][$r['sid']];
-//         $rows[$r['sid']] = $r;
-//     }
 
 
 ?>
@@ -739,10 +729,10 @@ echo $i_name;
                     </div>
                     <div class="z_detail_info_container">
                         <p class="z_detail_cost_phone z_detail_mb">$15,000/月</p>
-                        <p class="z_detail_items_name z_detail_mb"><?php $i_name ?></p>
+                        <p class="z_detail_items_name z_detail_mb"><?= $i['item_name'] ?></p>
                         <div class="z_detail_mb z_detail_icon_items_center">
                             <img class="z_mr-5" src="imgs/bus.svg" alt="">
-                            <span class="z_detail_mb">距離士林捷運站 500 公尺</span>
+                            <span class="z_detail_mb"><?= $i['item_name'] ?></span>
                         </div>
                         <div class="z_detail_mb z_detail_icon_items_center">
                             <img class="z_mr-5" src="imgs/position.svg" alt="">
