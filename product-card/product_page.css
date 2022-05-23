@@ -27,7 +27,8 @@
     top: 3%;
     right: 20%;
 }
-.S-lg-share:hover{
+
+.S-lg-share:hover {
     background-color: #75BBE3;
 }
 
@@ -49,10 +50,11 @@
     top: 3%;
     right: 3%;
 }
-.S-lg-like:hover{
-    background-color: #75BBE3;
 
+.S-lg-like:hover {
+    background-color: #75BBE3;
 }
+
 .S-lg-like svg {
     width: 30px;
     height: 30px;
@@ -136,9 +138,11 @@
     top: 3%;
     right: 18%;
 }
-.S-md-share:hover{
+
+.S-md-share:hover {
     background-color: #75BBE3;
 }
+
 .S-md-share i {
     font-size: 1.2em;
 }
@@ -157,9 +161,11 @@
     top: 3%;
     right: 3%;
 }
-.S-md-like:hover{
+
+.S-md-like:hover {
     background-color: #75BBE3;
 }
+
 .S-md-like svg {
     width: 25px;
     height: 25px;
@@ -243,9 +249,11 @@
     top: 3%;
     right: 22%;
 }
-.S-xs-share:hover{
+
+.S-xs-share:hover {
     background-color: #75BBE3;
 }
+
 .S-xs-share i {
     font-size: 1.2em;
 }
@@ -264,9 +272,11 @@
     top: 3%;
     right: 3%;
 }
-.S-xs-like:hover{
+
+.S-xs-like:hover {
     background-color: #75BBE3;
 }
+
 .S-xs-like svg {
     width: 25px;
     height: 25px;
@@ -324,76 +334,79 @@
     display: inline;
 }
 
+
 /* --------------------------------------------------------------------------*/
+
+
+/* 分享icon卡片  */
+
+.share-wrap {
+    background: #F4F4F4;
+    /* margin-top: 700px; */
+    z-index: 999;
+    width: 250px;
+    height: 70px;
+    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+    /* border: 1px solid red; */
+}
+
+.share {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.share svg {
+    width: 30px;
+    margin: 0 15px;
+}
+
+.hover-card {
+    color: #0E2E3D;
+    margin-top: 50px;
+    width: 325px;
+    height: 100%;
+    height: 350px;
+    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hover-card-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.hover-card-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.hover-card-info {
+    width: 50%;
+}
+
+@media screen and(max-width:376px) {
+    /* --------------------------------------------------------------------------*/
     /* 分享icon卡片  */
-
-
-    .share-wrap{
-        background:#F4F4F4;
-        /* margin-top: 700px; */
-        z-index: 999;
-        width: 250px;
-        height: 70px;
-        box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);   
-        /* border: 1px solid red; */
-    }
-    .share{
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-    }
-    .share svg{
-        width: 30px;
-        margin: 0 15px;
-    }
-    .hover-card{
-        color: #0E2E3D;
-        margin-top: 50px;
-        width: 325px;
-        height: 100%;
-        height: 350px;
-        box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);   
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    .hover-card-icon{
-        width: 50px;
-        height: 50px;
-        
-    }
-    .hover-card-icon img{
-        width: 50px;
-        height: 50px;
-    }
-    .hover-card-info{
-        width: 50%;
-    }
-    
-    @media screen and(max-width:376px){
-    
-        /* --------------------------------------------------------------------------*/
-        /* 分享icon卡片  */
-    
-    
-    .share-wrap{
+    .share-wrap {
         margin-top: 700px;
         z-index: 999;
         width: 100px;
         height: 70px;
-        box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);   
+        box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
         /* border: 10px solid red; */
     }
-    .share{
+    .share {
         display: flex;
         justify-content: center;
         padding: 20px;
     }
-    .share svg{
+    .share svg {
         width: 30px;
         margin: 0 15px;
     }
-        
-    }
+}
