@@ -128,17 +128,17 @@ textarea[type=text] {
 }
 
 .pc-button-F4F4F4-272 {
-    margin-right: 15px;
+    /* margin-right: 15px; */
+    /* border: 1px solid red; */
 }
 
 button.pc-button-FEAC00-272 {
     font-size: 16px;
-    margin-left: 15px;
+    /* margin-left: 15px; */
     width: 162.5px;
+    /* border: 1px solid red; */
 }
-#cloth{
-    margin-left: 0px;
-}
+
 
 
 /* 點此上傳 */
