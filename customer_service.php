@@ -1,23 +1,289 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include __DIR__ . './part/head.php'  ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>custmer_service</title>
-    <link rel="stylesheet" href="../button-fonts.css">
-    <link rel="stylesheet" href="../customer_service/customer_service.css">
-    <link rel="stylesheet" href="../product-card/warning_card.css">
-    <link rel="stylesheet" href="../nav-footer/nav-footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* 自己頁面的css */
+        .S-customer_service-bg {
+    z-index: 0;
+    /* padding: 0 -50px; */
+    /* margin: 0 -200px; */
+    height: 1080px;
+    width: 100%;
+    background: url(../imgs/living-room-1835923_1920.jpg)center center /cover no-repeat;
+    /* background-color: black; */
+    /* filter: brightness(.5); */
+}
 
-</head>
+.S-wrap {
+    margin-top: 100px;
+    width: 100%;
+    height: 1080px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-<body>
+.S-info {
+    z-index: 1;
+    color: #fff;
+    width: 602px;
+    height: 980px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 38px;
+}
 
+.S-q {
+    color: #fff;
+    display: flex;
+    padding: 60px 0;
+}
+
+.S-q img {
+    margin-right: 20px;
+}
+
+.S-q1 img {
+    margin-right: 40px;
+}
+
+.S-q-word h3,
+.S-q-word p {
+    color: #fff;
+    padding: 3px 0 0;
+}
+
+.S-list {
+    padding: 40px 70px;
+    width: 590px;
+    height: 816px;
+    background: #F1EDEA;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.S-list-title {
+    /* padding: 30px 0 15px; */
+    margin-bottom: 15px;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.S-list img {
+    width: 30px;
+    margin-right: 10px;
+}
+.CustomerService-x img{
+    width: 50px;
+    height: 50px;
+    margin: 0;
+}
+.input_option {
+    padding: 15px 0;
+}
+
+.dropdown_container {
+    padding: 15px 0;
+}
+
+.input_option.S-big input {
+    width: 100%;
+    height: 300px;
+    /* line-height: 2rem; */
+}
+
+.input_option.S-big textarea {
+    width: 100%;
+    outline: none;
+    /* border: #75BBE3 1px solid; */
+    font-size: 16px;
+    /* line-height: 2rem; */
+}
+
+textarea[type=text] {
+    margin: 0;
+    padding: 0;
+    height: 100px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.fullinput_container textarea[placeholder],
+.input_container textarea[placeholder] {
+    font-size: 16px;
+    padding: 20px;
+}
+
+.alert {
+    text-align: left;
+}
+
+.z_upload_item_img_btn button {
+    background: transparent;
+}
+
+.z_upload_item_img_btn img {
+    width: 16px;
+}
+
+.z_upload_item_img_btn>button {
+    font-size: 16px;
+    font-weight: bold;
+    color: #75BBE3;
+}
+
+.S-btn {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.pc-button-F4F4F4-272 {
+    margin-right: 15px;
+}
+
+button.pc-button-FEAC00-272 {
+    font-size: 16px;
+    margin-left: 15px;
+    width: 162.5px;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+@media screen and (max-width:376px) {
+    
+ 
+
+
+    .S-customer_service-bg {
+        position: relative;
+        top: 0px;
+        height: 800px;
+        width: 100%;
+        background: #F4F4F4;
+        background: url(../imgs/living-room-1835923_1920.jpg)center center /cover no-repeat;
+    }
+    .S-wrap {
+        margin-top: 0px;
+        flex-direction: column;
+    }
+    .S-info {
+        width: 100%;
+        margin-top: 550px;
+        /* background: url(../imgs/living-room-1835923_1920.jpg)center center /cover no-repeat; */
+        padding: 70px 40px;
+    }
+    .S-q {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+    }
+    .S-q img {
+        width: 50px;
+        margin: 0;
+    }
+    .S-q1 img {
+        margin: 0;
+    }
+    .S-q-word {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        text-align: center;
+        margin-top: 10px;
+    }
+    .S-q-word h3 {
+        font-size: 20px;
+    }
+    .S-q-word p {
+        font-size: 16px;
+    }
+    .S-list {
+        margin-top: 40px;
+        padding: 40px 20px;
+        width: 100%;
+        height: 816px;
+        background: #F4F4F4;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .S-list-title {
+        font-size: 24px;
+        /* padding: 30px 0 15px; */
+        margin-bottom: 15px;
+        height: 5%;
+        display: flex;
+        justify-content: center;
+    }
+    .input_option.S-big input {
+        font-size: 12px;
+    }
+    .S-list img {
+        width: 30px;
+        margin-right: 10px;
+    }
+    .mobile-button-F4F4F4-162 {
+        margin-right: 5px;
+        font-size: 20px;
+    }
+    .S-list.button.pc-button-FEAC00-272 {
+        /* margin: 0; */
+        /* height: 60px; */
+        border: 5px solid purple;
+    }
+    .button.pc-button-FEAC00-272.h60 {
+        height: 60px;
+        border: 5px solid purple;
+    }
+    .input_option {
+        padding: 15px 0;
+    }
+    .dropdown_container {
+        padding: 15px 0;
+    }
+    .input_option.S-big input {
+        width: 100%;
+        height: 300px;
+        /* line-height: 2rem; */
+    }
+    /* .input_option.S-big input::placeholder{
+        transform: translateX(-.5rem);
+        white-space: normal;
+    } */
+    .z_upload_item_img_btn {
+        text-align: right;
+    }
+    .z_upload_item_img_btn button {
+        background: transparent;
+    }
+    .z_upload_item_img_btn img {
+        width: 16px;
+    }
+    .z_upload_item_img_btn>button {
+        font-size: 16px;
+        font-weight: bold;
+        color: #75BBE3;
+    }
+    .S-btn {
+        margin-top: 10px;
+        display: flex;
+    }
+    .footer_container {
+        margin-top: 860px;
+    }
+}
+    </style>
+
+<?php include __DIR__ . './part/nav.php'  ?>
+
+    <!-- 自己頁面的html -->
     <div class="nav">
         <div class="container">
             <ul>
@@ -253,113 +519,10 @@
 
 
 
+<?php include __DIR__ . './part/footer.php'  ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- footer -->
-    <!-- 以下是footer---------------------------------------------  -->
-    <div class="footer_container">
-        <div class="footer">
-            <div class="container">
-                <div class="footer-up">
-                    <div class="footer-left">
-                        <div class="footer_phone_icon">
-                            <img src="../imgs/facebook-square-brands.svg" alt="">
-                            <img src="../imgs/instagram-brands.svg" alt="">
-                            <img src="../imgs/twitter-brands.svg" alt="">
-                            <img src="../imgs/youtube-brands.svg" alt="">
-                        </div>
-                        <div class="footer-left-up">
-                            <p>
-                                地址：台北市大安區市民大道9巷9樓
-                            </p>
-                            <p>
-                                電話：02-2222-2222
-                            </p>
-                            <p>
-                                信箱：csdas@gmail.com
-                            </p>
-                        </div>
-                        <div class="footer-left-down">
-                            <a href="#">免責聲明</a>
-                            <a href="#">隱私權政策</a>
-                            <a href="#">服務條款</a>
-                        </div>
-                    </div>
-                    <div class="footer-right">
-                        <img src="../imgs/people.png" alt="">
-                    </div>
-                </div>
-
-            </div>
-            <div class="footer-down">
-                <div class="container">
-                    <div class="footer_icon">
-                        <p>Follow us</p>
-                        <img src="../imgs/facebook-square-brands.svg" alt="">
-                        <img src="../imgs/instagram-brands.svg" alt="">
-                        <img src="../imgs/twitter-brands.svg" alt="">
-                        <img src="../imgs/youtube-brands.svg" alt="">
-                    </div>
-                    <div class="copyright">
-                        <p>
-                            Copyright © ICS COLLEGE OF ARTS. All rights reserved.
-                        </p>
-                    </div>
-                    <div class="tw">
-                        <p>
-                            TW
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="phone_copyright">
-            <p>
-                Copyright © ICS COLLEGE OF ARTS. All rights reserved.
-            </p>
-        </div>
-    </div>
-
-    <!-- FOOTER--------------------------------------------------- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="../js/jquery-3.6.0.js"></script>
     <script>
+        // 自己頁面的script
         $("button").click(function () {
             $(this).next(".dropdown_list").toggle()
             $(this).find("img").toggleClass("downArrow")
@@ -379,20 +542,6 @@
         close2.addEventListener("click", function () {
             infoModal.close();
         })
-
-
-
-
-        // --------------------------------------------------------------
-       
-
-
-
-
-
-
     </script>
 
-</body>
-
-</html>
+<?php include __DIR__ . './part/javascript.php'  ?>
