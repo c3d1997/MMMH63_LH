@@ -172,12 +172,38 @@
     margin-top: 30px;
 }
 
-.x-title-card-all {
+.footer_container {
+    margin-top: 40px;
+}
+
+.x-dislplaynone {
     display: none;
 }
 
-.footer_container {
-    margin-top: 40px;
+.x-title-list {
+    cursor: pointer;
+}
+
+.x-title-card {
+    cursor: pointer;
+}
+
+.x-canser {
+    cursor: pointer;
+}
+
+.x-displaynone-canser {
+    display: none;
+}
+
+.x-canser-card {
+    cursor: pointer;
+}
+
+.S-xs-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 @media screen and (max-width:376px) {

@@ -730,8 +730,6 @@
         width: 40px;
         height: 40px;
         font-size: 1.2em;
-        color: #0E2E3D;
-        background-color: #F1EDEA;
         border-radius: 50%;
         position: absolute;
         top: 3%;
@@ -747,17 +745,14 @@
         width: 40px;
         height: 40px;
         font-size: 1.2em;
-        color: #0E2E3D;
-        background-color: #F1EDEA;
         border-radius: 50%;
         position: absolute;
         top: 3%;
         right: 3%;
     }
     .x-search-month-nice-object-product .S-lg-like svg {
-        width: 25px;
-        height: 25px;
-        fill: #0E2E3D;
+        width: 40px;
+        height: 40px;
     }
     .x-search-month-nice-object-product .S-lg-card {
         width: 100%;
