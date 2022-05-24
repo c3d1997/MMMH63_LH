@@ -124,7 +124,7 @@ $title = '付款方式'
 
         .z_input_text {
             flex-grow: 1;
-            text-indent: 15px;
+            text-indent: 15px;;
         }
         .z_bank_name {
             width: 100%;
@@ -544,6 +544,9 @@ $title = '付款方式'
             text-align: center;
             text-indent: 0;
         }
+        #coupon_container {
+            width: 100%;
+        }
 
         @media screen and (max-width:376px) {
 
@@ -771,7 +774,7 @@ $title = '付款方式'
                     <div class="z_text_intput ">
                         <p class="z_checkbox_option ">　優惠碼</p>
                         <div class="z_input_container">
-                            <input class="z_input_text"   type="text" name="" id="" placeholder="請輸入優惠碼">
+                            <input class="z_input_text"   type="text" name="" id="coupon_container" placeholder="請輸入優惠碼">
                         </div>
                         <div class="z_coupon_container">
                             <p class="coupon">帶入優惠碼</p>
@@ -889,25 +892,25 @@ $title = '付款方式'
     </section>
 
 <?php include __DIR__ . './part/footer.php'  ?>
+    <script>
+        $(".z_checkbox_container :checkbox").click(function(){
+            $(this).parent().siblings().find(":checkbox").prop('checked', false);
+            if ($("#payBank").prop('checked')) {
+                $(".bank_area").css("display","block")
+                $(".card_area").css("display","none")
 
-    $(".z_checkbox_container :checkbox").click(function(){
-        $(this).parent().siblings().find(":checkbox").prop('checked', false);
-        if ($("#payBank").prop('checked')) {
-            $(".bank_area").css("display","block")
-            $(".card_area").css("display","none")
+            } else if ($("#payCard").prop('checked')) {
+                $(".bank_area").css("display","none")
+                $(".card_area").css("display","block")
 
-        } else if ($("#payCard").prop('checked')) {
-            $(".bank_area").css("display","none")
-            $(".card_area").css("display","block")
+            } else {
+                $(".bank_area").css("display","none")
+                $(".card_area").css("display","none")
+            }
+            })
 
-        } else {
-            $(".bank_area").css("display","none")
-            $(".card_area").css("display","none")
-        }
+            $("#bankSelect").click(function(){
+                $(".arrow_container img").toggleClass("downArrow")
         })
-
-        $("#bankSelect").click(function(){
-            $(".arrow_container img").toggleClass("downArrow")
-    })
-    
+    </script>
 <?php include __DIR__ . './part/javascript.php' ?>
