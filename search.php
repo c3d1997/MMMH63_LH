@@ -866,8 +866,6 @@ $title = 'LittleHouse';
             display: inline;
         }
     }
-
-    
 </style>
 
 <?php include __DIR__ . './part/nav.php'  ?>
