@@ -1,3 +1,20 @@
+<?php 
+    require './part/connect-db.php';
+
+
+
+
+    $sql = "SELECT * FROM `mumber` WHERE `sid` = 1;";
+    $stmt = $pdo->query($sql);
+    $n = $stmt->fetch();
+    
+    
+    
+
+
+?>
+
+
 <?php include __DIR__ . './part/head.php'  ?>
 <style>
 body {
@@ -255,6 +272,10 @@ ul {
     .z_full_btn {
         width: 100%;
     }
+    .sign {
+        width: 50%;
+        height: 50%;
+    }
 }
 </style>
 
@@ -361,12 +382,15 @@ ul {
 電子郵件信箱：<br> <br> 
 
 承租人： <br>
-姓名(名稱)： <br>
-簽章 ：<br>
-戶籍地址： <br>
-通訊地址： <br>
-聯絡電話： <br>
-電子郵件信箱： <br><br> 
+姓名(名稱)： <?= $n['name'] ?><br>
+<div class="sign_container">
+    <p>簽章 ：</p>
+    <img src="" alt="" id="sign" style="width:30%;">
+</div>
+戶籍地址： <?= $n['Area'],$n['Dist'],$n['Add'] ?><br>
+通訊地址： <?= $n['Area'],$n['Dist'],$n['Add'] ?><br>
+聯絡電話： <?= $n['mobile'] ?><br>
+電子郵件信箱： <?= $n['email'] ?><br> 
 
 西元    年    月   日 
 
@@ -385,7 +409,13 @@ ul {
 <?php include __DIR__ . './part/footer.php'  ?>   
 
 <script>
-        // 自己頁面的script
+    $(document).ready(function(){
+        let data = localStorage.getItem("sign");
+        data = JSON.parse(data);
+        $("#sign").attr("src",data)
+    })
+
+
 </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>

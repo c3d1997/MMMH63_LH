@@ -403,10 +403,9 @@
         </div>
         
             <div class="c_button_right">
-            <form action="./contract05.php" method="post">
                 <button onclick="saveCanvas()" class="pc-button-F4F4F4-180">送出</button>
             </div>
-            </form>
+        </form>
     </div>
     
 
@@ -450,12 +449,14 @@
         };
         const saveCanvas = () => {
             const image = myCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+            const view = myCanvas.toDataURL("image/png")
             // location.href = image;
 
             let a = document.createElement('a');
             a.setAttribute('download', 'draw.png');
             a.setAttribute('href', image);
             a.click();
+            localStorage.setItem("sign",JSON.stringify(view))
         };
         $("#myCanvas").mousedown(function() {
             $(".c_sign_text").css("display", "none")
