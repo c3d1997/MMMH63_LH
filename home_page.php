@@ -204,13 +204,22 @@ $title = 'LittleHouse';
 
     @media screen and (max-width:376px) {
 
-        .x-home-page-introduce-symbiosis,
-        .x-home-page-introduce-sublease {
+        .x-home-page-introduce-symbiosis{
+            width: 100%;
+            max-width: 1280px;
+            margin: auto;
+            background: none;
+            padding-top: 460px;
+            margin-bottom: 0px;
+        }
+    
+        .x-home-page-introduce-sublease{
             width: 100%;
             max-width: 1280px;
             margin: auto;
             background: none;
             padding-top: 0px;
+            
             margin-bottom: 0px;
         }
 
@@ -998,7 +1007,7 @@ $title = 'LittleHouse';
             <h2>
                 共生租屋
             </h2>
-            <img src="../imgs/espolon-tequila-xCsalofaxw4-unsplash.jpg" alt="">
+            <img src="imgs/espolon-tequila-xCsalofaxw4-unsplash.jpg" alt="">
             <p>
                 若發現問題比我們想像的還要深奧，那肯定不簡單。 所謂租屋，關鍵是租屋需要如何解讀。 租屋的出現，重寫了人生的意義。既然，租屋，到底應該如何實現。租屋因何而發生？ 話雖如此，做好租屋這件事，可以說已經成為了民運動。
             </p>
@@ -1315,6 +1324,7 @@ $title = 'LittleHouse';
     </div>
 </div>
 <?php include __DIR__ . './part/footer.php'  ?>
+<script>
 // 共生分租講解動畫 
     // Get the size of the device screen
     var screenWidth = screen.width;
@@ -1373,4 +1383,6 @@ $title = 'LittleHouse';
             }
         })
     })
+</script>
+
 <?php include __DIR__ . './part/javascript.php'  ?>
