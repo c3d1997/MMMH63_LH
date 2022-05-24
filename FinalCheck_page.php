@@ -287,8 +287,8 @@
 
                 <div class="S-FinalCheck-btn">
 
-                    <button class="pc-button-F4F4F4-180  mobile-button-F4F4F4-162"><a href="../customer_service/customer_service.html">聯絡我們</a></button>
-                    <button class="pc-button-FEAC00-180 mobile-button-FEAC00-162"><a href="../contract/contract01_calend.html">確定租屋</a></button>
+                    <button class="pc-button-F4F4F4-180  mobile-button-F4F4F4-162"><a href="customer_service/customer_service.html">聯絡我們</a></button>
+                    <button class="pc-button-FEAC00-180 mobile-button-FEAC00-162"><a href="contract/contract01_calend.html">確定租屋</a></button>
 
 
                 </div>

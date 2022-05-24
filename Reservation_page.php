@@ -220,8 +220,10 @@
 
                     <div class="S-Reservation-btn">
 
+                        <!-- <button class="pc-button-F4F4F4-180"><a
+                                href="../customer_service/customer_service.html">聯絡我們</a></button> -->
                         <button class="pc-button-F4F4F4-180"><a
-                                href="../customer_service/customer_service.html">聯絡我們</a></button>
+                                href="customer_service/customer_service.html">聯絡我們</a></button>
                         <button class="pc-button-FEAC00-180" id="show">確定預約</button>
                         <!-- 彈出預約成功視窗 -->
 
@@ -237,7 +239,7 @@
                                     <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">返回
                                 </div>
                                 <button class="ReservationSuccess-x" id="close2">
-                                    <img src="../imgs/X.svg" alt="">
+                                    <img src="imgs/X.svg" alt="">
                                 </button>
                             </div>
                         </dialog>
