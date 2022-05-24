@@ -2,7 +2,7 @@
 
 <style>
     /* 自己頁面的css */
-    .S-customer_service-bg {
+.S-customer_service-bg {
     z-index: 0;
     /* padding: 0 -50px; */
     /* margin: 0 -200px; */
@@ -81,11 +81,10 @@
     height: 50px;
     margin: 0;
 }
-/* .input_option {
+
+.dropdown_container {
     padding: 15px 0;
-} */
-
-
+}
 
 .input_option.S-big input {
     width: 100%;
@@ -98,7 +97,6 @@
     outline: none;
     /* border: #75BBE3 1px solid; */
     font-size: 16px;
-    margin-top: 30px;
     /* line-height: 2rem; */
 }
 
@@ -121,6 +119,20 @@ textarea[type=text] {
     text-align: left;
 }
 
+.z_upload_item_img_btn button {
+    background: transparent;
+}
+
+.z_upload_item_img_btn img {
+    width: 16px;
+}
+
+.z_upload_item_img_btn>button {
+    font-size: 16px;
+    font-weight: bold;
+    color: #75BBE3;
+}
+
 .S-btn {
     margin-top: 10px;
     display: flex;
@@ -132,43 +144,19 @@ textarea[type=text] {
 }
 
 button.pc-button-FEAC00-272 {
-    font-size: 16px;
-    margin-left: 15px;
-    width: 162.5px;
-}
-#cloth{
-    margin-left: 0px;
+    /* font-size: 16px; */
+    /* width: 162.5px; */
+    font-weight: 700;
 }
 
-
-/* 點此上傳 */
-input[type="file"] {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
-}
-.custom-file-upload {
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
-}
-.custom-file-upload img{
-    width: 15px;
-}
-
-/* ---------下拉選單-------------------------- */
 .z_select_dropdown_container{
-    /* flex-grow: 1; */
+    flex-grow: 1;
     position: relative;
     display: flex;
+    margin-bottom: 15px;
 }
-.z_select_dropdown_container select{
-    color: rgba(0, 0, 0, 0.6);
+.bank_area select{
+    color: #0E2E3D;
     height: 60px;
     border: none;
     outline: none;
@@ -179,37 +167,27 @@ input[type="file"] {
 }
 .bank_area select option {
     font-size: 16px;
+
 }
+.banklist p{
+    margin-bottom: 10px
+}
+
 .z_select_dropdown_container .arrow_container {
     top:50%;
-    transform: translateY(-45%);
-    right: 10px;
+    transform: translateY(-50%);
+    right: 15px;
     position: absolute;
     pointer-events: none;
 }
-.arrow_container img{
-    width: 30px;
-    height: 30px;
-}
-.downArrow {
-    transform: rotateX(180deg);
-}
-
-
-
-
-
-
-
-
-
-
-
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 @media screen and (max-width:376px) {
     
+ 
+
+
     .S-customer_service-bg {
         position: relative;
         top: 0px;
@@ -276,7 +254,7 @@ input[type="file"] {
         font-size: 12px;
     }
     .S-list img {
-        width: 15px;
+        width: 30px;
         margin-right: 10px;
     }
     .mobile-button-F4F4F4-162 {
@@ -292,9 +270,9 @@ input[type="file"] {
         height: 60px;
         border: 5px solid purple;
     }
-    /* .input_option {
+    .input_option {
         padding: 15px 0;
-    } */
+    }
     .dropdown_container {
         padding: 15px 0;
     }
@@ -303,9 +281,23 @@ input[type="file"] {
         height: 300px;
         /* line-height: 2rem; */
     }
-    .arrow_container img{
-        width: 30px;
-        margin: 5px;
+    /* .input_option.S-big input::placeholder{
+        transform: translateX(-.5rem);
+        white-space: normal;
+    } */
+    .z_upload_item_img_btn {
+        text-align: right;
+    }
+    .z_upload_item_img_btn button {
+        background: transparent;
+    }
+    .z_upload_item_img_btn img {
+        width: 16px;
+    }
+    .z_upload_item_img_btn>button {
+        font-size: 16px;
+        font-weight: bold;
+        color: #75BBE3;
     }
     .S-btn {
         margin-top: 10px;
@@ -377,7 +369,8 @@ input[type="file"] {
                         </div>
                         <!-- 請選擇您遭遇的問題分類 -->
                         <!-- 下拉選單 -->
-                        <div class="z_select_dropdown_container">
+                        <div class="bank_area">
+                        <div class="z_select_dropdown_container ">
                             <select id="bankSelect" name=”bankSelect” class="z_select_dropdown">
                                 <option value=””>請選擇欲詢問的問題分類</option>
                                 <option value=””>搜尋問題</option>
@@ -389,21 +382,21 @@ input[type="file"] {
                                 <img src="imgs/down-arrow.svg" alt="">
                             </div>
                         </div>
+                        </div>
                         <!-- 請詳細描述您的問題或是上傳相關圖片，
                                 我們將會盡快已郵件回覆您 -->
                         <div class="input_option S-big">
                             <div class="fullinput_container">
-                                <textarea name="question" id="" cols="30" rows="10"
+                                <textarea name="question" id="" cols="30" rows="10" 
                                     placeholder="請詳細描述您的問題或是上傳相關圖片，我們將會盡快已郵件回覆您" style="outline: none;"></textarea>
                                 <div class="alert">*錯誤
                                 </div>
                             </div>
                         </div>
-                        
-                        <label for="file-upload" class="custom-file-upload">
-                            <img src="imgs/uploadicon.svg" alt=""> 點此上傳
-                        </label>
-                        <input id="file-upload" type="file"/>
+                        <div class="z_upload_item_img_btn">
+                            <label class="" id="" for="filename"><img src="imgs/uploadicon.svg" alt="">點此上傳</label>
+                            <input type="file" id="filename" class="" name="" style="display: none;">
+                        </div>
 
                         <div class="S-btn">
                             <button class="pc-button-F4F4F4-272 mobile-button-F4F4F4-162">清除資料</button>
@@ -432,19 +425,8 @@ input[type="file"] {
                     </dialog>
                     <!-- 以上是"預約成功"ReservationSuccess -->
 
-
-
-
                 </div>
             </div>
-
-
-
-
-
-
-
-
 
         </div>
     </div>
@@ -453,25 +435,26 @@ input[type="file"] {
 
 
 <?php include __DIR__ . './part/footer.php'  ?>
-// 自己頁面的script
-$("#bankSelect").click(function(){
-$(".arrow_container img").toggleClass("downArrow")
-})
+<!-- // 自己頁面的script -->
+<script>
+    $("#bankSelect").click(function(){
+    $(".arrow_container img").toggleClass("downArrow")
+    })
 
-// 客服送出成功 彈出視窗
-let btn = document.querySelector("#show");
-let infoModal = document.querySelector("#infoModal");
-let close = document.querySelector("#close");
-let close2 = document.querySelector("#close2");
-btn.addEventListener("click", function () {
-infoModal.showModal();
-})
-close.addEventListener("click", function () {
-infoModal.close();
-})
-close2.addEventListener("click", function () {
-infoModal.close();
-})
-
+    // 客服送出成功 彈出視窗
+    let btn = document.querySelector("#show");
+    let infoModal = document.querySelector("#infoModal");
+    let close = document.querySelector("#close");
+    let close2 = document.querySelector("#close2");
+    btn.addEventListener("click", function () {
+    infoModal.showModal();
+    })
+    close.addEventListener("click", function () {
+    infoModal.close();
+    })
+    close2.addEventListener("click", function () {
+    infoModal.close();
+    })
+</script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>

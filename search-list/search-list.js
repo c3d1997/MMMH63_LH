@@ -1,3 +1,14 @@
+$('.x-content-list').click(function() {
+    console.log(1);
+    $('.x-search-list-content-all').removeClass('x-search-displaynone')
+    $('.x-search-list-card').addClass('x-search-displaynone')
+})
+$('.x-card-list').click(function() {
+        console.log(2);
+        $('.x-search-list-card').removeClass('x-search-displaynone')
+        $('.x-search-list-content-all').addClass('x-search-displaynone')
+    })
+    // 
 if (window.innerWidth > 376) {
     $(".S-lg-share").mousedown(function() {
         $(this).css({
@@ -56,8 +67,12 @@ if (window.innerWidth > 376) {
     })
 }
 $(".S-lg-svg").click(function() {
-    console.log(1);
-    $(this).toggleClass('x-svg-color')
+        console.log(1);
+        $(this).toggleClass('x-svg-color')
 
 
+    })
+    // 
+$(".x-down").click(function() {
+    $(this).toggleClass('x-up')
 })

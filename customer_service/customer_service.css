@@ -154,6 +154,37 @@ button.pc-button-FEAC00-272 {
     width: 162.5px;
 }
 
+.z_select_dropdown_container{
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    margin-bottom: 15px;
+}
+.bank_area select{
+    color: #0E2E3D;
+    height: 60px;
+    border: none;
+    outline: none;
+    appearance:none;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 15px;
+}
+.bank_area select option {
+    font-size: 16px;
+
+}
+.banklist p{
+    margin-bottom: 10px
+}
+
+.z_select_dropdown_container .arrow_container {
+    top:50%;
+    transform: translateY(-50%);
+    right: 15px;
+    position: absolute;
+    pointer-events: none;
+}
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 

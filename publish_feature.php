@@ -930,8 +930,8 @@
                             </label>
                         </div>
                         <div class="z_twobtn">                      
-                            <button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162">上一步</button>
-                            <button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162">下一步</button>
+                            <a href="./publish_item_detail.php"><button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162">上一步</button></a>
+                            <a href="./publish_uploadcertificate.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162">下一步</button></a>
                         </div>
                     </div>
                 </div>

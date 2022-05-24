@@ -1,3 +1,13 @@
+<?php
+
+
+// 移動上傳的暫存檔
+//                                     暫存位置                                 儲存原檔名
+move_uploaded_file($_FILES['certificate']['tmp_name'], __DIR__ .'/'.$_FILES['certificate']['name']);
+echo json_encode($_FILES['certificate']);
+?>
+
+
 <?php include __DIR__ . './part/head.php'  ?>
 
     <style>
@@ -117,14 +127,14 @@
             cursor: pointer;
             display: inline-block;
             padding-left: 30px;
-            /* line-height: 24px; */
+            line-height: 20px;
             background: url(imgs/unchecked.svg) no-repeat left top;
             user-select: none;
         }
         input[type=checkbox]:checked+span {
             display: inline-block;
             padding-left: 30px;
-            /* line-height: 24px; */
+            line-height: 20px;
             background-image: url(imgs/checked.svg);
         }
         body {
@@ -762,8 +772,8 @@
                         <span class="z_checkbox">我已仔細閱讀並明瞭<a href="#"> 「服務條款」 </a>，<a href="#"> 「免責聲明」 </a>和<a href="#"> 「隱私權聲明」 </a>等所載內容及其意義，茲同意該等條款規定，並願遵守網站現今、嗣後規範的各種規則。</span>  
                     </label>
                     <div class="z_twobtn">                      
-                        <button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162">上一步</button>
-                        <button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162">下一步</button>
+                        <a href="./publish_uploadcertificate.php"><button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162">上一步</button></a>
+                        <a href=""><button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162">下一步</button></a>
                     </div>
                 </div>
 

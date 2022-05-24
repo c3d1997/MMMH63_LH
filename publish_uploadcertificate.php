@@ -167,6 +167,10 @@
             align-items: center;
             height: 550px;
             border: 3px solid #0E2E3D;
+            position: relative;
+        }
+        .uploadimg_before {
+            position: absolute;
         }
         .uploadimg_before > *{
             margin-bottom: 10px;
@@ -181,6 +185,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            position: absolute;
         }
 
         .z_upload_item_img_btn {
@@ -221,6 +226,7 @@
             background-color: rgba(255, 255, 255, 0);
             background-image: url(imgs/closeicon.svg);
             background-position: center;
+            z-index: 5;
         }
         .z_review_card img {
             width: 100%;
@@ -463,6 +469,9 @@
             padding: 30px;
             margin-bottom: 30px;
         }
+        #imgUpload {
+            display: none;
+        }
 
 
 
@@ -658,28 +667,34 @@
             <div class="z_row ">
                 <div class="z_publish_container">
                     <div class="z_publish_phone_title">
-                        <img src="../imgs/backcolor.svg" alt="">
+                        <img src="imgs/backcolor.svg" alt="">
                         <p>刊登物件</p>
                     </div>
                     <h2 class="z_step_title bold">step4.　上傳房屋權狀</h2>
+                    <form action="./publish_otherinfo.php" method="post" enctype="multipart/form-data">
                     <div class="z_img_reviewcontainer_02 bold">
+                        
                         <div class="uploadimg_after">
                             <button class="z_close_icon"></button>
-                            <img src="../imgs/bedroom-5646321_1920.jpg" alt="">
+                            <img src="imgs\uploadbg.jpg" alt="" class="" >
+                            <img  alt="" class="" id="nowimg">
                         </div>
-                        <!-- <div class="uploadimg_before">
+                        <div class="uploadimg_before">
                             <p>您可以拖拉圖片至此處</p>
                             <div class="z_upload_item_img_btn">
-                                <button><img src="../imgs/uploadicon.svg" alt="">或是點此上傳</button>
+                                <button type="button" id="upload_btn"><img src="imgs/uploadicon.svg" alt="">或是點此上傳</button>
                             </div>
-                        </div> -->
+                            <input type="file" id="imgUpload" accept="image/* " name="certificate">
+                        </div>
                         
                     </div>
                     
                     <div class="z_twobtn">                      
-                        <button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162">上一步</button>
+                        <a href="./publish_feature.php"><button type="button" class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162">上一步</button></a>
+                        
                         <button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162">下一步</button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -688,7 +703,32 @@
 <?php include __DIR__ . './part/footer.php'  ?>
 
     <script>
-        // 自己頁面的script
+        $("#upload_btn").click(function(){
+            $("#imgUpload").click()
+        })
+        $("#imgUpload").change(function(){
+            $("#nowimg").css("z-index","2")
+            readURL(this);
+        });
+
+        function readURL(input){
+        //   if(input.files && input.files[0]){
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $("#nowimg").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        //   }
+        }
+        $(".z_close_icon").click(function(){
+            if ($(this).next().attr("src")){
+                $(this).next().next().removeAttr("src")
+                $(this).next().next().css("z-index","-1")
+            } else {
+
+            }
+
+        })
     </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>
