@@ -35,10 +35,6 @@
     margin-right: 60px;
 }
 
-.x-up {
-    display: none;
-}
-
 @media screen and (max-width:376px) {
     .x-search-list {
         margin-top: 30px;
@@ -155,9 +151,10 @@
 }
 
 .x-search-list-content-price-top {
+    height: 50px;
     width: 120px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-left: 20px;
 }
 
@@ -179,10 +176,18 @@
 }
 
 .x-search-list-card {
-    display: none;
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+}
+
+.x-down {
+    transform: rotate(0deg);
+}
+
+.x-up {
+    transform: rotate(180deg);
 }
 
 .S-lg-card-wrap {
@@ -191,7 +196,35 @@
     margin-bottom: 30px;
 }
 
+.x-search-list-all .x-search-displaynone {
+    display: none;
+}
+
+.x-content-list {
+    transition: .5s;
+}
+
+.x-content-list:active {
+    transform: scale(0.8);
+}
+
+.x-card-list {
+    transition: .5s;
+}
+
+.x-card-list:active {
+    transform: scale(0.8);
+}
+
+.x-search-list-content-price-top .S-lg-share,
+.x-search-list-content-price-top .S-lg-like {
+    position: relative;
+}
+
 @media screen and (max-width:376px) {
+    .x-search-list-all .x-search-displaynone {
+        display: flex;
+    }
     .x-search-list {
         margin-top: 30px;
     }

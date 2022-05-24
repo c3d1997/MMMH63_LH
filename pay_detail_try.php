@@ -462,6 +462,8 @@ $i = $stmt->fetch();
         }
         .z_pay_detail_img img{
             width: 100%;
+            height: 60%;
+            object-fit: cover;
         }
         .z_pay_detail_text {
             margin-left: 75px;
@@ -712,7 +714,7 @@ $i = $stmt->fetch();
             <h2 class="z_pay_detail_title">租屋明細</h2>
             <div class="z_pay_detail_container">
                 <div class="z_pay_detail_img">
-                    <img src="imgs/item_example.png" alt="">
+                    <img src="<?= $i['img']?>" alt="">
                 </div>
                 <div class="z_pay_detail_text">
                     <div class=" z_people_info_container">

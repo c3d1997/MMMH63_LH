@@ -1,6 +1,23 @@
+<?php 
+    require './part/connect-db.php';
+
+
+
+
+    $sql = "SELECT * FROM `mumber` WHERE `sid` = 1;";
+    $stmt = $pdo->query($sql);
+    $n = $stmt->fetch();
+    
+    
+    
+
+
+?>
+
+
 <?php include __DIR__ . './part/head.php'  ?>
 <style>
-       body {
+body {
     margin: 0px;
 }
 
@@ -178,60 +195,10 @@ ul {
 @media screen and (max-width:376px){
     .c_content_box::-webkit-scrollbar {
         width: 3px;
-    
     }
 }
 
-/* --------------confirm bar----------------- */
-.c_confirm_bar {
-    max-width: 1280px;
-    width: 100%;
-    padding: 0 25px;
-    margin: 30px auto;
-    text-align: center;
-
-
-}
-
-
-
-input[type=text] {
-    margin: 0;
-    padding: 0;
-    height: 60px;
-    border: none;
-    /* text-indent: 15px; */
-    color: #0E2E3D;
-}
-
-input[type=checkbox] {
-    display: none;
-    color: #0E2E3D;
-}
-
-input[type=checkbox]+span {
-    cursor: pointer;
-    display: inline-block;
-    padding-left: 30px;
-    /* line-height: 24px; */
-    background: url(./imgs/unchecked.svg) no-repeat left center;
-    user-select: none;
-    color: #0E2E3D;
-}
-
-a {
-    text-decoration: none;
-    color: #75BBE3;
-}
-
-input[type=checkbox]:checked+span {
-    display: inline-block;
-    padding-left: 30px;
-    /* line-height: 24px; */
-    background-image: url(./imgs/checked.svg);
-}
-
-/* ---------------------------button--------------------- */
+/*---------------- button-------- */
 
 
 
@@ -295,60 +262,74 @@ input[type=checkbox]:checked+span {
     .c_container_stepbar{
         margin-top: 110px;
     }
-
+    .c_button_section {
+        padding: 0 20px;
+        width: 100%;
+    }
+    .c_button_left {
+        width: 100%;
+    }
+    .z_full_btn {
+        width: 100%;
+    }
+    .sign {
+        width: 50%;
+        height: 50%;
+    }
 }
 </style>
+
 <?php include __DIR__ . './part/nav.php'  ?>
-        <section>
+<section>
 
-        <div class="c_container_stepbar">
+<div class="c_container_stepbar">
 
-            <div class="z_progress z_margin-center ">
-                <div class="z_progress_text">
-                    <ul class="z_barcontainer">
-                        <li>
-                            <h3>選擇租屋</h3>
-                            <div class="z_radio_finish"></div>
-                        </li>
-                        <li>
-                            <h3>確定租屋資訊</h3>
-                            <div class="z_radio_finish"></div>
-                        </li>
-                        <li>
-                            <h3>線上合約</h3>
-                            <div class="z_radio_finish"></div>
-                        </li>
-                        <li>
-                            <h3>確認付款</h3>
-                            <div class="z_radio"></div>
-                        </li>
-                        <li>
-                            <h3>租屋完成</h3>
-                            <div class="z_radio"></div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="z_progress_bar"></div>
-                <div class="z_progress_bar_step1"></div>
-                <div class="z_progress_bar_step2"></div>
-                <div class="z_progress_bar_step3"></div>
-            </div>
+    <div class="z_progress z_margin-center ">
+        <div class="z_progress_text">
+            <ul class="z_barcontainer">
+                <li>
+                    <h3>選擇租屋</h3>
+                    <div class="z_radio_finish"></div>
+                </li>
+                <li>
+                    <h3>確定租屋資訊</h3>
+                    <div class="z_radio_finish"></div>
+                </li>
+                <li>
+                    <h3>線上合約</h3>
+                    <div class="z_radio_finish"></div>
+                </li>
+                <li>
+                    <h3>確認付款</h3>
+                    <div class="z_radio"></div>
+                </li>
+                <li>
+                    <h3>租屋完成</h3>
+                    <div class="z_radio"></div>
+                </li>
+            </ul>
         </div>
-        </section>
+        <div class="z_progress_bar"></div>
+        <div class="z_progress_bar_step1"></div>
+        <div class="z_progress_bar_step2"></div>
+        <div class="z_progress_bar_step3"></div>
+    </div>
+</div>
+</section>
 
 
 <!-------------------------step-bar2 ---------------->
-        <div class="c_step-bar2">
-            <p>Step3. 契約內容</p>
-            <div class="c_progress2">
-                <div class="c_progress-bar2"></div>
-            </div>
-        </div>
+<div class="c_step-bar2">
+    <p>Step5. 契約預覽</p>
+    <div class="c_progress2">
+        <div class="c_progress-bar2"></div>
+    </div>
+</div>
 
 <!---------------section content---------------->
 <div class="c_container_content">
-    <div class="c_content_box">
-        <div class="c_scroll-object">
+<div class="c_content_box">
+<div class="c_scroll-object">
 
 房屋租賃契約書<br><br>
 出 租 人：                                    (以下簡稱甲方)
@@ -371,17 +352,20 @@ input[type=checkbox]:checked+span {
 
 第三條：租金：
 1、每月租金新台幣 元整，每月 日以前繳納。 
-2、保證金(押金) 新台幣 元整，
-於租賃期滿交還房屋時無息返還。
-保證金（押金）由租賃雙方約定為___個月租金，
+
+租金支付方式：□轉帳繳付：金融機構：____，戶 名：____，帳號：____。□其他：____。 
+
+2、保證金(押金) 新台幣 元整，於租賃期滿交還房屋時無息返還。保證金（押金）由租賃雙方約定為___個月租金，
 金額為           元整 (最高不得超過二個月房屋租金之總額)。
 乙方應於簽訂本契約之同 時給付甲方。 前項保證金(押金) ，甲方應於租期屆滿或租賃契約終止，承租人交還房屋時返還之。
+
+租金支付方式：□現金繳付□轉帳繳付：金融機構：____，戶 名：____，帳號：____。□其他：____。 
 <br><br>
 第四條：使用租賃物之限制： 
 房屋不得供非法使用，或存放危險物品影響公共安全。 
 房屋有改裝之必要，乙方取得甲方之同意後得自行裝設，
 但不得損害原 有建築，乙方於交還房屋時並應負責回復原狀。
-<br>
+<br><br>
 第五條：違約處罰： 
 1、乙方違反約定方法使用房屋，或拖欠租金達兩個月以上，其租金約定於 每期開始支付者，並應於遲延給付二個月時，經甲方催告限期繳納仍不 支付時，不待期限屆滿，甲方得終止租約。 
 2、乙方於終止租約或租賃期滿不交還房屋，自終止租約或租賃期滿之翌日 起，乙方應支付按房租壹倍計算之違約金。 
@@ -396,37 +380,42 @@ input[type=checkbox]:checked+span {
 通訊地址： <br>
 聯絡電話： <br>
 電子郵件信箱：<br> <br> 
- 
+
 承租人： <br>
-姓名(名稱)： <br>
-簽章 ：<br>
-戶籍地址： <br>
-通訊地址： <br>
-聯絡電話： <br>
-電子郵件信箱： <br><br> 
+姓名(名稱)： <?= $n['name'] ?><br>
+<div class="sign_container">
+    <p>簽章 ：</p>
+    <img src="" alt="" id="sign" style="width:30%;">
+</div>
+戶籍地址： <?= $n['Area'],$n['Dist'],$n['Add'] ?><br>
+通訊地址： <?= $n['Area'],$n['Dist'],$n['Add'] ?><br>
+聯絡電話： <?= $n['mobile'] ?><br>
+電子郵件信箱： <?= $n['email'] ?><br> 
 
 西元    年    月   日 
 
-        </div>
-    </div>
+</div>
+</div>
 </div>
 
-<!-------------confirm bar------------------------- -->
-<section>
-    <div class="c_confirm_bar">
-    <label>
-        <input type="checkbox" name="" id="">
-        <span class="z_all-center">我已仔細閱讀並明瞭<a href="#"> 「服務條款」 </a>，<a href="#"> 「免責聲明」 </a>和<a href="#"> 「隱私權聲明」 </a>等所載內容及其意義，茲同意該等條款規定，並願遵守網站現今、嗣後規範的各種規則。</span>  
-        </label>
-    </div>
-</section>
 <!---------------------button------------------------->
 
 <div class="c_button_section">
-    <div class="c_button_left">
-    <button class="pc-button-FEAC00-180"><a href="contract04.php" style="text-decoration: none; color:#0E2E3D;">確認</a></button>
-    
-    </div>  
+<div class="c_button_left">
+<button class="pc-button-FEAC00-180 z_full_btn ">確認</button>
+</div>  
 </div>
-<?php include __DIR__ . './part/footer.php'  ?>
+
+<?php include __DIR__ . './part/footer.php'  ?>   
+
+<script>
+    $(document).ready(function(){
+        let data = localStorage.getItem("sign");
+        data = JSON.parse(data);
+        $("#sign").attr("src",data)
+    })
+
+
+</script>
+
 <?php include __DIR__ . './part/javascript.php'  ?>

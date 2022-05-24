@@ -802,25 +802,6 @@
                 </div>
             </form>
         </div>
-        <div class="testfrom2 cz_mb">
-            <form class="form" action="#">
-                <label for="person">
-                    <p>付款方式</p>
-                </label>
-                <div class="c-dropdown_container">
-                    <span id="areaListBtn">
-                        <div class="c-dropdown">
-                            <img src="../imgs/down-arrow.svg" alt="">
-                        </div>
-                    </span>
-                    <div id="areaList" class="dropdown_list" hidden>
-                        <p class="">現金</p>
-                        <p class="">匯款</p>
-                        <p class="">信用卡</p>
-                    </div>
-                </div>
-            </form>
-        </div>
     </div>
 
 
@@ -842,13 +823,7 @@
             <input type="text" name="Name" id="" placeholder="">
         </form>
         <p class="alert">格式錯誤</p>
-        <form class="form" action="#">
-            <label for="person">
-                <p>職業</p>
-            </label>
-            <input type="text" name="Name" id="" placeholder="">
-        </form>
-        <p class="alert">格式錯誤</p>
+
     </div>
 </div>
 

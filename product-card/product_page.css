@@ -20,20 +20,16 @@
     width: 50px;
     height: 50px;
     font-size: 1.3em;
-    color: #0E2E3D;
-    background-color: #F1EDEA;
     border-radius: 50%;
     position: absolute;
     top: 3%;
     right: 20%;
+    transition: .5s;
 }
 
-.S-lg-share:hover {
-    background-color: #75BBE3;
-}
-
-.S-lg-share i {
-    font-size: 1.2em;
+.S-lg-share img {
+    width: 100%;
+    height: 100%;
 }
 
 .S-lg-like {
@@ -43,22 +39,20 @@
     align-items: center;
     width: 50px;
     height: 50px;
-    color: #0E2E3D;
-    background-color: #F1EDEA;
     border-radius: 50%;
     position: absolute;
     top: 3%;
     right: 3%;
-}
-
-.S-lg-like:hover {
-    background-color: #75BBE3;
+    transition: .5s;
 }
 
 .S-lg-like svg {
-    width: 30px;
-    height: 30px;
-    fill: #0E2E3D;
+    width: 100%;
+    height: 100%;
+}
+
+.S-lg-like svg.x-svg-color {
+    fill: red;
 }
 
 .S-lg-card {
