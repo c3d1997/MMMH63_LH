@@ -175,34 +175,33 @@
                         </div>
                         <!-- 請選擇您遭遇的問題分類 -->
                         <!-- 下拉選單 -->
-                        <div class="dropdown_container">
-                            <button id="areaListBtn">
-                                <div class="dropdown">
-                                    <span>請選擇您遭遇的問題分類</span>
-                                    <img src="../imgs/down-arrow.svg" alt="">
-                                </div>
-                            </button>
-                            <div id="areaList" class="dropdown_list" hidden>
-                                <p class="">搜尋問題</p>
-                                <p class="">付款問題</p>
-                                <p class="">契約問題</p>
-                                <p class="">其他問題</p>
+                        <div class="bank_area">
+                        <div class="z_select_dropdown_container ">
+                            <select id="bankSelect" name=”bankSelect” class="z_select_dropdown">
+                                <option value=””>請選擇欲詢問的問題分類</option>
+                                <option value=””>搜尋問題</option>
+                                <option value=””>付款問題</option>
+                                <option value=””>契約問題</option>
+                                <option value=””>其他問題</option>
+                            </select>
+                            <div class="arrow_container">
+                                <img src="../imgs/down-arrow.svg" alt="">
                             </div>
+                        </div>
                         </div>
                         <!-- 請詳細描述您的問題或是上傳相關圖片，
                                 我們將會盡快已郵件回覆您 -->
                         <div class="input_option S-big">
                             <div class="fullinput_container">
-                                <textarea name="question" id="" cols="30" rows="10"
+                                <textarea name="question" id="" cols="30" rows="10" 
                                     placeholder="請詳細描述您的問題或是上傳相關圖片，我們將會盡快已郵件回覆您" style="outline: none;"></textarea>
                                 <div class="alert">*錯誤
                                 </div>
                             </div>
                         </div>
                         <div class="z_upload_item_img_btn">
-                            <input type="file" name="" id="hid_on_true" accept="image/*">
-                            <button>
-                                <img src="../imgs/uploadicon.svg" alt="">點此上傳</button>
+                            <label class="" id="" for="filename"><img src="../imgs/uploadicon.svg" alt="">點此上傳</label>
+                            <input type="file" id="filename" class="" name="" style="display: none;">
                         </div>
 
                         <div class="S-btn">

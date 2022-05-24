@@ -552,7 +552,6 @@
 
         .mobile-signupBtn,
         .mobile-signinBtn {
-            font-weight: 900;
             cursor: pointer;
             font-size: 32px;
             /* color: #0E2E3D; */
@@ -765,17 +764,17 @@
     </div>
 </div>
 <div class="white backdrop-blur S-d-none"></div>
-  <!-- 以下是footer---------------------------------------------  -->
-  <div class="footer_container S-lg-d-none S-d-block">
+<!-- 以下是footer---------------------------------------------  -->
+<div class="footer_container S-lg-d-none S-d-block">
     <div class="footer">
         <div class="container">
             <div class="footer-up">
                 <div class="footer-left">
                     <div class="footer_phone_icon">
-                        <img src="../imgs/facebook-square-brands.svg" alt="">
-                        <img src="../imgs/instagram-brands.svg" alt="">
-                        <img src="../imgs/twitter-brands.svg" alt="">
-                        <img src="../imgs/youtube-brands.svg" alt="">
+                        <img src="imgs/facebook-square-brands.svg" alt="">
+                        <img src="imgs/instagram-brands.svg" alt="">
+                        <img src="imgs/twitter-brands.svg" alt="">
+                        <img src="imgs/youtube-brands.svg" alt="">
                     </div>
                     <div class="footer-left-up">
                         <p>
@@ -795,7 +794,7 @@
                     </div>
                 </div>
                 <div class="footer-right">
-                    <img src="../imgs/people.png" alt="">
+                    <img src="./imgs/people.png" alt="">
                 </div>
             </div>
 
@@ -804,10 +803,11 @@
             <div class="container">
                 <div class="footer_icon">
                     <p>Follow us</p>
-                    <img src="../imgs/facebook-square-brands.svg" alt="">
-                    <img src="../imgs/instagram-brands.svg" alt="">
-                    <img src="../imgs/twitter-brands.svg" alt="">
-                    <img src="../imgs/youtube-brands.svg" alt="">
+                    <img src="imgs/facebook-square-brands.svg" alt="">
+
+                    <img src="imgs/instagram-brands.svg" alt="">
+                    <img src="imgs/twitter-brands.svg" alt="">
+                    <img src="imgs/youtube-brands.svg" alt="">
                 </div>
                 <div class="copyright">
                     <p>
@@ -832,7 +832,7 @@
 
 <!-- FOOTER--------------------------------------------------- -->
 
-<!-- <?php include __DIR__ . './part/footer.php'  ?> -->
+
 <script src="js/jquery-3.6.0.js"></script>
 <script>
     // 自己頁面的script
