@@ -176,6 +176,15 @@ $title = '付款方式'
         }
         .z_input_container {
             flex-grow: 1;
+            height: 60px;
+            background-color: #fff;
+        }
+        .z_input_container p{
+            position: relative;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            padding-left: 15px;
         }
         .z_input_medium_container {
             display: flex;
@@ -510,6 +519,30 @@ $title = '付款方式'
             position: absolute;
             pointer-events: none;
         }
+        .z_coupon_container {
+            width: 130px;
+        }
+        .z_coupon_phone_container {
+            display: none;
+        }
+        .coupon {
+            margin-left: 20px;
+            color: #0E2E3D;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            background-color: #FEAC00;
+        }
+        #lastThree {
+            width: 100%;
+            text-align: center;
+            text-indent: 0;
+        }
+        #coupon_container {
+            width: 100%;
+        }
 
         @media screen and (max-width:376px) {
 
@@ -550,6 +583,7 @@ $title = '付款方式'
             }
             .z_input_container {
                 width: 100%;
+                height: 45px;
             }
             .z_check_container {
                 height: 45px;
@@ -686,6 +720,24 @@ $title = '付款方式'
             .z_payghost {
                 display: none;
             }
+            .z_coupon_container {
+                display: none;
+            }
+            .z_coupon_phone_container {
+                margin: auto;
+                width: 40%;
+                display: block;
+                margin-bottom: 30px;
+            }
+            .z_input_small_container  input[type=text]{
+                max-width: 75px;
+            }
+            .z_input_medium_container input[type=text] {
+                max-width: 158px;
+            }
+            .bank_area select {
+                height: 45px;
+            }
         }
     </style>
 
@@ -726,6 +778,7 @@ $title = '付款方式'
                     <h3 class="paytitle bold">租金支付</h3>
                     <p class="z_paytitle_detail">我的租屋_XXXXXXXXX</p>
                 </div>
+                <form action="" method="POST"></form>
                 <div class="z_title_data_container">
                     <div class="z_chebox_intput">
                         <p class="z_checkbox_option ">付款方式</p>
@@ -747,9 +800,24 @@ $title = '付款方式'
                         <p class="alert" id="payWay"></p>
                     </div>
                     <div class="z_text_intput ">
+                        <p class="z_checkbox_option ">　優惠碼</p>
+                        <div class="z_input_container">
+                            <input class="z_input_text"   type="text" name="" id="coupon_container" placeholder="請輸入優惠碼">
+                        </div>
+                        <div class="z_coupon_container">
+                            <p class="coupon">帶入優惠碼</p>
+                        </div>
+                    </div>
+                    <div class="z_pay_alert">
+                        <p class="alert" ></p>
+                    </div>
+                    <div class="z_coupon_phone_container">
+                        <p class="coupon">帶入優惠碼</p>
+                    </div>
+                    <div class="z_text_intput ">
                         <p class="z_checkbox_option ">付款金額</p>
                         <div class="z_input_container">
-                            <input class="z_input_text"   type="text" name="" id="">
+                            <p>777777</p>
                         </div>
                         <div class="z_payghost"></div>
                     </div>
@@ -758,7 +826,9 @@ $title = '付款方式'
                     </div>
                     <div class="z_text_intput ">
                         <p class="z_checkbox_option ">繳費日期</p>
-                        <input class="z_input_text" type="text" name="" id=""  >
+                        <div class="z_input_container">
+                            <p>777777</p>
+                        </div>
                         <div class="z_payghost"></div>
                     </div>
                     <div class="z_pay_alert">
@@ -778,8 +848,6 @@ $title = '付款方式'
                                     <img src="imgs/down-arrow.svg" alt="">
                                 </div>
                             </div>
-
-                            
                             <div class="z_payghost"></div>
                         </div>
                         <div class="z_pay_alert">
@@ -822,16 +890,15 @@ $title = '付款方式'
                         <div class="z_text_intput ">
                             <p class="z_checkbox_option ">　末三碼</p>
                             <div class="z_input_container">
-                                <input class="z_input_text" type="text" name="" id="" placeholder="XXX">
+                                <input class="z_input_text" type="text" name="" id="lastThree" placeholder="XXX">
                             </div>
                             <img class="z_creditcard_img" src="imgs\creditcardback.png" alt="">
                         </div>
 
-                    <p class="alert z_pay_alert " id="lastThree"></p>
+                    <p class="alert z_pay_alert " id="lastThree_alert"></p>
                     <div class="z_creditcard_phone_img">
                         <img src="imgs\creditcardback.png" alt="">
                     </div>
-                </div>
                 </div>
                 
                 <div class="z_payagree">
