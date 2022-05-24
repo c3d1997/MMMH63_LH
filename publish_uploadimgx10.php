@@ -764,14 +764,13 @@
                         <p>提醒您！</p>
                         <p>最多可以上傳10張照片，並且每張照片解析度請至少達到1280*920px</p>
                     </div>
-                    <button class="pc-button-FEAC00-180 z_publish_btnY z_maxbtn">下一步</button>
+                    <a href="./publish_item_detail.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_maxbtn">下一步</button></a>
                 </div>
             </div>
         </div>
     </section>
 
 <?php include __DIR__ . './part/footer.php'  ?>
-        </script>
         <script>
         $("#upload_btn").click(function(){
             $("#mainUpload").click()
@@ -817,6 +816,5 @@
 
         })
         </script>
-        <script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>
