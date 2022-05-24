@@ -2204,12 +2204,7 @@
 
         })
     }
-    $(".S-lg-svg").click(function() {
-        console.log(1);
-        $(this).toggleClass('x-svg-color')
-
-
-    })
+    
     // 
     $(".x-down").click(function() {
         $(this).toggleClass('x-up')
