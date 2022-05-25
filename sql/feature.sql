@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-05-22 18:08:07
+-- 產生時間： 2022-05-25 11:21:37
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 7.4.29
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫: `mmmh57`
+-- 資料庫: `little_house`
 --
 
 -- --------------------------------------------------------
@@ -30,17 +30,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `feature` (
   `sid` int(11) NOT NULL,
   `feature` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `searchcategory_sid` int(11) NOT NULL
+  `img` varchar(255) CHARACTER SET utf8 DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 傾印資料表的資料 `feature`
 --
 
-INSERT INTO `feature` (`sid`, `feature`, `searchcategory_sid`) VALUES
-(1, '限女性', 0),
-(2, '可開伙', 0),
-(3, '可養寵物', 0);
+INSERT INTO `feature` (`sid`, `feature`, `img`) VALUES
+(1, '限女性', 'imgs/icon1/icon0.svg'),
+(2, '可開伙', 'imgs/icon1/icon1.svg'),
+(3, '可養寵物', 'imgs/icon1/icon2.svg');
 
 --
 -- 已傾印資料表的索引
