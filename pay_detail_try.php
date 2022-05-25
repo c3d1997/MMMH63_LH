@@ -12,11 +12,19 @@ $psql = "SELECT * FROM `pay` WHERE `sid` = 1;";
 $stmt = $pdo->query($psql);
 $p = $stmt->fetch();
 
+<<<<<<< HEAD
 // 帶入房屋資料
 $sql = "SELECT * FROM `items` WHERE `id` = 1;";
 $stmt = $pdo->query($sql);
 $i = $stmt->fetch();
 
+=======
+
+$sql = "SELECT *     FROM `items` WHERE `id` = 1;";
+$i = $pdo->query($sql)->fetch();
+$sql = "SELECT *     FROM `items` WHERE `img`";
+$img = $pdo->query($sql)->fetch();
+>>>>>>> 6961c7a71bfb7dd3ca061352ed5356d3409ad318
 
 ?>
 
@@ -717,7 +725,11 @@ $i = $stmt->fetch();
             <h2 class="z_pay_detail_title">租屋明細</h2>
             <div class="z_pay_detail_container">
                 <div class="z_pay_detail_img">
+<<<<<<< HEAD
                     <img src="<?= $i['img'] ?>item0.jpg" alt="">
+=======
+                    <img src="<?= $i['img']?>item1.jpg" alt="">
+>>>>>>> 6961c7a71bfb7dd3ca061352ed5356d3409ad318
                 </div>
                 <div class="z_pay_detail_text">
                     <div class=" z_people_info_container">

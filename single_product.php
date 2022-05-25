@@ -13,6 +13,7 @@ $i = $stmt->fetch();
 
 
 <?php include __DIR__ . './part/head.php'  ?>
+
 <link rel="stylesheet" href="./single_product.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="../product-card/product_page.css">
@@ -943,6 +944,13 @@ $i = $stmt->fetch();
             <span class="close cursor" onclick="closeModal()">&times;</span>
             <div class="modal-content">
                 <div class="mySlides-wrap">
+                    <?php for($i=0; $i<10;$i++): ?>
+                        <div class="mySlides">
+                            <img src="imgs/items<?= 1 ?>/item<?= $i ?>.jpg" style="width:100%">
+                        </div>
+
+                    <?php endfor;?>
+                <!--
                     <div class="mySlides">
                         <img src="imgs/img1.jpg" style="width:100%">
                     </div>
@@ -976,7 +984,7 @@ $i = $stmt->fetch();
                     <div class="mySlides">
                         <img src="imgs/img10.jpg" style="width:100%">
                     </div>
-
+-->
                 </div>
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -987,6 +995,12 @@ $i = $stmt->fetch();
 
                 <!-- 下排圖片 -->
                 <div class="column-bottom">
+                    <?php for($i=0; $i<10;$i++): ?>
+                    <div class="column">
+                        <img class="demo cursor" src="imgs/items<?= 1 ?>/item<?= $i ?>.jpg" style="width:100%" onclick="currentSlide(<?= $i+1 ?>)" alt="Nature and sunrise">
+                    </div>
+                    <?php endfor;?>
+<!--
                     <div class="column">
                         <img class="demo cursor" src="imgs/img2.jpg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
                     </div>
@@ -1017,6 +1031,7 @@ $i = $stmt->fetch();
                     <div class="column">
                         <img class="demo cursor" src="imgs/img10.jpg" style="width:100%" onclick="currentSlide(10)" alt="Northern Lights">
                     </div>
+-->
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
 
 require __DIR__ . '/connect-db.php';
 
-$sql = "INSERT INTO `Persons`(`Name`, `phone/id`, `email`, `checkid`, `password`)VALUES
+$sql = "INSERT INTO `Persons`(`Name`, `phone`, `email`, `checkid`, `password`)VALUES
  (?, ?, ?, ?, ?)";
 
 $stmt = $pdo->prepare($sql);

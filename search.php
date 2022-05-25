@@ -1,7 +1,3 @@
-<?php
-$pageName = 'search';
-$title = 'LittleHouse';
-?>
 <?php include __DIR__ . './part/searchead.php'  ?>
 
 <style>
