@@ -5,10 +5,10 @@ require './part/connect-db.php';
 
 
 
-$sql = "SELECT * FROM `items` WHERE `id` = 1;";
-$stmt = $pdo->query($sql);
-$i = $stmt->fetch();
-
+$sql = "SELECT *     FROM `items` WHERE `id` = 1;";
+$i = $pdo->query($sql)->fetch();
+$sql = "SELECT *     FROM `items` WHERE `img`";
+$img = $pdo->query($sql)->fetch();
 
 
 
@@ -714,7 +714,7 @@ $i = $stmt->fetch();
             <h2 class="z_pay_detail_title">租屋明細</h2>
             <div class="z_pay_detail_container">
                 <div class="z_pay_detail_img">
-                    <img src="<?= $i['img']?>" alt="">
+                    <img src="<?= $i['img']?>item1.jpg" alt="">
                 </div>
                 <div class="z_pay_detail_text">
                     <div class=" z_people_info_container">

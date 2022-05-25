@@ -1,32 +1,38 @@
 <?php
-$pageName = 'search';
+$pageName = 'searchpage';
 $title = '搜尋畫面';
 require './part/connect-db.php';
-require './part/searchpage.php';
 
-// $price = $_GET["price"];
-$area = $_GET["area"];
-$dist = $_GET["dist"];
-// $rentaltype = $_GET["rentaltype"];
-// $roomtype = $_GET["roomtype"];
-// $equipment = $_GET["equipment"];
-// $postulate = $_GET["postulate"];
-// $ping_number = $_GET["ping_number"];
-// $around = $_GET["around"];
-// 去抓篩選
 
-$s_sql = "SELECT * FROM items WHERE area LIKE '%$area%' 
-AND dist LIKE '%$dist%'
-";
-// 判定有哪些
+$sql_i = "SELECT * FROM `items` WHERE `area` LIKE '%台北%' 
+// AND `dist` LIKE '%$dist%'
+// ";
 
-$obj = $pdo->query($sql)->fetchAll();
+
+// 以下是抓到列表
+$sql = "SELECT * FROM `items`";
+$sql_f = "SELECT * FROM `feature`";
+
+$stmt = $pdo->query($sql)->fetchAll();
+$stmt_f = $pdo->query($sql_f)->fetchAll();
+// 以上是抓到列表
+
+
+// $i = $stmt->fetch();
+
 
 ?>
 <?php include __DIR__ . './part/searchead.php'  ?>
 
 <style>
     /* 搜尋選單 */
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .x-search {
         width: 100%;
         max-width: 1920px;
@@ -680,16 +686,16 @@ $obj = $pdo->query($sql)->fetchAll();
     }
 
     .x-search-list-content-img-train {
-        width: 300%;
+        width: 100%;
         height: 100%;
-        display: flex;
+
         list-style: none;
     }
 
     .x-search-list-content-img-train img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: fill;
     }
 
     .x-right-arrow,
@@ -711,6 +717,7 @@ $obj = $pdo->query($sql)->fetchAll();
     }
 
     .x-search-list-content-txt {
+        width: 360px;
         padding: 42px 30px;
         display: flex;
         flex-direction: column;
@@ -740,6 +747,7 @@ $obj = $pdo->query($sql)->fetchAll();
     }
 
     .x-search-list-content-icon {
+        width: 288px;
         padding: 95px 0px;
         display: flex;
         align-items: center;
@@ -781,7 +789,8 @@ $obj = $pdo->query($sql)->fetchAll();
     }
 
     .x-search-list-content-price-down h3 {
-        margin-left: 26px;
+        margin-left: 10px;
+        width: 100%;
     }
 
     .x-search-list-content {
@@ -879,7 +888,7 @@ $obj = $pdo->query($sql)->fetchAll();
 
 <?php include __DIR__ . './part/nav.php'  ?>
 
-<?php include __DIR__ . './part/searchpage.php'  ?>
+<?php include __DIR__ . './searchpage.php'  ?>
 
 <!-- 搜尋結果列表 -->
 <div class="x-search-list">
@@ -910,650 +919,79 @@ $obj = $pdo->query($sql)->fetchAll();
                 </div>
             </div>
             <div class="x-search-list-content-all">
-                <div class="x-search-list-content">
-                    <div class="x-search-list-content-img">
-                        <ul class="x-search-list-content-img-train">
-                            <li>
-                                <img src="imgs/57 1.jpg" alt="">
-                            </li>
+                <?php foreach ($stmt as $i) : ?>
+                    <div class="x-search-list-content">
+                        <div class="x-search-list-content-img">
+                            <ul class="x-search-list-content-img-train">
+                                <li>
 
-                        </ul>
-                        <!-- <div class="x-left-arrow">
-                                <img src="imgs/輪播牆左箭頭.svg" alt="">
-                            </div>
-                            <div class="x-right-arrow">
-                                <img src="imgs/輪播牆右箭頭.svg" alt="">
+                                    <img src="<?= $i['img'] ?>.jpg" alt="">
+                                </li>
 
-                            </div> -->
-                    </div>
-                    <div class="x-search-list-content-txt">
-                        <h3>
-                            士林夜市近士林劍潭捷運小套房
-                        </h3>
-                        <p>
-                            <img src="imgs/捷運.svg" alt="">距離士林捷運站 500 公尺
-                        </p>
-                        <p>
-                            <img src="imgs/位置.svg" alt=""> 新北市三重區碧華街 900 號
-                        </p>
-                        <div>
-                            <p>
-                                <img src="imgs/坪數.svg" alt=""> 30坪
-                            </p>
-                            <p>
-                                <img src="imgs/格局.svg" alt=""> 整層住家 6 樓 3房 2 廳 2 衛浴
-                            </p>
-
+                            </ul>
 
                         </div>
-
-                    </div>
-                    <div class="x-search-list-content-icon">
-                        <div>
-                            <img src="imgs/限男性.svg" alt="">
+                        <div class="x-search-list-content-txt">
+                            <h3>
+                                <?= $i['item_name'] ?>
+                            </h3>
                             <p>
-                                限男性
+                                <img src="imgs/捷運.svg" alt=""><?= $i['close_station'] ?>
                             </p>
-                        </div>
-                        <div>
-                            <img src="imgs/有陽台.svg" alt="">
                             <p>
-                                有陽台
+                                <img src="imgs/位置.svg" alt=""> <?= $i['area'], $i['dist'], $i['address'] ?>
                             </p>
-                        </div>
-                        <div>
-                            <img src="imgs/可開伙.svg" alt="">
-                            <p>
-                                可開伙
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/可寵.svg" alt="">
-                            <p>
-                                可養寵物
-                            </p>
-                        </div>
-                    </div>
-                    <div class="x-search-list-content-price">
-                        <div class="x-search-list-content-price-top">
-                            <div class="S-lg-share">
-                                <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                            </div>
-                            <div class="S-lg-like">
-                                <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                                    <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-
-                            </div>
-                        </div>
-                        <div class="x-search-list-content-price-down">
                             <div>
-                                <img src="imgs/瀏覽.svg" alt="">
                                 <p>
-                                    瀏覽量：8999
+                                    <img src="imgs/坪數.svg" alt=""> <?= $i['ping_number'] ?>
+                                </p>
+                                <p>
+                                    <img src="imgs/格局.svg" alt=""> <?= $i['floor'] ?>
                                 </p>
                             </div>
-                            <h3>
-                                15,000/月
-                            </h3>
+
                         </div>
-                    </div>
+                        <div class="x-search-list-content-icon">
+                            <?php foreach ($stmt_f as $f) : ?>
+                                <div>
+                                    <img src="<?= $f['img'] ?>" alt="">
+                                    <p>
+                                        <?= $f['feature'] ?>
+                                    </p>
+                                </div>
+                            <?php endforeach ?>
 
-                </div>
-                <div class="x-search-list-content">
-                    <div class="x-search-list-content-img">
-                        <ul class="x-search-list-content-img-train">
-                            <li>
-                                <img src="imgs/57 1.jpg" alt="">
-                            </li>
+                        </div>
+                        <div class="x-search-list-content-price">
+                            <div class="x-search-list-content-price-top">
+                                <div class="S-lg-share">
+                                    <!-- <img src="imgs/分享.svg" alt=""> -->
 
-                        </ul>
-                        <!-- <div class="x-left-arrow">
-                                <img src="imgs/輪播牆左箭頭.svg" alt="">
+                                </div>
+                                <div class="S-lg-like">
+                                    <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
+                                        <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                </div>
                             </div>
-                            <div class="x-right-arrow">
-                                <img src="imgs/輪播牆右箭頭.svg" alt="">
-
-                            </div> -->
-                    </div>
-                    <div class="x-search-list-content-txt">
-                        <h3>
-                            士林夜市近士林劍潭捷運小套房
-                        </h3>
-                        <p>
-                            <img src="imgs/捷運.svg" alt="">距離士林捷運站 500 公尺
-                        </p>
-                        <p>
-                            <img src="imgs/位置.svg" alt=""> 新北市三重區碧華街 900 號
-                        </p>
-                        <div>
-                            <p>
-                                <img src="imgs/坪數.svg" alt=""> 30坪
-                            </p>
-                            <p>
-                                <img src="imgs/格局.svg" alt=""> 整層住家 6 樓 3房 2 廳 2 衛浴
-                            </p>
-
-
-                        </div>
-
-                    </div>
-                    <div class="x-search-list-content-icon">
-                        <div>
-                            <img src="imgs/限男性.svg" alt="">
-                            <p>
-                                限男性
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/有陽台.svg" alt="">
-                            <p>
-                                有陽台
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/可開伙.svg" alt="">
-                            <p>
-                                可開伙
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/可寵.svg" alt="">
-                            <p>
-                                可養寵物
-                            </p>
-                        </div>
-                    </div>
-                    <div class="x-search-list-content-price">
-                        <div class="x-search-list-content-price-top">
-                            <div class="S-lg-share">
-                                <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                            </div>
-                            <div class="S-lg-like">
-                                <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                                    <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-
+                            <div class="x-search-list-content-price-down">
+                                <div>
+                                    <img src="imgs/瀏覽.svg" alt="">
+                                    <p>
+                                        瀏覽量：8999
+                                    </p>
+                                </div>
+                                <h3>
+                                    $<?= number_format($i['price']) ?>/月
+                                </h3>
                             </div>
                         </div>
-                        <div class="x-search-list-content-price-down">
-                            <div>
-                                <img src="imgs/瀏覽.svg" alt="">
-                                <p>
-                                    瀏覽量：8999
-                                </p>
-                            </div>
-                            <h3>
-                                15,000/月
-                            </h3>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="x-search-list-content">
-                    <div class="x-search-list-content-img">
-                        <ul class="x-search-list-content-img-train">
-                            <li>
-                                <img src="imgs/57 1.jpg" alt="">
-                            </li>
-
-                        </ul>
-                        <!-- <div class="x-left-arrow">
-                                <img src="imgs/輪播牆左箭頭.svg" alt="">
-                            </div>
-                            <div class="x-right-arrow">
-                                <img src="imgs/輪播牆右箭頭.svg" alt="">
-
-                            </div> -->
-                    </div>
-                    <div class="x-search-list-content-txt">
-                        <h3>
-                            士林夜市近士林劍潭捷運小套房
-                        </h3>
-                        <p>
-                            <img src="imgs/捷運.svg" alt="">距離士林捷運站 500 公尺
-                        </p>
-                        <p>
-                            <img src="imgs/位置.svg" alt=""> 新北市三重區碧華街 900 號
-                        </p>
-                        <div>
-                            <p>
-                                <img src="imgs/坪數.svg" alt=""> 30坪
-                            </p>
-                            <p>
-                                <img src="imgs/格局.svg" alt=""> 整層住家 6 樓 3房 2 廳 2 衛浴
-                            </p>
-
-
-                        </div>
 
                     </div>
-                    <div class="x-search-list-content-icon">
-                        <div>
-                            <img src="imgs/限男性.svg" alt="">
-                            <p>
-                                限男性
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/有陽台.svg" alt="">
-                            <p>
-                                有陽台
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/可開伙.svg" alt="">
-                            <p>
-                                可開伙
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/可寵.svg" alt="">
-                            <p>
-                                可養寵物
-                            </p>
-                        </div>
-                    </div>
-                    <div class="x-search-list-content-price">
-                        <div class="x-search-list-content-price-top">
-                            <div class="S-lg-share">
-                                <!-- <img src="imgs/分享.svg" alt=""> -->
+                <?php endforeach ?>
 
-                            </div>
-                            <div class="S-lg-like">
-                                <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                                    <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-
-                            </div>
-                        </div>
-                        <div class="x-search-list-content-price-down">
-                            <div>
-                                <img src="imgs/瀏覽.svg" alt="">
-                                <p>
-                                    瀏覽量：8999
-                                </p>
-                            </div>
-                            <h3>
-                                15,000/月
-                            </h3>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="x-search-list-content">
-                    <div class="x-search-list-content-img">
-                        <ul class="x-search-list-content-img-train">
-                            <li>
-                                <img src="imgs/57 1.jpg" alt="">
-                            </li>
-
-                        </ul>
-                        <!-- <div class="x-left-arrow">
-                                <img src="imgs/輪播牆左箭頭.svg" alt="">
-                            </div>
-                            <div class="x-right-arrow">
-                                <img src="imgs/輪播牆右箭頭.svg" alt="">
-
-                            </div> -->
-                    </div>
-                    <div class="x-search-list-content-txt">
-                        <h3>
-                            士林夜市近士林劍潭捷運小套房
-                        </h3>
-                        <p>
-                            <img src="imgs/捷運.svg" alt="">距離士林捷運站 500 公尺
-                        </p>
-                        <p>
-                            <img src="imgs/位置.svg" alt=""> 新北市三重區碧華街 900 號
-                        </p>
-                        <div>
-                            <p>
-                                <img src="imgs/坪數.svg" alt=""> 30坪
-                            </p>
-                            <p>
-                                <img src="imgs/格局.svg" alt=""> 整層住家 6 樓 3房 2 廳 2 衛浴
-                            </p>
-
-
-                        </div>
-
-                    </div>
-                    <div class="x-search-list-content-icon">
-                        <div>
-                            <img src="imgs/限男性.svg" alt="">
-                            <p>
-                                限男性
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/有陽台.svg" alt="">
-                            <p>
-                                有陽台
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/可開伙.svg" alt="">
-                            <p>
-                                可開伙
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/可寵.svg" alt="">
-                            <p>
-                                可養寵物
-                            </p>
-                        </div>
-                    </div>
-                    <div class="x-search-list-content-price">
-                        <div class="x-search-list-content-price-top">
-                            <div class="S-lg-share">
-                                <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                            </div>
-                            <div class="S-lg-like">
-                                <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                                    <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-
-                            </div>
-                        </div>
-                        <div class="x-search-list-content-price-down">
-                            <div>
-                                <img src="imgs/瀏覽.svg" alt="">
-                                <p>
-                                    瀏覽量：8999
-                                </p>
-                            </div>
-                            <h3>
-                                15,000/月
-                            </h3>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="x-search-list-content">
-                    <div class="x-search-list-content-img">
-                        <ul class="x-search-list-content-img-train">
-                            <li>
-                                <img src="imgs/57 1.jpg" alt="">
-                            </li>
-
-                        </ul>
-                        <!-- <div class="x-left-arrow">
-                                <img src="imgs/輪播牆左箭頭.svg" alt="">
-                            </div>
-                            <div class="x-right-arrow">
-                                <img src="imgs/輪播牆右箭頭.svg" alt="">
-
-                            </div> -->
-                    </div>
-                    <div class="x-search-list-content-txt">
-                        <h3>
-                            士林夜市近士林劍潭捷運小套房
-                        </h3>
-                        <p>
-                            <img src="imgs/捷運.svg" alt="">距離士林捷運站 500 公尺
-                        </p>
-                        <p>
-                            <img src="imgs/位置.svg" alt=""> 新北市三重區碧華街 900 號
-                        </p>
-                        <div>
-                            <p>
-                                <img src="imgs/坪數.svg" alt=""> 30坪
-                            </p>
-                            <p>
-                                <img src="imgs/格局.svg" alt=""> 整層住家 6 樓 3房 2 廳 2 衛浴
-                            </p>
-
-
-                        </div>
-
-                    </div>
-                    <div class="x-search-list-content-icon">
-                        <div>
-                            <img src="imgs/限男性.svg" alt="">
-                            <p>
-                                限男性
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/有陽台.svg" alt="">
-                            <p>
-                                有陽台
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/可開伙.svg" alt="">
-                            <p>
-                                可開伙
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/可寵.svg" alt="">
-                            <p>
-                                可養寵物
-                            </p>
-                        </div>
-                    </div>
-                    <div class="x-search-list-content-price">
-                        <div class="x-search-list-content-price-top">
-                            <div class="S-lg-share">
-                                <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                            </div>
-                            <div class="S-lg-like">
-                                <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                                    <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-
-                            </div>
-                        </div>
-                        <div class="x-search-list-content-price-down">
-                            <div>
-                                <img src="imgs/瀏覽.svg" alt="">
-                                <p>
-                                    瀏覽量：8999
-                                </p>
-                            </div>
-                            <h3>
-                                15,000/月
-                            </h3>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="x-search-list-content">
-                    <div class="x-search-list-content-img">
-                        <ul class="x-search-list-content-img-train">
-                            <li>
-                                <img src="imgs/57 1.jpg" alt="">
-                            </li>
-
-                        </ul>
-                        <!-- <div class="x-left-arrow">
-                                <img src="imgs/輪播牆左箭頭.svg" alt="">
-                            </div>
-                            <div class="x-right-arrow">
-                                <img src="imgs/輪播牆右箭頭.svg" alt="">
-
-                            </div> -->
-                    </div>
-                    <div class="x-search-list-content-txt">
-                        <h3>
-                            士林夜市近士林劍潭捷運小套房
-                        </h3>
-                        <p>
-                            <img src="imgs/捷運.svg" alt="">距離士林捷運站 500 公尺
-                        </p>
-                        <p>
-                            <img src="imgs/位置.svg" alt=""> 新北市三重區碧華街 900 號
-                        </p>
-                        <div>
-                            <p>
-                                <img src="imgs/坪數.svg" alt=""> 30坪
-                            </p>
-                            <p>
-                                <img src="imgs/格局.svg" alt=""> 整層住家 6 樓 3房 2 廳 2 衛浴
-                            </p>
-
-
-                        </div>
-
-                    </div>
-                    <div class="x-search-list-content-icon">
-                        <div>
-                            <img src="imgs/限男性.svg" alt="">
-                            <p>
-                                限男性
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/有陽台.svg" alt="">
-                            <p>
-                                有陽台
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/可開伙.svg" alt="">
-                            <p>
-                                可開伙
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/可寵.svg" alt="">
-                            <p>
-                                可養寵物
-                            </p>
-                        </div>
-                    </div>
-                    <div class="x-search-list-content-price">
-                        <div class="x-search-list-content-price-top">
-                            <div class="S-lg-share">
-                                <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                            </div>
-                            <div class="S-lg-like">
-                                <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                                    <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-
-                            </div>
-                        </div>
-                        <div class="x-search-list-content-price-down">
-                            <div>
-                                <img src="imgs/瀏覽.svg" alt="">
-                                <p>
-                                    瀏覽量：8999
-                                </p>
-                            </div>
-                            <h3>
-                                15,000/月
-                            </h3>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="x-search-list-content">
-                    <div class="x-search-list-content-img">
-                        <ul class="x-search-list-content-img-train">
-                            <li>
-                                <img src="imgs/57 1.jpg" alt="">
-                            </li>
-
-                        </ul>
-                        <!-- <div class="x-left-arrow">
-                                <img src="imgs/輪播牆左箭頭.svg" alt="">
-                            </div>
-                            <div class="x-right-arrow">
-                                <img src="imgs/輪播牆右箭頭.svg" alt="">
-
-                            </div> -->
-                    </div>
-                    <div class="x-search-list-content-txt">
-                        <h3>
-                            士林夜市近士林劍潭捷運小套房
-                        </h3>
-                        <p>
-                            <img src="imgs/捷運.svg" alt="">距離士林捷運站 500 公尺
-                        </p>
-                        <p>
-                            <img src="imgs/位置.svg" alt=""> 新北市三重區碧華街 900 號
-                        </p>
-                        <div>
-                            <p>
-                                <img src="imgs/坪數.svg" alt=""> 30坪
-                            </p>
-                            <p>
-                                <img src="imgs/格局.svg" alt=""> 整層住家 6 樓 3房 2 廳 2 衛浴
-                            </p>
-
-
-                        </div>
-
-                    </div>
-                    <div class="x-search-list-content-icon">
-                        <div>
-                            <img src="imgs/限男性.svg" alt="">
-                            <p>
-                                限男性
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/有陽台.svg" alt="">
-                            <p>
-                                有陽台
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/可開伙.svg" alt="">
-                            <p>
-                                可開伙
-                            </p>
-                        </div>
-                        <div>
-                            <img src="imgs/可寵.svg" alt="">
-                            <p>
-                                可養寵物
-                            </p>
-                        </div>
-                    </div>
-                    <div class="x-search-list-content-price">
-                        <div class="x-search-list-content-price-top">
-                            <div class="S-lg-share">
-                                <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                            </div>
-                            <div class="S-lg-like">
-                                <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                                    <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-
-                            </div>
-                        </div>
-                        <div class="x-search-list-content-price-down">
-                            <div>
-                                <img src="imgs/瀏覽.svg" alt="">
-                                <p>
-                                    瀏覽量：8999
-                                </p>
-                            </div>
-                            <h3>
-                                15,000/月
-                            </h3>
-                        </div>
-                    </div>
-
-                </div>
 
 
             </div>
@@ -1589,440 +1027,7 @@ $obj = $pdo->query($sql)->fetchAll();
                         </div>
                     </div>
                 </div>
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="imgs/分享.svg" alt=""> -->
 
-                    </div>
-                    <div class="S-lg-like">
-                        <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span>三重大樓</span> 新北市三重區
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    整層住家 6 樓 3房 2 廳 2衛浴
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                    </div>
-                    <div class="S-lg-like">
-                        <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span>三重大樓</span> 新北市三重區
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    整層住家 6 樓 3房 2 廳 2衛浴
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                    </div>
-                    <div class="S-lg-like">
-                        <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span>三重大樓</span> 新北市三重區
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    整層住家 6 樓 3房 2 廳 2衛浴
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                    </div>
-                    <div class="S-lg-like">
-                        <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span>三重大樓</span> 新北市三重區
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    整層住家 6 樓 3房 2 廳 2衛浴
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                    </div>
-                    <div class="S-lg-like">
-                        <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span>三重大樓</span> 新北市三重區
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    整層住家 6 樓 3房 2 廳 2衛浴
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                    </div>
-                    <div class="S-lg-like">
-                        <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span>三重大樓</span> 新北市三重區
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    整層住家 6 樓 3房 2 廳 2衛浴
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                    </div>
-                    <div class="S-lg-like">
-                        <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span>三重大樓</span> 新北市三重區
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    整層住家 6 樓 3房 2 廳 2衛浴
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                    </div>
-                    <div class="S-lg-like">
-                        <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span>三重大樓</span> 新北市三重區
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    整層住家 6 樓 3房 2 廳 2衛浴
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                    </div>
-                    <div class="S-lg-like">
-                        <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span>三重大樓</span> 新北市三重區
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    整層住家 6 樓 3房 2 廳 2衛浴
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                    </div>
-                    <div class="S-lg-like">
-                        <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span>三重大樓</span> 新北市三重區
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    整層住家 6 樓 3房 2 廳 2衛浴
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                    </div>
-                    <div class="S-lg-like">
-                        <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span>三重大樓</span> 新北市三重區
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    整層住家 6 樓 3房 2 廳 2衛浴
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                    </div>
-                    <div class="S-lg-like">
-                        <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span>三重大樓</span> 新北市三重區
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    整層住家 6 樓 3房 2 廳 2衛浴
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                    </div>
-                    <div class="S-lg-like">
-                        <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span>三重大樓</span> 新北市三重區
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    整層住家 6 樓 3房 2 廳 2衛浴
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                    </div>
-                    <div class="S-lg-like">
-                        <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span>三重大樓</span> 新北市三重區
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    整層住家 6 樓 3房 2 廳 2衛浴
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
 
             </div>
@@ -2229,7 +1234,7 @@ $obj = $pdo->query($sql)->fetchAll();
 
         })
     }
-    
+
     // 
     $(".x-down").click(function() {
         $(this).toggleClass('x-up')

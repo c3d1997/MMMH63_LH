@@ -91,9 +91,7 @@
     padding: 25px 25px;
 }
 
-.content-table tbody tr {
-    /* border-bottom: 1px solid #dddddd; */
-}
+
 
 .content-table tbody tr a{
     text-decoration: none;
@@ -107,13 +105,7 @@
     background-color: #F1EDEA;
 }
 
-.content-table tbody tr:last-of-type {
-    /* border-bottom: 2px solid #009879; */
-}
 
-.content-table tbody tr.active-row {
-    /* font-weight: bold; */
-}
 
 
 /* 右邊標題結束 */
