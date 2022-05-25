@@ -677,7 +677,7 @@
                     <div class="input_option">
                         <p class="option_name">手機</p>
                         <div class="fullinput_container ">
-                            <input type="text" name="" id="" placeholder="輸入您的帳號">
+                            <input type="text" name="mobile" id="mobile" placeholder="輸入您的帳號">
                         </div>
 
                     </div>
@@ -686,7 +686,7 @@
                     <div class="input_option">
                         <p class="option_name">密碼</p>
                         <div class="fullinput_container ">
-                            <input type="text" name="" id="" placeholder="輸入您的密碼">
+                            <input type="text" name="password" id="password" placeholder="輸入您的密碼">
                         </div>
                     </div>
                     <div class="alert">!帳號或密碼錯誤 </div>
@@ -707,14 +707,14 @@
                 <div class="input_option">
                     <p class="option_name">真實姓名</p>
                     <div class="fullinput_container ">
-                        <input type="text" name="name" id="" placeholder="請輸入您的姓名">
+                        <input type="text" name="name" id="name" placeholder="請輸入您的姓名">
                     </div>
                 </div>
                 <div class="alert">!姓名輸入格式錯誤 </div>
                 <div class="input_option">
                     <p class="option_name">手機/帳號</p>
                     <div class="fullinput_container ">
-                        <input type="text" name="mobile" id="" placeholder="請輸入您的手機">
+                        <input type="text" name="mobile" id="mobile" placeholder="請輸入您的手機">
                     </div>
                 </div>
                 <div class="alert">!手機格式錯誤 </div>
@@ -730,7 +730,7 @@
                         <div class="input_option">
                             <p class="option_name mr-1word" style="margin-right: 15px;margin-left: 15px;">驗證碼</p>
                             <div class="fullinput_container ">
-                                <input type="text" name="checkid" id="" placeholder="請輸入驗證碼">
+                                <input type="text" name="checked" id="checked" placeholder="請輸入驗證碼">
                             </div>
                         </div>
                         <!-- 驗證碼按鈕 -->
@@ -742,14 +742,14 @@
                 <div class="input_option">
                     <p class="option_name" style="margin-right: 16px;margin-left: 30px;">密碼</p>
                     <div class="fullinput_container ">
-                        <input type="text" name="Password" id="" placeholder="請輸入您的密碼">
+                        <input type="text" name="password" id="password" placeholder="請輸入您的密碼">
                     </div>
                 </div>
                 <div class="alert">!密碼格式錯誤 </div>
                 <div class="input_option">
                     <p class="option_name">密碼確認</p>
                     <div class="fullinput_container ">
-                        <input type="text" name="" id="" placeholder="請再次輸入您的密碼">
+                        <input type="text" name="passwordAgain" id="passwordAgain" placeholder="請再次輸入您的密碼">
                     </div>
                 </div>
                 <div class="alert">!密碼與前一次不同 </div>
@@ -844,6 +844,18 @@
     <script src="js/jquery-3.6.0.js"></script>
     <script>
         // 自己頁面的script
+
+
+
+
+
+
+
+
+
+
+
+
         const signinBtn = document.querySelector('.signinBtn');
         const signupBtn = document.querySelector('.signupBtn');
         // const formBx = document.querySelector('.formBx');
@@ -920,6 +932,44 @@
                 }, 'json');
             }
         }
+
+
+
+
+
+        
+        const $name = $('#name');
+        const $mobile = $('#mobile');
+        const $email = $('#email');
+        const $password = $('#password');
+
+
+        function checkForm{
+
+            // 清除之前的檢查訊息
+            $name.next().html('');
+
+
+            let isPass = true; //有沒有通過檢查
+
+            name = $name.val().trim();
+            if(name.length < 2){
+                $name.next().html('請填寫正確資料');
+                isPass = false;
+
+            }
+
+
+
+            //json
+            if (isPass){
+                $.post('insert02.php'),$(document.form1).serialize(), function(data){
+                    console.log(data),'json';
+                }
+            }
+
+        }
+
         // $('.CAPTCHA-Btn').click(function() {
         //     console.log($('#email').text());
         // });
