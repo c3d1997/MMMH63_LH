@@ -1,3 +1,19 @@
+<?php 
+$title = '我的租屋';
+require './part/connect-db.php';
+
+// 帶入支付方式 pay
+$psql = "SELECT * FROM `pay` WHERE `sid` = 1;";
+$stmt = $pdo->query($psql);
+$p = $stmt->fetch();
+
+// 帶入房屋資料
+$sql = "SELECT * FROM `items` WHERE `id` = 1;";
+$stmt = $pdo->query($sql);
+$i = $stmt->fetch();
+
+?>
+
 <?php include __DIR__ . './part/head.php'  ?>
 
     <style>
@@ -220,7 +236,7 @@ ul.pagination li a:hover{
 <!-- --------------手機板的下拉--- -->
 
 <div class="flip">
-    <p>士林夜市近士林劍潭捷運小套房</p>
+    <p><?= $i['item_name'] ?></p>
     <img src="../imgs/down-arrow.svg" alt="">
 
 </div>
@@ -233,7 +249,7 @@ ul.pagination li a:hover{
 
 <!-- 2 -->
 <div class="flip">
-    <p>士林夜市近士林劍潭捷運小套房</p>
+    <p><?= $i['item_name'] ?></p>
     <img src="../imgs/down-arrow.svg" alt="">
 
 </div>
@@ -245,7 +261,7 @@ ul.pagination li a:hover{
 
 <!-- 3 -->
 <div class="flip">
-    <p>士林夜市近士林劍潭捷運小套房</p>
+    <p><?= $i['item_name'] ?></p>
     <img src="../imgs/down-arrow.svg" alt="">
 
 </div>
@@ -270,20 +286,20 @@ ul.pagination li a:hover{
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><p>士林夜市近士林劍潭捷運小套房</p></td>
+                                    <td><p><?= $i['item_name'] ?></p></td>
                                     <td><p>一年</p></td>
                                     <td><a href=""><p class="check">點擊查看</p></a></td>
                                     <td><p>2022/05/01</p></td>
                                 </tr>
 
                                 <tr class="active-row">
-                                        <td><p>士林夜市近士林劍潭捷運小套房</p></td>
+                                        <td><p><?= $i['item_name'] ?></p></td>
                                         <td><p>一年</p></td>
                                         <td><a href=""><p class="check">點擊查看</p></a></td>
                                         <td><p>2022/05/01</p></td>
                                 </tr>
                                 <tr>
-                                    <td><p>士林夜市近士林劍潭捷運小套房</p></td>
+                                    <td><p><?= $i['item_name'] ?></p></td>
                                     <td><p>一年</p></td>
                                     <td><a href=""><p class="check">點擊查看</p></a></td>
                                     <td><p>2022/05/01</p></td>

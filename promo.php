@@ -1,3 +1,15 @@
+<?php 
+$title = '優惠券';
+require './part/connect-db.php';
+
+
+// 帶入房屋資料
+$csql = "SELECT * FROM `coupon` WHERE `sid` = 1;";
+$stmt = $pdo->query($csql);
+$c = $stmt->fetch();
+
+?>
+
 <?php include __DIR__ . './part/head.php'  ?>
 
     <style>
@@ -305,7 +317,7 @@ ul.pagination li a:hover{
                 <tbody>
                     <tr>
                         <td>
-                            <p>優惠碼_XXXXXX</p>
+                            <p>優惠碼_<?= $c['promo'] ?></p>
                         </td>
                         <td>
                             <p>清潔優惠85折</p>
@@ -317,7 +329,7 @@ ul.pagination li a:hover{
 
                     <tr class="active-row">
                         <td>
-                            <p>優惠碼_XXXXXX</p>
+                            <p>優惠碼_<?= $c['promo'] ?></p>
                         </td>
                         <td>
                             <p>清潔優惠85折</p>
@@ -326,7 +338,7 @@ ul.pagination li a:hover{
                     </tr>
                     <tr>
                         <td>
-                            <p>優惠碼_XXXXXX    </p>
+                            <p>優惠碼_<?= $c['promo'] ?>    </p>
                         </td>
                         <td>
                             <p>清潔優惠85折</p>

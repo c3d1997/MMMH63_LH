@@ -1,3 +1,17 @@
+<?php 
+$title = '單一物件';
+require './part/connect-db.php';
+
+
+// 帶入房屋資料
+$sql = "SELECT * FROM `items` WHERE `id` = 1;";
+$stmt = $pdo->query($sql);
+$i = $stmt->fetch();
+
+?>
+
+
+
 <?php include __DIR__ . './part/head.php'  ?>
 
 <link rel="stylesheet" href="./single_product.css">
@@ -909,15 +923,15 @@
         <!-- img -->
         <div class="S-product-img">
             <div class="S-product-img-left column">
-                <img src="imgs/img1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                <img src="<?= $i['img']?>item0.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
             </div>
             <div class="S-product-img-right">
                 <div class="S-product-img-right-up column">
-                    <img src="imgs/img2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                    <img src="<?= $i['img']?>item1.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
                 </div>
                 <div class="S-product-img-right-down-g">
                     <div class="S-product-img-right-down column">
-                        <img src="imgs/img2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                        <img src="<?= $i['img']?>item2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
                     </div>
                     <button class="more-img">+7</button>
                 </div>
@@ -1027,15 +1041,15 @@
 
         <div class="S-product-info">
             <div class="S-product-info-left">
-                <h2 class="S-price">$20,000</h2>
-                <h2 class="S-name">士林夜市近士林劍潭捷運小套房</h2>
-                <h3 class="S-location"><i class="fa-solid fa-location-dot"></i>台北市士林區劍潭路100號35巷1弄3樓</h3>
-                <h3 class="S-date"><i class="fa-solid fa-calendar-days"></i>租約期限 : 至少一年</h3>
-                <p class="S-lg-d-none S-d-none"><i class="fa-solid fa-train-subway"></i>距離士林捷運站 500 公尺</p>
+                <h2 class="S-price">$<?= number_format($i['price']) ?>/月</h2>
+                <h2 class="S-name"><?= $i['item_name'] ?></h2>
+                <h3 class="S-location"><i class="fa-solid fa-location-dot"></i><?= $i['area'], $i['dist'] ,$i['address'] ?></h3>
+                <h3 class="S-date"><i class="fa-solid fa-calendar-days"></i><?= $i['contract'] ?></h3>
+                <p class="S-lg-d-none S-d-none"><i class="fa-solid fa-train-subway"></i><?= $i['close_station'] ?></p>
                 <p class="S-lg-d-none S-d-none"><i class="fa-solid fa-ruler"></i>30 坪
-                    <span><i class="fa-solid fa-stairs"></i>6樓</span>
+                    <span><i class="fa-solid fa-stairs"></i><?= $i['floor']?></span>
                 </p>
-                <p class="S-lg-d-none S-d-none"><i class="fa-solid fa-door-open"></i>整層住家 3 房 2 廳 2 衛浴</p>
+                <p class="S-lg-d-none S-d-none"><i class="fa-solid fa-door-open"></i><?= $i['rentaltype'], $i['floor']?></p>
             </div>
             <div class="S-product-info-right">
                 <button type="button" class="pc-button-FEAC00-280 S-btn-order">預約看房</button>

@@ -1,3 +1,20 @@
+<?php 
+$title = '租金支付';
+require './part/connect-db.php';
+
+// 帶入支付方式 pay
+$psql = "SELECT * FROM `pay` WHERE `sid` = 1;";
+$stmt = $pdo->query($psql);
+$p = $stmt->fetch();
+
+// 帶入房屋資料
+$sql = "SELECT * FROM `items` WHERE `id` = 1;";
+$stmt = $pdo->query($sql);
+$i = $stmt->fetch();
+
+?>
+
+
 <?php include __DIR__ . './part/head.php'  ?>
 
     <style>
@@ -231,19 +248,19 @@ ul.pagination li a:hover{
            <!-- --------------手機板的下拉--- -->
 
            <div class="flip">
-               <p>士林夜市近士林劍潭捷運小套房</p>
+               <p><?= $i['item_name'] ?></p>
                <img src="../imgs/down-arrow.svg" alt="">
 
            </div>
            <div class="panel" hidden>
-               <p>應繳金額：$8,000</p>
+               <p><?= $p['contract_from_y_m_d'] ?>至<?= $p['contract_end_y_m_d'] ?></p>
                <p>狀態 : <span>待審核</span></p>
            </div>
 
 
            <!-- 2 -->
            <div class="flip">
-               <p>士林夜市近士林劍潭捷運小套房</p>
+               <p><?= $i['item_name'] ?></p>
                <img src="../imgs/down-arrow.svg" alt="">
 
            </div>
@@ -256,7 +273,7 @@ ul.pagination li a:hover{
 
            <!-- 3 -->
            <div class="flip">
-               <p>士林夜市近士林劍潭捷運小套房</p>
+               <p><?= $i['item_name'] ?></p>
                <img src="../imgs/down-arrow.svg" alt="">
 
            </div>
@@ -283,21 +300,21 @@ ul.pagination li a:hover{
                        </thead>
                        <tbody>
                            <tr>
-                               <td><p>我的租屋_XXX</p></td>
-                               <td><p>$8,000</p></td>
+                               <td><p>我的租屋_<?= $i['item_name'] ?></p></td>
+                               <td><p><?= $p['contract_from_y_m_d'] ?>至<?= $p['contract_end_y_m_d'] ?></p></td>
                                <td><a href=""><p class="check">待繳費</p></a></td>
                                
                            </tr>
 
                            <tr class="active-row">
-                                   <td><p>我的租屋_XXX</p></td>
-                                   <td><p>$8,000</p></td>
+                                   <td><p>我的租屋_<?= $i['item_name'] ?></p></td>
+                                   <td><p><?= $p['contract_from_y_m_d'] ?>至<?= $p['contract_end_y_m_d'] ?></p></td>
                                    <td><p>已繳費</p></td>
 
                            </tr>
                            <tr>
-                               <td><p>我的租屋_XXX</p></td>
-                               <td><p>$8,000</p></td>
+                               <td><p>我的租屋_<?= $i['item_name'] ?></p></td>
+                               <td><p><?= $p['contract_from_y_m_d'] ?>至<?= $p['contract_end_y_m_d'] ?></p></td>
                                <td><p>已繳費</p></td>
                            </tr>
                        </tbody>

@@ -1,3 +1,17 @@
+<?php 
+$title = '單一物件';
+require './part/connect-db.php';
+
+
+// 帶入房屋資料
+$sql = "SELECT * FROM `items` WHERE `id` = 1;";
+$stmt = $pdo->query($sql);
+$i = $stmt->fetch();
+
+?>
+
+
+
 <?php include __DIR__ . './part/head.php'  ?>
 <link rel="stylesheet" href="bar.css">
 <style>
@@ -53,7 +67,18 @@
     .S-FinalCheck-img {
         width: 908px;
         height: 320px;
-        background: url(imgs/bedroom-5646321_1920.jpg)center center/cover no-repeat;
+        overflow: hidden;
+        /* background: url(imgs/bedroom-5646321_1920.jpg)center center/cover no-repeat; */
+        /* border: #FEAC00 1px solid; */
+
+    }
+    .S-FinalCheck-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        /* object-fit: fill; */
+        object-position: center;
+        /* border: #FEAC00 1px solid; */
     }
 
     .S-FinalCheck-name {
@@ -146,7 +171,8 @@
             margin: auto;
             width: 335px;
             height: 215px;
-            background: url(imgs/bedroom-5646321_1920.jpg)center center/cover no-repeat;
+            overflow: hidden;
+            /* background: url(imgs/bedroom-5646321_1920.jpg)center center/cover no-repeat; */
         }
 
         .S-FinalCheck-info {
@@ -270,17 +296,18 @@
             <!-- 間距30px -->
             <div class="S-FinalCheck-wrap">
                 <div class="S-FinalCheck">
-                    <div class="S-FinalCheck-img"></div>
+                    <div class="S-FinalCheck-img">
+                        <img src="<?= $i['img'] ?>item0.jpg" alt="">
+                    </div>
                     <div class="S-FinalCheck-info">
-                        <h3 class="S-FinalCheck-price S-lg-d-none S-xs-d-block">$20,000</h3>
-                        <h2 class="S-FinalCheck-name">士林夜市近士林劍潭捷運小套房</h2>
+                        <h3 class="S-FinalCheck-price S-lg-d-none S-xs-d-block">$<?= number_format($i['price']) ?>/月</h3>
+                        <h2 class="S-FinalCheck-name"><?= $i['area'], $i['dist'] ,$i['address'] ?></h2>
                         <h3 class="S-FinalCheck-location">
                             <i class="fa-solid fa-location-dot"></i>
-                            台北市士林區劍潭路100號35巷1弄3樓
+                            <?= $i['area'], $i['dist'] ,$i['address'] ?>
                         </h3>
-                        <h2 class="S-FinalCheck-date">
-                            2022 年 4 月 15 日
-                            <span class="S-FinalCheck-time">15:00</span>
+                        <h2 class="S-FinalCheck-price">
+                        $<?= number_format($i['price']) ?>/月
                         </h2>
                     </div>
                 </div>
