@@ -1,27 +1,4 @@
-<?php
-$pageName = 'searchpage';
-$title = '搜尋畫面';
-require './part/connect-db.php';
 
-
-$sql_i = "SELECT * FROM `items` WHERE `area` LIKE '%台北%' 
-// AND `dist` LIKE '%$dist%'
-// ";
-
-
-// 以下是抓到列表
-$sql = "SELECT * FROM `items`";
-$sql_f = "SELECT * FROM `feature`";
-
-$stmt = $pdo->query($sql)->fetchAll();
-$stmt_f = $pdo->query($sql_f)->fetchAll();
-// 以上是抓到列表
-
-
-// $i = $stmt->fetch();
-
-
-?>
 <!-- 關鍵字搜尋 -->
 <div class="x-search">
     <div class="container">
