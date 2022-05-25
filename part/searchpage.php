@@ -16,7 +16,7 @@
 
             </div>
             <div class="x-search-price-bar ">
-                <input type="text" class="js-range-slider" name="my_range" value="" data-type="double" data-min="5000" data-max="50000" data-step="500" />
+                <input type="text" class="js-range-slider" name="price" value="" data-type="double" data-min="5000" data-max="50000" data-step="500" />
             </div>
             <div class="x-search-price-switch ">
                 <div class="x-search-price-switch-onoff">
@@ -67,22 +67,22 @@
                             </div>
                             <div class="x-search-ex-tag">
                                 <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                    <button class="x-button-only">
+                                    <button class="x-button-only" name="area">
                                         <p>
                                             新北
                                         </p>
                                     </button>
-                                    <button class="x-button-only">
+                                    <button class="x-button-only" name="area">
                                         <p>
                                             台北
                                         </p>
                                     </button>
-                                    <button class="x-button-only">
+                                    <button class="x-button-only" name="area">
                                         <p>
                                             台中
                                         </p>
                                     </button>
-                                    <button class="x-button-only">
+                                    <button class="x-button-only" name="area">
                                         <p>
                                             高雄
                                         </p>
@@ -101,147 +101,147 @@
                             </div>
                             <div class="x-search-ex-tag">
                                 <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             板橋區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             三重區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             中和區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             永和區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             新莊區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             新店區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             土城區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             蘆洲區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             樹林區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             汐止區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             鶯歌區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             三峽區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             淡水區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             瑞芳區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             五股區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             泰山區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             林口區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             深坑區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             石碇區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             坪林區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             三芝區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             石門區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             八里區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             平溪區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             雙溪區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             貢寮區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             金山區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             萬里區
                                         </p>
                                     </button>
-                                    <button class="x-button-more">
+                                    <button class="x-button-more" name="dist">
                                         <p>
                                             烏來區
                                         </p>
@@ -442,7 +442,7 @@
                 </div>
                 <div class="x-search-button">
                     <button class="pc-button-F4F4F4-180 x-button-clear">重選</button>
-                    <button class="pc-button-FEAC00-180">開始搜尋</button>
+                    <button class="pc-button-FEAC00-180" type="submit">開始搜尋</button>
                 </div>
             </div>
 

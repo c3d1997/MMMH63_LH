@@ -1,6 +1,27 @@
 <?php
 $pageName = 'search';
-$title = 'LittleHouse';
+$title = '搜尋畫面';
+require './part/connect-db.php';
+require './part/searchpage.php';
+
+// $price = $_GET["price"];
+$area = $_GET["area"];
+$dist = $_GET["dist"];
+// $rentaltype = $_GET["rentaltype"];
+// $roomtype = $_GET["roomtype"];
+// $equipment = $_GET["equipment"];
+// $postulate = $_GET["postulate"];
+// $ping_number = $_GET["ping_number"];
+// $around = $_GET["around"];
+// 去抓篩選
+
+$sql = "SELECT * FROM items WHERE area LIKE '%$area%' 
+AND dist LIKE '%$dist%'
+";
+// 判定有哪些
+
+$obj = $pdo->query($sql)->fetchAll();
+
 ?>
 <?php include __DIR__ . './part/searchead.php'  ?>
 
