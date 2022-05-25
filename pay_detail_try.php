@@ -2,21 +2,24 @@
 $title = '租屋明細';
 require './part/connect-db.php';
 
+// 帶入會員資料
+$msql = "SELECT * FROM `members` WHERE `sid` = 1;";
+$stmt = $pdo->query($msql);
+$m = $stmt->fetch();
 
+// 帶入支付方式 pay
+$psql = "SELECT * FROM `pay` WHERE `sid` = 1;";
+$stmt = $pdo->query($psql);
+$p = $stmt->fetch();
 
-
+// 帶入房屋資料
 $sql = "SELECT * FROM `items` WHERE `id` = 1;";
 $stmt = $pdo->query($sql);
 $i = $stmt->fetch();
 
 
-
-
-
-
-
-
 ?>
+
 
 <?php include __DIR__ . './part/head.php'  ?>
     <style>
@@ -714,18 +717,18 @@ $i = $stmt->fetch();
             <h2 class="z_pay_detail_title">租屋明細</h2>
             <div class="z_pay_detail_container">
                 <div class="z_pay_detail_img">
-                    <img src="<?= $i['img']?>" alt="">
+                    <img src="<?= $i['img'] ?>item0.jpg" alt="">
                 </div>
                 <div class="z_pay_detail_text">
                     <div class=" z_people_info_container">
                         <h3 class="bold z_detail_mb">租屋人資訊</h3>
-                        <p class="z_detail_mb">姓名：里成溪</p>
-                        <p class="z_detail_mb">手機：0912-345-678</p>
-                        <p>身分證：F123456789</p>
+                        <p class="z_detail_mb">姓名：<?= $m['name'] ?></p>
+                        <p class="z_detail_mb">手機：<?= $m['mobile'] ?></p>
+                        <p>身分證：<?= $m['Id_number'] ?></p>
                     </div>
                     <div class="z_pay_info_container">
                         <h3 class="bold z_detail_mb">付款資訊</h3>
-                        <p class="z_detail_mb">付款方式：信用卡</p>
+                        <p class="z_detail_mb">付款方式：<?= $p['payway'] ?></p>
                     </div>
                     <div class="z_detail_info_container">
                         <p class="z_detail_cost_phone z_detail_mb ">$<?= number_format($i['price'])?>/月</p>

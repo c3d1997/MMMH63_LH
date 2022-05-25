@@ -1,3 +1,30 @@
+<?php
+$title = '租金支付';
+require './part/connect-db.php';
+
+
+//// ------------------------------------------
+$json_str = '{"sid":"1","id":"A1556655","name":"彭世豪","EngName":null,"Id_number":"B294354724","Pass_num":null,"email":"bosebawi@gmail.com","mobile":"0968881277","Area":"新北市","Dist":"樹林區","Add":"田尾街17號","Password":"123","Introduce":"韓愈說過一句富有哲理的話，不塞不流，不止不行。希望各位能用心體會這段話。我以為我了解興趣，但我真的了解興趣嗎？仔細想想，我對興趣的理解只是皮毛而已。貝蒂在不經意間這樣說過，大家都不聽謊言，說謊的人也就絕跡了。","created_at":"2020-04-06 16:31:02"}';
+$_SESSION['user'] = json_decode($json_str, true);
+//// ------------------------------------------
+
+// 帶入會員資料
+$msql = "SELECT * FROM `members` WHERE `sid` = 1;";
+$stmt = $pdo->query($msql);
+$m = $stmt->fetch();
+
+// 帶入支付方式 pay
+$psql = "SELECT * FROM `pay` WHERE `sid` = 1;";
+$stmt = $pdo->query($psql);
+$p = $stmt->fetch();
+
+// 帶入房屋資料
+$sql = "SELECT * FROM `items` WHERE `id` = 1;";
+$stmt = $pdo->query($sql);
+$i = $stmt->fetch();
+
+?>
+
 <?php include __DIR__ . './part/head.php'  ?>
 <style>
     .c_container_stepbar {
@@ -147,8 +174,6 @@
         margin: 0 auto;
         padding: 0px 25px;
     }
-
-    .c-select_container {}
 
     .c-select {
         display: flex;
@@ -339,8 +364,6 @@
         margin-left: 20px;
     }
 
-    .dropdown_container-short {}
-
     .dropdown_container-short>span {
         /* width: 158px; */
         height: 60px;
@@ -432,6 +455,46 @@
     #totalMonth {
         padding-left: 15px;
     }
+
+
+
+
+    /* ----------------下拉選單-------------------------------------------------------------- */
+    .z_select_dropdown_container select {
+        color: #0E2E3D;
+        height: 60px;
+        border: none;
+        outline: none;
+        appearance: none;
+        width: 100%;
+        font-size: 16px;
+        padding-left: 15px;
+    }
+
+    .z_select_dropdown_container {
+        position: relative;
+    }
+
+    .z_select_dropdown_container .arrow_container {
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15px;
+        position: absolute;
+        pointer-events: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @media screen and (max-width:376px) {
         .c_sample_block {
@@ -712,15 +775,15 @@
     </div>
     <div class="c-select_container">
         <div class="c-select">
-            <label for="">
+            <label for="yes">
                 <h3>是</h3>
             </label>
-            <input type="radio" name="gender" id="yes">
+            <input type="radio" name="mySelect" id="yes" class="autoInput">
 
-            <label for="">
+            <label for="no">
                 <h3>否</h3>
             </label>
-            <input type="radio" name="gender" id="no">
+            <input type="radio" name="mySelect" id="no">
         </div>
     </div>
 </section>
@@ -739,21 +802,21 @@
             <label for="person">
                 <p>姓名</p>
             </label>
-            <input type="text" name="Name" id="" placeholder="">
+            <input type="text" name="Name" id="name" placeholder="">
         </form>
         <p class="alert">格式錯誤</p>
         <form class="form" action="#"></form>
         <label for="phone">
             <p>英文姓名</p>
         </label>
-        <input type="text" name="EngName" id="" placeholder="">
+        <input type="text" name="EngName" id="EngName" placeholder="">
         </form>
         <p class="alert">格式錯誤</p>
         <form class="form" action="#"></form>
         <label for="phone">
             <p>身分證/護照號碼 擇一</p>
         </label>
-        <input type="text" name="Id_number" id="" placeholder="">
+        <input type="text" name="Id_number" id="Id_number" placeholder="">
         </form>
         <p class="alert">格式錯誤</p>
     </div>
@@ -768,14 +831,15 @@
                 <label for="person">
                     <p>戶籍縣市</p>
                 </label>
-                <div class="c-dropdown_container">
-                    <div class="c-dropdown">
-                        <img src="../imgs/down-arrow.svg" alt="">
-                    </div>
-                    <div id="areaList" class="dropdown_list" hidden>
-                        <p class="">台北市</p>
-                        <p class="">新北市</p>
-                        <p class="">基隆市</p>
+                <div class="z_select_dropdown_container">
+                    <select id="citySelect" name="citySelect" class="z_select_dropdown">
+                        <option selected disabled value="000">--戶籍縣市--</option>
+                        <option value="001">001-台北市</option>
+                        <option value="002">002-新北市</option>
+                        <option value="003">003-基隆市</option>
+                    </select>
+                    <div class="arrow_container">
+                        <img src="imgs/down-arrow.svg" alt="">
                     </div>
                 </div>
             </form>
@@ -787,16 +851,15 @@
                         <p>行政區</p>
                     </label>
 
-                    <div class="c-dropdown_container">
-                        <span id="areaListBtn">
-                            <div class="c-dropdown">
-                                <img src="../imgs/down-arrow.svg" alt="">
-                            </div>
-                        </span>
-                        <div id="areaList" class="dropdown_list" hidden>
-                            <p class="">大安區</p>
-                            <p class="">松山區</p>
-                            <p class="">大同區</p>
+                    <div class="z_select_dropdown_container">
+                        <select id="areaSelect" name="areaSelect" class="z_select_dropdown">
+                            <option selected disabled value="000">--行政區--</option>
+                            <option value="001">001-松山區</option>
+                            <option value="002">002-文山區</option>
+                            <option value="003">003-大安區</option>
+                        </select>
+                        <div class="arrow_container">
+                            <img src="imgs/down-arrow.svg" alt="">
                         </div>
                     </div>
                 </div>
@@ -812,7 +875,7 @@
             <label for="person">
                 <p>電子郵件</p>
             </label>
-            <input type="text" name="Name" id="" placeholder="">
+            <input type="text" name="email" id="email" placeholder="">
         </form>
         <p class="alert">格式錯誤</p>
         <form class="form" action="#">
@@ -820,7 +883,7 @@
                 <p>手機
                 </p>
             </label>
-            <input type="text" name="Name" id="" placeholder="">
+            <input type="text" name="phone" id="phone" placeholder="">
         </form>
         <p class="alert">格式錯誤</p>
 
@@ -997,7 +1060,7 @@
     </div>
     <div class="c_button_right">
         <button class="pc-button-F4F4F4-180 z_phone-button-162"><a href="contract02.php" style="text-decoration:none; color:#0E2E3D;">送出</a></button>
-        
+
     </div>
 </div>
 
@@ -1050,6 +1113,76 @@
             }
         });
     });
+
+    //  方法1
+    // 自動帶入資料 autoInput
+    // <input type="radio" name="autoInput" id="yes" class="autoInput">
+    //     $(".autoInput").click(function() {
+    //    if($("#yes").prop("checked")) {
+    //      $("input[name='user_active_col[]']").each(function() {
+    //          $(this).prop("checked", true);
+    //      });
+    //    } else {
+    //      $("input[name='user_active_col[]']").each(function() {
+    //          $(this).prop("checked", false);
+    //      });
+    //    }
+    // });
+
+
+    //  方法2
+    // $(".z_checkbox_container :checkbox").click(function(){
+    //         $(this).parent().siblings().find(":checkbox").prop('checked', false);
+    //         if ($("#payBank").prop('checked')) {
+    //             console.log("hi");
+    //             $(".bank_area").css("display","block")
+    //             $(".card_area").css("display","none")
+
+    //         } else if ($("#payCard").prop('checked')) {
+    //             $(".bank_area").css("display","none")
+    //             $(".card_area").css("display","block")
+
+    //         } else {
+    //             $(".bank_area").css("display","none")
+    //             $(".card_area").css("display","none")
+    //         }
+    //     })
+
+
+    const memberData = <?= json_encode($_SESSION['user'], JSON_UNESCAPED_UNICODE) ?>;
+
+    $('.c-select #yes').click(function() {
+        ($('#yes').prop('checked'))
+            console.log('hi');
+            console.log('username:', $('#name').val());
+            $('#name').val(memberData.name);
+            $('#email').val(memberData.email);
+            $('#Id_number').val(memberData.Id_number);
+            $('#phone').val(memberData.mobile);
+            $('#citySelect').val('001');
+            $('#areaSelect').val('001');
+    })
+    $('.c-select #no').click(function(){
+        $('#name').val('');
+            $('#email').val('');
+            $('#Id_number').val('');
+            $('#phone').val('');
+            $('#citySelect').val('000');
+            $('#areaSelect').val('000');
+    })
+
+
+
+
+
+
+
+
+
+    // $("form").on("submit", function(event) {
+    //     event.preventDefault();
+    //     console.log($(this).serialize());
+    // });
 </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>
