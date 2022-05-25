@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-05-25 09:38:10
+-- 產生時間： 2022-05-25 09:59:35
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 7.4.29
 
@@ -24,14 +24,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `reservation`
+-- 資料表結構 `my_house`
 --
 
-CREATE TABLE `reservation` (
+CREATE TABLE `my_house` (
   `sid` int(11) NOT NULL,
+  `member_sid` int(11) NOT NULL,
   `item_sid` int(11) NOT NULL,
-  `date` datetime NOT NULL,
-  `members_sid` int(11) NOT NULL
+  `pay_sid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -39,9 +39,9 @@ CREATE TABLE `reservation` (
 --
 
 --
--- 資料表索引 `reservation`
+-- 資料表索引 `my_house`
 --
-ALTER TABLE `reservation`
+ALTER TABLE `my_house`
   ADD PRIMARY KEY (`sid`);
 
 --
@@ -49,9 +49,9 @@ ALTER TABLE `reservation`
 --
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `reservation`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `my_house`
 --
-ALTER TABLE `reservation`
+ALTER TABLE `my_house`
   MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 

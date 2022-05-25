@@ -798,21 +798,6 @@ $title = '付款方式'
                         <p class="alert" id="payWay"></p>
                     </div>
                     <div class="z_text_intput ">
-                        <p class="z_checkbox_option ">　優惠碼</p>
-                        <div class="z_input_container">
-                            <input class="z_input_text"   type="text" name="" id="" placeholder="請輸入優惠碼">
-                        </div>
-                        <div class="z_coupon_container">
-                            <p class="coupon">帶入優惠碼</p>
-                        </div>
-                    </div>
-                    <div class="z_pay_alert">
-                        <p class="alert" ></p>
-                    </div>
-                    <div class="z_coupon_phone_container">
-                        <p class="coupon">帶入優惠碼</p>
-                    </div>
-                    <div class="z_text_intput ">
                         <p class="z_checkbox_option ">付款金額</p>
                         <div class="z_input_container">
                             <p>00000</p>
