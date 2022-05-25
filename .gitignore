@@ -1,2 +1,7 @@
-imgs/
+.vscode
+
+vendor
+
+composer.lock
+
 test/

@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <?php include __DIR__ . './part/head.php'  ?>
 
 <style>
@@ -698,26 +702,27 @@
 
 
             <div class="form signupForm S-d-new-none">
-                <form>
-                    <!-- 註冊手機按鈕mobile-signinBtn -->
-                    <div class="input_option">
-                        <p class="option_name">真實姓名</p>
-                        <div class="fullinput_container ">
-                            <input type="text" name="" id="" placeholder="請輸入您的姓名">
-                        </div>
+                <!-- <form name="form1" method="post" onsubmit="checkForm(); return false;" novalidate> -->
+                <!-- 註冊手機按鈕mobile-signinBtn -->
+                <div class="input_option">
+                    <p class="option_name">真實姓名</p>
+                    <div class="fullinput_container ">
+                        <input type="text" name="name" id="" placeholder="請輸入您的姓名">
                     </div>
-                    <div class="alert">!姓名輸入格式錯誤 </div>
-                    <div class="input_option">
-                        <p class="option_name">手機/帳號</p>
-                        <div class="fullinput_container ">
-                            <input type="text" name="" id="" placeholder="請輸入您的手機">
-                        </div>
+                </div>
+                <div class="alert">!姓名輸入格式錯誤 </div>
+                <div class="input_option">
+                    <p class="option_name">手機/帳號</p>
+                    <div class="fullinput_container ">
+                        <input type="text" name="mobile" id="" placeholder="請輸入您的手機">
                     </div>
-                    <div class="alert">!手機格式錯誤 </div>
+                </div>
+                <div class="alert">!手機格式錯誤 </div>
+                <form action="./contract/test0102.php" target="_blank">
                     <div class="input_option">
                         <p class="option_name">電子郵件</p>
                         <div class="fullinput_container ">
-                            <input type="text" name="" id="" placeholder="請輸入您的信箱">
+                            <input type="text" name="email" id="email" placeholder="請輸入您的信箱">
                         </div>
                     </div>
                     <div class="alert">!郵件格式錯誤 </div>
@@ -725,165 +730,203 @@
                         <div class="input_option">
                             <p class="option_name mr-1word" style="margin-right: 15px;margin-left: 15px;">驗證碼</p>
                             <div class="fullinput_container ">
-                                <input type="text" name="" id="" placeholder="請輸入驗證碼">
+                                <input type="text" name="checkid" id="" placeholder="請輸入驗證碼">
                             </div>
                         </div>
                         <!-- 驗證碼按鈕 -->
+
                         <button class="CAPTCHA-Btn S-d-none">寄送驗證碼</button>
                     </div>
-                    <div class="alert">!驗證碼輸入錯誤 </div>
-                    <div class="input_option">
-                        <p class="option_name" style="margin-right: 16px;margin-left: 30px;">密碼</p>
-                        <div class="fullinput_container ">
-                            <input type="text" name="" id="" placeholder="請輸入您的密碼">
-                        </div>
-                    </div>
-                    <div class="alert">!密碼格式錯誤 </div>
-                    <div class="input_option">
-                        <p class="option_name">密碼確認</p>
-                        <div class="fullinput_container ">
-                            <input type="text" name="" id="" placeholder="請再次輸入您的密碼">
-                        </div>
-                    </div>
-                    <div class="alert">!密碼與前一次不同 </div>
-
-
-
-                    <div class="checkbox-info">
-                        <div class="c_confirm_bar">
-                            <label>
-                                <input type="checkbox" name="" id="">
-                                <span class="z_all-center">我同意<a href="#"> 隱私條款 </a>與<a href="#">租客平台公約</a>,我已閱讀完<a href="#">租賃法.</a></span>
-                            </label>
-                        </div>
                 </form>
+                <div class="alert">!驗證碼輸入錯誤 </div>
+                <div class="input_option">
+                    <p class="option_name" style="margin-right: 16px;margin-left: 30px;">密碼</p>
+                    <div class="fullinput_container ">
+                        <input type="text" name="Password" id="" placeholder="請輸入您的密碼">
+                    </div>
+                </div>
+                <div class="alert">!密碼格式錯誤 </div>
+                <div class="input_option">
+                    <p class="option_name">密碼確認</p>
+                    <div class="fullinput_container ">
+                        <input type="text" name="" id="" placeholder="請再次輸入您的密碼">
+                    </div>
+                </div>
+                <div class="alert">!密碼與前一次不同 </div>
+
+
+
+                <div class="checkbox-info">
+                    <div class="c_confirm_bar">
+                        <label>
+                            <input type="checkbox" name="" id="">
+                            <span class="z_all-center">我同意<a href="#"> 隱私條款 </a>與<a href="#">租客平台公約</a>,我已閱讀完<a href="#">租賃法.</a></span>
+                        </label>
+                    </div>
+
+                </div>
+                <button type="submit" class="pc-button-FEAC00-180">註冊</button>
+                <!-- </form> -->
+                <p>您已經註冊了嗎？<a href="#">由此進入</a></p>
             </div>
-            <button class="pc-button-FEAC00-180">註冊</button>
-            <p>您已經註冊了嗎？<a href="#">由此進入</a></p>
         </div>
     </div>
-</div>
-<div class="white backdrop-blur S-d-none"></div>
-<!-- 以下是footer---------------------------------------------  -->
-<div class="footer_container S-lg-d-none S-d-block">
-    <div class="footer">
-        <div class="container">
-            <div class="footer-up">
-                <div class="footer-left">
-                    <div class="footer_phone_icon">
+    <div class="white backdrop-blur S-d-none"></div>
+    <!-- 以下是footer---------------------------------------------  -->
+    <div class="footer_container S-lg-d-none S-d-block">
+        <div class="footer">
+            <div class="container">
+                <div class="footer-up">
+                    <div class="footer-left">
+                        <div class="footer_phone_icon">
+                            <img src="imgs/facebook-square-brands.svg" alt="">
+                            <img src="imgs/instagram-brands.svg" alt="">
+                            <img src="imgs/twitter-brands.svg" alt="">
+                            <img src="imgs/youtube-brands.svg" alt="">
+                        </div>
+                        <div class="footer-left-up">
+                            <p>
+                                地址：台北市大安區市民大道9巷9樓
+                            </p>
+                            <p>
+                                電話：02-2222-2222
+                            </p>
+                            <p>
+                                信箱：csdas@gmail.com
+                            </p>
+                        </div>
+                        <div class="footer-left-down">
+                            <a href="#">免責聲明</a>
+                            <a href="#">隱私權政策</a>
+                            <a href="#">服務條款</a>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <img src="./imgs/people.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer-down">
+                <div class="container">
+                    <div class="footer_icon">
+                        <p>Follow us</p>
                         <img src="imgs/facebook-square-brands.svg" alt="">
+
                         <img src="imgs/instagram-brands.svg" alt="">
                         <img src="imgs/twitter-brands.svg" alt="">
                         <img src="imgs/youtube-brands.svg" alt="">
                     </div>
-                    <div class="footer-left-up">
+                    <div class="copyright">
                         <p>
-                            地址：台北市大安區市民大道9巷9樓
-                        </p>
-                        <p>
-                            電話：02-2222-2222
-                        </p>
-                        <p>
-                            信箱：csdas@gmail.com
+                            Copyright © ICS COLLEGE OF ARTS. All rights reserved.
                         </p>
                     </div>
-                    <div class="footer-left-down">
-                        <a href="#">免責聲明</a>
-                        <a href="#">隱私權政策</a>
-                        <a href="#">服務條款</a>
+                    <div class="tw">
+                        <p>
+                            TW
+                        </p>
                     </div>
                 </div>
-                <div class="footer-right">
-                    <img src="./imgs/people.png" alt="">
-                </div>
-            </div>
 
+            </div>
         </div>
-        <div class="footer-down">
-            <div class="container">
-                <div class="footer_icon">
-                    <p>Follow us</p>
-                    <img src="imgs/facebook-square-brands.svg" alt="">
-
-                    <img src="imgs/instagram-brands.svg" alt="">
-                    <img src="imgs/twitter-brands.svg" alt="">
-                    <img src="imgs/youtube-brands.svg" alt="">
-                </div>
-                <div class="copyright">
-                    <p>
-                        Copyright © ICS COLLEGE OF ARTS. All rights reserved.
-                    </p>
-                </div>
-                <div class="tw">
-                    <p>
-                        TW
-                    </p>
-                </div>
-            </div>
-
+        <div class="phone_copyright">
+            <p>
+                Copyright © ICS COLLEGE OF ARTS. All rights reserved.
+            </p>
         </div>
     </div>
-    <div class="phone_copyright">
-        <p>
-            Copyright © ICS COLLEGE OF ARTS. All rights reserved.
-        </p>
-    </div>
-</div>
 
-<!-- FOOTER--------------------------------------------------- -->
+    <!-- FOOTER--------------------------------------------------- -->
 
 
-<script src="js/jquery-3.6.0.js"></script>
-<script>
-    // 自己頁面的script
-    const signinBtn = document.querySelector('.signinBtn');
-    const signupBtn = document.querySelector('.signupBtn');
-    // const formBx = document.querySelector('.formBx');
-    const InfoBx = document.querySelector('.InfoBx');
-    const body = document.querySelector('body');
-    const signupForm = document.querySelector('.signupForm');
-    const signinForm = document.querySelector('.signinForm');
+    <script src="js/jquery-3.6.0.js"></script>
+    <script>
+        // 自己頁面的script
+        const signinBtn = document.querySelector('.signinBtn');
+        const signupBtn = document.querySelector('.signupBtn');
+        // const formBx = document.querySelector('.formBx');
+        const InfoBx = document.querySelector('.InfoBx');
+        const body = document.querySelector('body');
+        const signupForm = document.querySelector('.signupForm');
+        const signinForm = document.querySelector('.signinForm');
 
-    let signinClicked = $('.signinBtn').click();
-    let signupClicked = $('.signupBtn').click();
+        let signinClicked = $('.signinBtn').click();
+        let signupClicked = $('.signupBtn').click();
+        let $btnSendVerify = $('.CAPTCHA-Btn');
 
 
 
-    // 桌機版註冊&登入
-    $('.signupBtn').click(function() {
-        console.log('hi signup');
-        InfoBx.classList.add('active');
-        InfoBx.classList.remove('inactive');
-        signupBtn.classList.add('S-blue');
-        signinBtn.classList.remove('S-blue');
-    });
+        // 桌機版註冊&登入
+        $('.signupBtn').click(function() {
+            console.log('hi signup');
+            InfoBx.classList.add('active');
+            InfoBx.classList.remove('inactive');
+            signupBtn.classList.add('S-blue');
+            signinBtn.classList.remove('S-blue');
+        });
 
-    $('.signinBtn').click(function() {
-        console.log('hi signin');
-        InfoBx.classList.add('inactive');
-        InfoBx.classList.remove('active');
-        signinBtn.classList.add('S-blue');
-        signupBtn.classList.remove('S-blue');
-    });
+        $('.signinBtn').click(function() {
+            console.log('hi signin');
+            InfoBx.classList.add('inactive');
+            InfoBx.classList.remove('active');
+            signinBtn.classList.add('S-blue');
+            signupBtn.classList.remove('S-blue');
+        });
 
 
 
 
-    // 手機板註冊&登入
+        // 手機板註冊&登入
 
-    $('.mobile-signinBtn').click(function() {
-        $('.signupForm').addClass('S-d-new-none');
-        $('.signinForm').removeClass('S-d-new-none');
-        $('.mobile-signinBtn').addClass('S-blue');
-        $('.mobile-signupBtn').removeClass('S-blue');
-    })
+        $('.mobile-signinBtn').click(function() {
+            $('.signupForm').addClass('S-d-new-none');
+            $('.signinForm').removeClass('S-d-new-none');
+            $('.mobile-signinBtn').addClass('S-blue');
+            $('.mobile-signupBtn').removeClass('S-blue');
+        })
 
-    $('.mobile-signupBtn').click(function() {
-        $('.signinForm').addClass('S-d-new-none');
-        $('.signupForm').removeClass('S-d-new-none');
-        $('.mobile-signupBtn').addClass('S-blue');
-        $('.mobile-signinBtn').removeClass('S-blue');
-    })
-</script>
+        $('.mobile-signupBtn').click(function() {
+            $('.signinForm').addClass('S-d-new-none');
+            $('.signupForm').removeClass('S-d-new-none');
+            $('.mobile-signupBtn').addClass('S-blue');
+            $('.mobile-signinBtn').removeClass('S-blue');
+        })
 
-<?php include __DIR__ . './part/javascript.php'  ?>
+
+
+        function checkForm() {
+            let isPass = true,
+                $data = $(document.form1).serialize();
+
+            // AJAX
+            if (isPass) {
+                $.post('insert02.php', $data, function(data) {
+                    console.log(data);
+                    if (data.success) {
+                        // alert('資料新增成功');
+                        // location.href = 'ab-list.php';
+                        $modal.find('#exampleModalLabel').html('資料新增成功');
+                        $modal.find('.modal-body').html('恭喜');
+                        modal.show();
+
+                    } else {
+                        //alert(data.error || '資料新增失敗');
+                        $modal.find('#exampleModalLabel').html('資料新增失敗');
+                        $modal.find('.modal-body').html('...');
+                        modal.show();
+                    }
+                }, 'json');
+            }
+        }
+        // $('.CAPTCHA-Btn').click(function() {
+        //     console.log($('#email').text());
+        // });
+
+        $btnSendVerify.on('click', function() {
+            document.cookie = "username=John Doe";
+        });
+    </script>
+
+    <?php include __DIR__ . './part/javascript.php'  ?>
