@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <?php include __DIR__ . './part/head.php'  ?>
 
 <style>
@@ -165,17 +161,6 @@
     button.signupBtn:hover {
         color: #5D8DC1;
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
     .formBx {
@@ -702,71 +687,73 @@
 
 
             <div class="form signupForm S-d-new-none">
-                <!-- <form name="form1" method="post" onsubmit="checkForm(); return false;" novalidate> -->
-                <!-- 註冊手機按鈕mobile-signinBtn -->
-                <div class="input_option">
-                    <p class="option_name">真實姓名</p>
-                    <div class="fullinput_container ">
-                        <input type="text" name="name" id="name" placeholder="請輸入您的姓名">
-                    </div>
-                </div>
-                <div class="alert">!姓名輸入格式錯誤 </div>
-                <div class="input_option">
-                    <p class="option_name">手機/帳號</p>
-                    <div class="fullinput_container ">
-                        <input type="text" name="mobile" id="mobile" placeholder="請輸入您的手機">
-                    </div>
-                </div>
-                <div class="alert">!手機格式錯誤 </div>
-                <form action="./contract/test0102.php" target="_blank">
+                <form action="" name="form1" id='form1' method="post" onsubmit="checkForm(); return false;">
+                    <!-- 註冊手機按鈕mobile-signinBtn -->
                     <div class="input_option">
-                        <p class="option_name">電子郵件</p>
+                        <p class="option_name">真實姓名</p>
                         <div class="fullinput_container ">
-                            <input type="text" name="email" id="email" placeholder="請輸入您的信箱">
+                            <input type="text" name="name" id="name" placeholder="請輸入您的姓名">
                         </div>
                     </div>
-                    <div class="alert">!郵件格式錯誤 </div>
-                    <div class="CAPTCHA-g">
+                    <div class="alert">!姓名輸入格式錯誤 </div>
+                    <div class="input_option">
+                        <p class="option_name">手機/帳號</p>
+                        <div class="fullinput_container ">
+                            <input type="text" name="mobile" id="mobile" placeholder="請輸入您的手機">
+                        </div>
+                    </div>
+                    <div class="alert">!手機格式錯誤 </div>
+                    <!-- <form name="form2" id='form2' action="./contract/test0102.php" target="_blank"> -->
                         <div class="input_option">
-                            <p class="option_name mr-1word" style="margin-right: 15px;margin-left: 15px;">驗證碼</p>
+                            <p class="option_name">電子郵件</p>
                             <div class="fullinput_container ">
-                                <input type="text" name="checked" id="checked" placeholder="請輸入驗證碼">
+                                <input type="text" name="email" id="email" placeholder="請輸入您的信箱">
                             </div>
                         </div>
-                        <!-- 驗證碼按鈕 -->
+                        <div class="alert">!郵件格式錯誤 </div>
+                        
+                        <div class="CAPTCHA-g">
+                            <div class="input_option">
+                                <p class="option_name mr-1word" style="margin-right: 15px;margin-left: 15px;">驗證碼</p>
+                                <div class="fullinput_container ">
+                                    <input type="text" name="checked" id="checked" placeholder="請輸入驗證碼">
+                                </div>
+                            </div>
+                            <!-- 驗證碼按鈕 -->
 
-                        <button class="CAPTCHA-Btn S-d-none">寄送驗證碼</button>
+                            <button class="CAPTCHA-Btn S-d-none">寄送驗證碼</button>
+                        </div>
+                    <!-- </form> -->
+                    <div class="alert">!驗證碼輸入錯誤 </div>
+                    <div class="input_option">
+                        <p class="option_name" style="margin-right: 16px;margin-left: 30px;">密碼</p>
+                        <div class="fullinput_container ">
+                            <input type="text" name="Password" id="password" placeholder="請輸入您的密碼">
+                        </div>
                     </div>
+                    <div class="alert">!密碼格式錯誤 </div>
+                    <div class="input_option">
+                        <p class="option_name">密碼確認</p>
+                        <div class="fullinput_container ">
+                            <input type="text" name="passwordAgain" id="passwordAgain" placeholder="請再次輸入您的密碼">
+                        </div>
+                    </div>
+                    <div class="alert">!密碼與前一次不同 </div>
+
+
+
+                    <div class="checkbox-info">
+                        <div class="c_confirm_bar">
+                            <label>
+                                <input type="checkbox" name="" id="">
+                                <span class="z_all-center">我同意<a href="#"> 隱私條款 </a>與<a href="#">租客平台公約</a>,我已閱讀完<a href="#">租賃法.</a></span>
+                            </label>
+                        </div>
+
+                    </div>
+                    <button type="submit" id="sign_up"
+                    class="pc-button-FEAC00-180">註冊</button>
                 </form>
-                <div class="alert">!驗證碼輸入錯誤 </div>
-                <div class="input_option">
-                    <p class="option_name" style="margin-right: 16px;margin-left: 30px;">密碼</p>
-                    <div class="fullinput_container ">
-                        <input type="text" name="password" id="password" placeholder="請輸入您的密碼">
-                    </div>
-                </div>
-                <div class="alert">!密碼格式錯誤 </div>
-                <div class="input_option">
-                    <p class="option_name">密碼確認</p>
-                    <div class="fullinput_container ">
-                        <input type="text" name="passwordAgain" id="passwordAgain" placeholder="請再次輸入您的密碼">
-                    </div>
-                </div>
-                <div class="alert">!密碼與前一次不同 </div>
-
-
-
-                <div class="checkbox-info">
-                    <div class="c_confirm_bar">
-                        <label>
-                            <input type="checkbox" name="" id="">
-                            <span class="z_all-center">我同意<a href="#"> 隱私條款 </a>與<a href="#">租客平台公約</a>,我已閱讀完<a href="#">租賃法.</a></span>
-                        </label>
-                    </div>
-
-                </div>
-                <button type="submit" class="pc-button-FEAC00-180">註冊</button>
-                <!-- </form> -->
                 <p>您已經註冊了嗎？<a href="#">由此進入</a></p>
             </div>
         </div>
@@ -847,15 +834,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
         const signinBtn = document.querySelector('.signinBtn');
         const signupBtn = document.querySelector('.signupBtn');
         // const formBx = document.querySelector('.formBx');
@@ -914,7 +892,7 @@
 
             // AJAX
             if (isPass) {
-                $.post('insert02.php', $data, function(data) {
+                $.post('insert02.php', $(document.form1).serialize(), function(data) {
                     console.log(data);
                     if (data.success) {
                         // alert('資料新增成功');
@@ -935,48 +913,51 @@
 
 
 
+        // const $name = $('#name');
+        // const $mobile = $('#mobile');
+        // const $email = $('#email');
+        // const $password = $('#password');
 
 
-        
-        const $name = $('#name');
-        const $mobile = $('#mobile');
-        const $email = $('#email');
-        const $password = $('#password');
+        // function checkForm() {
+
+        //     // 清除之前的檢查訊息
+        //     $name.next().html('');
 
 
-        function checkForm{
+        //     let isPass = true; //有沒有通過檢查
 
-            // 清除之前的檢查訊息
-            $name.next().html('');
+        //     name = $name.val().trim();
+        //     if (name.length < 2) {
+        //         $name.next().html('請填寫正確資料');
+        //         isPass = false;
 
-
-            let isPass = true; //有沒有通過檢查
-
-            name = $name.val().trim();
-            if(name.length < 2){
-                $name.next().html('請填寫正確資料');
-                isPass = false;
-
-            }
+        //     }
 
 
 
-            //json
-            if (isPass){
-                $.post('insert02.php'),$(document.form1).serialize(), function(data){
-                    console.log(data),'json';
-                }
-            }
+        //     //json
+        //     if (isPass) {
+        //         $.post('insert02.php'), $(document.form1).serialize(),
+        //             function(data) {
+        //                 console.log(data), 'json';
+        //             }
+        //     }
 
-        }
+        // }
 
-        // $('.CAPTCHA-Btn').click(function() {
-        //     console.log($('#email').text());
-        // });
+        $('.CAPTCHA-Btn').click(function() {
+            console.log($('#email').text());
+        });
 
         $btnSendVerify.on('click', function() {
             document.cookie = "username=John Doe";
         });
+
+        $("form").click(function(){
+            console.log('lll');
+            // $("#checked").attr('disabled','disabled')
+        })
     </script>
 
     <?php include __DIR__ . './part/javascript.php'  ?>

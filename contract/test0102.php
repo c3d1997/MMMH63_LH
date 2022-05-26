@@ -34,7 +34,7 @@
         $mail->setFrom('littlehouse6302@gmail.com', 'Mailer');
         $mail->addAddress('littlehouse6302@gmail.com', 'Joe User');     // Add a recipient
         $mail->addAddress('chiying0104@gmail.com', 'Chiying User');               // Name is optional
-        // $mail->addReplyTo('littlehouse6302@gmail.com', 'Little_house');
+        $mail->addReplyTo('littlehouse6302@gmail.com', 'Little_house');
         // $mail->addCC('chiying0104@gmail.com');
         // $mail->addBCC('');
 
@@ -45,11 +45,11 @@
         //Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Here is the subject';
-        $mail->Body    = 'g5f8t1f85';
+        $mail->Body    = 'g5f8t1f88888';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
-        // echo 'Message has been sent';
+        echo 'Message has been sent';
         // header("Location: ../sign_signup.php");
         exit();
     } catch (Exception $e) {

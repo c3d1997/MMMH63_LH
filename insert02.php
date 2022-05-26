@@ -2,10 +2,12 @@
 
 require __DIR__ . '/part/connect-db.php';
 
+
 $sql = "INSERT INTO `members`(`name`, `email`, `mobile`,`Password`)
 VALUES (?, ?, ?, ?)";
 
 $stmt = $pdo->prepare($sql);
+// echo $stmt;
 
 
 $stmt->execute([

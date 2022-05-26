@@ -13,7 +13,7 @@ $stmt = $pdo->query($psql);
 $p = $stmt->fetch();
 
 
-$sql = "SELECT *     FROM `items` WHERE `id` = 1;";
+$sql = "SELECT *     FROM `items` WHERE `sid` = 1;";
 $i = $pdo->query($sql)->fetch();
 $sql = "SELECT *     FROM `items` WHERE `img`";
 $img = $pdo->query($sql)->fetch();

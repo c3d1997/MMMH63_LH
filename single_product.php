@@ -4,7 +4,7 @@ require './part/connect-db.php';
 
 
 // 帶入房屋資料
-$sql = "SELECT * FROM `items` WHERE `id` = 1;";
+$sql = "SELECT * FROM `items` WHERE `sid` = 1;";
 $stmt = $pdo->query($sql);
 $i = $stmt->fetch();
 
@@ -1058,7 +1058,7 @@ $i = $stmt->fetch();
                 <!-- <button class="simplepicker-btn">Show Picker</button> -->
                 <div class="event-log S-d-none">Event logs:<br></div>
 
-                <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a href="customer_service/customer_service.html">聯絡我們</a></button>
+                <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a href="./FinalCheck_page.php">我要租屋</a></button>
 
 
             </div>
