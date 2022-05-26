@@ -15,7 +15,7 @@
                 </svg>
 
             </div>
-            <div action="" id="search_form" onchange="check()";>
+            <div action="" id="search_form">
                 <div class="x-search-price-bar ">
                     <input type="text" class="js-range-slider" name="price" value="" data-type="double" data-min="5000" data-max="50000" data-step="500" />
                 </div>
