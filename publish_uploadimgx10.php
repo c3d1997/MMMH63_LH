@@ -1,3 +1,7 @@
+
+
+
+
 <?php include __DIR__ . './part/head.php'  ?>
 
     <style>
@@ -686,13 +690,14 @@
                         <img src="imgs/backcolor.svg" alt="">
                         <p>刊登物件</p>
                     </div>
+                    <!-- <form action="publish_uploadimg-api.php" method="post" enctype="multipart/form-data"> -->
                     <div class="z_step_title bold">step1.　上傳房屋圖片</div>
                     <div class="z_img_reviewcontainer bold">
                         <div class="uploadimg_before">
                             <p>您可以拖拉圖片至此處</p>
                             <div class="z_upload_item_img_btn">
-                                <input type="file" accept="image/* " id="mainUpload">
-                                <button id="upload_btn"><img src="imgs/uploadicon.svg" alt="">或是點此上傳</button>
+                                <input type="file" accept="image/*" id="mainUpload" name="mainUpload">
+                                <button id="upload_btn" type="button"><img src="imgs/uploadicon.svg" alt="">或是點此上傳</button>
                             </div>
                             <p>提醒您！最多可以上傳10張照片，並且每張照片解析度請至少達到1280*920px</p>
                         </div>
@@ -764,7 +769,9 @@
                         <p>提醒您！</p>
                         <p>最多可以上傳10張照片，並且每張照片解析度請至少達到1280*920px</p>
                     </div>
-                    <a href="./publish_item_detail.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_maxbtn">下一步</button></a>
+                    
+                    <a href="./publish_item_detail.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_maxbtn" onclick="saveAllImg()">下一步</button></a>
+                    <!-- </form> -->
                 </div>
             </div>
         </div>
@@ -772,11 +779,12 @@
 
 <?php include __DIR__ . './part/footer.php'  ?>
         <script>
+        const img_arr = []
+
         $("#upload_btn").click(function(){
             $("#mainUpload").click()
         })
         $("#mainUpload").change(function(){
-            console.log(this);
             readURL(this);
             $(".uploadimg_before").css("background","#eef1f47c")
         });
@@ -791,6 +799,7 @@
                 if (i<smallcontainer.length) {
                     $(smallcontainer[i]).attr('src', e.target.result);
                     $(smallcontainer[i]).css("z-index","3")
+                    img_arr.push(e.target.result)
                 }else{
                     i=0;
                     $(smallcontainer[i]).attr('src', e.target.result);
@@ -800,6 +809,7 @@
                 console.log(i);
             }
             reader.readAsDataURL(input.files[0]);
+            console.log(img_arr);
         //   }
         }
         const uploadBg = 
@@ -813,8 +823,14 @@
                 console.log("none");
                 console.log(i);
             }
-
         })
+        // const saveAllImg = () => {
+        //     localStorage.setItem("itemsImg",JSON.stringify(img_arr))
+        // };
+
+
+
+
         </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>

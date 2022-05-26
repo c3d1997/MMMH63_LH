@@ -571,7 +571,9 @@ $title = '付款方式'
     .downArrow {
         transform: rotateX(180deg);
     }
-
+    .downArrow_0 {
+        transform: rotateX(0deg);
+    }
     .z_maxbtn {
         display: flex;
         justify-content: center;
@@ -956,21 +958,6 @@ $title = '付款方式'
                     <p class="alert" id="payWay"></p>
                 </div>
                 <div class="z_text_intput ">
-                    <p class="z_checkbox_option ">　優惠碼</p>
-                    <div class="z_input_container">
-                        <input class="z_input_text" type="text" name="" id="coupon_container" placeholder="請輸入優惠碼">
-                    </div>
-                    <div class="z_coupon_container">
-                        <p class="coupon">帶入優惠碼</p>
-                    </div>
-                </div>
-                <div class="z_pay_alert">
-                    <p class="alert"></p>
-                </div>
-                <div class="z_coupon_phone_container">
-                    <p class="coupon">帶入優惠碼</p>
-                </div>
-                <div class="z_text_intput ">
                     <p class="z_checkbox_option ">付款金額</p>
                     <div class="z_input_container">
                         <p>777777</p>
@@ -1091,10 +1078,16 @@ $title = '付款方式'
             $(".card_area").css("display", "none")
         }
     })
-
-    $("#bankSelect").click(function() {
+    $("#bankSelect").on({
+        mouseleave: function() {
+        $(".arrow_container img").removeClass("downArrow")
+    },  
+    click: function(){
         $(".arrow_container img").toggleClass("downArrow")
+    }
     })
+
+
 </script>
 
 <?php include __DIR__ . './part/javascript.php' ?>
