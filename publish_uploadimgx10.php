@@ -770,7 +770,7 @@
                         <p>最多可以上傳10張照片，並且每張照片解析度請至少達到1280*920px</p>
                     </div>
                     
-                    <a href="./publish_item_detail.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_maxbtn" onclick="saveAllImg()">下一步</button></a>
+                    <a><button class="pc-button-FEAC00-180 z_publish_btnY z_maxbtn" onclick="saveAllImg()">下一步</button></a>
                     <!-- </form> -->
                 </div>
             </div>
@@ -779,8 +779,8 @@
 
 <?php include __DIR__ . './part/footer.php'  ?>
         <script>
-        const img_arr = []
-
+        const img_arr = new Array()
+        const test = []
         $("#upload_btn").click(function(){
             $("#mainUpload").click()
         })
@@ -806,10 +806,9 @@
                     console.log("over");
                 }
                 i++;
-                console.log(i);
+                // console.log(i);
             }
             reader.readAsDataURL(input.files[0]);
-            console.log(img_arr);
         //   }
         }
         const uploadBg = 
@@ -824,9 +823,17 @@
                 console.log(i);
             }
         })
-        // const saveAllImg = () => {
-        //     localStorage.setItem("itemsImg",JSON.stringify(img_arr))
-        // };
+        function saveAllImg() {
+            $.ajax({
+                url:"publish_uploadimg-api.php",
+                method: "post",
+                data: {img_arr : JSON.stringify(img_arr) },
+                success: function(){
+                    console.log((img_arr))
+                }
+
+            })
+        }
 
 
 
