@@ -19,7 +19,7 @@ $stmt = $pdo->query($psql);
 $p = $stmt->fetch();
 
 // 帶入房屋資料
-$sql = "SELECT * FROM `items` WHERE `id` = 1;";
+$sql = "SELECT * FROM `items` WHERE `sid` = 1;";
 $stmt = $pdo->query($sql);
 $i = $stmt->fetch();
 
@@ -481,6 +481,9 @@ $i = $stmt->fetch();
         right: 15px;
         position: absolute;
         pointer-events: none;
+    }
+    .downArrow {
+        transform: rotate(180deg);
     }
 
 
@@ -1072,10 +1075,15 @@ $i = $stmt->fetch();
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script>
-    $(".c-dropdown_container").click(function() {
-        $(this).find(".dropdown_list").toggle()
-        $(this).find("img").toggleClass("downArrow")
-    })
+
+    $("select").on({
+        mouseleave: function(){
+            $(this).next().children().removeClass("downArrow")
+        },
+        click : function(){
+            $(this).next().children().toggleClass("downArrow")
+        } 
+        })
 
 
     const $record = $('#record');

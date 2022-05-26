@@ -4,7 +4,7 @@
 
 
 
-    $sql = "SELECT * FROM `mumber` WHERE `sid` = 1;";
+    $sql = "SELECT * FROM `members` WHERE `sid` = 1;";
     $stmt = $pdo->query($sql);
     $n = $stmt->fetch();
     
