@@ -3,8 +3,28 @@
 require __DIR__ . '/part/connect-db.php';
 
 
-$sql = "INSERT INTO `members`(`name`, `email`, `mobile`,`Password`)
-VALUES (?, ?, ?, ?)";
+$output = [
+  'success' => false,
+  'error' => '',
+  'code' => 0,
+  'postData' => $_POST,  // 確認資料
+];
+header('Content-Type: application/json');
+
+// TODO: 檢查欄位資料
+if (empty($_POST['name'])) {
+  $output['error'] = '沒有姓名資料';
+  echo json_encode($output, JSON_UNESCAPED_UNICODE);
+  exit;
+}
+
+
+
+
+
+
+$sql = "INSERT INTO `members`(`name`, `email`, `mobile`,`Password`, created_at)
+VALUES (?, ?, ?, ?, NOW())";
 
 $stmt = $pdo->prepare($sql);
 // echo $stmt;

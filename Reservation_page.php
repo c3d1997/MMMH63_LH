@@ -4,7 +4,7 @@ require './part/connect-db.php';
 
 
 // 帶入房屋資料
-$sql = "SELECT * FROM `items` WHERE `id` = 1;";
+$sql = "SELECT * FROM `items` WHERE `sid` = 1;";
 $stmt = $pdo->query($sql);
 $i = $stmt->fetch();
 
