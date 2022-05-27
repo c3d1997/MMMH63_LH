@@ -1,9 +1,10 @@
 <?php
-// require './part/admin-required.php';
-// require './part/connect-db.php';
+require './part/admin-required.php';
+require './part/connect-db.php';
 $pageName = 'signin_signup';
-?>
+$title = '登入登出';
 
+?>
 <?php include __DIR__ . './part/head.php'  ?>
 
 <style>
@@ -66,7 +67,7 @@ $pageName = 'signin_signup';
         position: absolute;
         z-index: 8888;
         top: 0;
-        left: 0%;
+        left: 50%;
         width: 50%;
         height: 90%;
         background: #5D8DC1;
@@ -184,6 +185,17 @@ $pageName = 'signin_signup';
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
     .formBx {
         position: absolute;
         top: 0;
@@ -214,8 +226,9 @@ $pageName = 'signin_signup';
     .formBx .form {
         position: absolute;
         left: 0;
-        width: 100%;
+        width: 80%;
         transition: .5s;
+
     }
 
     .formBx .signinForm {
@@ -241,10 +254,19 @@ $pageName = 'signin_signup';
     }
 
 
+
+    form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     /* 註冊表格 */
     .formBx .signupForm {
         top: 15%;
-        left: 0%;
+        left: 10%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -340,16 +362,9 @@ $pageName = 'signin_signup';
     .input_option {
         height: 48px;
         width: 100%;
+        margin: 15px 0;
     }
 
-    .alert {
-        padding: 2px 0;
-        margin-left: 80px;
-    }
-
-    .signinForm .alert {
-        margin-left: 50px;
-    }
 
     .checkbox-info input {
         width: 10px;
@@ -518,7 +533,6 @@ $pageName = 'signin_signup';
         }
 
 
-
         .blueBg {
             background: #F1EDEA;
             box-shadow: 0 5px 45px rgba(0, 0, 0, 0);
@@ -578,7 +592,6 @@ $pageName = 'signin_signup';
 
 
         .alert {
-            /* padding: 2px 0; */
             margin-left: 0;
         }
 
@@ -670,7 +683,6 @@ $pageName = 'signin_signup';
 
 
         <!-- 登入表格 -->
-
         <div class="formBx">
             <!-- 登入手機按鈕mobile-signinBtn -->
             <div class="mobil-Btn-g S-lg-d-none">
@@ -678,442 +690,401 @@ $pageName = 'signin_signup';
                 <button class="mobile-signupBtn">註冊</button>
             </div>
             <div class="form signinForm">
-                <form>
+                <form action="" name="form-signin" method="post" onsubmit="checkForm(); return false;" novalidatea>
                     <!-- 標題+輸入框 -->
                     <div class="input_option">
                         <p class="option_name">手機</p>
                         <div class="fullinput_container ">
-                            <input type="text" name="mobile" id="mobile" placeholder="輸入您的帳號">
+                            <input type="text" name="signin-mobile" id="signin-mobile" placeholder="輸入您的帳號">
+                            <div class="alert"></div>
                         </div>
 
                     </div>
-                    <div class="alert">!帳號或密碼錯誤 </div>
                     <!-- 標題+輸入框 -->
                     <div class="input_option">
                         <p class="option_name">密碼</p>
                         <div class="fullinput_container ">
-                            <input type="text" name="password" id="password" placeholder="輸入您的密碼">
+                            <input type="text" name="signin-password" id="signin-password" placeholder="輸入您的密碼">
+                            <div class="alert"></div>
                         </div>
                     </div>
-                    <div class="alert">!帳號或密碼錯誤 </div>
                     <a href="#" class="forgot">忘記密碼</a>
+
+                    <button class="pc-button-FEAC00-180">登入</button>
                 </form>
-                <button class="pc-button-FEAC00-180">登入</button>
                 <a href="#" class="font-color-blue">尚未註冊？點此註冊</a>
             </div>
 
 
 
+
+
+
+            <!-- ------------------------------------------------------------------------------------- -->
+
             <!-- 註冊表格 -->
-
-
-            <div class="form signupForm S-d-new-none">
-                <form action="" name="form1" id='form1' method="post" onsubmit="checkForm(); return false ;">
+            <!-- <form action="" name="form1" method="post" onsubmit="checkForm(); return false;" novalidatea> -->
+            <form action="" name="form-signup" method="post" onsubmit="checkForm(); return false;" novalidate>
+                <div class="form signupForm S-d-new-none">
+                    <!-- <form name="form1" method="post" onsubmit="checkForm(); return false;" novalidate> -->
                     <!-- 註冊手機按鈕mobile-signinBtn -->
                     <div class="input_option">
                         <p class="option_name">真實姓名</p>
                         <div class="fullinput_container ">
-                            <input type="text" name="name" id="signup-name" placeholder="請輸入您的姓名">
+                            <input type="text" name="signup-name" id="signup-name" placeholder="請輸入您的姓名">
                             <div class="alert"></div>
                         </div>
                     </div>
-
                     <div class="input_option">
                         <p class="option_name">手機/帳號</p>
                         <div class="fullinput_container ">
-                            <input type="text" name="mobile" id="signup-mobile" placeholder="請輸入您的手機">
+                            <input type="text" name="signup-mobile" id="signup-mobile" placeholder="請輸入您的手機">
                             <div class="alert"></div>
                         </div>
                     </div>
-
-                    <div class="input_option">
-                        <p class="option_name">電子郵件</p>
-                        <div class="fullinput_container ">
-
-                            <input type="email" name="email" id="signup-email" placeholder="請輸入您的信箱" style="border:none; padding: 10px;">
-                            <div class="alert"></div>
-                        </div>
-                    </div>
-
-
-                    <div class="CAPTCHA-g">
+                    <!-- <div class="alert">!手機格式錯誤 </div> -->
+                    <div class="alert"></div>
+                    <form action="./contract/test0102.php" target="_blank">
                         <div class="input_option">
-                            <p class="option_name mr-1word">驗證碼</p>
+                            <p class="option_name">電子郵件</p>
                             <div class="fullinput_container ">
-                                <input type="text" name="checked" id="signup-checked" placeholder="請輸入驗證碼">
+                                <input type="text" name="signup-email" id="signup-email" placeholder="請輸入您的信箱">
                                 <div class="alert"></div>
                             </div>
                         </div>
-                        <!-- 驗證碼按鈕 -->
+                        <div class="CAPTCHA-g">
+                            <div class="input_option">
+                                <p class="option_name mr-1word" style="margin-right: 15px;margin-left: 15px;">驗證碼</p>
+                                <div class="fullinput_container ">
+                                    <input type="text" name="signup-checked" id="signup-checked" placeholder="請輸入驗證碼">
+                                    <div class="alert"></div>
+                                </div>
+                            </div>
 
-                        <button type="button" class="CAPTCHA-Btn S-d-none" onclick="getCode()">寄送驗證碼</button>
-                    </div>
-
+                            <!-- 驗證碼按鈕 -->
+                            <button class="CAPTCHA-Btn S-d-none">寄送驗證碼</button>
+                        </div>
+                    </form>
                     <div class="input_option">
                         <p class="option_name" style="margin-right: 16px;margin-left: 30px;">密碼</p>
                         <div class="fullinput_container ">
-                            <input type="text" name="Password" id="signup-password" placeholder="請輸入您的密碼">
+                            <input type="text" name="signup-password" id="signup-password" placeholder="請輸入您的密碼">
                             <div class="alert"></div>
                         </div>
                     </div>
-
                     <div class="input_option">
                         <p class="option_name">密碼確認</p>
                         <div class="fullinput_container ">
-                            <input type="text" name="passwordAgain" id="signup-passwordAgain" placeholder="請再次輸入您的密碼">
+                            <input type="text" name="signup-passwordAgain" id="signup-passwordAgain" placeholder="請再次輸入您的密碼">
                             <div class="alert"></div>
                         </div>
                     </div>
+                    <!-- <div class="alert">!密碼與前一次不同 </div> -->
 
 
 
                     <div class="checkbox-info">
                         <div class="c_confirm_bar">
                             <label>
-                                <input type="checkbox" name="signup-checkbox" id="signup-checkbox">
+                                <input type="checkbox" name="signup-checkbox" id="">
                                 <span class="z_all-center">我同意<a href="#"> 隱私條款 </a>與<a href="#">租客平台公約</a>,我已閱讀完<a href="#">租賃法.</a></span>
                             </label>
                         </div>
 
                     </div>
-                    <button type="submit" id="sign_up" class="pc-button-FEAC00-180">註冊</button>
-                </form>
-                <p>您已經註冊了嗎？<a href="#">由此進入</a></p>
-            </div>
+                    <button type="submit" class="pc-button-FEAC00-180">註冊</button>
+            </form>
+            <p>您已經註冊了嗎？<a href="#">由此進入</a></p>
         </div>
     </div>
-    <div class="white backdrop-blur S-d-none"></div>
-    <!-- 以下是footer---------------------------------------------  -->
-    <div class="footer_container S-lg-d-none S-d-block">
-        <div class="footer">
-            <div class="container">
-                <div class="footer-up">
-                    <div class="footer-left">
-                        <div class="footer_phone_icon">
-                            <img src="imgs/facebook-square-brands.svg" alt="">
-                            <img src="imgs/instagram-brands.svg" alt="">
-                            <img src="imgs/twitter-brands.svg" alt="">
-                            <img src="imgs/youtube-brands.svg" alt="">
-                        </div>
-                        <div class="footer-left-up">
-                            <p>
-                                地址：台北市大安區市民大道9巷9樓
-                            </p>
-                            <p>
-                                電話：02-2222-2222
-                            </p>
-                            <p>
-                                信箱：csdas@gmail.com
-                            </p>
-                        </div>
-                        <div class="footer-left-down">
-                            <a href="#">免責聲明</a>
-                            <a href="#">隱私權政策</a>
-                            <a href="#">服務條款</a>
-                        </div>
-                    </div>
-                    <div class="footer-right">
-                        <img src="./imgs/people.png" alt="">
-                    </div>
-                </div>
+</div>
 
-            </div>
-            <div class="footer-down">
-                <div class="container">
-                    <div class="footer_icon">
-                        <p>Follow us</p>
+<div class="white backdrop-blur S-d-none"></div>
+<!-- 以下是footer---------------------------------------------  -->
+<div class="footer_container S-lg-d-none S-d-block">
+    <div class="footer">
+        <div class="container">
+            <div class="footer-up">
+                <div class="footer-left">
+                    <div class="footer_phone_icon">
                         <img src="imgs/facebook-square-brands.svg" alt="">
-
                         <img src="imgs/instagram-brands.svg" alt="">
                         <img src="imgs/twitter-brands.svg" alt="">
                         <img src="imgs/youtube-brands.svg" alt="">
                     </div>
-                    <div class="copyright">
+                    <div class="footer-left-up">
                         <p>
-                            Copyright © ICS COLLEGE OF ARTS. All rights reserved.
+                            地址：台北市大安區市民大道9巷9樓
+                        </p>
+                        <p>
+                            電話：02-2222-2222
+                        </p>
+                        <p>
+                            信箱：csdas@gmail.com
                         </p>
                     </div>
-                    <div class="tw">
-                        <p>
-                            TW
-                        </p>
+                    <div class="footer-left-down">
+                        <a href="#">免責聲明</a>
+                        <a href="#">隱私權政策</a>
+                        <a href="#">服務條款</a>
                     </div>
                 </div>
-
+                <div class="footer-right">
+                    <img src="./imgs/people.png" alt="">
+                </div>
             </div>
+
         </div>
-        <div class="phone_copyright">
-            <p>
-                Copyright © ICS COLLEGE OF ARTS. All rights reserved.
-            </p>
+        <div class="footer-down">
+            <div class="container">
+                <div class="footer_icon">
+                    <p>Follow us</p>
+                    <img src="imgs/facebook-square-brands.svg" alt="">
+
+                    <img src="imgs/instagram-brands.svg" alt="">
+                    <img src="imgs/twitter-brands.svg" alt="">
+                    <img src="imgs/youtube-brands.svg" alt="">
+                </div>
+                <div class="copyright">
+                    <p>
+                        Copyright © ICS COLLEGE OF ARTS. All rights reserved.
+                    </p>
+                </div>
+                <div class="tw">
+                    <p>
+                        TW
+                    </p>
+                </div>
+            </div>
+
         </div>
     </div>
+    <div class="phone_copyright">
+        <p>
+            Copyright © ICS COLLEGE OF ARTS. All rights reserved.
+        </p>
+    </div>
+</div>
 
-    <!-- FOOTER--------------------------------------------------- -->
-
-
-    <script src="js/jquery-3.6.0.js"></script>
-    <script>
-        // 自己頁面的script
-
-
-
-        const signinBtn = document.querySelector('.signinBtn');
-        const signupBtn = document.querySelector('.signupBtn');
-        // const formBx = document.querySelector('.formBx');
-        const InfoBx = document.querySelector('.InfoBx');
-        const body = document.querySelector('body');
-        const signupForm = document.querySelector('.signupForm');
+<!-- FOOTER--------------------------------------------------- -->
 
 
-        let signinClicked = $('.signinBtn').click();
-        let signupClicked = $('.signupBtn').click();
-        let $btnSendVerify = $('.CAPTCHA-Btn');
+<script src="js/jquery-3.6.0.js"></script>
+<script>
+    // 自己頁面的script
+    const signinBtn = document.querySelector('.signinBtn');
+    const signupBtn = document.querySelector('.signupBtn');
+    // const formBx = document.querySelector('.formBx');
+    const InfoBx = document.querySelector('.InfoBx');
+    const body = document.querySelector('body');
+    const signupForm = document.querySelector('.signupForm');
+    const signinForm = document.querySelector('.signinForm');
 
-
-
-        // 桌機版註冊&登入
-        $('.signupBtn').click(function() {
-            console.log('hi signup');
-            InfoBx.classList.add('active');
-            InfoBx.classList.remove('inactive');
-            signupBtn.classList.add('S-blue');
-            signinBtn.classList.remove('S-blue');
-        });
-
-        $('.signinBtn').click(function() {
-            console.log('hi signin');
-            InfoBx.classList.add('inactive');
-            InfoBx.classList.remove('active');
-            signinBtn.classList.add('S-blue');
-            signupBtn.classList.remove('S-blue');
-        });
+    let signinClicked = $('.signinBtn').click();
+    let signupClicked = $('.signupBtn').click();
+    let $btnSendVerify = $('.CAPTCHA-Btn');
 
 
 
+    // 桌機版註冊&登入
+    $('.signupBtn').click(function() {
+        console.log('hi signup');
+        InfoBx.classList.add('active');
+        InfoBx.classList.remove('inactive');
+        signupBtn.classList.add('S-blue');
+        signinBtn.classList.remove('S-blue');
+    });
 
-        // 手機板註冊&登入
-
-        $('.mobile-signinBtn').click(function() {
-            $('.signupForm').addClass('S-d-new-none');
-            $('.signinForm').removeClass('S-d-new-none');
-            $('.mobile-signinBtn').addClass('S-blue');
-            $('.mobile-signupBtn').removeClass('S-blue');
-        })
-
-        $('.mobile-signupBtn').click(function() {
-            $('.signinForm').addClass('S-d-new-none');
-            $('.signupForm').removeClass('S-d-new-none');
-            $('.mobile-signupBtn').addClass('S-blue');
-            $('.mobile-signinBtn').removeClass('S-blue');
-        })
+    $('.signinBtn').click(function() {
+        console.log('hi signin');
+        InfoBx.classList.add('inactive');
+        InfoBx.classList.remove('active');
+        signinBtn.classList.add('S-blue');
+        signupBtn.classList.remove('S-blue');
+    });
 
 
 
-        // function checkForm() {
-        //     // let isPass = true,
-        //     //     $data = $(document.form1).serialize();
 
-        //     // AJAX
-        //     $.post('insert02.php', $(document.form1).serialize(), function(data) {
-        //         console.log(data);
-        //         if (data.success) {
-        //             // alert('資料新增成功');
-        //             // location.href = 'ab-list.php';
-        //             $modal.find('#exampleModalLabel').html('資料新增成功');
-        //             $modal.find('.modal-body').html('恭喜');
-        //             modal.show();
+    // 手機板註冊&登入
 
-        //         } else {
-        //             //alert(data.error || '資料新增失敗');
-        //             $modal.find('#exampleModalLabel').html('資料新增失敗');
-        //             $modal.find('.modal-body').html('...');
-        //             modal.show();
-        //         }
-        //     }, 'json');
+    $('.mobile-signinBtn').click(function() {
+        $('.signupForm').addClass('S-d-new-none');
+        $('.signinForm').removeClass('S-d-new-none');
+        $('.mobile-signinBtn').addClass('S-blue');
+        $('.mobile-signupBtn').removeClass('S-blue');
+    })
+
+    $('.mobile-signupBtn').click(function() {
+        $('.signinForm').addClass('S-d-new-none');
+        $('.signupForm').removeClass('S-d-new-none');
+        $('.mobile-signupBtn').addClass('S-blue');
+        $('.mobile-signinBtn').removeClass('S-blue');
+    })
+
+
+    // -----------註冊輸入並增加會員----------------------------------------
+
+    // function checkForm() {
+    //     let isPass = true,
+    //         $data = $(document.form1).serialize();
+
+    //     // AJAX
+    //     if (isPass) {
+    //         $.post('insert02.php', $data, function(data) {
+    //             console.log(data);
+    //             if (data.success) {
+    //                 // alert('資料新增成功');
+    //                 // location.href = 'ab-list.php';
+    //                 $modal.find('#exampleModalLabel').html('資料新增成功');
+    //                 $modal.find('.modal-body').html('恭喜');
+    //                 modal.show();
+
+    //             } else {
+    //                 //alert(data.error || '資料新增失敗');
+    //                 $modal.find('#exampleModalLabel').html('資料新增失敗');
+    //                 $modal.find('.modal-body').html('...');
+    //                 modal.show();
+    //             }
+    //         }, 'json');
+    //     }
+    // }
+</script>
+<script>
+    // ------------驗證並彈出錯誤訊息------------------------------------------
+
+    const $name = $('#signup-name');
+    const $mobile = $('#signup-mobile');
+    const $email = $('#signup-email');
+    
+    const $signupChecked = $('#signup-checked');
+    const $password = $('#signup-password');
+    const $passwordAgain = $('#signup-passwordAgain');
+    // const msgFields = [$name, $email, $mobile];
+
+
+
+    function validateEmail(email) {
+        var re =
+            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zAZ]{2,}))$/;
+        return re.test(email);
+    }
+
+    function validateMobile(m) {
+        return /^09\d{2}-?\d{3}-?\d{3}$/.test(m);
+    }
+
+    // https://cloudlab.tw/wp/sampleFiles/RegExp/ 正規標示式
+    function validatePassword(p) {
+        var re =/\d[a-zA-Z]{1}/.test(p);
+        return re.test(p);
+
+    }
+    
+
+
+    function checkForm() {
+
+        // 清除之前的檢查訊息
+        // for (let f of msgFields) {
+        //     f.css('border', '#CCCCCC 1px solid');
+        //     f.next().html('');
         // }
-
-
-
-        $('.CAPTCHA-Btn').click(function() {
-            console.log($('#email').text());
-        });
-
-        $btnSendVerify.on('click', function() {
-            document.cookie = "username=John Doe";
-        });
-
-        function getCode() {
-            let email = $('#signup-email').val();
-            $.get('contract/test0102.php', {
-                email
-            }, function(data) {
-                alert('....');
-            });
-
-
-
-        }
-    </script>
-
-    <script>
-        // ------------驗證並彈出錯誤訊息------------------------------------------
-
-
-
-
-
-
-        function validateEmail(email) {
-            var re =
-                /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zAZ]{2,}))$/;
-            return re.test(email);
-        }
-
-        function validateMobile(m) {
-            return /^09\d{2}-?\d{3}-?\d{3}$/.test(m);
-        }
-
-        // https://cloudlab.tw/wp/sampleFiles/RegExp/ 正規標示式
-        function validatePassword(p) {
-            return /(\d+[a-z]+|[a-z]+\d+)/.test(p);
-        }
-
-
-
-
-        //  存入資料庫
-        function checkForm() {
-            const $name = $('#signup-name');
-            const $email = $('#signup-email');
-            const $mobile = $('#signup-mobile');
-
-            const msgFields = [$name, $email, $mobile];
-            // 清除之前的檢查訊息
-            for (let f of msgFields) {
-                f.css('border', '#CCCCCC 1px solid');
-                f.next().html('');
-            }
-            let isPass = true; //有沒有通過檢查(預設為通過，有一格沒填就不過)
-
-
-            if ($name.val().length < 2) {
-                $name.next().html('請填寫正確資料');
-                $name.css('border', 'red 1px solid');
-                isPass = false;
-            }
-
-            if ($email.val() && !validateEmail($email.val())) {
-
-                $email.next().html('請填寫正確的email');
-                $email.css('border', 'red 1px solid');
-                isPass = false;
-            }
-
-            if ($mobile.val() && !validateMobile($mobile.val())) {
-
-                $mobile.next().html('請填寫正確的手機號碼');
-                $mobile.css('border', 'red 1px solid');
-                isPass = false;
-            }
-            const $signupChecked = $('#signup-checked');
-            if ($signupChecked.val().length < 5) {
-
-                $signupChecked.next().html('請填寫正確的驗證碼');
-                $signupChecked.css('border', 'red 1px solid');
-                isPass = false;
-            }
-            const $password = $('#signup-password');
-            if (!$password.val() || !validatePassword($password.val())) {
-
-                $password.next().html('請填寫16位元的密碼，至少一個英文一個數字');
-                $password.css('border', 'red 1px solid');
-                isPass = false;
-            }
-            const $passwordAgain = $('#signup-passwordAgain');
-            if ($passwordAgain.val() != $password.val()) {
-                $passwordAgain.next().html('需與前一次密碼相同');
-                $passwordAgain.css('border', 'red 1px solid');
-                isPass = false;
-            }
-
-            if (isPass) {
-                $.post('insert02.php', $(document.form1).serialize(),
-                    function(data) {
-                        console.log(data), 'json';
-                    });
-            }
-        }
-
-        //  存入資料庫
-
-
-
 
 
         // TODO: 檢查欄位資料.
 
+        let isPass = true; //有沒有通過檢查(預設為通過，有一格沒填就不過)
 
 
+        
         // trim()前後空白去掉
         // const name = $name.val().trim();
         // console.log('name');
 
-        // const $name = $('#signup-name');
-        // if ($name.val().length < 2) {
-        //     $name.next().html('請填寫正確資料');
-        //     $name.css('border', 'red 1px solid');
-        //     isPass = false;
-        // }
-        // const $email = $('#signup-email');
-        // if ($email.val() && !validateEmail($email.val())) {
+        if (name.length < 2) {
+            $name.next().html('請填寫正確資料');
+            $name.css('border', 'red 1px solid');
+            isPass = false;
+        }
 
-        //     $email.next().html('請填寫正確的email');
-        //     $email.css('border', 'red 1px solid');
-        //     isPass = false;
-        // }
-        // const $mobile = $('#signup-mobile');
-        // if ($mobile.val() && !validateMobile($mobile.val())) {
+        if ($email.val() && !validateEmail($email.val())) {
+            $email.next().html('請填寫正確的email');
+            $email.css('border', 'red 1px solid');
+            isPass = false;
+        }
 
-        //     $mobile.next().html('請填寫正確的手機號碼');
+        if ($mobile.val() && !validateMobile($mobile.val())) {
+            $mobile.next().html('請填寫正確的手機號碼');
+            $mobile.css('border', 'red 1px solid');
+            isPass = false;
+        }
+
+        if ($signupChecked.length < 5) {
+            $signupChecked.next().html('請填寫正確的驗證碼');
+            $signupChecked.css('border', 'red 1px solid');
+            isPass = false;
+        }  
+
+        if ($password.val() && !validatePassword($password.val())) {
+            // console.log('right');
+            $password.next().html('請填寫16位元的密碼，至少一個英文一個數字');
+            $password.css('border', 'red 1px solid');
+            isPass = false;
+        }
+        if ($passwordAgain.length != $password.val()) {
+            $passwordAgain.next().html('需與前一次密碼相同');
+            $passwordAgain.css('border', 'red 1px solid');
+            isPass = false;
+        }
+        if ($ != $password.val()) {
+            $passwordAgain.next().html('需與前一次密碼相同');
+            $passwordAgain.css('border', 'red 1px solid');
+            isPass = false;
+        }
+        // export const validatePass = (rule, value, callback) => {
+        //     var regex = new RegExp('(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{6,30}');
+        //     if (!regex.test(value)) {
+        //         callback(new Error('密码不能少于6位，且包含大写字母、小写字母、数字、特殊符号'))
+        //     } else {
+        //         callback()
+        //     }
+        // };
+        // if ($password.password_verify($password, $password_hash)) {
+        //     $mobile.next().html('請填寫正確的密碼');
         //     $mobile.css('border', 'red 1px solid');
         //     isPass = false;
         // }
-        // const $signupChecked = $('#signup-checked');
-        // if ($signupChecked.length < 5) {
-
-        //     $signupChecked.next().html('請填寫正確的驗證碼');
-        //     $signupChecked.css('border', 'red 1px solid');
-        //     isPass = false;
-        // }
-        // const $password = $('#signup-password');
-        // if ($password.val() && !validatePassword($password.val())) {
-
-        //     $password.next().html('請填寫16位元的密碼，至少一個英文一個數字');
-        //     $password.css('border', 'red 1px solid');
-        //     isPass = false;
-        // }
-        // const $passwordAgain = $('#signup-passwordAgain');
-        // if ($passwordAgain.length != $password.val()) {
-        //     $passwordAgain.next().html('需與前一次密碼相同');
-        //     $passwordAgain.css('border', 'red 1px solid');
+        //    看看兩次密碼是否相同？
+        // var pw1 = document.getElementById("#signup-password");
+        // var pw2 = document.getElementById("#signup-passwordAgain");
+        // if (pw1.value != pw2.value) {
+        //     $mobile.next().html('請填寫正確的密碼');
+        //     $mobile.css('border', 'red 1px solid');
         //     isPass = false;
         // }
 
+        // //json
+        // if (isPass) {
+        //     //     $.post('insert02.php'), $(document.form1).serialize(),
+        //     //         function(data) {
+        //     //             console.log(data), 'json';
+        //     //         }
+        //     // }
+
+    };
 
 
 
 
 
+    // -----------------------------------------------------------------------------
+    $('.CAPTCHA-Btn').click(function() {
+        console.log($('#email').text());
+    });
 
-        // json
-
-
-
-
-
-        // -----------------------------------------------------------------------------
-    </script>
-
-
-    <?php include __DIR__ . './part/javascript.php'  ?>
+    $btnSendVerify.on('click', function() {
+        document.cookie = "username=John Doe";
+    });
+</script>
+<?php include __DIR__ . './part/javascript.php'  ?>
