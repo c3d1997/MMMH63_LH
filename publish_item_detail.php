@@ -4,15 +4,16 @@
     $stmt = $pdo->query($sql)->fetch();
     // echo $stmt['COUNT(*)'];
     $new_item = $stmt['COUNT(*)'] + 1;
-    
-// 上傳 單張 與 建立資料夾
-// $path = "imgs/item$new_item";
-// if(!file_exists($path)){
-//     mkdir($path);
-// }
-// move_uploaded_file($_FILES['mainUpload']['tmp_name'],  $path . '/' .$_FILES['mainUpload']['name']);
-// echo $path . '/'
-//
+
+    $area_sql = "SELECT * FROM `area`;";
+    $area = $pdo->query($area_sql);
+
+
+    $da_sql = "SELECT * FROM `detailed_area`;";
+    $detailed_area = $pdo->query($area_sql);
+
+    // session_destroy();
+
 ?>
 
 
@@ -39,6 +40,7 @@
         margin-left: 75px;
         color: red;
         line-height: 30px;
+        height: 30px;
     }
 
     .fullinput_container input,
@@ -874,138 +876,145 @@
                     <p>刊登物件</p>
                 </div>
                 <div class="z_step_title bold">step2.　房屋詳細資料</div>
-                <div class="z_publish_text_container">
-                    <div class="z_input_row">
-                        <div class="z_publish_input_twooption">
-                            <p class="option_name">　　地址</p>
-                            <div class="z_two_input">
-                                <div class="z_select_dropdown_half_container">
-                                    <select id="areaSelect" name=”areaSelect” class="z_select_dropdown">
-                                        <option value=””>請選擇縣市</option>
-                                        <option value=””>台北市</option>
-                                        <option value=””>新北市</option>
-                                        <option value=””>基隆市</option>
-                                    </select>
-                                    <div class="arrow_container">
-                                        <img src="imgs/down-arrow.svg" alt="">
+                <form action="">
+                    <div class="z_publish_text_container">
+                        <div class="z_input_row">
+                            <div class="z_publish_input_twooption">
+                                <p class="option_name">　　地址</p>
+                                <div class="z_two_input">
+                                    <div class="z_select_dropdown_half_container">
+                                        <select id="areaSelect" name="item_area" class="z_select_dropdown">
+                                            <option value="預設" selected disabled>----請選擇縣市----</option>
+                                            <?php foreach($area as $a ): ?>
+                                                <option value="<?=$a['area']?>">
+                                                    <?=$a['area']?>
+                                                </option>
+                                            <?php endforeach;?>
+                                        </select>
+                                        <div class="arrow_container">
+                                            <img src="imgs/down-arrow.svg" alt="">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="input_alert z_input_alert z_display-b-phone z_display-n-pc">
-                                    <p class="alert">！　請選擇縣市</p>
-                                </div>
-                                <div class="z_select_dropdown_half_container">
-                                    <select id="distSelect" name=”distSelect” class="z_select_dropdown">
-                                        <option value=””>請選擇行政區</option>
-                                        <option value=””>大安區</option>
-                                        <option value=””>信義區</option>
-                                        <option value=””>松山區</option>
-                                    </select>
-                                    <div class="arrow_container">
-                                        <img src="imgs/down-arrow.svg" alt="">
+                                    <div class="input_alert z_input_alert z_display-b-phone z_display-n-pc">
+                                        <p class="alert">！　請選擇縣市</p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input_alert z_input_alert">
-                            <p class="alert">！　請選擇縣市與行政區</p>
-                        </div>
-                        <div class="input_option">
-                            <p class="option_name z_display-n-phone z_display-b-pc">　　　　</p>
-                            <div class="fullinput_container z_fullinput_container">
-                                <input type="text" name="" id="" placeholder="詳細地址">
-                            </div>
-                        </div>
-                        <div class="input_alert z_input_alert">
-                            <p class="alert">！　您的資料格式錯誤（不能為空）</p>
-                        </div>
-                        <div class="input_option">
-                            <p class="option_name">　　坪數</p>
-                            <div class="fullinput_container z_fullinput_container">
-                                <input type="text" name="" id="" placeholder="輸入坪數">
-                            </div>
-                        </div>
-                        <div class="input_alert z_input_alert">
-                            <p class="alert">！　您的資料格式錯誤（不能為空）</p>
-                        </div>
-                        <div class="input_option">
-                            <p class="option_name">　　樓層</p>
-                            <div class="fullinput_container z_fullinput_container">
-                                <input type="text" name="" id="" placeholder="輸入樓層">
-                            </div>
-                        </div>
-                        <div class="input_alert z_input_alert">
-                            <p class="alert">！　您的資料格式錯誤（不能為空）</p>
-                        </div>
-                        <div class="input_option">
-                            <p class="option_name">　　房型</p>
-                            <div class="fullinput_container z_fullinput_container">
-                                <div class="z_select_dropdown_container">
-                                    <select id="distSelect" name=”distSelect” class="z_select_dropdown">
-                                        <option value=””>請選擇房型</option>
-                                        <option value=””>共生</option>
-                                        <option value=””>分租</option>
-                                    </select>
-                                    <div class="arrow_container">
-                                        <img src="imgs/down-arrow.svg" alt="">
+                                    <div class="z_select_dropdown_half_container">
+                                        <select id="distSelect" name=”item_dist” class="z_select_dropdown">
+                                            <option value="" selected disabled>----請選擇縣市----</option>
+                                            <?php foreach($detailed_area as $da ): ?>
+                                            <option value="">大安區</option>
+                                            <option value="">信義區</option>
+                                            <option value="">松山區</option>
+                                            <?php endforeach;?>
+                                        </select>
+                                        <div class="arrow_container">
+                                            <img src="imgs/down-arrow.svg" alt="">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="input_alert z_input_alert">
-                            <p class="alert">！　請選擇房間類型</p>
-                        </div>
-                        <div class="input_option">
-                            <p class="option_name">房間數量</p>
-                            <div class="fullinput_container z_fullinput_container">
-                                <input type="text" name="" id="" placeholder="輸入房間數量">
+                            <div class="input_alert z_input_alert">
+                                <!-- <p class="alert">！　請選擇縣市與行政區</p> -->
                             </div>
-                        </div>
-                        <div class="input_alert z_input_alert">
-                            <p class="alert">！　您的資料格式錯誤（不能為空）</p>
-                        </div>
-                        <div class="input_option">
-                            <p class="option_name">物件名稱</p>
-                            <div class="fullinput_container z_fullinput_container">
-                                <input type="text" name="" id="" placeholder="輸入出租名稱">
+                            <div class="input_option">
+                                <p class="option_name z_display-n-phone z_display-b-pc">　　　　</p>
+                                <div class="fullinput_container z_fullinput_container">
+                                    <input type="text" name="item_address" id="item_address" placeholder="詳細地址">
+                                </div>
                             </div>
-                        </div>
-                        <div class="input_alert z_input_alert">
-                            <p class="alert">！　您的資料格式錯誤（不能為空）</p>
-                        </div>
-                        <div class="input_option">
-                            <p class="option_name">　　價格</p>
-                            <div class="fullinput_container z_fullinput_container">
-                                <input type="text" name="" id="" placeholder="輸入想收取的租金">
+                            <div class="input_alert z_input_alert">
+                                <!-- <p class="alert">！　您的資料格式錯誤（不能為空）</p> -->
                             </div>
-                        </div>
-                        <div class="input_alert z_input_alert">
-                            <p class="alert">！　您的資料格式錯誤（不能為空）</p>
-                        </div>
-                        <div class="input_option">
-                            <p class="option_name">託管時間</p>
-                            <div class="fullinput_container z_fullinput_container">
-                                <input type="text" name="" id="" placeholder="選擇想交由本公司代理出租的時間">
+                            <div class="input_option">
+                                <p class="option_name">　　坪數</p>
+                                <div class="fullinput_container z_fullinput_container">
+                                    <input type="text" name="ping_number" id="ping_number" placeholder="輸入坪數">
+                                </div>
                             </div>
-                        </div>
-                        <div class="input_alert z_input_alert">
-                            <p class="alert">！　您的資料格式錯誤（不能為空）</p>
-                        </div>
-                        <div class="input_option">
-                            <p class="option_name">出租時間</p>
-                            <div class="fullinput_container z_fullinput_container">
-                                <input type="text" name="" id="" placeholder="欲讓房客使用時間">
+                            <div class="input_alert z_input_alert">
+                                <!-- <p class="alert">！　您的資料格式錯誤（不能為空）</p> -->
                             </div>
-                        </div>
-                        <div class="input_alert z_input_alert">
-                            <p class="alert">！　您的資料格式錯誤（不能為空）</p>
+                            <div class="input_option">
+                                <p class="option_name">　　樓層</p>
+                                <div class="fullinput_container z_fullinput_container">
+                                    <input type="text" name="floor" id="loor" placeholder="輸入樓層">
+                                </div>
+                            </div>
+                            <div class="input_alert z_input_alert">
+                                <!-- <p class="alert">！　您的資料格式錯誤（不能為空）</p> -->
+                            </div>
+                            <div class="input_option">
+                                <p class="option_name">　　房型</p>
+                                <div class="fullinput_container z_fullinput_container">
+                                    <div class="z_select_dropdown_container">
+                                        <select id="typeSelect" name="roomtype" class="z_select_dropdown">
+                                            <option value="" selected disabled>請選擇房型</option>
+                                            <option value="">整層住家</option>
+                                            <option value="">分租套房</option>
+                                            <option value="">雅房</option>
+                                        </select>
+                                        <div class="arrow_container">
+                                            <img src="imgs/down-arrow.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input_alert z_input_alert">
+                                <!-- <p class="alert">！　請選擇房間類型</p> -->
+                            </div>
+                            <div class="input_option">
+                                <p class="option_name">房間數量</p>
+                                <div class="fullinput_container z_fullinput_container">
+                                    <input type="text" name="room_count" id="room_count" placeholder="輸入房間數量" value="">
+                                </div>
+                            </div>
+                            <div class="input_alert z_input_alert">
+                                <!-- <p class="alert">！　您的資料格式錯誤（不能為空）</p> -->
+                            </div>
+                            <div class="input_option">
+                                <p class="option_name">物件名稱</p>
+                                <div class="fullinput_container z_fullinput_container">
+                                    <input type="text" name="item_name" id="item_name" placeholder="輸入出租名稱">
+                                </div>
+                            </div>
+                            <div class="input_alert z_input_alert">
+                                <!-- <p class="alert">！　您的資料格式錯誤（不能為空）</p> -->
+                            </div>
+                            <div class="input_option">
+                                <p class="option_name">　　價格</p>
+                                <div class="fullinput_container z_fullinput_container">
+                                    <input type="text" name="price" id="" placeholder="輸入想收取的租金">
+                                </div>
+                            </div>
+                            <div class="input_alert z_input_alert">
+                                <!-- <p class="alert">！　您的資料格式錯誤（不能為空）</p> -->
+                            </div>
+                            <!-- <div class="input_option">
+                                <p class="option_name">託管時間</p>
+                                <div class="fullinput_container z_fullinput_container">
+                                    <input type="text" name="" id="" placeholder="選擇想交由本公司代理出租的時間">
+                                </div>
+                            </div>
+                            <div class="input_alert z_input_alert"> -->
+                                <!-- <p class="alert">！　您的資料格式錯誤（不能為空）</p> -->
+                            <!-- </div> -->
+                            <div class="input_option">
+                                <p class="option_name">租約期間</p>
+                                <div class="fullinput_container z_fullinput_container">
+                                    <input type="text" name="contract" id="contract" placeholder="欲讓房客使用時間">
+                                </div>
+                            </div>
+                            <div class="input_alert z_input_alert">
+                                <!-- <p class="alert">！　您的資料格式錯誤（不能為空）</p> -->
+                            </div>
                         </div>
                     </div>
-
-                </div>
+                </form>    
                 <div class="z_twobtn">
-                    <a href="./publish_uploadimgx10.php"><button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162">上一步</button></a>
-                    <a href="./publish_feature.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162">下一步</button></a>
+                    <a href="./publish_uploadimgx10.php"><button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162" type="button">上一步</button></a>
+                    <a href=""><button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162" onsubmit="itemFeature()">下一步</button></a>
                 </div>
+
             </div>
         </div>
     </div>
@@ -1014,14 +1023,52 @@
 <?php include __DIR__ . './part/footer.php'  ?>
 
 <script>
-    $(".z_select_dropdown").click(function() {
-        $(this).next().find("img").toggleClass("downArrow")
-    })
-    // $(document).ready(function(){
-    //     console.log(JSON.parse(localStorage.getItem("itemsImg"))); 
-
+    // $(".z_select_dropdown").click(function() {
+    //     $(this).next().find("img").toggleClass("downArrow")
     // })
-    
+    $("select").on({
+        mouseleave: function() {
+        $(this).next().children().removeClass("downArrow")
+    },  
+    click: function(){
+        $(this).next().children().toggleClass("downArrow")
+    }
+    })
+
+    const item_area = $("areaSelect").val()
+    const item_dist = $("#distSelect").val()
+    const item_address = $("#item_address").val()
+    const ping_number = $("#ping_number").val()
+    const floor = $("#floor").val()
+    const roomtype = $("#typeSelect").val()
+    const room_count  = $("#room_count").val()
+    const item_name = $("#item_name").val()
+    const contract = $("#contract").val()
+
+
+    function itemFeature() {
+        $.ajax({
+            url:"publish_uploadimg-api.php",
+            method: "post",
+            data:{ 
+                item_area:JSON.stringify(item_area),
+                item_dist:JSON.stringify(item_dist),
+                item_address:JSON.stringify(item_address),
+                ping_number:JSON.stringify(ping_number),
+                floor:JSON.stringify(floor),
+                roomty:JSON.stringify(peroomtype),
+                room_count:JSON.stringify(room_count),
+                item_name:JSON.stringify(item_name),
+                contract:JSON.stringify(contract),
+                success: function(){
+                    console.log((data))
+                }
+            }
+        })
+    }
+
+
+
 </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>

@@ -1,4 +1,7 @@
+<?php 
+    session_start();
 
+?>
 
 
 
@@ -222,7 +225,7 @@
             height: 450px;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-evenly;
             align-content: space-between;
         }
         .z_review_card {
@@ -494,6 +497,9 @@
             background-image: url(imgs\uploadbg.jpg);
             z-index: 3;
         }
+        #phone_upload_btn {
+            display: none;
+        }
 
 
 
@@ -537,10 +543,10 @@
             .z_step1imgs_container {
                 /* margin-top: 20px; */
                 width: 950%;
-                height: 200px;
+                height: 230px;
                 /* display: block; */
                 flex-wrap: nowrap;
-                justify-content: space-between;
+                justify-content:flex-start;
                 /* align-content: space-between; */
             }
             .z_review_card {
@@ -549,6 +555,7 @@
                 height: 250px;
                 background-color: #EEF1F4;
                 outline: 3px solid #0E2E3D;
+                margin-right: 40px;
             }
             .z_review_card img {
                 width: 100%;
@@ -560,7 +567,7 @@
             }
 
             .z_phone_view {
-                margin-left: 30px; 
+                /* margin-left: 30px;  */
                 /* width: 120%; */
                 overflow:scroll;
                 height: 300px;
@@ -677,6 +684,14 @@
             .z_publish_textarea_container  {
                 margin-bottom: 0;
             }
+            #phone_upload_btn {
+                display: block;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%);
+                z-index: 5;
+            }
         }
     </style>
 
@@ -694,10 +709,10 @@
                     <div class="z_step_title bold">step1.　上傳房屋圖片</div>
                     <div class="z_img_reviewcontainer bold">
                         <div class="uploadimg_before">
-                            <p>您可以拖拉圖片至此處</p>
+                            <!-- <p>您可以拖拉圖片至此處</p> -->
                             <div class="z_upload_item_img_btn">
                                 <input type="file" accept="image/*" id="mainUpload" name="mainUpload">
-                                <button id="upload_btn" type="button"><img src="imgs/uploadicon.svg" alt="">或是點此上傳</button>
+                                <button id="upload_btn" type="button"><img src="imgs/uploadicon.svg" alt="">點此上傳</button>
                             </div>
                             <p>提醒您！最多可以上傳10張照片，並且每張照片解析度請至少達到1280*920px</p>
                         </div>
@@ -705,74 +720,10 @@
                     </div>
                     <div class="z_phone_view">
                         <div class="z_step1imgs_container">
-                            <div class="z_review_card">
-                                <button class="z_close_icon"></button>
-                                <img  alt=""  class="smallimg">
-                                <img  alt=""  class="bgimg">
-                            </div>
-                            <div class="z_review_card">
-                                <button class="z_close_icon"></button>
-                                <img  alt="" class="smallimg">
-                                <img  alt=""  class="bgimg">
-
-                            </div>
-                            <div class="z_review_card">
-                                <button class="z_close_icon"></button>
-                                <img  alt="" class="smallimg">
-                                <img  alt=""  class="bgimg">
-
-                            </div>
-                            <div class="z_review_card">
-                                <button class="z_close_icon"></button>
-                                <img  alt="" class="smallimg">
-                                <img  alt=""  class="bgimg">
-
-                            </div>
-                            <div class="z_review_card">
-                                <button class="z_close_icon"></button>
-                                <img  alt="" class="smallimg">
-                                <img  alt=""  class="bgimg">
-
-                            </div>
-                            <div class="z_review_card">
-                                <button class="z_close_icon"></button>
-                                <img  alt="" class="smallimg">
-                                <img  alt=""  class="bgimg">
-
-                            </div>
-                            <div class="z_review_card">
-                                <button class="z_close_icon"></button>
-                                <img  alt="" class="smallimg">
-                                <img  alt=""  class="bgimg">
-
-                            </div>
-                            <div class="z_review_card">
-                                <button class="z_close_icon"></button>
-                                <img  alt="" class="smallimg">
-                                <img  alt=""  class="bgimg">
-                            </div>
-                            <div class="z_review_card">
-                                <button class="z_close_icon"></button>
-                                <img  alt="" class="smallimg">
-                                <img  alt=""  class="bgimg">
-                            
-                            </div>
-                            <div class="z_review_card">
-                                <button class="z_close_icon"></button>
-                                <img  alt="" class="smallimg">
-                                <img  alt=""  class="bgimg">
-                            
-                            </div>
-                        </div>
+                        <button id="phone_upload_btn" type="button"><img src="imgs/uploadicon.svg" alt="">或是點此上傳</button>
                     </div>
-                    <div class="z_publish_phone_tip_container">
-                        <p>提醒您！</p>
-                        <p>最多可以上傳10張照片，並且每張照片解析度請至少達到1280*920px</p>
-                    </div>
-                    
-                    <a><button class="pc-button-FEAC00-180 z_publish_btnY z_maxbtn" onclick="saveAllImg()">下一步</button></a>
-                    <!-- </form> -->
                 </div>
+                <a href="publish_item_detail.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_maxbtn" onclick="saveAllImg()">下一步</button></a>
             </div>
         </div>
     </section>
@@ -780,49 +731,40 @@
 <?php include __DIR__ . './part/footer.php'  ?>
         <script>
         const img_arr = new Array()
-        const test = []
         $("#upload_btn").click(function(){
             $("#mainUpload").click()
         })
+        $("#phone_upload_btn").click(function(){
+            $("#mainUpload").click()
+        })
+
         $("#mainUpload").change(function(){
             readURL(this);
             $(".uploadimg_before").css("background","#eef1f47c")
         });
-        smallcontainer = $(".smallimg")
-        console.log((smallcontainer.length)); 
+
         let i = 0
         function readURL(input){
         //   if(input.files && input.files[0]){
             var reader = new FileReader();
             reader.onload = function (e) {
                 $("#nowimg").attr('src', e.target.result);
-                if (i<smallcontainer.length) {
-                    $(smallcontainer[i]).attr('src', e.target.result);
-                    $(smallcontainer[i]).css("z-index","3")
-                    img_arr.push(e.target.result)
-                }else{
-                    i=0;
-                    $(smallcontainer[i]).attr('src', e.target.result);
-                    console.log("over");
-                }
-                i++;
-                // console.log(i);
+
+                $('.z_step1imgs_container').append(`<div class="z_review_card"><button class="z_close_icon"></button><img src="${e.target.result}" alt=""  class="smallimg"><img  alt=""  class="bgimg"></div>`)
+                img_arr.push(e.target.result)
             }
             reader.readAsDataURL(input.files[0]);
         //   }
         }
-        const uploadBg = 
-        $(".z_close_icon").click(function(){
-            console.log(i);
-            if ($(this).next().attr("src")){
-                $(this).next().removeAttr("src")
-                $(this).next().css("z-index","-1")
-                i--;
-            } else {
-                console.log("none");
-                console.log(i);
-            }
-        })
+
+        $(document).on("click",".z_close_icon",function(){
+            console.log(img_arr.length);
+            
+            $(this).parent().remove();
+            img_arr.pop()
+        });
+
+
         function saveAllImg() {
             $.ajax({
                 url:"publish_uploadimg-api.php",
@@ -831,12 +773,8 @@
                 success: function(){
                     console.log((img_arr))
                 }
-
             })
         }
-
-
-
 
         </script>
 
