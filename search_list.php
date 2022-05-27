@@ -1,18 +1,1665 @@
 <?php
-header('Content-Type: application/json; charset=UTF-8'); 
+require './part/connect-db.php';
 
-if ($_SERVER['REQUEST_METHOD'] == "POST") { 
-    @$rentaltype = $_POST["rentaltype"]; 
-    
-    if ($rentaltype != null ) { 
-        //回傳 nickname 和 gender json 資料
-        echo json_encode(array(
-            'rentaltype' => $rentaltype
-        ));
-    } 
-    
-}
+// $output = [
+//     'filtsuccess' => false,
+//     'code' => 0,
+// ];
+// // 一次讀取幾筆資料
+// $perSearch = 20 ;
+
+// //判斷是否有拿到參數
+// $B_rentaltype = !empty(($_GET['B_rentaltype'])) ? $_GET['B_rentaltype'] :0;
+
+// // 判斷rentaltype 拿sql 單選
+// if($B_rentaltype == 1){
+//     $B_rentaltypeSql = '共生';
+// }else if($B_rentaltype == 2){
+//     $B_rentaltypeSql = '分租';
+// }else if($B_rentaltype == 3){
+//     $B_rentaltypeSql = '%';
+// }
+
+// $allsql ='SELECT * FROM `items` WHERE (`rentaltype`LIKE :B_rentaltypeSql )';
+// $allstmt = $pdo ->prepare($allsql);
+
+// $allstmt ->bindValue(':B_rentaltypeSql',$B_rentaltypeSql, PDO::PARAM_STR);
+// $allstmt ->execute();
+// $allROW = $allstmt ->fetchAll();
+
+// if(empty($allROW)){
+//     $output = [
+//         'filtsuccess' => false,
+//         'code' => 401,
+//         'error' => '房屋查找失敗'
+//     ];
+//     echo json_encode($output, JSON_UNESCAPED_UNICODE);
+//     exit;
+// };
+// if(!empty($allROW)){
+//     $output = [
+//         'filtsuccess' => true,
+//         'code' => 200,
+//         'error' => '房屋查找成功',
+//         'test' => $ottFilterRow[0]['item_name']
+//     ];
+//     echo json_encode($output, JSON_UNESCAPED_UNICODE);
+//     exit;
+// };
+
+// $sql_i = "SELECT * FROM `items` WHERE `area` LIKE '%台北%' 
+// // AND `dist` LIKE '%$dist%'";
+
+// 總比數
+// $sql = "SELECT * FROM `items`";
+// $sql_f = "SELECT * FROM `feature`";
+
+// $stmt = $pdo->query($sql)->fetchAll();
+// $stmt_f = $pdo->query($sql_f)->fetchAll();
+
 ?>
+<?php include __DIR__ . './part/searchead.php'  ?>
+<style>
+    /* 搜尋選單 */
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .x-search {
+        width: 100%;
+        max-width: 1920px;
+        height: 100vh;
+        max-height: 1080px;
+        margin: auto;
+        background: url(imgs/spacejoy-YI2YkyaREHk-unsplash\ 1.jpg) no-repeat center/cover;
+        padding-top: 320px;
+        transition: .5s;
+    }
+
+    .x-search-ex-ex {
+        width: 100%;
+        max-width: 1920px;
+        height: 100vh;
+        max-height: 1080px;
+        margin: auto;
+        background: url(imgs/spacejoy-YI2YkyaREHk-unsplash\ 1.jpg) no-repeat center/cover;
+        padding-top: 35vh;
+    }
+
+    .x-search-all {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .x-search-all-ex {
+        margin-top: -180px;
+    }
+
+    .x-search-keyword-input {
+        border: none;
+        width: 100%;
+        max-width: 564px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        padding-right: 15px;
+        background-color: white;
+        margin-bottom: 20px;
+        transition: .25s;
+    }
+
+    .x-search-options {
+        width: 100%;
+        max-width: 564px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .x-search-keyword-input input {
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 70px;
+        font-size: 24px;
+        padding-left: 15px;
+    }
+
+    .x-search-keyword-input-ex {
+        display: none;
+    }
+
+    ::placeholder {
+        font-weight: bold;
+        font-size: 24px;
+        color: #0E2E3D;
+        opacity: 50%;
+    }
+
+    .x-search-keyword-input svg {
+        cursor: pointer;
+    }
+
+    .x-search-price-bar {
+        height: 84px;
+        /* border: 1px solid; */
+        margin-top: 0px;
+        width: 100%;
+    }
+
+
+    /* .x-search-price-bar  */
+
+    .irs--round .irs-handle {
+        top: 35px;
+        width: 30px;
+        height: 30px;
+        border: 2px solid #FEAC00;
+        background-color: #FEAC00;
+        border-radius: 24px;
+        box-shadow: 0 1px 3px rgba(0, 0, 255, 0.3);
+        cursor: pointer;
+    }
+
+    .irs--round .irs-bar {
+        top: 45px;
+        height: 10px;
+        background-color: #75BBE3;
+    }
+
+    .irs--round .irs-from,
+    .irs--round .irs-to,
+    .irs--round .irs-single {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1;
+        text-shadow: none;
+        padding: 4px 10px;
+        background-color: #FEAC00;
+        color: #0E2E3D;
+        border-radius: 18px;
+        top: 0px;
+    }
+
+    .irs--round .irs-line {
+        top: 45px;
+        height: 10px;
+        background-color: #F2EBE8;
+        border-radius: 4px;
+    }
+
+    .irs--round .irs-min,
+    .irs--round .irs-max {
+        color: #111111;
+        font-family: 'raleway';
+        font-size: 0px;
+        top: 0px;
+        padding: 3px 5px;
+        background-color: rgba(6, 5, 5, 0);
+        border-radius: 4px;
+    }
+
+    .irs--round .irs-from:before,
+    .irs--round .irs-to:before,
+    .irs--round .irs-single:before {
+        position: absolute;
+        display: block;
+        content: "";
+        bottom: -6px;
+        left: 100%;
+        width: 0;
+        height: 0;
+        margin-left: -3px;
+        overflow: hidden;
+        border: 3px solid transparent;
+        border-top-color: #c6A554;
+        opacity: 0;
+    }
+
+    .irs--round {
+        margin: auto;
+        width: 1175px;
+    }
+
+    @media screen and (max-width:376px) {
+        .irs--round .irs-handle {
+            top: 38px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #FEAC00;
+            background-color: #FEAC00;
+            border-radius: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 255, 0.3);
+            cursor: pointer;
+        }
+
+        .irs--round .irs-bar {
+            top: 45px;
+            height: 7px;
+            background-color: #75BBE3;
+        }
+
+        .irs--round .irs-from,
+        .irs--round .irs-to,
+        .irs--round .irs-single {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1;
+            text-shadow: none;
+            padding: 4px 10px;
+            background-color: #FEAC00;
+            color: #0E2E3D;
+            border-radius: 18px;
+            top: 10px;
+        }
+
+        .irs--round .irs-line {
+            top: 45px;
+            height: 7px;
+            background-color: #F2EBE8;
+            border-radius: 4px;
+        }
+
+        .irs--round .irs-min,
+        .irs--round .irs-max {
+            color: #111111;
+            font-family: 'raleway';
+            font-size: 0px;
+            top: 0px;
+            padding: 3px 5px;
+            background-color: rgba(6, 5, 5, 0);
+            border-radius: 4px;
+        }
+
+        .irs--round .irs-from:before,
+        .irs--round .irs-to:before,
+        .irs--round .irs-single:before {
+            position: absolute;
+            display: block;
+            content: "";
+            bottom: -6px;
+            left: 100%;
+            width: 0;
+            height: 0;
+            margin-left: -3px;
+            overflow: hidden;
+            border: 3px solid transparent;
+            border-top-color: #c6A554;
+            opacity: 0;
+        }
+
+        .irs--round {
+            margin: auto;
+            width: 305px;
+        }
+    }
+
+
+    /* .x-search-price-bar  */
+
+    .x-search-price-switch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -20px;
+        margin-bottom: 10px;
+    }
+
+    .x-search-price-switch div h3 {
+        font-weight: normal;
+    }
+
+    .x-search-price-switch-onoff {
+        position: relative;
+        width: 54px;
+        margin-top: 3px;
+        margin-right: 5px;
+    }
+
+    .onoffswitch-checkbox {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .onoffswitch-label {
+        display: block;
+        overflow: hidden;
+        cursor: pointer;
+        height: 27px;
+        padding: 0;
+        line-height: 27px;
+        border: 2px solid #E3E3E3;
+        border-radius: 8px;
+        background-color: #FFFFFF;
+        transition: background-color 0.3s ease-in;
+    }
+
+    .onoffswitch-label:before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin: 0px;
+        background: #FFFFFF;
+        position: absolute;
+        top: 2;
+        right: 25px;
+        border: 2px solid #E3E3E3;
+        border-radius: 27px;
+        transition: all 0.3s ease-in 0s;
+    }
+
+    .onoffswitch-checkbox:checked+.onoffswitch-label {
+        background-color: #75BBE3;
+    }
+
+    .onoffswitch-checkbox:checked+.onoffswitch-label,
+    .onoffswitch-checkbox:checked+.onoffswitch-label:before {
+        border-color: #75BBE3;
+    }
+
+    .onoffswitch-checkbox:checked+.onoffswitch-label:before {
+        right: 2px;
+        top: 1px;
+    }
+
+    .x-hidden-DisplayNone {
+        height: 0px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        transition: .5s;
+    }
+
+    @media screen and (max-width:376px) {
+        .x-search {
+            width: 100%;
+            max-width: 375px;
+            height: 100vh;
+            max-height: 667px;
+            margin: auto;
+            background: url(imgs/spacejoy-YI2YkyaREHk-unsplash\ 1.jpg) no-repeat center/cover;
+            padding-top: 35vh;
+        }
+
+        .x-search-all-ex {
+            margin-top: -140px;
+        }
+
+        .pc-button-FEAC00-272 {
+            width: 162.5px;
+            height: 45px;
+            color: #0E2E3D;
+            font-weight: bold;
+            font-size: 20px;
+            border: none;
+            background-color: #FEAC00;
+        }
+
+        .pc-button-F4F4F4-272 {
+            width: 162.5px;
+            height: 45px;
+            color: #0E2E3D;
+            font-weight: bold;
+            font-size: 20px;
+            border: none;
+            background-color: #F1EDEA;
+        }
+
+        .x-search-options {
+            margin-bottom: 10px;
+        }
+
+        .x-search-keyword-input {
+            height: 45px;
+            margin-bottom: 10px;
+        }
+
+        .x-search-keyword-input input {
+            height: 45px;
+        }
+
+        .x-search-price-bar {
+            height: 50px;
+        }
+
+        .x-search-price-switch {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .x-search-price-switch h3 {
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        .x-search-price-switch-onoff {
+            width: 36px;
+        }
+
+        .onoffswitch-label {
+            height: 20px;
+            line-height: 20px;
+            border-radius: 6px;
+        }
+
+        .onoffswitch-label:before {
+            width: 14px;
+            height: 14px;
+            top: 1.0;
+            right: 14px;
+        }
+    }
+
+
+    /* 進階搜尋 */
+
+    .x-hidden-scroll-bar {
+        width: 100%;
+        max-width: 910px;
+        height: 460px;
+        overflow: hidden;
+    }
+
+    .x-search-ex {
+        width: 100%;
+        max-width: 922px;
+        margin-top: 0px;
+        z-index: 5;
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+    .x-search-ex::-webkit-scrollbar {
+        width: 3px;
+        background: #E0F1FC;
+    }
+
+    .x-search-ex::-webkit-scrollbar-thumb {
+        background: #5D8DC1;
+    }
+
+    .x-search-ex::-webkit-scrollbar-thumb:hover {
+        background: hsla(211, 45%, 56%, 0.766)
+    }
+
+    .x-search-ex-both {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .x-search-ex-both span {
+        font-size: 16px;
+    }
+
+    .x-search-ex-title {
+        background-color: #F4F4F4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 922px;
+        height: 60px;
+    }
+
+    .x-search-ex-tag-wrap {
+        max-width: 520px;
+        margin: 20px 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .x-search-ex-tag-wrap button {
+        transition: .25s;
+    }
+
+    .x-search-ex-tag-wrap button:hover {
+        transform: translateY(-2px)
+    }
+
+    .x-search-ex-tag {
+        height: 100%;
+        padding: 0px 0;
+        display: flex;
+        max-width: 922px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+    }
+
+    .x-search-ex-tag-wrap button {
+        width: 120px;
+        height: 40px;
+        color: #0E2E3D;
+        font-weight: bold;
+        font-size: 24px;
+        border: none;
+        background-color: #F1EDEA;
+        cursor: pointer;
+        margin: 5px 5px;
+    }
+
+    .x-search-ex-tag-wrap button p {
+        font-weight: normal;
+    }
+
+    .x-search-ex-tag-wrap .x-tag-on-click {
+        background-color: #FEAC00;
+    }
+
+    .x-search-button {
+        margin-top: 20px;
+    }
+
+    .x-search-button .pc-button-F4F4F4-180 {
+        margin-right: 30px;
+    }
+
+    @media screen and (max-width:376px) {
+        .x-hidden-scroll-bar {
+            height: 300px;
+        }
+
+        .x-search-ex {
+            height: 300px;
+            overflow: auto;
+            margin-top: 0px;
+        }
+
+        .x-search-ex::-webkit-scrollbar {
+            background: #E0F1FC;
+            width: 2px;
+        }
+
+        .x-search-ex::-webkit-scrollbar-thumb {
+            background: #5D8DC1;
+        }
+
+        .x-search-ex::-webkit-scrollbar-thumb:hover {
+            background: hsla(211, 45%, 56%, 0.766)
+        }
+
+        .x-search-ex-title {
+            height: 45px;
+        }
+
+        .x-search-ex-title h3 {
+            font-size: 16px;
+        }
+
+        .x-search-ex-tag {
+            padding: 0px 0;
+        }
+
+        .x-search-ex-tag-wrap {
+            margin: 15px 0;
+            padding: 0px 0;
+            width: 100%;
+            max-width: 270px;
+        }
+
+        .x-search-ex-tag-wrap button {
+            width: 80px;
+            height: 30px;
+            color: #0E2E3D;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            background-color: #F1EDEA;
+            cursor: pointer;
+            margin: 5px 5px;
+        }
+
+        .x-search-button {
+            margin-top: 20px;
+            display: flex;
+        }
+
+        .x-search-button .pc-button-FEAC00-180 {
+            width: 162.5px;
+            height: 60px;
+            color: #0E2E3D;
+            font-weight: bold;
+            font-size: 20px;
+            border: none;
+            background-color: #FEAC00;
+        }
+
+        .x-search-button .pc-button-F4F4F4-180 {
+            width: 162.5px;
+            height: 60px;
+            color: #0E2E3D;
+            font-weight: bold;
+            font-size: 20px;
+            border: none;
+            background-color: #F4F4F4;
+            margin-right: 10px;
+        }
+    }
+
+    /*  */
+    .x-search-list {
+        margin-top: 80px;
+    }
+
+    .x-search-list-state {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .x-search-list-state-left img {
+        margin-right: 30px;
+        cursor: pointer;
+    }
+
+    .x-search-list-state-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .x-search-list-state-right img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .x-search-list-state-right div {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .x-search-list-state-right div:nth-child(1),
+    .x-search-list-state-right div:nth-child(2) {
+        margin-right: 60px;
+    }
+
+    @media screen and (max-width:376px) {
+        .x-search-list {
+            margin-top: 30px;
+        }
+
+        .x-search-list-state-left {
+            display: none;
+        }
+
+        .x-search-list-state-right h3 {
+            font-size: 20px;
+        }
+
+        .x-search-list-state-right div:nth-child(1),
+        .x-search-list-state-right div:nth-child(2) {
+            margin-right: 22px;
+        }
+    }
+
+    /* 本月本週精選 */
+
+    .x-search-month-best {
+        margin-bottom: 60px;
+    }
+
+    .x-search-month-best-title {
+        background: url(imgs/本月精選.svg) no-repeat center/contain;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        margin-top: 60px;
+        height: 47px;
+    }
+
+    .x-search-week-best-title {
+        background: url(imgs/本週精選.svg) no-repeat center/contain;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        margin-top: 60px;
+        height: 47px;
+    }
+
+    .x-search-month-best-content {
+        width: 100%;
+        display: flex;
+    }
+
+    .x-search-month-best-content-img {
+        width: 100%;
+        max-width: 674px;
+        height: 100%;
+        max-height: 460px;
+    }
+
+    .x-search-month-best-content-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .x-search-month-best-content-txt {
+        width: 100%;
+        max-width: 556px;
+        padding: 65px 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #F1EDEA;
+    }
+
+    .x-search-month-best-content-re {
+        flex-direction: row-reverse;
+    }
+
+    .x-search-month-best-content-txt h3,
+    .x-search-month-best-content-txt p {
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    .x-search-month-best-content-txt p:nth-child(2) {
+        font-weight: bold;
+    }
+
+    @media screen and (max-width:376px) {
+        .x-search-month-best {
+            margin-bottom: 40px;
+        }
+
+        .x-search-month-best-title {
+            background: url(imgs/本月精選.svg) no-repeat center/contain;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+            margin-top: 40px;
+            height: 36px;
+        }
+
+        .x-search-week-best-title {
+            background: url(imgs/本週精選.svg) no-repeat center/contain;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+            margin-top: 40px;
+            height: 36px;
+        }
+
+        .x-search-month-best-content {
+            flex-direction: column;
+        }
+
+        .x-search-month-best-content-txt {
+            padding: 10px 0px 20px 0;
+        }
+
+        .x-search-month-best-content-txt h3,
+        .x-search-month-best-content-txt p {
+            margin-bottom: 15px;
+        }
+
+        .x-search-month-best-content-txt .pc-button-FEAC00-180 {
+            width: 335px;
+            height: 60px;
+            color: #0E2E3D;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .x-search-month-best .container:nth-child(2),
+        .x-search-month-best .container:nth-child(4) {
+            background-color: #F1EDEA;
+            padding-top: 20px;
+        }
+
+        .x-search-month-best-content-txt p:nth-child(3) {
+            font-size: 12px;
+        }
+    }
+
+
+    /* 精選房屋 */
+
+    .x-search-month-nice-object {
+        margin-bottom: 40px;
+    }
+
+    .x-search-month-nice-object-title {
+        margin-bottom: 30px;
+    }
+
+    .S-lg-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .x-search-month-nice-object-product {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .S-lg-card-wrap {
+        margin-bottom: 30px;
+    }
+
+    @media screen and (max-width:376px) {
+        .x-search-month-nice-object {
+            margin-bottom: 20px;
+        }
+
+        .x-search-month-nice-object-title {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .x-search-month-nice-object-title h2 {
+            font-size: 20px;
+        }
+
+        .x-search-month-nice-object-product {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            width: 600%;
+        }
+
+        .x-search-month-nice-object-product-scroll {
+            width: 100%;
+            overflow: scroll;
+        }
+
+        .x-search-month-nice-object-product .S-lg-card-wrap {
+            margin-top: 0px;
+            margin-right: 20px;
+            margin-bottom: 5px;
+            width: 250px;
+            height: 247px;
+            overflow: hidden;
+            position: relative;
+            /* border: 1px solid blue; */
+        }
+
+        .x-search-month-nice-object-product .S-lg-share {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2em;
+            border-radius: 50%;
+            position: absolute;
+            top: 3%;
+            right: 22%;
+        }
+
+        .x-search-month-nice-object-product .S-lg-share i {
+            font-size: 1.2em;
+        }
+
+        .x-search-month-nice-object-product .S-lg-like {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2em;
+            border-radius: 50%;
+            position: absolute;
+            top: 3%;
+            right: 3%;
+        }
+
+        .x-search-month-nice-object-product .S-lg-like svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .x-search-month-nice-object-product .S-lg-card {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            /* border: 1px solid red; */
+        }
+
+        .x-search-month-nice-object-product .S-lg-card-img {
+            width: 100%;
+            height: 100%;
+            background: url(imgs/chairs-g9439200e7_1920.jpg) 70% center/ cover;
+        }
+
+        .x-search-month-nice-object-product .S-lg-card-info {
+            display: flex;
+            justify-content: space-between;
+            padding: 9px 10px;
+            /* border: 1px solid rgb(45, 95, 112); */
+            background-color: #F1EDEA;
+            margin: 0;
+        }
+
+        .x-search-month-nice-object-product .S-lg-card-info h4 {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        .x-search-month-nice-object-product .S-lg-card-info h4 span {
+            font-size: 16px;
+            font-weight: bold;
+            padding-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .x-search-month-nice-object-product .S-lg-card-info-2 {
+            display: flex;
+            margin-top: 30px;
+            justify-content: right;
+            align-items: flex-end;
+        }
+
+        .x-search-month-nice-object-product .S-lg-card-info p {
+            display: none;
+            margin: 0;
+            font-size: 12px;
+        }
+
+        .x-search-month-nice-object-product .S-lg-card-info h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline;
+        }
+    }
+
+    /* 以下是列表 */
+
+    .x-search-list-content {
+        display: flex;
+        background-color: #F1EDEA;
+    }
+
+    .x-search-list-content-img {
+        width: 320px;
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .x-search-list-content-img-train {
+        width: 100%;
+        height: 100%;
+
+        list-style: none;
+    }
+
+    .x-search-list-content-img-train img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+
+    .x-right-arrow,
+    .x-left-arrow {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        bottom: 0;
+        width: 10%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .x-left-arrow {
+        left: 5px;
+        right: 0px;
+    }
+
+    .x-search-list-content-txt {
+        width: 360px;
+        padding: 42px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .x-search-list-content-txt p,
+    .x-search-list-content-txt h3 {
+        display: flex;
+        align-items: center;
+    }
+
+    .x-search-list-content-txt div {
+        display: flex;
+    }
+
+    .x-search-list-content-txt div p {
+        margin: 0;
+    }
+
+    .x-search-list-content-txt div p:nth-child(1) {
+        margin-right: 35px;
+    }
+
+    .x-search-list-content-txt img {
+        margin-right: 5px;
+    }
+
+    .x-search-list-content-icon {
+        width: 288px;
+        padding: 95px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .x-search-list-content-icon div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 72px;
+        height: 60px;
+    }
+
+    .x-search-list-content-price {
+        padding: 15px 15px 15px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .x-search-list-content-price-top {
+        height: 50px;
+        width: 120px;
+        display: flex;
+        justify-content: flex-end;
+        margin-left: 20px;
+    }
+
+    .x-search-list-content-price-down div {
+        display: flex;
+        align-items: center;
+    }
+
+    .x-search-list-content-price-down div p {
+        margin-left: 8px;
+    }
+
+    .x-search-list-content-price-down h3 {
+        margin-left: 10px;
+        width: 100%;
+    }
+
+    .x-search-list-content {
+        margin-bottom: 30px;
+    }
+
+    .x-search-list-card {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .x-down {
+        transform: rotate(0deg);
+    }
+
+    .x-up {
+        transform: rotate(180deg);
+    }
+
+    .S-lg-card-wrap {
+        width: 390px;
+        height: 359px;
+        margin-bottom: 30px;
+    }
+
+    .x-search-list-all .x-search-displaynone {
+        display: none;
+    }
+
+    .x-content-list {
+        transition: .5s;
+    }
+
+    .x-content-list:active {
+        transform: scale(0.8);
+    }
+
+    .x-card-list {
+        transition: .5s;
+    }
+
+    .x-card-list:active {
+        transform: scale(0.8);
+    }
+
+    .x-search-list-content-price-top .S-lg-share,
+    .x-search-list-content-price-top .S-lg-like {
+        position: relative;
+    }
+
+    .S-lg-card-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .S-lg-like,
+    .irs-to,
+    .irs-handle,
+    .irs-from {
+        cursor: pointer;
+    }
+
+    @media screen and (max-width:376px) {
+        .x-search-list-all .x-search-displaynone {
+            display: flex;
+        }
+
+        .x-search-list {
+            margin-top: 30px;
+        }
+
+        .x-search-list-state-right h3 {
+            font-size: 20px;
+        }
+
+        .x-search-list-state-right div:nth-child(1),
+        .x-search-list-state-right div:nth-child(2) {
+            margin-right: 22px;
+        }
+
+        .x-search-list-card {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .x-search-list-content-all {
+            display: none;
+        }
+    }
+</style>
+<!-- 搜尋 -->
+
+<div class="x-search">
+    <div class="container">
+        <div class="x-search-all">
+            <div class="x-search-options">
+                <button class="pc-button-FEAC00-272">關鍵字搜尋</button>
+                <button class="pc-button-F4F4F4-272">進階搜尋</button>
+            </div>
+            <div class="x-search-keyword-input">
+                <input class="x-search-input-setting" type="text" name="name" placeholder="關鍵字搜尋">
+
+                <svg width="30" height="30" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.647 24.3125C20.1698 24.3125 24.647 19.8353 24.647 14.3125C24.647 8.78965 20.1698 4.3125 14.647 4.3125C9.12413 4.3125 4.64697 8.78965 4.64697 14.3125C4.64697 19.8353 9.12413 24.3125 14.647 24.3125Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M27.147 26.8125L21.7095 21.375" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+            </div>
+            <form id="search_list_form" action="search_all_list.php" method="post">
+                <div class="x-search-price-bar ">
+                    <input type="text" class="js-range-slider" name="price" value="" data-type="double" data-min="5000" data-max="50000" data-step="500" />
+                </div>
+                <div class="x-search-price-switch ">
+                    <div class="x-search-price-switch-onoff">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
+                        <label class="onoffswitch-label" for="myonoffswitch"></label>
+                    </div>
+                    <div>
+                        <h3>彈性價錢</h3>
+                    </div>
+                </div>
+                <div class="x-hidden-DisplayNone">
+
+                    <div class="x-hidden-scroll-bar">
+                        <div class="x-search-ex">
+
+                            <!-- 租屋類型---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        租屋類型
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap">
+                                        <button class="x-button-only rentaltype" type="button" data-filter="1">
+                                            <p>
+                                                共生
+                                            </p>
+                                        </button>
+                                        <button class="x-button-only rentaltype" type="button" data-filter="2">
+                                            <p>
+                                                分租
+                                            </p>
+                                        </button>
+                                        <button class="x-button-only rentaltype" type="button" data-filter="3">
+                                            <p>
+                                                不限分類
+                                            </p>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- 地區---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        地區
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                        <button class="x-button-only" name="area" type="button">
+                                            <p>
+                                                新北
+                                            </p>
+                                        </button>
+                                        <button class="x-button-only" name="area" type="button">
+                                            <p>
+                                                台北
+                                            </p>
+                                        </button>
+                                        <button class="x-button-only" name="area" type="button">
+                                            <p>
+                                                台中
+                                            </p>
+                                        </button>
+                                        <button class="x-button-only" name="area" type="button">
+                                            <p>
+                                                高雄
+                                            </p>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- 詳細地區---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        詳細地區
+                                        <span>(可複選)</span>
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                板橋區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                三重區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                中和區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                永和區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                新莊區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                新店區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                土城區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                蘆洲區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                樹林區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                汐止區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                鶯歌區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                三峽區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                淡水區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                瑞芳區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                五股區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                泰山區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                林口區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                深坑區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                石碇區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                坪林區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                三芝區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                石門區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                八里區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                平溪區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                雙溪區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                貢寮區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                金山區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                萬里區
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="dist" type="button">
+                                            <p>
+                                                烏來區
+                                            </p>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- 房型---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        房型
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap">
+                                        <button class="x-button-only rentaltype" name="roomtype" type="button" value="套房">
+                                            <p>
+                                                套房
+                                            </p>
+                                        </button>
+                                        <button class="x-button-only rentaltype" name="roomtype" type="button" value="雅房">
+                                            <p>
+                                                雅房
+                                            </p>
+                                        </button>
+                                        <button class="x-button-only rentaltype" name="roomtype" type="button" value="整層">
+                                            <p>
+                                                整層
+                                            </p>
+                                        </button>
+                                        <button class="x-button-only rentaltype" name="roomtype" type="button" value="不限房型">
+                                            <p>
+                                                不限房型
+                                            </p>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- 房間數量---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        坪數
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap">
+                                        <button class="x-button-only" name="ping_number" type="button">
+                                            <p>
+                                                1 - 5 坪
+                                            </p>
+                                        </button>
+                                        <button class="x-button-only" name="ping_number" type="button">
+                                            <p>
+                                                5 - 10 坪
+                                            </p>
+                                        </button>
+                                        <button class="x-button-only" name="ping_number" type="button">
+                                            <p>
+                                                10 - 15 坪
+                                            </p>
+                                        </button>
+                                        <button class="x-button-only" name="ping_number" type="button">
+                                            <p>
+                                                15 - 20 坪
+                                            </p>
+                                        </button>
+                                        <button class="x-button-only" name="ping_number" type="button">
+                                            <p>
+                                                不限坪數
+                                            </p>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- 特色---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        特色<span>(可複選)</span>
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                        <button class="x-button-more" name="feature" type="button">
+                                            <p>
+                                                限女性
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="feature" type="button">
+                                            <p>
+                                                可開伙
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="feature" type="button">
+                                            <p>
+                                                可養寵物
+                                            </p>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- 設備---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        設備
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                        <button class="x-button-only" name="equipment" type="button">
+                                            <p>
+                                                有附傢俱
+                                            </p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 公設---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        公設<span>(可複選)</span>
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                        <button class="x-button-more" name="postulate" type="button">
+                                            <p>
+                                                陽台
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="postulate" type="button">
+                                            <p>
+                                                電梯
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="postulate" type="button">
+                                            <p>
+                                                交誼廳
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="postulate" type="button">
+                                            <p>
+                                                廚房
+                                            </p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 其他費用---------------------------------------------------------------- -->
+                            <div class="x-search-ex-both">
+                                <div class="x-search-ex-title">
+                                    <h3>
+                                        額外費用<span>(可複選)</span>
+                                    </h3>
+                                </div>
+                                <div class="x-search-ex-tag">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                        <button class="x-button-more" name="" type="button">
+                                            <p>
+                                                水電費
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="" type="button">
+                                            <p>
+                                                網路費
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="" type="button">
+                                            <p>
+                                                第四台
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="" type="button">
+                                            <p>
+                                                清潔費
+                                            </p>
+                                        </button>
+                                        <button class="x-button-more" name="" type="button">
+                                            <p>
+                                                停車費
+                                            </p>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                    <div class="x-search-button">
+                        <button class="pc-button-F4F4F4-180 x-button-clear" type="button">重選</button>
+                        <button id="x-select-btn" class="pc-button-FEAC00-180" type="button">開始搜尋</button>
+                    </div>
+
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>
 <!-- 搜尋結果列表 -->
 <div class="x-search-list">
     <div class="container">
@@ -42,7 +1689,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 </div>
             </div>
             <div class="x-search-list-content-all">
-                <?php foreach ($stmt as $i) : ?>
+                <?php foreach ($allROW as $i) : ?>
                     <div class="x-search-list-content">
                         <div class="x-search-list-content-img">
                             <ul class="x-search-list-content-img-train">
@@ -75,14 +1722,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                         </div>
                         <div class="x-search-list-content-icon">
-                            <?php foreach ($stmt_f as $f) : ?>
-                                <div>
-                                    <img src="<?= $f['img'] ?>" alt="">
-                                    <p>
-                                        <?= $f['feature'] ?>
-                                    </p>
-                                </div>
-                            <?php endforeach ?>
+
+                            <div>
+                                <img src="<?= $i['img'] ?>" alt="">
+                                <p>
+                                    <?= $i['feature'] ?>
+                                </p>
+                            </div>
+
 
                         </div>
                         <div class="x-search-list-content-price">
@@ -158,3 +1805,142 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
     </div>
 </div>
+
+<!-- 搜尋相關全js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.js"></script>
+<script>
+    $(".js-range-slider").ionRangeSlider({
+        skin: "round",
+        from: 0,
+    });
+
+    $('.pc-button-F4F4F4-272').click(function() {
+        $('.x-hidden-DisplayNone').css({
+            'height': '540px',
+            'width': '100%',
+            'display': 'flex',
+            'flex-direction': 'column',
+
+            'align-items': 'center'
+        })
+        $('.pc-button-F4F4F4-272').css(
+            'background-color', '#FEAC00'
+        )
+        $('.pc-button-FEAC00-272').css(
+            'background-color', '#F1EDEA'
+        )
+        $('.x-search').css(
+            'padding-top', '15vh'
+        )
+        $('.x-search-keyword-input').css({
+            'height': '0px',
+            'overflow': 'hidden'
+        })
+    })
+    $('.pc-button-FEAC00-272').click(function() {
+        $('.x-hidden-DisplayNone').css({
+            'height': '0px',
+            'width': '100%',
+            'overflot': 'hidden'
+        })
+        $('.pc-button-F4F4F4-272').css(
+            'background-color', '#F1EDEA'
+        )
+        $('.pc-button-FEAC00-272').css(
+            'background-color', '#FEAC00'
+        )
+        $('.x-search').css(
+            'padding-top', '40vh'
+        )
+        $('.x-search-keyword-input').css({
+            'height': '70px',
+            'overflow': 'hidden'
+        })
+
+    })
+
+    // 
+    $(".x-button-only").click(function() {
+        $(this).toggleClass('x-tag-on-click');
+        $(this).siblings().removeClass('x-tag-on-click')
+    })
+    $(".x-button-more").click(function() {
+        $(this).toggleClass('x-tag-on-click');
+
+    })
+    $(".x-button-clear").click(function() {
+        $('button').removeClass('x-tag-on-click')
+    })
+
+    // 
+
+
+    if (window.innerWidth > 376) {
+        $(".S-lg-share").mousedown(function() {
+            $(this).css({
+                'transform': 'translateY(0px)scale(1.0)'
+
+            })
+        })
+        $(".S-lg-share").mouseup(function() {
+            $(this).css({
+                'transform': 'translateY(0px)scale(1.1)'
+
+            })
+
+        })
+        $(".S-lg-share").mouseenter(function() {
+            $(this).css({
+                'transform': 'translateY(0px)scale(1.1)'
+
+            })
+
+        })
+        $(".S-lg-share").mouseleave(function() {
+            $(this).css({
+                'transform': 'translateY(0px)scale(1.0)'
+
+            })
+
+        })
+        $(".S-lg-like").mousedown(function() {
+            $(this).css({
+                'transform': 'translateY(0px)scale(1.0)',
+
+            })
+
+        })
+        $(".S-lg-like").mouseup(function() {
+            $(this).css({
+                'transform': 'translateY(0px)scale(1.1)',
+
+            })
+
+        })
+        $(".S-lg-like").mouseenter(function() {
+            $(this).css({
+                'transform': 'translateY(0px)scale(1.1)'
+
+            })
+
+        })
+        $(".S-lg-like").mouseleave(function() {
+            $(this).css({
+                'transform': 'translateY(0px)scale(1.0)'
+
+            })
+
+        })
+    }
+    $(".S-lg-svg").click(function() {
+        console.log(1);
+        $(this).toggleClass('x-svg-color')
+
+
+    })
+</script>
+
+
+<?php include __DIR__ . './part/javascript.php'  ?>
