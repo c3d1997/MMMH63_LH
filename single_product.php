@@ -1,12 +1,12 @@
-<?php 
+<?php
 $title = '單一物件';
 require './part/connect-db.php';
 
 
 // 帶入房屋資料
-$sql = "SELECT * FROM `items` WHERE `sid` = 1;";
-$stmt = $pdo->query($sql);
-$i = $stmt->fetch();
+$ksql = "SELECT * FROM `items` WHERE `sid` = 1;";
+$stmt = $pdo->query($ksql);
+$k = $stmt->fetch();
 
 ?>
 
@@ -330,7 +330,7 @@ $i = $stmt->fetch();
 
     .S-menu-icon-wrap {
         /* background: pink; */
-        width: 74%;
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -340,7 +340,7 @@ $i = $stmt->fetch();
     }
 
     .S-menu-icon {
-        width: 49.5%;
+        width: 360px;
         display: flex;
         flex-wrap: wrap;
     }
@@ -355,8 +355,12 @@ $i = $stmt->fetch();
 
     .S-menu-icon img {
         margin: 10px 30px;
+        height: 30px;
+        width: 30px;
     }
-
+    .center{
+        justify-content: center;
+    }
     .S-menu-icon-c img {
         margin: 10px 30px;
     }
@@ -923,15 +927,15 @@ $i = $stmt->fetch();
         <!-- img -->
         <div class="S-product-img">
             <div class="S-product-img-left column">
-                <img src="<?= $i['img']?>item0.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                <img src="<?= $i['img'] ?>item0.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
             </div>
             <div class="S-product-img-right">
                 <div class="S-product-img-right-up column">
-                    <img src="<?= $i['img']?>item1.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                    <img src="<?= $i['img'] ?>item1.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
                 </div>
                 <div class="S-product-img-right-down-g">
                     <div class="S-product-img-right-down column">
-                        <img src="<?= $i['img']?>item2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                        <img src="<?= $i['img'] ?>item2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
                     </div>
                     <button class="more-img">+7</button>
                 </div>
@@ -944,13 +948,13 @@ $i = $stmt->fetch();
             <span class="close cursor" onclick="closeModal()">&times;</span>
             <div class="modal-content">
                 <div class="mySlides-wrap">
-                    <?php for($i=0; $i<10;$i++): ?>
+                    <?php for ($i = 0; $i < 10; $i++) : ?>
                         <div class="mySlides">
                             <img src="imgs/items<?= 1 ?>/item<?= $i ?>.jpg" style="width:100%">
                         </div>
 
-                    <?php endfor;?>
-                <!--
+                    <?php endfor; ?>
+                    <!--
                     <div class="mySlides">
                         <img src="imgs/img1.jpg" style="width:100%">
                     </div>
@@ -995,12 +999,12 @@ $i = $stmt->fetch();
 
                 <!-- 下排圖片 -->
                 <div class="column-bottom">
-                    <?php for($i=0; $i<10;$i++): ?>
-                    <div class="column">
-                        <img class="demo cursor" src="imgs/items<?= 1 ?>/item<?= $i ?>.jpg" style="width:100%" onclick="currentSlide(<?= $i+1 ?>)" alt="Nature and sunrise">
-                    </div>
-                    <?php endfor;?>
-<!--
+                    <?php for ($i = 0; $i < 10; $i++) : ?>
+                        <div class="column">
+                            <img class="demo cursor" src="imgs/items<?= 1 ?>/item<?= $i ?>.jpg" style="width:100%" onclick="currentSlide(<?= $i + 1 ?>)" alt="Nature and sunrise">
+                        </div>
+                    <?php endfor; ?>
+                    <!--
                     <div class="column">
                         <img class="demo cursor" src="imgs/img2.jpg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
                     </div>
@@ -1041,25 +1045,25 @@ $i = $stmt->fetch();
 
         <div class="S-product-info">
             <div class="S-product-info-left">
-                <h2 class="S-price">$<?= number_format($i['price']) ?>/月</h2>
-                <h2 class="S-name"><?= $i['item_name'] ?></h2>
-                <h3 class="S-location"><i class="fa-solid fa-location-dot"></i><?= $i['area'], $i['dist'] ,$i['address'] ?></h3>
-                <h3 class="S-date"><i class="fa-solid fa-calendar-days"></i><?= $i['contract'] ?></h3>
-                <p class="S-lg-d-none S-d-none"><i class="fa-solid fa-train-subway"></i><?= $i['close_station'] ?></p>
+                <h2 class="S-price">$<?= number_format($k['price']) ?>/月</h2>
+                <h2 class="S-name"><?= $k['item_name'] ?></h2>
+                <h3 class="S-location"><i class="fa-solid fa-location-dot"></i><?= $k['area'], $k['dist'], $k['address'] ?></h3>
+                <h3 class="S-date"><i class="fa-solid fa-calendar-days"></i><?= $k['contract'] ?></h3>
+                <p class="S-lg-d-none S-d-none"><i class="fa-solid fa-train-subway"></i><?= $k['close_station'] ?></p>
                 <p class="S-lg-d-none S-d-none"><i class="fa-solid fa-ruler"></i>30 坪
-                    <span><i class="fa-solid fa-stairs"></i><?= $i['floor']?></span>
+                    <span><i class="fa-solid fa-stairs"></i><?= $k['floor'] ?></span>
                 </p>
-                <p class="S-lg-d-none S-d-none"><i class="fa-solid fa-door-open"></i><?= $i['rentaltype'], $i['floor']?></p>
+                <p class="S-lg-d-none S-d-none"><i class="fa-solid fa-door-open"></i><?= $k['rentaltype'], $k['floor'] ?></p>
             </div>
             <div class="S-product-info-right">
                 <button type="button" class="pc-button-FEAC00-280 S-btn-order">預約看房</button>
-
+                <form action="./Reservation_page.php" method="post">
                 <!-- 日曆按鈕-->
                 <!-- <button class="simplepicker-btn">Show Picker</button> -->
-                <div class="event-log S-d-none">Event logs:<br></div>
+                <div class="event-log"><br></div>
 
                 <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a href="./FinalCheck_page.php">我要租屋</a></button>
-
+                </form>
 
             </div>
         </div>
@@ -1138,20 +1142,20 @@ $i = $stmt->fetch();
                 <div class="S-menu-icon-wrap">
                     <div class="S-menu-icon-c">
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>冰箱</p>
+                            <img src="imgs/物件設備/冰箱.svg" alt="">
+                            <p>共生</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>飲水機</p>
+                            <img src="imgs/物件設備/冰箱.svg" alt="">
+                            <p>坪數</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>沙發</p>
+                            <img src="imgs/物件設備/冰箱.svg" alt="">
+                            <p>樓層</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
+                            <img src="imgs/物件設備/冰箱.svg" alt="">
+                            <p>房間</p>
                         </div>
 
                     </div>
@@ -1159,8 +1163,7 @@ $i = $stmt->fetch();
 
                 <!-- 手機版調整高度做收合 -->
                 <div class="S-menu-info">
-                    <p>問題的關鍵看似不明確，但想必在諸位心中已有了明確
-                        的答案。這種事實對本人來說意義重大，相信對這個世界也是有一定意義的。若發現問題比我們想像的還要深奧，那肯定不簡單。世界上若沒有租屋，對於人類的改變可想而知。俞吾金講過一段耐人尋思的話，科學就是對常識的不斷衝擊、突破和超越。這句話反映了問題的急切性。需要考慮周詳租屋的影響及因應對策。那麼，問題的關鍵究竟為何？我們要從本質思考，從根本解決問題。在人類的歷史中，我們總是盡了一切努力想搞懂租屋。
+                    <p>周邊機能完善，離捷運站步行只要30分鐘，非常方便，近師大商圈，環境單純，房間寬敞舒適，室友友善，和藹可親，絕對是居家旅行，必備租屋。
                     </p>
                     <button href="#" class="S-menu-info-more S-d-none S-xs-d-block" id="more">查看更多</button>
 
@@ -1192,48 +1195,48 @@ $i = $stmt->fetch();
                 <div class="S-menu-icon-wrap">
                     <div class="S-menu-icon">
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
+                            <img src="imgs/物件設備/冰箱.svg" alt="">
                             <p>冰箱</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>飲水機</p>
+                            <img src="imgs/物件設備/冷氣.svg" alt="">
+                            <p>冷氣</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
+                            <img src="imgs/物件設備/床鋪.svg" alt="">
+                            <p>床鋪</p>
+                        </div>
+                        <div class="S-menu-icon-group col-lg-3">
+                            <img src="imgs/物件設備/桌椅.svg" alt="">
+                            <p>桌椅</p>
+                        </div>
+                        <div class="S-menu-icon-group col-lg-3">
+                            <img src="imgs/物件設備/沙發.svg" alt="">
                             <p>沙發</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
+                            <img src="imgs/物件設備/洗衣機.svg" alt="">
                             <p>洗衣機</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
+                            <img src="imgs/物件設備/浴缸.svg" alt="">
+                            <p>浴缸</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>冰箱</p>
+                            <img src="imgs/物件設備/熱水器.svg" alt="">
+                            <p>熱水器</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>飲水機</p>
+                            <img src="imgs/物件設備/瓦斯.svg" alt="">
+                            <p>瓦斯</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>沙發</p>
+                            <img src="imgs/物件設備/第四台.svg" alt="">
+                            <p>第四台</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
+                            <img src="imgs/物件設備/電視.svg" alt="">
+                            <p>電視</p>
                         </div>
                     </div>
                 </div>
@@ -1265,48 +1268,24 @@ $i = $stmt->fetch();
                 <div class="S-menu-icon-wrap">
                     <div class="S-menu-icon">
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>冰箱</p>
+                            <img src="imgs/物件公設/交誼廳.svg" alt="">
+                            <p>交誼廳</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>飲水機</p>
+                            <img src="imgs/物件公設/客廳.svg" alt="">
+                            <p>客廳</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>沙發</p>
+                            <img src="imgs/物件公設/廚房.svg" alt="">
+                            <p>廚房</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
+                            <img src="imgs/物件公設/陽台.svg" alt="">
+                            <p>陽台</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>冰箱</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>飲水機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>沙發</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
+                            <img src="imgs/物件公設/電梯.svg" alt="">
+                            <p>電梯</p>
                         </div>
                     </div>
                 </div>
@@ -1334,51 +1313,20 @@ $i = $stmt->fetch();
 
 
                 <div class="S-menu-icon-wrap">
-                    <div class="S-menu-icon">
+                    <div class="S-menu-icon center">
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>冰箱</p>
+                            <img src="imgs/物件特色/限女性.svg" alt="">
+                            <p>限女性</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>飲水機</p>
+                            <img src="imgs/物件特色/可養寵物.svg" alt="">
+                            <p>可養寵物</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>沙發</p>
+                            <img src="imgs/物件特色/可開伙.svg" alt="">
+                            <p>可開伙</p>
                         </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>冰箱</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>飲水機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>沙發</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -1406,49 +1354,22 @@ $i = $stmt->fetch();
                 <div class="S-menu-icon-wrap">
                     <div class="S-menu-icon">
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>冰箱</p>
+                            <img src="imgs/物件安全設備/安全門窗.svg" alt="">
+                            <p>安全門窗</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>飲水機</p>
+                            <img src="imgs/物件安全設備/滅火器.svg" alt="">
+                            <p>滅火器</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>沙發</p>
+                            <img src="imgs/物件安全設備/灑水器.svg" alt="">
+                            <p>灑水器</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
+                            <img src="imgs/物件安全設備/煙霧警報.svg" alt="">
+                            <p>煙霧警報</p>
                         </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>冰箱</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>飲水機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>沙發</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -1476,49 +1397,26 @@ $i = $stmt->fetch();
                 <div class="S-menu-icon-wrap">
                     <div class="S-menu-icon">
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>冰箱</p>
+                            <img src="imgs/物件其他費用/水電費.svg" alt="">
+                            <p>水電費</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>飲水機</p>
+                            <img src="imgs/物件其他費用/停車費.svg" alt="">
+                            <p>停車費</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>沙發</p>
+                            <img src="imgs/物件其他費用/清潔費.svg" alt="">
+                            <p>清潔費</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
+                            <img src="imgs/物件其他費用/第四台.svg" alt="">
+                            <p>第四台</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
+                            <img src="imgs/物件其他費用/網路費.svg" alt="">
+                            <p>網路費</p>
                         </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>冰箱</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>飲水機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>沙發</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -1545,49 +1443,38 @@ $i = $stmt->fetch();
                 <div class="S-menu-icon-wrap">
                     <div class="S-menu-icon">
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>冰箱</p>
+                            <img src="imgs/周邊機能/學校.svg" alt="">
+                            <p>學校</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>飲水機</p>
+                            <img src="imgs/周邊機能/市場.svg" alt="">
+                            <p>市場</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>沙發</p>
+                            <img src="imgs/周邊機能/捷運站.svg" alt="">
+                            <p>捷運站</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
+                            <img src="imgs/周邊機能/火車站.svg" alt="">
+                            <p>火車站</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
+                            <img src="imgs/周邊機能/高鐵站.svg" alt="">
+                            <p>高鐵站</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>冰箱</p>
+                            <img src="imgs/周邊機能/百貨公司.svg" alt="">
+                            <p>百貨公司</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>飲水機</p>
+                            <img src="imgs/周邊機能/超市.svg" alt="">
+                            <p>超市</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>沙發</p>
+                            <img src="imgs/周邊機能/醫院.svg" alt="">
+                            <p>醫院</p>
                         </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -1622,57 +1509,49 @@ $i = $stmt->fetch();
                 <div class="S-menu-icon-wrap">
                     <div class="S-menu-icon">
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>冰箱</p>
+                            <img src="imgs/室友簡介與喜好/唱歌.svg" alt="">
+                            <p>唱歌</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>飲水機</p>
+                            <img src="imgs/室友簡介與喜好/宅.svg" alt="">
+                            <p>宅</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>沙發</p>
+                            <img src="imgs/室友簡介與喜好/手做.svg" alt="">
+                            <p>手做</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
+                            <img src="imgs/室友簡介與喜好/文創.svg" alt="">
+                            <p>文創</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
+                            <img src="imgs/室友簡介與喜好/旅遊.svg" alt="">
+                            <p>旅遊</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>冰箱</p>
+                            <img src="imgs/室友簡介與喜好/烹飪.svg" alt="">
+                            <p>烹飪</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>飲水機</p>
+                            <img src="imgs/室友簡介與喜好/運動.svg" alt="">
+                            <p>運動</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>沙發</p>
+                            <img src="imgs/室友簡介與喜好/閱讀.svg" alt="">
+                            <p>閱讀</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
+                            <img src="imgs/室友簡介與喜好/電影.svg" alt="">
+                            <p>電影</p>
                         </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
-                        <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/refrigerator.svg" alt="">
-                            <p>洗衣機</p>
-                        </div>
+                        
                     </div>
                 </div>
 
 
                 <!-- 手機版調整高度做收合 -->
                 <div class="S-menu-info">
-                    <p>問題的關鍵看似不明確，但想必在諸位心中已有了明確
-                        的答案。這種事實對本人來說意義重大，相信對這個世界也是有一定意義的。若發現問題比我們想像的還要深奧，那肯定不簡單。世界上若沒有租屋，對於人類的改變可想而知。俞吾金講過一段耐人尋思的話，科學就是對常識的不斷衝擊、突破和超越。這句話反映了問題的急切性。需要考慮周詳租屋的影響及因應對策。那麼，問題的關鍵究竟為何？我們要從本質思考，從根本解決問題。在人類的歷史中，我們總是盡了一切努力想搞懂租屋。
+                    <p>我們是一群熱愛電影和電動的好室友，歡迎跟我們搭伙，我們有PS5、switch、VR、該有的應有盡有，絕對不會無聊。歡迎來當我們的室友!!
                     </p>
                     <button href="#" class="S-menu-info-more S-d-none S-xs-d-block" id="more2">查看更多</button>
                 </div>
@@ -2086,6 +1965,27 @@ $i = $stmt->fetch();
     simplepicker.on('close', (date) => {
         $eventLog.innerHTML += 'Picker Closed' + '\n';
     });
+
+
+    // --------------------------------------換頁-----------------------------
+    $(document).ready(function(){
+        // $(".simplepicker-ok-btn").attr("type","submit")
+        $(".simplepicker-ok-btn").html('<a href="Reservation_page.php" style="display:none;"></a>')
+        
+    })
+
+    const date = $(".event-log").text()
+    $(".simplepicker-ok-btn").click(function() {
+            console.log('gooddddd');
+            
+            localStorage.setItem("date",JSON.stringify(date))
+    })
+
+        
+
+
+
+
 </script>
 
 
