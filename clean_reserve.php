@@ -31,6 +31,18 @@
     text-decoration: none;
     opacity: 1;
 }
+
+.c-list-active{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+.c-list-active a{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
 @media screen and (max-width:376px){
     .c-mylist{
         display: none;
@@ -236,7 +248,7 @@ ul.pagination li a:hover{
             <li class="c-list"><a href="">
                     <h3>租金支付</h3>
                 </a> </li>
-            <li class="c-list"><a href="">
+            <li class="c-list-active"><a href="">
                     <h3>清潔服務</h3>
                 </a> </li>
         </ul>

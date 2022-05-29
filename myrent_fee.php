@@ -8,7 +8,7 @@ $stmt = $pdo->query($psql);
 $p = $stmt->fetch();
 
 // 帶入房屋資料
-$sql = "SELECT * FROM `items` WHERE `id` = 1;";
+$sql = "SELECT * FROM `items` WHERE `sid` = 1;";
 $stmt = $pdo->query($sql);
 $i = $stmt->fetch();
 
@@ -48,7 +48,27 @@ $i = $stmt->fetch();
     text-decoration: none;
     opacity: 1;
 }
+.c-list-active{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+.c-list-active a{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
 
+        .c-list-active{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+.c-list-active a{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
 @media screen and (max-width:376px){
     .c-mylist{
         display: none;
@@ -234,7 +254,7 @@ ul.pagination li a:hover{
                    <li class="c-list"><a href=""><h3>我的優惠</h3></a> </li>
                    <li class="c-list"><a href=""><h3>我的預約</h3></a> </li>
                    <li class="c-list"><a href=""><h3>租屋契約</h3></a></li>
-                   <li class="c-list"><a href=""><h3>租金支付</h3></a> </li>
+                   <li class="c-list-active"><a href=""><h3>租金支付</h3></a> </li>
                    <li class="c-list"><a href=""><h3>清潔服務</h3></a> </li>
                </ul>
            </div>
@@ -302,7 +322,7 @@ ul.pagination li a:hover{
                            <tr>
                                <td><p>我的租屋_<?= $i['item_name'] ?></p></td>
                                <td><p><?= $p['contract_from_y_m_d'] ?>至<?= $p['contract_end_y_m_d'] ?></p></td>
-                               <td><a href=""><p class="check">待繳費</p></a></td>
+                               <td><a href="pay_way.php"><p class="check">待繳費</p></a></td>
                                
                            </tr>
 
