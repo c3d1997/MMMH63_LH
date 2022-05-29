@@ -31,6 +31,16 @@
     text-decoration: none;
     opacity: 1;
 }
+.c-list-active{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+.c-list-active a{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
 @media screen and (max-width:376px){
     .c-mylist{
         display: none;
@@ -229,7 +239,7 @@ ul.pagination li a:hover{
             <li class="c-list"><a href="">
                     <h3>我的預約</h3>
                 </a> </li>
-            <li class="c-list"><a href="">
+            <li class="c-list-active"><a href="">
                     <h3>租屋契約</h3>
                 </a></li>
             <li class="c-list"><a href="">
@@ -317,7 +327,7 @@ ul.pagination li a:hover{
                             <p class="check">待審核</p>
                         </td>
                         <td>
-                                <iframe src="myrent_contract.php" style="display:none;" name="frame"><img src="../imgs/print_icon.svg" alt=""></iframe>
+                                <iframe src="myrent_contract02.php" style="display:none;" name="frame"><img src="../imgs/print_icon.svg" alt=""></iframe>
                                 <button type="button" onclick="frames['frame'].print()"><img src="imgs/print_icon.svg" alt=""></button>
                         </td>
                     </tr>
@@ -330,7 +340,7 @@ ul.pagination li a:hover{
                             <p>已審核</p>
                         </td>
                         <td> 
-                            <iframe src="myrent_contract.php" style="display:none;" name="frame"><img src="../imgs/print_icon.svg" alt=""></iframe>
+                            <iframe src="myrent_contract02.php" style="display:none;" name="frame"><img src="../imgs/print_icon.svg" alt=""></iframe>
                             <button type="button" onclick="frames['frame'].print()"><img src="imgs/print_icon.svg" alt=""></button>
                         </td>
                     </tr>
@@ -342,7 +352,7 @@ ul.pagination li a:hover{
                             <p>已審核</p>
                         </td>
                         <td> 
-                            <iframe src="myrent_contract.php" style="display:none;" name="frame"><img src="../imgs/print_icon.svg" alt=""></iframe>
+                            <iframe src="myrent_contract02.php" style="display:none;" name="frame"><img src="../imgs/print_icon.svg" alt=""></iframe>
                             <button type="button" onclick="frames['frame'].print()"><img src="imgs/print_icon.svg" alt=""></button>
                         </td>
                     </tr>

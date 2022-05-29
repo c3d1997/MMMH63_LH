@@ -960,7 +960,7 @@ $title = '付款方式'
                 <div class="z_text_intput ">
                     <p class="z_checkbox_option ">付款金額</p>
                     <div class="z_input_container">
-                        <p>777777</p>
+                        <p>$10,000</p>
                     </div>
                     <div class="z_payghost"></div>
                 </div>
@@ -970,7 +970,7 @@ $title = '付款方式'
                 <div class="z_text_intput ">
                     <p class="z_checkbox_option ">繳費日期</p>
                     <div class="z_input_container">
-                        <p>777777</p>
+                        <p>2022-07-02</p>
                     </div>
                     <div class="z_payghost"></div>
                 </div>

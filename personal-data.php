@@ -31,7 +31,16 @@
         text-decoration: none;
         opacity: 1;
     }
-
+    .c-list-active{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+    .c-list-active a{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
 
     /* 右邊標題開始 */
 
@@ -174,7 +183,7 @@
         <!-- 左邊選單 -->
         <div class="c-mylist">
             <ul>
-                <li class="c-list">
+                <li class="c-list-active">
                     <a href="">
                         <h3>會員資料</h3>
                     </a>
