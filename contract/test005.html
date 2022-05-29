@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        font-family:微軟正黑體;
+        letter-spacing:1px;
+        transition-duration:1s;
+      }
+      .buyed{
+        border:solid 2px black;
+        background-color:#f24;
+        color:white;
+      }
+    </style>
+</head>
+<body>
+    <h3>點擊按鈕改變背景色及文字</h3>
+    <div class="buybtn">點擊購買</div>
+    <div class="buybtn">點擊購買</div>
+    <script src="/js/jquery-3.6.0.js"></script>
+
+    <script>
+        $(".c-list").click(
+  function(){
+    $(this).h3("刊登物件");     
+    $(this).toggleClass("buyed");
+  }
+);
+    </script>
+    
+</body>
+</html>

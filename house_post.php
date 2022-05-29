@@ -27,10 +27,22 @@
     opacity: 0.5;
 }
 
+
 .c-list a:hover {
     text-decoration: none;
     opacity: 1;
 }
+
+.c-list-active{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+.c-list-active a{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
 
 @media screen and (max-width:376px){
     .c-mylist{
@@ -148,6 +160,8 @@ ul.pagination li a:hover{
     opacity: 1;
 }
 
+
+
 /* --------------------pages---------------- */
 
 @media screen and (max-width:376px){
@@ -212,9 +226,8 @@ ul.pagination li a:hover{
                 <!-- 左邊選單開始 -->
                 <div class="c-mylist">
                     <ul>
-                        <li class="c-list">
-                            <a href=""><h3>會員資料</h3></a></li>
-                        <li class="c-list"><a href=""><h3>刊登物件</h3></a></li>
+                        <li class="c-list"><a href=""><h3>會員資料</h3></a></li>
+                        <li tabindex="1" class="c-list-active"><a href=""><h3>刊登物件</h3></a></li>
                         <li class="c-list"><a href=""><h3>我的租屋</h3></a> </li>
                         <li class="c-list"><a href=""><h3>我的收藏</h3>
                         </a></li>
@@ -242,7 +255,7 @@ ul.pagination li a:hover{
 <div class="panel" hidden>
     <p>合約期限一年</p>
     <p>房屋狀態 : <span>未出租</span></p>
-    <p>合約內容 : <a href="">點擊查看</a></p>
+    <p>合約內容 : <a href="myrent_contract02.php">點擊查看</a></p>
     
 </div>
 
@@ -256,7 +269,7 @@ ul.pagination li a:hover{
 <div class="panel">
     <p>合約期限一年</p>
     <p>房屋狀態 : 已出租</p>
-    <p>合約內容 : <a href="">點擊查看</a></p>
+    <p>合約內容 : <a href="myrent_contract02.php">點擊查看</a></p>
     
 </div>
 
@@ -289,20 +302,20 @@ ul.pagination li a:hover{
                                 <tr>
                                     <td><p>士林夜市近士林劍潭捷運小套房</p></td>
                                     <td><p>一年</p></td>
-                                    <td><a href=""><p class="check">點擊查看</p></a></td>
+                                    <td><a href="myrent_contract02.php"><p class="check">點擊查看</p></a></td>
                                     <td><p class="notyet">未出租</p></td>
                                 </tr>
 
                                 <tr class="active-row">
                                         <td><p>士林夜市近士林劍潭捷運小套房</p></td>
                                         <td><p>一年</p></td>
-                                        <td><a href=""><p class="check">點擊查看</p></a></td>
+                                        <td><a href="myrent_contract02.php"><p class="check">點擊查看</p></a></td>
                                         <td><p>已出租</p></td>
                                 </tr>
                                 <tr>
                                     <td><p>士林夜市近士林劍潭捷運小套房</p></td>
                                     <td><p>一年</p></td>
-                                    <td><a href=""><p class="check">點擊查看</p></a></td>
+                                    <td><a href="myrent_contract02.php"><p class="check">點擊查看</p></a></td>
                                     <td><p>已出租</p></td>
                                 </tr>
                             </tbody>
@@ -356,6 +369,8 @@ $(function () {
         // $(".xs2").toggle();
     });
 });
+
+
 </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>

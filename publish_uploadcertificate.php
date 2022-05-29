@@ -1,3 +1,19 @@
+<?php 
+    require './part/connect-db.php';
+
+    $_SESSION["物件設備"] = $_POST["物件設備"];
+    $_SESSION["物件安全設備"] = $_POST["物件安全設備"];
+    $_SESSION["物件特色"] = $_POST["物件特色"];
+    $_SESSION["周遭機能"] = $_POST["周遭機能"];
+    $_SESSION["物件公設"] = $_POST["物件公設"];
+    $_SESSION["物件其他費用"] = $_POST["物件其他費用"];
+
+
+
+    // echo json_encode( $_SESSION,JSON_UNESCAPED_UNICODE);
+
+?>
+
 <?php include __DIR__ . './part/head.php'  ?>
 
     <style>
@@ -671,11 +687,11 @@
                         <p>刊登物件</p>
                     </div>
                     <h2 class="z_step_title bold">step4.　上傳房屋權狀</h2>
-                    <form action="./publish_otherinfo.php" method="post" enctype="multipart/form-data">
+                    <!-- <form action="publish_otherinfo.php" method="post" enctype="multipart/form-data"> -->
                     <div class="z_img_reviewcontainer_02 bold">
                         
                         <div class="uploadimg_after">
-                            <button class="z_close_icon"></button>
+                            <button class="z_close_icon" type="button"></button>
                             <img src="imgs\uploadbg.jpg" alt="" class="" >
                             <img  alt="" class="" id="nowimg">
                         </div>
@@ -692,9 +708,9 @@
                     <div class="z_twobtn">                      
                         <a href="./publish_feature.php"><button type="button" class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162">上一步</button></a>
                         
-                        <button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162">下一步</button>
+                        <a href="publish_otherinfo.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162" onclick="saveCertificate()">下一步</button></a>
                     </div>
-                    </form>
+                    <!-- </form> -->
                 </div>
             </div>
         </div>
@@ -703,6 +719,8 @@
 <?php include __DIR__ . './part/footer.php'  ?>
 
     <script>
+        const certificate = new Array();
+
         $("#upload_btn").click(function(){
             $("#imgUpload").click()
         })
@@ -710,14 +728,15 @@
             $("#nowimg").css("z-index","2")
             readURL(this);
         });
-
         function readURL(input){
         //   if(input.files && input.files[0]){
             var reader = new FileReader();
             reader.onload = function (e) {
                 $("#nowimg").attr('src', e.target.result);
+                certificate.push(e.target.result)
             }
             reader.readAsDataURL(input.files[0]);
+            
         //   }
         }
         $(".z_close_icon").click(function(){
@@ -727,8 +746,22 @@
             } else {
 
             }
-
         })
+
+        
+        function saveCertificate(){
+        
+            $.ajax({
+                url:"publish_otherinfo.php",
+                method: "post",   
+                data: {certificate : JSON.stringify(certificate)},
+                success: function(){
+                    alert(("777"))
+                }
+
+            })
+        }  
+
     </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>

@@ -332,6 +332,14 @@ $pageName = 'signin_signup';
         color: rgba(0, 0, 0, 0.2);
     }
 
+    .divfor_submit{ 
+        text-align: center;
+        margin-top: 30px;
+    }
+    #sign_up{
+        height: 40px;
+        width: 181px;
+    }
 
 
 
@@ -463,8 +471,12 @@ $pageName = 'signin_signup';
 
     .CAPTCHA-g {
         display: flex;
+<<<<<<< HEAD
         align-items: center;
         width: 100%;
+=======
+        align-items:baseline;
+>>>>>>> 3de1323ae8da809c6d658338ef1b8230f1887e4f
     }
 
     p.option_name.m-left {
@@ -490,9 +502,15 @@ $pageName = 'signin_signup';
     .formBx .form form button {
         /* font-weight: 900; */
         font-size: 20px;
+<<<<<<< HEAD
         width: 45%;
         height: 60px;
         padding: 6px;
+=======
+        width: 50%;
+        height: 45px;
+        /* padding: 6px; */
+>>>>>>> 3de1323ae8da809c6d658338ef1b8230f1887e4f
         margin-left: 10px;
         background: #FEAC00;
         border: none;
@@ -525,12 +543,16 @@ $pageName = 'signin_signup';
     .input_option {
         height: 48px;
         width: 100%;
+<<<<<<< HEAD
         margin: 15px 0;
+=======
+        margin-top: 25px;
+>>>>>>> 3de1323ae8da809c6d658338ef1b8230f1887e4f
     }
 
     .alert {
-        padding: 2px 0;
-        margin-left: 80px;
+        text-align: start;
+        
     }
 
     .signinForm .alert {
@@ -544,11 +566,13 @@ $pageName = 'signin_signup';
     .signupForm .pc-button-FEAC00-180 {
         height: 41px;
         margin: 0px 0 10px;
+       
     }
 
     .signinForm .pc-button-FEAC00-180 {
         height: 60px;
         margin: 10px 0 10px;
+
     }
 
 
@@ -569,7 +593,7 @@ $pageName = 'signin_signup';
         /* padding: 0 25px; */
         margin: 0 auto 30px;
         text-align: center;
-
+        margin-top: 25px;
 
     }
 
@@ -630,7 +654,9 @@ $pageName = 'signin_signup';
     }
 
 
-
+    .fullinput_container{
+        text-align: start;
+    }
 
 
 
@@ -735,7 +761,6 @@ $pageName = 'signin_signup';
             top: 150px;
         }
 
-
         /* ---------註冊表單-------------------------------------------------- */
         .formBx .signupForm {
             display: flex;
@@ -773,8 +798,7 @@ $pageName = 'signin_signup';
 
 
         .alert {
-            /* padding: 2px 0; */
-            margin-left: 0;
+            text-align: start;
         }
 
         .signinForm .alert {
@@ -806,9 +830,8 @@ $pageName = 'signin_signup';
         .S-d-block {
             display: block;
         }
-
-        /* ----------------------------- */
     }
+
 </style>
 
 <?php include __DIR__ . './part/nav.php'  ?>
@@ -876,9 +899,14 @@ $pageName = 'signin_signup';
                     <!-- 標題+輸入框 -->
                     <div class="input_option">
                         <p class="option_name">手機</p>
+<<<<<<< HEAD
                         <div class="fullinput_container ">
                             <input type="text" name="mobile" id="signin-mobile" placeholder="輸入您的帳號">
                             <div class="alert"></div>
+=======
+                        <div class="fullinput_container">
+                            <input type="text" name="mobile" id="mobile" placeholder="輸入您的帳號">
+>>>>>>> 3de1323ae8da809c6d658338ef1b8230f1887e4f
                         </div>
 
                     </div>
@@ -922,9 +950,14 @@ $pageName = 'signin_signup';
 
                     <div class="input_option">
                         <p class="option_name">電子郵件</p>
-                        <div class="fullinput_container ">
+                        
 
+<<<<<<< HEAD
                             <input type="email" name="email" id="signup-email" placeholder="請輸入您的信箱">
+=======
+                        <div class="fullinput_container ">
+                            <input type="email" name="email" id="signup-email" placeholder="請輸入您的信箱" style="width: 300px;height: 48px;border:none;">
+>>>>>>> 3de1323ae8da809c6d658338ef1b8230f1887e4f
                             <div class="alert"></div>
                         </div>
                     </div>
@@ -953,7 +986,7 @@ $pageName = 'signin_signup';
 
                     <div class="input_option">
                         <p class="option_name">密碼確認</p>
-                        <div class="fullinput_container ">
+                        <div class="fullinput_container">
                             <input type="text" name="passwordAgain" id="signup-passwordAgain" placeholder="請再次輸入您的密碼">
                             <div class="alert"></div>
                         </div>
@@ -969,8 +1002,13 @@ $pageName = 'signin_signup';
                             </label>
                         </div>
                     </div>
+                    <div class="divfor_submit">
                     <button type="submit" id="sign_up" class="pc-button-FEAC00-180">註冊</button>
+<<<<<<< HEAD
 
+=======
+                    </div>
+>>>>>>> 3de1323ae8da809c6d658338ef1b8230f1887e4f
                 </form>
                 <p>您已經註冊了嗎？<a href="#">由此進入</a></p>
             </div>
@@ -1174,7 +1212,7 @@ $pageName = 'signin_signup';
             $.get('contract/test0102.php', {
                 email
             }, function(data) {
-                alert('....');
+                alert('請至信箱收取驗證碼');
             });
 
 
@@ -1234,6 +1272,7 @@ $pageName = 'signin_signup';
             if ($name.val().length < 2) {
                 $name.next().html('請填寫正確資料');
                 $name.css('border', 'red 1px solid');
+                
                 isPass = false;
             }
 
