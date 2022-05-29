@@ -1,12 +1,12 @@
 <?php 
     require './part/connect-db.php';
 
-    $_SESSION["物件設備"] = $_POST["物件設備"];
-    $_SESSION["物件安全設備"] = $_POST["物件安全設備"];
-    $_SESSION["物件特色"] = $_POST["物件特色"];
-    $_SESSION["周遭機能"] = $_POST["周遭機能"];
-    $_SESSION["物件公設"] = $_POST["物件公設"];
-    $_SESSION["物件其他費用"] = $_POST["物件其他費用"];
+    $_SESSION["equipment_detail"] = $_POST["equipment_detail"];
+    $_SESSION["safety_equipment"] = $_POST["safety_equipment"];
+    $_SESSION["feature"] = $_POST["feature"];
+    $_SESSION["around"] = $_POST["around"];
+    $_SESSION["postulate"] = $_POST["postulate"];
+    $_SESSION["other_cost"] = $_POST["other_cost"];
 
 
 

@@ -690,7 +690,7 @@
                                     <p class="alert bold z_publish_small">（非必填）</p>
                                 </div>
                                 <div class="z_publish_textarea_container">
-                                    <textarea name="同住人資訊" id="roommate_info" cols="30" rows="100"></textarea>
+                                    <textarea name="roommate_info" id="roommate_info" cols="30" rows="100"></textarea>
                                 </div>
                             </div>
                             <div class="z_otherinfo_order1">
@@ -701,67 +701,67 @@
                                 <div class="z_publish_longer_check_container ">
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="健身">
+                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="健身">
                                         <span>健身</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="文創">
+                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="文創">
                                         <span>文創</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="電影">
+                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="電影">
                                         <span>電影</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="唱歌">
+                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="唱歌">
                                         <span>唱歌</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="運動">
+                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="運動">
                                         <span>運動</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="手作">
+                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="手作">
                                         <span>手作</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="音樂">
+                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="音樂">
                                         <span>音樂</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="烹飪">
+                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="烹飪">
                                         <span>烹飪</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="旅遊">
+                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="旅遊">
                                         <span>旅遊</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="閱讀">
+                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="閱讀">
                                         <span>閱讀</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="宅">
+                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="宅">
                                         <span>宅</span>
                                     </div>
                                 </label>
@@ -774,23 +774,24 @@
                                     <p class="alert bold z_publish_small">（非必填）</p>
                                 </div>
                                 <div class="z_publish_textarea_container">
-                                    <textarea name="room_info" id="" cols="30" rows="10"></textarea>
+                                    <textarea name="item_info" id="" cols="30" rows="10"></textarea>
                                 </div>
+                            </div>
+                        
+                            </div>
+                            <label>
+                                <input type="checkbox" name="" id="">
+                                <span class="z_checkbox">我已仔細閱讀並明瞭<a href="#"> 「服務條款」 </a>，<a href="#"> 「免責聲明」 </a>和<a href="#"> 「隱私權聲明」 </a>等所載內容及其意義，茲同意該等條款規定，並願遵守網站現今、嗣後規範的各種規則。</span>  
+                            </label>
+                            <div class="z_twobtn">                      
+                                <a href="./publish_uploadcertificate.php"><button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162" type="button">上一步</button></a>
+                                <a href="publish_uploadimg-api.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162">下一步</button></a>
                             </div>
                         </form>
                     </div>
-                    <label>
-                        <input type="checkbox" name="" id="">
-                        <span class="z_checkbox">我已仔細閱讀並明瞭<a href="#"> 「服務條款」 </a>，<a href="#"> 「免責聲明」 </a>和<a href="#"> 「隱私權聲明」 </a>等所載內容及其意義，茲同意該等條款規定，並願遵守網站現今、嗣後規範的各種規則。</span>  
-                    </label>
-                    <div class="z_twobtn">                      
-                        <a href="./publish_uploadcertificate.php"><button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162" type="button">上一步</button></a>
-                        <a href="publish_uploadimg-api.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162">下一步</button></a>
-                    </div>
                 </div>
-
             </div>
-        </div>
+        </div>    
     </section>
 
 <?php include __DIR__ . './part/footer.php'  ?>
