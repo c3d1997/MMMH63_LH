@@ -3,6 +3,7 @@ $pageName = 'searchpage';
 $title = '搜尋畫面';
 require './part/connect-db.php';
 
+
 // $item = isset($_GET['item']) ? intval($_GET['item']) : 0 ;
 // $parmas = [];
 
@@ -10,7 +11,8 @@ require './part/connect-db.php';
 // if(!empty($item)){
 //     $where .= "AND "
 // }
-// ?>
+// 
+?>
 
 <?php include __DIR__ . './part/searchead.php'  ?>
 <!-- 搜尋相關畫面全CSS -->
@@ -1418,7 +1420,7 @@ require './part/connect-db.php';
                                         房型
                                     </h3>
                                 </div>
-                                <div class="x-search-ex-tag roomtype-group" >
+                                <div class="x-search-ex-tag roomtype-group">
                                     <div class="x-search-ex-tag-wrap">
                                         <button class="x-button-only rentaltype" data-roomtype="1" type="button" value="套房">
                                             <p>
@@ -2353,46 +2355,61 @@ require './part/connect-db.php';
         })
 
     })
+    $('#x-select-btn').on('click', function() {
+
+    })
+    // 單選區
     // 房屋分類
     $(".rentaltype-group .x-button-only").click(function() {
         $(this).toggleClass('x-tag-on-click');
         $(this).siblings().removeClass('x-tag-on-click');
 
-        console.log({rentaltype: $(this).attr('data-rentaltype')})
+        console.log({
+            rentaltype: $(this).attr('data-rentaltype')
+        })
+        
     })
     // 地區
     $(".item_area-group .x-button-only").click(function() {
         $(this).toggleClass('x-tag-on-click');
         $(this).siblings().removeClass('x-tag-on-click');
 
-        console.log({item_area: $(this).attr('data-item_area')})
+        console.log({
+            item_area: $(this).attr('data-item_area')
+        })
     })
     // 房屋類型
     $(".roomtype-group .x-button-only").click(function() {
         $(this).toggleClass('x-tag-on-click');
         $(this).siblings().removeClass('x-tag-on-click');
 
-        console.log({roomtype: $(this).attr('data-roomtype')})
+        console.log({
+            roomtype: $(this).attr('data-roomtype')
+        })
     })
     // 坪數
     $(".ping_number-group .x-button-only").click(function() {
         $(this).toggleClass('x-tag-on-click');
         $(this).siblings().removeClass('x-tag-on-click');
 
-        console.log({ping_number: $(this).attr('data-ping_number')})
+        console.log({
+            ping_number: $(this).attr('data-ping_number')
+        })
     })
     // 設備
     $(".equipment-group .x-button-only").click(function() {
         $(this).toggleClass('x-tag-on-click');
         $(this).siblings().removeClass('x-tag-on-click');
 
-        console.log({equipment: $(this).attr('data-equipment')})
+        console.log({
+            equipment: $(this).attr('data-equipment')
+        })
     })
+    // 複選區
 
 
-    
 
-    
+
     $(".x-button-more").click(function() {
         $(this).toggleClass('x-tag-on-click');
 
@@ -2400,7 +2417,6 @@ require './part/connect-db.php';
     $(".x-button-clear").click(function() {
         $('button').removeClass('x-tag-on-click')
     })
-    rentaltype-group
     // 
 
 
@@ -2469,8 +2485,24 @@ require './part/connect-db.php';
     })
 </script>
 <script>
+    const Xbtn = document.querySelectorAll('#x-select-btn')
 
-   
+    Xbtn.addEventListener('click', getData);
+
+    function getData() {
+        const rentaltype = document.querySelectorAll('.rentaltype.x-button-only.x-tag-on-click')
+
+        let rentaltypeData;
+        let allDataObj = {};
+        $rentaltypeData = (rent.length != 0) ? rent[0].getAttribute('data-rentaltype') :'0';
+
+        allDataObj = {
+            "rentaltype": rentaltypeData,
+        }
+
+        Api(allDataObj);
+    }
+    // $_GET['data-rentaltype']
 </script>
 
 
