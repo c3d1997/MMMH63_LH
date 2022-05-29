@@ -6,7 +6,178 @@ $pageName = 'signin_signup';
 
 <?php include __DIR__ . './part/head.php'  ?>
 
+
 <style>
+    /* --------------------------------signin-card------------------------------------ */
+    /* 卡片加大 card biger  */
+    .card-wrap.card-biger {
+        height: 450px;
+    }
+
+    .card-wrap.card-biger .input_option {
+        margin: 0px 0;
+    }
+
+
+
+    /*  正常大小 */
+
+    .card-wrap {
+        position: relative;
+        height: 345px;
+        width: 502px;
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #0E2E3D;
+        box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+    }
+
+    .card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* text-align: center; */
+        margin: auto;
+    }
+
+    .card-icon {
+        font-size: 30px;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .card h2 {
+        text-align: center;
+        font-weight: 900;
+        margin-bottom: 10px;
+    }
+
+
+    /* XXXXXXXx */
+
+    .card-x {
+        width: 50px;
+        height: 50px;
+        background-color: #F1EDEA;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        color: #0E2E3D;
+    }
+
+    .card-x i {
+        font-size: 40px;
+    }
+
+
+    .input_option {
+        margin: 20px 0;
+        width: 70%;
+        height: 100px;
+    }
+
+
+
+    .fullinput_container {
+        height: 100%;
+    }
+
+
+    .card-wrap p {
+        margin-bottom: 30px;
+    }
+
+
+
+    /* 電腦版短版按鈕 */
+
+    button.pc-button-FEAC00-272 {
+        height: 60px;
+        width: 180px;
+        font-size: 24px;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+    /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+    /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+    @media screen and (max-width: 376px) {
+
+
+
+        .card-wrap {
+            position: relative;
+            height: 378px;
+            width: 375px;
+            /* border: 1px solid red; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #0E2E3D;
+            box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.18);
+            padding: 20px 0 10px;
+        }
+
+
+
+
+        /* XXXXXXXx */
+
+        .card-x {
+            margin: 10px;
+            width: 30px;
+            height: 30px;
+
+        }
+
+        .card-x i {
+            font-size: 40px;
+        }
+
+
+        /* 電腦版短版按鈕 */
+
+        button.pc-button-FEAC00-272 {
+            height: 60px;
+            width: 70%;
+            font-size: 24px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    .box_checked {}
+
     /* ------------------------------------- */
     /* 註冊區的alert */
     .alert {
@@ -253,6 +424,7 @@ $pageName = 'signin_signup';
     .formBx .signupForm {
         top: 15%;
         left: 0%;
+        height: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -265,10 +437,19 @@ $pageName = 'signin_signup';
 
     }
 
-
     .formBx .form form {
+        /* border: 1px solid red; */
         width: 80%;
         display: flex;
+        /* align-items: center; */
+        flex-direction: column;
+    }
+
+    .signupForm #form1 {
+        /* border: 1px solid #0E2E3D; */
+        width: 80%;
+        display: flex;
+        align-items: center;
         flex-direction: column;
     }
 
@@ -290,8 +471,25 @@ $pageName = 'signin_signup';
 
     .CAPTCHA-g {
         display: flex;
+<<<<<<< HEAD
+        align-items: center;
+        width: 100%;
+=======
         align-items:baseline;
+>>>>>>> 3de1323ae8da809c6d658338ef1b8230f1887e4f
     }
+
+    p.option_name.m-left {
+        flex-grow: 1;
+        text-align: right;
+    }
+
+    .fullinput_container.grow-none {
+        flex-grow: 0;
+    }
+
+
+
 
     .formBx .form form input.CAPTCHA {
         width: 65%;
@@ -304,9 +502,15 @@ $pageName = 'signin_signup';
     .formBx .form form button {
         /* font-weight: 900; */
         font-size: 20px;
+<<<<<<< HEAD
+        width: 45%;
+        height: 60px;
+        padding: 6px;
+=======
         width: 50%;
         height: 45px;
         /* padding: 6px; */
+>>>>>>> 3de1323ae8da809c6d658338ef1b8230f1887e4f
         margin-left: 10px;
         background: #FEAC00;
         border: none;
@@ -328,15 +532,6 @@ $pageName = 'signin_signup';
 
     }
 
-    .checkbox-info {
-        display: flex;
-        /* width: 100%; */
-    }
-
-    .formBx .form .checkbox-info input {
-        width: 20%;
-    }
-
     /* 忘記密碼 */
     .formBx .form form .forgot {
         padding: 0 0 10px;
@@ -348,7 +543,11 @@ $pageName = 'signin_signup';
     .input_option {
         height: 48px;
         width: 100%;
+<<<<<<< HEAD
+        margin: 15px 0;
+=======
         margin-top: 25px;
+>>>>>>> 3de1323ae8da809c6d658338ef1b8230f1887e4f
     }
 
     .alert {
@@ -371,7 +570,7 @@ $pageName = 'signin_signup';
     }
 
     .signinForm .pc-button-FEAC00-180 {
-        height: 41px;
+        height: 60px;
         margin: 10px 0 10px;
 
     }
@@ -409,30 +608,39 @@ $pageName = 'signin_signup';
         color: #0E2E3D;
     }
 
+    input[type=email] {
+        margin: 0;
+        padding: 0;
+        height: 48px;
+        border: none;
+        /* text-indent: 15px; */
+        color: #0E2E3D;
+    }
+
     input[type=checkbox] {
         display: none;
         color: #0E2E3D;
     }
 
+    /* checkbox 未勾選 */
     input[type=checkbox]+span {
         cursor: pointer;
         display: inline-block;
         padding-left: 30px;
-        /* line-height: 24px; */
         background: url(imgs/unchecked.svg) no-repeat left center;
         user-select: none;
-        color: #0E2E3D;
     }
 
+    /* checkbox連結 */
     a {
         text-decoration: none;
         color: #75BBE3;
     }
 
+    /* checkbox 已勾選 */
     input[type=checkbox]:checked+span {
         display: inline-block;
         padding-left: 30px;
-        /* line-height: 24px; */
         background-image: url(imgs/checked.svg);
     }
 
@@ -680,7 +888,6 @@ $pageName = 'signin_signup';
 
 
         <!-- 登入表格 -->
-
         <div class="formBx">
             <!-- 登入手機按鈕mobile-signinBtn -->
             <div class="mobil-Btn-g S-lg-d-none">
@@ -688,27 +895,32 @@ $pageName = 'signin_signup';
                 <button class="mobile-signupBtn">註冊</button>
             </div>
             <div class="form signinForm">
-                <form>
+                <form action="" name="form2" id='form2' method="post" onsubmit="checkForm(); return false ;">
                     <!-- 標題+輸入框 -->
                     <div class="input_option">
                         <p class="option_name">手機</p>
+<<<<<<< HEAD
+                        <div class="fullinput_container ">
+                            <input type="text" name="mobile" id="signin-mobile" placeholder="輸入您的帳號">
+                            <div class="alert"></div>
+=======
                         <div class="fullinput_container">
                             <input type="text" name="mobile" id="mobile" placeholder="輸入您的帳號">
+>>>>>>> 3de1323ae8da809c6d658338ef1b8230f1887e4f
                         </div>
 
                     </div>
-                    <div class="alert">!帳號或密碼錯誤 </div>
                     <!-- 標題+輸入框 -->
                     <div class="input_option">
                         <p class="option_name">密碼</p>
                         <div class="fullinput_container ">
-                            <input type="text" name="password" id="password" placeholder="輸入您的密碼">
+                            <input type="text" name="password" id="signin-password" placeholder="輸入您的密碼">
                         </div>
                     </div>
-                    <div class="alert">!帳號或密碼錯誤 </div>
+                    <div class="alert"></div>
                     <a href="#" class="forgot">忘記密碼</a>
+                    <button type="submit" id="sign_in" class="pc-button-FEAC00-180 S-d-none">登入</button>
                 </form>
-                <button class="pc-button-FEAC00-180">登入</button>
                 <a href="#" class="font-color-blue">尚未註冊？點此註冊</a>
             </div>
 
@@ -740,8 +952,12 @@ $pageName = 'signin_signup';
                         <p class="option_name">電子郵件</p>
                         
 
+<<<<<<< HEAD
+                            <input type="email" name="email" id="signup-email" placeholder="請輸入您的信箱">
+=======
                         <div class="fullinput_container ">
                             <input type="email" name="email" id="signup-email" placeholder="請輸入您的信箱" style="width: 300px;height: 48px;border:none;">
+>>>>>>> 3de1323ae8da809c6d658338ef1b8230f1887e4f
                             <div class="alert"></div>
                         </div>
                     </div>
@@ -749,8 +965,8 @@ $pageName = 'signin_signup';
 
                     <div class="CAPTCHA-g">
                         <div class="input_option">
-                            <p class="option_name mr-1word">驗證碼</p>
-                            <div class="fullinput_container ">
+                            <p class="option_name m-left">驗證碼</p>
+                            <div class="fullinput_container grow-none">
                                 <input type="text" name="checked" id="signup-checked" placeholder="請輸入驗證碼">
                                 <div class="alert"></div>
                             </div>
@@ -785,16 +1001,40 @@ $pageName = 'signin_signup';
                                 <span class="z_all-center">我同意<a href="#"> 隱私條款 </a>與<a href="#">租客平台公約</a>,我已閱讀完<a href="#">租賃法.</a></span>
                             </label>
                         </div>
-
                     </div>
                     <div class="divfor_submit">
                     <button type="submit" id="sign_up" class="pc-button-FEAC00-180">註冊</button>
+<<<<<<< HEAD
+
+=======
                     </div>
+>>>>>>> 3de1323ae8da809c6d658338ef1b8230f1887e4f
                 </form>
                 <p>您已經註冊了嗎？<a href="#">由此進入</a></p>
             </div>
         </div>
     </div>
+
+    <!-- 以下是"註冊成功" -->
+    <dialog id="infoModal">
+        <div class="card-wrap">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                </div>
+                <h2>註冊成功</h2>
+                <h3>恭喜您獲得清潔優惠卷</h3>
+                <h3>ABC-123456</h3>
+                <p>可以前往會員區確認</p>
+                <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">確認
+            </div>
+            <div class="card-x">
+                <img src="./imgs/X.svg" alt="">
+            </div>
+        </div>
+    </dialog>
+    <!-- 以上是"註冊成功" -->
+
     <div class="white backdrop-blur S-d-none"></div>
     <!-- 以下是footer---------------------------------------------  -->
     <div class="footer_container S-lg-d-none S-d-block">
@@ -868,9 +1108,6 @@ $pageName = 'signin_signup';
     <script src="js/jquery-3.6.0.js"></script>
     <script>
         // 自己頁面的script
-
-
-
         const signinBtn = document.querySelector('.signinBtn');
         const signupBtn = document.querySelector('.signupBtn');
         // const formBx = document.querySelector('.formBx');
@@ -923,6 +1160,20 @@ $pageName = 'signin_signup';
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // function checkForm() {
         //     // let isPass = true,
         //     //     $data = $(document.form1).serialize();
@@ -972,11 +1223,6 @@ $pageName = 'signin_signup';
     <script>
         // ------------驗證並彈出錯誤訊息------------------------------------------
 
-
-
-
-
-
         function validateEmail(email) {
             var re =
                 /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zAZ]{2,}))$/;
@@ -992,24 +1238,37 @@ $pageName = 'signin_signup';
             return /(\d+[a-z]+|[a-z]+\d+)/.test(p);
         }
 
+        const checkbox = $('#signup-checkbox');
+        checkbox.click(function() {
+            checkbox.toggleClass('box_checked');
+            $('input[type=checkbox]+span').css('background-image', '');
+        })
 
 
 
-        //  存入資料庫
         function checkForm() {
             const $name = $('#signup-name');
             const $email = $('#signup-email');
             const $mobile = $('#signup-mobile');
 
+
+
+
             const msgFields = [$name, $email, $mobile];
-            // 清除之前的檢查訊息
+
+
+            // 清除之前的檢查訊息start------------------------------------------------
             for (let f of msgFields) {
                 f.css('border', '#CCCCCC 1px solid');
                 f.next().html('');
             }
-            let isPass = true; //有沒有通過檢查(預設為通過，有一格沒填就不過)
+            // 清除之前的檢查訊息over------------------------------------------------
 
 
+            // let isPass = true; //有沒有通過檢查(預設為通過，有一格沒填就不過)
+
+
+            // ---註冊的判斷-------------------------------------------------
             if ($name.val().length < 2) {
                 $name.next().html('請填寫正確資料');
                 $name.css('border', 'red 1px solid');
@@ -1051,6 +1310,74 @@ $pageName = 'signin_signup';
                 isPass = false;
             }
 
+
+
+            // if (!$checkbox.hasClass('box_checked')) {
+            //     $('input[type=checkbox]+span').css('background-image', 'url(imgs/checkbox-warnning.svg)');
+            //     isPass = false;
+            // }
+
+
+
+
+            // ---------註冊成功彈跳視窗---------------------------------------
+
+
+            // 成功 彈出視窗
+
+            let btn = document.querySelector("#sign_up");
+            let infoModal = document.querySelector("#infoModal");
+            let close = document.querySelector("#close");
+            btn.addEventListener("click", function() {
+                infoModal.showModal();
+            })
+            close.addEventListener("click", function() {
+                console.log('close');
+                infoModal.close();
+            })
+
+
+            // ---登入的判斷-------------------------------------------------
+
+
+
+
+            const $inMobile = $('#signin-mobile');
+            if ($inMobile.val() && !validateMobile($inMobile.val())) {
+                console.log('iambeauty');
+                $mobile.next().html('! 帳號或密碼填寫錯誤');
+                $mobile.css('border', 'red 1px solid');
+                isPass = false;
+            }
+
+            const $inPassword = $('#signin-password');
+            // if (!$inPassword.val() || !validatePassword($inPassword.val())) {
+
+            //     $inPassword.next().html('! 帳號或密碼填寫錯誤');
+            //     $inPassword.css('border', 'red 1px solid');
+            //     isPass = false;
+            // }
+
+            // if (!$inMobile.val().trim() || !$inPassword.val().trim()) {
+            //     console.log('iambeauty');
+            //     $mobile.next().html('! 帳號或密碼填寫錯誤');
+            //     $mobile.css('border', 'red 1px solid');
+            //     isPass = false;
+
+            //     // alert('兩個欄位都要填寫');
+            // }
+
+
+
+
+
+
+
+
+
+
+            // -------------------------------------------------------------------------------------
+            // 註冊成功存入會員資料表
             if (isPass) {
                 $.post('insert02.php', $(document.form1).serialize(),
                     function(data) {
@@ -1058,75 +1385,6 @@ $pageName = 'signin_signup';
                     });
             }
         }
-
-        //  存入資料庫
-
-
-
-
-
-        // TODO: 檢查欄位資料.
-
-
-
-        // trim()前後空白去掉
-        // const name = $name.val().trim();
-        // console.log('name');
-
-        // const $name = $('#signup-name');
-        // if ($name.val().length < 2) {
-        //     $name.next().html('請填寫正確資料');
-        //     $name.css('border', 'red 1px solid');
-        //     isPass = false;
-        // }
-        // const $email = $('#signup-email');
-        // if ($email.val() && !validateEmail($email.val())) {
-
-        //     $email.next().html('請填寫正確的email');
-        //     $email.css('border', 'red 1px solid');
-        //     isPass = false;
-        // }
-        // const $mobile = $('#signup-mobile');
-        // if ($mobile.val() && !validateMobile($mobile.val())) {
-
-        //     $mobile.next().html('請填寫正確的手機號碼');
-        //     $mobile.css('border', 'red 1px solid');
-        //     isPass = false;
-        // }
-        // const $signupChecked = $('#signup-checked');
-        // if ($signupChecked.length < 5) {
-
-        //     $signupChecked.next().html('請填寫正確的驗證碼');
-        //     $signupChecked.css('border', 'red 1px solid');
-        //     isPass = false;
-        // }
-        // const $password = $('#signup-password');
-        // if ($password.val() && !validatePassword($password.val())) {
-
-        //     $password.next().html('請填寫16位元的密碼，至少一個英文一個數字');
-        //     $password.css('border', 'red 1px solid');
-        //     isPass = false;
-        // }
-        // const $passwordAgain = $('#signup-passwordAgain');
-        // if ($passwordAgain.length != $password.val()) {
-        //     $passwordAgain.next().html('需與前一次密碼相同');
-        //     $passwordAgain.css('border', 'red 1px solid');
-        //     isPass = false;
-        // }
-
-
-
-
-
-
-
-        // json
-
-
-
-
-
-        // -----------------------------------------------------------------------------
     </script>
 
 
