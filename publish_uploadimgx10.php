@@ -1,6 +1,8 @@
 <?php 
+    if(!empty(session_start()))
+        session_destroy();
     session_start();
-
+    
 ?>
 
 
@@ -767,7 +769,7 @@
 
         function saveAllImg() {
             $.ajax({
-                url:"publish_uploadimg-api.php",
+                url:"publish_item_detail.php",
                 method: "post",
                 data: {img_arr : JSON.stringify(img_arr) },
                 success: function(){

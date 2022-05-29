@@ -1,5 +1,8 @@
 <?php
     require './part/connect-db.php';
+    
+    // session_destroy();
+
     $sql = "SELECT COUNT(*) FROM `items`;";
     $stmt = $pdo->query($sql)->fetch();
     // echo $stmt['COUNT(*)'];
@@ -12,8 +15,7 @@
     $da_sql = "SELECT * FROM `detailed_area`;";
     $detailed_area = $pdo->query($area_sql);
 
-    // session_destroy();
-
+    $_SESSION['img_arr'] = json_decode($_POST['img_arr']);
 ?>
 
 
@@ -876,7 +878,8 @@
                     <p>刊登物件</p>
                 </div>
                 <div class="z_step_title bold">step2.　房屋詳細資料</div>
-                <form action="">
+                <!-- <form action="publish_feature.php" method="post" onsubmit="itemFeature()"> -->
+                <form action="publish_feature.php" method="post" onsubmit="itemFeature()">
                     <div class="z_publish_text_container">
                         <div class="z_input_row">
                             <div class="z_publish_input_twooption">
@@ -884,11 +887,9 @@
                                 <div class="z_two_input">
                                     <div class="z_select_dropdown_half_container">
                                         <select id="areaSelect" name="item_area" class="z_select_dropdown">
-                                            <option value="預設" selected disabled>----請選擇縣市----</option>
+                                            <option value="" selected disabled>----請選擇縣市----</option>
                                             <?php foreach($area as $a ): ?>
-                                                <option value="<?=$a['area']?>">
-                                                    <?=$a['area']?>
-                                                </option>
+                                                <option value="<?=$a['area']?>"><?=$a['area']?></option>
                                             <?php endforeach;?>
                                         </select>
                                         <div class="arrow_container">
@@ -899,12 +900,12 @@
                                         <p class="alert">！　請選擇縣市</p>
                                     </div>
                                     <div class="z_select_dropdown_half_container">
-                                        <select id="distSelect" name=”item_dist” class="z_select_dropdown">
+                                        <select id="distSelect" name="item_dist" class="z_select_dropdown">
                                             <option value="" selected disabled>----請選擇縣市----</option>
                                             <?php foreach($detailed_area as $da ): ?>
-                                            <option value="">大安區</option>
-                                            <option value="">信義區</option>
-                                            <option value="">松山區</option>
+                                            <option value="大安區">大安區</option>
+                                            <option value="信義區">信義區</option>
+                                            <option value="松山區">松山區</option>
                                             <?php endforeach;?>
                                         </select>
                                         <div class="arrow_container">
@@ -937,7 +938,7 @@
                             <div class="input_option">
                                 <p class="option_name">　　樓層</p>
                                 <div class="fullinput_container z_fullinput_container">
-                                    <input type="text" name="floor" id="loor" placeholder="輸入樓層">
+                                    <input type="text" name="floor" id="floor" placeholder="輸入樓層">
                                 </div>
                             </div>
                             <div class="input_alert z_input_alert">
@@ -949,9 +950,9 @@
                                     <div class="z_select_dropdown_container">
                                         <select id="typeSelect" name="roomtype" class="z_select_dropdown">
                                             <option value="" selected disabled>請選擇房型</option>
-                                            <option value="">整層住家</option>
-                                            <option value="">分租套房</option>
-                                            <option value="">雅房</option>
+                                            <option value="整層住家">整層住家</option>
+                                            <option value="分租套房">分租套房</option>
+                                            <option value="雅房">雅房</option>
                                         </select>
                                         <div class="arrow_container">
                                             <img src="imgs/down-arrow.svg" alt="">
@@ -1009,12 +1010,12 @@
                             </div>
                         </div>
                     </div>
-                </form>    
+                
                 <div class="z_twobtn">
                     <a href="./publish_uploadimgx10.php"><button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162" type="button">上一步</button></a>
-                    <a href=""><button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162" onsubmit="itemFeature()">下一步</button></a>
+                    <button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162" >下一步</button>
                 </div>
-
+                </form>    
             </div>
         </div>
     </div>
@@ -1035,18 +1036,20 @@
     }
     })
 
-    const item_area = $("areaSelect").val()
-    const item_dist = $("#distSelect").val()
-    const item_address = $("#item_address").val()
-    const ping_number = $("#ping_number").val()
-    const floor = $("#floor").val()
-    const roomtype = $("#typeSelect").val()
-    const room_count  = $("#room_count").val()
-    const item_name = $("#item_name").val()
-    const contract = $("#contract").val()
+
 
 
     function itemFeature() {
+        const item_area = $("#areaSelect").val()
+        const item_dist = $("#distSelect").val()
+        const item_address = $("#item_address").val()
+        const ping_number = $("#ping_number").val()
+        const floor = $("#floor").val()
+        const roomtype = $("#typeSelect").val()
+        const room_count  = $("#room_count").val()
+        const item_name = $("#item_name").val()
+        const contract = $("#contract").val()
+
         $.ajax({
             url:"publish_uploadimg-api.php",
             method: "post",
@@ -1056,15 +1059,18 @@
                 item_address:JSON.stringify(item_address),
                 ping_number:JSON.stringify(ping_number),
                 floor:JSON.stringify(floor),
-                roomty:JSON.stringify(peroomtype),
+                roomty:JSON.stringify(roomtype),
                 room_count:JSON.stringify(room_count),
                 item_name:JSON.stringify(item_name),
                 contract:JSON.stringify(contract),
+                contentType:'application/json;charset=UTF-8',
                 success: function(){
-                    console.log((data))
+                    console.log("成功")
+                    console.log(data)
                 }
             }
         })
+
     }
 
 

@@ -1,10 +1,20 @@
 <?php
+    require './part/connect-db.php';
 
+    // 
+    $_SESSION['certificate'] = json_decode($_POST['certificate']);
+    // 
+    // $path = 'imgs/items'.$new_item;
+    // if(!file_exists($path)){
+    //     mkdir($path);
+    // }
+    // $certificate = json_decode($_POST['certificate']);
+    // $i = 1;
+    //     $image = file_get_contents($url);
 
-// 移動上傳的暫存檔
-//                                     暫存位置                                 儲存原檔名
-move_uploaded_file($_FILES['certificate']['tmp_name'], __DIR__ .'/'.$_FILES['certificate']['name']);
-echo json_encode($_FILES['certificate']);
+    //     file_put_contents($path.'/item'.$i.'.jpg', $image ); //Where to save the image
+    //     $i=$i+1;
+    // echo json_encode($_SESSION,JSON_UNESCAPED_UNICODE);
 ?>
 
 
@@ -673,13 +683,14 @@ echo json_encode($_FILES['certificate']);
                     </div>
                     <h2 class="z_step_title bold">step5.　同住人資訊以及房屋簡介</h2>
                     <div class="z_otherinfo_flex">
+                        <form action="publish_uploadimg-api.php" method="POST">
                             <div class="z_publish_text_container">
                                 <div class="z_publish_option_title">
                                     <div class="z_publish_item_detail_title">同住人資訊</div>
                                     <p class="alert bold z_publish_small">（非必填）</p>
                                 </div>
                                 <div class="z_publish_textarea_container">
-                                    <textarea name="" id="" cols="30" rows="100"></textarea>
+                                    <textarea name="同住人資訊" id="roommate_info" cols="30" rows="100"></textarea>
                                 </div>
                             </div>
                             <div class="z_otherinfo_order1">
@@ -690,67 +701,67 @@ echo json_encode($_FILES['certificate']);
                                 <div class="z_publish_longer_check_container ">
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
+                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="健身">
                                         <span>健身</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
+                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="文創">
                                         <span>文創</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
+                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="電影">
                                         <span>電影</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
+                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="唱歌">
                                         <span>唱歌</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
+                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="運動">
                                         <span>運動</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
+                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="手作">
                                         <span>手作</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
+                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="音樂">
                                         <span>音樂</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
+                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="烹飪">
                                         <span>烹飪</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
+                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="旅遊">
                                         <span>旅遊</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
+                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="閱讀">
                                         <span>閱讀</span>
                                     </div>
                                 </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="" id="" value="">
+                                        <input class="z_checkbox_option" type="checkbox" name="共同興趣[]" id="" value="宅">
                                         <span>宅</span>
                                     </div>
                                 </label>
@@ -763,17 +774,18 @@ echo json_encode($_FILES['certificate']);
                                     <p class="alert bold z_publish_small">（非必填）</p>
                                 </div>
                                 <div class="z_publish_textarea_container">
-                                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                                    <textarea name="room_info" id="" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
+                        </form>
                     </div>
                     <label>
                         <input type="checkbox" name="" id="">
                         <span class="z_checkbox">我已仔細閱讀並明瞭<a href="#"> 「服務條款」 </a>，<a href="#"> 「免責聲明」 </a>和<a href="#"> 「隱私權聲明」 </a>等所載內容及其意義，茲同意該等條款規定，並願遵守網站現今、嗣後規範的各種規則。</span>  
                     </label>
                     <div class="z_twobtn">                      
-                        <a href="./publish_uploadcertificate.php"><button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162">上一步</button></a>
-                        <a href=""><button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162">下一步</button></a>
+                        <a href="./publish_uploadcertificate.php"><button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162" type="button">上一步</button></a>
+                        <a href="publish_uploadimg-api.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162">下一步</button></a>
                     </div>
                 </div>
 
@@ -784,7 +796,8 @@ echo json_encode($_FILES['certificate']);
 <?php include __DIR__ . './part/footer.php'  ?>
 
     <script>
-        // 自己頁面的script
+
+
     </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>
