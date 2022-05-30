@@ -769,9 +769,12 @@
 
         function saveAllImg() {
             $.ajax({
+                // url:"publish_uploadimg-api.php",
                 url:"publish_item_detail.php",
                 method: "post",
-                data: {img_arr : JSON.stringify(img_arr) },
+                data: {
+                    img_arr : JSON.stringify(img_arr),
+                },
                 success: function(){
                     console.log((img_arr))
                 }

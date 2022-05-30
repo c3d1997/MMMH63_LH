@@ -5,9 +5,28 @@
     $stmt = $pdo->query($sql)->fetch();
     // echo $stmt['COUNT(*)'];
     $new_item = $stmt['COUNT(*)'] + 1;
+
     $_SESSION['item_c'] = $new_item;
-
-
+    // 
+    // $_SESSION['img_arr'] = json_decode($_POST['img_arr']);
+    // $_SESSION['item_area'] = $_POST['item_area'];
+    // $_SESSION['item_dist'] = $_POST['item_dist'];
+    // $_SESSION['item_address'] = $_POST['item_address'];
+    // $_SESSION['ping_number'] = $_POST['ping_number'];
+    // $_SESSION['floor'] = $_POST['floor'];
+    // $_SESSION['roomtype'] = $_POST['roomtype'];
+    // $_SESSION['room_count'] = $_POST['room_count'];
+    // $_SESSION['item_name'] = $_POST['item_name'];
+    // $_SESSION['price'] = $_POST['price'];
+    // $_SESSION['contract'] = $_POST['contract'];
+    // $_SESSION["equipment_detail"] = $_POST["equipment_detail"];
+    // $_SESSION["safety_equipment"] = $_POST["safety_equipment"];
+    // $_SESSION["feature"] = $_POST["feature"];
+    // $_SESSION["around"] = $_POST["around"];
+    // $_SESSION["postulate"] = $_POST["postulate"];
+    // $_SESSION["other_cost"] = $_POST["other_cost"];
+    // $_SESSION['certificate'] = json_decode($_POST['certificate']);
+    // 
     $_SESSION['roommate_info'] = $_POST['roommate_info'];
     $_SESSION['hobby'] = $_POST['hobby'];
     $_SESSION['item_info'] = $_POST['item_info'];
@@ -48,25 +67,25 @@
 
 
 
-    echo $_SESSION['item_name'];
-    echo $_SESSION['roomtype'];
-    echo $_SESSION['room_count'];
-    echo $_SESSION['ping_number'];
-    echo $_SESSION['floor'];
-    echo $_SESSION['price'];
-    echo $_SESSION['item_area'];
-    echo $_SESSION['item_dist'];
-    echo $_SESSION['item_address'];
-    echo $_SESSION['contract'];
-    echo implode(',',$_SESSION["feature"]);
-    echo implode(',',$_SESSION["equipment_detail"]);
-    echo implode(',',$_SESSION["safety_equipment"]);
-    echo implode(',',$_SESSION["other_cost"]);
-    echo implode(',',$_SESSION["postulate"]);
-    echo implode(',',$_SESSION["around"]);
-    echo implode(',',$_SESSION['hobby']) ;
-    echo $_SESSION['item_info'];
-    echo $_SESSION['roommate_info'];
+    // echo $_SESSION['item_name'];
+    // echo $_SESSION['roomtype'];
+    // echo $_SESSION['room_count'];
+    // echo $_SESSION['ping_number'];
+    // echo $_SESSION['floor'];
+    // echo $_SESSION['price'];
+    // echo $_SESSION['item_area'];
+    // echo $_SESSION['item_dist'];
+    // echo $_SESSION['item_address'];
+    // echo $_SESSION['contract'];
+    // echo implode(',',$_SESSION["feature"]);
+    // echo implode(',',$_SESSION["equipment_detail"]);
+    // echo implode(',',$_SESSION["safety_equipment"]);
+    // echo implode(',',$_SESSION["other_cost"]);
+    // echo implode(',',$_SESSION["postulate"]);
+    // echo implode(',',$_SESSION["around"]);
+    // echo implode(',',$_SESSION['hobby']) ;
+    // echo $_SESSION['item_info'];
+    // echo $_SESSION['roommate_info'];
 
 
     $stmt = $pdo->prepare($sql);

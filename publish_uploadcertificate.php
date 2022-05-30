@@ -1,14 +1,13 @@
 <?php 
     require './part/connect-db.php';
-
-    $_SESSION["equipment_detail"] = $_POST["equipment_detail"];
-    $_SESSION["safety_equipment"] = $_POST["safety_equipment"];
-    $_SESSION["feature"] = $_POST["feature"];
-    $_SESSION["around"] = $_POST["around"];
-    $_SESSION["postulate"] = $_POST["postulate"];
-    $_SESSION["other_cost"] = $_POST["other_cost"];
-
-
+    if(! empty($_POST)){
+        $_SESSION["equipment_detail"] = $_POST["equipment_detail"];
+        $_SESSION["safety_equipment"] = $_POST["safety_equipment"];
+        $_SESSION["feature"] = $_POST["feature"];
+        $_SESSION["around"] = $_POST["around"];
+        $_SESSION["postulate"] = $_POST["postulate"];
+        $_SESSION["other_cost"] = $_POST["other_cost"];
+    }
 
     // echo json_encode( $_SESSION,JSON_UNESCAPED_UNICODE);
 
@@ -752,7 +751,8 @@
         function saveCertificate(){
         
             $.ajax({
-                url:"publish_otherinfo.php",
+                url:"publish_uploadimg-api.php",
+                // url:"publish_otherinfo.php",
                 method: "post",   
                 data: {certificate : JSON.stringify(certificate)},
                 success: function(){
