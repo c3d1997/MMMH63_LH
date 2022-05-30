@@ -3,15 +3,6 @@ $pageName = 'searchpage';
 $title = '搜尋畫面';
 require './part/connect-db.php';
 
-
-// $item = isset($_GET['item']) ? intval($_GET['item']) : 0 ;
-// $parmas = [];
-
-// $where = ' WHERE 1 ';
-// if(!empty($item)){
-//     $where .= "AND "
-// }
-// 
 ?>
 
 <?php include __DIR__ . './part/searchead.php'  ?>
@@ -1228,8 +1219,8 @@ require './part/connect-db.php';
                                         地區
                                     </h3>
                                 </div>
-                                <div class="x-search-ex-tag item_area-group">
-                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                <div class="x-search-ex-tag ">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start item_area-group">
                                         <button class="x-button-only" data-item_area="1" type="button">
                                             <p>
                                                 新北
@@ -1263,148 +1254,148 @@ require './part/connect-db.php';
                                     </h3>
                                 </div>
                                 <div class="x-search-ex-tag ">
-                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                        <button class="x-button-more" name="dist" type="button">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start item_dist-group">
+                                        <button class="x-button-more" data-item_dist="1" type="button">
                                             <p>
                                                 板橋區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="2" type="button">
                                             <p>
                                                 三重區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="3" type="button">
                                             <p>
                                                 中和區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="4" type="button">
                                             <p>
                                                 永和區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="5" type="button">
                                             <p>
                                                 新莊區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="6" type="button">
                                             <p>
                                                 新店區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="7" type="button">
                                             <p>
                                                 土城區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="8" type="button">
                                             <p>
                                                 蘆洲區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="9" type="button">
                                             <p>
                                                 樹林區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="10" type="button">
                                             <p>
                                                 汐止區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="11" type="button">
                                             <p>
                                                 鶯歌區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="12" type="button">
                                             <p>
                                                 三峽區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="13" type="button">
                                             <p>
                                                 淡水區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="14" type="button">
                                             <p>
                                                 瑞芳區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="15" type="button">
                                             <p>
                                                 五股區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="16" type="button">
                                             <p>
                                                 泰山區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="17" type="button">
                                             <p>
                                                 林口區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="18" type="button">
                                             <p>
                                                 深坑區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="19" type="button">
                                             <p>
                                                 石碇區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="20" type="button">
                                             <p>
                                                 坪林區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="21" type="button">
                                             <p>
                                                 三芝區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="22" type="button">
                                             <p>
                                                 石門區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="23" type="button">
                                             <p>
                                                 八里區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="24" type="button">
                                             <p>
                                                 平溪區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="25" type="button">
                                             <p>
                                                 雙溪區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="26" type="button">
                                             <p>
                                                 貢寮區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="27" type="button">
                                             <p>
                                                 金山區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="28" type="button">
                                             <p>
                                                 萬里區
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="dist" type="button">
+                                        <button class="x-button-more" data-item_dist="29" type="button">
                                             <p>
                                                 烏來區
                                             </p>
@@ -1493,18 +1484,18 @@ require './part/connect-db.php';
                                     </h3>
                                 </div>
                                 <div class="x-search-ex-tag">
-                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                        <button class="x-button-more" name="feature" type="button">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start feature-group">
+                                        <button class="x-button-more" data-feature="1" type="button">
                                             <p>
                                                 限女性
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="feature" type="button">
+                                        <button class="x-button-more" data-feature="2" type="button">
                                             <p>
                                                 可開伙
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="feature" type="button">
+                                        <button class="x-button-more" data-feature="3" type="button">
                                             <p>
                                                 可養寵物
                                             </p>
@@ -1538,23 +1529,23 @@ require './part/connect-db.php';
                                     </h3>
                                 </div>
                                 <div class="x-search-ex-tag">
-                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                        <button class="x-button-more" name="postulate" type="button">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start postulate-group">
+                                        <button class="x-button-more" data-postulate="1" type="button">
                                             <p>
                                                 陽台
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="postulate" type="button">
+                                        <button class="x-button-more" data-postulate="2" type="button">
                                             <p>
                                                 電梯
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="postulate" type="button">
+                                        <button class="x-button-more" data-postulate="3" type="button">
                                             <p>
                                                 交誼廳
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="postulate" type="button">
+                                        <button class="x-button-more" data-postulate="4" type="button">
                                             <p>
                                                 廚房
                                             </p>
@@ -1570,28 +1561,28 @@ require './part/connect-db.php';
                                     </h3>
                                 </div>
                                 <div class="x-search-ex-tag">
-                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                        <button class="x-button-more" name="" type="button">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start other_cost-group">
+                                        <button class="x-button-more" data-other_cost="1" type="button">
                                             <p>
                                                 水電費
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="" type="button">
+                                        <button class="x-button-more" data-other_cost="2" type="button">
                                             <p>
                                                 網路費
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="" type="button">
+                                        <button class="x-button-more" data-other_cost="3" type="button">
                                             <p>
                                                 第四台
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="" type="button">
+                                        <button class="x-button-more" data-other_cost="4" type="button">
                                             <p>
                                                 清潔費
                                             </p>
                                         </button>
-                                        <button class="x-button-more" name="" type="button">
+                                        <button class="x-button-more" data-other_cost="5" type="button">
                                             <p>
                                                 停車費
                                             </p>
@@ -1607,8 +1598,8 @@ require './part/connect-db.php';
                         </div>
                     </div>
                     <div class="x-search-button">
-                        <button class="pc-button-F4F4F4-180 x-button-clear" type="button">重選</button>
-                        <button id="x-select-btn" class="pc-button-FEAC00-180" type="button">開始搜尋</button>
+                        <button class="pc-button-F4F4F4-180 x-button-clear" type="button" onclick="detare()">重選</button>
+                        <button id="x-select-btn" class="pc-button-FEAC00-180" type="button" onclick="datacheck()">開始搜尋</button>
                     </div>
 
                 </div>
@@ -2355,19 +2346,65 @@ require './part/connect-db.php';
         })
 
     })
-    $('#x-select-btn').on('click', function() {
+    
+    // 搜尋送出按鈕
 
-    })
+    function datacheck() {
+        // $.ajax({
+        //     url: "search_list.php",
+        //     method: "get",
+        //     data: {
+        //         dataR: JSON.stringify($('.x-tag-on-click').attr('data-rentaltype'))
+        //     },
+        //     // success: function() {
+        //     //     console.log((dataR))
+        //     // }
+        // })
+        // const dataD_a = new Array()
+
+        const areaBtns = $('.x-search-ex-tag > .item_dist-group .x-button-more');
+        const areaSelected = [];
+        areaBtns.each(function(){
+            const btn = $(this);
+            if(btn.hasClass('x-tag-on-click')){
+                areaSelected.push( btn.find('p').text().trim());
+            }
+        });
+        const dataAreas = JSON.stringify(areaSelected);
+        // console.log(areaSelected);
+        
+        const dataR = $('.x-tag-on-click').attr('data-rentaltype')
+        $.get('search_list.php', {dataR, dataAreas},
+            function(data){
+                $('#search_all_all').html(data);
+            },'text');
+
+        
+        
+        
+        
+        // $('#search_all_all').html(data);
+        // $.get('search_list.php',function(data){
+        //     $('#search_all_all').html(data);
+        //     // document.getElementById("search_all_all").innerHTML = data;
+            
+        // })
+        
+    }
     // 單選區
     // 房屋分類
+
     $(".rentaltype-group .x-button-only").click(function() {
         $(this).toggleClass('x-tag-on-click');
         $(this).siblings().removeClass('x-tag-on-click');
 
-        console.log({
-            rentaltype: $(this).attr('data-rentaltype')
-        })
-        
+        console.log(
+            // rentaltype: $(this).attr('data-rentaltype');
+            $('.x-tag-on-click').attr('data-rentaltype')
+        )
+        // var dataRentaltype = $('.rentaltype').attr('data-rentaltype')
+        // var dataRentaltype = $('.rentaltype').attr('data-rentaltype')
+
     })
     // 地區
     $(".item_area-group .x-button-only").click(function() {
@@ -2406,14 +2443,18 @@ require './part/connect-db.php';
         })
     })
     // 複選區
-
-
-
-
-    $(".x-button-more").click(function() {
+    // 詳細地區
+    $(".item_dist-group .x-button-more").click(function() {
         $(this).toggleClass('x-tag-on-click');
-
+        console.log({
+            item_dist: $(this).attr('data-item_dist')
+        })
+        
     })
+
+
+
+    
     $(".x-button-clear").click(function() {
         $('button').removeClass('x-tag-on-click')
     })
@@ -2483,26 +2524,6 @@ require './part/connect-db.php';
 
 
     })
-</script>
-<script>
-    const Xbtn = document.querySelectorAll('#x-select-btn')
-
-    Xbtn.addEventListener('click', getData);
-
-    function getData() {
-        const rentaltype = document.querySelectorAll('.rentaltype.x-button-only.x-tag-on-click')
-
-        let rentaltypeData;
-        let allDataObj = {};
-        $rentaltypeData = (rent.length != 0) ? rent[0].getAttribute('data-rentaltype') :'0';
-
-        allDataObj = {
-            "rentaltype": rentaltypeData,
-        }
-
-        Api(allDataObj);
-    }
-    // $_GET['data-rentaltype']
 </script>
 
 
