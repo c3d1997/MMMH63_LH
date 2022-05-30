@@ -1,23 +1,28 @@
 <?php
 require './part/connect-db.php';
 
-$rentaltype = isset($_GET['rentaltype']) ? intval($_GET['rentaltype']) : 0;
+$dataRentaltype = !empty(isset($_GET['dataR'])) ? $_GET['dataR'] : '0';
+echo $dataRentaltype;
 
-// $where = ' WHERE 1 ';
-// if (!empty($_GET['rentaltype'])) {
-//     $where .= " AND 'rentaltype'";
-// }
-if ($rentaltype == 1) {
-    $rentaltypeSql = '共生';
-} else if ($rentaltype == 2) {
-    $rentaltypeSql = '分租';
-} else if ($rentaltype == 3) {
-    $rentaltypeSql = '%';
+if ($dataRentaltype == 1) {
+    $dataRSql = '共生';
+} else if ($dataRentaltype == 2) {
+    $dataRSql = '分租';
+} else if ($dataRentaltype == 3) {
+    $dataRSql = '%';
 }
 
-$r_sql = "SELECT * FROM `items` WHERE 
-rentaltype LIKE ':rentaltypeSql'";
-$totalRows = $pdo->query($r_sql)->fetchAll();
+// $where = ' WHERE 1 ';
+// if (!empty($_GET['dataR'])) {
+//     $where .= sprintf(" AND 'dataR'");
+// }
+
+$r_sql = "SELECT * FROM `items` WHERE `rentaltype` LIKE ':dataRSql'";
+
+// $rRows = $pdo->query($r_sql)->fetchAll();
+$r_Stmt = $pdo->prepare($r_sql);
+$r_Stmt->bindValue(':dataRSql', $dataRSql, PDO::PARAM_STR);
+$rRows = $r_Stmt->fetchAll();
 
 
 
@@ -1196,7 +1201,7 @@ $totalRows = $pdo->query($r_sql)->fetchAll();
                 </div>
             </div>
             <div class="x-search-list-content-all">
-                <?php foreach ($totalRows as $i) : ?>
+                <?php foreach ($rRows as $i) : ?>
                     <div class="x-search-list-content">
                         <div class="x-search-list-content-img">
                             <ul class="x-search-list-content-img-train">
