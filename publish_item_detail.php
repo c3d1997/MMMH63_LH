@@ -1039,39 +1039,39 @@
 
 
 
-    function itemFeature() {
-        const item_area = $("#areaSelect").val()
-        const item_dist = $("#distSelect").val()
-        const item_address = $("#item_address").val()
-        const ping_number = $("#ping_number").val()
-        const floor = $("#floor").val()
-        const roomtype = $("#typeSelect").val()
-        const room_count  = $("#room_count").val()
-        const item_name = $("#item_name").val()
-        const contract = $("#contract").val()
+    // function itemFeature() {
+    //     const item_area = $("#areaSelect").val()
+    //     const item_dist = $("#distSelect").val()
+    //     const item_address = $("#item_address").val()
+    //     const ping_number = $("#ping_number").val()
+    //     const floor = $("#floor").val()
+    //     const roomtype = $("#typeSelect").val()
+    //     const room_count  = $("#room_count").val()
+    //     const item_name = $("#item_name").val()
+    //     const contract = $("#contract").val()
 
-        $.ajax({
-            url:"publish_uploadimg-api.php",
-            method: "post",
-            data:{ 
-                item_area:JSON.stringify(item_area),
-                item_dist:JSON.stringify(item_dist),
-                item_address:JSON.stringify(item_address),
-                ping_number:JSON.stringify(ping_number),
-                floor:JSON.stringify(floor),
-                roomty:JSON.stringify(roomtype),
-                room_count:JSON.stringify(room_count),
-                item_name:JSON.stringify(item_name),
-                contract:JSON.stringify(contract),
-                contentType:'application/json;charset=UTF-8',
-                success: function(){
-                    console.log("成功")
-                    console.log(data)
-                }
-            }
-        })
+    //     $.ajax({
+    //         url:"publish_uploadimg-api.php",
+    //         method: "post",
+    //         data:{ 
+    //             item_area:JSON.stringify(item_area),
+    //             item_dist:JSON.stringify(item_dist),
+    //             item_address:JSON.stringify(item_address),
+    //             ping_number:JSON.stringify(ping_number),
+    //             floor:JSON.stringify(floor),
+    //             roomty:JSON.stringify(roomtype),
+    //             room_count:JSON.stringify(room_count),
+    //             item_name:JSON.stringify(item_name),
+    //             contract:JSON.stringify(contract),
+    //             contentType:'application/json;charset=UTF-8',
+    //             success: function(){
+    //                 console.log("成功")
+    //                 console.log(data)
+    //             }
+    //         }
+    //     })
 
-    }
+    // }
 
 
 

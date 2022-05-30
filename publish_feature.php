@@ -13,6 +13,7 @@
     $_SESSION['contract'] = $_POST['contract'];
 
 
+
 ?>
 
 <?php include __DIR__ . './part/head.php'  ?>
@@ -690,85 +691,85 @@
                         <div class="z_publish_check_container_s ">
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件設備[]" id="" value="飲水機">
+                                    <input class="z_checkbox_option" type="checkbox" name="equipment_detail[]" id="" value="飲水機">
                                     <span>飲水機</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件設備[]" id="" value="浴缸">
+                                    <input class="z_checkbox_option" type="checkbox" name="equipment_detail[]" id="" value="浴缸">
                                     <span>浴缸</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件設備[]" id="" value="電視">
+                                    <input class="z_checkbox_option" type="checkbox" name="equipment_detail[]" id="" value="電視">
                                     <span>電視</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件設備[]" id="" value="網路">
+                                    <input class="z_checkbox_option" type="checkbox" name="equipment_detail[]" id="" value="網路">
                                     <span>網路</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件設備[]" id="" value="床鋪">
+                                    <input class="z_checkbox_option" type="checkbox" name="equipment_detail[]" id="" value="床鋪">
                                     <span>床鋪</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_opti999999999on_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件設備[]" id="" value="桌椅">
+                                    <input class="z_checkbox_option" type="checkbox" name="equipment_detail[]" id="" value="桌椅">
                                     <span>桌椅</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件設備[]" id="" value="熱水器">
+                                    <input class="z_checkbox_option" type="checkbox" name="equipment_detail[]" id="" value="熱水器">
                                     <span>熱水器</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件設備[]" id="" value="冷氣">
+                                    <input class="z_checkbox_option" type="checkbox" name="equipment_detail[]" id="" value="冷氣">
                                     <span>冷氣</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件設備[]" id="" value="第四台">
+                                    <input class="z_checkbox_option" type="checkbox" name="equipment_detail[]" id="" value="第四台">
                                     <span>第四台</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件設備[]" id="" value="衣櫃">
+                                    <input class="z_checkbox_option" type="checkbox" name="equipment_detail[]" id="" value="衣櫃">
                                     <span>衣櫃</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件設備[]" id="" value="冰箱">
+                                    <input class="z_checkbox_option" type="checkbox" name="equipment_detail[]" id="" value="冰箱">
                                     <span>冰箱</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件設備[]" id="" value="瓦斯">
+                                    <input class="z_checkbox_option" type="checkbox" name="equipment_detail[]" id="" value="瓦斯">
                                     <span>瓦斯</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件設備[]" id="" value="洗衣機">
+                                    <input class="z_checkbox_option" type="checkbox" name="equipment_detail[]" id="" value="洗衣機">
                                     <span>洗衣機</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件設備[]" id="" value="沙發">
+                                    <input class="z_checkbox_option" type="checkbox" name="equipment_detail[]" id="" value="沙發">
                                     <span>沙發</span>
                                 </div>
                             </label>
@@ -780,25 +781,25 @@
                         <div class="z_publish_check_container ">
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件安全設備[]" id="" value="滅火器">
+                                    <input class="z_checkbox_option" type="checkbox" name="safety_equipment[]" id="" value="滅火器">
                                     <span>滅火器</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件安全設備[]" id="" value="自動灑水器">
+                                    <input class="z_checkbox_option" type="checkbox" name="safety_equipment[]" id="" value="自動灑水器">
                                     <span>自動灑水器</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件安全設備[]" id="" value="煙霧警報">
+                                    <input class="z_checkbox_option" type="checkbox" name="safety_equipment[]" id="" value="煙霧警報">
                                     <span>煙霧警報</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件安全設備[]" id="" value="安全門窗">
+                                    <input class="z_checkbox_option" type="checkbox" name="safety_equipment[]" id="" value="安全門窗">
                                     <span>安全門窗</span>
                                 </div>
                             </label>
@@ -810,19 +811,19 @@
                         <div class="z_publish_check_container ">
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件特色[]" id="" value="可開伙">
+                                    <input class="z_checkbox_option" type="checkbox" name="feature[]" id="" value="可開伙">
                                     <span>可開伙</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件特色[]" id="" value="限女性">
+                                    <input class="z_checkbox_option" type="checkbox" name="feature[]" id="" value="限女性">
                                     <span>限女性</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件特色[]" id="" value="可養寵物">
+                                    <input class="z_checkbox_option" type="checkbox" name="feature[]" id="" value="可養寵物">
                                     <span>可養寵物</span>
                                 </div>
                             </label>
@@ -834,49 +835,49 @@
                         <div class="z_publish_check_container ">
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="周遭機能[]" id="" value="百貨公司">
+                                    <input class="z_checkbox_option" type="checkbox" name="around[]" id="" value="百貨公司">
                                     <span>百貨公司</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="周遭機能[]" id="" value="學校">
+                                    <input class="z_checkbox_option" type="checkbox" name="around[]" id="" value="學校">
                                     <span>學校</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="周遭機能[]" id="" value="市場">
+                                    <input class="z_checkbox_option" type="checkbox" name="around[]" id="" value="市場">
                                     <span>市場</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="周遭機能[]" id="" value="醫院">
+                                    <input class="z_checkbox_option" type="checkbox" name="around[]" id="" value="醫院">
                                     <span>醫院</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="周遭機能[]" id="" value="超市">
+                                    <input class="z_checkbox_option" type="checkbox" name="around[]" id="" value="超市">
                                     <span>超市</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="周遭機能[]" id="" value="火車站">
+                                    <input class="z_checkbox_option" type="checkbox" name="around[]" id="" value="火車站">
                                     <span>火車站</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="周遭機能[]" id="" value="高鐵站">
+                                    <input class="z_checkbox_option" type="checkbox" name="around[]" id="" value="高鐵站">
                                     <span>高鐵站</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="周遭機能[]" id="" value="捷運站">
+                                    <input class="z_checkbox_option" type="checkbox" name="around[]" id="" value="捷運站">
                                     <span>捷運站</span>
                                 </div>
                             </label>
@@ -888,25 +889,25 @@
                         <div class="z_publish_check_container ">
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件公設[]" id="" value="電梯">
+                                    <input class="z_checkbox_option" type="checkbox" name="postulate[]" id="" value="電梯">
                                     <span>電梯</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件公設[]" id="" value="客廳">
+                                    <input class="z_checkbox_option" type="checkbox" name="postulate[]" id="" value="客廳">
                                     <span>客廳</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件公設[]" id="" value="陽台">
+                                    <input class="z_checkbox_option" type="checkbox" name="postulate[]" id="" value="陽台">
                                     <span>陽台</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件公設[]" id="" value="廚房">
+                                    <input class="z_checkbox_option" type="checkbox" name="postulate[]" id="" value="廚房">
                                     <span>廚房</span>
                                 </div>
                             </label>
@@ -918,31 +919,31 @@
                         <div class="z_publish_check_container ">
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件其他費用[]" id="" value="水電費">
+                                    <input class="z_checkbox_option" type="checkbox" name="other_cost[]" id="" value="水電費">
                                     <span>水電費</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件其他費用[]" id="" value="網路費">
+                                    <input class="z_checkbox_option" type="checkbox" name="other_cost[]" id="" value="網路費">
                                     <span>網路費</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件其他費用[]" id="" value="第四台">
+                                    <input class="z_checkbox_option" type="checkbox" name="other_cost[]" id="" value="第四台">
                                     <span>第四台</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件其他費用[]" id="" value="清潔費">
+                                    <input class="z_checkbox_option" type="checkbox" name="other_cost[]" id="" value="清潔費">
                                     <span>清潔費</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="z_publish_checkbox_option_container">
-                                    <input class="z_checkbox_option" type="checkbox" name="物件其他費用[]" id="" value="停車費">
+                                    <input class="z_checkbox_option" type="checkbox" name="other_cost[]" id="" value="停車費">
                                     <span>停車費</span>
                                 </div>
                             </label>
