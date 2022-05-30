@@ -231,9 +231,8 @@ $i = $stmt->fetch();
                             <h3 class="S-Reservation-location">
                                 <i class="fa-solid fa-location-dot"></i><?= $i['area'], $i['dist'] ,$i['address'] ?>
                             </h3>
-                            <h2 class="S-Reservation-date">
-                                2022 年 4 月 15 日
-                                <span class="S-Reservation-time">15:00</span>
+                            <h2 class="S-Reservation-date" id="time">
+
                             </h2>
                         </div>
                     </div>
@@ -289,5 +288,16 @@ $i = $stmt->fetch();
             infoModal.close();
         })
     </script>
+
+<script>
+    $(document).ready(function(){
+        let data = localStorage.getItem("date");
+        data = JSON.parse(data);
+        $("#time").text(data)
+    })
+
+
+</script>
+
 
 <?php include __DIR__ . './part/javascript.php'  ?>

@@ -979,7 +979,7 @@ $pageName = 'signin_signup';
                             </label>
                         </div>
                     </div>
-                    <div class="divfor_submit">
+            <div class="divfor_submit">
                         <button type="submit" id="sign_up" class="pc-button-FEAC00-180">註冊</button>
                 </form>
                 <p>您已經註冊了嗎？<a href="#">由此進入</a></p>
@@ -1309,41 +1309,35 @@ $pageName = 'signin_signup';
             })
 
 
-            // ---登入的判斷-------------------------------------------------
+            // // ---登入的判斷-------------------------------------------------
 
 
 
 
-            const $inMobile = $('#signin-mobile');
-            if ($inMobile.val() && !validateMobile($inMobile.val())) {
-                console.log('iambeauty');
-                $mobile.next().html('! 帳號或密碼填寫錯誤');
-                $mobile.css('border', 'red 1px solid');
-                isPass = false;
-            }
-
-            const $inPassword = $('#signin-password');
-            // if (!$inPassword.val() || !validatePassword($inPassword.val())) {
-
-            //     $inPassword.next().html('! 帳號或密碼填寫錯誤');
-            //     $inPassword.css('border', 'red 1px solid');
-            //     isPass = false;
-            // }
-
-            // if (!$inMobile.val().trim() || !$inPassword.val().trim()) {
+            // const $inMobile = $('#signin-mobile');
+            // if ($inMobile.val() && !validateMobile($inMobile.val())) {
             //     console.log('iambeauty');
             //     $mobile.next().html('! 帳號或密碼填寫錯誤');
             //     $mobile.css('border', 'red 1px solid');
             //     isPass = false;
-
-            //     // alert('兩個欄位都要填寫');
             // }
 
+            // const $inPassword = $('#signin-password');
+            // // if (!$inPassword.val() || !validatePassword($inPassword.val())) {
 
+            // //     $inPassword.next().html('! 帳號或密碼填寫錯誤');
+            // //     $inPassword.css('border', 'red 1px solid');
+            // //     isPass = false;
+            // // }
 
+            // // if (!$inMobile.val().trim() || !$inPassword.val().trim()) {
+            // //     console.log('iambeauty');
+            // //     $mobile.next().html('! 帳號或密碼填寫錯誤');
+            // //     $mobile.css('border', 'red 1px solid');
+            // //     isPass = false;
 
-
-
+            // //     // alert('兩個欄位都要填寫');
+            // // }
 
 
 

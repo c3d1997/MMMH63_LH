@@ -1,5 +1,4 @@
 <?php
-
     require './part/connect-db.php';
     $sql = "SELECT COUNT(*) FROM `items`;";
     $stmt = $pdo->query($sql)->fetch();
