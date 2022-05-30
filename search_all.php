@@ -1608,7 +1608,7 @@ require './part/connect-db.php';
                     </div>
                     <div class="x-search-button">
                         <button class="pc-button-F4F4F4-180 x-button-clear" type="button">重選</button>
-                        <button id="x-select-btn" class="pc-button-FEAC00-180" type="button">開始搜尋</button>
+                        <button id="x-select-btn" class="pc-button-FEAC00-180" type="button" onclick="datacheck()">開始搜尋</button>
                     </div>
 
                 </div>
@@ -2360,15 +2360,33 @@ require './part/connect-db.php';
     })
     // 單選區
     // 房屋分類
+    
     $(".rentaltype-group .x-button-only").click(function() {
         $(this).toggleClass('x-tag-on-click');
         $(this).siblings().removeClass('x-tag-on-click');
-
+        
         console.log({
             rentaltype: $(this).attr('data-rentaltype')
+            
         })
+        // var dataRentaltype = $('.rentaltype').attr('data-rentaltype')
+        // var dataRentaltype = $('.rentaltype').attr('data-rentaltype')
         
     })
+    function datacheck() {
+            $.ajax({
+                url: "search_list.php",
+                method: "GET",
+                data: {
+                    dataR: JSON.stringify($('.x-tag-on-click').attr('data-rentaltype'))
+                },
+                success: function() {
+                    console.log((dataR))
+                }
+            })
+        }
+    
+
     // 地區
     $(".item_area-group .x-button-only").click(function() {
         $(this).toggleClass('x-tag-on-click');
@@ -2485,23 +2503,23 @@ require './part/connect-db.php';
     })
 </script>
 <script>
-    const Xbtn = document.querySelectorAll('#x-select-btn')
+    // const Xbtn = document.querySelectorAll('#x-select-btn')
 
-    Xbtn.addEventListener('click', getData);
+    // Xbtn.addEventListener('click', getData);
 
-    function getData() {
-        const rentaltype = document.querySelectorAll('.rentaltype.x-button-only.x-tag-on-click')
+    // function getData() {
+    //     const rentaltype = document.querySelectorAll('.rentaltype.x-button-only.x-tag-on-click')
 
-        let rentaltypeData;
-        let allDataObj = {};
-        $rentaltypeData = (rent.length != 0) ? rent[0].getAttribute('data-rentaltype') :'0';
+    //     let rentaltypeData;
+    //     let allDataObj = {};
+    //     $rentaltypeData = (rent.length != 0) ? rent[0].getAttribute('data-rentaltype') :'0';
 
-        allDataObj = {
-            "rentaltype": rentaltypeData,
-        }
+    //     allDataObj = {
+    //         "rentaltype": rentaltypeData,
+    //     }
 
-        Api(allDataObj);
-    }
+    //     Api(allDataObj);
+    // }
     // $_GET['data-rentaltype']
 </script>
 
