@@ -1,23 +1,22 @@
 <?php 
     require './part/connect-db.php';
 
-    $_SESSION['item_area'] = $_POST['item_area'];
-    $_SESSION['item_dist'] = $_POST['item_dist'];
-    $_SESSION['item_address'] = $_POST['item_address'];
-    $_SESSION['ping_number'] = $_POST['ping_number'];
-    $_SESSION['floor'] = $_POST['floor'];
-    $_SESSION['roomtype'] = $_POST['roomtype'];
-    $_SESSION['room_count'] = $_POST['room_count'];
-    $_SESSION['item_name'] = $_POST['item_name'];
-    $_SESSION['price'] = $_POST['price'];
-    $_SESSION['contract'] = $_POST['contract'];
-
+    if(! empty($_POST)){
+        $_SESSION['item_area'] = $_POST['item_area'];
+        $_SESSION['item_dist'] = $_POST['item_dist'];
+        $_SESSION['item_address'] = $_POST['item_address'];
+        $_SESSION['ping_number'] = $_POST['ping_number'];
+        $_SESSION['floor'] = $_POST['floor'];
+        $_SESSION['roomtype'] = $_POST['roomtype'];
+        $_SESSION['room_count'] = $_POST['room_count'];
+        $_SESSION['item_name'] = $_POST['item_name'];
+        $_SESSION['price'] = $_POST['price'];
+        $_SESSION['contract'] = $_POST['contract'];
+    }
 
 
 ?>
-
 <?php include __DIR__ . './part/head.php'  ?>
-
     <style>
         .input_option {
             display: flex;
@@ -688,9 +687,9 @@
                             <div class="z_publish_item_detail_title">物件設備</div>
                             <p class="alert bold z_publish_small">（請至少填寫一項）</p>
                         </div>
-                        <div class="z_publish_check_container_s ">
+                        <div class="z_publish_check_container_s equipment">
                             <label>
-                                <div class="z_publish_checkbox_option_container">
+                                <div class="z_publish_checkbox_option_container ">
                                     <input class="z_checkbox_option" type="checkbox" name="equipment_detail[]" id="" value="飲水機">
                                     <span>飲水機</span>
                                 </div>
@@ -778,7 +777,7 @@
                             <div class="z_publish_item_detail_title">物件安全設備</div>
                             <p class="alert bold z_publish_small">（請至少填寫一項）</p>
                         </div>
-                        <div class="z_publish_check_container ">
+                        <div class="z_publish_check_container safety">
                             <label>
                                 <div class="z_publish_checkbox_option_container">
                                     <input class="z_checkbox_option" type="checkbox" name="safety_equipment[]" id="" value="滅火器">
@@ -808,7 +807,7 @@
                             <div class="z_publish_item_detail_title">物件特色</div>
                             <p class="alert bold z_publish_small">（非必填）</p>
                         </div>
-                        <div class="z_publish_check_container ">
+                        <div class="z_publish_check_container feature">
                             <label>
                                 <div class="z_publish_checkbox_option_container">
                                     <input class="z_checkbox_option" type="checkbox" name="feature[]" id="" value="可開伙">
@@ -832,7 +831,7 @@
                             <div class="z_publish_item_detail_title">周遭機能</div>
                             <p class="alert bold z_publish_small">（非必填）</p>
                         </div>
-                        <div class="z_publish_check_container ">
+                        <div class="z_publish_check_container around">
                             <label>
                                 <div class="z_publish_checkbox_option_container">
                                     <input class="z_checkbox_option" type="checkbox" name="around[]" id="" value="百貨公司">
@@ -886,7 +885,7 @@
                             <div class="z_publish_item_detail_title">物件公設</div>
                             <p class="alert bold z_publish_small">（非必填）</p>
                         </div>
-                        <div class="z_publish_check_container ">
+                        <div class="z_publish_check_container postulate">
                             <label>
                                 <div class="z_publish_checkbox_option_container">
                                     <input class="z_checkbox_option" type="checkbox" name="postulate[]" id="" value="電梯">
@@ -916,7 +915,7 @@
                             <div class="z_publish_item_detail_title">物件其他費用</div>
                             <p class="alert bold z_publish_small">（非必填）</p>
                         </div>
-                        <div class="z_publish_check_container ">
+                        <div class="z_publish_check_container other_cost">
                             <label>
                                 <div class="z_publish_checkbox_option_container">
                                     <input class="z_checkbox_option" type="checkbox" name="other_cost[]" id="" value="水電費">
@@ -949,7 +948,7 @@
                             </label>
                         </div>
                         <div class="z_twobtn">                      
-                            <a href="./publish_item_detail.php"><button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162">上一步</button></a>
+                            <a href="./publish_item_detail.php"><button type="button" class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162">上一步</button></a>
                             <button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162">下一步</button>
                         </div>
                     </div>
@@ -961,7 +960,65 @@
 <?php include __DIR__ . './part/footer.php'  ?>
 
     <script>
+        const data = <?=  empty($_SESSION) ? '[]' : json_encode($_SESSION, JSON_UNESCAPED_UNICODE) ?>;
+        const group1 = $('.equipment input.z_checkbox_option');
+        const group2 = $('.safety input.z_checkbox_option');
+        const group3 = $('.feature input.z_checkbox_option');
+        const group4 = $('.around input.z_checkbox_option');
+        const group5 = $('.postulate input.z_checkbox_option');
+        const group6 = $('.other_cost input.z_checkbox_option');
 
+
+        group1.each(function(){
+            const me = $(this);
+            if(data.equipment_detail && data.equipment_detail.length){
+                if(data.equipment_detail.includes(me.val())){
+                    me.prop('checked', true);
+                }
+            }
+        });
+        group2.each(function(){
+            const me = $(this);
+            if(data.safety_equipment && data.safety_equipment.length){
+                if(data.safety_equipment.includes(me.val())){
+                    me.prop('checked', true);
+                }
+            }
+        });
+        group3.each(function(){
+            const me = $(this);
+            if(data.feature && data.feature.length){
+                if(data.feature.includes(me.val())){
+                    me.prop('checked', true);
+                }
+            }
+        });
+        group4.each(function(){
+            const me = $(this);
+            if(data.around && data.around.length){
+                if(data.around.includes(me.val())){
+                    me.prop('checked', true);
+                }
+            }
+        });
+        group5.each(function(){
+            const me = $(this);
+            if(data.postulate && data.postulate.length){
+                if(data.postulate.includes(me.val())){
+                    me.prop('checked', true);
+                }
+            }
+        });
+        group6.each(function(){
+            const me = $(this);
+            if(data.other_cost && data.other_cost.length){
+                if(data.other_cost.includes(me.val())){
+                    me.prop('checked', true);
+                }
+            }
+        });
+
+        
 
     // function itemFeature() {
     //     const item_area = $("#areaSelect").val()

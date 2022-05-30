@@ -771,7 +771,7 @@
                             <div class="z_publish_text_container">
                                 <div class="z_publish_option_title">
                                     <div class="z_publish_item_detail_title">房屋簡介</div>
-                                    <p class="alert bold z_publish_small">（非必填）</p>
+                                    <p class="alert bold z_publish_small"></p>
                                 </div>
                                 <div class="z_publish_textarea_container">
                                     <textarea name="item_info" id="" cols="30" rows="10"></textarea>

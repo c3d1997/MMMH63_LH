@@ -15,7 +15,7 @@
     $da_sql = "SELECT * FROM `detailed_area`;";
     $detailed_area = $pdo->query($area_sql);
 
-    $_SESSION['img_arr'] = json_decode($_POST['img_arr']);
+
 ?>
 
 
@@ -1013,7 +1013,7 @@
                 
                 <div class="z_twobtn">
                     <a href="./publish_uploadimgx10.php"><button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162" type="button">上一步</button></a>
-                    <button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162" >下一步</button>
+                    <button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162">下一步</button>
                 </div>
                 </form>    
             </div>
@@ -1024,9 +1024,55 @@
 <?php include __DIR__ . './part/footer.php'  ?>
 
 <script>
-    // $(".z_select_dropdown").click(function() {
-    //     $(this).next().find("img").toggleClass("downArrow")
-    // })
+    // $_SESSION['item_area'] = $_POST['item_area'];
+    // $_SESSION['item_dist'] = $_POST['item_dist'];
+    // $_SESSION['item_address'] = $_POST['item_address'];
+    // $_SESSION['ping_number'] = $_POST['ping_number'];
+    // $_SESSION['floor'] = $_POST['floor'];
+    // $_SESSION['roomtype'] = $_POST['roomtype'];
+    // $_SESSION['room_count'] = $_POST['room_count'];
+    // $_SESSION['item_name'] = $_POST['item_name'];
+    // $_SESSION['price'] = $_POST['price'];
+    // $_SESSION['contract'] = $_POST['contract'];
+    const data = <?=  empty($_SESSION) ? '[]' : json_encode($_SESSION, JSON_UNESCAPED_UNICODE) ?>;
+
+    const els = document.forms[0].elements;
+    for(el of els){
+        const name = el.name.trim() || '';
+        if(name){
+            if(data[name]){
+                el.value = data[name];
+            }
+        }
+        console.log(el.name);
+    }
+
+
+
+    //$("#areaSelect").val();
+    // const group2 = $("#distSelect").val();
+    // const group3 = $("#item_address").val();
+    // const group4 = $("#ping_number").val();
+    // const group5 = $("#floor").val();
+    // const group6 = $("#typeSelect").val();
+    // const group6 = $("#room_count").val();
+    // const group6 = $("#item_name").val();
+    // const group6 = $("#contract").val();
+/*
+    $(document).on('ready',function(){
+        const me = group1;
+        // if(!empty (data.item_area)){
+        //     if(data.equipment_detail.includes(me.val())){
+        //         me.prop('checked', true);
+        //     }
+        // }
+        if(!(data.item_area == null)){
+            me = data.item_area
+        }
+    });
+    // console.log(data.item_area);
+*/
+
     $("select").on({
         mouseleave: function() {
         $(this).next().children().removeClass("downArrow")
@@ -1070,7 +1116,6 @@
     //             }
     //         }
     //     })
-
     // }
 
 
