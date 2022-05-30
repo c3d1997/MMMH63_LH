@@ -77,12 +77,12 @@ $pageName = 'signin_signup';
         font-size: 40px;
     }
 
-
+    /* 
     .input_option {
         margin: 20px 0;
         width: 70%;
         height: 100px;
-    }
+    } */
 
 
 
@@ -188,7 +188,7 @@ $pageName = 'signin_signup';
 
     /* 登入區域的alert */
     .signinForm .alert {
-        margin-left: 50px;
+        /* margin-left: 50px; */
         color: red;
     }
 
@@ -538,14 +538,16 @@ $pageName = 'signin_signup';
         margin: 15px 0;
     }
 
+    /* .input_option p{
+        width: 30%;
+    } */
+
     .alert {
         text-align: start;
 
     }
 
-    .signinForm .alert {
-        margin-left: 50px;
-    }
+
 
     .checkbox-info input {
         width: 10px;
@@ -601,12 +603,12 @@ $pageName = 'signin_signup';
         padding: 0;
         height: 48px;
         border: none;
-        /* text-indent: 15px; */
+        text-indent: 15px;
         color: #0E2E3D;
     }
 
     input[type=checkbox] {
-        display: none;
+        /* display: none; */
         color: #0E2E3D;
     }
 
@@ -617,6 +619,8 @@ $pageName = 'signin_signup';
         padding-left: 30px;
         background: url(imgs/unchecked.svg) no-repeat left center;
         user-select: none;
+        color: #0E2E3D;
+
     }
 
     /* checkbox連結 */
@@ -882,7 +886,7 @@ $pageName = 'signin_signup';
                 <button class="mobile-signupBtn">註冊</button>
             </div>
             <div class="form signinForm">
-                <form action="" name="form2" id='form2' method="post" onsubmit="checkForm(); return false ;">
+                <form action="" name="form2" id='form2' method="post" onsubmit="checkForm2(); return false ;">
                     <!-- 標題+輸入框 -->
                     <div class="input_option">
                         <p class="option_name">手機</p>
@@ -897,9 +901,9 @@ $pageName = 'signin_signup';
                         <p class="option_name">密碼</p>
                         <div class="fullinput_container ">
                             <input type="text" name="password" id="signin-password" placeholder="輸入您的密碼">
+                            <div class="alert"></div>
                         </div>
                     </div>
-                    <div class="alert"></div>
                     <a href="#" class="forgot">忘記密碼</a>
                     <button type="submit" id="sign_in" class="pc-button-FEAC00-180 S-d-none">登入</button>
                 </form>
@@ -912,6 +916,7 @@ $pageName = 'signin_signup';
 
 
             <div class="form signupForm S-d-new-none">
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------onclick-------------------- -->
                 <form action="" name="form1" id='form1' method="post" onsubmit="checkForm(); return false ;">
                     <!-- 註冊手機按鈕mobile-signinBtn -->
                     <div class="input_option">
@@ -932,10 +937,10 @@ $pageName = 'signin_signup';
 
                     <div class="input_option">
                         <p class="option_name">電子郵件</p>
-
-
-                        <input type="email" name="email" id="signup-email" placeholder="請輸入您的信箱">
-                        <div class="alert"></div>
+                        <div class="fullinput_container ">
+                            <input type="email" name="email" id="signup-email" placeholder="請輸入您的信箱">
+                            <div class="alert"></div>
+                        </div>
                     </div>
 
 
@@ -974,15 +979,15 @@ $pageName = 'signin_signup';
                     <div class="checkbox-info">
                         <div class="c_confirm_bar">
                             <label>
-                                <input type="checkbox" name="signup-checkbox" id="signup-checkbox">
+                                <input type="checkbox" name="signup-checkbox" id="signup-checkbox" style="display:none;" ;>
                                 <span class="z_all-center">我同意<a href="#"> 隱私條款 </a>與<a href="#">租客平台公約</a>,我已閱讀完<a href="#">租賃法.</a></span>
                             </label>
                         </div>
                     </div>
-                    <div class="divfor_submit">
-                        <button type="submit" id="sign_up" class="pc-button-FEAC00-180">註冊</button>
+                    <!-- <div class="divfor_submit"> -->
+                    <button type="submit" id="sign_up" class="pc-button-FEAC00-180">註冊</button>
                 </form>
-                <p>您已經註冊了嗎？<a href="#">由此進入</a></p>
+                <p><a>您已經註冊了嗎？由此進入</p>
             </div>
         </div>
     </div>
@@ -998,9 +1003,9 @@ $pageName = 'signin_signup';
                 <h3>恭喜您獲得清潔優惠卷</h3>
                 <h3>ABC-123456</h3>
                 <p>可以前往會員區確認</p>
-                <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">確認
+                <button onclick="cleanstring()" class="pc-button-FEAC00-272 mobile-button-FEAC00-162 clear" id="close">確認
             </div>
-            <div class="card-x">
+            <div class="card-x clear" id="close2">
                 <img src="./imgs/X.svg" alt="">
             </div>
         </div>
@@ -1130,47 +1135,6 @@ $pageName = 'signin_signup';
             $('.mobile-signinBtn').removeClass('S-blue');
         })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // function checkForm() {
-        //     // let isPass = true,
-        //     //     $data = $(document.form1).serialize();
-
-        //     // AJAX
-        //     $.post('insert02.php', $(document.form1).serialize(), function(data) {
-        //         console.log(data);
-        //         if (data.success) {
-        //             // alert('資料新增成功');
-        //             // location.href = 'ab-list.php';
-        //             $modal.find('#exampleModalLabel').html('資料新增成功');
-        //             $modal.find('.modal-body').html('恭喜');
-        //             modal.show();
-
-        //         } else {
-        //             //alert(data.error || '資料新增失敗');
-        //             $modal.find('#exampleModalLabel').html('資料新增失敗');
-        //             $modal.find('.modal-body').html('...');
-        //             modal.show();
-        //         }
-        //     }, 'json');
-        // }
-
-
-
         $('.CAPTCHA-Btn').click(function() {
             console.log($('#email').text());
         });
@@ -1210,14 +1174,16 @@ $pageName = 'signin_signup';
             return /(\d+[a-z]+|[a-z]+\d+)/.test(p);
         }
 
+
+        // -------------------checkbocx地方-------------------
         const checkbox = $('#signup-checkbox');
         checkbox.click(function() {
-            checkbox.toggleClass('box_checked');
+            $(this).toggleClass('box_checked');
             $('input[type=checkbox]+span').css('background-image', '');
         })
 
 
-
+        // ----------註冊的驗證-----------------------------------------
         function checkForm() {
             const $name = $('#signup-name');
             const $email = $('#signup-email');
@@ -1226,18 +1192,7 @@ $pageName = 'signin_signup';
 
 
 
-            const msgFields = [$name, $email, $mobile];
-
-
-            // 清除之前的檢查訊息start------------------------------------------------
-            for (let f of msgFields) {
-                f.css('border', '#CCCCCC 1px solid');
-                f.next().html('');
-            }
-            // 清除之前的檢查訊息over------------------------------------------------
-
-
-            // let isPass = true; //有沒有通過檢查(預設為通過，有一格沒填就不過)
+            let isPass = true; //有沒有通過檢查(預設為通過，有一格沒填就不過)
 
 
             // ---註冊的判斷-------------------------------------------------
@@ -1248,14 +1203,14 @@ $pageName = 'signin_signup';
                 isPass = false;
             }
 
-            if ($email.val() && !validateEmail($email.val())) {
+            if (!$email.val() && !validateEmail($email.val())) {
 
                 $email.next().html('請填寫正確的email');
                 $email.css('border', 'red 1px solid');
                 isPass = false;
             }
 
-            if ($mobile.val() && !validateMobile($mobile.val())) {
+            if (!$mobile.val() && !validateMobile($mobile.val())) {
 
                 $mobile.next().html('請填寫正確的手機號碼');
                 $mobile.css('border', 'red 1px solid');
@@ -1271,7 +1226,7 @@ $pageName = 'signin_signup';
             const $password = $('#signup-password');
             if (!$password.val() || !validatePassword($password.val())) {
 
-                $password.next().html('請填寫16位元的密碼，至少一個英文一個數字');
+                $password.next().html('請填寫8位元的密碼，至少一個英文一個數字');
                 $password.css('border', 'red 1px solid');
                 isPass = false;
             }
@@ -1283,81 +1238,138 @@ $pageName = 'signin_signup';
             }
 
 
+            // ---------------------------------------------------------------------------------------------------checkbocx地方-------------------
 
-            // if (!$checkbox.hasClass('box_checked')) {
-            //     $('input[type=checkbox]+span').css('background-image', 'url(imgs/checkbox-warnning.svg)');
-            //     isPass = false;
-            // }
-
-
-
-
-            // ---------註冊成功彈跳視窗---------------------------------------
-
-
-            // 成功 彈出視窗
-
-            let btn = document.querySelector("#sign_up");
-            let infoModal = document.querySelector("#infoModal");
-            let close = document.querySelector("#close");
-            btn.addEventListener("click", function() {
-                infoModal.showModal();
-            })
-            close.addEventListener("click", function() {
-                console.log('close');
-                infoModal.close();
-            })
-
-
-            // ---登入的判斷-------------------------------------------------
-
-
-
-
-            const $inMobile = $('#signin-mobile');
-            if ($inMobile.val() && !validateMobile($inMobile.val())) {
-                console.log('iambeauty');
-                $mobile.next().html('! 帳號或密碼填寫錯誤');
-                $mobile.css('border', 'red 1px solid');
+            if (!checkbox.hasClass('box_checked')) {
+                $('input[type=checkbox]+span').css('background-image', 'url(./imgs/checkbox_warnning.svg)');
                 isPass = false;
             }
 
-            const $inPassword = $('#signin-password');
-            // if (!$inPassword.val() || !validatePassword($inPassword.val())) {
-
-            //     $inPassword.next().html('! 帳號或密碼填寫錯誤');
-            //     $inPassword.css('border', 'red 1px solid');
-            //     isPass = false;
-            // }
-
-            // if (!$inMobile.val().trim() || !$inPassword.val().trim()) {
-            //     console.log('iambeauty');
-            //     $mobile.next().html('! 帳號或密碼填寫錯誤');
-            //     $mobile.css('border', 'red 1px solid');
-            //     isPass = false;
-
-            //     // alert('兩個欄位都要填寫');
-            // }
 
 
 
 
 
 
-
-
-
-
-            // -------------------------------------------------------------------------------------
             // 註冊成功存入會員資料表
             if (isPass) {
+
+                // ---------註冊成功彈跳視窗---------------------------------------
+                // 成功 彈出視窗
+
+                let btn = document.querySelector("#sign_up");
+                let infoModal = document.querySelector("#infoModal");
+                let close = document.querySelector("#close");
+                let close2 = document.querySelector("#close2");
+                btn.addEventListener("click", function() {
+                    infoModal.showModal();
+                })
+                close.addEventListener("click", function() {
+                    console.log('close');
+                    infoModal.close();
+                    $name.html('');
+                })
+                close2.addEventListener("click", function() {
+                    console.log('close2');
+                    infoModal.close();
+                    $('input').html('');
+                })
+
+
+                console.log('恭喜註冊成功');
+
+                // $Mobile.next().html('');
+                // $Mobile.innerhtml('');
+                // $Mobile.css('border', '#CCCCCC 1px solid');
+
+                // $Password.next().html('');
+                // $Password.innerhtml('');
+                // $Password.css('border', '#CCCCCC 1px solid');
+
+
                 $.post('insert02.php', $(document.form1).serialize(),
                     function(data) {
                         console.log(data), 'json';
                     });
             }
+
+        }
+
+
+
+
+
+
+
+
+        // ----------登入的驗證-----------------------------------------
+        function checkForm2() {
+
+
+            let isPassIn = true; //有沒有通過檢查(預設為通過，有一格沒填就不過)
+
+
+
+            const $MobileIn = $('#signin-mobile');
+            const $PasswordIn = $('#signin-password');
+
+
+            if (!$MobileIn.val().trim() || !$PasswordIn.val().trim() || !validateMobile($MobileIn.val()) || !validatePassword($PasswordIn.val())) {
+
+                $MobileIn.next().html('! 帳號或密碼填寫錯誤');
+                $MobileIn.css('border', 'red 1px solid');
+
+                $PasswordIn.next().html('! 帳號或密碼填寫錯誤');
+                $PasswordIn.css('border', 'red 1px solid');
+                isPassIn = false;
+
+                // alert('兩個欄位都要填寫');
+
+            }
+            if (isPassIn) {
+                console.log('恭喜登入成功');
+
+                $MobileIn.next().html('');
+                $MobileIn.html('');
+                $MobileIn.css('border', '#CCCCCC 1px solid');
+
+                $PasswordIn.next().html('');
+                $PasswordIn.html('');
+                $PasswordIn.css('border', '#CCCCCC 1px solid');
+
+
+                // AJAX
+
+                $.post('login-api.php', $(document.form2).serialize(), function(data) {
+                    console.log(data);
+                    if (data.success) {
+                        // alert('登入成功');
+                        location.href = 'home_page.php';
+                        // $('').css();
+                    } else {
+                        // alert(data.error || '登入失敗');
+                        $MobileIn.next().html('! 帳號或密碼填寫錯誤');
+                        $MobileIn.css('border', 'red 1px solid');
+
+                        $PasswordIn.next().html('! 帳號或密碼填寫錯誤');
+                        $PasswordIn.css('border', 'red 1px solid');
+                        isPassIn = false;
+                    }
+
+                }, 'json');
+
+
+
+
+
+
+            }
+
+
+
         }
     </script>
+
 
 
     <?php include __DIR__ . './part/javascript.php'  ?>
