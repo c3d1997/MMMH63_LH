@@ -1,10 +1,13 @@
 <?php
 require './part/connect-db.php';
-// 這裡是
+// 這裡是複選
 $dataRentaltype = !empty($_GET['dataR']) ? intval($_GET['dataR']) : 3;
 $dataAreas = !empty($_GET['dataAreas']) ? json_decode($_GET['dataAreas'], true) : [];
 // echo $dataRentaltype;
-
+if(!empty($dataAreas)){
+    $where .= sprintf(" AND item_dist IN ('%s')", implode("','", $dataAreas));
+}
+// 
 $where = ' WHERE 1 ';
 if(in_array($dataRentaltype, [1,2])){
     $rentalTypes = [
@@ -14,9 +17,7 @@ if(in_array($dataRentaltype, [1,2])){
     $where .= " AND rentaltype='{$rentalTypes[$dataRentaltype]}' ";
 }
 
-if(!empty($dataAreas)){
-    $where .= sprintf(" AND item_dist IN ('%s')", implode("','", $dataAreas));
-}
+
 
 
 
