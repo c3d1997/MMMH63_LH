@@ -755,10 +755,6 @@
                 // url:"publish_otherinfo.php",
                 method: "post",   
                 data: {certificate : JSON.stringify(certificate)},
-                success: function(){
-                    alert(("777"))
-                }
-
             })
         }  
 
