@@ -123,11 +123,11 @@
  }
  
  .log-out {
-     /* display: none; */
+     display: none;
  }
  
  .log-in {
-     display: none;
+     /* display: none; */
  }
  
  .x-log-show {
