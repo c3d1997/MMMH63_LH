@@ -282,10 +282,12 @@ ul {
 
 <div class="c_button_section">
 <div class="c_button_left">
-<button class="pc-button-FEAC00-180">返回</button>
+<button class="pc-button-FEAC00-180"><a href="contract05.php" style="text-decoration:none; color:#0E2E3D;">返回</a></button>
+
 </div>
 <div class="c_button_right">
-<button class="pc-button-F4F4F4-180">前往付款</button>
+<button class="pc-button-F4F4F4-180"><a href="pay_way.php"style="text-decoration:none; color:#0E2E3D;">前往付款</a></button>
+
 </div>
 </div>
 <?php include __DIR__ . './part/footer.php'  ?>

@@ -328,7 +328,7 @@ ul.pagination li a:hover{
                         </td>
                         <td>
                                 <iframe src="myrent_contract02.php" style="display:none;" name="frame"><img src="../imgs/print_icon.svg" alt=""></iframe>
-                                <button type="button" onclick="frames['frame'].print()"><img src="imgs/print_icon.svg" alt=""></button>
+                                <button type="button" onclick="frames['frame'].print()"><img src="./imgs/printer.svg" alt=""></button>
                         </td>
                     </tr>
 
@@ -341,7 +341,7 @@ ul.pagination li a:hover{
                         </td>
                         <td> 
                             <iframe src="myrent_contract02.php" style="display:none;" name="frame"><img src="../imgs/print_icon.svg" alt=""></iframe>
-                            <button type="button" onclick="frames['frame'].print()"><img src="imgs/print_icon.svg" alt=""></button>
+                            <button type="button" onclick="frames['frame'].print()"><img src="./imgs/printer.svg" alt=""></button>
                         </td>
                     </tr>
                     <tr>
@@ -353,7 +353,7 @@ ul.pagination li a:hover{
                         </td>
                         <td> 
                             <iframe src="myrent_contract02.php" style="display:none;" name="frame"><img src="../imgs/print_icon.svg" alt=""></iframe>
-                            <button type="button" onclick="frames['frame'].print()"><img src="imgs/print_icon.svg" alt=""></button>
+                            <button type="button" onclick="frames['frame'].print()"><img src="./imgs/printer.svg" alt=""></button>
                         </td>
                     </tr>
                 </tbody>

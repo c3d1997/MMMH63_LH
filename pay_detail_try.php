@@ -15,7 +15,7 @@ $p = $stmt->fetch();
 
 $sql = "SELECT *     FROM `items` WHERE `sid` = 1;";
 $i = $pdo->query($sql)->fetch();
-$sql = "SELECT *     FROM `items` WHERE `img`";
+$sql = "SELECT *     FROM `items` WHERE `item_imgs`";
 $img = $pdo->query($sql)->fetch();
 
 ?>
@@ -440,6 +440,7 @@ $img = $pdo->query($sql)->fetch();
         .z_pay_detail_container {
             display: flex;
             margin-bottom: 50px;
+            max-height: 550px;
         }
         .z_people_info_container {
             order: 0;
@@ -465,7 +466,7 @@ $img = $pdo->query($sql)->fetch();
         }
         .z_pay_detail_img img{
             width: 100%;
-            height: 60%;
+            height: 100%;
             object-fit: cover;
         }
         .z_pay_detail_text {
@@ -717,7 +718,8 @@ $img = $pdo->query($sql)->fetch();
             <h2 class="z_pay_detail_title">租屋明細</h2>
             <div class="z_pay_detail_container">
                 <div class="z_pay_detail_img">
-                    <img src="<?= $i['img']?>item1.jpg" alt="">
+                    <img src="imgs/items<?= 1 ?>/item4.jpg">
+
                 </div>
                 <div class="z_pay_detail_text">
                     <div class=" z_people_info_container">
@@ -739,7 +741,7 @@ $img = $pdo->query($sql)->fetch();
                         </div>
                         <div class="z_detail_mb z_detail_icon_items_center">
                             <img class="z_mr-5" src="imgs/position.svg" alt="">
-                            <span class="z_detail_mb z_ml-5"><?= $i['area'], $i['dist'] ,$i['address'] ?></span>
+                            <span class="z_detail_mb z_ml-5"><?= $i['item_area'], $i['item_dist'] ,$i['item_address'] ?></span>
                         </div>
                         <div class="z_detail_icon_items_center">
                             <img class="z_mr-5" src="imgs/ping.svg" alt="">

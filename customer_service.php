@@ -386,8 +386,8 @@ button.pc-button-FEAC00-272 {
                         <!-- 請詳細描述您的問題或是上傳相關圖片，
                                 我們將會盡快已郵件回覆您 -->
                         <div class="input_option S-big">
-                            <div class="fullinput_container">
-                                <textarea name="question" id="" cols="30" rows="10" 
+                            <div class="fullinput_container id="nowimg">
+                                <textarea name="question" id="clean" cols="30" rows="10" 
                                     placeholder="請詳細描述您的問題或是上傳相關圖片，我們將會盡快已郵件回覆您" style="outline: none;"></textarea>
                                 <div class="alert">*錯誤
                                 </div>
@@ -399,7 +399,7 @@ button.pc-button-FEAC00-272 {
                         </div>
 
                         <div class="S-btn">
-                            <button class="pc-button-F4F4F4-272 mobile-button-F4F4F4-162">清除資料</button>
+                            <button type="button" onclick="cleantext()" class="pc-button-F4F4F4-272 mobile-button-F4F4F4-162">清除資料</button>
                             <!-- 行內元素 height:60px -->
                             <button class="pc-button-FEAC00-272 
                             mobile-button-FEAC00-162 h-60" style="width: 162.5px; height:60px;font-size: 20px;"
@@ -456,5 +456,12 @@ button.pc-button-FEAC00-272 {
     infoModal.close();
     })
 </script>
+
+  <script>
+        const cleantext = () => {
+            $("#clean").val("")
+        };
+  </script>
+
 
 <?php include __DIR__ . './part/javascript.php'  ?>

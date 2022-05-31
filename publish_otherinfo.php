@@ -683,7 +683,7 @@
                     </div>
                     <h2 class="z_step_title bold">step5.　同住人資訊以及房屋簡介</h2>
                     <div class="z_otherinfo_flex">
-                        <form action="publish_uploadimg-api.php" method="POST">
+                        <form action="publish_uploadimg-api.php" method="POST"  name="form1" id='form1'>
                             <div class="z_publish_text_container">
                                 <div class="z_publish_option_title">
                                     <div class="z_publish_item_detail_title">同住人資訊</div>
@@ -785,7 +785,8 @@
                             </label>
                             <div class="z_twobtn">                      
                                 <a href="./publish_uploadcertificate.php"><button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162" type="button">上一步</button></a>
-                                <a href="publish_uploadimg-api.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162">下一步</button></a>
+                                <a href="pay_success.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162" type="button" onclick="final_submit()">下一步</button></a>
+                                <!-- <a href="publish_uploadimg-api.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162" type="button">下一步</button></a> -->
                             </div>
                         </form>
                     </div>
@@ -797,7 +798,12 @@
 <?php include __DIR__ . './part/footer.php'  ?>
 
     <script>
-
+        function final_submit() {
+            $.post('publish_uploadimg-api.php', $(document.form1).serialize(),
+                function(data) {
+                console.log(data), 'json';
+                });
+        }
 
     </script>
 

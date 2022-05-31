@@ -1,28 +1,67 @@
 <?php
 require './part/connect-db.php';
-// 這裡是複選
-$dataRentaltype = !empty($_GET['dataR']) ? intval($_GET['dataR']) : 3;
-$dataAreas = !empty($_GET['dataAreas']) ? json_decode($_GET['dataAreas'], true) : [];
-// echo $dataRentaltype;
-if(!empty($dataAreas)){
-    $where .= sprintf(" AND item_dist IN ('%s')", implode("','", $dataAreas));
+
+// 單選房屋分類
+// $dataRental = !empty($_GET['dataRental']) ? intval($_GET['dataRental']) : 3;
+// if(in_array($dataRental, [1,2])){
+//     $rentalTypes = [
+//         '1' => '%共生%',
+//         '2' => '%分租%',
+//         '3' => '%',
+//     ];
+//     $where .= sprintf(" AND rentaltype IN ('%s')",$rentalTypes[$dataRental]);
+// }
+$where = " WHERE 1 ";
+$dataRental = !empty($_GET['dataRental']) ? json_decode($_GET['dataRental'], true) : [];
+if(!empty($dataRental)){
+    $where .= sprintf(" AND rentaltype LIKE '%%%s%%'", implode("','", $dataRental));
 }
-// 
-$where = ' WHERE 1 ';
-if(in_array($dataRentaltype, [1,2])){
-    $rentalTypes = [
-        '1' => '共生',
-        '2' => '分租',
-    ];
-    $where .= " AND rentaltype='{$rentalTypes[$dataRentaltype]}' ";
+// 單選地區
+$dataArea = !empty($_GET['dataArea']) ? json_decode($_GET['dataArea'], true) : [];
+if(!empty($dataArea)){
+    $where .= sprintf(" AND item_area LIKE '%%%s%%'", implode("','", $dataArea));
+    
+}
+// 複選詳細地區
+$dataItemDist = !empty($_GET['dataItemDist']) ? json_decode($_GET['dataItemDist'], true) : [];
+if(!empty($dataItemDist)){
+    $where .= sprintf(" AND item_dist IN ('%s')", implode("','", $dataItemDist));
 }
 
+// 單選房型
+$dataRoom = !empty($_GET['dataRoom']) ? json_decode($_GET['dataRoom'], true) : [];
 
+if(!empty($dataRoom)){
+    $where .= sprintf(" AND roomtype LIKE '%%%s%%'", implode("','",$dataRoom));
+}
+// 複選特色
+$dataFeture = !empty($_GET['dataFeture']) ? json_decode($_GET['dataFeture'], true) : [];
 
+if(!empty($dataFeture)){
+    $where .= sprintf(" AND feature IN ('%s')", implode("','",$dataFeture));
+}
+// 單選設備
+$dataEquip = !empty($_GET['dataEquip']) ? json_decode($_GET['dataEquip'], true) : [];
 
+if(!empty($dataEquip)){
+    $where .= sprintf(" AND equipment LIKE '%%%s%%'", implode("','",$dataEquip));
+}
+// 復選公設
+$dataPostulate = !empty($_GET['dataPostulate']) ? json_decode($_GET['dataPostulate'], true) : [];
 
+if(!empty($dataPostulate)){
+    $where .= sprintf(" AND postulate IN ('%s')", implode("','",$dataPostulate));
+}
+// 復選額外
+$dataOtherCost = !empty($_GET['dataOtherCost']) ? json_decode($_GET['dataOtherCost'], true) : [];
 
+if(!empty($dataOtherCost)){
+    $where .= sprintf(" AND other_cost IN ('%s')", implode("','",$dataOtherCost));
+}
+
+// "SELECT * FROM items WHERE 欄位 LIKE 內容 AND";
 $r_sql = "SELECT * FROM items $where";
+// $r_sql = "SELECT * FROM items WHERE `rentaltype` LIKE $whereRental ";
 $rRows = $pdo->query($r_sql)->fetchAll();
 
 // 以下先不用理他
