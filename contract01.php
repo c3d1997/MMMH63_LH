@@ -209,10 +209,6 @@ $i = $stmt->fetch();
         max-width: 390px;
     }
 
-    .cz_mb {
-        margin-bottom: 30px;
-    }
-
     .c-dropdown {
         background-color: #fff;
         width: 100%;
@@ -808,21 +804,20 @@ $i = $stmt->fetch();
             </label>
             <input type="text" name="Name" id="name" placeholder="">
         </form>
-        <p class="alert">格式錯誤</p>
+        
         <form class="form" action="#"></form>
         <label for="phone">
-            <p>英文姓名</p>
+            <p style="margin-top:20px;">英文姓名</p>
         </label>
         <input type="text" name="EngName" id="EngName" placeholder="">
         </form>
-        <p class="alert">格式錯誤</p>
+        
         <form class="form" action="#"></form>
         <label for="phone">
-            <p>身分證/護照號碼 擇一</p>
+            <p style="margin-top:20px;">身分證/護照號碼 擇一</p>
         </label>
         <input type="text" name="Id_number" id="Id_number" placeholder="">
         </form>
-        <p class="alert">格式錯誤</p>
     </div>
 
 
@@ -852,7 +847,7 @@ $i = $stmt->fetch();
             <form class="form" action="#">
                 <div class="testfrom">
                     <label for="person">
-                        <p>行政區</p>
+                        <p style="margin-top:20px;">行政區</p>
                     </label>
 
                     <div class="z_select_dropdown_container">
@@ -881,15 +876,13 @@ $i = $stmt->fetch();
             </label>
             <input type="text" name="email" id="email" placeholder="">
         </form>
-        <p class="alert">格式錯誤</p>
         <form class="form" action="#">
             <label for="person">
-                <p>手機
+                <p style="margin-top:20px;">手機
                 </p>
             </label>
             <input type="text" name="phone" id="phone" placeholder="">
         </form>
-        <p class="alert">格式錯誤</p>
 
     </div>
 </div>
@@ -900,7 +893,7 @@ $i = $stmt->fetch();
     <h3>選擇租屋期限</h3>
 
     <input type="text" name="daterange" value="06/08/2022 - 06/08/2023" style="width:0px; height:0px;" />
-    <button id="showSelectedRange" type="button" onclick="$('input[name=daterange]').click()">select range</button>
+    <button id="showSelectedRange" type="button" onclick="$('input[name=daterange]').click()"><p style="color:red;">請選擇租約期限</p></button>
 
     <p id="record"></p>
 
