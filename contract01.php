@@ -482,6 +482,7 @@ $i = $stmt->fetch();
         position: absolute;
         pointer-events: none;
     }
+
     .downArrow {
         transform: rotate(180deg);
     }
@@ -898,7 +899,9 @@ $i = $stmt->fetch();
 <div class="z_time">
     <h3>選擇租屋期限</h3>
 
-    <input type="text" name="daterange" value="06/08/2022 - 06/08/2023" />
+    <input type="text" name="daterange" value="06/08/2022 - 06/08/2023" style="width:0px; height:0px;" />
+    <button id="showSelectedRange" type="button" onclick="$('input[name=daterange]').click()">select range</button>
+
     <p id="record"></p>
 
 
@@ -1075,15 +1078,14 @@ $i = $stmt->fetch();
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script>
-
     $("select").on({
-        mouseleave: function(){
+        mouseleave: function() {
             $(this).next().children().removeClass("downArrow")
         },
-        click : function(){
+        click: function() {
             $(this).next().children().toggleClass("downArrow")
-        } 
-        })
+        }
+    })
 
 
     const $record = $('#record');
@@ -1092,6 +1094,11 @@ $i = $stmt->fetch();
         $('input[name="daterange"]').daterangepicker({
             opens: 'left'
         }, function(start, end, label) {
+            const showSelectedRange = $('#showSelectedRange');
+
+            showSelectedRange.html(start.format('YYYY-MM-DD') + ' ~ ' + end.format('YYYY-MM-DD'));
+
+
             console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
             // $record.text(start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
 
@@ -1161,22 +1168,22 @@ $i = $stmt->fetch();
 
     $('.c-select #yes').click(function() {
         ($('#yes').prop('checked'))
-            console.log('hi');
-            console.log('username:', $('#name').val());
-            $('#name').val(memberData.name);
-            $('#email').val(memberData.email);
-            $('#Id_number').val(memberData.Id_number);
-            $('#phone').val(memberData.mobile);
-            $('#citySelect').val('001');
-            $('#areaSelect').val('001');
+        console.log('hi');
+        console.log('username:', $('#name').val());
+        $('#name').val(memberData.name);
+        $('#email').val(memberData.email);
+        $('#Id_number').val(memberData.Id_number);
+        $('#phone').val(memberData.mobile);
+        $('#citySelect').val('001');
+        $('#areaSelect').val('001');
     })
-    $('.c-select #no').click(function(){
+    $('.c-select #no').click(function() {
         $('#name').val('');
-            $('#email').val('');
-            $('#Id_number').val('');
-            $('#phone').val('');
-            $('#citySelect').val('000');
-            $('#areaSelect').val('000');
+        $('#email').val('');
+        $('#Id_number').val('');
+        $('#phone').val('');
+        $('#citySelect').val('000');
+        $('#areaSelect').val('000');
     })
 
 

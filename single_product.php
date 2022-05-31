@@ -358,9 +358,11 @@ $k = $stmt->fetch();
         height: 30px;
         width: 30px;
     }
-    .center{
+
+    .center {
         justify-content: center;
     }
+
     .S-menu-icon-c img {
         margin: 10px 30px;
     }
@@ -1058,11 +1060,11 @@ $k = $stmt->fetch();
             <div class="S-product-info-right">
                 <button type="button" class="pc-button-FEAC00-280 S-btn-order">預約看房</button>
                 <form action="./Reservation_page.php" method="post">
-                <!-- 日曆按鈕-->
-                <!-- <button class="simplepicker-btn">Show Picker</button> -->
-                <div class="event-log"><br></div>
+                    <!-- 日曆按鈕-->
+                    <!-- <button class="simplepicker-btn">Show Picker</button> -->
+                    <div class="event-log" id="time" style="border:transparent;"></div>
 
-                <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a href="./FinalCheck_page.php">我要租屋</a></button>
+                    <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a href="./FinalCheck_page.php">我要租屋</a></button>
                 </form>
 
             </div>
@@ -1326,7 +1328,7 @@ $k = $stmt->fetch();
                             <img src="imgs/物件特色/可開伙.svg" alt="">
                             <p>可開伙</p>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -1369,7 +1371,7 @@ $k = $stmt->fetch();
                             <img src="imgs/物件安全設備/煙霧警報.svg" alt="">
                             <p>煙霧警報</p>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -1416,7 +1418,7 @@ $k = $stmt->fetch();
                             <img src="imgs/物件其他費用/網路費.svg" alt="">
                             <p>網路費</p>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -1474,7 +1476,7 @@ $k = $stmt->fetch();
                             <img src="imgs/周邊機能/醫院.svg" alt="">
                             <p>醫院</p>
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -1544,7 +1546,7 @@ $k = $stmt->fetch();
                             <img src="imgs/室友簡介與喜好/電影.svg" alt="">
                             <p>電影</p>
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -1942,7 +1944,7 @@ $k = $stmt->fetch();
 </script>
 
 <!-------------------日曆-------------------------------------------- -->
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script src="./simplepicker-main/dist/simplepicker.js"></script>
 <script>
     let simplepicker = new SimplePicker({
@@ -1959,7 +1961,9 @@ $k = $stmt->fetch();
 
     // $eventLog.innerHTML += '\n\n';
     simplepicker.on('submit', (date, readableDate) => {
-        $eventLog.innerHTML += readableDate + '\n';
+        const t = moment(readableDate);
+        // $eventLog.innerHTML += readableDate + '\n';
+        $eventLog.innerHTML += t.format('YYYY-MM-DD HH:mm:ss') + '\n';
     });
 
     simplepicker.on('close', (date) => {
@@ -1968,24 +1972,18 @@ $k = $stmt->fetch();
 
 
     // --------------------------------------換頁-----------------------------
-    $(document).ready(function(){
-        // $(".simplepicker-ok-btn").attr("type","submit")
-        $(".simplepicker-ok-btn").html('<a href="Reservation_page.php" style="display:none;"></a>')
-        
+    // $(document).ready(function(){
+    //     // $(".simplepicker-ok-btn").attr("type","submit")
+    //     $(".simplepicker-ok-btn").html('<a href="Reservation_page.php"></a>')
+
+    // })
+
+
+    $(".simplepicker-ok-btn").on("click", function() {
+        const date = $(".event-log").text()
+        console.log('gooddddd');
+        localStorage.setItem("date", JSON.stringify(date))
     })
-
-    const date = $(".event-log").text()
-    $(".simplepicker-ok-btn").click(function() {
-            console.log('gooddddd');
-            
-            localStorage.setItem("date",JSON.stringify(date))
-    })
-
-        
-
-
-
-
 </script>
 
 
