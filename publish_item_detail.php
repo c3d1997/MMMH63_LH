@@ -888,9 +888,28 @@
                                     <div class="z_select_dropdown_half_container">
                                         <select id="areaSelect" name="item_area" class="z_select_dropdown">
                                             <option value="" selected disabled>----請選擇縣市----</option>
-                                            <?php foreach($area as $a ): ?>
-                                                <option value="<?=$a['area']?>"><?=$a['area']?></option>
-                                            <?php endforeach;?>
+                                            <option value="">基隆市</option>
+                                            <option value="">台北市</option>
+                                            <option value="">新北市</option>
+                                            <option value="">桃園縣</option>
+                                            <option value="">新竹市</option>
+                                            <option value="">新竹縣</option>
+                                            <option value="">苗栗縣</option>
+                                            <option value="">台中市</option>
+                                            <option value="">彰化縣</option>
+                                            <option value="">南投縣</option>
+                                            <option value="">雲林縣</option>
+                                            <option value="">嘉義市</option>
+                                            <option value="">嘉義縣</option>
+                                            <option value="">台南市</option>
+                                            <option value="">高雄市</option>
+                                            <option value="">屏東縣</option>
+                                            <option value="">台東縣</option>
+                                            <option value="">花蓮縣</option>
+                                            <option value="">宜蘭縣</option>
+                                            <option value="">澎湖縣</option>
+                                            <option value="">金門縣</option>
+                                            <option value="">連江縣</option>
                                         </select>
                                         <div class="arrow_container">
                                             <img src="imgs/down-arrow.svg" alt="">
@@ -902,11 +921,18 @@
                                     <div class="z_select_dropdown_half_container">
                                         <select id="distSelect" name="item_dist" class="z_select_dropdown">
                                             <option value="" selected disabled>----請選擇縣市----</option>
-                                            <?php foreach($detailed_area as $da ): ?>
-                                            <option value="大安區">大安區</option>
-                                            <option value="信義區">信義區</option>
-                                            <option value="松山區">松山區</option>
-                                            <?php endforeach;?>
+                                            <option value="">松山區</option>
+                                            <option value="">信義區</option>
+                                            <option value="">大安區</option>
+                                            <option value="">中山區</option>
+                                            <option value="">中正區</option>
+                                            <option value="">大同區</option>
+                                            <option value="">萬華區</option>
+                                            <option value="">文山區</option>
+                                            <option value="">南港區</option>
+                                            <option value="">內湖區</option>
+                                            <option value="">士林區</option>
+                                            <option value="">北投區</option>
                                         </select>
                                         <div class="arrow_container">
                                             <img src="imgs/down-arrow.svg" alt="">
@@ -1024,16 +1050,9 @@
 <?php include __DIR__ . './part/footer.php'  ?>
 
 <script>
-    // $_SESSION['item_area'] = $_POST['item_area'];
-    // $_SESSION['item_dist'] = $_POST['item_dist'];
-    // $_SESSION['item_address'] = $_POST['item_address'];
-    // $_SESSION['ping_number'] = $_POST['ping_number'];
-    // $_SESSION['floor'] = $_POST['floor'];
-    // $_SESSION['roomtype'] = $_POST['roomtype'];
-    // $_SESSION['room_count'] = $_POST['room_count'];
-    // $_SESSION['item_name'] = $_POST['item_name'];
-    // $_SESSION['price'] = $_POST['price'];
-    // $_SESSION['contract'] = $_POST['contract'];
+    let areaName = ['----請選擇縣市----','基隆市','台北市','新北市','桃園縣','新竹市','新竹縣','苗栗縣','台中市','彰化縣','南投縣','雲林縣','嘉義市','嘉義縣','台南市','高雄市','屏東縣',	'台東縣','花蓮縣','宜蘭縣','澎湖縣','金門縣','連江縣'] 
+
+
     const data = <?=  empty($_SESSION) ? '[]' : json_encode($_SESSION, JSON_UNESCAPED_UNICODE) ?>;
 
     const els = document.forms[0].elements;
@@ -1046,32 +1065,18 @@
         }
         console.log(el.name);
     }
+    $(document).ready(function(){
+        const area = areaName[$(this).text()]
+        console.log(areaName);
+        $('#areaSelect option').each(function(index,area){
+            $(this).html(areaName)
+        // console.log('index',areaName[index]);
+        // console.log('index',index);
+        // console.log('item',area);
+    })
 
 
 
-    //$("#areaSelect").val();
-    // const group2 = $("#distSelect").val();
-    // const group3 = $("#item_address").val();
-    // const group4 = $("#ping_number").val();
-    // const group5 = $("#floor").val();
-    // const group6 = $("#typeSelect").val();
-    // const group6 = $("#room_count").val();
-    // const group6 = $("#item_name").val();
-    // const group6 = $("#contract").val();
-/*
-    $(document).on('ready',function(){
-        const me = group1;
-        // if(!empty (data.item_area)){
-        //     if(data.equipment_detail.includes(me.val())){
-        //         me.prop('checked', true);
-        //     }
-        // }
-        if(!(data.item_area == null)){
-            me = data.item_area
-        }
-    });
-    // console.log(data.item_area);
-*/
 
     $("select").on({
         mouseleave: function() {
@@ -1081,42 +1086,6 @@
         $(this).next().children().toggleClass("downArrow")
     }
     })
-
-
-
-
-    // function itemFeature() {
-    //     const item_area = $("#areaSelect").val()
-    //     const item_dist = $("#distSelect").val()
-    //     const item_address = $("#item_address").val()
-    //     const ping_number = $("#ping_number").val()
-    //     const floor = $("#floor").val()
-    //     const roomtype = $("#typeSelect").val()
-    //     const room_count  = $("#room_count").val()
-    //     const item_name = $("#item_name").val()
-    //     const contract = $("#contract").val()
-
-    //     $.ajax({
-    //         url:"publish_uploadimg-api.php",
-    //         method: "post",
-    //         data:{ 
-    //             item_area:JSON.stringify(item_area),
-    //             item_dist:JSON.stringify(item_dist),
-    //             item_address:JSON.stringify(item_address),
-    //             ping_number:JSON.stringify(ping_number),
-    //             floor:JSON.stringify(floor),
-    //             roomty:JSON.stringify(roomtype),
-    //             room_count:JSON.stringify(room_count),
-    //             item_name:JSON.stringify(item_name),
-    //             contract:JSON.stringify(contract),
-    //             contentType:'application/json;charset=UTF-8',
-    //             success: function(){
-    //                 console.log("成功")
-    //                 console.log(data)
-    //             }
-    //         }
-    //     })
-    // }
 
 
 

@@ -775,9 +775,6 @@
                 data: {
                     img_arr : JSON.stringify(img_arr),
                 },
-                success: function(){
-                    console.log((img_arr))
-                }
             })
         }
 
