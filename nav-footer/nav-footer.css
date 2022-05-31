@@ -122,11 +122,11 @@
      align-items: center;
  }
  
- .log-out {
-     /* display: none; */
+ .phone-nav-link.log-out {
+     display: none;
  }
  
- .log-in {
+ .phone-nav-link.log-in {
      display: none;
  }
  
