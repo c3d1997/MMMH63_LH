@@ -4,7 +4,7 @@ require './part/connect-db.php';
 
 
 //// ------------------------------------------
-$json_str = '{"sid":"1","id":"A1556655","name":"彭世豪","EngName":null,"Id_number":"B294354724","Pass_num":null,"email":"bosebawi@gmail.com","mobile":"0968881277","Area":"新北市","Dist":"樹林區","Add":"田尾街17號","Password":"123","Introduce":"韓愈說過一句富有哲理的話，不塞不流，不止不行。希望各位能用心體會這段話。我以為我了解興趣，但我真的了解興趣嗎？仔細想想，我對興趣的理解只是皮毛而已。貝蒂在不經意間這樣說過，大家都不聽謊言，說謊的人也就絕跡了。","created_at":"2020-04-06 16:31:02"}';
+$json_str = '{"sid":"1","id":"A1556655","name":"彭世豪","EngName":"Peter","Id_number":"B294354724","Pass_num":null,"email":"bosebawi@gmail.com","mobile":"0968881277","Area":"新北市","Dist":"樹林區","Add":"田尾街17號","Password":"123","Introduce":"韓愈說過一句富有哲理的話，不塞不流，不止不行。希望各位能用心體會這段話。我以為我了解興趣，但我真的了解興趣嗎？仔細想想，我對興趣的理解只是皮毛而已。貝蒂在不經意間這樣說過，大家都不聽謊言，說謊的人也就絕跡了。","created_at":"2020-04-06 16:31:02"}';
 $_SESSION['user'] = json_decode($json_str, true);
 //// ------------------------------------------
 
@@ -833,9 +833,28 @@ $i = $stmt->fetch();
                 <div class="z_select_dropdown_container">
                     <select id="citySelect" name="citySelect" class="z_select_dropdown">
                         <option selected disabled value="000">--戶籍縣市--</option>
-                        <option value="001">001-台北市</option>
-                        <option value="002">002-新北市</option>
-                        <option value="003">003-基隆市</option>
+                        <option value="">基隆市</option>
+                                            <option value="">台北市</option>
+                                            <option value="">新北市</option>
+                                            <option value="">桃園縣</option>
+                                            <option value="">新竹市</option>
+                                            <option value="">新竹縣</option>
+                                            <option value="">苗栗縣</option>
+                                            <option value="">台中市</option>
+                                            <option value="">彰化縣</option>
+                                            <option value="">南投縣</option>
+                                            <option value="">雲林縣</option>
+                                            <option value="">嘉義市</option>
+                                            <option value="">嘉義縣</option>
+                                            <option value="">台南市</option>
+                                            <option value="">高雄市</option>
+                                            <option value="">屏東縣</option>
+                                            <option value="">台東縣</option>
+                                            <option value="">花蓮縣</option>
+                                            <option value="">宜蘭縣</option>
+                                            <option value="">澎湖縣</option>
+                                            <option value="">金門縣</option>
+                                            <option value="">連江縣</option>
                     </select>
                     <div class="arrow_container">
                         <img src="imgs/down-arrow.svg" alt="">
@@ -853,9 +872,18 @@ $i = $stmt->fetch();
                     <div class="z_select_dropdown_container">
                         <select id="areaSelect" name="areaSelect" class="z_select_dropdown">
                             <option selected disabled value="000">--行政區--</option>
-                            <option value="001">001-松山區</option>
-                            <option value="002">002-文山區</option>
-                            <option value="003">003-大安區</option>
+                            <option value="">松山區</option>
+                                            <option value="">信義區</option>
+                                            <option value="">大安區</option>
+                                            <option value="">中山區</option>
+                                            <option value="">中正區</option>
+                                            <option value="">大同區</option>
+                                            <option value="">萬華區</option>
+                                            <option value="">文山區</option>
+                                            <option value="">南港區</option>
+                                            <option value="">內湖區</option>
+                                            <option value="">士林區</option>
+                                            <option value="">北投區</option>
                         </select>
                         <div class="arrow_container">
                             <img src="imgs/down-arrow.svg" alt="">
@@ -893,7 +921,7 @@ $i = $stmt->fetch();
     <h3>選擇租屋期限</h3>
 
     <input type="text" name="daterange" value="06/08/2022 - 06/08/2023" style="width:0px; height:0px;" />
-    <button id="showSelectedRange" type="button" onclick="$('input[name=daterange]').click()"><p style="color:red;">請選擇租約期限</p></button>
+    <button id="showSelectedRange" type="button" onclick="$('input[name=daterange]').click()" style="color:red;font-size:18px;"><p style="color:red;font-size:18px;">請選擇租約期限</p></button>
 
     <p id="record"></p>
 
@@ -1164,6 +1192,7 @@ $i = $stmt->fetch();
         console.log('hi');
         console.log('username:', $('#name').val());
         $('#name').val(memberData.name);
+        $('#EngName').val(memberData.EngName);
         $('#email').val(memberData.email);
         $('#Id_number').val(memberData.Id_number);
         $('#phone').val(memberData.mobile);
@@ -1172,6 +1201,7 @@ $i = $stmt->fetch();
     })
     $('.c-select #no').click(function() {
         $('#name').val('');
+        $('#EngName').val(memberData.EngName);
         $('#email').val('');
         $('#Id_number').val('');
         $('#phone').val('');
