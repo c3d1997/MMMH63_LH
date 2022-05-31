@@ -4,7 +4,7 @@ require './part/connect-db.php';
 
 
 // 帶入房屋資料
-$ksql = "SELECT * FROM `items` WHERE `sid` = 1;";
+$ksql = "SELECT * FROM `items` WHERE `sid` = 2;";
 $stmt = $pdo->query($ksql);
 $k = $stmt->fetch();
 
@@ -927,7 +927,7 @@ $k = $stmt->fetch();
         <!-- img -->
         <div class="S-product-img">
             <div class="S-product-img-left column">
-                <img src="<?= $i['img'] ?>item0.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                <img src="<?= $k['item_imgs'] ?>item0.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
             </div>
             <div class="S-product-img-right">
                 <div class="S-product-img-right-up column">
