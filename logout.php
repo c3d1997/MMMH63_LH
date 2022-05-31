@@ -3,4 +3,4 @@ session_start();
 
 unset($_SESSION['admin']);
 
-header('Location: sign_signup.php');
+header('Location: home_page.php');

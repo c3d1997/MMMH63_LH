@@ -39,7 +39,7 @@ if (!empty($row)) {
     $output['code'] = 200;
     $_SESSION['admin'] = [
         'id' => $row['id'],
-        'email' => $row['mobile'],
+        'mobile' => $row['mobile'],
     ];
 } else {
     $output['error'] = '帳密錯誤';

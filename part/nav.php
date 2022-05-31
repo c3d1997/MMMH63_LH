@@ -36,53 +36,56 @@
                         清潔服務
                     </a>
                 </li>
-                <li class="log-in x-log">
-                    <a href="">
-                        會員登入/註冊
-                    </a>
-                </li>
-                <li class="log-out x-log x-hidden-flip">
-                    <a href="#">
-                        個人頁面 <img src="imgs/down-arrow.svg" alt="">
-                    </a>
-                </li>
-                <div class="x-hidden-personaal x-hidden-click">
-                    <a href="">
-                        會員資料
-                    </a>
-                    <a href="">
-                        刊登物件
-                    </a>
-                    <a href="">
-                        我的租屋
-                    </a>
-                    <a href="">
-                        我的收藏
-                    </a>
-                    <a href="">
-                        我的優惠
-                    </a>
-                    <a href="">
-                        我的預約
-                    </a>
-                    <a href="">
-                        租金支付
-                    </a>
-                    <a href="">
-                        清潔服務
-                    </a>
-                    <a href="">
-                        租屋契約
-                    </a>
-                </div>
-                <li class="log-out x-log">
-                    <a href="">
-                        登出
-                    </a>
-                </li>
 
+                <?php if (!isset($_SESSION['admin'])) : ?>
+                    <li class="x-log S-nav-login">
+                        <a href="sign_signup0530.php">
+                            會員登入/註冊
+                        </a>
+                    </li>
+
+                <?php else : ?>
+                    <li class=" x-log" id="S-nav-logout">
+                        <a href="#">
+                            個人頁面 <img src="imgs/down-arrow.svg" alt="">
+                        </a>
+                    </li>
+                    <div class="x-hidden-personaal x-hidden-click">
+                        <a href="">
+                            會員資料
+                        </a>
+                        <a href="">
+                            刊登物件
+                        </a>
+                        <a href="">
+                            我的租屋
+                        </a>
+                        <a href="">
+                            我的收藏
+                        </a>
+                        <a href="">
+                            我的優惠
+                        </a>
+                        <a href="">
+                            我的預約
+                        </a>
+                        <a href="">
+                            租金支付
+                        </a>
+                        <a href="">
+                            清潔服務
+                        </a>
+                        <a href="">
+                            租屋契約
+                        </a>
+                    </div>
+                    <li class="x-log" id="S-nav-logout2">
+                        <a href="logout.php">
+                            登出
+                        </a>
+                    </li>
+                <?php endif; ?>
             </div>
-
 
 
         </ul>

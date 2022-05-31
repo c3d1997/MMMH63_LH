@@ -10,6 +10,28 @@
      background-color: #F4F4F4;
  }
  
+
+
+
+ /* ---------SSSSSSSS---------------- */
+ .x-log.active{
+
+    background-color: #6666FF;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+
+
+
+
+}
+
+
+
+
+ /* ---------SSSSSSSS---------------- */
+
+
  h1,
  h2,
  h3,
@@ -66,7 +88,13 @@
      margin: auto;
  }
  /* nav */
- 
+ /* .log-change{
+    display: none;
+} */
+li.x-log.S-nav-logout{
+    display: none;
+}
+
  .nav .container ul {
      width: 100%;
      display: flex;
@@ -122,13 +150,7 @@
      align-items: center;
  }
  
- .phone-nav-link.log-out {
-     display: none;
- }
  
- .phone-nav-link.log-in {
-     display: none;
- }
  
  .x-log-show {
      display: none;
@@ -175,8 +197,9 @@
      display: none;
  }
  
- .nav .container ul .phone-nav-link li:nth-child(5) img {
+ .nav .container ul .phone-nav-link li:nth-child(4) img {
      display: none;
+     /* border: 1px solid red; */
  }
  
  .x-hidden-personaal {
