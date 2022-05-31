@@ -1223,22 +1223,22 @@ require './part/connect-db.php';
                                     <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start item_area-group">
                                         <button class="x-button-only" data-item_area="1" type="button">
                                             <p>
-                                                新北
+                                                新北市
                                             </p>
                                         </button>
                                         <button class="x-button-only" data-item_area="2" type="button">
                                             <p>
-                                                台北
+                                                台北市
                                             </p>
                                         </button>
                                         <button class="x-button-only" data-item_area="3" type="button">
                                             <p>
-                                                台中
+                                                台中市
                                             </p>
                                         </button>
                                         <button class="x-button-only" data-item_area="4" type="button">
                                             <p>
-                                                高雄
+                                                高雄市
                                             </p>
                                         </button>
                                     </div>
@@ -1411,24 +1411,24 @@ require './part/connect-db.php';
                                         房型
                                     </h3>
                                 </div>
-                                <div class="x-search-ex-tag roomtype-group">
-                                    <div class="x-search-ex-tag-wrap">
-                                        <button class="x-button-only rentaltype" data-roomtype="1" type="button" value="套房">
+                                <div class="x-search-ex-tag ">
+                                    <div class="x-search-ex-tag-wrap roomtype-group">
+                                        <button class="x-button-only " data-roomtype="1" type="button" value="套房">
                                             <p>
                                                 套房
                                             </p>
                                         </button>
-                                        <button class="x-button-only rentaltype" data-roomtype="2" type="button" value="雅房">
+                                        <button class="x-button-only " data-roomtype="2" type="button" value="雅房">
                                             <p>
                                                 雅房
                                             </p>
                                         </button>
-                                        <button class="x-button-only rentaltype" data-roomtype="3" type="button" value="整層">
+                                        <button class="x-button-only " data-roomtype="3" type="button" value="整層">
                                             <p>
                                                 整層
                                             </p>
                                         </button>
-                                        <button class="x-button-only rentaltype" data-roomtype="4" type="button" value="不限房型">
+                                        <button class="x-button-only " data-roomtype="4" type="button" value="不限房型">
                                             <p>
                                                 不限房型
                                             </p>
@@ -1511,8 +1511,8 @@ require './part/connect-db.php';
                                         設備
                                     </h3>
                                 </div>
-                                <div class="x-search-ex-tag equipment-group">
-                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
+                                <div class="x-search-ex-tag ">
+                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start equipment-group">
                                         <button class="x-button-only" data-equipment="1" type="button">
                                             <p>
                                                 有附傢俱
@@ -2352,24 +2352,89 @@ require './part/connect-db.php';
     function datacheck() {
 
         // 複選詳細地區
-        const areaBtns = $('.x-search-ex-tag > .item_dist-group .x-button-more');
-        const areaSelected = [];
+        const itemDistBtns = $('.x-search-ex-tag > .item_dist-group .x-button-more');
+        const itemDistSelected = [];
+        itemDistBtns.each(function(){
+            const btn = $(this);
+            if(btn.hasClass('x-tag-on-click')){
+                itemDistSelected.push( btn.find('p').text().trim());
+            }
+        });
+        const dataItemDist = JSON.stringify(itemDistSelected);
+
+        // 單選房屋分類
+        const rentalBtns = $('.x-search-ex-tag > .rentaltype-group .x-button-only');
+        const rentalSelected=[];
+        rentalBtns.each(function(){
+            const btn = $(this);
+            if(btn.hasClass('x-tag-on-click')){
+                rentalSelected.push( btn.find('p').text().trim());
+            }
+        });
+        const dataRental = JSON.stringify(rentalSelected);
+        // const dataRental = $('.x-tag-on-click').attr('data-rentaltype')
+        // 單選地區
+        const areaBtns = $('.x-search-ex-tag > .item_area-group .x-button-only');
+        const areaSelected=[];
         areaBtns.each(function(){
             const btn = $(this);
             if(btn.hasClass('x-tag-on-click')){
                 areaSelected.push( btn.find('p').text().trim());
             }
         });
-        const dataAreas = JSON.stringify(areaSelected);
-
-        // 單選房屋分類
-        const dataR = $('.x-tag-on-click').attr('data-rentaltype')
-
-        // 單選地區
-        const dataA = $('.x-tag-on-click').attr('data-rentaltype')
-
+        const dataArea = JSON.stringify(areaSelected);
+        // 單選房型
+        const roomBtns = $('.x-search-ex-tag > .roomtype-group .x-button-only');
+        const roomSelected=[];
+        roomBtns.each(function(){
+            const btn = $(this);
+            if(btn.hasClass('x-tag-on-click')){
+                roomSelected.push( btn.find('p').text().trim());
+            }
+        });
+        const dataRoom = JSON.stringify(roomSelected);
+        // 復選特色
+        const featureBtns =  $('.x-search-ex-tag > .feature-group .x-button-more');
+        const featureSelected=[];
+        featureBtns.each(function(){
+            const btn = $(this);
+            if(btn.hasClass('x-tag-on-click')){
+                featureSelected.push( btn.find('p').text().trim());
+            }
+        });
+        const dataFeture = JSON.stringify(featureSelected);
+        // 單選設備
+        const equipBtns =  $('.x-search-ex-tag > .equipment-group .x-button-only');
+        const equipSelected=[];
+        equipBtns.each(function(){
+            const btn = $(this);
+            if(btn.hasClass('x-tag-on-click')){
+                equipSelected.push( btn.find('p').text().trim());
+            }
+        });
+        const dataEquip = JSON.stringify(equipSelected);
+        // 複選公設
+        const postulateBtns =  $('.x-search-ex-tag > .postulate-group .x-button-more');
+        const postulateSelected=[];
+        postulateBtns.each(function(){
+            const btn = $(this);
+            if(btn.hasClass('x-tag-on-click')){
+                postulateSelected.push( btn.find('p').text().trim());
+            }
+        });
+        const dataPostulate = JSON.stringify(postulateSelected);
+        // 複選額外費用
+        const otherCostBtns =  $('.x-search-ex-tag > .other_cost-group .x-button-more');
+        const otherCostSelected=[];
+        otherCostBtns.each(function(){
+            const btn = $(this);
+            if(btn.hasClass('x-tag-on-click')){
+                otherCostSelected.push( btn.find('p').text().trim());
+            }
+        });
+        const dataOtherCost = JSON.stringify(otherCostSelected);
         // 給API
-        $.get('search_list.php', {dataR, dataAreas},
+        $.get('search_list.php', {dataRental,dataArea,dataItemDist,dataRoom,dataFeture,dataEquip,dataPostulate,dataOtherCost},
         // 回傳
             function(data){
                 $('#search_all_all').html(data);
@@ -2407,9 +2472,9 @@ require './part/connect-db.php';
         $(this).toggleClass('x-tag-on-click');
         $(this).siblings().removeClass('x-tag-on-click');
 
-        console.log({
-            item_area: $(this).attr('data-item_area')
-        })
+        console.log(
+            $('.x-tag-on-click').attr('data-item_area')
+        )
     })
     // 房屋類型
     $(".roomtype-group .x-button-only").click(function() {
@@ -2444,6 +2509,30 @@ require './part/connect-db.php';
         $(this).toggleClass('x-tag-on-click');
         console.log({
             item_dist: $(this).attr('data-item_dist')
+        })
+        
+    })
+    // 特色
+    $(".feature-group .x-button-more").click(function() {
+        $(this).toggleClass('x-tag-on-click');
+        console.log({
+            item_dist: $(this).attr('data-feature')
+        })
+        
+    })
+    // 公設
+    $(".postulate-group .x-button-more").click(function() {
+        $(this).toggleClass('x-tag-on-click');
+        console.log({
+            item_dist: $(this).attr('data-postulate')
+        })
+        
+    })
+    // 額外費用
+    $(".other_cost-group .x-button-more").click(function() {
+        $(this).toggleClass('x-tag-on-click');
+        console.log({
+            item_dist: $(this).attr('data-other_cost')
         })
         
     })
