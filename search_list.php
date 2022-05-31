@@ -7,7 +7,7 @@ $dataAreas = !empty($_GET['dataAreas']) ? json_decode($_GET['dataAreas'], true) 
 if(!empty($dataAreas)){
     $where .= sprintf(" AND item_dist IN ('%s')", implode("','", $dataAreas));
 }
-
+// 
 $where = ' WHERE 1 ';
 if(in_array($dataRentaltype, [1,2])){
     $rentalTypes = [

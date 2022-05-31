@@ -2350,18 +2350,8 @@ require './part/connect-db.php';
     // 搜尋送出按鈕
 
     function datacheck() {
-        // $.ajax({
-        //     url: "search_list.php",
-        //     method: "get",
-        //     data: {
-        //         dataR: JSON.stringify($('.x-tag-on-click').attr('data-rentaltype'))
-        //     },
-        //     // success: function() {
-        //     //     console.log((dataR))
-        //     // }
-        // })
-        // const dataD_a = new Array()
 
+        // 複選詳細地區
         const areaBtns = $('.x-search-ex-tag > .item_dist-group .x-button-more');
         const areaSelected = [];
         areaBtns.each(function(){
@@ -2371,10 +2361,16 @@ require './part/connect-db.php';
             }
         });
         const dataAreas = JSON.stringify(areaSelected);
-        // console.log(areaSelected);
-        
+
+        // 單選房屋分類
         const dataR = $('.x-tag-on-click').attr('data-rentaltype')
+
+        // 單選地區
+        const dataA = $('.x-tag-on-click').attr('data-rentaltype')
+
+        // 給API
         $.get('search_list.php', {dataR, dataAreas},
+        // 回傳
             function(data){
                 $('#search_all_all').html(data);
             },'text');
