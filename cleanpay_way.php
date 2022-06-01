@@ -885,7 +885,7 @@ $title = '付款方式'
                 </div>
                 <div class="z_twobtn">
                     <button class="pc-button-F4F4F4-180 z_phone_162 ">清除資料</button>
-                    <button class="pc-button-FEAC00-180 z_phone_162 ">確認付款</button>
+                    <a href="cleanpay_success.php"><button class="pc-button-FEAC00-180 z_phone_162 ">確認付款</button></a>
                 </div>
             </div>
         </div>

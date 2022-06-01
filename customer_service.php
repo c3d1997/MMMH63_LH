@@ -1,3 +1,7 @@
+<?php 
+$title = '單一物件';
+require './part/connect-db.php';
+?>
 <?php include __DIR__ . './part/head.php'  ?>
 
 <style>

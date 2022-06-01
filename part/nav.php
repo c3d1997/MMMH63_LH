@@ -47,7 +47,7 @@
 
                 <?php else : ?>
                     <li class=" x-log" id="S-nav-logout">
-                        <a href="#">
+                        <a href="personal-data.php">
                             <?= empty($_SESSION['member']['name']) ? $_SESSION['member']['EngName'] : $_SESSION['member']['name'] ?><img src="imgs/down-arrow.svg" alt="">
                             <!-- 個人頁面 -->
                         </a>
