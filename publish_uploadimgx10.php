@@ -573,7 +573,7 @@
                 /* width: 120%; */
                 overflow:scroll;
                 height: 300px;
-                border: 3px solid #0E2E3D;
+                /* border: 3px solid #0E2E3D; */
                 padding: 5px 0;
             }
             .z_publish_phone_tip_container {

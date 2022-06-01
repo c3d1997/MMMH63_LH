@@ -1010,7 +1010,7 @@
                             <div class="input_option">
                                 <p class="option_name">　　價格</p>
                                 <div class="fullinput_container z_fullinput_container">
-                                    <input type="text" name="price" id="" placeholder="輸入想收取的租金">
+                                    <input type="text" name="price" id="price" placeholder="輸入想收取的租金" oninput = "value=value.replace(/[^\d]/g,'')">
                                 </div>
                             </div>
                             <div class="input_alert z_input_alert">
