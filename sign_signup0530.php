@@ -342,9 +342,10 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
         margin-top: 30px;
     }
 
-    #sign_up {
-        height: 40px;
-        width: 181px;
+
+    .formBx .form form button {
+
+        margin-left: 0px;
     }
 
 
@@ -447,7 +448,7 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
         /* border: 1px solid red; */
         width: 80%;
         display: flex;
-        /* align-items: center; */
+        align-items: center;
         flex-direction: column;
     }
 
@@ -502,12 +503,11 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
     }
 
     .formBx .form form button {
-        /* font-weight: 900; */
         font-size: 20px;
         width: 45%;
         height: 48px;
         padding: 6px;
-        margin-left: 10px;
+        /* margin-left: 10px; */
         background: #FEAC00;
         border: none;
         color: #0E2E3D;
@@ -534,6 +534,7 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
         text-align: right;
         color: #5D8DC1;
         text-decoration: none;
+        align-self: flex-end;
     }
 
     .input_option {
@@ -572,12 +573,6 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
 
 
 
-    /* 尚未註冊？點此註冊 */
-    .formBx .font-color-blue {
-        color: #0E2E3D;
-        /* font-weight: 900; */
-        text-decoration: underline;
-    }
 
 
     /* --------------confirm bar----------------- */
@@ -652,13 +647,24 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
 
     .fullinput_container {
         text-align: start;
+        width: 73%;
+    }
+
+    /* 驗證碼 */
+    .signup-checked {
+        width: 88px;
+        margin-left: 27px;
+    }
+
+    #mobile-input_option {
+        margin-left: -13px;
     }
 
 
-
-
-
-
+    /* ---------壓CSS------------------------ */
+    .CAPTCHA-Btn {
+        font-weight: 500;
+    }
 
     /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -685,14 +691,18 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
             background-color: #F1EDEA;
             /* margin-top: 40px; */
             background: #F1EDEA;
+            margin-top: 150px;
         }
 
         .container1 {
+            min-height: 667px;
             max-width: 375px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 0;
+            margin-top: 120px;
+            margin-bottom: 150px;
+            background-color: #F1EDEA;
         }
 
         .container1 .blueBg {
@@ -728,7 +738,7 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
         /* ---------登入表單-------------------------------------------------- */
 
         .formBx .signinForm {
-            top: 15%;
+            top: 20%;
             width: 100%;
             left: 0%;
             /* background: #75BBE3; */
@@ -805,6 +815,34 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
             background: url(imgs/unchecked.svg) no-repeat left top;
             border: 5px solid red;
         }
+
+        .fullinput_container.grow-none {
+            flex-grow: 1;
+        }
+
+        #mobile-input_option {
+            margin-left: 0;
+        }
+
+        .signupForm .pc-button-FEAC00-180 {
+            height: 41px;
+            margin: 0 0 10px;
+
+        }
+
+        .formBx .form form button {
+            font-size: 20px;
+            width: 100%;
+            height: 60px;
+            padding: 6px;
+            /* margin-left: 10px; */
+            background: #FEAC00;
+            border: none;
+            color: #0E2E3D;
+        }
+
+
+
 
 
         /*.blueBg --------------隱藏-------------- */
@@ -909,9 +947,9 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
                         </div>
                     </div>
                     <a href="#" class="forgot">忘記密碼</a>
-                    <button type="submit" id="sign_in" class="pc-button-FEAC00-180 S-d-none">登入</button>
+                    <button type="submit" id="sign_in" class="pc-button-FEAC00-180">登入</button>
                 </form>
-                <a href="#" class="font-color-blue">尚未註冊？點此註冊</a>
+                <p>尚未註冊？<a href="#" class="ask-signup">點此註冊</a></p>
             </div>
 
 
@@ -931,7 +969,7 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
                         </div>
                     </div>
 
-                    <div class="input_option">
+                    <div class="input_option" id="mobile-input_option">
                         <p class="option_name">手機/帳號</p>
                         <div class="fullinput_container ">
                             <input type="text" name="mobile" id="signup-mobile" placeholder="請輸入您的手機">
@@ -984,14 +1022,15 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
                         <div class="c_confirm_bar">
                             <label>
                                 <input type="checkbox" name="signup-checkbox" id="signup-checkbox" style="display:none;" ;>
-                                <span class="z_all-center">我同意<a href="#"> 隱私條款 </a>與<a href="#">租客平台公約</a>,我已閱讀完<a href="#">租賃法.</a></span>
+                                <!-- <span class="z_all-center">我同意<a href="#"> 隱私條款 </a>與<a href="#">租客平台公約</a>,我已閱讀完<a href="#">租賃法.</a></span> -->
+                                <span class="z_all-center">我同意隱私條款與租客平台公約,我已閱讀完租賃法</span>
                             </label>
                         </div>
                     </div>
                     <!-- <div class="divfor_submit"> -->
                     <button type="submit" id="sign_up" class="pc-button-FEAC00-180">註冊</button>
                 </form>
-                <p><a>您已經註冊了嗎？由此進入</p>
+                <p>您已經註冊了嗎？<a href="#" class="ask-signin">由此進入</a></p>
             </div>
         </div>
 
@@ -1141,13 +1180,32 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
         $('.mobile-signinBtn').removeClass('S-blue');
     })
 
+    // // ask-signin 已有會員?
+    // $('.ask-signin').click(function() {
+    //     console.log('登入');
+    //     // $('.InfoBx').css('left','50%');
+    //     InfoBx.classList.add('inactive');
+    //     InfoBx.classList.remove('active');
+    // })
+    // // ask-signup 未註冊?
+    // $('.ask-signup').click(function() {
+    //     console.log('註冊');
+        
+    // })
+
+
+
+
+// ----------------驗證信--------------------------------------
     $('.CAPTCHA-Btn').click(function() {
         console.log($('#email').text());
     });
 
+
     $btnSendVerify.on('click', function() {
         document.cookie = "username=John Doe";
     });
+
 
     function getCode() {
         let email = $('#signup-email').val();
@@ -1156,9 +1214,6 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
         }, function(data) {
             alert('請至信箱收取驗證碼');
         });
-
-
-
     }
 </script>
 
@@ -1262,14 +1317,12 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
 
             // ---------註冊成功彈跳視窗---------------------------------------
             // 成功 彈出視窗
-
             let btn = document.querySelector("#sign_up");
             let infoModal = document.querySelector("#infoModal");
             let close = document.querySelector("#close");
             let close2 = document.querySelector("#close2");
-            btn.addEventListener("click", function() {
-                infoModal.showModal();
-            })
+            infoModal.showModal();
+
             close.addEventListener("click", function() {
                 console.log('close');
                 infoModal.close();
@@ -1339,13 +1392,16 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
             $.post('login-api.php', $(document.form2).serialize(), function(data) {
                 console.log(data);
                 if (data.success) {
+                    console.log('恭喜登入成功 第二下');
+                    location.href = 'home_page.php';
                     // alert('登入成功');
+                    /*
                     $('#sign_in').click(function() {
                         console.log('恭喜登入成功 第二下');
                         location.href = 'home_page.php';
                     })
-
-                    setCookie('LH_Login', "yes");
+                    */
+                    // setCookie('LH_Login', "yes");
                     // 登出改變nav項目 寫JQ在這裡
 
                 } else {
@@ -1360,14 +1416,7 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
 
             }, 'json');
 
-
-
-
-
-
-
         }
-
 
     }
 
@@ -1380,4 +1429,4 @@ echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
 
 
 
-<?php include __DIR__ . 'part/javascript.php'  ?>
+<?php include __DIR__ . './part/javascript.php' ?>

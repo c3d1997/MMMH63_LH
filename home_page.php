@@ -1,4 +1,5 @@
 <?php
+session_start();
 $pageName = 'home_page';
 $title = 'LittleHouse';
 ?>
@@ -204,7 +205,7 @@ $title = 'LittleHouse';
 
     @media screen and (max-width:376px) {
 
-        .x-home-page-introduce-symbiosis{
+        .x-home-page-introduce-symbiosis {
             width: 100%;
             max-width: 1280px;
             margin: auto;
@@ -212,14 +213,14 @@ $title = 'LittleHouse';
             padding-top: 460px;
             margin-bottom: 0px;
         }
-    
-        .x-home-page-introduce-sublease{
+
+        .x-home-page-introduce-sublease {
             width: 100%;
             max-width: 1280px;
             margin: auto;
             background: none;
             padding-top: 0px;
-            
+
             margin-bottom: 0px;
         }
 
@@ -1325,7 +1326,7 @@ $title = 'LittleHouse';
 </div>
 <?php include __DIR__ . './part/footer.php'  ?>
 <script>
-// 共生分租講解動畫 
+    // 共生分租講解動畫 
     // Get the size of the device screen
     var screenWidth = screen.width;
     var screenHeight = screen.height;
