@@ -874,7 +874,7 @@
         <div class="z_row">
             <div class="z_publish_container">
                 <div class="z_publish_phone_title">
-                    <img src="../imgs/backcolor.svg" alt="">
+                    <img src="imgs/backcolor.svg" alt="">
                     <p>刊登物件</p>
                 </div>
                 <div class="z_step_title bold">step2.　房屋詳細資料</div>
@@ -888,51 +888,51 @@
                                     <div class="z_select_dropdown_half_container">
                                         <select id="areaSelect" name="item_area" class="z_select_dropdown">
                                             <option value="" selected disabled>----請選擇縣市----</option>
-                                            <option value="">基隆市</option>
-                                            <option value="">台北市</option>
-                                            <option value="">新北市</option>
-                                            <option value="">桃園縣</option>
-                                            <option value="">新竹市</option>
-                                            <option value="">新竹縣</option>
-                                            <option value="">苗栗縣</option>
-                                            <option value="">台中市</option>
-                                            <option value="">彰化縣</option>
-                                            <option value="">南投縣</option>
-                                            <option value="">雲林縣</option>
-                                            <option value="">嘉義市</option>
-                                            <option value="">嘉義縣</option>
-                                            <option value="">台南市</option>
-                                            <option value="">高雄市</option>
-                                            <option value="">屏東縣</option>
-                                            <option value="">台東縣</option>
-                                            <option value="">花蓮縣</option>
-                                            <option value="">宜蘭縣</option>
-                                            <option value="">澎湖縣</option>
-                                            <option value="">金門縣</option>
-                                            <option value="">連江縣</option>
+                                            <option value="基隆市">基隆市</option>
+                                            <option value="台北市">台北市</option>
+                                            <option value="新北市">新北市</option>
+                                            <option value="桃園縣">桃園縣</option>
+                                            <option value="新竹市">新竹市</option>
+                                            <option value="新竹縣">新竹縣</option>
+                                            <option value="苗栗縣">苗栗縣</option>
+                                            <option value="台中市">台中市</option>
+                                            <option value="彰化縣">彰化縣</option>
+                                            <option value="南投縣">南投縣</option>
+                                            <option value="雲林縣">雲林縣</option>
+                                            <option value="嘉義市">嘉義市</option>
+                                            <option value="嘉義縣">嘉義縣</option>
+                                            <option value="台南市">台南市</option>
+                                            <option value="高雄市">高雄市</option>
+                                            <option value="屏東縣">屏東縣</option>
+                                            <option value="台東縣">台東縣</option>
+                                            <option value="花蓮縣">花蓮縣</option>
+                                            <option value="宜蘭縣">宜蘭縣</option>
+                                            <option value="澎湖縣">澎湖縣</option>
+                                            <option value="金門縣">金門縣</option>
+                                            <option value="連江縣">連江縣</option>
                                         </select>
                                         <div class="arrow_container">
                                             <img src="imgs/down-arrow.svg" alt="">
                                         </div>
                                     </div>
                                     <div class="input_alert z_input_alert z_display-b-phone z_display-n-pc">
-                                        <p class="alert">！　請選擇縣市</p>
+                                        <!-- <p class="alert">！　請選擇縣市</p> -->
                                     </div>
                                     <div class="z_select_dropdown_half_container">
                                         <select id="distSelect" name="item_dist" class="z_select_dropdown">
                                             <option value="" selected disabled>----請選擇縣市----</option>
-                                            <option value="">松山區</option>
-                                            <option value="">信義區</option>
-                                            <option value="">大安區</option>
-                                            <option value="">中山區</option>
-                                            <option value="">中正區</option>
-                                            <option value="">大同區</option>
-                                            <option value="">萬華區</option>
-                                            <option value="">文山區</option>
-                                            <option value="">南港區</option>
-                                            <option value="">內湖區</option>
-                                            <option value="">士林區</option>
-                                            <option value="">北投區</option>
+                                            <option value="松山區">松山區</option>
+                                            <option value="信義區">信義區</option>
+                                            <option value="大安區">大安區</option>
+                                            <option value="中山區">中山區</option>
+                                            <option value="中正區">中正區</option>
+                                            <option value="大同區">大同區</option>
+                                            <option value="萬華區">萬華區</option>
+                                            <option value="文山區">文山區</option>
+                                            <option value="南港區">南港區</option>
+                                            <option value="內湖區">內湖區</option>
+                                            <option value="士林區">士林區</option>
+                                            <option value="北投區">北投區</option>
                                         </select>
                                         <div class="arrow_container">
                                             <img src="imgs/down-arrow.svg" alt="">
@@ -1065,17 +1065,15 @@
         }
         console.log(el.name);
     }
-    $(document).ready(function(){
-        const area = areaName[$(this).text()]
-        console.log(areaName);
-        $('#areaSelect option').each(function(index,area){
-            $(this).html(areaName)
-        // console.log('index',areaName[index]);
-        // console.log('index',index);
-        // console.log('item',area);
-    })
-
-
+    // $(document).ready(function(){
+    //     const area = areaName[$(this).text()]
+    //     console.log(areaName);
+    //     $('#areaSelect option').each(function(index,area){
+    //         $(this).html(areaName)
+    //     // console.log('index',areaName[index]);
+    //     // console.log('index',index);
+    //     // console.log('item',area);
+    // })
 
 
     $("select").on({

@@ -199,7 +199,7 @@
         .uploadimg_after img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: fill;
             position: absolute;
         }
 
@@ -695,9 +695,9 @@
                             <img  alt="" class="" id="nowimg">
                         </div>
                         <div class="uploadimg_before">
-                            <p>您可以拖拉圖片至此處</p>
+                            <!-- <p>您可以拖拉圖片至此處</p> -->
                             <div class="z_upload_item_img_btn">
-                                <button type="button" id="upload_btn"><img src="imgs/uploadicon.svg" alt="">或是點此上傳</button>
+                                <button type="button" id="upload_btn"><img src="imgs/uploadicon.svg" alt="">點此上傳</button>
                             </div>
                             <input type="file" id="imgUpload" accept="image/* " name="certificate">
                         </div>

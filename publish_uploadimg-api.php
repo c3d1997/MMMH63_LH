@@ -7,11 +7,11 @@
     $new_item = $stmt['COUNT(*)'] + 1;
 
     $_SESSION['item_c'] = $new_item;
-
+    $_SESSION['img_arr'] =  json_decode($_POST['img_arr']);
     $_SESSION['roommate_info'] = $_POST['roommate_info'];
     $_SESSION['hobby'] = $_POST['hobby'];
     $_SESSION['item_info'] = $_POST['item_info'];
-
+    $_SESSION['certificate'] = json_decode($_POST['certificate']);
     // 下載圖片
     $path = 'imgs/items'.$new_item;
     if(!file_exists($path)){
