@@ -2,28 +2,52 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        path {
+            cursor: pointer;
+            fill: grey
+        }
+
+        .clicked {
+            fill: #ff0000;
+        }
+    </style>
 </head>
 
 <body>
-  <button type="button" onclick="removeDiv()">Add a div</button>
+    <svg width="100%" height="100%" viewBox="400 0 500 320" preserveAspectRatio="xMidYMid meet"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
-  <script src="../js/jquery-3.6.0.js"></script>
-  <script>
-    function removeDiv() {
-      let div = document.createElement('div');
-      div.textContent = `Sample text, created on ${new Date()}`;
-      div.addEventListener('click', remove);
-      document.body.remove(div);
-    }
 
-    function remove(e) {
-      e.target.remove();
-    }
-  </script>
+        <path id="sweden" d="M497.7,104.6l2,1.8h3.7l2,3.9l0.5,6.7l-5,3.5v3.5l-3.5,4.8l-2,0.2l-2.8,4.6l0.2,4.4l4.8,3.5l-0.4,2l-1.8,2.8
+        l-2.8,2.4l0.2,7.9l-4.2,1.5l-1.5,3.1h-2l-1.1-5.5l-4.6-7l3.8-6.3l0.3-15.6l2.6-1.4l0.6-8.9l7.4-10.6L497.7,104.6L497.7,104.6z
+        M498.5,150.2l-2.1,1.7l1.1,2.4l1.9-1.8L498.5,150.2L498.5,150.2z"></path>
+
+    </svg>
+
+
+    <script src="/js/jquery-3.6.0.js"></script>
+    <script>
+        // first we get all the path elements and put them in an array
+        let paths = document.getElementsByTagName('path')
+
+        //now we can loop over the array and add an eventlistener to each path in the array
+        // it listens to the 'click' event and then runs function toggleClass()
+        for (let i = 0; i < paths.length; i++) {
+            paths[i].addEventListener('click', toggleClass)
+        }
+
+        // In the function toggleClass we can toggle the 'clicked' class.
+        function toggleClass() {
+            this.classList.toggle('clicked')
+        }
+    </script>
+
+
 </body>
 
 </html>

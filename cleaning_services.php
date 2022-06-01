@@ -100,6 +100,7 @@
         height: 211px;
         opacity: .5;
         /* outline: 1px solid purple; */
+        cursor: pointer;
     }
 
     .n-npetur img {
@@ -680,7 +681,7 @@
 
         <div class="n-ntwobutton">
             <button class="pc-button-F4F4F4-180">清除資料</button>
-            <button class="pc-button-FEAC00-180">確認送出</button>
+            <button class="pc-button-FEAC00-180"><a href="cleanpay_way.php" style="text-decoration:none; color:#0E2E3D;">確認送出</a></button>
         </div>
 
 
