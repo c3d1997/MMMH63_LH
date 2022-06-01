@@ -1108,7 +1108,7 @@ $k = $stmt->fetch();
                         <span id="ok_time" style="height:30px;">點選上方</span>
                     </div>
 
-                    <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a href="./FinalCheck_page.php">我要租屋</a></button>
+                    <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a href="FinalCheck_page.php">我要租屋</a></button>
                 </form>
 
             </div>
