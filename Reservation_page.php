@@ -100,7 +100,12 @@ $i = $stmt->fetch();
     text-decoration: none;
     color: #0E2E3D;
 }
-
+#infoModal {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 100%;
+}
 
 
 
@@ -187,6 +192,7 @@ $i = $stmt->fetch();
         /* flex-direction: row-reverse; */
         justify-content: center;
         margin: 20px 0 40px;
+        position: relative;
     }
     .pc-button-FEAC00-180 {
         width: 162.5px;
@@ -211,6 +217,7 @@ $i = $stmt->fetch();
     </style>
 
 <?php include __DIR__ . './part/nav.php'  ?>
+<!-- <link rel="stylesheet" href="product-card\warning_card.css"> -->
 
     <!-- 自己頁面的html -->
     <div class="container">
@@ -223,13 +230,13 @@ $i = $stmt->fetch();
                 <div class="S-Reservation-wrap">
                     <div class="S-Reservation">
                         <div class="S-Reservation-img">
-                        <img src="<?= $i['img'] ?>item0.jpg" alt="">
+                        <img src="imgs/items<?= 1 ?>/item1.jpg" alt="">
                         </div>
                         <div class="S-Reservation-info">
                             <h3 class="S-Reservation-price S-lg-d-none S-xs-d-block">$<?= number_format($i['price']) ?>/月</h3>
                             <h2 class="S-Reservation-name"><?= $i['item_name'] ?></h2>
                             <h3 class="S-Reservation-location">
-                                <i class="fa-solid fa-location-dot"></i><?= $i['area'], $i['dist'] ,$i['address'] ?>
+                                <i class="fa-solid fa-location-dot"></i><?= $i['item_area'], $i['item_dist'] ,$i['item_address'] ?>
                             </h3>
                             <h2 class="S-Reservation-date" id="time">
 
