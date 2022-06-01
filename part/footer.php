@@ -64,6 +64,7 @@
     <script src="js/jquery-3.6.0.js"></script>
     <script src="nav-footer\nav-footer.js"></script>
     <script>
+        /*
         $(function() {
             let isLoginCookieStr = "LH_Login",
                 loginStatus = getCookie(isLoginCookieStr);
@@ -90,4 +91,5 @@
             document.cookie = key + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
             document.cookie = key + "=" + value.trim();
         }
+        */
     </script>

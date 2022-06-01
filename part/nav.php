@@ -23,11 +23,12 @@
             </li>
             <div class="phone-nav-link">
                 <li class="x-log x-phone">
-                    <a href="
-                        ">搜尋</a>
+                    <a href="">
+                        搜尋
+                    </a>
                 </li>
                 <li class="x-log x-phone">
-                    <a href="">
+                    <a href="./house_post.php">
                         刊登房屋
                     </a>
                 </li>
@@ -37,7 +38,7 @@
                     </a>
                 </li>
 
-                <?php if (!isset($_SESSION['admin'])) : ?>
+                <?php if (empty($_SESSION['member'])) : ?>
                     <li class="x-log S-nav-login">
                         <a href="sign_signup0530.php">
                             會員登入/註冊
@@ -47,26 +48,28 @@
                 <?php else : ?>
                     <li class=" x-log" id="S-nav-logout">
                         <a href="#">
-                            個人頁面 <img src="imgs/down-arrow.svg" alt="">
+                            <?= empty($_SESSION['member']['name']) ? $_SESSION['member']['EngName'] : $_SESSION['member']['name'] ?><img src="imgs/down-arrow.svg" alt="">
+                            <!-- 個人頁面 -->
                         </a>
+
                     </li>
                     <div class="x-hidden-personaal x-hidden-click">
-                        <a href="">
+                        <a href="../personal-data.php">
                             會員資料
                         </a>
-                        <a href="">
+                        <a href="./house_post.php">
                             刊登物件
                         </a>
                         <a href="">
                             我的租屋
                         </a>
-                        <a href="">
+                        <a href="mycollection_list.php">
                             我的收藏
                         </a>
-                        <a href="">
+                        <a href="promo.php">
                             我的優惠
                         </a>
-                        <a href="">
+                        <a href="house_reserve.php">
                             我的預約
                         </a>
                         <a href="">

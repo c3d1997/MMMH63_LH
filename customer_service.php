@@ -69,12 +69,14 @@
         margin-bottom: 15px;
         height: 5%;
         display: flex;
+        align-items: center;
         justify-content: center;
     }
 
     .S-list img {
         width: 30px;
         margin-right: 10px;
+        margin-top: 5px;
     }
 
     .CustomerService-x img {
@@ -109,6 +111,12 @@
         outline: none;
         font-size: 16px;
     }
+
+
+    .fullinput_container {
+        margin-bottom: 15px;
+    }
+
 
     .fullinput_container textarea[placeholder],
     .input_container textarea[placeholder] {
@@ -158,7 +166,7 @@
     }
 
     .bank_area select {
-        color: #0E2E3D;
+        color: rgb(118, 118, 118);
         height: 60px;
         border: none;
         outline: none;
@@ -192,17 +200,19 @@
 
     #infoModal {
         transform: translate(-50%, -50%);
-        position:fixed;
+        position: fixed;
         left: 50%;
         top: 50%;
     }
-    .CustomerService h3{
+
+    .CustomerService h3 {
         font-weight: normal;
     }
-    .mobile-button-F4F4F4-162{
+
+    .mobile-button-F4F4F4-162 {
         background-color: #F4f4f4;
     }
-   
+
     /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
     @media screen and (max-width:376px) {
@@ -295,6 +305,7 @@
         .mobile-button-F4F4F4-162 {
             margin-right: 5px;
             font-size: 20px;
+            background-color: #F1EDEA;
         }
 
         .S-list.button.pc-button-FEAC00-272 {
@@ -352,7 +363,10 @@
         .footer_container {
             margin-top: 860px;
         }
-    }
+
+
+        }
+
 </style>
 
 <?php include __DIR__ . './part/nav.php'  ?>
@@ -401,28 +415,26 @@
                     <div class="input_option">
                         <div class="fullinput_container ">
                             <input type="text" name="" id="" placeholder="請輸入您的姓名">
-                            <div class="alert">*錯誤
-                            </div>
+
                         </div>
                     </div>
                     <!-- 請輸入您的郵件 -->
                     <div class="input_option">
                         <div class="fullinput_container ">
                             <input type="text" name="" id="" placeholder="請輸入您的郵件">
-                            <div class="alert">*錯誤
-                            </div>
+
                         </div>
                     </div>
                     <!-- 請選擇您遭遇的問題分類 -->
                     <!-- 下拉選單 -->
                     <div class="bank_area">
                         <div class="z_select_dropdown_container ">
-                            <select id="bankSelect" name=”bankSelect” class="z_select_dropdown">
-                                <option value=””>請選擇欲詢問的問題分類</option>
-                                <option value=””>搜尋問題</option>
-                                <option value=””>付款問題</option>
-                                <option value=””>契約問題</option>
-                                <option value=””>其他問題</option>
+                            <select id="bankSelect" name="bankSelect" class="z_select_dropdown">
+                                <option selected disabled value="">請選擇欲詢問的問題分類</option>
+                                <option value="">搜尋問題</option>
+                                <option value="">付款問題</option>
+                                <option value="">契約問題</option>
+                                <option value="">其他問題</option>
                             </select>
                             <div class="arrow_container">
                                 <img src="imgs/down-arrow.svg" alt="">
@@ -434,8 +446,8 @@
                     <div class="input_option S-big">
                         <div class="fullinput_container id=" nowimg">
                             <textarea name="question" id="clean" cols="30" rows="10" placeholder="請詳細描述您的問題或是上傳相關圖片，我們將會盡快已郵件回覆您" style="outline: none;"></textarea>
-                            <div class="alert">*錯誤
-                            </div>
+                            <!-- <div class="alert">*錯誤
+                            </div> -->
                         </div>
                     </div>
                     <div class="z_upload_item_img_btn">
