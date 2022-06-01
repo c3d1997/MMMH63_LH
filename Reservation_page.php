@@ -102,12 +102,20 @@ $i = $stmt->fetch();
 }
 #infoModal {
     transform: translate(-50%, -50%);
-    position: absolute;
+    position:fixed;
     left: 50%;
-    top: 100%;
+    top: 50%;
+
 }
 
 
+
+
+/* ----------------壓過CSS--------------------------- */
+button.pc-button-FEAC00-272{
+    font-weight:normal;
+
+}
 
 
 
@@ -217,7 +225,6 @@ $i = $stmt->fetch();
     </style>
 
 <?php include __DIR__ . './part/nav.php'  ?>
-<!-- <link rel="stylesheet" href="product-card\warning_card.css"> -->
 
     <!-- 自己頁面的html -->
     <div class="container">
