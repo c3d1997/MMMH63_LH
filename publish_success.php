@@ -1,33 +1,12 @@
-<?php 
-$title = '租屋明細';
-require './part/connect-db.php';
-
-// 帶入會員資料
-$msql = "SELECT * FROM `members` WHERE `sid` = 1;";
-$stmt = $pdo->query($msql);
-$m = $stmt->fetch();
-
-// 帶入支付方式 pay
-$psql = "SELECT * FROM `pay` WHERE `sid` = 1;";
-$stmt = $pdo->query($psql);
-$p = $stmt->fetch();
-
-
-$sql = "SELECT *     FROM `items` WHERE `sid` = 1;";
-$i = $pdo->query($sql)->fetch();
-$sql = "SELECT *     FROM `items` WHERE `item_imgs`";
-$img = $pdo->query($sql)->fetch();
-
+<?php
+$title = '付款成功'
 ?>
 
+<?php include __DIR__ . './part/payhead.php'  ?>
 
-<?php include __DIR__ . './part/head.php'  ?>
     <style>
         * {
-            margin: 0;
-        }
-        .z_ml-5 {
-            margin-left: 5px;
+        margin: 0;
         }
         .display-n {
             display: none;
@@ -100,15 +79,15 @@ $img = $pdo->query($sql)->fetch();
             cursor: pointer;
             display: inline-block;
             padding-left: 30px;
-            /* line-height: 24px; */
-            background: url(../imgs/unchecked.svg) no-repeat left top;
+            line-height: 20px;
+            background: url(imgs/unchecked.svg) no-repeat left top;
             user-select: none;
         }
         input[type=checkbox]:checked+span {
             display: inline-block;
             padding-left: 30px;
-            /* line-height: 24px; */
-            background-image: url(../imgs/checked.svg);
+            line-height: 20px;
+            background-image: url(imgs/checked.svg);
         }
 
         .z_button_correct {
@@ -440,7 +419,6 @@ $img = $pdo->query($sql)->fetch();
         .z_pay_detail_container {
             display: flex;
             margin-bottom: 50px;
-            max-height: 550px;
         }
         .z_people_info_container {
             order: 0;
@@ -466,8 +444,6 @@ $img = $pdo->query($sql)->fetch();
         }
         .z_pay_detail_img img{
             width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
         .z_pay_detail_text {
             margin-left: 75px;
@@ -509,7 +485,7 @@ $img = $pdo->query($sql)->fetch();
             display: flex;
         }
         .bank_area select{
-            
+            color: #0E2E3D;
             height: 60px;
             border: none;
             outline: none;
@@ -661,7 +637,6 @@ $img = $pdo->query($sql)->fetch();
             }
             .z_pay_detail_container {
                 display: block;
-                max-height: none;
             }
             .z_pay_detail_img {
                 width: 100%;
@@ -712,50 +687,26 @@ $img = $pdo->query($sql)->fetch();
             }
         }
     </style>
+
 <?php include __DIR__ . './part/nav.php'  ?>
 
     <section class="z_section">
-        <div class="z_paycontainer ">
-            <h2 class="z_pay_detail_title">租屋明細</h2>
-            <div class="z_pay_detail_container">
-                <div class="z_pay_detail_img">
-                    <img src="imgs/items<?= 1 ?>/item4.jpg">
-
-                </div>
-                <div class="z_pay_detail_text">
-                    <div class=" z_people_info_container">
-                        <h3 class="bold z_detail_mb">租屋人資訊</h3>
-                        <p class="z_detail_mb">姓名：<?= $m['name'] ?></p>
-                        <p class="z_detail_mb">手機：<?= $m['mobile'] ?></p>
-                        <p>身分證：<?= $m['Id_number'] ?></p>
+        <div class="z_paycontainer">
+            <div class="z_paydata_container z_margin-center ">
+                <div class="z_pay_success_container">
+                    <h1 class="z_pay_success_title">刊登成功</h1>
+                    <div class="z_pay_success_tip_container">
+                        <p class="z_pay_success_tip">恭喜刊登成功 !</p>
+                        <p class="z_pay_success_tip"></p>
                     </div>
-                    <div class="z_pay_info_container">
-                        <h3 class="bold z_detail_mb">付款資訊</h3>
-                        <p class="z_detail_mb">付款方式：<?= $p['payway'] ?></p>
-                    </div>
-                    <div class="z_detail_info_container">
-                        <p class="z_detail_cost_phone z_detail_mb ">$<?= number_format($i['price'])?>/月</p>
-                        <p class="z_detail_items_name z_detail_mb"><?= $i['item_name'] ?></p>
-                        <div class="z_detail_mb z_detail_icon_items_center">
-                            <img class="z_mr-5" src="imgs/bus.svg" alt="">
-                            <span class="z_detail_mb z_ml-5"><?= $i['close_station'] ?></span>
-                        </div>
-                        <div class="z_detail_mb z_detail_icon_items_center">
-                            <img class="z_mr-5" src="imgs/position.svg" alt="">
-                            <span class="z_detail_mb z_ml-5"><?= $i['item_area'], $i['item_dist'] ,$i['item_address'] ?></span>
-                        </div>
-                        <div class="z_detail_icon_items_center">
-                            <img class="z_mr-5" src="imgs/ping.svg" alt="">
-                            <span class="z_icon_type_mr z_ml-5"><?= $i['ping_number'] ?></span>
-                            <img src="imgs/type.svg" alt="">
-                            <span class="z_icon_type_mr z_icon_type_nomr z_ml-5"><?= $i['rentaltype'], $i['floor']?></span>
-                            <p class="z_detail_cost z_ml-5">$<?= number_format($i['price']) ?>/月</p>
-                        </div>
+                    <div class="z_twobtn z_btn_reverse">
+                        <button class="pc-button-F4F4F4-180 z_phone_162 "><a href="home_page.php">返回首頁</a></button>
+                        
+                        <button class="pc-button-FEAC00-180 z_phone_162 "><a href="single_product.php">查看物件</a></button>
+                        
+                        </button>
                     </div>
                 </div>
-            </div>
-            <div class="z_d_flex z_justify-content_center z_grow " >
-                <button class="z_maxbtn pc-button-FEAC00-180 z_phone_162 ">繼續</button>
             </div>
         </div>
     </section>
