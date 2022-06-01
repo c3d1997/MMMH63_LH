@@ -29,7 +29,7 @@ button.pc-button-FEAC00-272 {
     height: 70px;
     width: 332px;
     font-size: 32px;
-    font-weight: 900;
+    /* font-weight: 900; */
     display: flex;
     align-items: center;
     justify-content: center;
