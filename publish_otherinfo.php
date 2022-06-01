@@ -2,7 +2,7 @@
     require './part/connect-db.php';
 
     // 
-    $_SESSION['certificate'] = json_decode($_POST['certificate']);
+    
     // 
     // $path = 'imgs/items'.$new_item;
     // if(!file_exists($path)){

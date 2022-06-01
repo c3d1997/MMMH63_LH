@@ -195,7 +195,7 @@
         #nowimg {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: fill;
         }
         #mainUpload {
             display: none;
@@ -543,9 +543,9 @@
                 padding: 0 20px;
             }
             .z_step1imgs_container {
-                /* margin-top: 20px; */
+                margin-top: 0px;
                 width: 950%;
-                height: 230px;
+                height: 100%;
                 /* display: block; */
                 flex-wrap: nowrap;
                 justify-content:flex-start;
@@ -554,7 +554,7 @@
             .z_review_card {
                 position: relative;
                 width: 275px;
-                height: 250px;
+                height: 100%;
                 background-color: #EEF1F4;
                 outline: 3px solid #0E2E3D;
                 margin-right: 40px;
@@ -573,6 +573,8 @@
                 /* width: 120%; */
                 overflow:scroll;
                 height: 300px;
+                border: 3px solid #0E2E3D;
+                padding: 5px 0;
             }
             .z_publish_phone_tip_container {
                 padding: 0 30px;
@@ -693,6 +695,10 @@
                 top: 50%;
                 transform: translate(-50%);
                 z-index: 5;
+                color: #75BBE3;
+                background-color: transparent;
+                background: rgba(238, 241, 244, 0.486);
+                padding: 5px;
             }
         }
     </style>
@@ -722,7 +728,7 @@
                     </div>
                     <div class="z_phone_view">
                         <div class="z_step1imgs_container">
-                        <button id="phone_upload_btn" type="button"><img src="imgs/uploadicon.svg" alt="">或是點此上傳</button>
+                        <button id="phone_upload_btn" type="button"><img src="imgs/uploadicon.svg" alt="">點此上傳</button>
                     </div>
                 </div>
                 <a href="publish_item_detail.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_maxbtn" onclick="saveAllImg()">下一步</button></a>
@@ -769,15 +775,21 @@
 
         function saveAllImg() {
             $.ajax({
-                // url:"publish_uploadimg-api.php",
-                url:"publish_item_detail.php",
+                url:"publish_uploadimg-api.php",
+                // url:"publish_item_detail.php",
                 method: "post",
                 data: {
                     img_arr : JSON.stringify(img_arr),
                 },
             })
-        }
-
+            $.ajax({
+                url:"publish_uploadimg-api.php",
+                // url:"publish_otherinfo.php",
+                method: "post",   
+                data: {certificate : JSON.stringify(certificate)},
+            })
+        }  
+        
         </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>
