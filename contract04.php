@@ -399,11 +399,11 @@
     
     <div class="c_button_section">
         <div class="c_button_left">
-            <button type="button" onclick="clearCanvas()" class="pc-button-F4F4F4-180">清除資料</button>
+            <button type="button" onclick="clearCanvas()" class="pc-button-FEAC00-180">清除資料</button>
         </div>
         
             <div class="c_button_right">
-                <button onclick="saveCanvas()" class="pc-button-FEAC00-180">送出</button>
+                <button onclick="saveCanvas()" class="pc-button-F4F4F4-180">送出</button>
             </div>
         </form>
     </div>

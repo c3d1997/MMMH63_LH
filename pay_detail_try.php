@@ -15,8 +15,8 @@ $p = $stmt->fetch();
 
 $sql = "SELECT *     FROM `items` WHERE `sid` = 1;";
 $i = $pdo->query($sql)->fetch();
-// $sql = "SELECT *     FROM `items` WHERE `item_imgs`";
-// $img = $pdo->query($sql)->fetch();
+$sql = "SELECT *     FROM `items` WHERE `item_imgs`";
+$img = $pdo->query($sql)->fetch();
 
 ?>
 
