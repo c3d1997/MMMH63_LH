@@ -10,13 +10,30 @@ $title = 'LittleHouse';
         height: 80px;
         /* border: 1px solid; */
         position: fixed;
-        right: 4%;
+        right: 3%;
         bottom: 10%;
         z-index: 9;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color:#F4F4F4;
+        background-color: #F4F4F4;
+        /* border: 1px solid  #0E2E3D; */
+        border-radius: 25%;
+        cursor: pointer;
+    }
+
+    .x-home-page-chat {
+        width: 80px;
+        height: 80px;
+        /* border: 1px solid; */
+        position: fixed;
+        right: 3%;
+        bottom: 22%;
+        z-index: 9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #F4F4F4;
         /* border: 1px solid  #0E2E3D; */
         border-radius: 25%;
         cursor: pointer;
@@ -29,13 +46,20 @@ $title = 'LittleHouse';
 
     }
 
-    
+    .x-home-page-chat img {
+        object-fit: contain;
+        width: 60%;
+        transition: .5s;
+    }
+
+
 
     .top-link-hide {
         visibility: hidden;
         opacity: 0;
-        transition:.5s ;
+        transition: .5s;
     }
+
     .top-link-show {
         visibility: visible;
         opacity: 1;
@@ -1009,6 +1033,11 @@ $title = 'LittleHouse';
     <div class="x-home-page-scroll-top top-link-hide" id="sc-top-js">
         <img src="./imgs/arrow-up.svg" alt="">
     </div>
+    <a href="customer_service.php">
+        <div class="x-home-page-chat" id="chat-js">
+            <img src="./imgs/comment-bubble.svg" alt="">
+        </div>
+    </a>
     <div class="x-home-page-slogan">
         <div class="container">
             <div class="x-slogan">
@@ -1446,10 +1475,20 @@ $title = 'LittleHouse';
         }
     };
 
-    scrollTopButton.onclick = function(e){
+    scrollTopButton.onclick = function(e) {
         e.preventDefault();
         scrollToTop();
     }
+
+    // 箭頭動畫
+    $('#sc-top-js').mouseenter(function() {
+
+        $('#sc-top-js').css('transform', 'translateY(-5px)')
+    })
+    $('#sc-top-js').mouseleave(function() {
+
+        $('#sc-top-js').css('transform', 'translateY(5px)')
+    })
 </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>

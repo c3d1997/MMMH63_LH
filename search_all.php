@@ -1190,9 +1190,6 @@ require './part/connect-db.php';
                     <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
                     <label class="onoffswitch-label" for="myonoffswitch"></label>
                 </div>
-                <div>
-                    <h3>彈性價錢</h3>
-                </div>
             </div>
             <div class="x-hidden-DisplayNone">
 
