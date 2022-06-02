@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="Store To Session Storage" onclick="store()"/>
+    <script>
+        function store () {
+          // (A) VARIABLES TO PASS
+          var first = "Foo Bar",
+              second = ["Hello", "World"];
+         
+          // (B) SAVE TO SESSION STORAGE
+          // (B1) FLAT STRING OR NUMBER
+          // SESSIONSTORAGE.SETITEM("KEY", "VALUE");
+          sessionStorage.setItem("first", first);
+         
+          // (B2) ARRAY OR OBJECT
+          // SESSION STORAGE CANNOT STORE ARRAY AND OBJECTS
+          // JSON ENCODE BEFORE STORING, CONVERT TO STRING
+          sessionStorage.setItem("second", JSON.stringify(second));
+         
+          // (C) REDIRECT
+          location.href = "./timetime02.html";
+          window.open("timetime02.html");
+        }
+        </script>
+        
+
+    </script>
+
+</body>
+
+</html>

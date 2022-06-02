@@ -208,6 +208,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: baseline;
+    z-index: 5;
 
 }
 
@@ -281,7 +282,17 @@ a {
     object-fit: cover;
     z-index: -1;
 }
-
+.z_close_icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url(imgs/closeicon.svg);
+    background-position: center;
+    z-index: 5;
+}
 
 
 @media screen and (max-width:376px) {
@@ -392,7 +403,9 @@ a {
                         <p>身分證/護照(正面)</p>
                     </div>
                     <div class="c_idcard_wrap wrap_1">
-                        <img src="" alt="">
+                        <button class="z_close_icon" type="button"></button>
+                        <img src="imgs\uploadbg.jpg" alt="" class="" >
+                        <img  alt="" class="nowimg" id="">
                         <input type="file" name="" id="pid_on_true" accept="image/*">
                         <div class="c_upload_sign" id="pid_on">
                             <div class="c_upload_icon">
@@ -413,7 +426,9 @@ a {
                         <p>身分證/護照(反面)</p>
                     </div>
                     <div class="c_idcard_wrap wrap_2">
-                        <img src="" alt="">
+                        <button class="z_close_icon" type="button"></button>
+                        <img src="imgs\uploadbg.jpg" alt="" class="" >
+                        <img  alt="" class="nowimg" id="">
                         <input type="file" name="" id="pid_in_true" accept="image/*">
                         <div class="c_upload_sign" id="pid_in">
                             <div class="c_upload_icon">
@@ -440,7 +455,9 @@ a {
                         <p>健保卡(正面)</p>
                     </div>
                     <div class="c_idcard_wrap wrap_3">
-                        <img src="" alt="">
+                        <button class="z_close_icon" type="button"></button>
+                        <img src="imgs\uploadbg.jpg" alt="" class="" >
+                        <img  alt="" class="nowimg" id="">
                         <input type="file" name="" id="hid_on_true" accept="image/*">
                         <div class="c_upload_sign" id="hid_on">
                             <div class="c_upload_icon">
@@ -465,7 +482,9 @@ a {
                         <p>健保卡(反面)</p>
                     </div>
                     <div class="c_idcard_wrap wrap_4">
-                        <img src="" alt="">
+                        <button class="z_close_icon" type="button"></button>
+                        <img src="imgs\uploadbg.jpg" alt="" class="" >
+                        <img  alt="" class="nowimg" id="">
                         <input type="file" name="" id="hid_in_true" accept="image/*">
                         <div class="c_upload_sign" id='hid_in'>
                             <div class="c_upload_icon">
@@ -520,7 +539,8 @@ a {
     <div class="container">
         <div class="c_button_section">
             <div class="c_button_right">
-                <button class="pc-button-FEAC00-180"><a href="contract03.php" style="text-decoration: none; color:#0E2E3D;">送出</a></button>
+            <a href="contract03.php" style="text-decoration: none; color:#0E2E3D;"><button class="pc-button-FEAC00-180">送出</button></a>
+                
             </div>
             <div class="c_button_left">
                 <button class="pc-button-F4F4F4-180">清除資料</button>
@@ -535,52 +555,59 @@ a {
             $(this).prev().click()
         })
         $("#pid_on_true").change(function(){
-            console.log(this);
+            $(this).prev().css("z-index","2")
             readURL1(this);
         });
         function readURL1(input){
         //   if(input.files && input.files[0]){
             var reader = new FileReader();
             reader.onload = function (e) {
-                $(".wrap_1 img").attr('src', e.target.result);
+                $(".wrap_1 .nowimg").attr('src', e.target.result);
             }
             reader.readAsDataURL(input.files[0]);
         }
         $("#pid_in_true").change(function(){
-            console.log(this);
+            $(this).prev().css("z-index","2")
             readURL2(this);
         });
         function readURL2(input){
         //   if(input.files && input.files[0]){
             var reader = new FileReader();
             reader.onload = function (e) {
-                $(".wrap_2 img").attr('src', e.target.result);
+                $(".wrap_2 .nowimg").attr('src', e.target.result);
             }
             reader.readAsDataURL(input.files[0]);
         }
         $("#hid_on_true").change(function(){
-            console.log(this);
+            $(this).prev().css("z-index","2")
             readURL3(this);
         });
         function readURL3(input){
         //   if(input.files && input.files[0]){
             var reader = new FileReader();
             reader.onload = function (e) {
-                $(".wrap_3 img").attr('src', e.target.result);
+                $(".wrap_3 .nowimg").attr('src', e.target.result);
             }
             reader.readAsDataURL(input.files[0]);
         }
         $("#hid_in_true").change(function(){
-            console.log(this);
+            $(this).prev().css("z-index","2")
             readURL4(this);
         });
         function readURL4(input){
         //   if(input.files && input.files[0]){
             var reader = new FileReader();
             reader.onload = function (e) {
-                $(".wrap_4 img").attr('src', e.target.result);
+                $(".wrap_4 .nowimg").attr('src', e.target.result);
             }
             reader.readAsDataURL(input.files[0]);
         }
+        $(".z_close_icon").click(function(){
+            $(this).next().css("z-index","2")
+            console.log( $(this).next());
+            $(this).next().next().removeAttr("src")
+            console.log( $(this).next().next())
+            $(this).next().next().css("z-index","-1")
+        })
     </script>
 <?php include __DIR__ . './part/javascript.php'  ?>

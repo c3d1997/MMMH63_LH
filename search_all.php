@@ -3,15 +3,6 @@ $pageName = 'searchpage';
 $title = '搜尋畫面';
 require './part/connect-db.php';
 
-
-// $item = isset($_GET['item']) ? intval($_GET['item']) : 0 ;
-// $parmas = [];
-
-// $where = ' WHERE 1 ';
-// if(!empty($item)){
-//     $where .= "AND "
-// }
-// 
 ?>
 
 <?php include __DIR__ . './part/searchead.php'  ?>
@@ -23,6 +14,10 @@ require './part/connect-db.php';
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .x-search-keyword-input-form {
+        flex-direction: row;
     }
 
     .x-search {
@@ -1018,7 +1013,7 @@ require './part/connect-db.php';
     }
 
     .x-search-list-content-icon {
-        width: 288px;
+        width: 345px;
         padding: 95px 0px;
         display: flex;
         align-items: center;
@@ -1167,456 +1162,427 @@ require './part/connect-db.php';
                 <button class="pc-button-F4F4F4-272">進階搜尋</button>
             </div>
             <div class="x-search-keyword-input">
-                <input class="x-search-input-setting" type="text" name="name" placeholder="關鍵字搜尋">
 
-                <svg width="30" height="30" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.647 24.3125C20.1698 24.3125 24.647 19.8353 24.647 14.3125C24.647 8.78965 20.1698 4.3125 14.647 4.3125C9.12413 4.3125 4.64697 8.78965 4.64697 14.3125C4.64697 19.8353 9.12413 24.3125 14.647 24.3125Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M27.147 26.8125L21.7095 21.375" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+                <input class="x-search-input-setting" type="text" placeholder="關鍵字搜尋">
+                <div onclick="datacheck()">
+                    <svg width="30" height="30" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.647 24.3125C20.1698 24.3125 24.647 19.8353 24.647 14.3125C24.647 8.78965 20.1698 4.3125 14.647 4.3125C9.12413 4.3125 4.64697 8.78965 4.64697 14.3125C4.64697 19.8353 9.12413 24.3125 14.647 24.3125Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M27.147 26.8125L21.7095 21.375" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+
+
+
+
+
+
+
 
             </div>
-            <form id="search_list_form" action="search_all_list.php" method="post">
-                <div class="x-search-price-bar ">
-                    <input type="text" class="js-range-slider" name="price" value="" data-type="double" data-min="5000" data-max="50000" data-step="500" />
-                </div>
-                <div class="x-search-price-switch ">
-                    <div class="x-search-price-switch-onoff">
-                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
-                        <label class="onoffswitch-label" for="myonoffswitch"></label>
-                    </div>
-                    <div>
-                        <h3>彈性價錢</h3>
-                    </div>
-                </div>
-                <div class="x-hidden-DisplayNone">
-
-                    <div class="x-hidden-scroll-bar">
-                        <div class="x-search-ex">
-
-                            <!-- 租屋類型---------------------------------------------------------------- -->
-                            <div class="x-search-ex-both">
-                                <div class="x-search-ex-title">
-                                    <h3>
-                                        租屋類型
-                                    </h3>
-                                </div>
-                                <div class="x-search-ex-tag">
-                                    <div class="x-search-ex-tag-wrap rentaltype-group">
-                                        <button class=" x-button-only rentaltype" type="button" data-rentaltype="1">
-                                            <p>
-                                                共生
-                                            </p>
-                                        </button>
-                                        <button class=" x-button-only rentaltype" type="button" data-rentaltype="2">
-                                            <p>
-                                                分租
-                                            </p>
-                                        </button>
-                                        <button class=" x-button-only rentaltype" type="button" data-rentaltype="3">
-                                            <p>
-                                                不限分類
-                                            </p>
-                                        </button>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- 地區---------------------------------------------------------------- -->
-                            <div class="x-search-ex-both">
-                                <div class="x-search-ex-title ">
-                                    <h3>
-                                        地區
-                                    </h3>
-                                </div>
-                                <div class="x-search-ex-tag item_area-group">
-                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                        <button class="x-button-only" data-item_area="1" type="button">
-                                            <p>
-                                                新北
-                                            </p>
-                                        </button>
-                                        <button class="x-button-only" data-item_area="2" type="button">
-                                            <p>
-                                                台北
-                                            </p>
-                                        </button>
-                                        <button class="x-button-only" data-item_area="3" type="button">
-                                            <p>
-                                                台中
-                                            </p>
-                                        </button>
-                                        <button class="x-button-only" data-item_area="4" type="button">
-                                            <p>
-                                                高雄
-                                            </p>
-                                        </button>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- 詳細地區---------------------------------------------------------------- -->
-                            <div class="x-search-ex-both">
-                                <div class="x-search-ex-title">
-                                    <h3>
-                                        詳細地區
-                                        <span>(可複選)</span>
-                                    </h3>
-                                </div>
-                                <div class="x-search-ex-tag ">
-                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                板橋區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                三重區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                中和區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                永和區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                新莊區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                新店區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                土城區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                蘆洲區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                樹林區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                汐止區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                鶯歌區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                三峽區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                淡水區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                瑞芳區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                五股區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                泰山區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                林口區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                深坑區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                石碇區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                坪林區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                三芝區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                石門區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                八里區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                平溪區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                雙溪區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                貢寮區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                金山區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                萬里區
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="dist" type="button">
-                                            <p>
-                                                烏來區
-                                            </p>
-                                        </button>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- 房型---------------------------------------------------------------- -->
-                            <div class="x-search-ex-both">
-                                <div class="x-search-ex-title">
-                                    <h3>
-                                        房型
-                                    </h3>
-                                </div>
-                                <div class="x-search-ex-tag roomtype-group">
-                                    <div class="x-search-ex-tag-wrap">
-                                        <button class="x-button-only rentaltype" data-roomtype="1" type="button" value="套房">
-                                            <p>
-                                                套房
-                                            </p>
-                                        </button>
-                                        <button class="x-button-only rentaltype" data-roomtype="2" type="button" value="雅房">
-                                            <p>
-                                                雅房
-                                            </p>
-                                        </button>
-                                        <button class="x-button-only rentaltype" data-roomtype="3" type="button" value="整層">
-                                            <p>
-                                                整層
-                                            </p>
-                                        </button>
-                                        <button class="x-button-only rentaltype" data-roomtype="4" type="button" value="不限房型">
-                                            <p>
-                                                不限房型
-                                            </p>
-                                        </button>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- 坪數---------------------------------------------------------------- -->
-                            <div class="x-search-ex-both">
-                                <div class="x-search-ex-title">
-                                    <h3>
-                                        坪數
-                                    </h3>
-                                </div>
-                                <div class="x-search-ex-tag ping_number-group">
-                                    <div class="x-search-ex-tag-wrap">
-                                        <button class="x-button-only" data-ping_number="1" type="button">
-                                            <p>
-                                                1 - 5 坪
-                                            </p>
-                                        </button>
-                                        <button class="x-button-only" data-ping_number="2" type="button">
-                                            <p>
-                                                5 - 10 坪
-                                            </p>
-                                        </button>
-                                        <button class="x-button-only" data-ping_number="3" type="button">
-                                            <p>
-                                                10 - 15 坪
-                                            </p>
-                                        </button>
-                                        <button class="x-button-only" data-ping_number="4" type="button">
-                                            <p>
-                                                15 - 20 坪
-                                            </p>
-                                        </button>
-                                        <button class="x-button-only" data-ping_number="5" type="button">
-                                            <p>
-                                                不限坪數
-                                            </p>
-                                        </button>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- 特色---------------------------------------------------------------- -->
-                            <div class="x-search-ex-both">
-                                <div class="x-search-ex-title">
-                                    <h3>
-                                        特色<span>(可複選)</span>
-                                    </h3>
-                                </div>
-                                <div class="x-search-ex-tag">
-                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                        <button class="x-button-more" name="feature" type="button">
-                                            <p>
-                                                限女性
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="feature" type="button">
-                                            <p>
-                                                可開伙
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="feature" type="button">
-                                            <p>
-                                                可養寵物
-                                            </p>
-                                        </button>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- 設備---------------------------------------------------------------- -->
-                            <div class="x-search-ex-both">
-                                <div class="x-search-ex-title">
-                                    <h3>
-                                        設備
-                                    </h3>
-                                </div>
-                                <div class="x-search-ex-tag equipment-group">
-                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                        <button class="x-button-only" data-equipment="1" type="button">
-                                            <p>
-                                                有附傢俱
-                                            </p>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 公設---------------------------------------------------------------- -->
-                            <div class="x-search-ex-both">
-                                <div class="x-search-ex-title">
-                                    <h3>
-                                        公設<span>(可複選)</span>
-                                    </h3>
-                                </div>
-                                <div class="x-search-ex-tag">
-                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                        <button class="x-button-more" name="postulate" type="button">
-                                            <p>
-                                                陽台
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="postulate" type="button">
-                                            <p>
-                                                電梯
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="postulate" type="button">
-                                            <p>
-                                                交誼廳
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="postulate" type="button">
-                                            <p>
-                                                廚房
-                                            </p>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 其他費用---------------------------------------------------------------- -->
-                            <div class="x-search-ex-both">
-                                <div class="x-search-ex-title">
-                                    <h3>
-                                        額外費用<span>(可複選)</span>
-                                    </h3>
-                                </div>
-                                <div class="x-search-ex-tag">
-                                    <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start">
-                                        <button class="x-button-more" name="" type="button">
-                                            <p>
-                                                水電費
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="" type="button">
-                                            <p>
-                                                網路費
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="" type="button">
-                                            <p>
-                                                第四台
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="" type="button">
-                                            <p>
-                                                清潔費
-                                            </p>
-                                        </button>
-                                        <button class="x-button-more" name="" type="button">
-                                            <p>
-                                                停車費
-                                            </p>
-                                        </button>
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
-                    <div class="x-search-button">
-                        <button class="pc-button-F4F4F4-180 x-button-clear" type="button">重選</button>
-                        <button id="x-select-btn" class="pc-button-FEAC00-180" type="button" onclick="datacheck()">開始搜尋</button>
-                    </div>
-
-                </div>
-            </form>
-
 
         </div>
+        <form id="search_list_form" action="search_all_list.php" method="post">
+            <div class="x-search-price-bar ">
+                <input type="text" class="js-range-slider" name="price" value="" data-type="double" data-min="5000" data-max="50000" data-step="500" />
+            </div>
+            <div class="x-search-price-switch ">
+                <div class="x-search-price-switch-onoff">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
+                    <label class="onoffswitch-label" for="myonoffswitch"></label>
+                </div>
+            </div>
+            <div class="x-hidden-DisplayNone">
+
+                <div class="x-hidden-scroll-bar">
+                    <div class="x-search-ex">
+
+                        <!-- 租屋類型---------------------------------------------------------------- -->
+                        <div class="x-search-ex-both">
+                            <div class="x-search-ex-title">
+                                <h3>
+                                    租屋類型
+                                </h3>
+                            </div>
+                            <div class="x-search-ex-tag">
+                                <div class="x-search-ex-tag-wrap rentaltype-group">
+                                    <button class=" x-button-only rentaltype" type="button" data-rentaltype="1">
+                                        <p>
+                                            共生
+                                        </p>
+                                    </button>
+                                    <button class=" x-button-only rentaltype" type="button" data-rentaltype="2">
+                                        <p>
+                                            分租
+                                        </p>
+                                    </button>
+                                    <button class=" x-button-only rentaltype" type="button" data-rentaltype="3">
+                                        <p>
+                                            不限分類
+                                        </p>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- 地區---------------------------------------------------------------- -->
+                        <div class="x-search-ex-both">
+                            <div class="x-search-ex-title ">
+                                <h3>
+                                    地區
+                                </h3>
+                            </div>
+                            <div class="x-search-ex-tag ">
+                                <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start item_area-group">
+                                    <button class="x-button-only" data-item_area="1" type="button">
+                                        <p>
+                                            新北市
+                                        </p>
+                                    </button>
+                                    <button class="x-button-only" data-item_area="2" type="button">
+                                        <p>
+                                            台北市
+                                        </p>
+                                    </button>
+                                    <button class="x-button-only" data-item_area="3" type="button">
+                                        <p>
+                                            台中市
+                                        </p>
+                                    </button>
+                                    <button class="x-button-only" data-item_area="4" type="button">
+                                        <p>
+                                            高雄市
+                                        </p>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- 詳細地區---------------------------------------------------------------- -->
+                        <div class="x-search-ex-both">
+                            <div class="x-search-ex-title">
+                                <h3>
+                                    詳細地區
+                                    <span>(可複選)</span>
+                                </h3>
+                            </div>
+                            <div class="x-search-ex-tag ">
+                                <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start item_dist-group">
+                                    <button class="x-button-more" data-item_dist="1" type="button">
+                                        <p>
+                                            板橋區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="2" type="button">
+                                        <p>
+                                            三重區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="3" type="button">
+                                        <p>
+                                            中和區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="4" type="button">
+                                        <p>
+                                            永和區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="5" type="button">
+                                        <p>
+                                            新莊區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="6" type="button">
+                                        <p>
+                                            新店區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="7" type="button">
+                                        <p>
+                                            土城區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="8" type="button">
+                                        <p>
+                                            蘆洲區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="9" type="button">
+                                        <p>
+                                            樹林區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="10" type="button">
+                                        <p>
+                                            汐止區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="11" type="button">
+                                        <p>
+                                            鶯歌區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="12" type="button">
+                                        <p>
+                                            三峽區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="13" type="button">
+                                        <p>
+                                            淡水區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="14" type="button">
+                                        <p>
+                                            瑞芳區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="15" type="button">
+                                        <p>
+                                            五股區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="16" type="button">
+                                        <p>
+                                            泰山區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="17" type="button">
+                                        <p>
+                                            林口區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="18" type="button">
+                                        <p>
+                                            深坑區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="19" type="button">
+                                        <p>
+                                            石碇區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="20" type="button">
+                                        <p>
+                                            坪林區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="21" type="button">
+                                        <p>
+                                            三芝區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="22" type="button">
+                                        <p>
+                                            石門區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="23" type="button">
+                                        <p>
+                                            八里區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="24" type="button">
+                                        <p>
+                                            平溪區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="25" type="button">
+                                        <p>
+                                            雙溪區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="26" type="button">
+                                        <p>
+                                            貢寮區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="27" type="button">
+                                        <p>
+                                            金山區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="28" type="button">
+                                        <p>
+                                            萬里區
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-item_dist="29" type="button">
+                                        <p>
+                                            烏來區
+                                        </p>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- 房型---------------------------------------------------------------- -->
+                        <div class="x-search-ex-both">
+                            <div class="x-search-ex-title">
+                                <h3>
+                                    房型
+                                </h3>
+                            </div>
+                            <div class="x-search-ex-tag ">
+                                <div class="x-search-ex-tag-wrap roomtype-group">
+                                    <button class="x-button-only " data-roomtype="1" type="button" value="套房">
+                                        <p>
+                                            套房
+                                        </p>
+                                    </button>
+                                    <button class="x-button-only " data-roomtype="2" type="button" value="雅房">
+                                        <p>
+                                            雅房
+                                        </p>
+                                    </button>
+                                    <button class="x-button-only " data-roomtype="3" type="button" value="整層">
+                                        <p>
+                                            整層
+                                        </p>
+                                    </button>
+                                    <button class="x-button-only " data-roomtype="4" type="button" value="不限房型">
+                                        <p>
+                                            不限房型
+                                        </p>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- 特色---------------------------------------------------------------- -->
+                        <div class="x-search-ex-both">
+                            <div class="x-search-ex-title">
+                                <h3>
+                                    特色<span>(可複選)</span>
+                                </h3>
+                            </div>
+                            <div class="x-search-ex-tag">
+                                <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start feature-group">
+                                    <button class="x-button-more" data-feature="1" type="button">
+                                        <p>
+                                            限女性
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-feature="2" type="button">
+                                        <p>
+                                            可開伙
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-feature="3" type="button">
+                                        <p>
+                                            可養寵物
+                                        </p>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- 設備---------------------------------------------------------------- -->
+                        <div class="x-search-ex-both">
+                            <div class="x-search-ex-title">
+                                <h3>
+                                    設備
+                                </h3>
+                            </div>
+                            <div class="x-search-ex-tag ">
+                                <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start equipment-group">
+                                    <button class="x-button-only" data-equipment="1" type="button">
+                                        <p>
+                                            有附傢俱
+                                        </p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 公設---------------------------------------------------------------- -->
+                        <div class="x-search-ex-both">
+                            <div class="x-search-ex-title">
+                                <h3>
+                                    公設<span>(可複選)</span>
+                                </h3>
+                            </div>
+                            <div class="x-search-ex-tag">
+                                <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start postulate-group">
+                                    <button class="x-button-more" data-postulate="1" type="button">
+                                        <p>
+                                            陽台
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-postulate="2" type="button">
+                                        <p>
+                                            電梯
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-postulate="3" type="button">
+                                        <p>
+                                            交誼廳
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-postulate="4" type="button">
+                                        <p>
+                                            廚房
+                                        </p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 其他費用---------------------------------------------------------------- -->
+                        <div class="x-search-ex-both">
+                            <div class="x-search-ex-title">
+                                <h3>
+                                    額外費用<span>(可複選)</span>
+                                </h3>
+                            </div>
+                            <div class="x-search-ex-tag">
+                                <div class="x-search-ex-tag-wrap x-search-ex-tag-flex-start other_cost-group">
+                                    <button class="x-button-more" data-other_cost="1" type="button">
+                                        <p>
+                                            水電費
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-other_cost="2" type="button">
+                                        <p>
+                                            網路費
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-other_cost="3" type="button">
+                                        <p>
+                                            第四台
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-other_cost="4" type="button">
+                                        <p>
+                                            清潔費
+                                        </p>
+                                    </button>
+                                    <button class="x-button-more" data-other_cost="5" type="button">
+                                        <p>
+                                            停車費
+                                        </p>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                <div class="x-search-button">
+                    <button class="pc-button-F4F4F4-180 x-button-clear" type="button" onclick="detare()">重選</button>
+                    <button id="x-select-btn" class="pc-button-FEAC00-180" type="button" onclick="datacheck()">開始搜尋</button>
+                </div>
+
+            </div>
+        </form>
+
+
     </div>
+</div>
 </div>
 
 
@@ -1911,7 +1877,7 @@ require './part/connect-db.php';
                             <!-- <img src="../imgs/分享.svg" alt=""> -->
 
                         </div>
-                        <div class="S-lg-like">
+                        <div class="S-lg-like" onclick="likeClick(event)" data-sid="12">
                             <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
                                 <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -2111,7 +2077,7 @@ require './part/connect-db.php';
                             <!-- <img src="../imgs/分享.svg" alt=""> -->
 
                         </div>
-                        <div class="S-lg-like">
+                        <div class="S-lg-like"  onclick="likeClick(event)">
                             <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
                                 <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -2305,6 +2271,7 @@ require './part/connect-db.php';
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.js"></script>
+
 <script>
     $(".js-range-slider").ionRangeSlider({
         skin: "round",
@@ -2355,46 +2322,172 @@ require './part/connect-db.php';
         })
 
     })
-    $('#x-select-btn').on('click', function() {
 
-    })
+
+    // 搜尋送出按鈕
+
+    function datacheck() {
+        // 單選房屋分類
+        // const typeBtns = $('.x-search-input-setting');
+        // const typeSelected = typeBtns.find('type_search').text().trim();
+        // const datatype = JSON.stringify(typeSelected);
+        //關鍵字
+        const searchtypeBtn = $('.x-search-input-setting');
+        const searchtypeSelected = searchtypeBtn.val().trim();
+        const dataSearchtype = JSON.stringify(searchtypeSelected)
+        //價格
+        const HpriceBtn = $('.x-search-price-bar');
+        const LpriceBtn = $('.x-search-price-bar');
+        const HpriceSelected = HpriceBtn.find('.irs-to').text().split(' ').join('');
+        const LpriceSelected = LpriceBtn.find('.irs-from').text().split(' ').join('');
+        // HpriceBtn.each(function(){
+        //     HpriceSelected.push(HpriceBtn.find('.irs-to').text().trim());
+
+        // });
+        const dataHprice = JSON.stringify(HpriceSelected)
+
+        // LpriceBtn.each(function(){
+        //     LpriceSelected.push(LpriceBtn.find('.irs-from').text().trim());
+
+        // });
+        const dataLprice = JSON.stringify(LpriceSelected)
+
+        // 複選詳細地區
+        const itemDistBtns = $('.x-search-ex-tag > .item_dist-group .x-button-more');
+        const itemDistSelected = [];
+        itemDistBtns.each(function() {
+            const btn = $(this);
+            if (btn.hasClass('x-tag-on-click')) {
+                itemDistSelected.push(btn.find('p').text().trim());
+            }
+        });
+        const dataItemDist = JSON.stringify(itemDistSelected);
+
+        // 單選房屋分類
+        const rentalBtns = $('.x-search-ex-tag > .rentaltype-group .x-button-only');
+        const rentalSelected = [];
+        rentalBtns.each(function() {
+            const btn = $(this);
+            if (btn.hasClass('x-tag-on-click')) {
+                rentalSelected.push(btn.find('p').text().trim());
+            }
+        });
+        const dataRental = JSON.stringify(rentalSelected);
+        // const dataRental = $('.x-tag-on-click').attr('data-rentaltype')
+        // 單選地區
+        const areaBtns = $('.x-search-ex-tag > .item_area-group .x-button-only');
+        const areaSelected = [];
+        areaBtns.each(function() {
+            const btn = $(this);
+            if (btn.hasClass('x-tag-on-click')) {
+                areaSelected.push(btn.find('p').text().trim());
+            }
+        });
+        const dataArea = JSON.stringify(areaSelected);
+        // 單選房型
+        const roomBtns = $('.x-search-ex-tag > .roomtype-group .x-button-only');
+        const roomSelected = [];
+        roomBtns.each(function() {
+            const btn = $(this);
+            if (btn.hasClass('x-tag-on-click')) {
+                roomSelected.push(btn.find('p').text().trim());
+            }
+        });
+        const dataRoom = JSON.stringify(roomSelected);
+        // 復選特色
+        const featureBtns = $('.x-search-ex-tag > .feature-group .x-button-more');
+        const featureSelected = [];
+        featureBtns.each(function() {
+            const btn = $(this);
+            if (btn.hasClass('x-tag-on-click')) {
+                featureSelected.push(btn.find('p').text().trim());
+            }
+        });
+        const dataFeture = JSON.stringify(featureSelected);
+        // 單選設備
+        const equipBtns = $('.x-search-ex-tag > .equipment-group .x-button-only');
+        const equipSelected = [];
+        equipBtns.each(function() {
+            const btn = $(this);
+            if (btn.hasClass('x-tag-on-click')) {
+                equipSelected.push(btn.find('p').text().trim());
+            }
+        });
+        const dataEquip = JSON.stringify(equipSelected);
+        // 複選公設
+        const postulateBtns = $('.x-search-ex-tag > .postulate-group .x-button-more');
+        const postulateSelected = [];
+        postulateBtns.each(function() {
+            const btn = $(this);
+            if (btn.hasClass('x-tag-on-click')) {
+                postulateSelected.push(btn.find('p').text().trim());
+            }
+        });
+        const dataPostulate = JSON.stringify(postulateSelected);
+        // 複選額外費用
+        const otherCostBtns = $('.x-search-ex-tag > .other_cost-group .x-button-more');
+        const otherCostSelected = [];
+        otherCostBtns.each(function() {
+            const btn = $(this);
+            if (btn.hasClass('x-tag-on-click')) {
+                otherCostSelected.push(btn.find('p').text().trim());
+            }
+        });
+        const dataOtherCost = JSON.stringify(otherCostSelected);
+        // 給API
+        $.get('search_list.php', {
+                dataHprice,
+                dataLprice,
+                dataRental,
+                dataArea,
+                dataItemDist,
+                dataRoom,
+                dataFeture,
+                dataEquip,
+                dataPostulate,
+                dataOtherCost,
+                dataSearchtype
+            },
+            // 回傳
+            function(data) {
+                $('#search_all_all').html(data);
+            }, 'text');
+
+
+
+
+
+        // $('#search_all_all').html(data);
+        // $.get('search_list.php',function(data){
+        //     $('#search_all_all').html(data);
+        //     // document.getElementById("search_all_all").innerHTML = data;
+
+        // })
+
+    }
     // 單選區
     // 房屋分類
-    
+
     $(".rentaltype-group .x-button-only").click(function() {
         $(this).toggleClass('x-tag-on-click');
         $(this).siblings().removeClass('x-tag-on-click');
-        
-        console.log({
-            rentaltype: $(this).attr('data-rentaltype')
-            
-        })
-        // var dataRentaltype = $('.rentaltype').attr('data-rentaltype')
-        // var dataRentaltype = $('.rentaltype').attr('data-rentaltype')
-        
-    })
-    function datacheck() {
-            $.ajax({
-                url: "search_list.php",
-                method: "GET",
-                data: {
-                    dataR: JSON.stringify($('.x-tag-on-click').attr('data-rentaltype'))
-                },
-                success: function() {
-                    console.log((dataR))
-                }
-            })
-        }
-    
 
+        console.log(
+            // rentaltype: $(this).attr('data-rentaltype');
+            $('.x-tag-on-click').attr('data-rentaltype')
+        )
+        // var dataRentaltype = $('.rentaltype').attr('data-rentaltype')
+        // var dataRentaltype = $('.rentaltype').attr('data-rentaltype')
+
+    })
     // 地區
     $(".item_area-group .x-button-only").click(function() {
         $(this).toggleClass('x-tag-on-click');
         $(this).siblings().removeClass('x-tag-on-click');
 
-        console.log({
-            item_area: $(this).attr('data-item_area')
-        })
+        console.log(
+            $('.x-tag-on-click').attr('data-item_area')
+        )
     })
     // 房屋類型
     $(".roomtype-group .x-button-only").click(function() {
@@ -2424,103 +2517,44 @@ require './part/connect-db.php';
         })
     })
     // 複選區
-
-
-
-
-    $(".x-button-more").click(function() {
+    // 詳細地區
+    $(".item_dist-group .x-button-more").click(function() {
         $(this).toggleClass('x-tag-on-click');
+        console.log({
+            item_dist: $(this).attr('data-item_dist')
+        })
 
     })
-    $(".x-button-clear").click(function() {
-        $('button').removeClass('x-tag-on-click')
+    // 特色
+    $(".feature-group .x-button-more").click(function() {
+        $(this).toggleClass('x-tag-on-click');
+        console.log({
+            item_dist: $(this).attr('data-feature')
+        })
+
     })
-    // 
-
-
-    if (window.innerWidth > 376) {
-        $(".S-lg-share").mousedown(function() {
-            $(this).css({
-                'transform': 'translateY(0px)scale(1.0)'
-
-            })
+    // 公設
+    $(".postulate-group .x-button-more").click(function() {
+        $(this).toggleClass('x-tag-on-click');
+        console.log({
+            item_dist: $(this).attr('data-postulate')
         })
-        $(".S-lg-share").mouseup(function() {
-            $(this).css({
-                'transform': 'translateY(0px)scale(1.1)'
 
-            })
-
+    })
+    // 額外費用
+    $(".other_cost-group .x-button-more").click(function() {
+        $(this).toggleClass('x-tag-on-click');
+        console.log({
+            item_dist: $(this).attr('data-other_cost')
         })
-        $(".S-lg-share").mouseenter(function() {
-            $(this).css({
-                'transform': 'translateY(0px)scale(1.1)'
-
-            })
-
-        })
-        $(".S-lg-share").mouseleave(function() {
-            $(this).css({
-                'transform': 'translateY(0px)scale(1.0)'
-
-            })
-
-        })
-        $(".S-lg-like").mousedown(function() {
-            $(this).css({
-                'transform': 'translateY(0px)scale(1.0)',
-
-            })
-
-        })
-        $(".S-lg-like").mouseup(function() {
-            $(this).css({
-                'transform': 'translateY(0px)scale(1.1)',
-
-            })
-
-        })
-        $(".S-lg-like").mouseenter(function() {
-            $(this).css({
-                'transform': 'translateY(0px)scale(1.1)'
-
-            })
-
-        })
-        $(".S-lg-like").mouseleave(function() {
-            $(this).css({
-                'transform': 'translateY(0px)scale(1.0)'
-
-            })
-
-        })
-    }
-    $(".S-lg-svg").click(function() {
-        console.log(1);
-        $(this).toggleClass('x-svg-color')
-
 
     })
 </script>
 <script>
-    // const Xbtn = document.querySelectorAll('#x-select-btn')
-
-    // Xbtn.addEventListener('click', getData);
-
-    // function getData() {
-    //     const rentaltype = document.querySelectorAll('.rentaltype.x-button-only.x-tag-on-click')
-
-    //     let rentaltypeData;
-    //     let allDataObj = {};
-    //     $rentaltypeData = (rent.length != 0) ? rent[0].getAttribute('data-rentaltype') :'0';
-
-    //     allDataObj = {
-    //         "rentaltype": rentaltypeData,
-    //     }
-
-    //     Api(allDataObj);
-    // }
-    // $_GET['data-rentaltype']
+    function likeClick(event) {
+        const svg = $(event.currentTarget).find('.S-lg-svg');
+        svg.toggleClass('x-svg-color');
+    }
 </script>
 
 

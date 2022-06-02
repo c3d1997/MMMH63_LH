@@ -1,9 +1,71 @@
 <?php
+session_start();
 $pageName = 'home_page';
 $title = 'LittleHouse';
 ?>
 <?php include __DIR__ . './part/head.php'  ?>
 <style>
+    .x-home-page-scroll-top {
+        width: 80px;
+        height: 80px;
+        /* border: 1px solid; */
+        position: fixed;
+        right: 3%;
+        bottom: 10%;
+        z-index: 9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #F4F4F4;
+        /* border: 1px solid  #0E2E3D; */
+        border-radius: 25%;
+        cursor: pointer;
+    }
+
+    .x-home-page-chat {
+        width: 80px;
+        height: 80px;
+        /* border: 1px solid; */
+        position: fixed;
+        right: 3%;
+        bottom: 22%;
+        z-index: 9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #F4F4F4;
+        /* border: 1px solid  #0E2E3D; */
+        border-radius: 25%;
+        cursor: pointer;
+    }
+
+    .x-home-page-scroll-top img {
+        object-fit: contain;
+        width: 60%;
+        transition: .5s;
+
+    }
+
+    .x-home-page-chat img {
+        object-fit: contain;
+        width: 60%;
+        transition: .5s;
+    }
+
+
+
+    .top-link-hide {
+        visibility: hidden;
+        opacity: 0;
+        transition: .5s;
+    }
+
+    .top-link-show {
+        visibility: visible;
+        opacity: 1;
+        transition: .5s;
+    }
+
     .x-home-page-img-effect {
         position: relative;
         width: 100%;
@@ -204,7 +266,7 @@ $title = 'LittleHouse';
 
     @media screen and (max-width:376px) {
 
-        .x-home-page-introduce-symbiosis{
+        .x-home-page-introduce-symbiosis {
             width: 100%;
             max-width: 1280px;
             margin: auto;
@@ -212,14 +274,14 @@ $title = 'LittleHouse';
             padding-top: 460px;
             margin-bottom: 0px;
         }
-    
-        .x-home-page-introduce-sublease{
+
+        .x-home-page-introduce-sublease {
             width: 100%;
             max-width: 1280px;
             margin: auto;
             background: none;
             padding-top: 0px;
-            
+
             margin-bottom: 0px;
         }
 
@@ -968,6 +1030,14 @@ $title = 'LittleHouse';
 </style>
 <?php include __DIR__ . './part/nav.php'  ?>
 <div class="x-home-page-img-effect">
+    <div class="x-home-page-scroll-top top-link-hide" id="sc-top-js">
+        <img src="./imgs/arrow-up.svg" alt="">
+    </div>
+    <a href="customer_service.php">
+        <div class="x-home-page-chat" id="chat-js">
+            <img src="./imgs/comment-bubble.svg" alt="">
+        </div>
+    </a>
     <div class="x-home-page-slogan">
         <div class="container">
             <div class="x-slogan">
@@ -984,18 +1054,18 @@ $title = 'LittleHouse';
                 </p>
             </div>
             <div class="x-search-post">
-                <button class="pc-button-FEAC00-280">
-                    開始搜尋
-                </button>
-                <button class="pc-button-F4F4F4-280">
-                    刊登房屋
-                </button>
-                <button class="mobile-button-FEAC00-162">
-                    開始搜尋
-                </button>
-                <button class="mobile-button-F4F4F4-162">
-                    刊登房屋
-                </button>
+                <a href="search_all.php"><button class="pc-button-FEAC00-280">
+                        開始搜尋
+                    </button></a>
+                <a href="publish_uploadimgx10.php"><button class="pc-button-F4F4F4-280">
+                        刊登房屋
+                    </button></a>
+                <a href="search_all.php"><button class="mobile-button-FEAC00-162">
+                        開始搜尋
+                    </button></a>
+                <a href="publish_uploadimgx10.php"><button class="mobile-button-F4F4F4-162">
+                        刊登房屋
+                    </button></a>
             </div>
         </div>
     </div>
@@ -1325,7 +1395,7 @@ $title = 'LittleHouse';
 </div>
 <?php include __DIR__ . './part/footer.php'  ?>
 <script>
-// 共生分租講解動畫 
+    // 共生分租講解動畫 
     // Get the size of the device screen
     var screenWidth = screen.width;
     var screenHeight = screen.height;
@@ -1382,6 +1452,42 @@ $title = 'LittleHouse';
                 }
             }
         })
+    })
+    // scrolltop
+    const scrollTopButton = document.getElementById('sc-top-js');
+    const scrollFunc = () => {
+        let y = window.scrollY;
+        console.log(y);
+        if (y > 0) {
+            scrollTopButton.classList.add("top-link-show");
+        } else {
+            scrollTopButton.classList.remove("top-link-show");
+        }
+    };
+    window.addEventListener("scroll", scrollFunc);
+
+    const scrollToTop = () => {
+        const c = document.documentElement.scrollTop || document.body.scrollTop;
+
+        if (c > 0) {
+            window.requestAnimationFrame(scrollToTop);
+            window.scrollTo(0, c - c / 10);
+        }
+    };
+
+    scrollTopButton.onclick = function(e) {
+        e.preventDefault();
+        scrollToTop();
+    }
+
+    // 箭頭動畫
+    $('#sc-top-js').mouseenter(function() {
+
+        $('#sc-top-js').css('transform', 'translateY(-5px)')
+    })
+    $('#sc-top-js').mouseleave(function() {
+
+        $('#sc-top-js').css('transform', 'translateY(5px)')
     })
 </script>
 

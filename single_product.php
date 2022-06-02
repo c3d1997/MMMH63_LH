@@ -1,17 +1,14 @@
 <?php
-$title = '單一物件';
 require './part/connect-db.php';
-
-
+$title = '單一物件';
 // 帶入房屋資料
-$ksql = "SELECT * FROM `items` WHERE `sid` = 1;";
+$x = $_GET['sid'];
+$ksql = "SELECT * FROM `items` WHERE `sid` = $x";
+// $ksql = "SELECT * FROM `items` WHERE `sid` = 65";
 $stmt = $pdo->query($ksql);
 $k = $stmt->fetch();
 
 ?>
-
-
-
 <?php include __DIR__ . './part/head.php'  ?>
 
 <link rel="stylesheet" href="./single_product.css">
@@ -26,17 +23,29 @@ $k = $stmt->fetch();
     /* 自己頁面的css */
     /* ----------------calender------------------------- */
     .event-log {
-        font-family: consolas, Monaco, monospace;
-        margin: 10px 5px;
-        line-height: 2;
-        border: 1px solid #4c4c4c;
+        margin: auto;
         height: auto;
-        width: 90%;
-        padding: 2px 6px;
-        color: #4c4c4c;
-        white-space: pre;
+        color: red;
+        font-weight: bold;
+        text-align: center;
+        display: flex;
+        justify-content: center;
     }
 
+    .ok_submit {
+        border: 2px solid red;
+        padding: 5px;
+        margin-left: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: red;
+    }
+
+    a:focus {
+        color: red;
+    }
 
     /* ----------------viewer------------------------- */
 
@@ -81,6 +90,23 @@ $k = $stmt->fetch();
         left: 70%;
     }
 
+    .link{
+        position: relative;
+    }
+    .show_copy{
+        position: absolute;
+        top: -95%;
+        left: 5%;
+        font-weight: bold;
+        color: red;
+        display: none;
+        background-color: #F1EDEA;
+    }
+
+    .js-copy-bob-btn{
+        cursor: pointer;
+    }
+    
     .S-viewer-wrap .S-lg-share {
         font-size: 1.5em;
         margin: 0 20px;
@@ -124,7 +150,6 @@ $k = $stmt->fetch();
         color: #0E2E3D;
         text-decoration: none;
     }
-
 
     /* ------------------------------------------- */
 
@@ -194,7 +219,7 @@ $k = $stmt->fetch();
 
     button.more-img {
         position: absolute;
-        top: 45%;
+        top: 42%;
         left: 46%;
         /* z-index: 888; */
         font-weight: 700;
@@ -218,6 +243,7 @@ $k = $stmt->fetch();
         margin-top: 30px;
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     .S-product-info-right button {
@@ -292,7 +318,7 @@ $k = $stmt->fetch();
 
     .S-menu-title-bg {
         /* margin: 20px; */
-        margin-left: 50px;
+        margin-left: 30px;
         padding: 30px 0 0;
         text-align: center;
     }
@@ -358,10 +384,14 @@ $k = $stmt->fetch();
         height: 30px;
         width: 30px;
     }
-    .center{
+
+    .center {
         justify-content: center;
     }
+
     .S-menu-icon-c img {
+        width: 30px;
+        height: 30px;
         margin: 10px 30px;
     }
 
@@ -676,12 +706,12 @@ $k = $stmt->fetch();
             color: #0E2E3D;
         }
 
-        .S-product-info-right {
+        /* .S-product-info-right {
             margin-top: 30px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-        }
+        } */
 
         button.S-btn-order {
             margin-right: 10px;
@@ -866,6 +896,7 @@ $k = $stmt->fetch();
         }
 
     }
+
 </style>
 
 <?php include __DIR__ . './part/nav.php'  ?>
@@ -885,7 +916,7 @@ $k = $stmt->fetch();
                         <i class="fa-solid fa-share-nodes"></i>
                     </div>
                     <div class="S-lg-like">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">                                        
                             <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                             <path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z" />
                         </svg>
@@ -914,10 +945,16 @@ $k = $stmt->fetch();
                         <path d="M14.9311 8.26221C11.2046 8.26221 8.19873 11.2681 8.19873 14.9946C8.19873 18.7212 11.2046 21.727 14.9311 21.727C18.6577 21.727 21.6636 18.7212 21.6636 14.9946C21.6636 11.2681 18.6577 8.26221 14.9311 8.26221ZM14.9311 19.3716C12.5229 19.3716 10.5542 17.4087 10.5542 14.9946C10.5542 12.5806 12.5171 10.6177 14.9311 10.6177C17.3452 10.6177 19.3081 12.5806 19.3081 14.9946C19.3081 17.4087 17.3393 19.3716 14.9311 19.3716ZM23.5093 7.98681C23.5093 8.85986 22.8061 9.55713 21.939 9.55713C21.0659 9.55713 20.3686 8.854 20.3686 7.98681C20.3686 7.11963 21.0718 6.4165 21.939 6.4165C22.8061 6.4165 23.5093 7.11963 23.5093 7.98681ZM27.9683 9.58056C27.8686 7.47705 27.3882 5.61377 25.8472 4.07861C24.312 2.54346 22.4487 2.06299 20.3452 1.95752C18.1772 1.83447 11.6792 1.83447 9.51123 1.95752C7.41357 2.05713 5.55029 2.5376 4.00928 4.07275C2.46826 5.60791 1.99365 7.47119 1.88818 9.57471C1.76514 11.7427 1.76514 18.2407 1.88818 20.4087C1.98779 22.5122 2.46826 24.3755 4.00928 25.9106C5.55029 27.4458 7.40771 27.9263 9.51123 28.0317C11.6792 28.1548 18.1772 28.1548 20.3452 28.0317C22.4487 27.9321 24.312 27.4517 25.8472 25.9106C27.3823 24.3755 27.8628 22.5122 27.9683 20.4087C28.0913 18.2407 28.0913 11.7485 27.9683 9.58056ZM25.1675 22.7349C24.7104 23.8833 23.8257 24.7681 22.6714 25.231C20.9429 25.9165 16.8413 25.7583 14.9311 25.7583C13.021 25.7583 8.91357 25.9106 7.19092 25.231C6.04248 24.7739 5.15771 23.8892 4.69482 22.7349C4.00928 21.0063 4.16748 16.9048 4.16748 14.9946C4.16748 13.0845 4.01514 8.97705 4.69482 7.25439C5.15185 6.10596 6.03662 5.22119 7.19092 4.7583C8.91943 4.07275 13.021 4.23096 14.9311 4.23096C16.8413 4.23096 20.9487 4.07861 22.6714 4.7583C23.8198 5.21533 24.7046 6.1001 25.1675 7.25439C25.853 8.98291 25.6948 13.0845 25.6948 14.9946C25.6948 16.9048 25.853 21.0122 25.1675 22.7349Z" fill="black" />
                     </svg>
                 </div>
-                <div class="link"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="link">
+                    <div class="show_copy">已拷貝</div>
+                    <a class="js-copy-bob-btn">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8.02138 9.45504C10.607 6.98745 14.9038 6.98745 17.4894 9.45504C19.8145 11.6745 20.1587 15.2123 18.2474 17.7647L18.1962 17.8357C17.7173 18.4705 16.7872 18.6214 16.1222 18.1642C15.4526 17.707 15.2945 16.8192 15.7734 16.1844L15.8246 16.1134C16.8895 14.6885 16.7221 12.7398 15.4247 11.5014C13.9645 10.1076 11.5882 10.1076 10.1233 11.5014L4.90568 16.4863C3.44037 17.8446 3.44037 20.1484 4.90568 21.5467C6.19847 22.7851 8.2446 22.9449 9.73269 21.9284L9.8071 21.8396C10.4767 21.4224 11.4068 21.5689 11.8811 22.2081C12.3601 22.8473 12.2067 23.7351 11.537 24.1923L11.4626 24.2411C8.74683 26.0655 5.12425 25.7725 2.79956 23.5575C0.173584 21.0495 0.173584 16.9835 2.79956 14.4799L8.02138 9.45504ZM21.7398 20.5035C19.1123 23.0115 14.8573 23.0115 12.2299 20.5035C9.90475 18.2841 9.60249 14.7862 11.5138 12.2338L11.5649 12.1628C12.002 11.528 12.9321 11.3771 13.6389 11.8343C14.3086 12.2516 14.4667 13.1393 13.9877 13.8141L13.9366 13.8851C12.8716 15.27 13.0391 17.2587 14.3365 18.4971C15.7967 19.8909 18.173 19.8909 19.6378 18.4971L24.8555 13.5122C26.3203 12.114 26.3203 9.81016 24.8555 8.45185C23.5627 7.21472 21.5166 7.05314 20.0285 8.0701L19.9541 8.11893C19.2844 8.57614 18.3544 8.3897 17.88 7.78956C17.401 7.15124 17.5545 6.2639 18.2241 5.80802L18.2985 5.75831C20.9725 3.9344 24.6369 4.22377 26.9621 6.44279C29.5895 8.94901 29.5895 13.0151 26.9621 15.5186L21.7398 20.5035Z" fill="black" />
-                    </svg>
+                        </svg>
+                    </a>
+                    
                 </div>
+
             </div>
         </div>
         <!-- </dialog> -->
@@ -927,15 +964,15 @@ $k = $stmt->fetch();
         <!-- img -->
         <div class="S-product-img">
             <div class="S-product-img-left column">
-                <img src="<?= $i['img'] ?>item0.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                <img src="imgs/items<?= $k['sid'] ?>/item1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
             </div>
             <div class="S-product-img-right">
                 <div class="S-product-img-right-up column">
-                    <img src="<?= $i['img'] ?>item1.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                    <img src="imgs/items<?= $k['sid'] ?>/item2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
                 </div>
                 <div class="S-product-img-right-down-g">
                     <div class="S-product-img-right-down column">
-                        <img src="<?= $i['img'] ?>item2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                        <img src="imgs/items<?= $k['sid'] ?>/item3.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
                     </div>
                     <button class="more-img">+7</button>
                 </div>
@@ -950,7 +987,7 @@ $k = $stmt->fetch();
                 <div class="mySlides-wrap">
                     <?php for ($i = 0; $i < 10; $i++) : ?>
                         <div class="mySlides">
-                            <img src="imgs/items<?= 1 ?>/item<?= $i ?>.jpg" style="width:100%">
+                            <img src="imgs/items<?= $k['sid'] ?>/item<?= $i ?>.jpg" style="width:100%">
                         </div>
 
                     <?php endfor; ?>
@@ -1001,7 +1038,7 @@ $k = $stmt->fetch();
                 <div class="column-bottom">
                     <?php for ($i = 0; $i < 10; $i++) : ?>
                         <div class="column">
-                            <img class="demo cursor" src="imgs/items<?= 1 ?>/item<?= $i ?>.jpg" style="width:100%" onclick="currentSlide(<?= $i + 1 ?>)" alt="Nature and sunrise">
+                            <img class="demo cursor" src="imgs/items<?= $k['sid'] ?>/item<?= $i ?>.jpg" style="width:100%" onclick="currentSlide(<?= $i + 1 ?>)" alt="Nature and sunrise">
                         </div>
                     <?php endfor; ?>
                     <!--
@@ -1047,22 +1084,25 @@ $k = $stmt->fetch();
             <div class="S-product-info-left">
                 <h2 class="S-price">$<?= number_format($k['price']) ?>/月</h2>
                 <h2 class="S-name"><?= $k['item_name'] ?></h2>
-                <h3 class="S-location"><i class="fa-solid fa-location-dot"></i><?= $k['area'], $k['dist'], $k['address'] ?></h3>
+                <h3 class="S-location"><i class="fa-solid fa-location-dot"></i><?= $k['item_area'], $k['item_dist'], $k['item_address'] ?></h3>
                 <h3 class="S-date"><i class="fa-solid fa-calendar-days"></i><?= $k['contract'] ?></h3>
                 <p class="S-lg-d-none S-d-none"><i class="fa-solid fa-train-subway"></i><?= $k['close_station'] ?></p>
-                <p class="S-lg-d-none S-d-none"><i class="fa-solid fa-ruler"></i>30 坪
+                <p class="S-lg-d-none S-d-none"><i class="fa-solid fa-ruler"></i><?= $k['ping_number'] ?>
                     <span><i class="fa-solid fa-stairs"></i><?= $k['floor'] ?></span>
                 </p>
                 <p class="S-lg-d-none S-d-none"><i class="fa-solid fa-door-open"></i><?= $k['rentaltype'], $k['floor'] ?></p>
             </div>
             <div class="S-product-info-right">
-                <button type="button" class="pc-button-FEAC00-280 S-btn-order">預約看房</button>
+                <button type="button" onclick="cleantext()" class="pc-button-FEAC00-280 S-btn-order">預約看房</button>
                 <form action="./Reservation_page.php" method="post">
-                <!-- 日曆按鈕-->
-                <!-- <button class="simplepicker-btn">Show Picker</button> -->
-                <div class="event-log"><br></div>
+                    <!-- 日曆按鈕-->
+                    <!-- <button class="simplepicker-btn">Show Picker</button> -->
+                    <div class="event-log" id="clean">
+                        <span id="pickTime"></span>
+                        <span id="ok_time" style="height:30px;">點選上方</span>
+                    </div>
 
-                <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a href="./FinalCheck_page.php">我要租屋</a></button>
+                    <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a href="FinalCheck_page.php">我要租屋</a></button>
                 </form>
 
             </div>
@@ -1142,20 +1182,20 @@ $k = $stmt->fetch();
                 <div class="S-menu-icon-wrap">
                     <div class="S-menu-icon-c">
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/物件設備/冰箱.svg" alt="">
+                            <img src="imgs/租屋資訊/共生&租屋.svg" alt="">
                             <p>共生</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/物件設備/冰箱.svg" alt="">
+                            <img src="imgs/租屋資訊/坪數.svg" alt="">
                             <p>坪數</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/物件設備/冰箱.svg" alt="">
+                            <img src="imgs/租屋資訊/樓層.svg" alt="">
                             <p>樓層</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/物件設備/冰箱.svg" alt="">
-                            <p>房間</p>
+                            <img src="imgs/租屋資訊/房型.svg" alt="">
+                            <p>雅房</p>
                         </div>
 
                     </div>
@@ -1326,7 +1366,7 @@ $k = $stmt->fetch();
                             <img src="imgs/物件特色/可開伙.svg" alt="">
                             <p>可開伙</p>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -1369,7 +1409,7 @@ $k = $stmt->fetch();
                             <img src="imgs/物件安全設備/煙霧警報.svg" alt="">
                             <p>煙霧警報</p>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -1416,7 +1456,7 @@ $k = $stmt->fetch();
                             <img src="imgs/物件其他費用/網路費.svg" alt="">
                             <p>網路費</p>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -1474,7 +1514,7 @@ $k = $stmt->fetch();
                             <img src="imgs/周邊機能/醫院.svg" alt="">
                             <p>醫院</p>
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -1544,7 +1584,7 @@ $k = $stmt->fetch();
                             <img src="imgs/室友簡介與喜好/電影.svg" alt="">
                             <p>電影</p>
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -1942,7 +1982,7 @@ $k = $stmt->fetch();
 </script>
 
 <!-------------------日曆-------------------------------------------- -->
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script src="./simplepicker-main/dist/simplepicker.js"></script>
 <script>
     let simplepicker = new SimplePicker({
@@ -1953,40 +1993,100 @@ $k = $stmt->fetch();
 
     const $button = document.querySelector('.S-btn-order');
     const $eventLog = document.querySelector('.event-log');
+    const $pickTime = document.querySelector('#pickTime');
     $button.addEventListener('click', (e) => {
         simplepicker.open();
     });
 
     // $eventLog.innerHTML += '\n\n';
     simplepicker.on('submit', (date, readableDate) => {
-        $eventLog.innerHTML += readableDate + '\n';
+        const t = moment(readableDate);
+        // $eventLog.innerHTML += readableDate + '\n';
+        // $eventLog.innerHTML += t.format('YYYY-MM-DD HH:mm:ss') + '\n';
+        $pickTime.innerHTML += t.format('YYYY-MM-DD HH:mm:ss') + '\n';
     });
 
     simplepicker.on('close', (date) => {
-        $eventLog.innerHTML += 'Picker Closed' + '\n';
+        $pickTime.innerHTML += 'Picker Closed' + '\n';
     });
 
 
     // --------------------------------------換頁-----------------------------
-    $(document).ready(function(){
-        // $(".simplepicker-ok-btn").attr("type","submit")
-        $(".simplepicker-ok-btn").html('<a href="Reservation_page.php" style="display:none;"></a>')
+    // $(document).ready(function(){
+    //     // $(".simplepicker-ok-btn").attr("type","submit")
+    //     $(".simplepicker-ok-btn").html('<a href="Reservation_page.php"></a>')
+
+    // })
+
+
+    $(".simplepicker-ok-btn").on("click", function() {
+        const date = $("#pickTime").text()
+        console.log('gooddddd');
+        localStorage.setItem("date", JSON.stringify(date))
+    })
+</script>
+
+<script>
+    const cleantext = () => {
+        $("#ok_time").text("")
+        $("#ok_time").append(`<a href="Reservation_page.php"><span class="ok_submit" >送出</span></a>`)
+    };
+    $(document).on('ready', function() {
+        if ($("#pickTime").text() === '') {
+            $("#pickTime").css('display', 'none')
+        } else {
+            $("#pickTime").css('display', 'block')
+        }
+    })
+</script>
+
+<script>
+
+        function fallbackCopyTextToClipboard(text) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                var successful = document.execCommand("copy");
+                var msg = successful ? "successful" : "unsuccessful";
+                console.log("Fallback: Copying text command was " + msg);
+            } catch (err) {
+                console.error("Fallback: Oops, unable to copy", err);
+            }
+
+            document.body.removeChild(textArea);
+        }
+        function copyTextToClipboard(text) {
+            if (!navigator.clipboard) {
+                fallbackCopyTextToClipboard(text);
+                return;
+            }
+            navigator.clipboard.writeText(text).then(
+                function () {
+                    console.log("Async: Copying to clipboard was successful!");
+                },
+                function (err) {
+                    console.error("Async: Could not copy text: ", err);
+                }
+            );
+        }
+
+
+    var copyBobBtn = document.querySelector(".js-copy-bob-btn");
+
+    copyBobBtn.addEventListener("click", function(event) {
+        copyTextToClipboard(location.href);
+    });
+    $(copyBobBtn).mousedown(function(){
+        $(".show_copy").toggle()
         
     })
-
-    const date = $(".event-log").text()
-    $(".simplepicker-ok-btn").click(function() {
-            console.log('gooddddd');
-            
-            localStorage.setItem("date",JSON.stringify(date))
-    })
-
-        
-
-
-
 
 </script>
+
 
 
 

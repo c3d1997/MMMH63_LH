@@ -5,14 +5,13 @@
     $stmt = $pdo->query($sql)->fetch();
     // echo $stmt['COUNT(*)'];
     $new_item = $stmt['COUNT(*)'] + 1;
+
     $_SESSION['item_c'] = $new_item;
-
-
+    $_SESSION['img_arr'] =  json_decode($_POST['img_arr']);
     $_SESSION['roommate_info'] = $_POST['roommate_info'];
     $_SESSION['hobby'] = $_POST['hobby'];
     $_SESSION['item_info'] = $_POST['item_info'];
-
-
+    $_SESSION['certificate'] = json_decode($_POST['certificate']);
     // 下載圖片
     $path = 'imgs/items'.$new_item;
     if(!file_exists($path)){
@@ -20,7 +19,7 @@
     }
 
     $img_arr = $_SESSION['img_arr'];
-    $i = 1;
+    $i = 0;
     foreach($img_arr as $i_url) {
         $i_image = file_get_contents($i_url);
         file_put_contents($path.'/item'.$i.'.jpg', $i_image ); //Where to save the image
@@ -48,25 +47,25 @@
 
 
 
-    echo $_SESSION['item_name'];
-    echo $_SESSION['roomtype'];
-    echo $_SESSION['room_count'];
-    echo $_SESSION['ping_number'];
-    echo $_SESSION['floor'];
-    echo $_SESSION['price'];
-    echo $_SESSION['item_area'];
-    echo $_SESSION['item_dist'];
-    echo $_SESSION['item_address'];
-    echo $_SESSION['contract'];
-    echo implode(',',$_SESSION["feature"]);
-    echo implode(',',$_SESSION["equipment_detail"]);
-    echo implode(',',$_SESSION["safety_equipment"]);
-    echo implode(',',$_SESSION["other_cost"]);
-    echo implode(',',$_SESSION["postulate"]);
-    echo implode(',',$_SESSION["around"]);
-    echo implode(',',$_SESSION['hobby']) ;
-    echo $_SESSION['item_info'];
-    echo $_SESSION['roommate_info'];
+    // echo $_SESSION['item_name'];
+    // echo $_SESSION['roomtype'];
+    // echo $_SESSION['room_count'];
+    // echo $_SESSION['ping_number'];
+    // echo $_SESSION['floor'];
+    // echo $_SESSION['price'];
+    // echo $_SESSION['item_area'];
+    // echo $_SESSION['item_dist'];
+    // echo $_SESSION['item_address'];
+    // echo $_SESSION['contract'];
+    // echo implode(',',$_SESSION["feature"]);
+    // echo implode(',',$_SESSION["equipment_detail"]);
+    // echo implode(',',$_SESSION["safety_equipment"]);
+    // echo implode(',',$_SESSION["other_cost"]);
+    // echo implode(',',$_SESSION["postulate"]);
+    // echo implode(',',$_SESSION["around"]);
+    // echo implode(',',$_SESSION['hobby']) ;
+    // echo $_SESSION['item_info'];
+    // echo $_SESSION['roommate_info'];
 
 
     $stmt = $pdo->prepare($sql);

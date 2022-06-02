@@ -21,8 +21,6 @@ if (empty($_POST['name'])) {
 
 
 
-
-
 $sql = "INSERT INTO `members`(`name`, `email`, `mobile`,`Password`, created_at)
 VALUES (?, ?, ?, ?, NOW())";
 

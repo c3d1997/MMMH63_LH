@@ -1,14 +1,13 @@
 <?php 
     require './part/connect-db.php';
-
-    $_SESSION["equipment_detail"] = $_POST["equipment_detail"];
-    $_SESSION["safety_equipment"] = $_POST["safety_equipment"];
-    $_SESSION["feature"] = $_POST["feature"];
-    $_SESSION["around"] = $_POST["around"];
-    $_SESSION["postulate"] = $_POST["postulate"];
-    $_SESSION["other_cost"] = $_POST["other_cost"];
-
-
+    if(! empty($_POST)){
+        $_SESSION["equipment_detail"] = $_POST["equipment_detail"];
+        $_SESSION["safety_equipment"] = $_POST["safety_equipment"];
+        $_SESSION["feature"] = $_POST["feature"];
+        $_SESSION["around"] = $_POST["around"];
+        $_SESSION["postulate"] = $_POST["postulate"];
+        $_SESSION["other_cost"] = $_POST["other_cost"];
+    }
 
     // echo json_encode( $_SESSION,JSON_UNESCAPED_UNICODE);
 
@@ -187,6 +186,7 @@
         }
         .uploadimg_before {
             position: absolute;
+            z-index: 5;
         }
         .uploadimg_before > *{
             margin-bottom: 10px;
@@ -200,7 +200,7 @@
         .uploadimg_after img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: fill;
             position: absolute;
         }
 
@@ -696,9 +696,9 @@
                             <img  alt="" class="" id="nowimg">
                         </div>
                         <div class="uploadimg_before">
-                            <p>您可以拖拉圖片至此處</p>
+                            <!-- <p>您可以拖拉圖片至此處</p> -->
                             <div class="z_upload_item_img_btn">
-                                <button type="button" id="upload_btn"><img src="imgs/uploadicon.svg" alt="">或是點此上傳</button>
+                                <button type="button" id="upload_btn"><img src="imgs/uploadicon.svg" alt="">點此上傳</button>
                             </div>
                             <input type="file" id="imgUpload" accept="image/* " name="certificate">
                         </div>
@@ -752,13 +752,10 @@
         function saveCertificate(){
         
             $.ajax({
-                url:"publish_otherinfo.php",
+                url:"publish_uploadimg-api.php",
+                // url:"publish_otherinfo.php",
                 method: "post",   
                 data: {certificate : JSON.stringify(certificate)},
-                success: function(){
-                    alert(("777"))
-                }
-
             })
         }  
 

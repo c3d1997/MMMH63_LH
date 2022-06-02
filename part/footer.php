@@ -63,6 +63,33 @@
     </div>
     <script src="js/jquery-3.6.0.js"></script>
     <script src="nav-footer\nav-footer.js"></script>
-        
+    <script>
+        /*
+        $(function() {
+            let isLoginCookieStr = "LH_Login",
+                loginStatus = getCookie(isLoginCookieStr);
 
-  
+            if (loginStatus !== undefined) {
+                // do somthing
+                alert('login');
+                return false;
+            }
+
+
+        });
+
+        function getCookie(cookieName) {
+            let cookie = {};
+            document.cookie.split(';').forEach(function(el) {
+                let [key, value] = el.split('=');
+                cookie[key.trim()] = value;
+            })
+            return cookie[cookieName];
+        }
+
+        function setCookie(key, value) {
+            document.cookie = key + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+            document.cookie = key + "=" + value.trim();
+        }
+        */
+    </script>

@@ -1,4 +1,7 @@
-<?php include __DIR__ . './part/head.php'  ?>
+<?php 
+include __DIR__ . './part/head.php';
+require './part/connect-db.php';
+  ?>
 
 <style>
     body {
@@ -100,6 +103,7 @@
         height: 211px;
         opacity: .5;
         /* outline: 1px solid purple; */
+        cursor: pointer;
     }
 
     .n-npetur img {
@@ -248,7 +252,19 @@
     .n-nOh p {
         display: none;
     }
-
+    select {
+        color: #0E2E3D;
+        height: 60px;
+        border: none;
+        outline: none;
+        appearance: none;
+        font-size: 16px;
+        padding-left: 15px;
+        flex-grow: 1;
+    }
+    .downArrow {
+        transform: rotateX(180deg);
+    }
 
     /* --------------------------------------------- */
 
@@ -608,46 +624,30 @@
             <!--  -->
             <div class="n-nhead">
                 <h3>
-                    3.請選則繳費方式，並選擇預約日期
+                    3.請選擇預約日期
                 </h3>
             </div>
             <!--  -->
 
-            <div class="n-nmamu">
-                <p class="n-nffont">繳費方式</p>
-                <div class="dropdown_container">
-                    <button id="areaListBtn">
-                        <div class="dropdown">
-                            <span>繳費方式</span>
-                            <img src="imgs/down-arrow.svg" alt="">
-                        </div>
-                    </button>
-                    <div id="areaList" class="dropdown_list" hidden>
-                        <p class="">轉帳</p>
-                        <p class="">信用卡</p>
-
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="n-nOh">
-                <p>！錯誤</p>
-            </div>
 
             <div class="n-nmamu">
                 <p class="n-nffont">預約日期</p>
                 <div class="dropdown_container">
-                    <button id="areaListBtn">
-                        <div class="dropdown">
-                            <span>預約日期</span>
-                            <img src="imgs/down-arrow.svg" alt="">
-                        </div>
-                    </button>
-                    <div id="areaList" class="dropdown_list" hidden>
-                        <p class="">1-5坪</p>
-
-
+                    <select name="" id="">
+                        <option value="" selected disabled>---請選擇預約日期---</option>
+                        <option value="">2022/06/09</option>
+                        <option value="">2022/06/10</option>
+                        <option value="">2022/06/11</option>
+                        <option value="">2022/06/12</option>
+                        <option value="">2022/06/13</option>
+                        <option value="">2022/06/14</option>
+                        <option value="">2022/06/15</option>
+                        <option value="">2022/06/16</option>
+                        <option value="">2022/06/17</option>
+                        <option value="">2022/06/18</option>
+                    </select>
+                    <div class="arrow_container">
+                        <img src="imgs/down-arrow.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -658,19 +658,16 @@
 
             <div class="n-nmamu">
                 <p class="n-nffont">預約時間</p>
-                <div class="dropdown_container">
-                    <button id="areaListBtn">
-                        <div class="dropdown">
-                            <span>預約時間</span>
+                    <div class="dropdown_container">
+                        <select name="" id="">
+                            <option value="" selected disabled>---請選擇預約時間---</option>
+                            <option value="">上午9點到上午11點</option>
+                            <option value="">下午1點到下午6點</option>
+                        </select>
+                        <div class="arrow_container">
                             <img src="imgs/down-arrow.svg" alt="">
                         </div>
-                    </button>
-                    <div id="areaList" class="dropdown_list" hidden>
-                        <p class="">1-5坪</p>
-
-
                     </div>
-                </div>
             </div>
             <div class="n-nOh">
                 <p>！錯誤</p>
@@ -680,7 +677,9 @@
 
         <div class="n-ntwobutton">
             <button class="pc-button-F4F4F4-180">清除資料</button>
-            <button class="pc-button-FEAC00-180">確認送出</button>
+            <a href="cleanpay_way.php" style="text-decoration:none; color:#0E2E3D;"><button class="pc-button-FEAC00-180">
+            確認送出</button></a>
+            
         </div>
 
 
@@ -691,10 +690,7 @@
 <?php include __DIR__ . './part/footer.php'  ?>
 
 <script>
-    $("button").click(function() {
-        $(this).next(".dropdown_list").toggle()
-        $(this).find("img").toggleClass("downArrow")
-    })
+
     $('.n-ncader').click(function() {
         console.log(1);
         $(this).find('.n-npetur').toggleClass('x-opc');
@@ -708,6 +704,15 @@
     })
     $('.n-ncader').mouseleave(function() {
         $(this).css('transform', 'scale(1)')
+    })
+
+    $("select").on({
+        mouseleave: function() {
+        $(this).next().children().removeClass("downArrow")
+    },  
+        click: function(){
+        $(this).next().children().toggleClass("downArrow")
+    }
     })
 </script>
 

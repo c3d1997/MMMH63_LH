@@ -1,4 +1,12 @@
-<?php include __DIR__ . './part/head.php'  ?>
+<?php 
+include __DIR__ . './part/head.php'  ;
+require './part/connect-db.php';
+
+$sql = "SELECT * FROM `items`";
+$stmt = $pdo->query($sql);
+$items = $stmt->fetchAll();
+
+?>
 
 <style>
     .c-world {
@@ -208,6 +216,16 @@
         height: 100%;
         object-fit: cover;
     }
+    .c-list-active{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+    .c-list-active a{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
 
     @media screen and (max-width:376px) {
         .x-title-card-all {
@@ -254,47 +272,47 @@
         <div class="c-mylist">
             <ul>
                 <li class="c-list">
-                    <a href="">
+                    <a href="personal-data.php">
                         <h3>會員資料</h3>
                     </a>
                 </li>
                 <li class="c-list">
-                    <a href="">
+                    <a href="house_post.php">
                         <h3>刊登物件</h3>
                     </a>
                 </li>
                 <li class="c-list">
-                    <a href="">
+                    <a href="myrent_house.php">
                         <h3>我的租屋</h3>
                     </a>
                 </li>
-                <li class="c-list">
-                    <a href="">
+                <li tabindex="1" class="c-list-active">
+                    <a href="mycollection_list.php">
                         <h3>我的收藏</h3>
                     </a>
                 </li>
                 <li class="c-list">
-                    <a href="">
+                    <a href="promo.php">
                         <h3>我的優惠</h3>
                     </a>
                 </li>
                 <li class="c-list">
-                    <a href="">
+                    <a href="house_reserve.php">
                         <h3>我的預約</h3>
                     </a>
                 </li>
                 <li class="c-list">
-                    <a href="">
+                    <a href="myrent_contract.php">
                         <h3>租屋契約</h3>
                     </a>
                 </li>
                 <li class="c-list">
-                    <a href="">
+                    <a href="myrent_fee.php">
                         <h3>租金支付</h3>
                     </a>
                 </li>
                 <li class="c-list">
-                    <a href="">
+                    <a href="clean_reserve.php">
                         <h3>清潔服務</h3>
                     </a>
                 </li>
