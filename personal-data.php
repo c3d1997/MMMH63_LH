@@ -241,26 +241,26 @@
                 </div>
                 <div class="x-title-content-all">
                     <div class="x-title-content">
-                        <input type="text" placeholder="請輸入欲修改姓名" value="王世豪" style="font-weight: bold;" >
+                        <input type="text" placeholder="請輸入欲修改姓名" value="" style="font-weight: bold;" >
                         <div>
                             
                         </div>
 
                     </div>
                     <div class="x-title-content">
-                        <input type="text" placeholder="請輸入欲修改手機" value="0968881277" style="font-weight: bold;">
+                        <input type="text" placeholder="請輸入欲修改手機" value="" style="font-weight: bold;">
                         <div>
                            
                         </div>
                     </div>
                     <div class="x-title-content">
-                        <input type="text" placeholder="請輸入欲修改郵件" value="bosebawi@gmail.com" style="font-weight: bold;">
+                        <input type="text" placeholder="請輸入欲修改郵件" value="" style="font-weight: bold;">
                         <div>
                             
                         </div>
                     </div>
                     <div class="x-title-content">
-                        <input type="text" placeholder="請多多介紹您自己！（非必填）" value="我是會說法文的工程師" style="font-weight: bold;">
+                        <input type="text" placeholder="請多多介紹您自己！（非必填）" value="" style="font-weight: bold;">
                         <div>
                             
                         </div>
