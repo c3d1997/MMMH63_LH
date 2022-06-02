@@ -3,11 +3,10 @@
         <ul>
             <div class="pc-link">
                 <li class="x-log">
-                    <a href="
-                        ">搜尋</a>
+                    <a href="search_all.php">搜尋</a>
                 </li>
                 <li class="x-log">
-                    <a href="">
+                    <a href="publish_uploadimgx10.php">
                         刊登房屋
                     </a>
                 </li>
@@ -23,12 +22,12 @@
             </li>
             <div class="phone-nav-link">
                 <li class="x-log x-phone">
-                    <a href="">
+                    <a href="search_all.php">
                         搜尋
                     </a>
                 </li>
                 <li class="x-log x-phone">
-                    <a href="./house_post.php">
+                    <a href="publish_uploadimgx10.php">
                         刊登房屋
                     </a>
                 </li>
@@ -47,7 +46,7 @@
 
                 <?php else : ?>
                     <li class=" x-log" id="S-nav-logout">
-                        <a href="#">
+                        <a href="personal-data.php">
                             <?= empty($_SESSION['member']['name']) ? $_SESSION['member']['EngName'] : $_SESSION['member']['name'] ?><img src="imgs/down-arrow.svg" alt="">
                             <!-- 個人頁面 -->
                         </a>

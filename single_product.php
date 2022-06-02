@@ -1,17 +1,13 @@
 <?php
-$title = '單一物件';
 require './part/connect-db.php';
-
-
+$title = '單一物件';
 // 帶入房屋資料
-$ksql = "SELECT * FROM `items` WHERE `sid` = 1;";
+$x = $_GET['sid'];
+$ksql = "SELECT * FROM `items` WHERE `sid` = $x";
 $stmt = $pdo->query($ksql);
 $k = $stmt->fetch();
 
 ?>
-
-
-
 <?php include __DIR__ . './part/head.php'  ?>
 
 <link rel="stylesheet" href="./single_product.css">
@@ -154,13 +150,6 @@ $k = $stmt->fetch();
         text-decoration: none;
     }
 
-    path{
-        cursor: pointer;
-        fill: grey;
-    }
-    .clicked {
-            fill: #ff0000;
-        }
     /* ------------------------------------------- */
 
 
@@ -974,15 +963,15 @@ $k = $stmt->fetch();
         <!-- img -->
         <div class="S-product-img">
             <div class="S-product-img-left column">
-                <img src="imgs/items<?= 1 ?>/item1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                <img src="imgs/items<?= $k['sid'] ?>/item1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
             </div>
             <div class="S-product-img-right">
                 <div class="S-product-img-right-up column">
-                    <img src="imgs/items<?= 1 ?>/item2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                    <img src="imgs/items<?= $k['sid'] ?>/item2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
                 </div>
                 <div class="S-product-img-right-down-g">
                     <div class="S-product-img-right-down column">
-                        <img src="imgs/items<?= 1 ?>/item3.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                        <img src="imgs/items<?= $k['sid'] ?>/item3.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
                     </div>
                     <button class="more-img">+7</button>
                 </div>
@@ -997,7 +986,7 @@ $k = $stmt->fetch();
                 <div class="mySlides-wrap">
                     <?php for ($i = 0; $i < 10; $i++) : ?>
                         <div class="mySlides">
-                            <img src="imgs/items<?= 1 ?>/item<?= $i ?>.jpg" style="width:100%">
+                            <img src="imgs/items<?= $k['sid'] ?>/item<?= $i ?>.jpg" style="width:100%">
                         </div>
 
                     <?php endfor; ?>
@@ -1048,7 +1037,7 @@ $k = $stmt->fetch();
                 <div class="column-bottom">
                     <?php for ($i = 0; $i < 10; $i++) : ?>
                         <div class="column">
-                            <img class="demo cursor" src="imgs/items<?= 1 ?>/item<?= $i ?>.jpg" style="width:100%" onclick="currentSlide(<?= $i + 1 ?>)" alt="Nature and sunrise">
+                            <img class="demo cursor" src="imgs/items<?= $k['sid'] ?>/item<?= $i ?>.jpg" style="width:100%" onclick="currentSlide(<?= $i + 1 ?>)" alt="Nature and sunrise">
                         </div>
                     <?php endfor; ?>
                     <!--
@@ -1112,7 +1101,7 @@ $k = $stmt->fetch();
                         <span id="ok_time" style="height:30px;">點選上方</span>
                     </div>
 
-                    <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a href="./FinalCheck_page.php">我要租屋</a></button>
+                    <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a href="FinalCheck_page.php">我要租屋</a></button>
                 </form>
 
             </div>
@@ -2097,21 +2086,7 @@ $k = $stmt->fetch();
 
 </script>
 
-<script>
-        // first we get all the path elements and put them in an array
-        let paths = document.getElementsByTagName('path')
 
-        //now we can loop over the array and add an eventlistener to each path in the array
-        // it listens to the 'click' event and then runs function toggleClass()
-        for (let i = 0; i < paths.length; i++) {
-            paths[i].addEventListener('click', toggleClass)
-        }
-
-        // In the function toggleClass we can toggle the 'clicked' class.
-        function toggleClass() {
-            this.classList.toggle('clicked')
-        }
-</script>
 
 
 <?php include __DIR__ . './part/javascript.php'  ?>

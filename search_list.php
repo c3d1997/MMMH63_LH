@@ -12,6 +12,22 @@ require './part/connect-db.php';
 //     $where .= sprintf(" AND rentaltype IN ('%s')",$rentalTypes[$dataRental]);
 // }
 $where = " WHERE 1 ";
+// 關鍵字
+$dataSearchtype = !empty($_GET['dataSearchtype']) ? json_decode($_GET['dataSearchtype'], true) : [];
+if(!empty($dataSearchtype)){
+    $where .= sprintf(" AND item_name LIKE '%%$dataSearchtype%%'");
+}
+// 價格
+$dataHprice = !empty($_GET['dataHprice']) ? json_decode($_GET['dataHprice'], true) : [];
+$dataLprice = !empty($_GET['dataLprice']) ? json_decode($_GET['dataLprice'], true) : [];
+if(!empty($dataHprice)){
+    $where .= sprintf(" AND price < %s",intval($dataHprice));
+}
+if(!empty($dataLprice)){
+    $where .= sprintf(" AND price > %s",intval($dataLprice));
+}
+
+// 單選房屋分類
 $dataRental = !empty($_GET['dataRental']) ? json_decode($_GET['dataRental'], true) : [];
 if(!empty($dataRental)){
     $where .= sprintf(" AND rentaltype LIKE '%%%s%%'", implode("','", $dataRental));
@@ -38,7 +54,9 @@ if(!empty($dataRoom)){
 $dataFeture = !empty($_GET['dataFeture']) ? json_decode($_GET['dataFeture'], true) : [];
 
 if(!empty($dataFeture)){
-    $where .= sprintf(" AND feature IN ('%s')", implode("','",$dataFeture));
+    foreach($dataFeture as $f){
+        $where .= " AND feature LIKE '%{$f}%' ";
+    }
 }
 // 單選設備
 $dataEquip = !empty($_GET['dataEquip']) ? json_decode($_GET['dataEquip'], true) : [];
@@ -50,14 +68,24 @@ if(!empty($dataEquip)){
 $dataPostulate = !empty($_GET['dataPostulate']) ? json_decode($_GET['dataPostulate'], true) : [];
 
 if(!empty($dataPostulate)){
-    $where .= sprintf(" AND postulate IN ('%s')", implode("','",$dataPostulate));
+    foreach($dataPostulate as $f){
+        $where .= " AND postulate LIKE '%{$f}%' ";
+    }
 }
+
+// if(!empty($dataPostulate)){
+//     $where .= sprintf(" AND postulate IN ('%s')", implode("','",$dataPostulate));
+// }
 // 復選額外
 $dataOtherCost = !empty($_GET['dataOtherCost']) ? json_decode($_GET['dataOtherCost'], true) : [];
 
 if(!empty($dataOtherCost)){
-    $where .= sprintf(" AND other_cost IN ('%s')", implode("','",$dataOtherCost));
+    foreach($dataOtherCost as $f){
+        $where .= " AND other_cost LIKE '%{$f}%' ";
+    }
 }
+
+
 
 // "SELECT * FROM items WHERE 欄位 LIKE 內容 AND";
 $r_sql = "SELECT * FROM items $where";
@@ -108,15 +136,16 @@ $fRows = $pdo->query($f_sql)->fetchAll();
                             <ul class="x-search-list-content-img-train">
                                 <li>
 
-                                    <img src="<?= $i['item_img'] ?>.jpg" alt="">
+                                    <img src="imgs/items<?=$i['sid']?>/item1.jpg" alt="">
                                 </li>
 
                             </ul>
 
                         </div>
                         <div class="x-search-list-content-txt">
-                            <h3>
+                            <h3><a href="single_product.php?sid=<?= $i['sid'] ?>">
                                 <?= $i['item_name'] ?>
+                                </a>
                             </h3>
                             <p>
                                 <img src="imgs/捷運.svg" alt=""><?= $i['close_station'] ?>
@@ -151,7 +180,7 @@ $fRows = $pdo->query($f_sql)->fetchAll();
                                     <!-- <img src="imgs/分享.svg" alt=""> -->
 
                                 </div>
-                                <div class="S-lg-like">
+                                <div onclick="" class="S-lg-like">
                                     <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
                                         <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -218,3 +247,6 @@ $fRows = $pdo->query($f_sql)->fetchAll();
         </div>
     </div>
 </div>
+<script>
+
+</script>

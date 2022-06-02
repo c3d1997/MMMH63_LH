@@ -4,7 +4,7 @@
 require './part/connect-db.php';
 $pageName = 'signin_signup';
 
-echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
+// echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
 ?>
 
 <?php include __DIR__ . './part/head.php'  ?>

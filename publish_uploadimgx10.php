@@ -1,7 +1,7 @@
 <?php 
-    if(!empty(session_start()))
-        session_destroy();
-    session_start();
+    // if(!empty(session_start()))
+    //     session_destroy();
+    // session_start();
     
 ?>
 
@@ -573,7 +573,7 @@
                 /* width: 120%; */
                 overflow:scroll;
                 height: 300px;
-                border: 3px solid #0E2E3D;
+                /* border: 3px solid #0E2E3D; */
                 padding: 5px 0;
             }
             .z_publish_phone_tip_container {
@@ -781,12 +781,6 @@
                 data: {
                     img_arr : JSON.stringify(img_arr),
                 },
-            })
-            $.ajax({
-                url:"publish_uploadimg-api.php",
-                // url:"publish_otherinfo.php",
-                method: "post",   
-                data: {certificate : JSON.stringify(certificate)},
             })
         }  
         
