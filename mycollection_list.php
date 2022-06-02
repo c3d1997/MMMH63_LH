@@ -1,4 +1,12 @@
-<?php include __DIR__ . './part/head.php'  ?>
+<?php 
+include __DIR__ . './part/head.php'  ;
+require './part/connect-db.php';
+
+$sql = "SELECT * FROM `items`";
+$stmt = $pdo->query($sql);
+$items = $stmt->fetchAll();
+
+?>
 
 <style>
     .c-world {
@@ -208,6 +216,16 @@
         height: 100%;
         object-fit: cover;
     }
+    .c-list-active{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+    .c-list-active a{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
 
     @media screen and (max-width:376px) {
         .x-title-card-all {
@@ -268,7 +286,7 @@
                         <h3>我的租屋</h3>
                     </a>
                 </li>
-                <li class="c-list">
+                <li tabindex="1" class="c-list-active">
                     <a href="mycollection_list.php">
                         <h3>我的收藏</h3>
                     </a>

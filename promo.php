@@ -283,7 +283,7 @@ ul.pagination li a:hover{
 
 
         <!-- 2 -->
-        <div class="flip">
+        <!-- <div class="flip">
             <p>士林夜市近士林劍潭捷運小套房</p>
             <img src="../imgs/down-arrow.svg" alt="">
 
@@ -291,10 +291,10 @@ ul.pagination li a:hover{
         <div class="panel" hidden>
             <p>優惠額度 : 85折</p>
             <p>狀態 : <span>待使用</span>
-        </div>
+        </div> -->
 
         <!-- 3 -->
-        <div class="flip">
+        <!-- <div class="flip">
             <p>士林夜市近士林劍潭捷運小套房</p>
             <img src="../imgs/down-arrow.svg" alt="">
 
@@ -302,7 +302,7 @@ ul.pagination li a:hover{
         <div class="panel" hidden>
             <p>優惠額度 : 85折</p>
             <p>狀態 : 已使用</p>
-        </div>
+        </div> -->
 
 
         <!-----------------------手機板的下拉-------- -->

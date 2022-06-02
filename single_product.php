@@ -21,6 +21,9 @@ $k = $stmt->fetch();
 <style>
     /* 自己頁面的css */
     /* ----------------calender------------------------- */
+    .simpilepicker-date-picker{
+        margin: 10% auto;    
+    }
     .event-log {
         margin: auto;
         height: auto;
