@@ -55,7 +55,7 @@ $pageName = 'signin_signup';
 
     .card h2 {
         text-align: center;
-        font-weight: 900;
+        /* font-weight: 900; */
         margin-bottom: 10px;
     }
 
@@ -106,7 +106,7 @@ $pageName = 'signin_signup';
         height: 60px;
         width: 180px;
         font-size: 24px;
-        font-weight: 900;
+        /* font-weight: 900; */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -162,7 +162,7 @@ $pageName = 'signin_signup';
             height: 60px;
             width: 70%;
             font-size: 24px;
-            font-weight: 900;
+            /* font-weight: 900; */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -200,7 +200,7 @@ $pageName = 'signin_signup';
     /* 自己頁面的css */
     .white {
         z-index: 0;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         width: 100%;
@@ -691,7 +691,7 @@ $pageName = 'signin_signup';
             background-color: #F1EDEA;
             /* margin-top: 40px; */
             background: #F1EDEA;
-            margin-top: 150px;
+            /* margin-top: 150px; */
         }
 
         .container1 {
@@ -703,6 +703,7 @@ $pageName = 'signin_signup';
             margin-top: 120px;
             margin-bottom: 150px;
             background-color: #F1EDEA;
+            position: inherit;
         }
 
         .container1 .blueBg {
@@ -1045,16 +1046,16 @@ $pageName = 'signin_signup';
                     <h3>恭喜您獲得清潔優惠卷</h3>
                     <h3>ABC-123456</h3>
                     <p>可以前往會員區確認</p>
-                    <button onclick="cleanstring()" class="pc-button-FEAC00-272 mobile-button-FEAC00-162 clear" id="close">確認
+                    <button onclick="cleanstring()" class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">確認
                 </div>
-                <div class="card-x clear" id="close2">
+                <div class="card-x" id="close2">
                     <img src="./imgs/X.svg" alt="">
                 </div>
             </div>
         </dialog>
         <!-- 以上是"註冊成功" -->
     </div>
-    <div class="white backdrop-blur S-d-none"></div>
+    <!-- <div class="white backdrop-blur S-d-none"></div> -->
 
     <!-- 以下是footer---------------------------------------------  -->
     <div class="footer_container S-lg-d-none S-d-block">
@@ -1123,6 +1124,12 @@ $pageName = 'signin_signup';
     </div>
 </div>
 
+
+
+
+<!-- white -->
+<div class="white backdrop-blur S-d-none"></div>
+
 <!-- FOOTER--------------------------------------------------- -->
 
 
@@ -1190,13 +1197,13 @@ $pageName = 'signin_signup';
     // // ask-signup 未註冊?
     // $('.ask-signup').click(function() {
     //     console.log('註冊');
-        
+
     // })
 
 
 
 
-// ----------------驗證信--------------------------------------
+    // ----------------驗證信--------------------------------------
     $('.CAPTCHA-Btn').click(function() {
         console.log($('#email').text());
     });
@@ -1327,6 +1334,7 @@ $pageName = 'signin_signup';
                 console.log('close');
                 infoModal.close();
                 $name.html('');
+                location.href = 'sign_signup0530.php';
             })
             close2.addEventListener("click", function() {
                 console.log('close2');
