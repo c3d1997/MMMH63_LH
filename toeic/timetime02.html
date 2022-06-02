@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="Get From Session Storage" onclick="get()"/>
+    <script>
+function get () {
+  // (A) GET FROM SESSION
+  var first = sessionStorage.getItem("first"),
+      second = JSON.parse(sessionStorage.getItem("second"));
+
+  // (B) IT WORKS!
+  // MANUALLY OPENING 1B-SESSION.HTML WILL NOT WORK THOUGH
+  // SESSION DATA WILL PERISH ONCE TAB/WINDOW IS CLOSED
+  console.log(first);  // Foo Bar
+  console.log(second); // ["Hello", "World"]
+
+  // (EXTRA) CLEAR SESSION STORAGE
+  // sessionStorage.removeItem("KEY");
+  // sessionStorage.clear();
+}
+    </script>
+
+
+
+</body>
+
+</html>

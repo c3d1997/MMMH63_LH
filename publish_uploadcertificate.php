@@ -1,3 +1,18 @@
+<?php 
+    require './part/connect-db.php';
+    if(! empty($_POST)){
+        $_SESSION["equipment_detail"] = $_POST["equipment_detail"];
+        $_SESSION["safety_equipment"] = $_POST["safety_equipment"];
+        $_SESSION["feature"] = $_POST["feature"];
+        $_SESSION["around"] = $_POST["around"];
+        $_SESSION["postulate"] = $_POST["postulate"];
+        $_SESSION["other_cost"] = $_POST["other_cost"];
+    }
+
+    // echo json_encode( $_SESSION,JSON_UNESCAPED_UNICODE);
+
+?>
+
 <?php include __DIR__ . './part/head.php'  ?>
 
     <style>
@@ -171,6 +186,7 @@
         }
         .uploadimg_before {
             position: absolute;
+            z-index: 5;
         }
         .uploadimg_before > *{
             margin-bottom: 10px;
@@ -184,7 +200,7 @@
         .uploadimg_after img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: fill;
             position: absolute;
         }
 
@@ -671,18 +687,18 @@
                         <p>刊登物件</p>
                     </div>
                     <h2 class="z_step_title bold">step4.　上傳房屋權狀</h2>
-                    <form action="./publish_otherinfo.php" method="post" enctype="multipart/form-data">
+                    <!-- <form action="publish_otherinfo.php" method="post" enctype="multipart/form-data"> -->
                     <div class="z_img_reviewcontainer_02 bold">
                         
                         <div class="uploadimg_after">
-                            <button class="z_close_icon"></button>
+                            <button class="z_close_icon" type="button"></button>
                             <img src="imgs\uploadbg.jpg" alt="" class="" >
                             <img  alt="" class="" id="nowimg">
                         </div>
                         <div class="uploadimg_before">
-                            <p>您可以拖拉圖片至此處</p>
+                            <!-- <p>您可以拖拉圖片至此處</p> -->
                             <div class="z_upload_item_img_btn">
-                                <button type="button" id="upload_btn"><img src="imgs/uploadicon.svg" alt="">或是點此上傳</button>
+                                <button type="button" id="upload_btn"><img src="imgs/uploadicon.svg" alt="">點此上傳</button>
                             </div>
                             <input type="file" id="imgUpload" accept="image/* " name="certificate">
                         </div>
@@ -692,9 +708,9 @@
                     <div class="z_twobtn">                      
                         <a href="./publish_feature.php"><button type="button" class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162">上一步</button></a>
                         
-                        <button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162">下一步</button>
+                        <a href="publish_otherinfo.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162" onclick="saveCertificate()">下一步</button></a>
                     </div>
-                    </form>
+                    <!-- </form> -->
                 </div>
             </div>
         </div>
@@ -703,6 +719,8 @@
 <?php include __DIR__ . './part/footer.php'  ?>
 
     <script>
+        const certificate = new Array();
+
         $("#upload_btn").click(function(){
             $("#imgUpload").click()
         })
@@ -710,14 +728,15 @@
             $("#nowimg").css("z-index","2")
             readURL(this);
         });
-
         function readURL(input){
         //   if(input.files && input.files[0]){
             var reader = new FileReader();
             reader.onload = function (e) {
                 $("#nowimg").attr('src', e.target.result);
+                certificate.push(e.target.result)
             }
             reader.readAsDataURL(input.files[0]);
+            
         //   }
         }
         $(".z_close_icon").click(function(){
@@ -727,8 +746,19 @@
             } else {
 
             }
-
         })
+
+        
+        function saveCertificate(){
+        
+            $.ajax({
+                url:"publish_uploadimg-api.php",
+                // url:"publish_otherinfo.php",
+                method: "post",   
+                data: {certificate : JSON.stringify(certificate)},
+            })
+        }  
+
     </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>

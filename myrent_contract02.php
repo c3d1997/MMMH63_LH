@@ -111,17 +111,4 @@
             </div>
 
         </div>
-        <!------------------------- button------------ -->
-        <div class="c_button_section">
-            <button class="mobile-button-FEAC00-162">上一頁</button>
-        </div>
-
-
-
     </div>
-
-
-<?php include __DIR__ . './part/footer.php'  ?>
-
-
-<?php include __DIR__ . './part/javascript.php'  ?>

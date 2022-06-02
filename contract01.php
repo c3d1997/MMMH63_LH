@@ -4,7 +4,7 @@ require './part/connect-db.php';
 
 
 //// ------------------------------------------
-$json_str = '{"sid":"1","id":"A1556655","name":"彭世豪","EngName":null,"Id_number":"B294354724","Pass_num":null,"email":"bosebawi@gmail.com","mobile":"0968881277","Area":"新北市","Dist":"樹林區","Add":"田尾街17號","Password":"123","Introduce":"韓愈說過一句富有哲理的話，不塞不流，不止不行。希望各位能用心體會這段話。我以為我了解興趣，但我真的了解興趣嗎？仔細想想，我對興趣的理解只是皮毛而已。貝蒂在不經意間這樣說過，大家都不聽謊言，說謊的人也就絕跡了。","created_at":"2020-04-06 16:31:02"}';
+$json_str = '{"sid":"1","id":"A1556655","name":"彭世豪","EngName":"Peter","Id_number":"B294354724","Pass_num":null,"email":"bosebawi@gmail.com","mobile":"0968881277","Area":"新北市","Dist":"樹林區","Add":"田尾街17號","Password":"123","Introduce":"韓愈說過一句富有哲理的話，不塞不流，不止不行。希望各位能用心體會這段話。我以為我了解興趣，但我真的了解興趣嗎？仔細想想，我對興趣的理解只是皮毛而已。貝蒂在不經意間這樣說過，大家都不聽謊言，說謊的人也就絕跡了。","created_at":"2020-04-06 16:31:02"}';
 $_SESSION['user'] = json_decode($json_str, true);
 //// ------------------------------------------
 
@@ -207,10 +207,6 @@ $i = $stmt->fetch();
         margin-left: 20px;
         width: 100%;
         max-width: 390px;
-    }
-
-    .cz_mb {
-        margin-bottom: 30px;
     }
 
     .c-dropdown {
@@ -482,6 +478,7 @@ $i = $stmt->fetch();
         position: absolute;
         pointer-events: none;
     }
+
     .downArrow {
         transform: rotate(180deg);
     }
@@ -807,21 +804,20 @@ $i = $stmt->fetch();
             </label>
             <input type="text" name="Name" id="name" placeholder="">
         </form>
-        <p class="alert">格式錯誤</p>
+        
         <form class="form" action="#"></form>
         <label for="phone">
-            <p>英文姓名</p>
+            <p style="margin-top:20px;">英文姓名</p>
         </label>
         <input type="text" name="EngName" id="EngName" placeholder="">
         </form>
-        <p class="alert">格式錯誤</p>
+        
         <form class="form" action="#"></form>
         <label for="phone">
-            <p>身分證/護照號碼 擇一</p>
+            <p style="margin-top:20px;">身分證/護照號碼 擇一</p>
         </label>
         <input type="text" name="Id_number" id="Id_number" placeholder="">
         </form>
-        <p class="alert">格式錯誤</p>
     </div>
 
 
@@ -837,9 +833,28 @@ $i = $stmt->fetch();
                 <div class="z_select_dropdown_container">
                     <select id="citySelect" name="citySelect" class="z_select_dropdown">
                         <option selected disabled value="000">--戶籍縣市--</option>
-                        <option value="001">001-台北市</option>
-                        <option value="002">002-新北市</option>
-                        <option value="003">003-基隆市</option>
+                        <option value="">基隆市</option>
+                                            <option value="">台北市</option>
+                                            <option value="">新北市</option>
+                                            <option value="">桃園縣</option>
+                                            <option value="">新竹市</option>
+                                            <option value="">新竹縣</option>
+                                            <option value="">苗栗縣</option>
+                                            <option value="">台中市</option>
+                                            <option value="">彰化縣</option>
+                                            <option value="">南投縣</option>
+                                            <option value="">雲林縣</option>
+                                            <option value="">嘉義市</option>
+                                            <option value="">嘉義縣</option>
+                                            <option value="">台南市</option>
+                                            <option value="">高雄市</option>
+                                            <option value="">屏東縣</option>
+                                            <option value="">台東縣</option>
+                                            <option value="">花蓮縣</option>
+                                            <option value="">宜蘭縣</option>
+                                            <option value="">澎湖縣</option>
+                                            <option value="">金門縣</option>
+                                            <option value="">連江縣</option>
                     </select>
                     <div class="arrow_container">
                         <img src="imgs/down-arrow.svg" alt="">
@@ -851,15 +866,24 @@ $i = $stmt->fetch();
             <form class="form" action="#">
                 <div class="testfrom">
                     <label for="person">
-                        <p>行政區</p>
+                        <p style="margin-top:20px;">行政區</p>
                     </label>
 
                     <div class="z_select_dropdown_container">
                         <select id="areaSelect" name="areaSelect" class="z_select_dropdown">
                             <option selected disabled value="000">--行政區--</option>
-                            <option value="001">001-松山區</option>
-                            <option value="002">002-文山區</option>
-                            <option value="003">003-大安區</option>
+                            <option value="">松山區</option>
+                                            <option value="">信義區</option>
+                                            <option value="">大安區</option>
+                                            <option value="">中山區</option>
+                                            <option value="">中正區</option>
+                                            <option value="">大同區</option>
+                                            <option value="">萬華區</option>
+                                            <option value="">文山區</option>
+                                            <option value="">南港區</option>
+                                            <option value="">內湖區</option>
+                                            <option value="">士林區</option>
+                                            <option value="">北投區</option>
                         </select>
                         <div class="arrow_container">
                             <img src="imgs/down-arrow.svg" alt="">
@@ -880,15 +904,13 @@ $i = $stmt->fetch();
             </label>
             <input type="text" name="email" id="email" placeholder="">
         </form>
-        <p class="alert">格式錯誤</p>
         <form class="form" action="#">
             <label for="person">
-                <p>手機
+                <p style="margin-top:20px;">手機
                 </p>
             </label>
             <input type="text" name="phone" id="phone" placeholder="">
         </form>
-        <p class="alert">格式錯誤</p>
 
     </div>
 </div>
@@ -898,7 +920,9 @@ $i = $stmt->fetch();
 <div class="z_time">
     <h3>選擇租屋期限</h3>
 
-    <input type="text" name="daterange" value="06/08/2022 - 06/08/2023" />
+    <input type="text" name="daterange" value="06/08/2022 - 06/08/2023" style="width:0px; height:0px;" />
+    <button id="showSelectedRange" type="button" onclick="$('input[name=daterange]').click()" style="color:red;font-size:18px;"><p style="color:red;font-size:18px;">請選擇租約期限</p></button>
+
     <p id="record"></p>
 
 
@@ -1062,7 +1086,10 @@ $i = $stmt->fetch();
         <button class="pc-button-FEAC00-180 z_phone-button-162">清除資料</button>
     </div>
     <div class="c_button_right">
-        <button class="pc-button-F4F4F4-180 z_phone-button-162"><a href="contract02.php" style="text-decoration:none; color:#0E2E3D;">送出</a></button>
+    <a href="contract02.php" style="text-decoration:none; color:#0E2E3D;"><button class="pc-button-F4F4F4-180 z_phone-button-162">送出</button></a>
+        
+    
+    
 
     </div>
 </div>
@@ -1075,15 +1102,14 @@ $i = $stmt->fetch();
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script>
-
     $("select").on({
-        mouseleave: function(){
+        mouseleave: function() {
             $(this).next().children().removeClass("downArrow")
         },
-        click : function(){
+        click: function() {
             $(this).next().children().toggleClass("downArrow")
-        } 
-        })
+        }
+    })
 
 
     const $record = $('#record');
@@ -1092,6 +1118,11 @@ $i = $stmt->fetch();
         $('input[name="daterange"]').daterangepicker({
             opens: 'left'
         }, function(start, end, label) {
+            const showSelectedRange = $('#showSelectedRange');
+
+            showSelectedRange.html(start.format('YYYY-MM-DD') + ' ~ ' + end.format('YYYY-MM-DD'));
+
+
             console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
             // $record.text(start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
 
@@ -1161,22 +1192,24 @@ $i = $stmt->fetch();
 
     $('.c-select #yes').click(function() {
         ($('#yes').prop('checked'))
-            console.log('hi');
-            console.log('username:', $('#name').val());
-            $('#name').val(memberData.name);
-            $('#email').val(memberData.email);
-            $('#Id_number').val(memberData.Id_number);
-            $('#phone').val(memberData.mobile);
-            $('#citySelect').val('001');
-            $('#areaSelect').val('001');
+        console.log('hi');
+        console.log('username:', $('#name').val());
+        $('#name').val(memberData.name);
+        $('#EngName').val(memberData.EngName);
+        $('#email').val(memberData.email);
+        $('#Id_number').val(memberData.Id_number);
+        $('#phone').val(memberData.mobile);
+        $('#citySelect').val('001');
+        $('#areaSelect').val('001');
     })
-    $('.c-select #no').click(function(){
+    $('.c-select #no').click(function() {
         $('#name').val('');
-            $('#email').val('');
-            $('#Id_number').val('');
-            $('#phone').val('');
-            $('#citySelect').val('000');
-            $('#areaSelect').val('000');
+        $('#EngName').val(memberData.EngName);
+        $('#email').val('');
+        $('#Id_number').val('');
+        $('#phone').val('');
+        $('#citySelect').val('000');
+        $('#areaSelect').val('000');
     })
 
 

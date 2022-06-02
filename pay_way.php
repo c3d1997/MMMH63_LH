@@ -960,7 +960,7 @@ $title = '付款方式'
                 <div class="z_text_intput ">
                     <p class="z_checkbox_option ">付款金額</p>
                     <div class="z_input_container">
-                        <p>777777</p>
+                        <p></p>
                     </div>
                     <div class="z_payghost"></div>
                 </div>
@@ -970,7 +970,7 @@ $title = '付款方式'
                 <div class="z_text_intput ">
                     <p class="z_checkbox_option ">繳費日期</p>
                     <div class="z_input_container">
-                        <p>777777</p>
+                        <p></p>
                     </div>
                     <div class="z_payghost"></div>
                 </div>
@@ -983,9 +983,70 @@ $title = '付款方式'
                         <div class="z_select_dropdown_container">
                             <select id="bankSelect" name=”bankSelect” class="z_select_dropdown">
                                 <option selected disabled>--請選擇銀行--</option>
-                                <option value="001">001-中央信託</option>
-                                <option value="006">006-合庫商銀</option>
-                                <option value="007">007-第一銀行</option>
+                                <option>001	中央信託</option>
+                                <option>003	交通銀行</option>
+                                <option>004	台灣銀行</option>
+                                <option>005	土地銀行</option>
+                                <option>006	合庫商銀</option>
+                                <option>008	華南銀行</option>
+                                <option>009	彰化銀行</option>
+                                <option>010	華僑銀行</option>
+                                <option>011	上海銀行</option>
+                                <option>012	台北富邦</option>
+                                <option>013	國泰世華</option>
+                                <option>016	高雄銀行</option>
+                                <option>017	兆豐商銀</option>
+                                <option>018	農業金庫</option>
+                                <option>021	花旗銀行</option>
+                                <option>024	運通銀行</option>
+                                <option>025	首都銀行</option>
+                                <option>039	荷蘭銀行</option>
+                                <option>040	中華開發</option>
+                                <option>050	臺灣企銀</option>
+                                <option>051	台北商銀</option>
+                                <option>052	新竹商銀</option>
+                                <option>053	台中商銀</option>
+                                <option>054	京城商銀</option>
+                                <option>056	花蓮企銀</option>
+                                <option>057	台東企銀</option>
+                                <option>075	東亞銀行</option>
+                                <option>039	荷蘭銀行</option>
+                                <option>081	匯豐銀行</option>
+                                <option>083	渣打銀行</option>
+                                <option>087	標旗銀行</option>
+                                <option>101	台北一信</option>
+                                <option>102	華泰銀行</option>
+                                <option>103	臺灣新光商銀</option>
+                                <option>104	台北五信</option>
+                                <option>106	台北九信</option>
+                                <option>108	陽信銀行</option>
+                                <option>114	基隆一信</option>
+                                <option>115	基隆二信</option>
+                                <option>118	板信銀行</option>
+                                <option>119	淡水一信</option>
+                                <option>120	淡水信合社</option>
+                                <option>124	宜蘭信合社</option>
+                                <option>127	桃園信合社</option>
+                                <option>130	新竹一信</option>
+                                <option>132	新竹三信</option>
+                                <option>139	竹南信合社</option>
+                                <option>146	台中二信</option>
+                                <option>147	三信銀行</option>
+                                <option>158	彰化一信</option>
+                                <option>161	彰化五信</option>
+                                <option>162	彰化六信</option>
+                                <option>163	彰化十信</option>
+                                <option>165	鹿港信合社</option>
+                                <option>178	嘉義三信</option>
+                                <option>179	嘉義四信</option>
+                                <option>188	台南三信</option>
+                                <option>203	高雄二信</option>
+                                <option>204	高雄三信</option>
+                                <option>215	花蓮一信</option>
+                                <option>216	花蓮二信</option>
+                                <option>222	澎湖一信</option>
+                                <option>223	澎湖二信</option>
+                                <option>224	金門信合社</option>
                             </select>
                             <div class="arrow_container">
                                 <img src="imgs/down-arrow.svg" alt="">
@@ -1009,10 +1070,10 @@ $title = '付款方式'
                     <div class="z_text_intput">
                         <p class="z_checkbox_option ">信用卡號</p>
                         <div class="z_input_small_container">
-                            <input class="z_input_small " type="text" name="" id="" placeholder="XXXX">
-                            <input class="z_input_small " type="text" name="" id="" placeholder="XXXX">
-                            <input class="z_input_small " type="text" name="" id="" placeholder="XXXX">
-                            <input class="z_input_small " type="text" name="" id="" placeholder="XXXX">
+                            <input class="z_input_small " type="text" name="" id="" placeholder="XXXX" maxlength="4">
+                            <input class="z_input_small " type="text" name="" id="" placeholder="XXXX" maxlength="4">
+                            <input class="z_input_small " type="text" name="" id="" placeholder="XXXX" maxlength="4">
+                            <input class="z_input_small " type="text" name="" id="" placeholder="XXXX" maxlength="4">
                         </div>
                         <img class="z_paycard_img" src="imgs/paycard.png" alt="">
                     </div>
@@ -1023,8 +1084,8 @@ $title = '付款方式'
                     <div class="z_text_intput ">
                         <p class="z_checkbox_option ">有效月年</p>
                         <div class="z_input_medium_container">
-                            <input class="z_input_medium" type="text" name="" id="" placeholder="月">
-                            <input class="z_input_medium" type="text" name="" id="" placeholder="年">
+                            <input class="z_input_medium" type="text" name="" id="" placeholder="月" maxlength="2">
+                            <input class="z_input_medium" type="text" name="" id="" placeholder="年" maxlength="2">
                         </div>
                         <div class="z_payghost"></div>
                     </div>
@@ -1033,7 +1094,7 @@ $title = '付款方式'
                     <div class="z_text_intput ">
                         <p class="z_checkbox_option ">　末三碼</p>
                         <div class="z_input_container">
-                            <input class="z_input_text" type="text" name="" id="lastThree" placeholder="XXX">
+                            <input class="z_input_text" type="text" name="" id="lastThree" placeholder="XXX" maxlength="3">
                         </div>
                         <img class="z_creditcard_img" src="imgs\creditcardback.png" alt="">
                     </div>
@@ -1054,8 +1115,8 @@ $title = '付款方式'
                     <p class="alert" id="payCheck"></p>
                 </div>
                 <div class="z_twobtn">
-                    <button class="pc-button-F4F4F4-180 z_phone_162 ">清除資料</button>
-                    <button class="pc-button-FEAC00-180 z_phone_162 ">確認付款</button>
+                    <button class="pc-button-F4F4F4-180 z_phone_162" id="clear">清除資料</button>
+                    <a href="pay_success.php"><button class="pc-button-FEAC00-180 z_phone_162">確認付款</button></a>
                 </div>
             </div>
         </div>
@@ -1082,11 +1143,22 @@ $title = '付款方式'
         mouseleave: function() {
         $(".arrow_container img").removeClass("downArrow")
     },  
-    click: function(){
+        click: function(){
         $(".arrow_container img").toggleClass("downArrow")
     }
     })
 
+    $("#clear").click(function(){
+        let input_array = new Array()
+        $("#bankSelect").val("--請選擇銀行--")
+        $("input").each(function(){
+            input_array = $(this).val('')
+        })
+        $(".z_checkbox_container :checkbox").prop('checked', false)
+        $(".bank_area").css("display", "none")
+        $(".card_area").css("display", "none")
+        $(".z_payagree :checkbox").prop('checked', false)
+    })
 
 </script>
 

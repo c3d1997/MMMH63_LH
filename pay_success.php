@@ -729,7 +729,7 @@ $title = '付款成功'
                     </div>
                     <div class="z_twobtn z_btn_reverse">
                         <button class="pc-button-F4F4F4-180 z_phone_162 ">返回</button>
-                        <button class="pc-button-FEAC00-180 z_phone_162 ">查看明細</button>
+                        <a href="pay_detail_try.php"><button class="pc-button-FEAC00-180 z_phone_162 ">查看明細</button></a>
                         </button>
                     </div>
                 </div>

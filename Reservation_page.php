@@ -100,9 +100,22 @@ $i = $stmt->fetch();
     text-decoration: none;
     color: #0E2E3D;
 }
+#infoModal {
+    transform: translate(-50%, -50%);
+    position:fixed;
+    left: 50%;
+    top: 50%;
+
+}
 
 
 
+
+/* ----------------壓過CSS--------------------------- */
+button.pc-button-FEAC00-272{
+    font-weight:normal;
+
+}
 
 
 
@@ -187,6 +200,7 @@ $i = $stmt->fetch();
         /* flex-direction: row-reverse; */
         justify-content: center;
         margin: 20px 0 40px;
+        position: relative;
     }
     .pc-button-FEAC00-180 {
         width: 162.5px;
@@ -223,17 +237,16 @@ $i = $stmt->fetch();
                 <div class="S-Reservation-wrap">
                     <div class="S-Reservation">
                         <div class="S-Reservation-img">
-                        <img src="<?= $i['img'] ?>item0.jpg" alt="">
+                        <img src="imgs/items<?= 1 ?>/item1.jpg" alt="">
                         </div>
                         <div class="S-Reservation-info">
                             <h3 class="S-Reservation-price S-lg-d-none S-xs-d-block">$<?= number_format($i['price']) ?>/月</h3>
                             <h2 class="S-Reservation-name"><?= $i['item_name'] ?></h2>
                             <h3 class="S-Reservation-location">
-                                <i class="fa-solid fa-location-dot"></i><?= $i['area'], $i['dist'] ,$i['address'] ?>
+                                <i class="fa-solid fa-location-dot"></i><?= $i['item_area'], $i['item_dist'] ,$i['item_address'] ?>
                             </h3>
-                            <h2 class="S-Reservation-date">
-                                2022 年 4 月 15 日
-                                <span class="S-Reservation-time">15:00</span>
+                            <h2 class="S-Reservation-date" id="time">
+
                             </h2>
                         </div>
                     </div>
@@ -289,5 +302,16 @@ $i = $stmt->fetch();
             infoModal.close();
         })
     </script>
+
+<script>
+    $(document).ready(function(){
+        let data = localStorage.getItem("date");
+        data = JSON.parse(data);
+        $("#time").text(data)
+    })
+
+
+</script>
+
 
 <?php include __DIR__ . './part/javascript.php'  ?>

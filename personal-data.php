@@ -1,3 +1,7 @@
+<?php 
+    require './part/connect-db.php';
+
+?>
 <?php include __DIR__ . './part/head.php'  ?>
 
 <style>
@@ -31,7 +35,16 @@
         text-decoration: none;
         opacity: 1;
     }
-
+    .c-list-active{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+    .c-list-active a{
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 30px;
+        }
 
     /* 右邊標題開始 */
 
@@ -174,48 +187,48 @@
         <!-- 左邊選單 -->
         <div class="c-mylist">
             <ul>
-                <li class="c-list">
-                    <a href="">
+                <li class="c-list-active">
+                    <a href="personal-data.php">
                         <h3>會員資料</h3>
                     </a>
                 </li>
                 <li class="c-list">
-                    <a href="">
+                    <a href="house_post.php">
                         <h3>刊登物件</h3>
                     </a>
                 </li>
                 <li class="c-list">
-                    <a href="">
+                    <a href="myrent_house.php">
                         <h3>我的租屋</h3>
                     </a>
                 </li>
                 <li class="c-list">
-                    <a href="">
+                    <a href="mycollection_list.php">
                         <h3>我的收藏</h3>
                     </a>
                 </li>
                 <li class="c-list">
-                    <a href="">
+                    <a href="promo.php">
                         <h3>我的優惠</h3>
                     </a>
                 </li>
                 <li class="c-list">
-                    <a href="">
+                    <a href="house_reserve.php">
                         <h3>我的預約</h3>
                     </a>
                 </li>
                 <li class="c-list">
-                    <a href="">
+                    <a href="myrent_contract.php">
                         <h3>租屋契約</h3>
                     </a>
                 </li>
                 <li class="c-list">
-                    <a href="">
+                    <a href="myrent_fee.php">
                         <h3>租金支付</h3>
                     </a>
                 </li>
                 <li class="c-list">
-                    <a href="">
+                    <a href="clean_reserve.php">
                         <h3>清潔服務</h3>
                     </a>
                 </li>
@@ -228,28 +241,28 @@
                 </div>
                 <div class="x-title-content-all">
                     <div class="x-title-content">
-                        <input type="text" placeholder="請輸入欲修改姓名">
+                        <input type="text" placeholder="請輸入欲修改姓名" value="王世豪" style="font-weight: bold;" >
                         <div>
-                            <p>！錯誤</p>
+                            
                         </div>
 
                     </div>
                     <div class="x-title-content">
-                        <input type="text" placeholder="請輸入欲修改手機">
+                        <input type="text" placeholder="請輸入欲修改手機" value="0968881277" style="font-weight: bold;">
                         <div>
-                            <p>！錯誤</p>
+                           
                         </div>
                     </div>
                     <div class="x-title-content">
-                        <input type="text" placeholder="請輸入欲修改郵件">
+                        <input type="text" placeholder="請輸入欲修改郵件" value="bosebawi@gmail.com" style="font-weight: bold;">
                         <div>
-                            <p>！錯誤</p>
+                            
                         </div>
                     </div>
                     <div class="x-title-content">
-                        <input type="text" placeholder="請多多介紹您自己！（非必填）">
+                        <input type="text" placeholder="請多多介紹您自己！（非必填）" value="我是會說法文的工程師" style="font-weight: bold;">
                         <div>
-                            <p>！錯誤</p>
+                            
                         </div>
                     </div>
                     <!-- <button class="pc-button-FEAC00-180">修改</button> -->
