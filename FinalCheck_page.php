@@ -4,7 +4,7 @@ require './part/connect-db.php';
 
 
 // 帶入房屋資料
-$sql = "SELECT * FROM `items` WHERE `id` = 1;";
+$sql = "SELECT * FROM `items` WHERE `sid` = 1;";
 $stmt = $pdo->query($sql);
 $i = $stmt->fetch();
 
@@ -297,14 +297,14 @@ $i = $stmt->fetch();
             <div class="S-FinalCheck-wrap">
                 <div class="S-FinalCheck">
                     <div class="S-FinalCheck-img">
-                        <img src="<?= $i['img'] ?>item0.jpg" alt="">
+                        <img src="imgs/items<?= 1 ?>/item1.jpg" alt="">
                     </div>
                     <div class="S-FinalCheck-info">
                         <h3 class="S-FinalCheck-price S-lg-d-none S-xs-d-block">$<?= number_format($i['price']) ?>/月</h3>
-                        <h2 class="S-FinalCheck-name"><?= $i['area'], $i['dist'] ,$i['address'] ?></h2>
+                        <h2 class="S-FinalCheck-name"><?= $i['item_area'], $i['item_dist'] ,$i['item_address'] ?></h2>
                         <h3 class="S-FinalCheck-location">
                             <i class="fa-solid fa-location-dot"></i>
-                            <?= $i['area'], $i['dist'] ,$i['address'] ?>
+                            <?= $i['item_area'], $i['item_dist'] ,$i['item_address'] ?>
                         </h3>
                         <h2 class="S-FinalCheck-price">
                         $<?= number_format($i['price']) ?>/月
@@ -315,7 +315,7 @@ $i = $stmt->fetch();
                 <div class="S-FinalCheck-btn">
 
                     <button class="pc-button-F4F4F4-180  mobile-button-F4F4F4-162"><a href="customer_service/customer_service.html">聯絡我們</a></button>
-                    <button class="pc-button-FEAC00-180 mobile-button-FEAC00-162"><a href="contract/contract01_calend.html">確定租屋</a></button>
+                    <button class="pc-button-FEAC00-180 mobile-button-FEAC00-162"><a href="contract01.php">確定租屋</a></button>
 
 
                 </div>

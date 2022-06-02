@@ -133,14 +133,14 @@
         input[type=checkbox]+span {
             cursor: pointer;
             display: inline-block;
-            padding-left: 30px;
+            padding-left: 35px;
             /* line-height: 24px; */
             background: url(imgs/unchecked.svg) no-repeat left top;
             user-select: none;
         }
         input[type=checkbox]:checked+span {
             display: inline-block;
-            padding-left: 30px;
+            padding-left: 35px;
             /* line-height: 24px; */
             background-image: url(imgs/checked.svg);
         }
@@ -371,7 +371,7 @@
             margin-bottom: 0;
         }
         .z_publish_check_container input[type=checkbox]+span, .z_publish_check_container_s input[type=checkbox]+span, .z_publish_longer_check_container input[type=checkbox]+span{
-            padding-left: 20px;
+            padding-left: 25px;
             margin-right: 15px;
             line-height: 20px;
         }

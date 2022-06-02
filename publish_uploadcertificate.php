@@ -186,6 +186,7 @@
         }
         .uploadimg_before {
             position: absolute;
+            z-index: 5;
         }
         .uploadimg_before > *{
             margin-bottom: 10px;

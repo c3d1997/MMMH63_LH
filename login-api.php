@@ -25,7 +25,7 @@ if (empty($PasswordIn)) {
     exit;
 }
 
-$sql = "SELECT `id`, `mobile`, `name` FROM members WHERE `mobile` =?";
+$sql = "SELECT * FROM members WHERE `mobile` =?";
 
 
 $stmt = $pdo->prepare($sql);
@@ -37,10 +37,8 @@ $row = $stmt->fetch();
 if (!empty($row)) {
     $output['success'] = true;
     $output['code'] = 200;
-    $_SESSION['admin'] = [
-        'id' => $row['id'],
-        'mobile' => $row['mobile'],
-    ];
+    $output['row'] = $row;
+    $_SESSION['member'] = $row;
 } else {
     $output['error'] = '帳密錯誤';
     $output['code'] = 430;

@@ -661,6 +661,7 @@ $img = $pdo->query($sql)->fetch();
             }
             .z_pay_detail_container {
                 display: block;
+                max-height: none;
             }
             .z_pay_detail_img {
                 width: 100%;
