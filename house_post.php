@@ -1,12 +1,4 @@
-<?php 
-include __DIR__ . './part/head.php';
-require './part/connect-db.php';
-
-$sql = "SELECT *     FROM `items` WHERE `sid` = 1;";
-$i = $pdo->query($sql)->fetch();
-
-
-?>
+<?php include __DIR__ . './part/head.php'  ?>
 
     <style>
 .c-world {
@@ -257,18 +249,19 @@ ul.pagination li a:hover{
 
 <div class="flip">
     <p>士林夜市近士林劍潭捷運小套房</p>
-    <img src="imgs/down-arrow.svg" alt="">
+    <img src="../imgs/down-arrow.svg" alt="">
 
 </div>
 <div class="panel" hidden>
     <p>合約期限一年</p>
     <p>房屋狀態 : <span>未出租</span></p>
     <p>合約內容 : <a href="myrent_contract02.php">點擊查看</a></p>
+    
 </div>
 
 
 <!-- 2 -->
-<!-- <div class="flip">
+<div class="flip">
     <p>士林夜市近士林劍潭捷運小套房</p>
     <img src="../imgs/down-arrow.svg" alt="">
 
@@ -278,10 +271,10 @@ ul.pagination li a:hover{
     <p>房屋狀態 : 已出租</p>
     <p>合約內容 : <a href="myrent_contract02.php">點擊查看</a></p>
     
-</div> -->
+</div>
 
 <!-- 3 -->
-<!-- <div class="flip">
+<div class="flip">
     <p>士林夜市近士林劍潭捷運小套房</p>
     <img src="../imgs/down-arrow.svg" alt="">
 
@@ -290,7 +283,7 @@ ul.pagination li a:hover{
     <p>合約期限一年</p>
     <p>房屋狀態 : 已出租</p>
     <p>合約內容 : <a href="">點擊查看</a></p>
-</div> -->
+</div>
 
 
 <!-----------------------手機板的下拉-------- -->
@@ -307,12 +300,12 @@ ul.pagination li a:hover{
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><p><?=$i['item_name']?></p></td>
-                                    <td><p><?=$i['contract']?></p></td>
+                                    <td><p>士林夜市近士林劍潭捷運小套房</p></td>
+                                    <td><p>一年</p></td>
                                     <td><a href="myrent_contract02.php"><p class="check">點擊查看</p></a></td>
                                     <td><p class="notyet">未出租</p></td>
                                 </tr>
-<!-- 
+
                                 <tr class="active-row">
                                         <td><p>士林夜市近士林劍潭捷運小套房</p></td>
                                         <td><p>一年</p></td>
@@ -324,7 +317,7 @@ ul.pagination li a:hover{
                                     <td><p>一年</p></td>
                                     <td><a href="myrent_contract02.php"><p class="check">點擊查看</p></a></td>
                                     <td><p>已出租</p></td>
-                                </tr> -->
+                                </tr>
                             </tbody>
                         </table>
                     </div>
