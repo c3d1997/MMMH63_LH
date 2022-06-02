@@ -245,20 +245,26 @@
                 </div>
                 <div class="x-title-content-all">
                     <div class="x-title-content">
+
                         <input type="text" placeholder="請輸入欲修改姓名" value="<?=  $_SESSION['member']['name']?>" style="font-weight: bold;" >
+
                         <div>
                             
                         </div>
 
                     </div>
                     <div class="x-title-content">
+
                         <input type="text" placeholder="請輸入欲修改手機" value="<?= $_SESSION['member']['mobile'] ?>" style="font-weight: bold;">
+
                         <div>
                            
                         </div>
                     </div>
                     <div class="x-title-content">
+
                         <input type="text" placeholder="請輸入欲修改郵件" value="<?= $_SESSION['member']['email'] ?>" style="font-weight: bold;">
+
                         <div>
                             
                         </div>

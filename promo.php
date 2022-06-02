@@ -337,24 +337,6 @@ ul.pagination li a:hover{
                         </td>
                     </tr>
 
-                    <tr class="active-row">
-                        <td>
-                            <p>優惠碼_<?= $c['promo'] ?></p>
-                        </td>
-                        <td>
-                            <p>清潔優惠85折</p>
-                        </td>
-                        <td><p>已使用</p></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>優惠碼_<?= $c['promo'] ?>    </p>
-                        </td>
-                        <td>
-                            <p>清潔優惠85折</p>
-                        </td>
-                        <td><p>已使用</p></td>
-                    </tr>
                 </tbody>
             </table>
         </div>
