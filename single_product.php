@@ -150,13 +150,6 @@ $k = $stmt->fetch();
         text-decoration: none;
     }
 
-    path{
-        cursor: pointer;
-        fill: grey;
-    }
-    .clicked {
-            fill: #ff0000;
-        }
     /* ------------------------------------------- */
 
 
@@ -2093,21 +2086,7 @@ $k = $stmt->fetch();
 
 </script>
 
-<script>
-        // first we get all the path elements and put them in an array
-        let paths = document.getElementsByTagName('path')
 
-        //now we can loop over the array and add an eventlistener to each path in the array
-        // it listens to the 'click' event and then runs function toggleClass()
-        for (let i = 0; i < paths.length; i++) {
-            paths[i].addEventListener('click', toggleClass)
-        }
-
-        // In the function toggleClass we can toggle the 'clicked' class.
-        function toggleClass() {
-            this.classList.toggle('clicked')
-        }
-</script>
 
 
 <?php include __DIR__ . './part/javascript.php'  ?>
