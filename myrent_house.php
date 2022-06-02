@@ -296,12 +296,12 @@ ul.pagination li a:hover{
                             <tbody>
                                 <tr>
                                     <td><p><?= $i['item_name'] ?></p></td>
-                                    <td><p><?=$i['contract']?></p></td>
+                                    <td><p>一年</p></td>
                                     <td><a href=""><p class="check">點擊查看</p></a></td>
-                                    <td><p>07/08</p></td>
+                                    <td><p>2022/05/01</p></td>
                                 </tr>
 
-                                <!-- <tr class="active-row">
+                                <tr class="active-row">
                                         <td><p><?= $i['item_name'] ?></p></td>
                                         <td><p>一年</p></td>
                                         <td><a href=""><p class="check">點擊查看</p></a></td>
@@ -312,7 +312,7 @@ ul.pagination li a:hover{
                                     <td><p>一年</p></td>
                                     <td><a href=""><p class="check">點擊查看</p></a></td>
                                     <td><p>2022/05/01</p></td>
-                                </tr> -->
+                                </tr>
                             </tbody>
                         </table>
                     </div>
