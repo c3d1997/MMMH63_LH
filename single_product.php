@@ -4,6 +4,7 @@ $title = '單一物件';
 // 帶入房屋資料
 $x = $_GET['sid'];
 $ksql = "SELECT * FROM `items` WHERE `sid` = $x";
+// $ksql = "SELECT * FROM `items` WHERE `sid` = 65";
 $stmt = $pdo->query($ksql);
 $k = $stmt->fetch();
 

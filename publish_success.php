@@ -1,8 +1,30 @@
 <?php
-$title = '付款成功'
+    require './part/connect-db.php';
+$title = '付款成功';
+
+unset($_SESSION['item_name']);
+unset($_SESSION['roomtype']);
+unset($_SESSION['room_count']);
+unset($_SESSION['ping_number']);
+unset($_SESSION['floor']);
+unset($_SESSION['price']);
+unset($_SESSION['item_area']);
+unset($_SESSION['item_dist']);
+unset($_SESSION['item_address']);
+unset($_SESSION['contract']);
+unset($_SESSION["feature"]);
+unset($_SESSION["equipment_detail"]);
+unset($_SESSION["safety_equipment"]);
+unset($_SESSION["other_cost"]);
+unset($_SESSION["postulate"]);
+unset($_SESSION["around"]);
+unset($_SESSION['hobby']);
+unset($_SESSION['item_info']);
+unset($_SESSION['roommate_info']);
+// echo json_encode($_SESSION,JSON_UNESCAPED_UNICODE)
 ?>
 
-<?php include __DIR__ . './part/payhead.php'  ?>
+<?php include __DIR__ . './part/head.php'  ?>
 
     <style>
         * {
