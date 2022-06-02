@@ -3,11 +3,10 @@
         <ul>
             <div class="pc-link">
                 <li class="x-log">
-                    <a href="
-                        ">搜尋</a>
+                    <a href="search_all.php">搜尋</a>
                 </li>
                 <li class="x-log">
-                    <a href="">
+                    <a href="publish_uploadimgx10.php">
                         刊登房屋
                     </a>
                 </li>
@@ -23,12 +22,12 @@
             </li>
             <div class="phone-nav-link">
                 <li class="x-log x-phone">
-                    <a href="">
+                    <a href="search_all.php">
                         搜尋
                     </a>
                 </li>
                 <li class="x-log x-phone">
-                    <a href="./house_post.php">
+                    <a href="publish_uploadimgx10.php">
                         刊登房屋
                     </a>
                 </li>
