@@ -1,3 +1,13 @@
+
+<?php
+
+// require './part/admin-required.php';
+require './part/connect-db.php';
+$pageName = 'cleanserver_homepage';
+
+// echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
+?>
+
 <?php include __DIR__ . './part/head.php'  ?>
 
 <style>

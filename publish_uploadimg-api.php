@@ -19,7 +19,7 @@
     }
 
     $img_arr = $_SESSION['img_arr'];
-    $i = 0;
+    $i = 1;
     foreach($img_arr as $i_url) {
         $i_image = file_get_contents($i_url);
         file_put_contents($path.'/item'.$i.'.jpg', $i_image ); //Where to save the image
