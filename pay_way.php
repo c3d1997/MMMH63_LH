@@ -1085,7 +1085,7 @@ $title = '付款方式'
                         <p class="z_checkbox_option ">有效月年</p>
                         <div class="z_input_medium_container">
                             <input class="z_input_medium" type="text" name="" id="" placeholder="月" maxlength="2">
-                            <input class="z_input_medium" type="text" name="" id="" placeholder="年" maxlength="4">
+                            <input class="z_input_medium" type="text" name="" id="" placeholder="年" maxlength="2">
                         </div>
                         <div class="z_payghost"></div>
                     </div>

@@ -782,12 +782,6 @@
                     img_arr : JSON.stringify(img_arr),
                 },
             })
-            $.ajax({
-                url:"publish_uploadimg-api.php",
-                // url:"publish_otherinfo.php",
-                method: "post",   
-                data: {certificate : JSON.stringify(certificate)},
-            })
         }  
         
         </script>
