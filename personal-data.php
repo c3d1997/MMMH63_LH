@@ -1,6 +1,8 @@
 <?php 
     require './part/connect-db.php';
 
+    
+
 ?>
 <?php include __DIR__ . './part/head.php'  ?>
 
@@ -88,8 +90,10 @@
         color: red;
     }
 
-    .x-title-content input[placeholder] {
-        opacity: .5;
+    .x-title-content input {
+        color: #0E2E3D;
+        text-indent: 15px;
+        /* opacity: .5; */
     }
 
     .x-title-content-all-button-two {
@@ -241,20 +245,26 @@
                 </div>
                 <div class="x-title-content-all">
                     <div class="x-title-content">
-                        <input type="text" placeholder="請輸入欲修改姓名" value="" style="font-weight: bold;" >
+
+                        <input type="text" placeholder="請輸入欲修改姓名" value="<?=  $_SESSION['member']['name']?>" style="font-weight: bold;" >
+
                         <div>
                             
                         </div>
 
                     </div>
                     <div class="x-title-content">
-                        <input type="text" placeholder="請輸入欲修改手機" value="" style="font-weight: bold;">
+
+                        <input type="text" placeholder="請輸入欲修改手機" value="<?= $_SESSION['member']['mobile'] ?>" style="font-weight: bold;">
+
                         <div>
                            
                         </div>
                     </div>
                     <div class="x-title-content">
-                        <input type="text" placeholder="請輸入欲修改郵件" value="" style="font-weight: bold;">
+
+                        <input type="text" placeholder="請輸入欲修改郵件" value="<?= $_SESSION['member']['email'] ?>" style="font-weight: bold;">
+
                         <div>
                             
                         </div>
