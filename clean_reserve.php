@@ -1,4 +1,7 @@
-<?php include __DIR__ . './part/head.php'  ?>
+<?php 
+include __DIR__ . './part/head.php';
+require './part/connect-db.php';
+?>
 
 <style>
     .c-world {

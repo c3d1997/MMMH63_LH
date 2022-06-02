@@ -376,7 +376,7 @@
             line-height: 20px;
         }
         .z_publish_check_container input[type=checkbox]+span,.z_publish_check_container_s input[type=checkbox]+span {
-            width: 100px;
+            width: 110px;
         }
         .z_publish_longer_check_container input[type=checkbox]+span{
             width: 60px;
