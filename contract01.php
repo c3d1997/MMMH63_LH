@@ -4,7 +4,7 @@ require './part/connect-db.php';
 
 
 //// ------------------------------------------
-$json_str = '{"sid":"1","id":"A1556655","name":"小皇子","EngName":"Peter","Id_number":"A123456789","Pass_num":null,"email":"littlehouse@gmail.com","mobile":"0987666888","Area":"新北市","Dist":"樹林區","Add":"田尾街17號","Password":"123","Introduce":"韓愈說過一句富有哲理的話，不塞不流，不止不行。希望各位能用心體會這段話。我以為我了解興趣，但我真的了解興趣嗎？仔細想想，我對興趣的理解只是皮毛而已。貝蒂在不經意間這樣說過，大家都不聽謊言，說謊的人也就絕跡了。","created_at":"2020-04-06 16:31:02"}';
+$json_str = '{"sid":"1","id":"A1556655","name":"彭世豪","EngName":"Peter","Id_number":"B294354724","Pass_num":null,"email":"bosebawi@gmail.com","mobile":"0968881277","Area":"新北市","Dist":"樹林區","Add":"田尾街17號","Password":"123","Introduce":"韓愈說過一句富有哲理的話，不塞不流，不止不行。希望各位能用心體會這段話。我以為我了解興趣，但我真的了解興趣嗎？仔細想想，我對興趣的理解只是皮毛而已。貝蒂在不經意間這樣說過，大家都不聽謊言，說謊的人也就絕跡了。","created_at":"2020-04-06 16:31:02"}';
 $_SESSION['user'] = json_decode($json_str, true);
 //// ------------------------------------------
 
@@ -1083,10 +1083,10 @@ $i = $stmt->fetch();
 <!------------------button--------- -->
 <div class="c_button_section">
     <div class="c_button_left">
-        <button class="pc-button-F4F4F4-180 z_phone-button-162">清除資料</button>
+        <button class="pc-button-FEAC00-180 z_phone-button-162">清除資料</button>
     </div>
     <div class="c_button_right">
-    <a href="contract02.php" style="text-decoration:none; color:#0E2E3D;"><button class="pc-button-FEAC00-180 z_phone-button-162">送出</button></a>
+    <a href="contract02.php" style="text-decoration:none; color:#0E2E3D;"><button class="pc-button-F4F4F4-180 z_phone-button-162">送出</button></a>
         
     
     

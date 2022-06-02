@@ -256,7 +256,7 @@ button.pc-button-FEAC00-272{
                         <!-- <button class="pc-button-F4F4F4-180"><a
                                 href="../customer_service/customer_service.html">聯絡我們</a></button> -->
                         <button class="pc-button-F4F4F4-180"><a
-                                href="customer_service/customer_service.html">聯絡我們</a></button>
+                                href="customer_service.php">聯絡我們</a></button>
                         <button class="pc-button-FEAC00-180" id="show">確定預約</button>
                         <!-- 彈出預約成功視窗 -->
 
