@@ -374,7 +374,7 @@
             margin-bottom: 0;
         }
         .z_publish_check_container input[type=checkbox]+span, .z_publish_check_container_s input[type=checkbox]+span, .z_publish_longer_check_container input[type=checkbox]+span{
-            padding-left: 20px;
+            padding-left: 25px;
             margin-right: 15px;
         }
         .z_publish_check_container input[type=checkbox]+span,.z_publish_check_container_s input[type=checkbox]+span {
@@ -699,12 +699,6 @@
                                     <p class="alert bold z_publish_small">（非必填）</p>
                                 </div>
                                 <div class="z_publish_longer_check_container ">
-                                <label>
-                                    <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="健身">
-                                        <span>健身</span>
-                                    </div>
-                                </label>
                                 <label>
                                     <div class="z_publish_checkbox_option_container">
                                         <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="文創">
