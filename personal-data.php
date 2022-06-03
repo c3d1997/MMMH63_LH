@@ -89,7 +89,8 @@
     }
 
     .x-title-content input[placeholder] {
-        opacity: .5;
+        /* opacity: .5; */
+        text-indent: 15px;
     }
 
     .x-title-content-all-button-two {
@@ -241,26 +242,26 @@
                 </div>
                 <div class="x-title-content-all">
                     <div class="x-title-content">
-                        <input type="text" placeholder="請輸入欲修改姓名" value="王世豪" style="font-weight: bold;" >
+                        <input type="text" placeholder="請輸入欲修改姓名" value="小皇子" style="font-weight: bold;" >
                         <div>
                             
                         </div>
 
                     </div>
                     <div class="x-title-content">
-                        <input type="text" placeholder="請輸入欲修改手機" value="0968881277" style="font-weight: bold;">
+                        <input type="text" placeholder="請輸入欲修改手機" value="0987666888" style="font-weight: bold;">
                         <div>
                            
                         </div>
                     </div>
                     <div class="x-title-content">
-                        <input type="text" placeholder="請輸入欲修改郵件" value="bosebawi@gmail.com" style="font-weight: bold;">
+                        <input type="text" placeholder="請輸入欲修改郵件" value="littlehouse@gmail.com" style="font-weight: bold;">
                         <div>
                             
                         </div>
                     </div>
                     <div class="x-title-content">
-                        <input type="text" placeholder="請多多介紹您自己！（非必填）" value="我是會說法文的工程師" style="font-weight: bold;">
+                        <input type="text" placeholder="請多多介紹您自己！（非必填）" value="" style="font-weight: bold;">
                         <div>
                             
                         </div>

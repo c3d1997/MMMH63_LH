@@ -245,8 +245,8 @@ ul.pagination li a:hover{
 <!-- --------------手機板的下拉--- -->
 
 <div class="flip">
-    <p><?= $i['item_name'] ?></p>
-    <img src="../imgs/down-arrow.svg" alt="">
+    <p>近捷運板橋站，市中心生活圈</p>
+    <img src="imgs/down-arrow.svg" alt="">
 
 </div>
 <div class="panel" hidden>
@@ -255,30 +255,6 @@ ul.pagination li a:hover{
     <p>繳費期限:2022/06/08</p>
 </div>
 
-
-<!-- 2 -->
-<div class="flip">
-    <p><?= $i['item_name'] ?></p>
-    <img src="../imgs/down-arrow.svg" alt="">
-
-</div>
-<div class="panel">
-    <p>合約期限一年</p>
-    <p>合約內容 : <a href="">點擊查看</a></p>
-    <p>繳費期限:2022/07/08</p>
-</div>
-
-<!-- 3 -->
-<div class="flip">
-    <p><?= $i['item_name'] ?></p>
-    <img src="../imgs/down-arrow.svg" alt="">
-
-</div>
-<div class="panel">
-    <p>合約期限一年</p>
-    <p>合約內容 : <a href="">點擊查看</a></p>
-    <p>繳費期限:2022/08/08</p>
-</div>
 
 
 <!-----------------------手機板的下拉-------- -->
@@ -295,43 +271,28 @@ ul.pagination li a:hover{
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><p><?= $i['item_name'] ?></p></td>
+                                    <td><p>近捷運板橋站，市中心生活圈</p></td>
                                     <td><p>一年</p></td>
                                     <td><a href=""><p class="check">點擊查看</p></a></td>
                                     <td><p>2022/05/01</p></td>
                                 </tr>
 
                                 <tr class="active-row">
-                                        <td><p><?= $i['item_name'] ?></p></td>
-                                        <td><p>一年</p></td>
-                                        <td><a href=""><p class="check">點擊查看</p></a></td>
-                                        <td><p>2022/05/01</p></td>
+                                        <td><p></p></td>
+                                        <td><p></p></td>
+                                        <td><a href=""><p class="check"></p></a></td>
+                                        <td><p></p></td>
                                 </tr>
                                 <tr>
-                                    <td><p><?= $i['item_name'] ?></p></td>
-                                    <td><p>一年</p></td>
-                                    <td><a href=""><p class="check">點擊查看</p></a></td>
-                                    <td><p>2022/05/01</p></td>
+                                    <td><p></p></td>
+                                    <td><p></p></td>
+                                    <td><a href=""><p class="check"></p></a></td>
+                                    <td><p></p></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-<!----------------pages------------------>
-                    <div class="c-pages">
-                        <ul class="pagination">
-                            <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❮</a></li>
-    
-                            <li><a href="#">1</a></li>
-                            <li><a class="active" href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-    
-                            <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❯</a></li>
-                        </ul>
-                    </div>
-                
-            <!--------------pages------------------->
 
                 </div>
 

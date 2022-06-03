@@ -1,6 +1,36 @@
 <?php
 $title = '付款成功';
 require './part/connect-db.php';
+// echo json_encode($_SESSION,JSON_UNESCAPED_UNICODE);
+
+
+
+
+unset($_SESSION['item_name']);
+unset($_SESSION['roomtype']);
+unset($_SESSION['room_count']);
+unset($_SESSION['ping_number']);
+unset($_SESSION['floor']);
+unset($_SESSION['price']);
+unset($_SESSION['item_area']);
+unset($_SESSION['item_dist']);
+unset($_SESSION['item_address']);
+unset($_SESSION['contract']);
+unset($_SESSION["feature"]);
+unset($_SESSION["equipment_detail"]);
+unset($_SESSION["safety_equipment"]);
+unset($_SESSION["other_cost"]);
+unset($_SESSION["postulate"]);
+unset($_SESSION["around"]);
+unset($_SESSION['hobby']);
+unset($_SESSION['item_info']);
+unset($_SESSION['roommate_info']);
+
+
+
+
+
+
 ?>
 
 <?php include __DIR__ . './part/payhead.php'  ?>
@@ -848,7 +878,7 @@ require './part/connect-db.php';
                 <div class="z_twobtn z_btn_reverse">
                     <button class="pc-button-F4F4F4-180 z_phone_162 "><a href="home_page.php">返回首頁</a></button>
 
-                    <button class="pc-button-FEAC00-180 z_phone_162 "><a href="single_product.php?=62>">查看物件</a></button>
+                    <a href="single_product.php?=<?php $_SESSION["item_c"]?>>"><button class="pc-button-FEAC00-180 z_phone_162 ">查看物件</button></a>
 
                     </button>
                 </div>
