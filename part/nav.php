@@ -12,9 +12,9 @@
                 </li>
             </div>
             <li class="x-log-img">
-                <a href=""><img src="imgs/LOGO.svg" alt="">
+                <a href="home_page.php"><img src="imgs/LOGO.svg" alt="">
                 </a>
-                <a href=""><img src="imgs/phone_logo.png" alt="">
+                <a href="home_page.php"><img src="imgs/phone_logo.png" alt="">
                 </a>
             </li>
             <li class="x-log-phone-title">
@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li class="x-log">
-                    <a href="cleaning_services.php">
+                    <a href="cleanserver_homepage.php">
                         清潔服務
                     </a>
                 </li>
