@@ -7,6 +7,10 @@ $ksql = "SELECT * FROM `items` WHERE `sid` = $x";
 $stmt = $pdo->query($ksql);
 $k = $stmt->fetch();
 
+$twosql = "SELECT * FROM items WHERE sid IN (8,9,10,11)";
+$twostmts = $pdo->query($twosql);
+$two = $twostmts->fetch();
+
 ?>
 <?php include __DIR__ . './part/head.php'  ?>
 
@@ -21,13 +25,27 @@ $k = $stmt->fetch();
 <style>
     /* 自己頁面的css */
     /* ----------------calender------------------------- */
-    .simpilepicker-date-picker{
-        margin: 10% auto;    
+    .simpilepicker-date-picker {
+        margin: 10% auto;
     }
+
+    .S-lg-card-img {
+        height: 70%;
+    }
+    .S-lg-like svg.x-svg-down {
+        transition: .25s;
+        transform: scale(0.8);
+    }
+
+    .S-lg-like svg.x-svg-up {
+        transition: .25s;
+        transform: scale(1);
+    }
+
     .event-log {
         margin: auto;
         height: auto;
-        color: red;
+        color: #0E2E3D;
         font-weight: bold;
         text-align: center;
         display: flex;
@@ -35,10 +53,14 @@ $k = $stmt->fetch();
     }
 
     .ok_submit {
-        border: 2px solid red;
-        padding: 5px;
+        /* background-color: #FEAC00; */
+        /* padding: 5px 10px; */
         margin-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
+    
 
     a {
         text-decoration: none;
@@ -92,10 +114,11 @@ $k = $stmt->fetch();
         left: 70%;
     }
 
-    .link{
+    .link {
         position: relative;
     }
-    .show_copy{
+
+    .show_copy {
         position: absolute;
         top: -95%;
         left: 5%;
@@ -105,10 +128,10 @@ $k = $stmt->fetch();
         background-color: #F1EDEA;
     }
 
-    .js-copy-bob-btn{
+    .js-copy-bob-btn {
         cursor: pointer;
     }
-    
+
     .S-viewer-wrap .S-lg-share {
         font-size: 1.5em;
         margin: 0 20px;
@@ -141,7 +164,7 @@ $k = $stmt->fetch();
     }
 
     .S-viewer-wrap .S-lg-like svg {
-        width: 25px;
+        width: 50px;
     }
 
     .pc-button-F4F4F4-280 {
@@ -429,7 +452,7 @@ $k = $stmt->fetch();
     /* footer */
 
     .footer_container {
-        margin-top: 266px;
+        margin-top: 140px;
     }
 
 
@@ -492,6 +515,7 @@ $k = $stmt->fetch();
         .S-lg-link-g {
             display: flex;
         }
+        
 
         .S-viewer-wrap .S-lg-share {
             width: 30px;
@@ -898,7 +922,6 @@ $k = $stmt->fetch();
         }
 
     }
-
 </style>
 
 <?php include __DIR__ . './part/nav.php'  ?>
@@ -917,11 +940,12 @@ $k = $stmt->fetch();
                     <div class="S-lg-share" id="share-show">
                         <i class="fa-solid fa-share-nodes"></i>
                     </div>
-                    <div class="S-lg-like">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">                                        
-                            <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                            <path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z" />
+                    <div class="S-lg-like" onclick="likeClick(event)" onmousedown="downClick(event)" onmouseup="upClick(event)" data-sid="12">
+                        <svg class=" S-lg-svg " width=" 50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
+                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
+
                     </div>
                 </div>
             </div>
@@ -951,10 +975,10 @@ $k = $stmt->fetch();
                     <div class="show_copy">已拷貝</div>
                     <a class="js-copy-bob-btn">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.02138 9.45504C10.607 6.98745 14.9038 6.98745 17.4894 9.45504C19.8145 11.6745 20.1587 15.2123 18.2474 17.7647L18.1962 17.8357C17.7173 18.4705 16.7872 18.6214 16.1222 18.1642C15.4526 17.707 15.2945 16.8192 15.7734 16.1844L15.8246 16.1134C16.8895 14.6885 16.7221 12.7398 15.4247 11.5014C13.9645 10.1076 11.5882 10.1076 10.1233 11.5014L4.90568 16.4863C3.44037 17.8446 3.44037 20.1484 4.90568 21.5467C6.19847 22.7851 8.2446 22.9449 9.73269 21.9284L9.8071 21.8396C10.4767 21.4224 11.4068 21.5689 11.8811 22.2081C12.3601 22.8473 12.2067 23.7351 11.537 24.1923L11.4626 24.2411C8.74683 26.0655 5.12425 25.7725 2.79956 23.5575C0.173584 21.0495 0.173584 16.9835 2.79956 14.4799L8.02138 9.45504ZM21.7398 20.5035C19.1123 23.0115 14.8573 23.0115 12.2299 20.5035C9.90475 18.2841 9.60249 14.7862 11.5138 12.2338L11.5649 12.1628C12.002 11.528 12.9321 11.3771 13.6389 11.8343C14.3086 12.2516 14.4667 13.1393 13.9877 13.8141L13.9366 13.8851C12.8716 15.27 13.0391 17.2587 14.3365 18.4971C15.7967 19.8909 18.173 19.8909 19.6378 18.4971L24.8555 13.5122C26.3203 12.114 26.3203 9.81016 24.8555 8.45185C23.5627 7.21472 21.5166 7.05314 20.0285 8.0701L19.9541 8.11893C19.2844 8.57614 18.3544 8.3897 17.88 7.78956C17.401 7.15124 17.5545 6.2639 18.2241 5.80802L18.2985 5.75831C20.9725 3.9344 24.6369 4.22377 26.9621 6.44279C29.5895 8.94901 29.5895 13.0151 26.9621 15.5186L21.7398 20.5035Z" fill="black" />
+                            <path d="M8.02138 9.45504C10.607 6.98745 14.9038 6.98745 17.4894 9.45504C19.8145 11.6745 20.1587 15.2123 18.2474 17.7647L18.1962 17.8357C17.7173 18.4705 16.7872 18.6214 16.1222 18.1642C15.4526 17.707 15.2945 16.8192 15.7734 16.1844L15.8246 16.1134C16.8895 14.6885 16.7221 12.7398 15.4247 11.5014C13.9645 10.1076 11.5882 10.1076 10.1233 11.5014L4.90568 16.4863C3.44037 17.8446 3.44037 20.1484 4.90568 21.5467C6.19847 22.7851 8.2446 22.9449 9.73269 21.9284L9.8071 21.8396C10.4767 21.4224 11.4068 21.5689 11.8811 22.2081C12.3601 22.8473 12.2067 23.7351 11.537 24.1923L11.4626 24.2411C8.74683 26.0655 5.12425 25.7725 2.79956 23.5575C0.173584 21.0495 0.173584 16.9835 2.79956 14.4799L8.02138 9.45504ZM21.7398 20.5035C19.1123 23.0115 14.8573 23.0115 12.2299 20.5035C9.90475 18.2841 9.60249 14.7862 11.5138 12.2338L11.5649 12.1628C12.002 11.528 12.9321 11.3771 13.6389 11.8343C14.3086 12.2516 14.4667 13.1393 13.9877 13.8141L13.9366 13.8851C12.8716 15.27 13.0391 17.2587 14.3365 18.4971C15.7967 19.8909 18.173 19.8909 19.6378 18.4971L24.8555 13.5122C26.3203 12.114 26.3203 9.81016 24.8555 8.45185C23.5627 7.21472 21.5166 7.05314 20.0285 8.0701L19.9541 8.11893C19.2844 8.57614 18.3544 8.3897 17.88 7.78956C17.401 7.15124 17.5545 6.2639 18.2241 5.80802L18.2985 5.75831C20.9725 3.9344 24.6369 4.22377 26.9621 6.44279C29.5895 8.94901 29.5895 13.0151 26.9621 15.5186L21.7398 20.5035Z" fill="black" />
                         </svg>
                     </a>
-                    
+
                 </div>
 
             </div>
@@ -1041,6 +1065,7 @@ $k = $stmt->fetch();
                     <?php for ($i = 0; $i < 10; $i++) : ?>
                         <div class="column">
                             <img class="demo cursor" src="imgs/items<?= $k['sid'] ?>/item<?= $i ?>.jpg" style="width:100%" onclick="currentSlide(<?= $i + 1 ?>)" alt="Nature and sunrise">
+                            
                         </div>
                     <?php endfor; ?>
                     <!--
@@ -1101,7 +1126,7 @@ $k = $stmt->fetch();
                     <!-- <button class="simplepicker-btn">Show Picker</button> -->
                     <div class="event-log" id="clean">
                         <span id="pickTime"></span>
-                        <span id="ok_time" style="height:30px;">點選上方</span>
+                        <span id="ok_time" style="height:30px;"></span>
                     </div>
 
                     <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a href="FinalCheck_page.php">我要租屋</a></button>
@@ -1620,94 +1645,39 @@ $k = $stmt->fetch();
 
         <!-- lg-card 大商品圖 -->
         <div class="S-lg-card-wrap-top S-xs-d-none">
-            <div class="S-lg-card-wrap col-lg-4">
-                <div class="S-lg-share">
-                    <i class="fa-solid fa-share-nodes"></i>
-                </div>
-                <div class="S-lg-like">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                        <path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z" />
-                    </svg>
-                </div>
-                <div class="S-lg-card">
-                    <div class="S-lg-card-img">
-                        <img src="imgs/bedroom-6778193_1920.jpg" alt="">
-                    </div>
-                    <div class="S-lg-card-info">
-                        <h4>
-                            <span>三重大樓</span> 新北市三重區
-                        </h4>
-                        <div class="S-lg-card-info-2">
-                            <p>
-                                整層住家 6 樓 3房 2 廳 2衛浴
-                            </p>
-                            <h3>
-                                15,000/月
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="S-lg-card-wrap col-lg-4">
-                <div class="S-lg-share">
-                    <i class="fa-solid fa-share-nodes"></i>
-                </div>
-                <div class="S-lg-like">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                        <path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z" />
-                    </svg>
-                </div>
-                <div class="S-lg-card">
-                    <div class="S-lg-card-img">
-                        <img src="imgs/bedroom-6778193_1920.jpg" alt="">
-                    </div>
-                    <div class="S-lg-card-info">
-                        <h4>
-                            <span>三重大樓</span> 新北市三重區
-                        </h4>
-                        <div class="S-lg-card-info-2">
-                            <p>
-                                整層住家 6 樓 3房 2 廳 2衛浴
-                            </p>
-                            <h3>
-                                15,000/月
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="S-lg-card-wrap col-lg-4">
-                <div class="S-lg-share">
-                    <i class="fa-solid fa-share-nodes"></i>
-                </div>
-                <div class="S-lg-like">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                        <path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z" />
-                    </svg>
-                </div>
-                <div class="S-lg-card">
-                    <div class="S-lg-card-img">
-                        <img src="imgs/bedroom-6778193_1920.jpg" alt="">
+            <?php foreach ($twostmts as $i) : ?>
+                <div class="S-lg-card-wrap">
+                    <div class="S-lg-share">
+                        <!-- <img src="../imgs/分享.svg" alt=""> -->
 
                     </div>
-                    <div class="S-lg-card-info">
-                        <h4>
-                            <span>三重大樓</span> 新北市三重區
-                        </h4>
-                        <div class="S-lg-card-info-2">
-                            <p>
-                                整層住家 6 樓 3房 2 廳 2衛浴
-                            </p>
-                            <h3>
-                                15,000/月
-                            </h3>
+                    <div class="S-lg-like" onclick="likeClick(event)" onmousedown="downClick(event)" onmouseup="upClick(event)" data-sid="12">
+                        <svg class=" S-lg-svg " width=" 50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
+                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                    </div>
+                    <div class="S-lg-card">
+                        <div class="S-lg-card-img">
+                            <img src="imgs/items<?= $i['sid'] ?>/item1.jpg">
+                        </div>
+                        <div class="S-lg-card-info ">
+                            <h4>
+                                <span><?= $i['item_name'] ?></span> <?= $i['item_area'] ?><?= $i['item_dist'] ?>
+                            </h4>
+                            <div class="S-lg-card-info-2 ">
+                                <p>
+                                    <?= $i['floor'] ?>
+                                </p>
+                                <h3>
+                                    $<?= number_format($i['price']) ?>/月
+                                </h3>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php endforeach; ?>
 
         </div>
 
@@ -2031,7 +2001,7 @@ $k = $stmt->fetch();
 <script>
     const cleantext = () => {
         $("#ok_time").text("")
-        $("#ok_time").append(`<a href="Reservation_page.php"><span class="ok_submit" >送出</span></a>`)
+        $("#ok_time").append(`<a href="Reservation_page.php"><span class="ok_submit" >確認詳細資訊</span></a>`)
     };
     $(document).on('ready', function() {
         if ($("#pickTime").text() === '') {
@@ -2043,38 +2013,38 @@ $k = $stmt->fetch();
 </script>
 
 <script>
+    function fallbackCopyTextToClipboard(text) {
+        var textArea = document.createElement("textarea");
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
 
-        function fallbackCopyTextToClipboard(text) {
-            var textArea = document.createElement("textarea");
-            textArea.value = text;
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-
-            try {
-                var successful = document.execCommand("copy");
-                var msg = successful ? "successful" : "unsuccessful";
-                console.log("Fallback: Copying text command was " + msg);
-            } catch (err) {
-                console.error("Fallback: Oops, unable to copy", err);
-            }
-
-            document.body.removeChild(textArea);
+        try {
+            var successful = document.execCommand("copy");
+            var msg = successful ? "successful" : "unsuccessful";
+            console.log("Fallback: Copying text command was " + msg);
+        } catch (err) {
+            console.error("Fallback: Oops, unable to copy", err);
         }
-        function copyTextToClipboard(text) {
-            if (!navigator.clipboard) {
-                fallbackCopyTextToClipboard(text);
-                return;
-            }
-            navigator.clipboard.writeText(text).then(
-                function () {
-                    console.log("Async: Copying to clipboard was successful!");
-                },
-                function (err) {
-                    console.error("Async: Could not copy text: ", err);
-                }
-            );
+
+        document.body.removeChild(textArea);
+    }
+
+    function copyTextToClipboard(text) {
+        if (!navigator.clipboard) {
+            fallbackCopyTextToClipboard(text);
+            return;
         }
+        navigator.clipboard.writeText(text).then(
+            function() {
+                console.log("Async: Copying to clipboard was successful!");
+            },
+            function(err) {
+                console.error("Async: Could not copy text: ", err);
+            }
+        );
+    }
 
 
     var copyBobBtn = document.querySelector(".js-copy-bob-btn");
@@ -2082,11 +2052,29 @@ $k = $stmt->fetch();
     copyBobBtn.addEventListener("click", function(event) {
         copyTextToClipboard(location.href);
     });
-    $(copyBobBtn).mousedown(function(){
+
+    $(copyBobBtn).mousedown(function() {
         $(".show_copy").toggle()
-        
+
     })
 
+    function likeClick(event) {
+        const svg = $(event.currentTarget).find('.S-lg-svg');
+        svg.toggleClass('x-svg-color');
+    }
+
+    function downClick(event) {
+        const svg = $(event.currentTarget).find('.S-lg-svg');
+        svg.removeClass('x-svg-up');
+        svg.addClass('x-svg-down');
+
+    }
+
+    function upClick(event) {
+        const svg = $(event.currentTarget).find('.S-lg-svg');
+        svg.removeClass('x-svg-down');
+        svg.addClass('x-svg-up');
+    }
 </script>
 
 
