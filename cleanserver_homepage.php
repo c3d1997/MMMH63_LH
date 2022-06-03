@@ -190,9 +190,7 @@ $pageName = 'cleanserver_homepage';
             <h3>
                 建立您個人的雲端服務紀錄建立您
             </h3>
-            <button class="pc-button-FEAC00-280">
-                預約清潔
-            </button>
+            <a href="cleaning_services.php"><button class="pc-button-FEAC00-280">預約清潔</button></a>
         </div>
     </div>
 </div>
