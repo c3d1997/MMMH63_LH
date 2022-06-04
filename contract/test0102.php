@@ -24,12 +24,14 @@
         $mail->SMTPDebug = 0;                                 // Enable verbose debug output
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = 'smtp.office365.com';  // Specify main and backup SMTP servers
+
         $mail->SMTPAuth = true;  
         $mail->CharSet = 'UTF-8'; 
         $mail->Encoding = "base64";                            // Enable SMTP authentication
         $mail->Username = 'notmeta.service@outlook.com';                 // SMTP username
         $mail->Password = 'mmmh6302@';                           // SMTP password
         $mail->SMTPSecure = 'SSL';                            // Enable TLS encryption, `ssl` also accepted
+
         $mail->Port = 587;                                    // TCP port to connect to
 
         //Recipients
