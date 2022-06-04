@@ -4,7 +4,7 @@
 
 
 
-    $sql = "SELECT * FROM `members` WHERE `sid` = 1;";
+    $sql = "SELECT * FROM `members` WHERE `sid` = 0;";
     $stmt = $pdo->query($sql);
     $n = $stmt->fetch();
     
@@ -370,7 +370,7 @@ input[type=checkbox]:checked+span {
 出 租 人： Little House          (以下簡稱甲方)
 <br>
 <br>
-承 租 人： 彭世豪               (以下簡稱乙方) 
+承 租 人： 小皇子               (以下簡稱乙方) 
 <br><br>
 因房屋租賃事件，訂立本契約，雙方同意之條件如下： <br><br>
 第一條：房屋所在地及使用範圍： 
@@ -387,7 +387,7 @@ input[type=checkbox]:checked+span {
 1、每月租金新台幣 元整，每月 日以前繳納。 
 2、保證金(押金) 新台幣 元整，
 於租賃期滿交還房屋時無息返還。
-保證金（押金）由租賃雙方約定為___個月租金，
+保證金（押金）由租賃雙方約定為_二_個月租金，
 金額為           元整 (最高不得超過二個月房屋租金之總額)。
 乙方應於簽訂本契約之同 時給付甲方。 前項保證金(押金) ，甲方應於租期屆滿或租賃契約終止，承租人交還房屋時返還之。
 <br><br>
@@ -417,8 +417,8 @@ input[type=checkbox]:checked+span {
     <p>簽章 ：</p>
     <img src="" alt="" id="sign" style="width:30%;">
 </div>
-戶籍地址： <?= $n['Area'],$n['Dist'],$n['Add'] ?><br>
-通訊地址： <?= $n['Area'],$n['Dist'],$n['Add'] ?><br>
+戶籍地址： 台北市大安區仁愛路三段53號<br>
+通訊地址： 台北市大安區仁愛路三段53號<br>
 聯絡電話： <?= $n['mobile'] ?><br>
 電子郵件信箱： <?= $n['email'] ?><br> 
 
@@ -441,7 +441,8 @@ input[type=checkbox]:checked+span {
 
 <div class="c_button_section">
     <div class="c_button_left">
-    <button class="pc-button-FEAC00-180"><a href="contract04.php" style="text-decoration: none; color:#0E2E3D;">確認</a></button>
+    <a href="contract04.php" style="text-decoration: none; color:#0E2E3D;"><button class="pc-button-FEAC00-180">確認</button></a>
+    
     
     </div>  
 </div>

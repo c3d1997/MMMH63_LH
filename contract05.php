@@ -4,7 +4,7 @@
 
 
 
-    $sql = "SELECT * FROM `members` WHERE `sid` = 1;";
+    $sql = "SELECT * FROM `members` WHERE `sid` = 0;";
     $stmt = $pdo->query($sql);
     $n = $stmt->fetch();
     
@@ -383,8 +383,8 @@ ul {
     <p>簽章 ：</p>
     <img src="" alt="" id="sign" style="width:30%;">
 </div>
-戶籍地址： <?= $n['Area'],$n['Dist'],$n['Add'] ?><br>
-通訊地址： <?= $n['Area'],$n['Dist'],$n['Add'] ?><br>
+戶籍地址： 台北市大安區仁愛路三段53號<br>
+通訊地址： 台北市大安區仁愛路三段53號<br>
 聯絡電話： <?= $n['mobile'] ?><br>
 電子郵件信箱： <?= $n['email'] ?><br> 
 
@@ -398,7 +398,8 @@ ul {
 
 <div class="c_button_section">
 <div class="c_button_left">
-<button class="pc-button-FEAC00-180 z_full_btn"><a href="contract06.php" style="text-decoration:none;color:#0E2E3D;">確認</a></button>
+<a href="contract06.php" style="text-decoration:none;color:#0E2E3D;"><button class="pc-button-FEAC00-180 z_full_btn">確認</button></a>
+
 <a href=""></a>
 </div>  
 </div>
