@@ -934,7 +934,7 @@ $title = '付款方式'
         <div class="z_paydata_container ">
             <div class="z_paytitle_container">
                 <h3 class="paytitle bold">租金支付</h3>
-                <p class="z_paytitle_detail">我的租屋_XXXXXXXXX</p>
+                <p class="z_paytitle_detail">近捷運板橋站，市中心生活圈</p>
             </div>
             <form action="" method="POST"></form>
             <div class="z_title_data_container">
@@ -960,7 +960,7 @@ $title = '付款方式'
                 <div class="z_text_intput ">
                     <p class="z_checkbox_option ">付款金額</p>
                     <div class="z_input_container">
-                        <p></p>
+                        <p>$20,000</p>
                     </div>
                     <div class="z_payghost"></div>
                 </div>
@@ -970,7 +970,7 @@ $title = '付款方式'
                 <div class="z_text_intput ">
                     <p class="z_checkbox_option ">繳費日期</p>
                     <div class="z_input_container">
-                        <p></p>
+                        <p>2022/06/08</p>
                     </div>
                     <div class="z_payghost"></div>
                 </div>
