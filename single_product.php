@@ -1015,15 +1015,20 @@ $two = $twostmts->fetch();
         <!-- img -->
         <div class="S-product-img">
             <div class="S-product-img-left column">
-                <img src="imgs/items<?= $k['sid'] ?>/item1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+
+                <img src="imgs/items<?= $k['sid'] ?>/item0.jpg" style="width:100%" onclick="openModal();currentSlide(1)"
+                    class="hover-shadow cursor">
             </div>
             <div class="S-product-img-right">
                 <div class="S-product-img-right-up column">
-                    <img src="imgs/items<?= $k['sid'] ?>/item2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                    <img src="imgs/items<?= $k['sid'] ?>/item1.jpg" style="width:100%"
+                        onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
                 </div>
                 <div class="S-product-img-right-down-g">
                     <div class="S-product-img-right-down column">
-                        <img src="imgs/items<?= $k['sid'] ?>/item3.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                        <img src="imgs/items<?= $k['sid'] ?>/item1.jpg" style="width:100%"
+                            onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+
                     </div>
                     <button class="more-img">+7</button>
                 </div>
@@ -1155,7 +1160,10 @@ $two = $twostmts->fetch();
 
                     </div>
 
-                    <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a href="FinalCheck_page.php">我要租屋</a></button>
+
+                    <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a
+                            href="FinalCheck_page.php?sid=<?= $x?>">我要租屋</a></button>
+
                 </form>
 
             </div>
@@ -1256,8 +1264,9 @@ $two = $twostmts->fetch();
 
                 <!-- 手機版調整高度做收合 -->
                 <div class="S-menu-info">
-                    <p>周邊機能完善，離捷運站步行只要30分鐘，非常方便，近師大商圈，環境單純，房間寬敞舒適，室友友善，和藹可親，絕對是居家旅行，必備租屋。
-                    </p>
+                    <!-- <p>周邊機能完善，離捷運站步行只要30分鐘，非常方便，近師大商圈，環境單純，房間寬敞舒適，室友友善，和藹可親，絕對是居家旅行，必備租屋。
+                    </p> -->
+                    <p><?= $k['item_info']?></p>
                     <button href="#" class="S-menu-info-more S-d-none S-xs-d-block" id="more">查看更多</button>
 
                 </div>
@@ -1644,8 +1653,7 @@ $two = $twostmts->fetch();
 
                 <!-- 手機版調整高度做收合 -->
                 <div class="S-menu-info">
-                    <p>我們是一群熱愛電影和電動的好室友，歡迎跟我們搭伙，我們有PS5、switch、VR、該有的應有盡有，絕對不會無聊。歡迎來當我們的室友!!
-                    </p>
+                    <p><?= $k['roommate_info']?></p>
                     <button href="#" class="S-menu-info-more S-d-none S-xs-d-block" id="more2">查看更多</button>
                 </div>
 
@@ -1961,15 +1969,36 @@ $two = $twostmts->fetch();
     // $(document).ready(function(){
     //     // $(".simplepicker-ok-btn").attr("type","submit")
     //     $(".simplepicker-ok-btn").html('<a href="Reservation_page.php"></a>')
+// })
+    const date = $("#pickTime").text()
+    const itemName = $(".S-name").text()
+    const itemAddress = $(".S-location").text()
+    const itemPrice = $(".S-price").text()
+    const itemImg = $(".S-product-img-left ").children().attr("src")
 
-    // })
+$(".simplepicker-ok-btn").on("click", function() {
 
+    console.log('gooddddd');
+    localStorage.setItem("date", JSON.stringify(date))
+    localStorage.setItem("itemName", JSON.stringify(itemName))
+    localStorage.setItem("itemAddress", JSON.stringify(itemAddress))
+    localStorage.setItem("itemPrice", JSON.stringify(itemPrice))
+    localStorage.setItem("itemImg", JSON.stringify(itemImg))
+    
+})
 
-    $(".simplepicker-ok-btn").on("click", function() {
-        const date = $("#pickTime").text()
-        console.log('gooddddd');
-        localStorage.setItem("date", JSON.stringify(date))
-    })
+$(".S-btn-conect").on("click", function() {
+    // const date = $("#pickTime").text()
+    // const itemName = $(".S-name").text()
+    // const itemAddress = $(".S-location").text()
+    // const itemPrice = $(".S-price").text()
+    localStorage.setItem("date", JSON.stringify(date))
+    localStorage.setItem("itemName", JSON.stringify(itemName))
+    localStorage.setItem("itemAddress", JSON.stringify(itemAddress))
+    localStorage.setItem("itemPrice", JSON.stringify(itemPrice))
+    localStorage.setItem("itemImg", JSON.stringify(itemImg))
+})
+
 </script>
 
 <script>

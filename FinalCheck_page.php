@@ -3,10 +3,7 @@ $title = '單一物件';
 require './part/connect-db.php';
 
 
-// 帶入房屋資料
-$sql = "SELECT * FROM `items` WHERE `sid` = 1;";
-$stmt = $pdo->query($sql);
-$i = $stmt->fetch();
+echo $_GET['sid']
 
 ?>
 
@@ -297,17 +294,17 @@ $i = $stmt->fetch();
             <div class="S-FinalCheck-wrap">
                 <div class="S-FinalCheck">
                     <div class="S-FinalCheck-img">
-                        <img src="imgs/items<?= 1 ?>/item1.jpg" alt="">
+                        <img src="" alt="">
                     </div>
                     <div class="S-FinalCheck-info">
-                        <h3 class="S-FinalCheck-price S-lg-d-none S-xs-d-block">$<?= number_format($i['price']) ?>/月</h3>
-                        <h2 class="S-FinalCheck-name"><?= $i['item_area'], $i['item_dist'] ,$i['item_address'] ?></h2>
+                        <h3 class="S-FinalCheck-price S-lg-d-none S-xs-d-block"></h3>
+                        <h2 class="S-FinalCheck-name"></h2>
                         <h3 class="S-FinalCheck-location">
                             <i class="fa-solid fa-location-dot"></i>
-                            <?= $i['item_area'], $i['item_dist'] ,$i['item_address'] ?>
+                            
                         </h3>
                         <h2 class="S-FinalCheck-price">
-                        $<?= number_format($i['price']) ?>/月
+                        
                         </h2>
                     </div>
                 </div>
@@ -333,15 +330,35 @@ $i = $stmt->fetch();
     let infoModal = document.querySelector("#infoModal");
     let close = document.querySelector("#close");
     let close2 = document.querySelector("#close2");
-    btn.addEventListener("click", function() {
-        infoModal.showModal();
+    // btn.addEventListener("click", function() {
+    //     infoModal.showModal();
+    // })
+    // close.addEventListener("click", function() {
+    //     infoModal.close();
+    // })
+    // close2.addEventListener("click", function() {
+    //     infoModal.close();
+    // })
+
+    $(document).ready(function(){
+
+        let itemName = JSON.parse(localStorage.getItem("itemName"));
+        let itemAddress = JSON.parse(localStorage.getItem("itemAddress"));
+        let itemPrice = JSON.parse(localStorage.getItem("itemPrice"));
+        let itemImg = JSON.parse(localStorage.getItem("itemImg"));
+
+
+        console.log(itemName);
+        console.log(itemAddress);
+        console.log(itemPrice);
+        console.log(itemImg);
+        $(".S-FinalCheck-name").text(itemName)
+        $(".S-FinalCheck-location").text(itemAddress)
+        $(".S-FinalCheck-price").text(itemPrice)
+        $(".S-FinalCheck-img").children().attr("src",itemImg)
+        
     })
-    close.addEventListener("click", function() {
-        infoModal.close();
-    })
-    close2.addEventListener("click", function() {
-        infoModal.close();
-    })
+
 </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>
