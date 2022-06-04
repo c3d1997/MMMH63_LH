@@ -327,34 +327,21 @@ ul.pagination li a:hover{
                            </tr>
 
                            <tr class="active-row">
-                                   <td><p>我的租屋_<?= $i['item_name'] ?></p></td>
-                                   <td><p><?= $p['contract_from_y_m_d'] ?>至<?= $p['contract_end_y_m_d'] ?></p></td>
-                                   <td><p>已繳費</p></td>
+                                   <td></td>
+                                   <td><p></p></td>
+                                   <td></td>
 
                            </tr>
                            <tr>
-                               <td><p>我的租屋_<?= $i['item_name'] ?></p></td>
-                               <td><p><?= $p['contract_from_y_m_d'] ?>至<?= $p['contract_end_y_m_d'] ?></p></td>
-                               <td><p>已繳費</p></td>
+                               <td><p></p></td>
+                               <td><p></p></td>
+                               <td><p></p></td>
                            </tr>
                        </tbody>
                    </table>
                </div>
 
                <!-----------------pages---------->
-
-           <div class="c-pages">
-               <ul class="pagination">
-                   <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❮</a></li>
-
-                   <li><a href="#">1</a></li>
-                   <li><a class="active" href="#">2</a></li>
-                   <li><a href="#">3</a></li>
-                   <li><a href="#">4</a></li>
-
-                   <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❯</a></li>
-               </ul>
-           </div>
 
 <!-- --------------------------------pages---------- -->
 

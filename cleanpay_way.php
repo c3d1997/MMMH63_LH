@@ -923,7 +923,7 @@ $title = '付款方式'
                         <div class="z_text_intput ">
                             <p class="z_checkbox_option ">　末三碼</p>
                             <div class="z_input_container">
-                                <input class="z_input_text" type="text" name="" id="lastThree" placeholder="XXX">
+                                <input class="z_input_text" type="text" name="" id="lastThree" placeholder="XXX" maxlength="3">
                             </div>
                             <img class="z_creditcard_img" src="imgs\creditcardback.png" alt="">
                         </div>
@@ -968,10 +968,14 @@ $title = '付款方式'
                 $(".bank_area").css("display","none")
                 $(".card_area").css("display","none")
             }
-            })
-
-            $("#bankSelect").click(function(){
-                $(".arrow_container img").toggleClass("downArrow")
+        })
+        $("select").on({
+            mouseleave: function() {
+            $(this).next().children().removeClass("downArrow")
+            },  
+            click: function(){
+            $(this).next().children().toggleClass("downArrow")
+            }
         })
     </script>
 <?php include __DIR__ . './part/javascript.php' ?>
