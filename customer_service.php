@@ -463,11 +463,13 @@
                     <div class="S-btn">
                         <button type="button" onclick="cleantext()" class="pc-button-F4F4F4-272 mobile-button-F4F4F4-162">清除資料</button>
                         <!-- 行內元素 height:60px -->
+                        <a href="mailto:littlehouse6302@gmail.com?subject=我有問題&body=Little_House 您好：我想問租金事宜%0D%0A回信請再次確認信箱" style="text-decoration: none">
                         <button class="pc-button-FEAC00-272 
                             mobile-button-FEAC00-162 h-60" style="width: 162.5px; height:60px;font-size: 20px;" id="show">確認送出</button>
+                            </a>
                     </div>
                     <!-- 以下是"客服送出成功"CustomerService -->
-                    <dialog id="infoModal">
+                    <!-- <dialog id="infoModal">
                         <div class="CustomerService-wrap">
                             <div class="CustomerService">
                                 <div class="CustomerService-icon">
@@ -475,13 +477,15 @@
                                 </div>
                                 <h3>送出成功<br>
                                     將會盡快以郵件回覆您</h3>
-                                <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">返回
+                                    
+                                <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">返回</button>
+                                
                             </div>
                             <div class="CustomerService-x" id="close2">
                                 <img src="imgs/X.svg" alt="">
                             </div>
                         </div>
-                    </dialog>
+                    </dialog> -->
                     <!-- 以上是"客服送出成功"ReservationSuccess -->
 
                 </div>
@@ -505,19 +509,19 @@
     })
 
     // 客服送出成功 彈出視窗
-    let btn = document.querySelector("#show");
-    let infoModal = document.querySelector("#infoModal");
-    let close = document.querySelector("#close");
-    let close2 = document.querySelector("#close2");
-    btn.addEventListener("click", function() {
-        infoModal.showModal();
-    })
-    close.addEventListener("click", function() {
-        infoModal.close();
-    })
-    close2.addEventListener("click", function() {
-        infoModal.close();
-    })
+    // let btn = document.querySelector("#show");
+    // let infoModal = document.querySelector("#infoModal");
+    // let close = document.querySelector("#close");
+    // let close2 = document.querySelector("#close2");
+    // btn.addEventListener("click", function() {
+    //     infoModal.showModal();
+    // })
+    // close.addEventListener("click", function() {
+    //     infoModal.close();
+    // })
+    // close2.addEventListener("click", function() {
+    //     infoModal.close();
+    // })
 </script>
 
 <script>

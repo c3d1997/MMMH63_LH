@@ -23,15 +23,17 @@
         //Server settings
         $mail->SMTPDebug = 0;                                 // Enable verbose debug output
         $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-        $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = 'littlehouse6302@gmail.com';                 // SMTP username
+        $mail->Host = 'smtp.office365.com';  // Specify main and backup SMTP servers
+        $mail->SMTPAuth = true;  
+        $mail->CharSet = 'UTF-8'; 
+        $mail->Encoding = "base64";                            // Enable SMTP authentication
+        $mail->Username = 'notmeta.service@outlook.com';                 // SMTP username
         $mail->Password = 'mmmh6302@';                           // SMTP password
-        $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-        $mail->Port = 465;                                    // TCP port to connect to
+        $mail->SMTPSecure = 'SSL';                            // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 587;                                    // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('littlehouse6302@gmail.com', 'Mailer');
+        $mail->setFrom('notmeta.service@outlook.com', 'Mailer');
         $mail->addAddress('littlehouse6302@gmail.com', 'Joe User');     // Add a recipient
         $mail->addAddress('chiying0104@gmail.com', 'Chiying User');               // Name is optional
         $mail->addReplyTo('littlehouse6302@gmail.com', 'Little_house');
@@ -45,7 +47,7 @@
         //Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Here is the subject';
-        $mail->Body    = 'g5f8t1f88888';
+        $mail->Body    = '11111';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
