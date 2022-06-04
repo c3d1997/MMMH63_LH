@@ -700,7 +700,7 @@ $title = '付款成功'
                         <p class="z_pay_success_tip"></p>
                     </div>
                     <div class="z_twobtn z_btn_reverse">
-                        <button class="pc-button-F4F4F4-180 z_phone_162 ">返回</button>
+                        <a href="home_page.php"><button class="pc-button-F4F4F4-180 z_phone_162 ">返回</button></a>
                         <button class="pc-button-FEAC00-180 z_phone_162 ">查看明細</button>
                         </button>
                     </div>

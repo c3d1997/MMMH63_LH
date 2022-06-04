@@ -176,24 +176,24 @@
                         <!-- 請選擇您遭遇的問題分類 -->
                         <!-- 下拉選單 -->
                         <div class="bank_area">
-                        <div class="z_select_dropdown_container ">
-                            <select id="bankSelect" name=”bankSelect” class="z_select_dropdown">
-                                <option value=””>請選擇欲詢問的問題分類</option>
-                                <option value=””>搜尋問題</option>
-                                <option value=””>付款問題</option>
-                                <option value=””>契約問題</option>
-                                <option value=””>其他問題</option>
-                            </select>
-                            <div class="arrow_container">
-                                <img src="../imgs/down-arrow.svg" alt="">
+                            <div class="z_select_dropdown_container ">
+                                <select id="bankSelect" name=”bankSelect” class="z_select_dropdown">
+                                    <option value=””>請選擇欲詢問的問題分類</option>
+                                    <option value=””>搜尋問題</option>
+                                    <option value=””>付款問題</option>
+                                    <option value=””>契約問題</option>
+                                    <option value=””>其他問題</option>
+                                </select>
+                                <div class="arrow_container">
+                                    <img src="../imgs/down-arrow.svg" alt="">
+                                </div>
                             </div>
-                        </div>
                         </div>
                         <!-- 請詳細描述您的問題或是上傳相關圖片，
                                 我們將會盡快已郵件回覆您 -->
                         <div class="input_option S-big">
                             <div class="fullinput_container">
-                                <textarea name="question" id="" cols="30" rows="10" 
+                                <textarea name="question" id="" cols="30" rows="10"
                                     placeholder="請詳細描述您的問題或是上傳相關圖片，我們將會盡快已郵件回覆您" style="outline: none;"></textarea>
                                 <div class="alert">*錯誤
                                 </div>
@@ -221,7 +221,10 @@
                                     </div>
                                     <h3>送出成功<br>
                                         將會盡快以郵件回覆您</h3>
-                                    <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">返回
+                                
+                                        <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162"
+                                            id="close">返回</button>
+                                   
                                 </div>
                                 <div class="CustomerService-x" id="close2">
                                     <img src="../imgs/X.svg" alt="">
@@ -363,7 +366,7 @@
             $(this).next(".dropdown_list").toggle()
             $(this).find("img").toggleClass("downArrow")
         })
-    
+
         // 客服送出成功 彈出視窗
         let btn = document.querySelector("#show");
         let infoModal = document.querySelector("#infoModal");
@@ -383,7 +386,7 @@
 
 
         // --------------------------------------------------------------
-       
+
 
 
 
