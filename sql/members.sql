@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-05-24 17:36:33
+-- 產生時間： 2022-06-04 11:22:04
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 7.4.29
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫: `test`
+-- 資料庫： `little_house`
 --
 
 -- --------------------------------------------------------
@@ -59,6 +59,26 @@ INSERT INTO `members` (`sid`, `id`, `name`, `EngName`, `Id_number`, `Pass_num`, 
 (8, 'A1556662', NULL, 'Wilma Harrison Graves', NULL, 'AC14949031', 'girizexu@gmail.com', '0939473797', '臺中市', '大雅區', '春亭一街13號', '4444', 'My name is Wilma Harrison Graves, I was born in Taiwan, on January 1st, 1989. I spent my childhood and school years there. I have one sibling. . My father is a/an engineer and my mother is a/an accountant. As a student, I tried to get good grades at schoo', '2020-04-06 16:31:02'),
 (9, 'A1556663', NULL, 'Armie Hammer', NULL, 'AC02540180', 'rixodeni@gmail.com', '0927508036', '臺南市', '永康區', '永科北路10號', '5555', 'My name is Armie Hammer, I was born in Taiwan, on January 1st, 1989. I spent my childhood and school years there. I have one sibling. . My father is a/an engineer and my mother is a/an accountant. As a student, I tried to get good grades at school. Histor', '2020-04-06 16:31:02'),
 (10, 'A1556664', NULL, 'Ronald C. Jacobs', NULL, 'AC58344356', 'zafefeyu@gmail.com', '0953893117', '臺中市', '南屯區', '文心南九路7號', '6666', 'My name is Ronald C. Jacobs, I was born in Taiwan, on January 1st, 1989. I spent my childhood and school years there. I have one sibling. . My father is a/an engineer and my mother is a/an accountant. As a student, I tried to get good grades at school. Hi', '2020-04-06 16:31:02');
+
+--
+-- 已傾印資料表的索引
+--
+
+--
+-- 資料表索引 `members`
+--
+ALTER TABLE `members`
+  ADD PRIMARY KEY (`sid`);
+
+--
+-- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
+--
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `members`
+--
+ALTER TABLE `members`
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

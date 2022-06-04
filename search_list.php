@@ -165,13 +165,40 @@ $fRows = $pdo->query($f_sql)->fetchAll();
                         </div>
                         <div class="x-search-list-content-icon">
 
-                            <div>
-                                <img src="<?= $f['img'] ?>" alt="">
-                                <p>
-                                    <?= $i['feature'] ?>
-                                </p>
-                            </div>
+                            <?php if ($i['feature_1'] == 0) : ?>
 
+                            <?php else : ?>
+                                <div>
+                                    <img src="imgs/feature/<?= $i['feature_1'] ?>.svg" alt="">
+
+                                    <p>
+                                        <?= $i['feature__N1'] ?>
+                                    </p>
+                                </div>
+                            <?php endif; ?>
+                            <?php if ($i['feature_2'] == 0) : ?>
+
+                            <?php else : ?>
+                                <div>
+                                    <img src="imgs/feature/<?= $i['feature_2'] ?>.svg" alt="">
+
+                                    <p>
+                                        <?= $i['feature__N2'] ?>
+                                    </p>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if ($i['feature_3'] == 0) : ?>
+
+                            <?php else : ?>
+                                <div>
+                                    <img src="imgs/feature/<?= $i['feature_3'] ?>.svg" alt="">
+
+                                    <p>
+                                        <?= $i['feature__N3'] ?>
+                                    </p>
+                                </div>
+                            <?php endif; ?>
 
                         </div>
                         <div class="x-search-list-content-price">
@@ -192,7 +219,7 @@ $fRows = $pdo->query($f_sql)->fetchAll();
                                 <div>
                                     <img src="imgs/瀏覽.svg" alt="">
                                     <p>
-                                        瀏覽量：8999
+                                        瀏覽量：<?= $i['view_log'] ?>
                                     </p>
                                 </div>
                                 <h3>
@@ -213,7 +240,7 @@ $fRows = $pdo->query($f_sql)->fetchAll();
                 <?php foreach ($rRows as $i) : ?>
                     <div class="S-lg-card-wrap">
                         <div onclick="likeClick(event)" onmousedown="downClick(event)" onmouseup="upClick(event)" class="S-lg-like">
-                            <svg  class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
                                 <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>

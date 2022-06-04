@@ -168,7 +168,7 @@ ul {
     font-weight: bold;
     font-size: 24px;
     border: none;
-    background-color: #F4F4F4;
+    
 }
 
 
@@ -282,11 +282,12 @@ ul {
 
 <div class="c_button_section">
 <div class="c_button_left">
-<button class="pc-button-FEAC00-180"><a href="contract05.php" style="text-decoration:none; color:#0E2E3D;">返回</a></button>
+<a href="contract05.php"><button class="pc-button-FEAC00-180" style="background-color:#F1EDEA;">返回</button></a>
+
 
 </div>
 <div class="c_button_right">
-<a href="pay_way.php"style="text-decoration:none; color:#0E2E3D;"><button class="pc-button-F4F4F4-180">前往付款</button></a>
+<a href="pay_way.php"style="text-decoration:none; color:#0E2E3D;"><button class="pc-button-FEAC00-180">前往付款</button></a>
 
 
 </div>

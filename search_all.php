@@ -1048,6 +1048,11 @@ $hre = $hrestmts->fetch();
         height: 60px;
     }
 
+    .x-search-list-content-icon div img {
+        width: 55%;
+        height: 55%;
+    }
+
     .x-search-list-content-price {
         padding: 15px 15px 15px 40px;
         display: flex;
@@ -1196,7 +1201,7 @@ $hre = $hrestmts->fetch();
         transform: scale(1);
     }
 </style>
-
+<?php include __DIR__ . './part/nav.php'  ?>
 <!-- 搜尋 -->
 
 <div class="x-search">
@@ -1650,7 +1655,8 @@ $hre = $hrestmts->fetch();
                         新北市三重區碧華街 6 樓 3 房 2 廳 2 衛浴
                     </p>
                     <p>
-                        出捷運站後回家只需10秒鐘，24小時社區秘書管理 收送包裹 乾洗衣物免煩惱，社區設有游泳池 健身房 不用另外花錢去運動，臨近雙公園 全聯 超商 Ubike站，浴室乾濕分離並有大浴缸泡澡超舒適，家電ㄧ應俱全 ㄧ卡皮箱即可入住，配有電子鎖 出門不用帶一堆鑰匙。
+                        出捷運站後回家只需10秒鐘，24小時社區秘書管理 收送包裹 乾洗衣物免煩惱，社區設有游泳池 健身房 不用另外花錢去運動，臨近雙公園 全聯 超商
+                        Ubike站，浴室乾濕分離並有大浴缸泡澡超舒適，家電ㄧ應俱全 ㄧ卡皮箱即可入住，配有電子鎖 出門不用帶一堆鑰匙。
                     </p>
                     <button class="pc-button-FEAC00-180">查看更多</button>
                 </div>
@@ -2144,7 +2150,7 @@ $hre = $hrestmts->fetch();
     }
 
     function cardonclick(event) {
-        
+
         const list = $('.x-search-list-content-all');
         const card = $('.x-search-list-card');
         list.addClass('x-search-displaynone');

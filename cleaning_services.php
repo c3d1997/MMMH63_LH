@@ -575,7 +575,7 @@
 
             <div class="n-nmamu">
                 <p class="n-nffont">應繳訂金</p>
-                <input class="n-inpupu" type="text" placeholder="應繳訂金">
+                <input class="n-inpupu" type="text" placeholder="應繳訂金" id='money'>
             </div>
 
             <div class="n-nOh">
@@ -602,7 +602,7 @@
 
             <div class="n-nmamu">
                 <p class="n-nffont">地址</p>
-                <input class="n-inpupu" type="text" placeholder="請填寫您的地址" value="台北市中正區重慶南路一段122號">
+                <input class="n-inpupu" type="text" placeholder="請填寫您的地址" value="台北市中正區重慶南路一段122號" id="address">
             </div>
 
             <div class="n-nOh">
@@ -712,7 +712,10 @@
     }
     })
 
-
+//  選擇坪數後自動顯示訂金金額
+    $('#bankSelect').click(function(){
+        $('#money').val('10000')
+    })
 
 </script>
 

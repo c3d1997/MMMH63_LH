@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-05-25 09:59:35
+-- 產生時間： 2022-06-04 15:24:10
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 7.4.29
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫: `test`
+-- 資料庫： `little_house`
 --
 
 -- --------------------------------------------------------
@@ -31,7 +31,14 @@ CREATE TABLE `my_house` (
   `sid` int(11) NOT NULL,
   `member_sid` int(11) NOT NULL,
   `item_sid` int(11) NOT NULL,
-  `pay_sid` int(11) NOT NULL
+  `item_name` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `contract_time` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `contract_txt` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `house_status` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `pay_time` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `see_house_time` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `contract_status` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `pay_status` varchar(50) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
