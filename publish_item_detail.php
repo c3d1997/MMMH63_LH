@@ -628,6 +628,16 @@
         position: absolute;
         pointer-events: none;
     }
+    .fast {
+        width: 100px;
+        height: 100px;
+        /* background-color:; */
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top:100px;
+        cursor: unset;
+    }
 
 
     @media screen and (max-width:376px) {
@@ -921,18 +931,29 @@
                                     <div class="z_select_dropdown_half_container">
                                         <select id="distSelect" name="item_dist" class="z_select_dropdown">
                                             <option value="" selected disabled>----請選擇縣市----</option>
-                                            <option value="松山區">松山區</option>
-                                            <option value="信義區">信義區</option>
-                                            <option value="大安區">大安區</option>
-                                            <option value="中山區">中山區</option>
-                                            <option value="中正區">中正區</option>
-                                            <option value="大同區">大同區</option>
-                                            <option value="萬華區">萬華區</option>
-                                            <option value="文山區">文山區</option>
-                                            <option value="南港區">南港區</option>
-                                            <option value="內湖區">內湖區</option>
-                                            <option value="士林區">士林區</option>
-                                            <option value="北投區">北投區</option>
+                                            <option value="板橋區">板橋區</option>
+                                            <option value="三重區">三重區</option>
+                                            <option value="中和區">中和區</option>
+                                            <option value="永和區">永和區</option>
+                                            <option value="新莊區">新莊區</option>
+                                            <option value="新店區">新店區</option>
+                                            <option value="土城區">土城區</option>
+                                            <option value="蘆洲區">蘆洲區</option>
+                                            <option value="汐止區">汐止區</option>
+                                            <option value="鶯歌區">鶯歌區</option>
+                                            <option value="三峽區">三峽區</option>
+                                            <option value="淡水區">淡水區</option>
+                                            <option value="瑞芳區">瑞芳區</option>
+                                            <option value="五股區">五股區</option>
+                                            <option value="泰山區">泰山區</option>
+                                            <option value="林口區">林口區</option>
+                                            <option value="深坑區">深坑區</option>
+                                            <option value="石碇區">石碇區</option>
+                                            <option value="坪林區">坪林區</option>
+                                            <option value="三芝區">三芝區</option>
+                                            <option value="石門區">石門區</option>
+                                            <option value="平溪區">平溪區</option>
+                                            <option value="雙溪區">雙溪區</option>
                                         </select>
                                         <div class="arrow_container">
                                             <img src="imgs/down-arrow.svg" alt="">
@@ -1045,6 +1066,7 @@
             </div>
         </div>
     </div>
+    <button class="fast" type="button"></button>
 </section>
 
 <?php include __DIR__ . './part/footer.php'  ?>
@@ -1085,7 +1107,19 @@
     }
     })
 
-
+    $(".fast").click(function(){
+        // console.log("gg")
+        $("#areaSelect").val("新北市")
+        $("#distSelect").val("板橋區")
+        $("#item_address").val("中山路一段161號")
+        $("#ping_number").val("30坪")
+        $("#floor").val("電梯大樓3F/12F")
+        $("#typeSelect").val("整層住家")
+        $("#room_count").val("3")
+        $("#item_name").val("近捷運板橋站，市中心生活圈")
+        $("#price").val("20000")
+        $("#contract").val("租期一年")
+    })
 
 </script>
 
