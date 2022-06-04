@@ -97,7 +97,7 @@
 
     .input_option.S-big textarea {
         width: 100%;
-        outline: none;
+        /* outline: none; */
         /* border: #75BBE3 1px solid; */
         font-size: 16px;
         /* line-height: 2rem; */
@@ -122,6 +122,11 @@
     .input_container textarea[placeholder] {
         font-size: 16px;
         padding: 20px;
+        border:none;
+    }
+
+    textarea{
+        outline: none;
     }
 
     .alert {
@@ -414,14 +419,14 @@
                     <!-- 請輸入您的姓名 -->
                     <div class="input_option">
                         <div class="fullinput_container ">
-                            <input type="text" name="" id="" placeholder="請輸入您的姓名">
+                            <input type="text" name="" id="name" placeholder="請輸入您的姓名">
 
                         </div>
                     </div>
                     <!-- 請輸入您的郵件 -->
                     <div class="input_option">
                         <div class="fullinput_container ">
-                            <input type="text" name="" id="" placeholder="請輸入您的郵件">
+                            <input type="text" name="" id="email" placeholder="請輸入您的郵件">
 
                         </div>
                     </div>
@@ -444,8 +449,8 @@
                     <!-- 請詳細描述您的問題或是上傳相關圖片，
                                 我們將會盡快已郵件回覆您 -->
                     <div class="input_option S-big">
-                        <div class="fullinput_container id=" nowimg">
-                            <textarea name="question" id="clean" cols="30" rows="10" placeholder="請詳細描述您的問題或是上傳相關圖片，我們將會盡快已郵件回覆您" style="outline: none;"></textarea>
+                        <div class="fullinput_container" id="nowimg">
+                            <textarea name="question" id="clean" cols="30" rows="10" placeholder="請詳細描述您的問題或是上傳相關圖片，我們將會盡快已郵件回覆您"></textarea>
                             <!-- <div class="alert">*錯誤
                             </div> -->
                         </div>
@@ -517,8 +522,12 @@
 
 <script>
     const cleantext = () => {
-        $("#clean").val("")
+        $("#clean").val("");
+        $("#bankSelect").val("");
+        $("#email").val("");  
+        $("#name").val("");  
     };
+    
 </script>
 
 
