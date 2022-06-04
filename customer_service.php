@@ -1,63 +1,288 @@
 <?php include __DIR__ . './part/head.php'  ?>
 
 <style>
-    /* 自己頁面的css */
+/* 自己頁面的css */
+.S-customer_service-bg {
+    z-index: 0;
+    /* padding: 0 -50px; */
+    /* margin: 0 -200px; */
+    height: 1080px;
+    width: 100%;
+    background: url(imgs/living-room-1835923_1920.jpg)center center /cover no-repeat;
+    /* background-color: black; */
+    /* filter: brightness(.5); */
+}
+
+.S-wrap {
+    margin-top: 100px;
+    width: 100%;
+    height: 1080px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.S-info {
+    z-index: 1;
+    color: #fff;
+    width: 602px;
+    height: 980px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 38px;
+}
+
+.S-q {
+    color: #fff;
+    display: flex;
+    padding: 60px 0;
+}
+
+.S-q img {
+    margin-right: 20px;
+}
+
+.S-q1 img {
+    margin-right: 40px;
+}
+
+.S-q-word h3,
+.S-q-word p {
+    color: #fff;
+    padding: 3px 0 0;
+}
+
+.S-list {
+    padding: 40px 70px;
+    width: 590px;
+    height: 816px;
+    background: #F1EDEA;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.S-list-title {
+    /* padding: 30px 0 15px; */
+    margin-bottom: 15px;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.S-list img {
+    width: 30px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.CustomerService-x img {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+}
+
+.dropdown_container {
+    padding: 15px 0;
+}
+
+.input_option.S-big input {
+    width: 100%;
+    height: 300px;
+    /* line-height: 2rem; */
+}
+
+.input_option.S-big textarea {
+    width: 100%;
+    /* outline: none; */
+    /* border: #75BBE3 1px solid; */
+    font-size: 16px;
+    /* line-height: 2rem; */
+}
+
+textarea[type=text] {
+    margin: 0;
+    padding: 0;
+    height: 100px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+
+.fullinput_container {
+    margin-bottom: 15px;
+}
+
+
+.fullinput_container textarea[placeholder],
+.input_container textarea[placeholder] {
+    font-size: 16px;
+    padding: 20px;
+    border: none;
+}
+
+textarea {
+    outline: none;
+}
+
+.alert {
+    text-align: left;
+}
+
+.z_upload_item_img_btn button {
+    background: transparent;
+}
+
+.z_upload_item_img_btn img {
+    width: 16px;
+}
+
+.z_upload_item_img_btn>button {
+    font-size: 16px;
+    font-weight: bold;
+    color: #75BBE3;
+}
+
+.S-btn {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.pc-button-F4F4F4-272 {
+    margin-right: 15px;
+}
+
+button.pc-button-FEAC00-272 {
+    /* font-size: 16px; */
+    /* width: 162.5px; */
+    font-weight: 700;
+}
+
+.z_select_dropdown_container {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.bank_area select {
+    color: rgb(118, 118, 118);
+    height: 60px;
+    border: none;
+    outline: none;
+    appearance: none;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 15px;
+}
+
+.bank_area select option {
+    font-size: 16px;
+
+}
+
+.banklist p {
+    margin-bottom: 10px
+}
+
+.z_select_dropdown_container .arrow_container {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    position: absolute;
+    pointer-events: none;
+}
+
+/* -----------------壓CSS---------------------------------- */
+.S-list {
+    position: relative;
+}
+
+#infoModal {
+    transform: translate(-50%, -50%);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+}
+
+.CustomerService h3 {
+    font-weight: normal;
+}
+
+.mobile-button-F4F4F4-162 {
+    background-color: #F4f4f4;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+@media screen and (max-width:376px) {
+
+
+
+
     .S-customer_service-bg {
-        z-index: 0;
-        /* padding: 0 -50px; */
-        /* margin: 0 -200px; */
-        height: 1080px;
+        position: relative;
+        top: 0px;
+        height: 800px;
         width: 100%;
+        background: #F4F4F4;
         background: url(imgs/living-room-1835923_1920.jpg)center center /cover no-repeat;
-        /* background-color: black; */
-        /* filter: brightness(.5); */
     }
 
     .S-wrap {
-        margin-top: 100px;
-        width: 100%;
-        height: 1080px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin-top: 0px;
+        flex-direction: column;
     }
 
     .S-info {
-        z-index: 1;
-        color: #fff;
-        width: 602px;
-        height: 980px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-right: 38px;
+        width: 100%;
+        margin-top: 550px;
+        /* background: url(imgs/living-room-1835923_1920.jpg)center center /cover no-repeat; */
+        padding: 70px 40px;
     }
 
     .S-q {
-        color: #fff;
-        display: flex;
-        padding: 60px 0;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
     }
 
     .S-q img {
-        margin-right: 20px;
+        width: 50px;
+        margin: 0;
     }
 
     .S-q1 img {
-        margin-right: 40px;
+        margin: 0;
     }
 
-    .S-q-word h3,
+    .S-q-word {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .S-q-word h3 {
+        font-size: 20px;
+    }
+
     .S-q-word p {
-        color: #fff;
-        padding: 3px 0 0;
+        font-size: 16px;
     }
 
     .S-list {
-        padding: 40px 70px;
-        width: 590px;
+        margin-top: 40px;
+        padding: 40px 20px;
+        width: 100%;
         height: 816px;
-        background: #F1EDEA;
+        background: #F4F4F4;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -65,24 +290,42 @@
     }
 
     .S-list-title {
+        font-size: 24px;
         /* padding: 30px 0 15px; */
         margin-bottom: 15px;
         height: 5%;
         display: flex;
-        align-items: center;
         justify-content: center;
+    }
+
+    .input_option.S-big input {
+        font-size: 12px;
     }
 
     .S-list img {
         width: 30px;
         margin-right: 10px;
-        margin-top: 5px;
     }
 
-    .CustomerService-x img {
-        width: 50px;
-        height: 50px;
-        margin: 0;
+    .mobile-button-F4F4F4-162 {
+        margin-right: 5px;
+        font-size: 20px;
+        background-color: #F1EDEA;
+    }
+
+    .S-list.button.pc-button-FEAC00-272 {
+        /* margin: 0; */
+        /* height: 60px; */
+        border: 5px solid purple;
+    }
+
+    .button.pc-button-FEAC00-272.h60 {
+        height: 60px;
+        border: 5px solid purple;
+    }
+
+    .input_option {
+        padding: 15px 0;
     }
 
     .dropdown_container {
@@ -95,42 +338,12 @@
         /* line-height: 2rem; */
     }
 
-    .input_option.S-big textarea {
-        width: 100%;
-        /* outline: none; */
-        /* border: #75BBE3 1px solid; */
-        font-size: 16px;
-        /* line-height: 2rem; */
-    }
-
-    textarea[type=text] {
-        margin: 0;
-        padding: 0;
-        height: 100px;
-        border: none;
-        outline: none;
-        font-size: 16px;
-    }
-
-
-    .fullinput_container {
-        margin-bottom: 15px;
-    }
-
-
-    .fullinput_container textarea[placeholder],
-    .input_container textarea[placeholder] {
-        font-size: 16px;
-        padding: 20px;
-        border:none;
-    }
-
-    textarea{
-        outline: none;
-    }
-
-    .alert {
-        text-align: left;
+    /* .input_option.S-big input::placeholder{
+        transform: translateX(-.5rem);
+        white-space: normal;
+    } */
+    .z_upload_item_img_btn {
+        text-align: right;
     }
 
     .z_upload_item_img_btn button {
@@ -150,228 +363,14 @@
     .S-btn {
         margin-top: 10px;
         display: flex;
-        justify-content: center;
     }
 
-    .pc-button-F4F4F4-272 {
-        margin-right: 15px;
+    .footer_container {
+        margin-top: 860px;
     }
 
-    button.pc-button-FEAC00-272 {
-        /* font-size: 16px; */
-        /* width: 162.5px; */
-        font-weight: 700;
-    }
 
-    .z_select_dropdown_container {
-        flex-grow: 1;
-        position: relative;
-        display: flex;
-        margin-bottom: 15px;
-    }
-
-    .bank_area select {
-        color: rgb(118, 118, 118);
-        height: 60px;
-        border: none;
-        outline: none;
-        appearance: none;
-        width: 100%;
-        font-size: 16px;
-        padding-left: 15px;
-    }
-
-    .bank_area select option {
-        font-size: 16px;
-
-    }
-
-    .banklist p {
-        margin-bottom: 10px
-    }
-
-    .z_select_dropdown_container .arrow_container {
-        top: 50%;
-        transform: translateY(-50%);
-        right: 15px;
-        position: absolute;
-        pointer-events: none;
-    }
-
-    /* -----------------壓CSS---------------------------------- */
-    .S-list {
-        position: relative;
-    }
-
-    #infoModal {
-        transform: translate(-50%, -50%);
-        position: fixed;
-        left: 50%;
-        top: 50%;
-    }
-
-    .CustomerService h3 {
-        font-weight: normal;
-    }
-
-    .mobile-button-F4F4F4-162 {
-        background-color: #F4f4f4;
-    }
-
-    /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-    @media screen and (max-width:376px) {
-
-
-
-
-        .S-customer_service-bg {
-            position: relative;
-            top: 0px;
-            height: 800px;
-            width: 100%;
-            background: #F4F4F4;
-            background: url(imgs/living-room-1835923_1920.jpg)center center /cover no-repeat;
-        }
-
-        .S-wrap {
-            margin-top: 0px;
-            flex-direction: column;
-        }
-
-        .S-info {
-            width: 100%;
-            margin-top: 550px;
-            /* background: url(imgs/living-room-1835923_1920.jpg)center center /cover no-repeat; */
-            padding: 70px 40px;
-        }
-
-        .S-q {
-            flex-direction: column;
-            align-items: center;
-            padding: 30px 0;
-        }
-
-        .S-q img {
-            width: 50px;
-            margin: 0;
-        }
-
-        .S-q1 img {
-            margin: 0;
-        }
-
-        .S-q-word {
-            display: flex;
-            flex-direction: column;
-            /* align-items: center; */
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .S-q-word h3 {
-            font-size: 20px;
-        }
-
-        .S-q-word p {
-            font-size: 16px;
-        }
-
-        .S-list {
-            margin-top: 40px;
-            padding: 40px 20px;
-            width: 100%;
-            height: 816px;
-            background: #F4F4F4;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .S-list-title {
-            font-size: 24px;
-            /* padding: 30px 0 15px; */
-            margin-bottom: 15px;
-            height: 5%;
-            display: flex;
-            justify-content: center;
-        }
-
-        .input_option.S-big input {
-            font-size: 12px;
-        }
-
-        .S-list img {
-            width: 30px;
-            margin-right: 10px;
-        }
-
-        .mobile-button-F4F4F4-162 {
-            margin-right: 5px;
-            font-size: 20px;
-            background-color: #F1EDEA;
-        }
-
-        .S-list.button.pc-button-FEAC00-272 {
-            /* margin: 0; */
-            /* height: 60px; */
-            border: 5px solid purple;
-        }
-
-        .button.pc-button-FEAC00-272.h60 {
-            height: 60px;
-            border: 5px solid purple;
-        }
-
-        .input_option {
-            padding: 15px 0;
-        }
-
-        .dropdown_container {
-            padding: 15px 0;
-        }
-
-        .input_option.S-big input {
-            width: 100%;
-            height: 300px;
-            /* line-height: 2rem; */
-        }
-
-        /* .input_option.S-big input::placeholder{
-        transform: translateX(-.5rem);
-        white-space: normal;
-    } */
-        .z_upload_item_img_btn {
-            text-align: right;
-        }
-
-        .z_upload_item_img_btn button {
-            background: transparent;
-        }
-
-        .z_upload_item_img_btn img {
-            width: 16px;
-        }
-
-        .z_upload_item_img_btn>button {
-            font-size: 16px;
-            font-weight: bold;
-            color: #75BBE3;
-        }
-
-        .S-btn {
-            margin-top: 10px;
-            display: flex;
-        }
-
-        .footer_container {
-            margin-top: 860px;
-        }
-
-
-        }
-
+}
 </style>
 
 <?php include __DIR__ . './part/nav.php'  ?>
@@ -450,7 +449,8 @@
                                 我們將會盡快已郵件回覆您 -->
                     <div class="input_option S-big">
                         <div class="fullinput_container" id="nowimg">
-                            <textarea name="question" id="clean" cols="30" rows="10" placeholder="請詳細描述您的問題或是上傳相關圖片，我們將會盡快已郵件回覆您"></textarea>
+                            <textarea name="question" id="clean" cols="30" rows="10"
+                                placeholder="請詳細描述您的問題或是上傳相關圖片，我們將會盡快已郵件回覆您"></textarea>
                             <!-- <div class="alert">*錯誤
                             </div> -->
                         </div>
@@ -461,10 +461,12 @@
                     </div>
 
                     <div class="S-btn">
-                        <button type="button" onclick="cleantext()" class="pc-button-F4F4F4-272 mobile-button-F4F4F4-162">清除資料</button>
+                        <button type="button" onclick="cleantext()"
+                            class="pc-button-F4F4F4-272 mobile-button-F4F4F4-162">清除資料</button>
                         <!-- 行內元素 height:60px -->
                         <button class="pc-button-FEAC00-272 
-                            mobile-button-FEAC00-162 h-60" style="width: 162.5px; height:60px;font-size: 20px;" id="show">確認送出</button>
+                            mobile-button-FEAC00-162 h-60" style="width: 162.5px; height:60px;font-size: 20px;"
+                            id="show">確認送出</button>
                     </div>
                     <!-- 以下是"客服送出成功"CustomerService -->
                     <dialog id="infoModal">
@@ -475,7 +477,7 @@
                                 </div>
                                 <h3>送出成功<br>
                                     將會盡快以郵件回覆您</h3>
-                                <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">返回
+                                <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">返回</button>
                             </div>
                             <div class="CustomerService-x" id="close2">
                                 <img src="imgs/X.svg" alt="">
@@ -500,34 +502,33 @@
 <?php include __DIR__ . './part/footer.php'  ?>
 <!-- // 自己頁面的script -->
 <script>
-    $("#bankSelect").click(function() {
-        $(".arrow_container img").toggleClass("downArrow")
-    })
+$("#bankSelect").click(function() {
+    $(".arrow_container img").toggleClass("downArrow")
+})
 
-    // 客服送出成功 彈出視窗
-    let btn = document.querySelector("#show");
-    let infoModal = document.querySelector("#infoModal");
-    let close = document.querySelector("#close");
-    let close2 = document.querySelector("#close2");
-    btn.addEventListener("click", function() {
-        infoModal.showModal();
-    })
-    close.addEventListener("click", function() {
-        infoModal.close();
-    })
-    close2.addEventListener("click", function() {
-        infoModal.close();
-    })
+// 客服送出成功 彈出視窗
+let btn = document.querySelector("#show");
+let infoModal = document.querySelector("#infoModal");
+let close = document.querySelector("#close");
+let close2 = document.querySelector("#close2");
+btn.addEventListener("click", function() {
+    infoModal.showModal();
+})
+close.addEventListener("click", function() {
+    infoModal.close();
+})
+close2.addEventListener("click", function() {
+    infoModal.close();
+})
 </script>
 
 <script>
-    const cleantext = () => {
-        $("#clean").val("");
-        $("#bankSelect").val("");
-        $("#email").val("");  
-        $("#name").val("");  
-    };
-    
+const cleantext = () => {
+    $("#clean").val("");
+    $("#bankSelect").val("");
+    $("#email").val("");
+    $("#name").val("");
+};
 </script>
 
 

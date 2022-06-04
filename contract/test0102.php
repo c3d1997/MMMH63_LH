@@ -23,12 +23,14 @@
         //Server settings
         $mail->SMTPDebug = 0;                                 // Enable verbose debug output
         $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+        $mail->Host = 'smtp.office365.com';  // Specify main and backup SMTP servers
+        $mail->CharSet = 'UTF-8';
+        $mail->Encoding = "base64";
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = 'littlehouse6302@gmail.com';                 // SMTP username
+        $mail->Username = 'notmeta.service@outlook.com';                 // SMTP username
         $mail->Password = 'mmmh6302@';                           // SMTP password
         $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-        $mail->Port = 465;                                    // TCP port to connect to
+        $mail->Port = 587;                                    // TCP port to connect to
 
         //Recipients
         $mail->setFrom('littlehouse6302@gmail.com', 'Mailer');
