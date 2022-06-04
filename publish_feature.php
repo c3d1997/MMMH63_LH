@@ -376,7 +376,7 @@
             line-height: 20px;
         }
         .z_publish_check_container input[type=checkbox]+span,.z_publish_check_container_s input[type=checkbox]+span {
-            width: 100px;
+            width: 100%;
         }
         .z_publish_longer_check_container input[type=checkbox]+span{
             width: 60px;
@@ -481,7 +481,9 @@
             padding: 30px;
             margin-bottom: 30px;
         }
-
+        label {
+            width: 145px;
+        }
 
 
 
@@ -666,6 +668,9 @@
             .z_publish_textarea_container  {
                 margin-bottom: 0;
             }
+            label {
+            width: 120px;
+        }
         }
     </style>
 
