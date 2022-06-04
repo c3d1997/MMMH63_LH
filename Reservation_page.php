@@ -306,8 +306,14 @@ button.pc-button-FEAC00-272{
 <script>
     $(document).ready(function(){
         let data = localStorage.getItem("date");
+        let itemName = JSON.parse(localStorage.getItem("itemName"));
+        let itemAddress = JSON.parse(localStorage.getItem("itemAddress"));
+        let itemImg = JSON.parse(localStorage.getItem("itemImg"));
         data = JSON.parse(data);
         $("#time").text(data)
+        $(".S-Reservation-name").text(itemName)
+        $(".S-Reservation-location").text(itemAddress)
+        $(".S-Reservation-img").children().attr("src",itemImg)
     })
 
 
