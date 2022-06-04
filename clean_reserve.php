@@ -268,41 +268,41 @@
 
         <!-- 右邊開始 -->
         <div class="c-mytitle">
-            <h3>清潔服務</h3>
+            <h3></h3>
 
             <!-- --------------手機板的下拉--- -->
 
             <div class="flip">
-                <p>清潔預約</p>
+                <p></p>
                 <img src="../imgs/down-arrow.svg" alt="">
 
             </div>
             <div class="panel" hidden>
-                <p>清潔費用 : $2,000</p>
-                <p>清潔時間：2022/05/06 12:00</p>
+                <p></p>
+                <p></p>
             </div>
 
 
             <!-- 2 -->
             <div class="flip">
-                <p>清潔預約</p>
+                <p></p>
                 <img src="../imgs/down-arrow.svg" alt="">
 
             </div>
             <div class="panel" hidden>
-                <p>清潔費用 : $2,000</p>
-                <p>清潔時間：2022/05/06 12:00</p>
+                <p></p>
+                <p></p>
             </div>
 
             <!-- 3 -->
             <div class="flip">
-                <p>清潔預約</p>
+                <p></p>
                 <img src="../imgs/down-arrow.svg" alt="">
 
             </div>
             <div class="panel" hidden>
-                <p>清潔費用 : $2,000</p>
-                <p>清潔時間：2022/05/06 12:00</p>
+                <p></p>
+                <p></p>
             </div>
 
 
@@ -328,58 +328,41 @@
                     <tbody>
                         <tr>
                             <td>
-                                <p>浴室清潔</p>
+                                <p></p>
                             </td>
                             <td>
-                                <p>35坪</p>
+                                <p></p>
                             </td>
                             <td>
-                                <p>$2,000</p>
+                                <p></p>
                             </td>
                         </tr>
 
                         <tr>
                             <td>
-                                <p>浴室清潔</p>
+                                <p></p>
                             </td>
                             <td>
-                                <p>35坪</p>
+                                <p></p>
                             </td>
                             <td>
-                                <p>$2,000</p>
+                                <p></p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <p>浴室清潔</p>
+                                <p></p>
                             </td>
                             <td>
-                                <p>35坪</p>
+                                <p></p>
                             </td>
                             <td>
-                                <p>$2,000</p>
+                                <p></p>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
-            <!----------------pages------------------>
-            <div class="c-pages">
-                <ul class="pagination">
-                    <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❮</a></li>
-
-                    <li><a href="#">1</a></li>
-                    <li><a class="active" href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-
-                    <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❯</a></li>
-                </ul>
-            </div>
-
-            <!--------------pages------------------->
-
         </div>
 
     </div>

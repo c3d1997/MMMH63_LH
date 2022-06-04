@@ -1,30 +1,26 @@
-<?php
-    require './part/connect-db.php';
-
-    // 
+<?php 
+    // if(!empty(session_start()))
+        // session_destroy();
+    // session_start();
     
-    // 
-    // $path = 'imgs/items'.$new_item;
-    // if(!file_exists($path)){
-    //     mkdir($path);
-    // }
-    // $certificate = json_decode($_POST['certificate']);
-    // $i = 1;
-    //     $image = file_get_contents($url);
+    require './part/connect-db.php';
+    $sql = "SELECT COUNT(*) FROM `items`;";
+    $stmt = $pdo->query($sql)->fetch();
+    // echo $stmt['COUNT(*)'];
+    $new_item = $stmt['COUNT(*)'] + 1;
 
-    //     file_put_contents($path.'/item'.$i.'.jpg', $image ); //Where to save the image
-    //     $i=$i+1;
-    // echo json_encode($_SESSION,JSON_UNESCAPED_UNICODE);
+    $_SESSION['item_c'] = $new_item;
 ?>
+
 
 
 <?php include __DIR__ . './part/head.php'  ?>
 
     <style>
         .input_option {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         }
         .fullinput_container {
             flex-grow: 1;
@@ -67,6 +63,13 @@
             background-color: #fff;
             padding: 0;
         }
+
+
+
+
+
+
+
         * {
             margin: 0;
         }
@@ -137,15 +140,15 @@
             cursor: pointer;
             display: inline-block;
             padding-left: 30px;
-            line-height: 20px;
-            background: url(imgs/unchecked.svg) no-repeat left top;
+            /* line-height: 24px; */
+            background: url(../imgs/unchecked.svg) no-repeat left top;
             user-select: none;
         }
         input[type=checkbox]:checked+span {
             display: inline-block;
             padding-left: 30px;
-            line-height: 20px;
-            background-image: url(imgs/checked.svg);
+            /* line-height: 24px; */
+            background-image: url(../imgs/checked.svg);
         }
         body {
             margin: 0;
@@ -169,6 +172,7 @@
             color: #0E2E3D;
         }
         .z_img_reviewcontainer {
+            position: relative;
             margin: auto;
             background-color: #EEF1F4;
             display: flex;
@@ -188,9 +192,20 @@
             height: 550px;
             border: 3px solid #0E2E3D;
         }
+        .uploadimg_before {
+            position: absolute;
+        }
         .uploadimg_before > *{
             margin-bottom: 10px;
             text-align: center;
+        }
+        #nowimg {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+        #mainUpload {
+            display: none;
         }
         .uploadimg_after {
             position: relative;
@@ -202,14 +217,11 @@
             height: 100%;
             object-fit: cover;
         }
-
-        .z_upload_item_img_btn {
-            background-color: #EEF1F4;
-        }
         .z_upload_item_img_btn > button {
             font-size: 16px;
             font-weight: bold;
             color: #75BBE3;
+            background-color:transparent;
         }
         .z_clickupload {
             font-size: 16px;
@@ -222,7 +234,7 @@
             height: 450px;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-evenly;
             align-content: space-between;
         }
         .z_review_card {
@@ -234,6 +246,7 @@
         }
         .z_close_icon {
             position: absolute;
+            z-index: 5;
             top: 5px;
             right: 5px;
             width: 25px;
@@ -242,10 +255,12 @@
             background-image: url(imgs/closeicon.svg);
             background-position: center;
         }
-        .z_review_card img {
+        .smallimg{
+            position: absolute;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            z-index: 1;
         }
         .z_publish_btnY { 
             display: block;
@@ -374,7 +389,7 @@
             margin-bottom: 0;
         }
         .z_publish_check_container input[type=checkbox]+span, .z_publish_check_container_s input[type=checkbox]+span, .z_publish_longer_check_container input[type=checkbox]+span{
-            padding-left: 25px;
+            padding-left: 20px;
             margin-right: 15px;
         }
         .z_publish_check_container input[type=checkbox]+span,.z_publish_check_container_s input[type=checkbox]+span {
@@ -483,8 +498,17 @@
             padding: 30px;
             margin-bottom: 30px;
         }
-
-
+        .bgimg {
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-image: url(imgs\uploadbg.jpg);
+            z-index: 3;
+        }
+        #phone_upload_btn {
+            display: none;
+        }
 
 
 
@@ -526,20 +550,21 @@
                 padding: 0 20px;
             }
             .z_step1imgs_container {
-                /* margin-top: 20px; */
+                margin-top: 0px;
                 width: 950%;
-                height: 200px;
+                height: 100%;
                 /* display: block; */
                 flex-wrap: nowrap;
-                justify-content: space-between;
+                justify-content:flex-start;
                 /* align-content: space-between; */
             }
             .z_review_card {
                 position: relative;
                 width: 275px;
-                height: 250px;
+                height: 100%;
                 background-color: #EEF1F4;
                 outline: 3px solid #0E2E3D;
+                margin-right: 40px;
             }
             .z_review_card img {
                 width: 100%;
@@ -551,10 +576,12 @@
             }
 
             .z_phone_view {
-                margin-left: 30px; 
+                /* margin-left: 30px;  */
                 /* width: 120%; */
                 overflow:scroll;
                 height: 300px;
+                /* border: 3px solid #0E2E3D; */
+                padding: 5px 0;
             }
             .z_publish_phone_tip_container {
                 padding: 0 30px;
@@ -668,6 +695,18 @@
             .z_publish_textarea_container  {
                 margin-bottom: 0;
             }
+            #phone_upload_btn {
+                display: block;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%);
+                z-index: 5;
+                color: #75BBE3;
+                background-color: transparent;
+                background: rgba(238, 241, 244, 0.486);
+                padding: 5px;
+            }
         }
     </style>
 
@@ -681,126 +720,92 @@
                         <img src="imgs/backcolor.svg" alt="">
                         <p>刊登物件</p>
                     </div>
-                    <h2 class="z_step_title bold">step5.　房屋簡介及同住人資訊</h2>
-                    <div class="z_otherinfo_flex">
-                        <form name="form1" id='form1'>
-                            <div class="z_publish_text_container">
-                                <div class="z_publish_option_title">
-                                    <div class="z_publish_item_detail_title">房屋簡介</div>
-                                    <p class="alert bold z_publish_small"></p>
+                    <form action="publish_uploadimg-api_copy.php" method="post" enctype="multipart/form-data" name="form1"  onsubmit="return false;">
+                        <div class="z_step_title bold">step1.　上傳房屋圖片</div>
+                        <div class="z_img_reviewcontainer bold">
+                            <div class="uploadimg_before">
+                                <!-- <p>您可以拖拉圖片至此處</p> -->
+                                <div class="z_upload_item_img_btn">
+                                    <input type="file" accept="image/*" id="mainUpload" name="mainUpload[]" multiple >
+                                    <button id="upload_btn" type="button"><img src="imgs/uploadicon.svg" alt="">點此上傳</button>
                                 </div>
-                                <div class="z_publish_textarea_container">
-                                    <textarea name="item_info" id="" cols="30" rows="10"></textarea>
-                                </div>
+                                <p>提醒您！最多可以上傳10張照片，並且每張照片解析度請至少達到1280*920px</p>
                             </div>
-                            <div class="z_publish_text_container">
-                                <div class="z_publish_option_title">
-                                    <div class="z_publish_item_detail_title">同住人資訊</div>
-                                    <p class="alert bold z_publish_small">（非必填）</p>
-                                </div>
-                                <div class="z_publish_textarea_container">
-                                    <textarea name="roommate_info" id="roommate_info" cols="30" rows="100"></textarea>
-                                </div>
-                            </div>
-                            <div class="z_otherinfo_order1">
-                                <div class="z_publish_option_title">
-                                    <div class="z_publish_item_detail_title">共同興趣</div>
-                                    <p class="alert bold z_publish_small">（非必填）</p>
-                                </div>
-                                <div class="z_publish_longer_check_container ">
-                                <label>
-                                    <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="文創">
-                                        <span>文創</span>
-                                    </div>
-                                </label>
-                                <label>
-                                    <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="電影">
-                                        <span>電影</span>
-                                    </div>
-                                </label>
-                                <label>
-                                    <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="唱歌">
-                                        <span>唱歌</span>
-                                    </div>
-                                </label>
-                                <label>
-                                    <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="運動">
-                                        <span>運動</span>
-                                    </div>
-                                </label>
-                                <label>
-                                    <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="手作">
-                                        <span>手作</span>
-                                    </div>
-                                </label>
-                                <label>
-                                    <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="音樂">
-                                        <span>音樂</span>
-                                    </div>
-                                </label>
-                                <label>
-                                    <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="烹飪">
-                                        <span>烹飪</span>
-                                    </div>
-                                </label>
-                                <label>
-                                    <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="旅遊">
-                                        <span>旅遊</span>
-                                    </div>
-                                </label>
-                                <label>
-                                    <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="閱讀">
-                                        <span>閱讀</span>
-                                    </div>
-                                </label>
-                                <label>
-                                    <div class="z_publish_checkbox_option_container">
-                                        <input class="z_checkbox_option" type="checkbox" name="hobby[]" id="" value="宅">
-                                        <span>宅</span>
-                                    </div>
-                                </label>
-                                </div>
-
-                            </div>
-                            <label>
-                                <input type="checkbox" name="" id="">
-                                <span class="z_checkbox">我已仔細閱讀並明瞭<a href="#"> 「服務條款」 </a>，<a href="#"> 「免責聲明」 </a>和<a href="#"> 「隱私權聲明」 </a>等所載內容及其意義，茲同意該等條款規定，並願遵守網站現今、嗣後規範的各種規則。</span>  
-                            </label>
-                        </form>
-                        <div class="z_twobtn">                      
-                                <a href="./publish_uploadcertificate.php"><button class="pc-button-F4F4F4-180 z_publish_btnY z_phone_162" type="button">上一步</button></a>
-                                <button class="pc-button-FEAC00-180 z_publish_btnY z_phone_162" type="button" onclick="final_submit()">下一步</button>
+                            <img  alt="" id="nowimg">
                         </div>
-                    </div>
+                        <div class="z_phone_view">
+                            <div class="z_step1imgs_container">
+                            <button id="phone_upload_btn" type="button"><img src="imgs/uploadicon.svg" alt="">點此上傳</button>
+                        </div>
+                    </form>
                 </div>
+                <a href="publish_item_detail.php"><button class="pc-button-FEAC00-180 z_publish_btnY z_maxbtn" id="nextStep">下一步</button></a>
             </div>
-        </div>    
+        </div>
     </section>
 
 <?php include __DIR__ . './part/footer.php'  ?>
+        <script>
+        const img_arr = new Array()
+        $("#upload_btn").click(function(){
+            $("#mainUpload").click()
+        })
+        $("#phone_upload_btn").click(function(){
+            $("#mainUpload").click()
+        })
 
-    <script>
-        function final_submit() {
-            $.post('publish_uploadimg-api.php', $(document.form1).serialize(),
-                function(data) {
-                    //
-                    location.href = 'publish_success.php';
-                }, 'text');
+        $("#mainUpload").change(function(){
+            readURL(this);
+            $(".uploadimg_before").css("background","#eef1f47c")
+        });
+
+        let i = 0
+        function readURL(input){
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                let img_url = e.target.result
+                $("#nowimg").attr('src', img_url);
+            }
+            reader.readAsDataURL(input.files[0]);
         }
 
+        $(document).on("click",".z_close_icon",function(){
+            $(this).parent().remove();
+        });
+        const btn = document.querySelector("#btn");
+        const appendImg = document.querySelector(".z_step1imgs_container");
+        const photos = document.form1.elements[0];
+        <?php ?>
+        const photoItem = (f) => {
+            return `
+            <div class="z_review_card"><button class="z_close_icon"></button><img class="smallimg" src="./imgs/items<?= $new_item ?>/${f}" alt=""  ><img  alt=""  class="bgimg"></div>`;
 
+            };
 
+        upLoad = document.querySelector("#mainUpload")
+        upLoad.addEventListener("change", async function () {
+            // 上傳表單
+            const fd = new FormData(document.form1);
+            const r = await fetch("upload-photos-api0604.php", {
+                method: "POST",
+                body: fd,
+            });
+            const obj = await r.json();
+            console.log(obj);
+            if (obj.filenames && obj.filenames.length) {
+                appendImg.innerHTML += obj.filenames
+                    .map((f) => photoItem(f))
+                    .join("");
+            }
+            const photoAr = [];
+            document.querySelectorAll(".photoItem").forEach((el) => {
+                photoAr.push(el.getAttribute("data-f"));
+            });
+        });
+        $("#nextStep").on("click",function(){
+            console.log($(".smallimg"));
+        })
 
-
-    </script>
+        </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>

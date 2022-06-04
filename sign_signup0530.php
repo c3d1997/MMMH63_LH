@@ -605,6 +605,14 @@ $pageName = 'signin_signup';
         text-indent: 15px;
         color: #0E2E3D;
     }
+    input[type=password] {
+        margin: 0;
+        padding: 0;
+        height: 48px;
+        border: none;
+        text-indent: 15px;
+        color: #0E2E3D;
+    }
 
     input[type=checkbox] {
         /* display: none; */
@@ -943,7 +951,7 @@ $pageName = 'signin_signup';
                     <div class="input_option">
                         <p class="option_name">密碼</p>
                         <div class="fullinput_container ">
-                            <input type="text" name="password" id="signin-password" placeholder="輸入您的密碼">
+                            <input type="password" name="password" id="signin-password" placeholder="輸入您的密碼">
                             <div class="alert"></div>
                         </div>
                     </div>
@@ -1004,7 +1012,7 @@ $pageName = 'signin_signup';
                     <div class="input_option">
                         <p class="option_name" style="margin-right: 16px;margin-left: 30px;">密碼</p>
                         <div class="fullinput_container ">
-                            <input type="text" name="Password" id="signup-password" placeholder="請輸入您的密碼">
+                            <input type="password" name="Password" id="signup-password" placeholder="請輸入您的密碼">
                             <div class="alert"></div>
                         </div>
                     </div>
@@ -1012,7 +1020,7 @@ $pageName = 'signin_signup';
                     <div class="input_option">
                         <p class="option_name">密碼確認</p>
                         <div class="fullinput_container">
-                            <input type="text" name="passwordAgain" id="signup-passwordAgain" placeholder="請再次輸入您的密碼">
+                            <input type="password" name="passwordAgain" id="signup-passwordAgain" placeholder="請再次輸入您的密碼">
                             <div class="alert"></div>
                         </div>
                     </div>
@@ -1044,7 +1052,7 @@ $pageName = 'signin_signup';
                     </div>
                     <h2>註冊成功</h2>
                     <h3>恭喜您獲得清潔優惠卷</h3>
-                    <h3>ABC-123456</h3>
+                    <h3>03uxf8</h3>
                     <p>可以前往會員區確認</p>
                     <button onclick="cleanstring()" class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">確認
                 </div>
