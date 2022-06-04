@@ -53,6 +53,8 @@
 
 .S-lg-like svg.x-svg-color {
     fill: red;
+    transition: .5s;
+    transform: scale(1.05);
 }
 
 .S-lg-card {
@@ -66,7 +68,6 @@
 .S-lg-card-img {
     width: 100%;
     height: 100%;
-    background: url(../old_house/1521821703_54177.jpg) 70% center/ cover;
 }
 
 .S-lg-card-info {

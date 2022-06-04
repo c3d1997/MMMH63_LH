@@ -317,57 +317,43 @@ ul.pagination li a:hover{
                 <tbody>
                     <tr>
                         <td>
-                            <p>士林夜市近士林劍潭捷運小套房</p>
+                            <p></p>
                         </td>
                         <td>
-                            <p>一年</p>
+                            <p></p>
                         </td>
                         <td>
-                            <p>2022/05/06  12:00</p>
+                            <p></p>
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <p>士林夜市近士林劍潭捷運小套房</p>
+                            <p></p>
                         </td>
                         <td>
-                            <p>一年</p>
+                            <p></p>
                         </td>
                         <td>
-                            <p>2022/05/06  12:00</p>
+                            <p></p>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <p>士林夜市近士林劍潭捷運小套房</p>
+                            <p></p>
                         </td>
                         <td>
-                            <p>一年</p>
+                            <p></p>
                         </td>
                         <td>
-                            <p>2022/05/06  12:00</p>
+                            <p></p>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <!----------------pages------------------>
-        <div class="c-pages">
-            <ul class="pagination">
-                <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❮</a></li>
 
-                <li><a href="#">1</a></li>
-                <li><a class="active" href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-
-                <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❯</a></li>
-            </ul>
-        </div>
-
-        <!--------------pages------------------->
 
     </div>
 

@@ -681,9 +681,18 @@
                         <img src="imgs/backcolor.svg" alt="">
                         <p>刊登物件</p>
                     </div>
-                    <h2 class="z_step_title bold">step5.　同住人資訊以及房屋簡介</h2>
+                    <h2 class="z_step_title bold">step5.　房屋簡介及同住人資訊</h2>
                     <div class="z_otherinfo_flex">
                         <form name="form1" id='form1'>
+                            <div class="z_publish_text_container">
+                                <div class="z_publish_option_title">
+                                    <div class="z_publish_item_detail_title">房屋簡介</div>
+                                    <p class="alert bold z_publish_small"></p>
+                                </div>
+                                <div class="z_publish_textarea_container">
+                                    <textarea name="item_info" id="" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
                             <div class="z_publish_text_container">
                                 <div class="z_publish_option_title">
                                     <div class="z_publish_item_detail_title">同住人資訊</div>
@@ -761,17 +770,6 @@
                                 </label>
                                 </div>
 
-                            </div>
-                            <div class="z_publish_text_container">
-                                <div class="z_publish_option_title">
-                                    <div class="z_publish_item_detail_title">房屋簡介</div>
-                                    <p class="alert bold z_publish_small"></p>
-                                </div>
-                                <div class="z_publish_textarea_container">
-                                    <textarea name="item_info" id="" cols="30" rows="10"></textarea>
-                                </div>
-                            </div>
-                        
                             </div>
                             <label>
                                 <input type="checkbox" name="" id="">

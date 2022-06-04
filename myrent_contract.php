@@ -261,7 +261,7 @@ ul.pagination li a:hover{
 
         <div class="flip">
             <p>士林夜市近士林劍潭捷運小套房</p>
-            <img src="../imgs/down-arrow.svg" alt="">
+            <img src="imgs/down-arrow.svg" alt="">
 
         </div>
         <div class="panel" hidden>
@@ -274,27 +274,27 @@ ul.pagination li a:hover{
 
         <!-- 2 -->
         <div class="flip">
-            <p>士林夜市近士林劍潭捷運小套房</p>
-            <img src="../imgs/down-arrow.svg" alt="">
+            <p></p>
+            <img src="imgs/down-arrow.svg" alt="">
 
         </div>
         <div class="panel" hidden>
-            <p>狀態 : <span>待審核</span></p>
-            <p>合約內容 : <a href="myrent_contract02.php">點擊查看</a>
-                <a href="">下載</a>
+            <p><span></span></p>
+            <p><a href="myrent_contract02.php"></a>
+                <a href=""></a>
             </p>
         </div>
 
         <!-- 3 -->
         <div class="flip">
-            <p>士林夜市近士林劍潭捷運小套房</p>
-            <img src="../imgs/down-arrow.svg" alt="">
+            <p></p>
+            <img src="imgs/down-arrow.svg" alt="">
 
         </div>
         <div class="panel" hidden>
-            <p>狀態 : <span>待審核</span>
-            <p>合約內容 : <a href="myrent_contract02.php">點擊查看</a>
-                <a href="">下載</a>
+            <p><span></span>
+            <p><a href="myrent_contract02.php"></a>
+                <a href=""></a>
             </p>
         </div>
 
@@ -321,10 +321,10 @@ ul.pagination li a:hover{
                 <tbody>
                     <tr>
                         <td>
-                            <p>士林夜市近士林劍潭捷運小套房</p>
+                            <p>近捷運板橋站，市中心生活圈</p>
                         </td>
                         <td>
-                            <p class="check">待審核</p>
+                            <p class="check">已審核</p>
                         </td>
                         <td>
                                 <iframe src="myrent_contract02.php" style="display:none;" name="frame"><img src="../imgs/print_icon.svg" alt=""></iframe>
@@ -334,26 +334,24 @@ ul.pagination li a:hover{
 
                     <tr class="active-row">
                         <td>
-                            <p>士林夜市近士林劍潭捷運小套房</p>
+                            <p></p>
                         </td>
                         <td>
-                            <p>已審核</p>
+                            <p></p>
                         </td>
                         <td> 
-                            <iframe src="myrent_contract02.php" style="display:none;" name="frame"><img src="../imgs/print_icon.svg" alt=""></iframe>
-                            <button type="button" onclick="frames['frame'].print()"><img src="./imgs/printer.svg" alt=""></button>
+
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <p>士林夜市近士林劍潭捷運小套房</p>
+                            <p></p>
                         </td>
                         <td>
-                            <p>已審核</p>
+                            <p></p>
                         </td>
                         <td> 
-                            <iframe src="myrent_contract02.php" style="display:none;" name="frame"><img src="../imgs/print_icon.svg" alt=""></iframe>
-                            <button type="button" onclick="frames['frame'].print()"><img src="./imgs/printer.svg" alt=""></button>
+    
                         </td>
                     </tr>
                 </tbody>
@@ -361,18 +359,7 @@ ul.pagination li a:hover{
         </div>
 
         <!----------------pages------------------>
-        <div class="c-pages">
-            <ul class="pagination">
-                <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❮</a></li>
 
-                <li><a href="#">1</a></li>
-                <li><a class="active" href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-
-                <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❯</a></li>
-            </ul>
-        </div>
 
         <!--------------pages------------------->
     </div>
