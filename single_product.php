@@ -397,6 +397,7 @@ h3.S-location i {
     width: 360px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .S-menu-icon-c {
@@ -1267,10 +1268,10 @@ h3.S-location i {
                             <img src="imgs/租屋資訊/樓層.svg" alt="">
                             <p>樓層</p>
                         </div>
-                        <div class="S-menu-icon-group col-lg-3">
+                        <!-- <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/租屋資訊/房型.svg" alt="">
                             <p>雅房</p>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
@@ -1308,7 +1309,7 @@ h3.S-location i {
 
                 <div class="S-menu-icon-wrap">
                     <div class="S-menu-icon">
-                        <div class="S-menu-icon-group col-lg-3">
+                        <!-- <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件設備/冰箱.svg" alt="">
                             <p>冰箱</p>
                         </div>
@@ -1335,19 +1336,19 @@ h3.S-location i {
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件設備/浴缸.svg" alt="">
                             <p>浴缸</p>
-                        </div>
+                        </div> -->
                         <div class="S-menu-icon-group col-lg-3">
-                            <img src="imgs/物件設備/熱水器.svg" alt="">
-                            <p>熱水器</p>
+                            <img src="imgs/物件設備/飲水機.svg" alt="">
+                            <p>飲水機</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件設備/瓦斯.svg" alt="">
                             <p>瓦斯</p>
                         </div>
-                        <div class="S-menu-icon-group col-lg-3">
+                        <!-- <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件設備/第四台.svg" alt="">
                             <p>第四台</p>
-                        </div>
+                        </div> -->
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件設備/電視.svg" alt="">
                             <p>電視</p>
@@ -1381,10 +1382,10 @@ h3.S-location i {
 
                 <div class="S-menu-icon-wrap">
                     <div class="S-menu-icon">
-                        <div class="S-menu-icon-group col-lg-3">
+                        <!-- <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件公設/交誼廳.svg" alt="">
                             <p>交誼廳</p>
-                        </div>
+                        </div> -->
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件公設/客廳.svg" alt="">
                             <p>客廳</p>
@@ -1393,14 +1394,14 @@ h3.S-location i {
                             <img src="imgs/物件公設/廚房.svg" alt="">
                             <p>廚房</p>
                         </div>
-                        <div class="S-menu-icon-group col-lg-3">
+                        <!-- <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件公設/陽台.svg" alt="">
                             <p>陽台</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件公設/電梯.svg" alt="">
                             <p>電梯</p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -1428,18 +1429,18 @@ h3.S-location i {
 
                 <div class="S-menu-icon-wrap">
                     <div class="S-menu-icon center">
-                        <div class="S-menu-icon-group col-lg-3">
+                        <!-- <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件特色/限女性.svg" alt="">
                             <p>限女性</p>
-                        </div>
+                        </div> -->
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件特色/可養寵物.svg" alt="">
                             <p>可養寵物</p>
                         </div>
-                        <div class="S-menu-icon-group col-lg-3">
+                        <!-- <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件特色/可開伙.svg" alt="">
                             <p>可開伙</p>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
@@ -1467,22 +1468,22 @@ h3.S-location i {
 
                 <div class="S-menu-icon-wrap">
                     <div class="S-menu-icon">
-                        <div class="S-menu-icon-group col-lg-3">
+                        <!-- <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件安全設備/安全門窗.svg" alt="">
                             <p>安全門窗</p>
-                        </div>
+                        </div> -->
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件安全設備/滅火器.svg" alt="">
                             <p>滅火器</p>
                         </div>
-                        <div class="S-menu-icon-group col-lg-3">
+                        <!-- <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件安全設備/灑水器.svg" alt="">
                             <p>灑水器</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件安全設備/煙霧警報.svg" alt="">
                             <p>煙霧警報</p>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
@@ -1514,7 +1515,7 @@ h3.S-location i {
                             <img src="imgs/物件其他費用/水電費.svg" alt="">
                             <p>水電費</p>
                         </div>
-                        <div class="S-menu-icon-group col-lg-3">
+                        <!-- <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件其他費用/停車費.svg" alt="">
                             <p>停車費</p>
                         </div>
@@ -1525,7 +1526,7 @@ h3.S-location i {
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件其他費用/第四台.svg" alt="">
                             <p>第四台</p>
-                        </div>
+                        </div> -->
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件其他費用/網路費.svg" alt="">
                             <p>網路費</p>
@@ -1556,19 +1557,19 @@ h3.S-location i {
 
                 <div class="S-menu-icon-wrap">
                     <div class="S-menu-icon">
-                        <div class="S-menu-icon-group col-lg-3">
+                        <!-- <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/周邊機能/學校.svg" alt="">
                             <p>學校</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/周邊機能/市場.svg" alt="">
                             <p>市場</p>
-                        </div>
+                        </div> -->
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/周邊機能/捷運站.svg" alt="">
                             <p>捷運站</p>
                         </div>
-                        <div class="S-menu-icon-group col-lg-3">
+                        <!-- <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/周邊機能/火車站.svg" alt="">
                             <p>火車站</p>
                         </div>
@@ -1583,7 +1584,7 @@ h3.S-location i {
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/周邊機能/超市.svg" alt="">
                             <p>超市</p>
-                        </div>
+                        </div> -->
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/周邊機能/醫院.svg" alt="">
                             <p>醫院</p>
@@ -1595,7 +1596,7 @@ h3.S-location i {
 
                 <div class="S-menu-map">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14459.21407901372!2d121.54840685!3d25.0407411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abd3c5fd79dd%3A0xa13fa6237f83c610!2z5bWc5pysIOmrmOe0mueUn-WQkOWPuOWwiOmWgOW6lyBTQUtJbW90byBCYWtlcnnlj7DljJfml5foiablupc!5e0!3m2!1szh-TW!2stw!4v1652345581238!5m2!1szh-TW!2stw"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.6428677772515!2d121.46315751524675!3d25.012248445316537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a81ed52cbcad%3A0xad138206f5ebe75c!2zMjIw5paw5YyX5biC5p2_5qmL5Y2A5Lit5bGx6Lev5LiA5q61MTYx6Jmf!5e0!3m2!1szh-TW!2stw!4v1654334998874!5m2!1szh-TW!2stw"
                         width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -1625,15 +1626,15 @@ h3.S-location i {
 
                 <div class="S-menu-icon-wrap">
                     <div class="S-menu-icon">
-                        <div class="S-menu-icon-group col-lg-3">
+                        <!-- <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/室友簡介與喜好/唱歌.svg" alt="">
                             <p>唱歌</p>
-                        </div>
+                        </div> -->
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/室友簡介與喜好/宅.svg" alt="">
                             <p>宅</p>
                         </div>
-                        <div class="S-menu-icon-group col-lg-3">
+                        <!-- <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/室友簡介與喜好/手做.svg" alt="">
                             <p>手做</p>
                         </div>
@@ -1656,7 +1657,7 @@ h3.S-location i {
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/室友簡介與喜好/閱讀.svg" alt="">
                             <p>閱讀</p>
-                        </div>
+                        </div> -->
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/室友簡介與喜好/電影.svg" alt="">
                             <p>電影</p>
