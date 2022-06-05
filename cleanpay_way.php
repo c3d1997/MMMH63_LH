@@ -1,6 +1,6 @@
 <?php
-$title = '付款方式'
-
+$title = '付款方式';
+require './part/connect-db.php';
 ?>
 
 <?php include __DIR__ . './part/head.php'  ?>

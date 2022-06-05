@@ -21,6 +21,69 @@ $hre = $hrestmts->fetch();
 <!-- 搜尋相關畫面全CSS -->
 <style>
     /* 搜尋選單 */
+    .x-home-page-scroll-top {
+        width: 80px;
+        height: 80px;
+        /* border: 1px solid; */
+        position: fixed;
+        right: 4%;
+        bottom: 10%;
+        z-index: 9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #F4F4F4;
+        /* border: 1px solid  #0E2E3D; */
+        border-radius: 25%;
+        cursor: pointer;
+        transition: .5s;
+
+    }
+
+
+    .x-home-page-scroll-top img {
+        object-fit: contain;
+        width: 60%;
+        transition: .5s;
+
+    }
+
+    .x-home-page-chat {
+        width: 80px;
+        height: 80px;
+        /* border: 1px solid; */
+        position: fixed;
+        right: 4%;
+        bottom: 22%;
+        z-index: 9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #F4F4F4;
+        /* border: 1px solid  #0E2E3D; */
+        border-radius: 25%;
+        cursor: pointer;
+        transition: .5s;
+    }
+
+    .x-home-page-chat a {
+        width: 80px;
+        height: 80px;
+        /* border: 1px solid; */
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+    }
+
+    .x-home-page-chat img {
+        object-fit: contain;
+        width: 60%;
+        transition: .5s;
+
+    }
     form {
         width: 100%;
         display: flex;
@@ -195,6 +258,54 @@ $hre = $hrestmts->fetch();
     }
 
     @media screen and (max-width:376px) {
+        .x-home-page-scroll-top {
+            width: 60px;
+            height: 60px;
+            /* border: 1px solid; */
+            position: fixed;
+            right: 4%;
+            bottom: 10%;
+            z-index: 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #F4F4F4;
+            /* border: 1px solid  #0E2E3D; */
+            border-radius: 25%;
+            cursor: pointer;
+            transition: .5s;
+
+        }
+
+        .x-home-page-chat {
+            width: 60px;
+            height: 60px;
+            /* border: 1px solid; */
+            position: fixed;
+            right: 4%;
+            bottom: 22%;
+            z-index: 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #F4F4F4;
+            /* border: 1px solid  #0E2E3D; */
+            border-radius: 25%;
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        .x-home-page-chat a {
+            width: 60px;
+            height: 60px;
+            /* border: 1px solid; */
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
         .irs--round .irs-handle {
             top: 38px;
             width: 20px;
@@ -543,7 +654,7 @@ $hre = $hrestmts->fetch();
         .x-search-ex {
             height: 300px;
             overflow: auto;
-            margin-top: 0px;
+            margin-top: 30px;
         }
 
         .x-search-ex::-webkit-scrollbar {
@@ -912,6 +1023,7 @@ $hre = $hrestmts->fetch();
 
         .x-search-month-nice-object-product .S-lg-card-info {
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
             padding: 9px 10px;
             /* border: 1px solid rgb(45, 95, 112); */
@@ -919,13 +1031,7 @@ $hre = $hrestmts->fetch();
             margin: 0;
         }
 
-        .x-search-month-nice-object-product .S-lg-card-info h4 {
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-            font-size: 12px;
-            font-weight: normal;
-        }
+        
 
         .x-search-month-nice-object-product .S-lg-card-info h4 span {
             font-size: 14px;
@@ -936,7 +1042,7 @@ $hre = $hrestmts->fetch();
 
         .x-search-month-nice-object-product .S-lg-card-info-2 {
             display: flex;
-            margin-top: 30px;
+            margin-top: 0;
             justify-content: right;
             align-items: flex-end;
         }
@@ -1203,7 +1309,12 @@ $hre = $hrestmts->fetch();
 </style>
 <?php include __DIR__ . './part/nav.php'  ?>
 <!-- 搜尋 -->
-
+<div class="x-home-page-scroll-top top-link-hide" id="sc-top-js">
+        <img src="./imgs/arrow-up.svg" alt="">
+    </div>
+    <div class="x-home-page-chat " id="chat-js">
+        <a href="customer_service.php"><img src="./imgs/support.png" alt=""></a>
+    </div>
 <div class="x-search">
     <div class="container">
         <div class="x-search-all">
@@ -2123,6 +2234,49 @@ $hre = $hrestmts->fetch();
     })
 </script>
 <script>
+     // scrolltop
+     const scrollTopButton = document.getElementById('sc-top-js');
+    const scrollFunc = () => {
+        let y = window.scrollY;
+        console.log(y);
+        if (y > 0) {
+            scrollTopButton.classList.add("top-link-show");
+        } else {
+            scrollTopButton.classList.remove("top-link-show");
+        }
+    };
+    window.addEventListener("scroll", scrollFunc);
+
+    const scrollToTop = () => {
+        const c = document.documentElement.scrollTop || document.body.scrollTop;
+
+        if (c > 0) {
+            window.requestAnimationFrame(scrollToTop);
+            window.scrollTo(0, c - c / 10);
+        }
+    };
+
+    scrollTopButton.onclick = function(e) {
+        e.preventDefault();
+        scrollToTop();
+    }
+    // chat-js
+    $('#chat-js').mouseenter(function() {
+        $('#chat-js').css('transform', 'translateY(-5px)')
+
+    })
+    $('#chat-js').mouseleave(function() {
+        $('#chat-js').css('transform', 'translateY(0px)')
+
+    })
+    $('#sc-top-js').mouseenter(function() {
+        $('#sc-top-js').css('transform', 'translateY(-5px)')
+
+    })
+    $('#sc-top-js').mouseleave(function() {
+        $('#sc-top-js').css('transform', 'translateY(0px)')
+
+    })
     function likeClick(event) {
         const svg = $(event.currentTarget).find('.S-lg-svg');
         svg.toggleClass('x-svg-color');

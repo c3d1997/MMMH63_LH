@@ -1,3 +1,6 @@
+<?php
+require './part/connect-db.php';
+?>
 <?php include __DIR__ . './part/head.php'  ?>
 
     <style>

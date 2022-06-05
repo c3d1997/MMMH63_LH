@@ -1,3 +1,6 @@
+<?php
+    require './part/connect-db.php';
+?>
 <?php include __DIR__ . './part/head.php'  ?>
 
 <style>
@@ -249,11 +252,13 @@
     .n-nOh p {
         display: none;
     }
+
     .z_select_dropdown_container {
         flex-grow: 1;
         position: relative;
         display: flex;
     }
+
     select {
         color: #0E2E3D;
         height: 60px;
@@ -264,6 +269,7 @@
         font-size: 16px;
         padding-left: 15px;
     }
+
     select option {
         font-size: 16px;
 
@@ -413,6 +419,7 @@
         position: absolute;
         pointer-events: none;
     }
+
     .downArrow {
         transform: rotateX(180deg);
     }
@@ -610,7 +617,7 @@
             </div>
 
             <div class="n-mmaps">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.825246449343!2d121.50976201432393!3d25.040003944206227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a90a8d497325%3A0x2876dc1b4d647f9!2z5Lit6I-v5rCR5ZyL57i957Wx5bqc!5e0!3m2!1szh-TW!2stw!4v1654287001679!5m2!1szh-TW!2stw" width="522" height="375" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.825246449343!2d121.50976201432393!3d25.040003944206227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a90a8d497325%3A0x2876dc1b4d647f9!2z5Lit6I-v5rCR5ZyL57i957Wx5bqc!5e0!3m2!1szh-TW!2stw!4v1654287001679!5m2!1szh-TW!2stw" width="522" height="375" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
             <div class="n-nmamutwo">
@@ -705,18 +712,17 @@
     })
     $("select").on({
         mouseleave: function() {
-        $(this).next().children().removeClass("downArrow")
-    },  
-        click: function(){
-        $(this).next().children().toggleClass("downArrow")
-    }
+            $(this).next().children().removeClass("downArrow")
+        },
+        click: function() {
+            $(this).next().children().toggleClass("downArrow")
+        }
     })
 
-//  選擇坪數後自動顯示訂金金額
-    $('#bankSelect').click(function(){
+    //  選擇坪數後自動顯示訂金金額
+    $('#bankSelect').click(function() {
         $('#money').val('10000')
     })
-
 </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>
