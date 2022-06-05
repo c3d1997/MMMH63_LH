@@ -564,11 +564,11 @@
                 <div class="z_select_dropdown_container">
                     <select id="bankSelect" name=”bankSelect” class="z_select_dropdown">
                         <option selected disabled>--請選擇坪數--</option>
-                        <option>1 - 5 坪</option>
-                        <option>5 - 10 坪</option>
-                        <option>10 - 15 坪</option>
-                        <option>15 - 20 坪</option>
-                        <option>20 坪以上</option>
+                        <option value="1">1 - 5 坪</option>
+                        <option value="2">5 - 10 坪</option>
+                        <option value="3">10 - 15 坪</option>
+                        <option value="4">15 - 20 坪</option>
+                        <option value="5">20 坪以上</option>
                     </select>
                     <div class="arrow_container">
                         <img src="imgs/down-arrow.svg" alt="">
@@ -681,7 +681,7 @@
 
         <div class="n-ntwobutton">
             <button class="pc-button-F4F4F4-180">清除資料</button>
-            <button class="pc-button-FEAC00-180"><a href="cleanpay_way.php" style="text-decoration:none; color:#0E2E3D;">確認送出</a></button>
+            <a href="cleanpay_way.php" style="text-decoration:none; color:#0E2E3D;"><button class="pc-button-FEAC00-180" onclick="transData()">確認送出</button></a>
         </div>
 
 
@@ -720,9 +720,25 @@
     })
 
     //  選擇坪數後自動顯示訂金金額
-    $('#bankSelect').click(function() {
-        $('#money').val('10000')
+    // $('#bankSelect').click(function() {
+    //     $('#money').val('10000')
+    // })
+    $('#bankSelect').on("change",function() {
+        if ($(this).val() == 1){
+            $('#money').val('10000')
+        }else if ($(this).val() == 2){
+            $('#money').val('20000')
+        }else if ($(this).val() == 3){
+            $('#money').val('30000')
+        }else {
+            $('#money').val('40000')
+        }
     })
+    function transData() {
+        const money = $("#money").val()
+        // console.log(money);
+        localStorage.setItem("money", JSON.stringify(money))
+    }
 </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>

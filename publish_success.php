@@ -876,9 +876,9 @@ unset($_SESSION['roommate_info']);
                     <p class="z_pay_success_tip"></p>
                 </div>
                 <div class="z_twobtn z_btn_reverse">
-                    <button class="pc-button-F4F4F4-180 z_phone_162 "><a href="home_page.php">返回首頁</a></button>
+                <a href="home_page.php"><button class="pc-button-F4F4F4-180 z_phone_162 ">返回首頁</button></a>
 
-                    <a href="single_product.php?=<?php $_SESSION["item_c"]?>>"><button class="pc-button-FEAC00-180 z_phone_162 ">查看物件</button></a>
+                    <a href="single_product.php?sid=<?= $_SESSION["item_c"]?>"><button class="pc-button-FEAC00-180 z_phone_162 ">查看物件</button></a>
 
                     </button>
                 </div>
