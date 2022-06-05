@@ -1,6 +1,22 @@
+<?php
+$title = '預約看房';
+require './part/connect-db.php';
+
+$user =  $_SESSION['member']['name'];
+
+$r_sql = "SELECT * FROM `reservation` WHERE `members_name` = '$user' ;";
+$stmt = $pdo->query($r_sql);
+// $i = $stmt->fetch();
+$items = $stmt->fetchAll();
+
+?>
+
+
+
+
 <?php include __DIR__ . './part/head.php'  ?>
 
-    <style>
+<style>
 .c-world {
     display: flex;
     width: 100%;
@@ -95,7 +111,7 @@
 .content-table th,
 .content-table td {
     padding: 25px 25px;
-    width: 208px;
+    /* width: 208px; */
 
 }
 
@@ -305,32 +321,25 @@ ul.pagination li a:hover{
                         <th>
                             <p>物件名稱</p>
                         </th>
+
                         <th>
-                            <p>合約期限</p>
-                        </th>
-                        <th>
-                            <p>預約看房</p>
+                            <p>預約時間</p>
                         </th>
 
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach ($items as $i): ?>
                     <tr>
                         <td>
-                            <p></p>
+                            <a href="single_product.php?sid=<?=$i['item_sid'] ?>"><p><?=$i['item_name'] ?></p></a>
                         </td>
                         <td>
-                            <p></p>
-                        </td>
-                        <td>
-                            <p></p>
+                            <p><?=$i['date'] ?></p>
                         </td>
                     </tr>
-
-                    <tr>
-                        <td>
-                            <p></p>
-                        </td>
+                    <?php endforeach?>
+                    <!-- <tr>
                         <td>
                             <p></p>
                         </td>
@@ -345,10 +354,7 @@ ul.pagination li a:hover{
                         <td>
                             <p></p>
                         </td>
-                        <td>
-                            <p></p>
-                        </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>

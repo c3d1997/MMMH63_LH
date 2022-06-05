@@ -1152,7 +1152,7 @@ $two = $twostmts->fetch();
             </div>
             <div class="S-product-info-right">
                 <button type="button" onclick="cleantext()" class="pc-button-FEAC00-280 S-btn-order">預約看房</button>
-                <form action="./Reservation_page.php" method="post">
+                <!-- <form action="./Reservation_page.php" method="post"> -->
                     <!-- 日曆按鈕-->
                     <!-- <button class="simplepicker-btn">Show Picker</button> -->
                     <div class="event-log" id="clean">
@@ -1164,7 +1164,7 @@ $two = $twostmts->fetch();
                     <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a
                             href="FinalCheck_page.php?sid=<?= $x?>">我要租屋</a></button>
 
-                </form>
+                <!-- </form> -->
 
             </div>
         </div>
@@ -1970,28 +1970,32 @@ $two = $twostmts->fetch();
     //     // $(".simplepicker-ok-btn").attr("type","submit")
     //     $(".simplepicker-ok-btn").html('<a href="Reservation_page.php"></a>')
 // })
+    
+
+
+$(".simplepicker-ok-btn").on("click", function() {
+    const itemSid = <?= $x?>;
     const date = $("#pickTime").text()
     const itemName = $(".S-name").text()
     const itemAddress = $(".S-location").text()
     const itemPrice = $(".S-price").text()
+    const contract = $(".S-date").text()
     const itemImg = $(".S-product-img-left ").children().attr("src")
-
-$(".simplepicker-ok-btn").on("click", function() {
-
-    console.log('gooddddd');
     localStorage.setItem("date", JSON.stringify(date))
     localStorage.setItem("itemName", JSON.stringify(itemName))
     localStorage.setItem("itemAddress", JSON.stringify(itemAddress))
     localStorage.setItem("itemPrice", JSON.stringify(itemPrice))
     localStorage.setItem("itemImg", JSON.stringify(itemImg))
+    localStorage.setItem("contract", JSON.stringify(contract))
+    localStorage.setItem("itemSid", JSON.stringify(itemSid))
     
 })
 
 $(".S-btn-conect").on("click", function() {
-    // const date = $("#pickTime").text()
-    // const itemName = $(".S-name").text()
-    // const itemAddress = $(".S-location").text()
-    // const itemPrice = $(".S-price").text()
+    const date = $("#pickTime").text()
+    const itemName = $(".S-name").text()
+    const itemAddress = $(".S-location").text()
+    const itemPrice = $(".S-price").text()
     localStorage.setItem("date", JSON.stringify(date))
     localStorage.setItem("itemName", JSON.stringify(itemName))
     localStorage.setItem("itemAddress", JSON.stringify(itemAddress))
