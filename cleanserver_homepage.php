@@ -39,7 +39,7 @@ $pageName = 'cleanserver_homepage';
         margin-top: 80px;
         margin-bottom: 30px;
         height: 60px;
-        background: url(imgs/五大區域清潔.svg) no-repeat center/contain;
+        background: url(imgs/6C.svg) no-repeat center/contain;
     }
 
     .x-cleanserver-price-content-object {
