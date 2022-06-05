@@ -900,7 +900,7 @@
                             <label>
                                 <div class="z_publish_checkbox_option_container">
                                     <input class="z_checkbox_option" type="checkbox" name="postulate[]" id="" value="客廳">
-                                    <span>客廳</span>
+                                    <span>交誼廳</span>
                                 </div>
                             </label>
                             <label>

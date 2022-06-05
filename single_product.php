@@ -25,6 +25,9 @@ $two = $twostmts->fetch();
 <style>
     /* 自己頁面的css */
     /* ----------------calender------------------------- */
+    
+        
+    
     .simpilepicker-date-picker {
         margin: 10% auto;
     }
@@ -947,6 +950,138 @@ $two = $twostmts->fetch();
         }
 
     }
+    .x-search-month-nice-object-product{
+        display: flex;
+        margin-top: 40px;
+    }
+    @media screen and (max-width:376px) {
+        .x-search-month-nice-object {
+            margin-bottom: 20px;
+        }
+
+        .x-search-month-nice-object-title {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .x-search-month-nice-object-title h2 {
+            font-size: 20px;
+        }
+
+        .x-search-month-nice-object-product {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            width: 600%;
+        }
+
+        .x-search-month-nice-object-product-scroll {
+            width: 100%;
+            overflow: scroll;
+        }
+
+        .x-search-month-nice-object-product .S-lg-card-wrap {
+            margin-top: 0px;
+            margin-right: 20px;
+            margin-bottom: 5px;
+            width: 250px;
+            height: 247px;
+            overflow: hidden;
+            position: relative;
+            /* border: 1px solid blue; */
+        }
+
+        .x-search-month-nice-object-product .S-lg-share {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2em;
+            border-radius: 50%;
+            position: absolute;
+            top: 3%;
+            right: 22%;
+        }
+
+        .x-search-month-nice-object-product .S-lg-share i {
+            font-size: 1.2em;
+        }
+
+        .x-search-month-nice-object-product .S-lg-like {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2em;
+            border-radius: 50%;
+            position: absolute;
+            top: 3%;
+            right: 3%;
+        }
+
+        .x-search-month-nice-object-product .S-lg-like svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .x-search-month-nice-object-product .S-lg-card {
+            width: 100%;
+            height: 100%;
+            /* display: flex; */
+            flex-direction: column;
+            /* border: 1px solid red; */
+        }
+
+        .x-search-month-nice-object-product .S-lg-card-img {
+            width: 100%;
+            height: 175px;
+
+        }
+
+        .x-search-month-nice-object-product .S-lg-card-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 9px 10px;
+            /* border: 1px solid rgb(45, 95, 112); */
+            background-color: #F1EDEA;
+            margin: 0;
+        }
+
+        
+
+        .x-search-month-nice-object-product .S-lg-card-info h4 span {
+            font-size: 14px;
+            font-weight: bold;
+            padding-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .x-search-month-nice-object-product .S-lg-card-info-2 {
+            display: flex;
+            margin-top: 0;
+            justify-content: right;
+            align-items: flex-end;
+        }
+
+        .x-search-month-nice-object-product .S-lg-card-info p {
+            display: none;
+            margin: 0;
+            font-size: 12px;
+        }
+
+        .x-search-month-nice-object-product .S-lg-card-info h3 {
+            width: 85px;
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline;
+        }
+    
+    }
+    
 </style>
 
 <?php include __DIR__ . './part/nav.php'  ?>
@@ -1016,18 +1151,15 @@ $two = $twostmts->fetch();
         <div class="S-product-img">
             <div class="S-product-img-left column">
 
-                <img src="imgs/items<?= $k['sid'] ?>/item0.jpg" style="width:100%" onclick="openModal();currentSlide(1)"
-                    class="hover-shadow cursor">
+                <img src="imgs/items<?= $k['sid'] ?>/item0.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
             </div>
             <div class="S-product-img-right">
                 <div class="S-product-img-right-up column">
-                    <img src="imgs/items<?= $k['sid'] ?>/item1.jpg" style="width:100%"
-                        onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                    <img src="imgs/items<?= $k['sid'] ?>/item1.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
                 </div>
                 <div class="S-product-img-right-down-g">
                     <div class="S-product-img-right-down column">
-                        <img src="imgs/items<?= $k['sid'] ?>/item1.jpg" style="width:100%"
-                            onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                        <img src="imgs/items<?= $k['sid'] ?>/item1.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
 
                     </div>
                     <button class="more-img">+7</button>
@@ -1153,16 +1285,15 @@ $two = $twostmts->fetch();
             <div class="S-product-info-right">
                 <button type="button" onclick="cleantext()" class="pc-button-FEAC00-280 S-btn-order">預約看房</button>
                 <!-- <form action="./Reservation_page.php" method="post"> -->
-                    <!-- 日曆按鈕-->
-                    <!-- <button class="simplepicker-btn">Show Picker</button> -->
-                    <div class="event-log" id="clean">
-                        <span id="pickTime"></span>
+                <!-- 日曆按鈕-->
+                <!-- <button class="simplepicker-btn">Show Picker</button> -->
+                <div class="event-log" id="clean">
+                    <span id="pickTime"></span>
 
-                    </div>
+                </div>
 
 
-                    <button type="button" class="pc-button-F4F4F4-280 S-btn-conect"><a
-                            href="FinalCheck_page.php?sid=<?= $x?>">我要租屋</a></button>
+                <button type="button" class="pc-button-F4F4F4-280 S-btn-conect" id="x-sendtotxt"><a href="FinalCheck_page.php?sid=<?= $x ?>">我要租屋</a></button>
 
                 <!-- </form> -->
 
@@ -1244,15 +1375,15 @@ $two = $twostmts->fetch();
                     <div class="S-menu-icon-c">
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/租屋資訊/共生&租屋.svg" alt="">
-                            <p>共生</p>
+                            <p>分租</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/租屋資訊/坪數.svg" alt="">
-                            <p>坪數</p>
+                            <p>30坪</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/租屋資訊/樓層.svg" alt="">
-                            <p>樓層</p>
+                            <p>12樓</p>
                         </div>
                         <!-- <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/租屋資訊/房型.svg" alt="">
@@ -1266,7 +1397,7 @@ $two = $twostmts->fetch();
                 <div class="S-menu-info">
                     <!-- <p>周邊機能完善，離捷運站步行只要30分鐘，非常方便，近師大商圈，環境單純，房間寬敞舒適，室友友善，和藹可親，絕對是居家旅行，必備租屋。
                     </p> -->
-                    <p><?= $k['item_info']?></p>
+                    <p><?= $k['item_info'] ?></p>
                     <button href="#" class="S-menu-info-more S-d-none S-xs-d-block" id="more">查看更多</button>
 
                 </div>
@@ -1653,7 +1784,7 @@ $two = $twostmts->fetch();
 
                 <!-- 手機版調整高度做收合 -->
                 <div class="S-menu-info">
-                    <p><?= $k['roommate_info']?></p>
+                    <p><?= $k['roommate_info'] ?></p>
                     <button href="#" class="S-menu-info-more S-d-none S-xs-d-block" id="more2">查看更多</button>
                 </div>
 
@@ -1678,42 +1809,47 @@ $two = $twostmts->fetch();
 
 
         <!-- lg-card 大商品圖 -->
-        <div class="S-lg-card-wrap-top S-xs-d-none">
-            <?php foreach ($twostmts as $i) : ?>
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="../imgs/分享.svg" alt=""> -->
+        <div class="x-search-month-nice-object-product-scroll">
+                <div class="x-search-month-nice-object-product">
+                    <?php foreach ($twostmts as $i) : ?>
+                        <div class="S-lg-card-wrap">
+                            <div class="S-lg-share">
+                                <!-- <img src="../imgs/分享.svg" alt=""> -->
 
-                    </div>
-                    <div class="S-lg-like" onclick="likeClick(event)" onmousedown="downClick(event)" onmouseup="upClick(event)" data-sid="12">
-                        <svg class=" S-lg-svg " width=" 50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/items<?= $i['sid'] ?>/item1.jpg">
-                        </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span><?= $i['item_name'] ?></span> <?= $i['item_area'] ?><?= $i['item_dist'] ?>
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    <?= $i['floor'] ?>
-                                </p>
-                                <h3>
-                                    $<?= number_format($i['price']) ?>/月
-                                </h3>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
+                            <div class="S-lg-like" onclick="likeClick(event)" onmousedown="downClick(event)" onmouseup="upClick(event)">
+                                <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
+                                    <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
 
-        </div>
+                            </div>
+
+                            <div class="S-lg-card">
+                                <div class="S-lg-card-img">
+                                    <img src="imgs/items<?= $i['sid'] ?>/item1.jpg">
+                                </div>
+                                <div class="S-lg-card-info ">
+                                    <h4>
+                                        <span><?= $i['item_name'] ?></span> <?= $i['item_area'] ?><?= $i['item_dist'] ?>
+                                    </h4>
+                                    <div class="S-lg-card-info-2 ">
+                                        <p>
+                                            <?= $i['floor'] ?>
+                                        </p>
+                                        <h3>
+                                            $<?= number_format($i['price']) ?>/月
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+       
+
 
 
         <!-- xs-card 小商品圖 -->
@@ -1969,40 +2105,39 @@ $two = $twostmts->fetch();
     // $(document).ready(function(){
     //     // $(".simplepicker-ok-btn").attr("type","submit")
     //     $(".simplepicker-ok-btn").html('<a href="Reservation_page.php"></a>')
-// })
-    
+    // })
 
 
-$(".simplepicker-ok-btn").on("click", function() {
-    const itemSid = <?= $x?>;
-    const date = $("#pickTime").text()
-    const itemName = $(".S-name").text()
-    const itemAddress = $(".S-location").text()
-    const itemPrice = $(".S-price").text()
-    const contract = $(".S-date").text()
-    const itemImg = $(".S-product-img-left ").children().attr("src")
-    localStorage.setItem("date", JSON.stringify(date))
-    localStorage.setItem("itemName", JSON.stringify(itemName))
-    localStorage.setItem("itemAddress", JSON.stringify(itemAddress))
-    localStorage.setItem("itemPrice", JSON.stringify(itemPrice))
-    localStorage.setItem("itemImg", JSON.stringify(itemImg))
-    localStorage.setItem("contract", JSON.stringify(contract))
-    localStorage.setItem("itemSid", JSON.stringify(itemSid))
-    
-})
 
-$(".S-btn-conect").on("click", function() {
-    const date = $("#pickTime").text()
-    const itemName = $(".S-name").text()
-    const itemAddress = $(".S-location").text()
-    const itemPrice = $(".S-price").text()
-    localStorage.setItem("date", JSON.stringify(date))
-    localStorage.setItem("itemName", JSON.stringify(itemName))
-    localStorage.setItem("itemAddress", JSON.stringify(itemAddress))
-    localStorage.setItem("itemPrice", JSON.stringify(itemPrice))
-    localStorage.setItem("itemImg", JSON.stringify(itemImg))
-})
+    $(".simplepicker-ok-btn").on("click", function() {
+        const itemSid = <?= $x ?>;
+        const date = $("#pickTime").text()
+        const itemName = $(".S-name").text()
+        const itemAddress = $(".S-location").text()
+        const itemPrice = $(".S-price").text()
+        const contract = $(".S-date").text()
+        const itemImg = $(".S-product-img-left ").children().attr("src")
+        localStorage.setItem("date", JSON.stringify(date))
+        localStorage.setItem("itemName", JSON.stringify(itemName))
+        localStorage.setItem("itemAddress", JSON.stringify(itemAddress))
+        localStorage.setItem("itemPrice", JSON.stringify(itemPrice))
+        localStorage.setItem("itemImg", JSON.stringify(itemImg))
+        localStorage.setItem("contract", JSON.stringify(contract))
+        localStorage.setItem("itemSid", JSON.stringify(itemSid))
 
+    })
+
+    $(".S-btn-conect").on("click", function() {
+        const date = $("#pickTime").text()
+        const itemName = $(".S-name").text()
+        const itemAddress = $(".S-location").text()
+        const itemPrice = $(".S-price").text()
+        localStorage.setItem("date", JSON.stringify(date))
+        localStorage.setItem("itemName", JSON.stringify(itemName))
+        localStorage.setItem("itemAddress", JSON.stringify(itemAddress))
+        localStorage.setItem("itemPrice", JSON.stringify(itemPrice))
+        localStorage.setItem("itemImg", JSON.stringify(itemImg))
+    })
 </script>
 
 <script>
@@ -2082,6 +2217,29 @@ $(".S-btn-conect").on("click", function() {
         svg.removeClass('x-svg-down');
         svg.addClass('x-svg-up');
     }
+</script>
+<script>
+    $("#x-sendtotxt").click(function(){
+        // $.post('Reservation-add.php'),{
+        //     item : x ,
+
+        // },function(){
+        //     console.log("7777");
+        // }
+        $.ajax({
+            url:"single_product.php.php",
+            // url:"publish_item_detail.php",
+            method: "post",
+            data: {
+                itemName : JSON.stringify(itemName),
+                itemSid : JSON.stringify(itemSid),
+                contract : JSON.stringify(contract),
+            },
+            // success:(function(){
+            //     console.log("7777");
+            // })
+        })
+    })
 </script>
 
 
