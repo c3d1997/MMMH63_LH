@@ -4,11 +4,12 @@ require './part/connect-db.php';
 
 
 // 帶入房屋資料
-$sql = "SELECT * FROM `items` WHERE `sid` = 1;";
-$stmt = $pdo->query($sql);
-$i = $stmt->fetch();
+// $sql = "SELECT * FROM `items` WHERE `sid` = 1;";
+// $stmt = $pdo->query($sql);
+// $i = $stmt->fetch();
 
-
+// echo json_encode($_SESSION,JSON_UNESCAPED_UNICODE);
+// echo json_encode($_GET,JSON_UNESCAPED_UNICODE);
 
 ?>
 
@@ -17,7 +18,10 @@ $i = $stmt->fetch();
 <style>
     /* 自己頁面的css */
     /* 主要區域 */
-
+    a {
+        text-decoration:none;
+        outline: none;
+    }
     .container {
         padding: 0 20px;
         position: relative;
@@ -253,14 +257,14 @@ $i = $stmt->fetch();
             <div class="S-Reservation-wrap">
                 <div class="S-Reservation">
                     <div class="S-Reservation-img">
-                        <img src="imgs/items<?= 1 ?>/item1.jpg" alt="">
+                        <img src="" alt="">
                     </div>
                     <div class="S-Reservation-info">
-                        <h3 class="S-Reservation-price S-lg-d-none S-xs-d-block">$<?= number_format($i['price']) ?>/月
+                        <h3 class="S-Reservation-price S-lg-d-none S-xs-d-block">
                         </h3>
-                        <h2 class="S-Reservation-name"><?= $i['item_name'] ?></h2>
+                        <h2 class="S-Reservation-name"></h2>
                         <h3 class="S-Reservation-location">
-                            <i class="fa-solid fa-location-dot"></i><?= $i['item_area'], $i['item_dist'], $i['item_address'] ?>
+                            <i class="fa-solid fa-location-dot"></i>
                         </h3>
                         <h2 class="S-Reservation-date" id="time">
 
@@ -285,7 +289,7 @@ $i = $stmt->fetch();
                                     <i class="fa-solid fa-thumbs-up"></i>
                                 </div>
                                 <h2>預約成功</h2>
-                                <a href="single_product.php?sid=63"><button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">返回</button></a>
+                                <a href="Reservation-add.php" id="backPage"><button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">返回</button></a>
                             </div>
                             <button class="ReservationSuccess-x" id="close2">
                                 <img src="imgs/X.svg" alt="">
@@ -320,17 +324,49 @@ $i = $stmt->fetch();
 </script>
 
 <script>
+    let date = JSON.parse(localStorage.getItem("date"));
+    let itemName = JSON.parse(localStorage.getItem("itemName"));
+    let itemAddress = JSON.parse(localStorage.getItem("itemAddress"));
+    let contract = JSON.parse(localStorage.getItem("contract"));
+    let itemSid = JSON.parse(localStorage.getItem("itemSid"));
+    let itemImg = JSON.parse(localStorage.getItem("itemImg"));
     $(document).ready(function() {
-        let data = localStorage.getItem("date");
-        let itemName = JSON.parse(localStorage.getItem("itemName"));
-        let itemAddress = JSON.parse(localStorage.getItem("itemAddress"));
-        let itemImg = JSON.parse(localStorage.getItem("itemImg"));
-        data = JSON.parse(data);
-        $("#time").text(data)
+        // let data = JSON.parse(localStorage.getItem("date"));
+        // let itemName = JSON.parse(localStorage.getItem("itemName"));
+        // let itemAddress = JSON.parse(localStorage.getItem("itemAddress"));
+        // let contract = JSON.parse(localStorage.getItem("contract"));
+        // let itemSid = JSON.parse(localStorage.getItem("itemSid"));
+        // let itemImg = JSON.parse(localStorage.getItem("itemImg"));
+        console.log(date);
+        $("#time").text(date)
         $(".S-Reservation-name").text(itemName)
         $(".S-Reservation-location").text(itemAddress)
         $(".S-Reservation-img").children().attr("src",itemImg)
+        $("#backPage").attr("href",`single_product.php?sid=${itemSid}`)
     })
+    const x = "88888"
+    $("#show").click(function(){
+        // $.post('Reservation-add.php'),{
+        //     item : x ,
+
+        // },function(){
+        //     console.log("7777");
+        // }
+        $.ajax({
+            url:"reservation-add.php",
+            // url:"publish_item_detail.php",
+            method: "post",
+            data: {
+                itemName : JSON.stringify(itemName),
+                itemSid : JSON.stringify(itemSid),
+                date : JSON.stringify(date),
+            },
+            // success:(function(){
+            //     console.log("7777");
+            // })
+        })
+    })
+
 </script>
 
 

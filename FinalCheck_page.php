@@ -3,7 +3,7 @@ $title = '單一物件';
 require './part/connect-db.php';
 
 
-echo $_GET['sid']
+// echo $_GET['sid']
 
 ?>
 
