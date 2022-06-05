@@ -322,6 +322,7 @@ $two = $twostmts->fetch();
     }
 
     .S-menu-btn {
+        cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1506,7 +1507,7 @@ $two = $twostmts->fetch();
                         </div> -->
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件公設/客廳.svg" alt="">
-                            <p>客廳</p>
+                            <p>交誼廳</p>
                         </div>
                         <div class="S-menu-icon-group col-lg-3">
                             <img src="imgs/物件公設/廚房.svg" alt="">

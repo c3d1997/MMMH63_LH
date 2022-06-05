@@ -719,7 +719,7 @@ $img = $pdo->query($sql)->fetch();
             <h2 class="z_pay_detail_title">租屋明細</h2>
             <div class="z_pay_detail_container">
                 <div class="z_pay_detail_img">
-                    <img src="imgs\myitems\共生01.png.jpg">
+                    <img src="imgs\myitems\1.jpg">
 
                 </div>
                 <div class="z_pay_detail_text">
@@ -755,7 +755,7 @@ $img = $pdo->query($sql)->fetch();
                 </div>
             </div>
             <div class="z_d_flex z_justify-content_center z_grow " >
-                <button class="z_maxbtn pc-button-FEAC00-180 z_phone_162 ">繼續</button>
+                <a href="home_page.php"><button class="z_maxbtn pc-button-FEAC00-180 z_phone_162 ">完成租屋</button></a>
             </div>
         </div>
     </section>
