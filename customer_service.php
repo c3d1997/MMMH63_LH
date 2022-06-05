@@ -1,3 +1,8 @@
+<?php 
+
+require './part/connect-db.php';
+
+?>
 <?php include __DIR__ . './part/head.php'  ?>
 
 <style>
@@ -132,7 +137,24 @@
     .alert {
         text-align: left;
     }
+    .z_upload_item_img_btn{
+        display: flex;
+        align-items: center;
+        justify-content: end;
 
+    }
+    .z_upload_item_img_btn label{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        
+    }
+    .z_upload_item_img_btn label img{
+        width: 18px;
+        margin-bottom: 4px;
+        margin-right: 2px;
+        
+    }
     .z_upload_item_img_btn button {
         background: transparent;
     }
@@ -455,7 +477,7 @@
                         </div>
                     </div>
                     <div class="z_upload_item_img_btn">
-                        <label class="" id="" for="filename"><img src="imgs/uploadicon.svg" alt="">點此上傳</label>
+                        <label class="" id="" for="filename"><img src="imgs/envelope-solid.svg" alt="">使用郵件寄送</label>
                         <input type="file" id="filename" class="" name="" style="display: none;">
                     </div>
 
@@ -465,7 +487,7 @@
                         <a href="mailto:littlehouse6302@gmail.com?subject=我有問題&body=Little_House 您好：我想問租金事宜%0D%0A回信請再次確認信箱" style="text-decoration: none">
                             <button class="pc-button-FEAC00-272 
 
-                            mobile-button-FEAC00-162 h-60" style="width: 162.5px; height:60px;font-size: 20px;" id="show">郵件送出</button>
+                            mobile-button-FEAC00-162 h-60" style="width: 162.5px; height:60px;font-size: 20px;" id="show">送出</button>
                         </a>
 
                     </div>
@@ -511,19 +533,19 @@
     })
 
     // 客服送出成功 彈出視窗
-    // let btn = document.querySelector("#show");
-    // let infoModal = document.querySelector("#infoModal");
-    // let close = document.querySelector("#close");
-    // let close2 = document.querySelector("#close2");
-    // btn.addEventListener("click", function() {
-    //     infoModal.showModal();
-    // })
-    // close.addEventListener("click", function() {
-    //     infoModal.close();
-    // })
-    // close2.addEventListener("click", function() {
-    //     infoModal.close();
-    // })
+    let btn = document.querySelector("#show");
+    let infoModal = document.querySelector("#infoModal");
+    let close = document.querySelector("#close");
+    let close2 = document.querySelector("#close2");
+    btn.addEventListener("click", function() {
+        infoModal.showModal();
+    })
+    close.addEventListener("click", function() {
+        infoModal.close();
+    })
+    close2.addEventListener("click", function() {
+        infoModal.close();
+    })
 </script>
 
 <script>
