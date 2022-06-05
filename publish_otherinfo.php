@@ -483,7 +483,16 @@
             padding: 30px;
             margin-bottom: 30px;
         }
-
+        .fast {
+        width: 100px;
+        height: 100px;
+        /* background-color:; */
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top:100px;
+        cursor: unset;
+        }
 
 
 
@@ -690,7 +699,7 @@
                                     <p class="alert bold z_publish_small"></p>
                                 </div>
                                 <div class="z_publish_textarea_container">
-                                    <textarea name="item_info" id="" cols="30" rows="10"></textarea>
+                                    <textarea name="item_info" id="item_info" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                             <div class="z_publish_text_container">
@@ -783,7 +792,8 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
+        <button class="fast" type="button"></button>
     </section>
 
 <?php include __DIR__ . './part/footer.php'  ?>
@@ -796,7 +806,11 @@
                     location.href = 'publish_success.php';
                 }, 'text');
         }
-
+        $(".fast").click(function(){
+        // console.log("gg")
+        $("#item_info").val("周邊機能完善，離捷運站步行只要30分鐘，非常方便，近捷運商圈，環境單純，房間寬敞舒適，室友友善，和藹可親，絕對是居家旅行，必備租屋。")
+        $("#roommate_info").val("我們是一群熱愛電影和電動的好室友，歡迎跟我們搭伙，我們有PS5、switch、VR、該有的應有盡有，絕對不會無聊。歡迎來當我們的室友!!")
+    })
 
 
 
