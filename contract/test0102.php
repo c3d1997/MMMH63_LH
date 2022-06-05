@@ -28,15 +28,15 @@
         $mail->SMTPAuth = true;  
         $mail->CharSet = 'UTF-8'; 
         $mail->Encoding = "base64";                            // Enable SMTP authentication
-        $mail->Username = 'notmeta.service@outlook.com';                 // SMTP username
+        $mail->Username = 'littlehouse6302@outlook.com';                 // SMTP username
         $mail->Password = 'mmmh6302@';                           // SMTP password
         $mail->SMTPSecure = 'SSL';                            // Enable TLS encryption, `ssl` also accepted
 
         $mail->Port = 587;                                    // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('notmeta.service@outlook.com', 'Mailer');
-        $mail->addAddress('littlehouse6302@gmail.com', 'Joe User');     // Add a recipient
+        $mail->setFrom('littlehouse6302@outlook.com', 'Little House');
+        $mail->addAddress('littlehouse6302@gmail.com', 'Little prince');     // Add a recipient
         $mail->addAddress('chiying0104@gmail.com', 'Chiying User');               // Name is optional
         $mail->addReplyTo('littlehouse6302@gmail.com', 'Little_house');
         // $mail->addCC('chiying0104@gmail.com');
@@ -48,8 +48,8 @@
 
         //Content
         $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = 'Here is the subject';
-        $mail->Body    = '11111';
+        $mail->Subject = 'Little House 驗證信';
+        $mail->Body    = '感謝您的註冊  請輸入此驗證碼註冊 : 11111';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
