@@ -1097,7 +1097,11 @@ $i = $stmt->fetch();
         <button class="pc-button-FEAC00-180 z_phone-button-162" style="background-color:#F1EDEA;">清除資料</button>
     </div>
     <div class="c_button_right">
+<<<<<<< HEAD
     <a href="contract02.php" style="text-decoration:none; color:#0E2E3D;"><button class="pc-button-FEAC00-180    z_phone-button-162" id="cont_ok">送出</button></a>
+=======
+    <a href="contract02.php" style="text-decoration:none; color:#0E2E3D;"><button class="pc-button-FEAC00-180    z_phone-button-162">送出</button></a>
+>>>>>>> df8831ea280c9f6f4cc1f7711ee34969ff6bf258
         
     
     

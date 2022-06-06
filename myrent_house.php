@@ -276,6 +276,7 @@ $items = $stmt->fetchAll();
             <h3>我的租屋</h3>
 
             <!-- --------------手機板的下拉--- -->
+<<<<<<< HEAD
             <?php foreach ($items as $i) : ?>
                 <div class="flip">
                     <p><?= $i['item_name'] ?></p>
@@ -288,6 +289,12 @@ $items = $stmt->fetchAll();
                     <p>繳費期限:2022/06/08</p>
                 </div>
             <?php endforeach ?>
+=======
+
+            <div class="flip">
+                <p>近捷運板橋站，市中心生活圈</p>
+                <img src="imgs/down-arrow.svg" alt="">
+>>>>>>> df8831ea280c9f6f4cc1f7711ee34969ff6bf258
 
 
             <!-----------------------手機板的下拉-------- -->
@@ -358,6 +365,85 @@ $items = $stmt->fetchAll();
                     </tbody>
                 </table>
             </div>
+<<<<<<< HEAD
+=======
+            <div class="panel" hidden>
+                <p>合約期限一年</p>
+                <p>合約內容 : <a href="myrent_contract02.php">點擊查看</a></p>
+                <p>繳費期限:2022/06/08</p>
+            </div>
+
+
+
+            <!-----------------------手機板的下拉-------- -->
+
+            <div class="c-table">
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <p>物件名稱</p>
+                            </th>
+                            <th>
+                                <p>合約期限</p>
+                            </th>
+                            <th>
+                                <p>合約內容</p>
+                            </th>
+                            <th>
+                                <p>繳費期限</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($items as $i) : ?>
+                            <tr>
+                                <td>
+                                    <p><?= $i['item_name'] ?></p>
+                                </td>
+                                <td>
+                                    <p><?= $i['contract'] ?></p>
+                                </td>
+                                <td><a href="">
+                                        <p class="check">點擊查看</p>
+                                    </a></td>
+                                <td>
+                                    <p>2022/05/01</p>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
+                        <tr class="active-row">
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td><a href="">
+                                    <p class="check"></p>
+                                </a></td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td><a href="">
+                                    <p class="check"></p>
+                                </a></td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+>>>>>>> df8831ea280c9f6f4cc1f7711ee34969ff6bf258
 
 
         </div>

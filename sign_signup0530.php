@@ -1224,9 +1224,7 @@ $pageName = 'signin_signup';
     // ------------驗證並彈出錯誤訊息------------------------------------------
 
     function validateEmail(email) {
-        var re =
-            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zAZ]{2,}))$/;
-        return re.test(email);
+        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zAZ]{2,}))$/;
     }
 
     function validateMobile(m) {
@@ -1263,19 +1261,19 @@ $pageName = 'signin_signup';
         if ($name.val().length < 2) {
             $name.next().html('請填寫正確資料');
             $name.css('border', 'red 1px solid');
-
             isPass = false;
         }
 
-        if (!$email.val() && !validateEmail($email.val())) {
 
+        if (!validateEmail($email.val())) {
+            // if (!validateEmail($email.val()) || !$email.val()) {
             $email.next().html('請填寫正確的email');
             $email.css('border', 'red 1px solid');
             isPass = false;
         }
 
-        if (!$mobile.val() && !validateMobile($mobile.val())) {
-
+        if (!$mobile.val() || !validateMobile($mobile.val())) {
+            console.log('111');
             $mobile.next().html('請填寫正確的手機號碼');
             $mobile.css('border', 'red 1px solid');
             isPass = false;
@@ -1289,7 +1287,6 @@ $pageName = 'signin_signup';
         }
         const $password = $('#signup-password');
         if (!$password.val() || !validatePassword($password.val())) {
-
             $password.next().html('請填寫8位元的密碼，至少一個英文一個數字');
             $password.css('border', 'red 1px solid');
             isPass = false;
@@ -1313,11 +1310,35 @@ $pageName = 'signin_signup';
 
 
 
+        $("input[type=text]").focus(function() {
+            $(this).next().html('');
+            $(this).html('');
+            $(this).css('border', '#CCCCCC 1px solid');
+            console.log("0000");
+        })
+        $("input[type=email]").focus(function() {
+            $(this).next().html('');
+            $(this).html('');
+            $(this).css('border', '#CCCCCC 1px solid');
+            console.log("emailerror");
+        })
+        $("input[type=password]").focus(function() {
+            $(this).next().html('');
+            $(this).html('');
+            $(this).css('border', '#CCCCCC 1px solid');
+            console.log("passworderror");
+        })
+
+
+
+
+
+
+
 
 
         // 註冊成功存入會員資料表
         if (isPass) {
-
             // ---------註冊成功彈跳視窗---------------------------------------
             // 成功 彈出視窗
             let btn = document.querySelector("#sign_up");
@@ -1357,9 +1378,6 @@ $pageName = 'signin_signup';
         }
 
     }
-
-
-
 
 
 
@@ -1423,6 +1441,14 @@ $pageName = 'signin_signup';
         }
 
     }
+
+
+
+
+
+
+
+
 
 
     function setCookie(key, value) {

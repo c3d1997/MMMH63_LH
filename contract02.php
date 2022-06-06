@@ -543,6 +543,7 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
         </div>
     </div>
 </section>
@@ -561,6 +562,26 @@
 </div>
 <?php include __DIR__ . './part/footer.php'  ?>
 
+=======
+        </div>
+    </div>
+</section>
+
+<!---------------------button------------------------->
+<div class="container">
+    <div class="c_button_section">
+        <div class="c_button_right">
+            <a href="contract03.php" style="text-decoration: none; color:#0E2E3D;"><button class="pc-button-FEAC00-180">送出</button></a>
+
+        </div>
+        <div class="c_button_left">
+            <button class="pc-button-F4F4F4-180">清除資料</button>
+        </div>
+    </div>
+</div>
+<?php include __DIR__ . './part/footer.php'  ?>
+
+>>>>>>> df8831ea280c9f6f4cc1f7711ee34969ff6bf258
 <script>
     $(".c_upload_sign").click(function() {
         console.log("hi");

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 $title = '租屋契約';
 require './part/connect-db.php';
@@ -9,6 +10,9 @@ $stmt = $pdo->query($r_sql);
 $items = $stmt->fetchAll();
 
 ?>
+=======
+<?php include __DIR__ . './part/head.php'  ?>
+>>>>>>> df8831ea280c9f6f4cc1f7711ee34969ff6bf258
 
 <?php include __DIR__ . './part/head.php'  ?>
 
@@ -237,6 +241,7 @@ $items = $stmt->fetchAll();
 
     <div class="c-world">
 
+<<<<<<< HEAD
         <!-- 左邊選單開始 -->
         <div class="c-mylist">
             <ul>
@@ -272,6 +277,152 @@ $items = $stmt->fetchAll();
             </ul>
         </div>
         <!-- 左邊選單結束 -->
+=======
+    <!-- 左邊選單開始 -->
+    <div class="c-mylist">
+        <ul>
+            <li class="c-list">
+                <a href="personal-data.php">
+                    <h3>會員資料</h3>
+                </a>
+            </li>
+            <li class="c-list"><a href="house_post.php">
+                    <h3>刊登物件</h3>
+                </a></li>
+            <li class="c-list"><a href=""myrent_house.php">
+                    <h3>我的租屋</h3>
+                </a> </li>
+            <li class="c-list"><a href="mycollection_list.php">
+                    <h3>我的收藏</h3>
+                </a></li>
+            <li class="c-list"><a href="promo.php">
+                    <h3>我的優惠</h3>
+                </a> </li>
+            <li class="c-list"><a href="house_reserve.php">
+                    <h3>我的預約</h3>
+                </a> </li>
+            <li class="c-list-active"><a href="myrent_contract.php">
+                    <h3>租屋契約</h3>
+                </a></li>
+            <li class="c-list"><a href="myrent_fee.php">
+                    <h3>租金支付</h3>
+                </a> </li>
+            <li class="c-list"><a href="clean_reserve.php">
+                    <h3>清潔服務</h3>
+                </a> </li>
+        </ul>
+    </div>
+    <!-- 左邊選單結束 -->
+
+
+    <!-- 右邊開始 -->
+    <div class="c-mytitle">
+        <h3>租屋契約</h3>
+
+        <!-- --------------手機板的下拉--- -->
+
+        <div class="flip">
+            <p>士林夜市近士林劍潭捷運小套房</p>
+            <img src="imgs/down-arrow.svg" alt="">
+
+        </div>
+        <div class="panel" hidden>
+            <p>狀態 : <span>待審核</span>
+            <p>合約內容 : <a href="myrent_contract02.php">點擊查看</a>
+                <a href="">下載</a>
+            </p>
+        </div>
+
+
+        <!-- 2 -->
+        <div class="flip">
+            <p></p>
+            <img src="imgs/down-arrow.svg" alt="">
+
+        </div>
+        <div class="panel" hidden>
+            <p><span></span></p>
+            <p><a href="myrent_contract02.php"></a>
+                <a href=""></a>
+            </p>
+        </div>
+
+        <!-- 3 -->
+        <div class="flip">
+            <p></p>
+            <img src="imgs/down-arrow.svg" alt="">
+
+        </div>
+        <div class="panel" hidden>
+            <p><span></span>
+            <p><a href="myrent_contract02.php"></a>
+                <a href=""></a>
+            </p>
+        </div>
+
+
+        <!-----------------------手機板的下拉-------- -->
+
+
+        <div class="c-table">
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <p>物件名稱</p>
+                        </th>
+                        <th>
+                            <p>狀態</p>
+                        </th>
+                        <th>
+                            <p>合約內容</p>
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p>近捷運板橋站，市中心生活圈</p>
+                        </td>
+                        <td>
+                            <p class="check">已審核</p>
+                        </td>
+                        <td>
+                                <iframe src="myrent_contract02.php" style="display:none;" name="frame"><img src="../imgs/print_icon.svg" alt=""></iframe>
+                                <button type="button" onclick="frames['frame'].print()"><img src="./imgs/printer.svg" alt=""></button>
+                        </td>
+                    </tr>
+
+                    <tr class="active-row">
+                        <td>
+                            <p></p>
+                        </td>
+                        <td>
+                            <p></p>
+                        </td>
+                        <td> 
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p></p>
+                        </td>
+                        <td>
+                            <p></p>
+                        </td>
+                        <td> 
+    
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!----------------pages------------------>
+
+>>>>>>> df8831ea280c9f6f4cc1f7711ee34969ff6bf258
 
 
         <!-- 右邊開始 -->

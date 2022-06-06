@@ -373,6 +373,39 @@ $hre = $hrestmts->fetch();
                         </div>
                     </div>
                 <?php endforeach ?>
+<<<<<<< HEAD
+=======
+            </div>
+            <div class="x-title-card-all x-dislplaynone">
+                <?php foreach ($hrestmts as $i) : ?>
+                    <div class="S-xs-card-wrap">
+
+                        <div class="S-xs-like">
+                            <img class="x-canser-card" src="imgs/取消.svg" alt="">
+                        </div>
+                        <div class="S-xs-card">
+                            <div class="S-xs-card-img">
+                                <img src="imgs/items<?= $i['sid'] ?>/item1.jpg" alt="">
+                            </div>
+                            <div class="S-xs-card-info">
+                                <h4>
+                                    <span><?= $i['item_name'] ?></span>
+                                </h4>
+                                <div class="S-xs-card-info-2">
+                                    <p>
+                                        <?= $i['item_address'] ?>
+                                    </p>
+                                    <h3>
+                                        $<?= number_format($i['price']) ?>/月
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach ?>
+
+
+>>>>>>> df8831ea280c9f6f4cc1f7711ee34969ff6bf258
             </div>
             
 

@@ -1294,7 +1294,11 @@ $two = $twostmts->fetch();
                 </div>
 
 
+<<<<<<< HEAD
                 <button type="button" class="pc-button-F4F4F4-280 S-btn-conect" id="x-sendtotxt"><a href="FinalCheck_page.php?sid=<?= $x ?>">我要租屋</a></button>
+=======
+                <a href="FinalCheck_page.php?sid=<?= $x ?>"><button type="button" class="pc-button-F4F4F4-280 S-btn-conect" id="x-sendtotxt">我要租屋</button></a>
+>>>>>>> df8831ea280c9f6f4cc1f7711ee34969ff6bf258
 
                 <!-- </form> -->
 
@@ -2134,6 +2138,7 @@ $two = $twostmts->fetch();
         const itemAddress = $(".S-location").text()
         const itemPrice = $(".S-price").text()
         const contract = $(".S-date").text()
+        const itemImg = $(".S-product-img-left ").children().attr("src")
         localStorage.setItem("date", JSON.stringify(date))
         localStorage.setItem("itemName", JSON.stringify(itemName))
         localStorage.setItem("itemAddress", JSON.stringify(itemAddress))
