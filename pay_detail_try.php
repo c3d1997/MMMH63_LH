@@ -719,7 +719,7 @@ $img = $pdo->query($sql)->fetch();
             <h2 class="z_pay_detail_title">租屋明細</h2>
             <div class="z_pay_detail_container">
                 <div class="z_pay_detail_img">
-                    <img src="imgs\myitems\1.jpg">
+                    <img src="myitem\upimg\1.jpg">
 
                 </div>
                 <div class="z_pay_detail_text">

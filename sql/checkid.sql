@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-05-27 05:18:20
+-- 產生時間： 2022-06-06 12:42:09
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 7.4.29
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫： `little_house`
+-- 資料庫: `little_house`
 --
 
 -- --------------------------------------------------------
@@ -36,12 +36,16 @@ CREATE TABLE `checkid` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- 傾印資料表的資料 `checkid`
+--
 
-INSERT INTO `checkid` (`id`, `email`, `password`, `mobile`,`create_at`) VALUES
-(1, 'ming@gg.com', '7777', '0918222333','2019-01-07 10:39:38'),
-(1, 'aaa@qq.com', '8888', '0911111111','2022-05-01 10:39:38'),
-(1, 'ming@gg.com', '7777', '0918222333','2022-06-01 10:39:38'),
-(1, 'ming@gg.com', '7777', '0918222333','2022-06-02 10:39:38');
+INSERT INTO `checkid` (`id`, `email`, `password`, `mobile`, `create_at`) VALUES
+(1, 'ming@gg.com', '7777', '0918222333', '2019-01-07 10:39:38'),
+(1, 'aaa@qq.com', '8888', '0911111111', '2022-05-01 10:39:38'),
+(1, 'ming@gg.com', '7777', '0918222333', '2022-06-01 10:39:38'),
+(1, 'ming@gg.com', '7777', '0918222333', '2022-06-02 10:39:38');
+COMMIT;
 
-
-
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -148,7 +148,8 @@ $items = $stmt->fetchAll();
     }
 
     .check {
-        color: #FF0000;
+        color: #000000;
+        opacity: .5;
     }
 
     .content-table tbody tr:nth-of-type(odd) {
@@ -337,7 +338,7 @@ $items = $stmt->fetchAll();
                                 <p><?= $i['date'] ?></p>
                             </td>
                             <td><a href="pay_way.php">
-                                    <p class="check">待繳費</p>
+                                    <p class="check">已繳費</p>
                                 </a></td>
 
                         </tr>
