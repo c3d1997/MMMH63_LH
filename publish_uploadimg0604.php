@@ -735,7 +735,7 @@
                         </div>
                         <div class="z_phone_view">
                             <div class="z_step1imgs_container">
-                            <button id="phone_upload_btn" type="button"><img src="imgs/uploadicon.svg" alt="">點此上傳</button>
+                            <button id="phone_upload_btn" type="button" onclick="phoneClick()"><img src="imgs/uploadicon.svg" alt="">點此上傳</button>
                         </div>
                     </form>
                 </div>
@@ -750,9 +750,12 @@
         $("#upload_btn").click(function(){
             $("#mainUpload").click()
         })
-        $("#phone_upload_btn").click(function(){
+        // $("#phone_upload_btn").click(function(){
+        //     $("#mainUpload").click()
+        // })
+        function phoneClick() {
             $("#mainUpload").click()
-        })
+        }
 
         $("#mainUpload").change(function(){
             readURL(this);

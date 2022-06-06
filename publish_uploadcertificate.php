@@ -205,12 +205,12 @@
         }
 
         .z_upload_item_img_btn {
-            background-color: #EEF1F4;
+            background-color: rgba(238, 241, 244, 0.486);
+            
         }
         .z_upload_item_img_btn > button {
-            font-size: 16px;
-            font-weight: bold;
             color: #75BBE3;
+            background-color: rgba(238, 241, 244, 0.486);
         }
         .z_clickupload {
             font-size: 16px;
@@ -673,6 +673,7 @@
             .z_publish_textarea_container  {
                 margin-bottom: 0;
             }
+
         }
     </style>
 
