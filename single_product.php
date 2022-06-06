@@ -25,7 +25,37 @@ $two = $twostmts->fetch();
 <style>
     /* 自己頁面的css */
     /* ----------------calender------------------------- */
-    
+    .mySlides-wrap{
+        overflow:unset;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        
+    }
+    .column-bottom > .column img{
+        object-fit: cover;
+    }
+    .column-bottom > .column{
+        margin: 0px 4px;
+    }
+    .mySlides-wrap > .mySlides{
+        width: 100%;
+        position: relative;
+        
+        
+    }
+    .mySlides-wrap > .mySlides img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        
+        
+    }
+    .mySlides-wrap > .mySlides img{
+        object-fit: contain;
+        
+    }
         
     
     .simpilepicker-date-picker {
@@ -1176,7 +1206,7 @@ $two = $twostmts->fetch();
                 <div class="mySlides-wrap">
                     <?php for ($i = 0; $i < 10; $i++) : ?>
                         <div class="mySlides">
-                            <img src="imgs/items<?= $k['sid'] ?>/item<?= $i ?>.jpg" style="width:100%">
+                            <img src="imgs/items<?= $k['sid'] ?>/item<?= $i ?>.jpg" >
                         </div>
 
                     <?php endfor; ?>
