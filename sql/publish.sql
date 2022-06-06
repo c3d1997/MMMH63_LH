@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-06-05 19:53:18
+-- 產生時間： 2022-06-06 12:46:18
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 7.4.29
 
@@ -32,7 +32,7 @@ CREATE TABLE `publish` (
   `item_name` varchar(50) NOT NULL,
   `contract` varchar(20) NOT NULL,
   `owner` varchar(20) NOT NULL,
-  `consumer` varchar(20) DEFAULT NULL
+  `item_sid` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

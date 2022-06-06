@@ -25,6 +25,9 @@ $two = $twostmts->fetch();
 <style>
     /* 自己頁面的css */
     /* ----------------calender------------------------- */
+    #pickTime{
+        display: none;
+    }
     .mySlides-wrap{
         overflow:unset;
         display: flex;
@@ -76,15 +79,7 @@ $two = $twostmts->fetch();
         transform: scale(1);
     }
 
-    .event-log {
-        margin: auto;
-        height: auto;
-        color: #0E2E3D;
-        font-weight: bold;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-    }
+    
 
     .ok_submit {
         /* background-color: #FEAC00; */
@@ -776,7 +771,7 @@ $two = $twostmts->fetch();
         } */
 
         button.S-btn-order {
-            margin-right: 10px;
+            margin-right: 0px;
         }
 
         .S-btn-conect {
@@ -1003,7 +998,7 @@ $two = $twostmts->fetch();
             display: flex;
             flex-wrap: nowrap;
             justify-content: flex-start;
-            width: 600%;
+            width: 250%;
         }
 
         .x-search-month-nice-object-product-scroll {
@@ -2183,7 +2178,7 @@ $two = $twostmts->fetch();
         if ($("#pickTime").text() === '') {
             $("#pickTime").css('display', 'none')
         } else {
-            $("#pickTime").css('display', 'block')
+            $("#pickTime").css('display', 'none')
         }
     })
 </script>
