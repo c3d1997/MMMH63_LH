@@ -1,5 +1,5 @@
 <?php
-    require './part/connect-db.php';
+require './part/connect-db.php';
 ?>
 <?php include __DIR__ . './part/head.php'  ?>
 <style>
@@ -360,7 +360,9 @@
             <div class="z_progress_bar_step3"></div>
         </div>
     </div>
+    
 </section>
+
 
 
 <!-------------------------step-bar2 ---------------->
@@ -391,28 +393,29 @@
                 </svg></a>
         </div>
         <form action="./contract05.php" method="post">
-        <input type="file" id="mainUpload">
-        <div class="c_upload_heretext">
-            <a id="upload_btn">點此上傳</a>
-        </div>
+            <input type="file" id="mainUpload">
+            <div class="c_upload_heretext">
+                <a id="upload_btn">點此上傳</a>
+            </div>
     </div>
 
 
     <!-- ---------------------------------點此上傳---------- -->
-    
+
     <div class="c_button_section">
         <div class="c_button_left">
             <button type="button" onclick="clearCanvas()" class="pc-button-FEAC00-180" style="background-color:#F1EDEA">清除資料</button>
         </div>
-        
-            <div class="c_button_right">
-                <button onclick="saveCanvas()" class="pc-button-FEAC00-180">送出</button>
-            </div>
+
+        <div class="c_button_right">
+            <button onclick="saveCanvas()" class="pc-button-FEAC00-180">送出</button>
+        </div>
         </form>
     </div>
-    
 
-    <?php include __DIR__ . './part/footer.php'  ?>
+</div>
+<?php include __DIR__ . './part/footer.php'  ?>
+
     <script>
         const myCanvas = document.querySelector('#myCanvas'),
             pColor = document.querySelector('#pColor'),
@@ -459,7 +462,7 @@
             a.setAttribute('download', 'draw.png');
             a.setAttribute('href', image);
             a.click();
-            localStorage.setItem("sign",JSON.stringify(view))
+            localStorage.setItem("sign", JSON.stringify(view))
         };
         $("#myCanvas").mousedown(function() {
             $(".c_sign_text").css("display", "none")

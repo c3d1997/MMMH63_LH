@@ -2054,7 +2054,7 @@ $two = $twostmts->fetch();
             $('.S-menu-info p').css('height', '100%');
             $('.S-menu-info-more').html("查看更少");
         } else {
-            $('.S-menu-info p').css('height', '100px');
+            $('.S-menu-info p').css('height', '200px');
             $('.S-menu-info-more').html("查看更多");
         }
 

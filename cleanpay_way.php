@@ -994,9 +994,9 @@ require './part/connect-db.php';
                 if ($("#coupon_container").val() === "03uxf8") {
                 let discountPay = parseInt($("#willPay").text()*0.85) 
                 console.log(discountPay);
-                $("#willPay").text(discountPay)
+                $("#willPay").text('$',discountPay)
             }else{
-                $("#willPay").text(money)
+                $("#willPay").text('$',money)
             }
         })
         $("#coupon_container").on("change",function(){
