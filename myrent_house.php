@@ -4,7 +4,7 @@ require './part/connect-db.php';
 
 $user =  $_SESSION['member']['name'];
 
-$r_sql = "SELECT * FROM `myHouse` WHERE `members_name` = '$user' ;";
+$r_sql = "SELECT * FROM `my_house` WHERE `members_name` = '$user' ;";
 $stmt = $pdo->query($r_sql);
 // $i = $stmt->fetch();
 $items = $stmt->fetchAll();
@@ -276,18 +276,18 @@ $items = $stmt->fetchAll();
             <h3>我的租屋</h3>
 
             <!-- --------------手機板的下拉--- -->
+            <?php foreach ($items as $i) : ?>
+                <div class="flip">
+                    <p><?= $i['item_name'] ?></p>
+                    <img src="imgs/down-arrow.svg" alt="">
 
-            <div class="flip">
-                <p>近捷運板橋站，市中心生活圈</p>
-                <img src="imgs/down-arrow.svg" alt="">
-
-            </div>
-            <div class="panel" hidden>
-                <p>合約期限一年</p>
-                <p>合約內容 : <a href="myrent_contract02.php">點擊查看</a></p>
-                <p>繳費期限:2022/06/08</p>
-            </div>
-
+                </div>
+                <div class="panel" hidden>
+                    <p>合約期限<p><?= $i['contract'] ?></p></p>
+                    <p>合約內容 : <a href="myrent_contract02.php">點擊查看</a></p>
+                    <p>繳費期限:2022/06/08</p>
+                </div>
+            <?php endforeach ?>
 
 
             <!-----------------------手機板的下拉-------- -->
@@ -323,7 +323,7 @@ $items = $stmt->fetchAll();
                                         <p class="check">點擊查看</p>
                                     </a></td>
                                 <td>
-                                    <p>2022/05/01</p>
+                                    <p>2022/06/08</p>
                                 </td>
                             </tr>
                         <?php endforeach ?>

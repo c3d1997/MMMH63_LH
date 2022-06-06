@@ -1,361 +1,391 @@
-<?php 
+<?php
 $title = '租金支付';
 require './part/connect-db.php';
 
 // 帶入支付方式 pay
-$psql = "SELECT * FROM `pay` WHERE `sid` = 1;";
-$stmt = $pdo->query($psql);
-$p = $stmt->fetch();
+// $psql = "SELECT * FROM `pay` WHERE `sid` = 1;";
+// $stmt = $pdo->query($psql);
+// $p = $stmt->fetch();
 
 // 帶入房屋資料
-$sql = "SELECT * FROM `items` WHERE `sid` = 1;";
-$stmt = $pdo->query($sql);
-$i = $stmt->fetch();
+// $sql = "SELECT * FROM `items` WHERE `sid` = 1;";
+// $stmt = $pdo->query($sql);
+// $i = $stmt->fetch();
+$user =  $_SESSION['member']['name'];
 
+$r_sql = "SELECT * FROM `my_house` WHERE `members_name` = '$user' ;";
+$stmt = $pdo->query($r_sql);
+// $i = $stmt->fetch();
+$items = $stmt->fetchAll();
 ?>
 
 
 <?php include __DIR__ . './part/head.php'  ?>
 
-    <style>
-.c-world {
-    display: flex;
-    width: 100%;
-    min-height: 911px;
-    justify-content: space-between;
-    margin-top: 190px;
-    margin-bottom: 60px;
+<style>
+    .c-world {
+        display: flex;
+        width: 100%;
+        min-height: 911px;
+        justify-content: space-between;
+        margin-top: 190px;
+        margin-bottom: 60px;
 
-}
-
-/* 左邊選單開始 */
-.c-mylist {
-    text-align: center;
-}
-
-.c-list {
-    text-decoration: none;
-    list-style: none;
-    margin-bottom: 30px;
-}
-
-.c-list a {
-    text-decoration: none;
-    opacity: 0.5;
-}
-
-.c-list a:hover {
-    text-decoration: none;
-    opacity: 1;
-}
-.c-list-active{
-            text-decoration: none;
-            list-style: none;
-            margin-bottom: 30px;
-        }
-.c-list-active a{
-            text-decoration: none;
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .c-list-active{
-            text-decoration: none;
-            list-style: none;
-            margin-bottom: 30px;
-        }
-.c-list-active a{
-            text-decoration: none;
-            list-style: none;
-            margin-bottom: 30px;
-        }
-@media screen and (max-width:376px){
-    .c-mylist{
-        display: none;
     }
-    
-}
 
-/* 左邊選單結束 */
-
-
-/* 右邊標題開始 */
-.c-mytitle {
-    max-width: 1053px;
-    width: 100%;
-}
-
-@media screen and (max-width:376px){
-    .c-mytitle {
-        max-width: 376px;
+    /* 左邊選單開始 */
+    .c-mylist {
         text-align: center;
     }
-    .c-mytitle h3 {
-        margin-top: -110px;
-        font-size: 20px; 
-    }
-    .c-table{
-        display: none;
-    }
-}
 
-
-/* --------------------我的租屋------------ */
-
-
-.c-table {
-    max-width: 1053px;
-    width: 100%;
-
-}
-
-.content-table {
-    border-collapse: collapse;
-    margin: 30px 0;
-    width: 100%;
-    max-width: 1053px;
-    overflow: hidden;
-    text-align: center;
-}
-
-.content-table thead tr {
-    background-color: #FEAC00;
-}
-
-.content-table th,
-.content-table td {
-    padding: 25px 25px;
-}
-
-.content-table tbody tr {
-    /* border-bottom: 1px solid #dddddd; */
-}
-
-.content-table tbody tr a {
-    text-decoration: none;
-
-}
-
-.check {
-    color: #FF0000;
-}
-
-.content-table tbody tr:nth-of-type(odd) {
-    background-color: #F1EDEA;
-}
-
-.content-table tbody tr:last-of-type {
-    /* border-bottom: 2px solid #009879; */
-}
-
-.content-table tbody tr.active-row {
-    /* font-weight: bold; */
-}
-
-
-
-/* 右邊標題結束 */
-
-/* --------------------pages--------------- */
-.c-pages {
-    text-align: center;
-}
-
-ul.pagination {
-    display: inline-block;
-}
-
-ul.pagination li {
-    display: inline;
-}
-ul.pagination li a {
-    color: black;
-    float: left;
-    padding: 10px 20px;
-    text-decoration: none;
-    opacity: 0.5;
-}
-
-ul.pagination li a:hover{
-    opacity: 1;
-}
-
-/* --------------------pages---------------- */
-@media screen and (max-width:376px){
-    .c-pages{
-        display: none;
-    }
-}
-/* -----------------------手機板的下拉------- */
-
-.flip {
-    margin: 0px;
-    padding: 10px;
-    text-align: left;
-    background: #F1EDEA;
-    cursor: pointer;
-    text-align: left;
-    display: none;
-}
-
-.panel {
-    margin: 0px;
-    padding: 15px;
-    text-align: center;
-    background: #F1EDEA;
-    border: solid 1px #000000;
-    display: none;
-}
-
-
-@media screen and (max-width:376px){
-    .flip{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 5px;
-    }
-    .panel{
-        flex-direction: column;
-        text-align: left;
-    }
-    .panel a{
-        color: #5D8DC1;
-        margin-left: 10px;
+    .c-list {
         text-decoration: none;
+        list-style: none;
+        margin-bottom: 30px;
     }
 
-    .panel span{
-        color: red;
+    .c-list a {
+        text-decoration: none;
+        opacity: 0.5;
     }
+
+    .c-list a:hover {
+        text-decoration: none;
+        opacity: 1;
+    }
+
+    .c-list-active {
+        text-decoration: none;
+        list-style: none;
+        margin-bottom: 30px;
+    }
+
+    .c-list-active a {
+        text-decoration: none;
+        list-style: none;
+        margin-bottom: 30px;
+    }
+
+    .c-list-active {
+        text-decoration: none;
+        list-style: none;
+        margin-bottom: 30px;
+    }
+
+    .c-list-active a {
+        text-decoration: none;
+        list-style: none;
+        margin-bottom: 30px;
+    }
+
+    @media screen and (max-width:376px) {
+        .c-mylist {
+            display: none;
+        }
+
+    }
+
+    /* 左邊選單結束 */
+
+
+    /* 右邊標題開始 */
+    .c-mytitle {
+        max-width: 1053px;
+        width: 100%;
+    }
+
+    @media screen and (max-width:376px) {
+        .c-mytitle {
+            max-width: 376px;
+            text-align: center;
+        }
+
+        .c-mytitle h3 {
+            margin-top: -110px;
+            font-size: 20px;
+        }
+
+        .c-table {
+            display: none;
+        }
+    }
+
+
+    /* --------------------我的租屋------------ */
+
+
+    .c-table {
+        max-width: 1053px;
+        width: 100%;
+
+    }
+
+    .content-table {
+        border-collapse: collapse;
+        margin: 30px 0;
+        width: 100%;
+        max-width: 1053px;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .content-table thead tr {
+        background-color: #FEAC00;
+    }
+
+    .content-table th,
+    .content-table td {
+        padding: 25px 25px;
+    }
+
+    .content-table tbody tr {
+        /* border-bottom: 1px solid #dddddd; */
+    }
+
+    .content-table tbody tr a {
+        text-decoration: none;
+
+    }
+
+    .check {
+        color: #FF0000;
+    }
+
+    .content-table tbody tr:nth-of-type(odd) {
+        background-color: #F1EDEA;
+    }
+
+    .content-table tbody tr:last-of-type {
+        /* border-bottom: 2px solid #009879; */
+    }
+
+    .content-table tbody tr.active-row {
+        /* font-weight: bold; */
     }
 
 
 
-/* --------------------手機板的下拉------- */
-    </style>
+    /* 右邊標題結束 */
+
+    /* --------------------pages--------------- */
+    .c-pages {
+        text-align: center;
+    }
+
+    ul.pagination {
+        display: inline-block;
+    }
+
+    ul.pagination li {
+        display: inline;
+    }
+
+    ul.pagination li a {
+        color: black;
+        float: left;
+        padding: 10px 20px;
+        text-decoration: none;
+        opacity: 0.5;
+    }
+
+    ul.pagination li a:hover {
+        opacity: 1;
+    }
+
+    /* --------------------pages---------------- */
+    @media screen and (max-width:376px) {
+        .c-pages {
+            display: none;
+        }
+    }
+
+    /* -----------------------手機板的下拉------- */
+
+    .flip {
+        margin: 0px;
+        padding: 10px;
+        text-align: left;
+        background: #F1EDEA;
+        cursor: pointer;
+        text-align: left;
+        display: none;
+    }
+
+    .panel {
+        margin: 0px;
+        padding: 15px;
+        text-align: center;
+        background: #F1EDEA;
+        border: solid 1px #000000;
+        display: none;
+    }
+
+
+    @media screen and (max-width:376px) {
+        .flip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+
+        .panel {
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .panel a {
+            color: #5D8DC1;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+
+        .panel span {
+            color: red;
+        }
+    }
+
+
+
+    /* --------------------手機板的下拉------- */
+</style>
 
 <?php include __DIR__ . './part/nav.php'  ?>
 
 <div class="container">
-       
-
-       <div class="c-world">
-
-           <!-- 左邊選單開始 -->
-           <div class="c-mylist">
-               <ul>
-                   <li class="c-list">
-                       <a href="personal-data.php"><h3>會員資料</h3></a></li>
-                   <li class="c-list"><a href="house_post.php"><h3>刊登物件</h3></a></li>
-                   <li class="c-list"><a href="yrent_house.php"><h3>我的租屋</h3></a> </li>
-                   <li class="c-list"><a href="mycollection_list.php"><h3>我的收藏</h3>
-                   </a></li>
-                   <li class="c-list"><a href="promo.php"><h3>我的優惠</h3></a> </li>
-                   <li class="c-list"><a href="house_reserve.php"><h3>我的預約</h3></a> </li>
-                   <li class="c-list"><a href="myrent_contract.php"><h3>租屋契約</h3></a></li>
-                   <li class="c-list-active"><a href="myrent_fee.php"><h3>租金支付</h3></a> </li>
-                   <li class="c-list"><a href="clean_reserve.php"><h3>清潔服務</h3></a> </li>
-               </ul>
-           </div>
-           <!-- 左邊選單結束 -->
-   
-   
-           <!-- 右邊開始 -->
-           <div class="c-mytitle">
-               <h3>租金支付</h3>
-
-           <!-- --------------手機板的下拉--- -->
-
-           <div class="flip">
-               <p><?= $i['item_name'] ?></p>
-               <img src="../imgs/down-arrow.svg" alt="">
-
-           </div>
-           <div class="panel" hidden>
-               <p><?= $p['contract_from_y_m_d'] ?>至<?= $p['contract_end_y_m_d'] ?></p>
-               <p>狀態 : <span>待審核</span></p>
-           </div>
 
 
-           <!-- 2 -->
-           <div class="flip">
-               <p><?= $i['item_name'] ?></p>
-               <img src="../imgs/down-arrow.svg" alt="">
+    <div class="c-world">
 
-           </div>
-           <div class="panel" hidden>
-               <p>狀態 : <span>待審核</span>
-               <p>合約內容 : <a href="">點擊查看</a>
-                   <a href="">下載</a>
-               </p>
-           </div>
+        <!-- 左邊選單開始 -->
+        <div class="c-mylist">
+            <ul>
+                <li class="c-list">
+                    <a href="personal-data.php">
+                        <h3>會員資料</h3>
+                    </a>
+                </li>
+                <li class="c-list"><a href="house_post.php">
+                        <h3>刊登物件</h3>
+                    </a></li>
+                <li class="c-list"><a href="yrent_house.php">
+                        <h3>我的租屋</h3>
+                    </a> </li>
+                <li class="c-list"><a href="mycollection_list.php">
+                        <h3>我的收藏</h3>
+                    </a></li>
+                <li class="c-list"><a href="promo.php">
+                        <h3>我的優惠</h3>
+                    </a> </li>
+                <li class="c-list"><a href="house_reserve.php">
+                        <h3>我的預約</h3>
+                    </a> </li>
+                <li class="c-list"><a href="myrent_contract.php">
+                        <h3>租屋契約</h3>
+                    </a></li>
+                <li class="c-list-active"><a href="myrent_fee.php">
+                        <h3>租金支付</h3>
+                    </a> </li>
+                <li class="c-list"><a href="clean_reserve.php">
+                        <h3>清潔服務</h3>
+                    </a> </li>
+            </ul>
+        </div>
+        <!-- 左邊選單結束 -->
 
-           <!-- 3 -->
-           <div class="flip">
-               <p><?= $i['item_name'] ?></p>
-               <img src="../imgs/down-arrow.svg" alt="">
 
-           </div>
-           <div class="panel" hidden>
-               <p>狀態 : <span>待審核</span>
-               <p>合約內容 : <a href="">點擊查看</a>
-                   <a href="">下載</a>
-               </p>
-           </div>
+        <!-- 右邊開始 -->
+        <div class="c-mytitle">
+            <h3>租金支付</h3>
+
+            <!-- --------------手機板的下拉--- -->
+            <?php foreach ($items as $i) : ?>
+                <div class="flip">
+                    <p><?= $i['item_name'] ?></p>
+                    <img src="imgs/down-arrow.svg" alt="">
+
+                </div>
+                <div class="panel" hidden>
+                    <p><?= $i['date'] ?></p>
+                    <p>狀態 : <span>待審核</span></p>
+                </div>
+            <?php endforeach ?>
+            <div class="c-table">
+
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <p>物件名稱</p>
+                        </th>
+                        <th>
+                            <p>合約期限</p>
+                        </th>
+                        <th>
+                            <p>繳費狀態</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($items as $i) : ?>
+                        <tr>
+
+                            <td>
+                                <p>我的租屋_<?= $i['item_name'] ?></p>
+                            </td>
+                            <td>
+                                <p><?= $i['date'] ?></p>
+                            </td>
+                            <td><a href="pay_way.php">
+                                    <p class="check">待繳費</p>
+                                </a></td>
+
+                        </tr>
+                    <?php endforeach ?>
+                    <tr class="active-row">
+                        <td></td>
+                        <td>
+                            <p></p>
+                        </td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <p></p>
+                        </td>
+                        <td>
+                            <p></p>
+                        </td>
+                        <td>
+                            <p></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
 
 
-           <!-----------------------手機板的下拉-------- -->
+        <!-----------------------手機板的下拉-------- -->
 
 
-               <div class="c-table">
+        
 
-                   <table class="content-table">
-                       <thead>
-                           <tr>
-                               <th><p>物件名稱</p></th>
-                               <th><p>合約期限</p></th>
-                               <th><p>繳費狀態</p></th>
-                           </tr>
-                       </thead>
-                       <tbody>
-                           <tr>
-                               <td><p>我的租屋_<?= $i['item_name'] ?></p></td>
-                               <td><p><?= $p['contract_from_y_m_d'] ?>至<?= $p['contract_end_y_m_d'] ?></p></td>
-                               <td><a href="pay_way.php"><p class="check">待繳費</p></a></td>
-                               
-                           </tr>
+        <!-----------------pages---------->
 
-                           <tr class="active-row">
-                                   <td></td>
-                                   <td><p></p></td>
-                                   <td></td>
+        <!-- --------------------------------pages---------- -->
 
-                           </tr>
-                           <tr>
-                               <td><p></p></td>
-                               <td><p></p></td>
-                               <td><p></p></td>
-                           </tr>
-                       </tbody>
-                   </table>
-               </div>
+    </div>
+</div>
 
-               <!-----------------pages---------->
 
-<!-- --------------------------------pages---------- -->
-
-           </div>
-       </div>
-   
-   
 </div>
 
 
 <?php include __DIR__ . './part/footer.php'  ?>
 
 <script>
-
     // $(function () {
     //     $(".flip").click(function () {
     //         $(".panel").slideToggle("slow");
@@ -366,8 +396,8 @@ ul.pagination li a:hover{
 
 
     // 改寫
-    $(function () {
-        $(".flip").click(function () {
+    $(function() {
+        $(".flip").click(function() {
             console.log((this));
             $(this).next().slideToggle("slow");
             // $(".xs1").toggle();

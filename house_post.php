@@ -113,7 +113,7 @@ $items = $stmt->fetchAll();
 
 .content-table th,
 .content-table td {
-    padding: 25px 25px;
+    padding: 25px 0px;
 }
 
 .content-table tbody tr {

@@ -326,15 +326,7 @@ $hre = $hrestmts->fetch();
                 <div class="x-title-txt">
                     <h3>我的收藏</h3>
                 </div>
-                <div class="x-title-icon">
-                    <div>
-                        <img class="x-title-list" src="imgs/橫列瀏覽.svg" alt="">
-                    </div>
-                    <div>
-                        <img class="x-title-card" src="imgs/方塊瀏覽.svg" alt="">
-                    </div>
-
-                </div>
+                
             </div>
             <div class="x-title-content-all ">
                 <?php foreach ($hrestmts as $i) : ?>
@@ -412,6 +404,7 @@ $hre = $hrestmts->fetch();
 
 
             </div>
+            
 
         </div>
 

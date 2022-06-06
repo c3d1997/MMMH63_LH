@@ -344,7 +344,7 @@ require './part/connect-db.php';
         $(".S-Reservation-img").children().attr("src",itemImg)
         $("#backPage").attr("href",`single_product.php?sid=${itemSid}`)
     })
-    const x = "88888"
+    
     $("#show").click(function(){
         // $.post('Reservation-add.php'),{
         //     item : x ,

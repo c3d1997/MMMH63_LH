@@ -1116,7 +1116,7 @@ require './part/connect-db.php';
                 </div>
                 <div class="z_twobtn">
                     <button class="pc-button-F4F4F4-180 z_phone_162" id="clear">清除資料</button>
-                    <a href="pay_success.php"><button class="pc-button-FEAC00-180 z_phone_162">確認付款</button></a>
+                    <a href="pay_success.php"><button class="pc-button-FEAC00-180 z_phone_162" id="x-pay-ok">確認付款</button></a>
                 </div>
             </div>
         </div>
@@ -1158,6 +1158,35 @@ require './part/connect-db.php';
         $(".bank_area").css("display", "none")
         $(".card_area").css("display", "none")
         $(".z_payagree :checkbox").prop('checked', false)
+    })
+    let date = JSON.parse(localStorage.getItem("date"));
+    let itemName = JSON.parse(localStorage.getItem("itemName"));
+    let itemAddress = JSON.parse(localStorage.getItem("itemAddress"));
+    let contract = JSON.parse(localStorage.getItem("contract"));
+    let itemSid = JSON.parse(localStorage.getItem("itemSid"));
+    let itemImg = JSON.parse(localStorage.getItem("itemImg"));
+
+    $("#x-pay-ok").click(function(){
+        // $.post('Reservation-add.php'),{
+        //     item : x ,
+
+        // },function(){
+        //     console.log("7777");
+        // }
+        $.ajax({
+            url:"myrent_house_add.php",
+            // url:"publish_item_detail.php",
+            method: "post",
+            data: {
+                itemName : JSON.stringify(itemName),
+                itemSid : JSON.stringify(itemSid),
+                date : JSON.stringify(date),
+                contract : JSON.stringify(contract),
+            },
+            // success:(function(){
+            //     console.log("7777");
+            // })
+        })
     })
 
 </script>

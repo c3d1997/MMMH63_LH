@@ -17,6 +17,9 @@ $items = $stmt->fetchAll();
 <?php include __DIR__ . './part/head.php'  ?>
 
 <style>
+    * a{
+        text-decoration: none;
+    }
     .c-world {
         display: flex;
         width: 100%;
@@ -285,39 +288,22 @@ $items = $stmt->fetchAll();
             <h3>預約看房</h3>
 
             <!-- --------------手機板的下拉--- -->
+            <?php foreach ($items as $i) : ?>
+                <div class="flip">
+                    <a href="single_product.php?sid=<?= $i['item_sid'] ?>">
+                        <p><?= $i['item_name'] ?></p>
+                    </a>
+                    <img src="imgs/down-arrow.svg" alt="">
 
-            <div class="flip">
-                <p>士林夜市近士林劍潭捷運小套房</p>
-                <img src="../imgs/down-arrow.svg" alt="">
+                </div>
+                <div class="panel" hidden>
 
-            </div>
-            <div class="panel" hidden>
-                <p>合約期限：一年</p>
-                <p>預約時間：2022/05/06 12:00</p>
-            </div>
+                    <p>預約時間：<?= $i['date'] ?></p>
+                </div>
+            <?php endforeach ?>
 
 
-            <!-- 2 -->
-            <div class="flip">
-                <p>士林夜市近士林劍潭捷運小套房</p>
-                <img src="../imgs/down-arrow.svg" alt="">
 
-            </div>
-            <div class="panel" hidden>
-                <p>合約期限：一年</p>
-                <p>預約時間：2022/05/06 12:00</p>
-            </div>
-
-            <!-- 3 -->
-            <div class="flip">
-                <p>士林夜市近士林劍潭捷運小套房</p>
-                <img src="../imgs/down-arrow.svg" alt="">
-
-            </div>
-            <div class="panel" hidden>
-                <p>合約期限：一年</p>
-                <p>預約時間：2022/05/06 12:00</p>
-            </div>
 
 
             <!-----------------------手機板的下拉-------- -->

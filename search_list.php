@@ -112,7 +112,7 @@ $fRows = $pdo->query($f_sql)->fetchAll();
                 </div>
                 <div class="x-search-list-state-right">
                     <div>
-                        <h3>價格</h3><?= $r_sql ?>
+                        <h3>價格</h3>
                         <img class="x-down" src="imgs/降冪.svg" alt="">
                         <!-- <img class="x-up" src="imgs/升冪.svg" alt=""> -->
                     </div>

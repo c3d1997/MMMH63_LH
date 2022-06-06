@@ -551,7 +551,7 @@
 <div class="container">
     <div class="c_button_section">
         <div class="c_button_right">
-            <a href="contract03.php" style="text-decoration: none; color:#0E2E3D;"><button class="pc-button-FEAC00-180">送出</button></a>
+            <a href="contract03.php" style="text-decoration: none; color:#0E2E3D;"><button class="pc-button-FEAC00-180" >送出</button></a>
 
         </div>
         <div class="c_button_left">
@@ -625,5 +625,7 @@
         console.log($(this).next().next())
         $(this).next().next().css("z-index", "-1")
     })
+
+    
 </script>
 <?php include __DIR__ . './part/javascript.php'  ?>

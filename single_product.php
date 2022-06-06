@@ -2133,12 +2133,14 @@ $two = $twostmts->fetch();
         const itemName = $(".S-name").text()
         const itemAddress = $(".S-location").text()
         const itemPrice = $(".S-price").text()
+        const contract = $(".S-date").text()
         const itemImg = $(".S-product-img-left ").children().attr("src")
         localStorage.setItem("date", JSON.stringify(date))
         localStorage.setItem("itemName", JSON.stringify(itemName))
         localStorage.setItem("itemAddress", JSON.stringify(itemAddress))
         localStorage.setItem("itemPrice", JSON.stringify(itemPrice))
         localStorage.setItem("itemImg", JSON.stringify(itemImg))
+        localStorage.setItem("contract", JSON.stringify(contract))
     })
 </script>
 
@@ -2229,7 +2231,7 @@ $two = $twostmts->fetch();
         //     console.log("7777");
         // }
         $.ajax({
-            url:"single_product.php.php",
+            url:"single_product.php",
             // url:"publish_item_detail.php",
             method: "post",
             data: {
