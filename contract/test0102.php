@@ -23,19 +23,22 @@
         //Server settings
         $mail->SMTPDebug = 0;                                 // Enable verbose debug output
         $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = 'smtp.office365.com';  // Specify main and backup SMTP servers
+        // $mail->Host = 'smtp.office365.com';  // Specify main and backup SMTP servers
+        $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 
         $mail->SMTPAuth = true;  
         $mail->CharSet = 'UTF-8'; 
         $mail->Encoding = "base64";                            // Enable SMTP authentication
-        $mail->Username = 'littlehouse6302@outlook.com';                 // SMTP username
-        $mail->Password = 'mmmh6302@';                           // SMTP password
-        $mail->SMTPSecure = 'SSL';                            // Enable TLS encryption, `ssl` also accepted
+        $mail->Username = 'littlehouse6302@gmail.com';                 // SMTP username
+        // $mail->Username = 'littlehouse6302@outlook.com';
+        $mail->Password = 'fryamvueqpremrdn';                           // SMTP password
+        // $mail->Password = 'mmmh6302@'; 
+        $mail->SMTPSecure = 'TLS';                            // Enable TLS encryption, `ssl` also accepted
 
         $mail->Port = 587;                                    // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('littlehouse6302@outlook.com', 'Little House');
+        $mail->setFrom('littlehouse6302@gmail.com', 'Little House');
         $mail->addAddress('littlehouse6302@gmail.com', 'Little prince');     // Add a recipient
         $mail->addAddress('chiying0104@gmail.com', 'Chiying User');               // Name is optional
         $mail->addReplyTo('littlehouse6302@gmail.com', 'Little_house');
