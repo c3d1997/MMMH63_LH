@@ -818,7 +818,7 @@ $two = $twostmts->fetch();
         }
 
         .S-menu-info p:nth-child(1) {
-            height: 200px;
+            height: 160px;
             overflow: hidden;
             /* border: 2px solid #0E2E3D; */
         }
@@ -2049,7 +2049,7 @@ $two = $twostmts->fetch();
             $('.S-menu-info p').css('height', '100%');
             $('.S-menu-info-more').html("查看更少");
         } else {
-            $('.S-menu-info p').css('height', '200px');
+            $('.S-menu-info p').css('height', '160px');
             $('.S-menu-info-more').html("查看更多");
         }
 
