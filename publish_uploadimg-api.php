@@ -131,7 +131,16 @@
         // $_SESSION["周遭機能"],
       ]);
       
+    $p_sql = "INSERT INTO `publish`(`item_name`, `contract`, `owner`,`item_sid`) VALUES (?,?,?,?)";
 
+        $pstmt = $pdo->prepare($p_sql);
+
+        $pstmt->execute([
+            $_SESSION['item_name'],
+            $_SESSION['contract'],
+            $_SESSION['member']['name'],
+            $_SESSION['item_c']
+        ]);
 ?>
 
 

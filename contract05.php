@@ -384,7 +384,7 @@ ul {
             電子郵件信箱：littlehouse6302@gmail.com
             <br><br>
 
-            承租人： <br>
+            承租人 <br>
             姓名(名稱)： <?= $n['name'] ?><br>
             <div class="sign_container">
                 <p>簽章 ：</p>

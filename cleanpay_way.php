@@ -1,6 +1,8 @@
 <?php
 $title = '付款方式';
 require './part/connect-db.php';
+
+
 ?>
 
 <?php include __DIR__ . './part/head.php'  ?>
@@ -777,7 +779,7 @@ require './part/connect-db.php';
                             <input class="z_input_text"   type="text" name="" id="coupon_container" placeholder="請輸入優惠碼">
                         </div>
                         <div class="z_coupon_container">
-                            <p class="coupon">帶入優惠碼</p>
+                            <p class="coupon" id="coupon">帶入優惠碼</p>
                         </div>
                     </div>
                     <div class="z_pay_alert">
@@ -789,7 +791,7 @@ require './part/connect-db.php';
                     <div class="z_text_intput ">
                         <p class="z_checkbox_option ">付款金額</p>
                         <div class="z_input_container">
-                            <p></p>
+                            <p id="willPay"></p>
                         </div>
                         <div class="z_payghost"></div>
                     </div>
@@ -799,7 +801,7 @@ require './part/connect-db.php';
                     <div class="z_text_intput ">
                         <p class="z_checkbox_option ">繳費日期</p>
                         <div class="z_input_container">
-                            <p></p>
+                            <p id="today"></p>
                         </div>
                         <div class="z_payghost"></div>
                     </div>
@@ -977,5 +979,38 @@ require './part/connect-db.php';
             $(this).next().children().toggleClass("downArrow")
             }
         })
+        let money = JSON.parse(localStorage.getItem("money"));
+        let date = new Date()
+
+        $(document).ready(function() {
+            $("#willPay").text(money)
+            $("#today").text(date.getFullYear() +"/"+ (date.getMonth()+1) +"/"+ date.getDate())
+            // console.log(date.getFullYear());
+        })
+
+
+        $("#coupon").click(function(){
+                $("#coupon_container").val("03uxf8")
+                if ($("#coupon_container").val() === "03uxf8") {
+                let discountPay = parseInt($("#willPay").text()*0.85) 
+                console.log(discountPay);
+                $("#willPay").text(discountPay)
+            }else{
+                $("#willPay").text(money)
+            }
+        })
+        $("#coupon_container").on("change",function(){
+
+            if ($(this).val() === "03uxf8") {
+                let discountPay = parseInt($("#willPay").text()*0.85) 
+                console.log(discountPay);
+                $("#willPay").text(discountPay)
+            }else{
+                $("#willPay").text(money)
+            }
+        })
+        
+
+
     </script>
 <?php include __DIR__ . './part/javascript.php' ?>
