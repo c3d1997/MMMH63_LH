@@ -253,47 +253,6 @@ $items = $stmt->fetchAll();
 <?php include __DIR__ . './part/nav.php'  ?>
 
 <div class="container">
-<<<<<<< HEAD
-=======
-       
-
-       <div class="c-world">
-
-           <!-- 左邊選單開始 -->
-           <div class="c-mylist">
-               <ul>
-                   <li class="c-list">
-                       <a href="personal-data.php"><h3>會員資料</h3></a></li>
-                   <li class="c-list"><a href="house_post.php"><h3>刊登物件</h3></a></li>
-                   <li class="c-list"><a href="yrent_house.php"><h3>我的租屋</h3></a> </li>
-                   <li class="c-list"><a href="mycollection_list.php"><h3>我的收藏</h3>
-                   </a></li>
-                   <li class="c-list"><a href="promo.php"><h3>我的優惠</h3></a> </li>
-                   <li class="c-list"><a href="house_reserve.php"><h3>我的預約</h3></a> </li>
-                   <li class="c-list"><a href="myrent_contract.php"><h3>租屋契約</h3></a></li>
-                   <li class="c-list-active"><a href="myrent_fee.php"><h3>租金支付</h3></a> </li>
-                   <li class="c-list"><a href="clean_reserve.php"><h3>清潔服務</h3></a> </li>
-               </ul>
-           </div>
-           <!-- 左邊選單結束 -->
-   
-   
-           <!-- 右邊開始 -->
-           <div class="c-mytitle">
-               <h3>租金支付</h3>
-
-           <!-- --------------手機板的下拉--- -->
-
-           <div class="flip">
-               <p><?= $i['item_name'] ?></p>
-               <img src="../imgs/down-arrow.svg" alt="">
-
-           </div>
-           <div class="panel" hidden>
-               <p><?= $p['contract_from_y_m_d'] ?>至<?= $p['contract_end_y_m_d'] ?></p>
-               <p>狀態 : <span>待審核</span></p>
-           </div>
->>>>>>> df8831ea280c9f6f4cc1f7711ee34969ff6bf258
 
 
     <div class="c-world">
@@ -411,42 +370,16 @@ $items = $stmt->fetchAll();
         <!-----------------------手機板的下拉-------- -->
 
 
-<<<<<<< HEAD
         
 
         <!-----------------pages---------->
-=======
-                           <tr class="active-row">
-                                   <td></td>
-                                   <td><p></p></td>
-                                   <td></td>
-
-                           </tr>
-                           <tr>
-                               <td><p></p></td>
-                               <td><p></p></td>
-                               <td><p></p></td>
-                           </tr>
-                       </tbody>
-                   </table>
-               </div>
->>>>>>> df8831ea280c9f6f4cc1f7711ee34969ff6bf258
 
         <!-- --------------------------------pages---------- -->
 
-<<<<<<< HEAD
     </div>
 </div>
 
 
-=======
-<!-- --------------------------------pages---------- -->
-
-           </div>
-       </div>
-   
-   
->>>>>>> df8831ea280c9f6f4cc1f7711ee34969ff6bf258
 </div>
 
 

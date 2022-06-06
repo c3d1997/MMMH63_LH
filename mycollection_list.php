@@ -373,8 +373,6 @@ $hre = $hrestmts->fetch();
                         </div>
                     </div>
                 <?php endforeach ?>
-<<<<<<< HEAD
-=======
             </div>
             <div class="x-title-card-all x-dislplaynone">
                 <?php foreach ($hrestmts as $i) : ?>
@@ -405,7 +403,6 @@ $hre = $hrestmts->fetch();
                 <?php endforeach ?>
 
 
->>>>>>> df8831ea280c9f6f4cc1f7711ee34969ff6bf258
             </div>
             
 
