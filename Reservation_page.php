@@ -70,7 +70,7 @@ require './part/connect-db.php';
     .S-Reservation-img img {
         width: 100%;
         height: 100%;
-        object-fit: fill;
+        object-fit: contain;
         object-position: center;
     }
 
