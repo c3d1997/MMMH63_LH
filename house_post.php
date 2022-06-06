@@ -1,5 +1,15 @@
 <?php 
 require './part/connect-db.php';
+
+$user =  $_SESSION['member']['name'];
+
+$r_sql = "SELECT * FROM `publish` WHERE `owner` = '$user' ;";
+$stmt = $pdo->query($r_sql);
+// $i = $stmt->fetch();
+$items = $stmt->fetchAll();
+
+
+
 ?>
 <?php include __DIR__ . './part/head.php'  ?>
 
@@ -273,24 +283,24 @@ ul.pagination li a:hover{
                                 <tr>
                                     <th><p>物件名稱</p></th>
                                     <th><p>合約期限</p></th>
-                                    <th><p>合約內容</p></th>
                                     <th><p>房屋狀態</p></th>
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php foreach($items as $i): ?>
                                 <tr>
-                                    <td><p>近捷運板橋站，市中心生活圈</p></td>
-                                    <td><p>一年</p></td>
-                                    <td><a href="myrent_contract02.php"><p class="check">點擊查看</p></a></td>
+                                    <td><a href="single_product.php?sid=<?= $i["item_sid"] ?>"><p><?= $i["item_name"] ?></p></a></td>
+                                    <td><p><?= $i["contract"] ?></p></td>
                                     <td><p class="notyet">已出租</p></td>
                                 </tr>
-
+                            <?php endforeach?>
                                 <tr class="active-row">
                                         <td><p></p></td>
                                         <td><p></p></td>
                                         <td><a href="myrent_contract02.php"><p class="check"></p></a></td>
                                         <td><p></p></td>
                                 </tr>
+
                                 <tr>
                                     <td><p></p></td>
                                     <td><p></p></td>
