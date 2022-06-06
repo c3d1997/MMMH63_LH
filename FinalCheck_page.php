@@ -72,7 +72,7 @@ require './part/connect-db.php';
     .S-FinalCheck-img img{
         width: 100%;
         height: 100%;
-        object-fit: fill;
+        object-fit: contain;
         /* object-fit: fill; */
         object-position: center;
         /* border: #FEAC00 1px solid; */

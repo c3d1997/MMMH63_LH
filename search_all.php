@@ -1324,7 +1324,7 @@ $hre = $hrestmts->fetch();
             </div>
             <div class="x-search-keyword-input">
 
-                <input class="x-search-input-setting" type="text" placeholder="關鍵字搜尋">
+                <input class="x-search-input-setting" type="text" placeholder="關鍵字搜尋" id="se_chinese">
                 <div onclick="datacheck()">
                     <svg width="30" height="30" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14.647 24.3125C20.1698 24.3125 24.647 19.8353 24.647 14.3125C24.647 8.78965 20.1698 4.3125 14.647 4.3125C9.12413 4.3125 4.64697 8.78965 4.64697 14.3125C4.64697 19.8353 9.12413 24.3125 14.647 24.3125Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -2310,6 +2310,11 @@ $hre = $hrestmts->fetch();
         list.addClass('x-search-displaynone');
         card.removeClass('x-search-displaynone')
     }
+    $('#se_chinese').keydown(function(event){
+        if(event.keyCode == 13){
+            datacheck();
+        };
+    });
 </script>
 
 
