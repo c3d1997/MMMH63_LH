@@ -1,6 +1,6 @@
 <?php
-$title = '付款方式'
-
+$title = '付款方式';
+require './part/connect-db.php';
 ?>
 
 <?php include __DIR__ . './part/head.php'  ?>
@@ -934,7 +934,7 @@ $title = '付款方式'
         <div class="z_paydata_container ">
             <div class="z_paytitle_container">
                 <h3 class="paytitle bold">租金支付</h3>
-                <p class="z_paytitle_detail">我的租屋_XXXXXXXXX</p>
+                <p class="z_paytitle_detail">近捷運板橋站，市中心生活圈</p>
             </div>
             <form action="" method="POST"></form>
             <div class="z_title_data_container">
@@ -960,7 +960,7 @@ $title = '付款方式'
                 <div class="z_text_intput ">
                     <p class="z_checkbox_option ">付款金額</p>
                     <div class="z_input_container">
-                        <p></p>
+                        <p>$20,000</p>
                     </div>
                     <div class="z_payghost"></div>
                 </div>
@@ -970,7 +970,7 @@ $title = '付款方式'
                 <div class="z_text_intput ">
                     <p class="z_checkbox_option ">繳費日期</p>
                     <div class="z_input_container">
-                        <p></p>
+                        <p>2022/06/08</p>
                     </div>
                     <div class="z_payghost"></div>
                 </div>
@@ -1116,7 +1116,7 @@ $title = '付款方式'
                 </div>
                 <div class="z_twobtn">
                     <button class="pc-button-F4F4F4-180 z_phone_162" id="clear">清除資料</button>
-                    <a href="pay_success.php"><button class="pc-button-FEAC00-180 z_phone_162">確認付款</button></a>
+                    <a href="pay_success.php"><button class="pc-button-FEAC00-180 z_phone_162" id="x-pay-ok">確認付款</button></a>
                 </div>
             </div>
         </div>
@@ -1158,6 +1158,35 @@ $title = '付款方式'
         $(".bank_area").css("display", "none")
         $(".card_area").css("display", "none")
         $(".z_payagree :checkbox").prop('checked', false)
+    })
+    let date = JSON.parse(localStorage.getItem("date"));
+    let itemName = JSON.parse(localStorage.getItem("itemName"));
+    let itemAddress = JSON.parse(localStorage.getItem("itemAddress"));
+    let contract = JSON.parse(localStorage.getItem("contract"));
+    let itemSid = JSON.parse(localStorage.getItem("itemSid"));
+    let itemImg = JSON.parse(localStorage.getItem("itemImg"));
+
+    $("#x-pay-ok").click(function(){
+        // $.post('Reservation-add.php'),{
+        //     item : x ,
+
+        // },function(){
+        //     console.log("7777");
+        // }
+        $.ajax({
+            url:"myrent_house_add.php",
+            // url:"publish_item_detail.php",
+            method: "post",
+            data: {
+                itemName : JSON.stringify(itemName),
+                itemSid : JSON.stringify(itemSid),
+                date : JSON.stringify(date),
+                contract : JSON.stringify(contract),
+            },
+            // success:(function(){
+            //     console.log("7777");
+            // })
+        })
     })
 
 </script>

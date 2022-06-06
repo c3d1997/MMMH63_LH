@@ -14,61 +14,60 @@ require './part/connect-db.php';
 $where = " WHERE 1 ";
 // 關鍵字
 $dataSearchtype = !empty($_GET['dataSearchtype']) ? json_decode($_GET['dataSearchtype'], true) : [];
-if(!empty($dataSearchtype)){
+if (!empty($dataSearchtype)) {
     $where .= sprintf(" AND item_name LIKE '%%$dataSearchtype%%'");
 }
 // 價格
 $dataHprice = !empty($_GET['dataHprice']) ? json_decode($_GET['dataHprice'], true) : [];
 $dataLprice = !empty($_GET['dataLprice']) ? json_decode($_GET['dataLprice'], true) : [];
-if(!empty($dataHprice)){
-    $where .= sprintf(" AND price < %s",intval($dataHprice));
+if (!empty($dataHprice)) {
+    $where .= sprintf(" AND price < %s", intval($dataHprice));
 }
-if(!empty($dataLprice)){
-    $where .= sprintf(" AND price > %s",intval($dataLprice));
+if (!empty($dataLprice)) {
+    $where .= sprintf(" AND price > %s", intval($dataLprice));
 }
 
 // 單選房屋分類
 $dataRental = !empty($_GET['dataRental']) ? json_decode($_GET['dataRental'], true) : [];
-if(!empty($dataRental)){
+if (!empty($dataRental)) {
     $where .= sprintf(" AND rentaltype LIKE '%%%s%%'", implode("','", $dataRental));
 }
 // 單選地區
 $dataArea = !empty($_GET['dataArea']) ? json_decode($_GET['dataArea'], true) : [];
-if(!empty($dataArea)){
+if (!empty($dataArea)) {
     $where .= sprintf(" AND item_area LIKE '%%%s%%'", implode("','", $dataArea));
-    
 }
 // 複選詳細地區
 $dataItemDist = !empty($_GET['dataItemDist']) ? json_decode($_GET['dataItemDist'], true) : [];
-if(!empty($dataItemDist)){
+if (!empty($dataItemDist)) {
     $where .= sprintf(" AND item_dist IN ('%s')", implode("','", $dataItemDist));
 }
 
 // 單選房型
 $dataRoom = !empty($_GET['dataRoom']) ? json_decode($_GET['dataRoom'], true) : [];
 
-if(!empty($dataRoom)){
-    $where .= sprintf(" AND roomtype LIKE '%%%s%%'", implode("','",$dataRoom));
+if (!empty($dataRoom)) {
+    $where .= sprintf(" AND roomtype LIKE '%%%s%%'", implode("','", $dataRoom));
 }
 // 複選特色
 $dataFeture = !empty($_GET['dataFeture']) ? json_decode($_GET['dataFeture'], true) : [];
 
-if(!empty($dataFeture)){
-    foreach($dataFeture as $f){
+if (!empty($dataFeture)) {
+    foreach ($dataFeture as $f) {
         $where .= " AND feature LIKE '%{$f}%' ";
     }
 }
 // 單選設備
 $dataEquip = !empty($_GET['dataEquip']) ? json_decode($_GET['dataEquip'], true) : [];
 
-if(!empty($dataEquip)){
-    $where .= sprintf(" AND equipment LIKE '%%%s%%'", implode("','",$dataEquip));
+if (!empty($dataEquip)) {
+    $where .= sprintf(" AND equipment LIKE '%%%s%%'", implode("','", $dataEquip));
 }
 // 復選公設
 $dataPostulate = !empty($_GET['dataPostulate']) ? json_decode($_GET['dataPostulate'], true) : [];
 
-if(!empty($dataPostulate)){
-    foreach($dataPostulate as $f){
+if (!empty($dataPostulate)) {
+    foreach ($dataPostulate as $f) {
         $where .= " AND postulate LIKE '%{$f}%' ";
     }
 }
@@ -79,8 +78,8 @@ if(!empty($dataPostulate)){
 // 復選額外
 $dataOtherCost = !empty($_GET['dataOtherCost']) ? json_decode($_GET['dataOtherCost'], true) : [];
 
-if(!empty($dataOtherCost)){
-    foreach($dataOtherCost as $f){
+if (!empty($dataOtherCost)) {
+    foreach ($dataOtherCost as $f) {
         $where .= " AND other_cost LIKE '%{$f}%' ";
     }
 }
@@ -107,13 +106,13 @@ $fRows = $pdo->query($f_sql)->fetchAll();
         <div class="x-search-list-all">
             <div class="x-search-list-state">
                 <div class="x-search-list-state-left">
-                    <img class="x-content-list" src="imgs/橫列瀏覽.svg" alt="">
-                    <img class="x-card-list" src="imgs/方塊瀏覽.svg" alt="">
+                    <img onclick="listonclick(event)" class="x-content-list" src="imgs/橫列瀏覽.svg" alt="">
+                    <img onclick="cardonclick(event)" class="x-card-list" src="imgs/方塊瀏覽.svg" alt="">
 
                 </div>
                 <div class="x-search-list-state-right">
                     <div>
-                        <h3>價格</h3><?= $r_sql ?>
+                        <h3>價格</h3>
                         <img class="x-down" src="imgs/降冪.svg" alt="">
                         <!-- <img class="x-up" src="imgs/升冪.svg" alt=""> -->
                     </div>
@@ -129,14 +128,15 @@ $fRows = $pdo->query($f_sql)->fetchAll();
                     </div>
                 </div>
             </div>
-            <div class="x-search-list-content-all">
-                <?php foreach ($rRows as $i) : ?>
+            <?php foreach ($rRows as $i) : ?>
+                <div class="x-search-list-content-all">
+
                     <div class="x-search-list-content">
                         <div class="x-search-list-content-img">
                             <ul class="x-search-list-content-img-train">
                                 <li>
 
-                                    <img src="imgs/items<?=$i['sid']?>/item1.jpg" alt="">
+                                    <img src="imgs/items<?= $i['sid'] ?>/item1.jpg" alt="">
                                 </li>
 
                             </ul>
@@ -144,7 +144,7 @@ $fRows = $pdo->query($f_sql)->fetchAll();
                         </div>
                         <div class="x-search-list-content-txt">
                             <h3><a href="single_product.php?sid=<?= $i['sid'] ?>">
-                                <?= $i['item_name'] ?>
+                                    <?= $i['item_name'] ?>
                                 </a>
                             </h3>
                             <p>
@@ -164,14 +164,41 @@ $fRows = $pdo->query($f_sql)->fetchAll();
 
                         </div>
                         <div class="x-search-list-content-icon">
-                        <?php foreach ($fRows as $f) : ?>
-                            <div>
-                                <img src="<?= $f['img'] ?>" alt="">
-                                <p>
-                                    <?= $f['feature'] ?>
-                                </p>
-                            </div>
-                        <?php endforeach ?>
+
+                            <?php if ($i['feature_1'] == 0) : ?>
+
+                            <?php else : ?>
+                                <div>
+                                    <img src="imgs/feature/<?= $i['feature_1'] ?>.svg" alt="">
+
+                                    <p>
+                                        <?= $i['feature__N1'] ?>
+                                    </p>
+                                </div>
+                            <?php endif; ?>
+                            <?php if ($i['feature_2'] == 0) : ?>
+
+                            <?php else : ?>
+                                <div>
+                                    <img src="imgs/feature/<?= $i['feature_2'] ?>.svg" alt="">
+
+                                    <p>
+                                        <?= $i['feature__N2'] ?>
+                                    </p>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if ($i['feature_3'] == 0) : ?>
+
+                            <?php else : ?>
+                                <div>
+                                    <img src="imgs/feature/<?= $i['feature_3'] ?>.svg" alt="">
+
+                                    <p>
+                                        <?= $i['feature__N3'] ?>
+                                    </p>
+                                </div>
+                            <?php endif; ?>
 
                         </div>
                         <div class="x-search-list-content-price">
@@ -180,7 +207,7 @@ $fRows = $pdo->query($f_sql)->fetchAll();
                                     <!-- <img src="imgs/分享.svg" alt=""> -->
 
                                 </div>
-                                <div onclick="" class="S-lg-like">
+                                <div onclick="likeClick(event)" onmousedown="downClick(event)" onmouseup="upClick(event)" class="S-lg-like">
                                     <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
                                         <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -192,7 +219,7 @@ $fRows = $pdo->query($f_sql)->fetchAll();
                                 <div>
                                     <img src="imgs/瀏覽.svg" alt="">
                                     <p>
-                                        瀏覽量：8999
+                                        瀏覽量：<?= $i['view_log'] ?>
                                     </p>
                                 </div>
                                 <h3>
@@ -202,45 +229,43 @@ $fRows = $pdo->query($f_sql)->fetchAll();
                         </div>
 
                     </div>
-                <?php endforeach ?>
 
 
 
-            </div>
+
+                </div>
+            <?php endforeach ?>
+
             <div class="x-search-list-card x-search-displaynone">
-                <div class="S-lg-card-wrap">
-                    <div class="S-lg-share">
-                        <!-- <img src="imgs/分享.svg" alt=""> -->
-
-                    </div>
-                    <div class="S-lg-like">
-                        <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
-                            <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                    </div>
-                    <div class="S-lg-card">
-                        <div class="S-lg-card-img">
-                            <img src="imgs/57 1.jpg">
+                <?php foreach ($rRows as $i) : ?>
+                    <div class="S-lg-card-wrap">
+                        <div onclick="likeClick(event)" onmousedown="downClick(event)" onmouseup="upClick(event)" class="S-lg-like">
+                            <svg class="S-lg-svg " width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="25" cy="25" r="25" fill="#F1EDEA" />
+                                <path d="M35.1494 16.0994C34.5629 15.4338 33.8667 14.9058 33.1003 14.5456C32.334 14.1854 31.5126 14 30.6831 14C29.8535 14 29.0321 14.1854 28.2658 14.5456C27.4994 14.9058 26.8032 15.4338 26.2167 16.0994L24.9997 17.48L23.7826 16.0994C22.5981 14.7556 20.9915 14.0007 19.3163 14.0007C17.6411 14.0007 16.0346 14.7556 14.85 16.0994C13.6655 17.4431 13 19.2657 13 21.1661C13 23.0664 13.6655 24.889 14.85 26.2327L16.0671 27.6134L24.9997 37.7467L33.9323 27.6134L35.1494 26.2327C35.7361 25.5675 36.2015 24.7776 36.519 23.9082C36.8366 23.0389 37 22.1071 37 21.1661C37 20.225 36.8366 19.2932 36.519 18.4239C36.2015 17.5545 35.7361 16.7646 35.1494 16.0994Z" stroke="#0E2E3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
                         </div>
-                        <div class="S-lg-card-info ">
-                            <h4>
-                                <span><?= $i['item_name'] ?></span> <?= $i['item_area'] ?><?= $i['item_dist'] ?>
-                            </h4>
-                            <div class="S-lg-card-info-2 ">
-                                <p>
-                                    <?= $i['roomtype'] ?>
-                                </p>
-                                <h3>
-                                    <?= number_format($i['price']) ?>/月
-                                </h3>
+                        <div class="S-lg-card">
+                            <div class="S-lg-card-img">
+                                <img src="imgs/items<?= $i['sid'] ?>/item1.jpg" alt="">
+                            </div>
+                            <div class="S-lg-card-info ">
+                                <h4>
+                                    <span><?= $i['item_name'] ?></span> <?= $i['item_area'] ?><?= $i['item_dist'] ?>
+                                </h4>
+                                <div class="S-lg-card-info-2 ">
+                                    <p>
+                                        <?= $i['roomtype'] ?>
+                                    </p>
+                                    <h3>
+                                        <?= number_format($i['price']) ?>/月
+                                    </h3>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-
+                <?php endforeach ?>
 
             </div>
 

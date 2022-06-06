@@ -1,3 +1,16 @@
+<?php 
+require './part/connect-db.php';
+
+$user =  $_SESSION['member']['name'];
+
+$r_sql = "SELECT * FROM `publish` WHERE `owner` = '$user' ;";
+$stmt = $pdo->query($r_sql);
+// $i = $stmt->fetch();
+$items = $stmt->fetchAll();
+
+
+
+?>
 <?php include __DIR__ . './part/head.php'  ?>
 
     <style>
@@ -100,7 +113,7 @@
 
 .content-table th,
 .content-table td {
-    padding: 25px 25px;
+    padding: 25px 0px;
 }
 
 .content-table tbody tr {
@@ -248,42 +261,18 @@ ul.pagination li a:hover{
 <!-- --------------手機板的下拉--- -->
 
 <div class="flip">
-    <p>士林夜市近士林劍潭捷運小套房</p>
-    <img src="../imgs/down-arrow.svg" alt="">
+    <p>近捷運板橋站，市中心生活圈</p>
+    <img src="/imgs/down-arrow.svg" alt="">
 
 </div>
 <div class="panel" hidden>
     <p>合約期限一年</p>
-    <p>房屋狀態 : <span>未出租</span></p>
+    <p>房屋狀態 : <span>已出租</span></p>
     <p>合約內容 : <a href="myrent_contract02.php">點擊查看</a></p>
     
 </div>
 
 
-<!-- 2 -->
-<div class="flip">
-    <p>士林夜市近士林劍潭捷運小套房</p>
-    <img src="../imgs/down-arrow.svg" alt="">
-
-</div>
-<div class="panel">
-    <p>合約期限一年</p>
-    <p>房屋狀態 : 已出租</p>
-    <p>合約內容 : <a href="myrent_contract02.php">點擊查看</a></p>
-    
-</div>
-
-<!-- 3 -->
-<div class="flip">
-    <p>士林夜市近士林劍潭捷運小套房</p>
-    <img src="../imgs/down-arrow.svg" alt="">
-
-</div>
-<div class="panel">
-    <p>合約期限一年</p>
-    <p>房屋狀態 : 已出租</p>
-    <p>合約內容 : <a href="">點擊查看</a></p>
-</div>
 
 
 <!-----------------------手機板的下拉-------- -->
@@ -294,50 +283,33 @@ ul.pagination li a:hover{
                                 <tr>
                                     <th><p>物件名稱</p></th>
                                     <th><p>合約期限</p></th>
-                                    <th><p>合約內容</p></th>
                                     <th><p>房屋狀態</p></th>
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php foreach($items as $i): ?>
                                 <tr>
-                                    <td><p>士林夜市近士林劍潭捷運小套房</p></td>
-                                    <td><p>一年</p></td>
-                                    <td><a href="myrent_contract02.php"><p class="check">點擊查看</p></a></td>
-                                    <td><p class="notyet">未出租</p></td>
+                                    <td><a href="single_product.php?sid=<?= $i["item_sid"] ?>"><p><?= $i["item_name"] ?></p></a></td>
+                                    <td><p><?= $i["contract"] ?></p></td>
+                                    <td><p class="notyet">已出租</p></td>
+                                </tr>
+                            <?php endforeach?>
+                                <tr class="active-row">
+                                        <td><p></p></td>
+                                        <td><p></p></td>
+                                        <td><a href="myrent_contract02.php"><p class="check"></p></a></td>
+                                        <td><p></p></td>
                                 </tr>
 
-                                <tr class="active-row">
-                                        <td><p>士林夜市近士林劍潭捷運小套房</p></td>
-                                        <td><p>一年</p></td>
-                                        <td><a href="myrent_contract02.php"><p class="check">點擊查看</p></a></td>
-                                        <td><p>已出租</p></td>
-                                </tr>
                                 <tr>
-                                    <td><p>士林夜市近士林劍潭捷運小套房</p></td>
-                                    <td><p>一年</p></td>
-                                    <td><a href="myrent_contract02.php"><p class="check">點擊查看</p></a></td>
-                                    <td><p>已出租</p></td>
+                                    <td><p></p></td>
+                                    <td><p></p></td>
+                                    <td><a href="myrent_contract02.php"><p class="check"></p></a></td>
+                                    <td><p></p></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-
-<!----------------pages------------------>
-                    <div class="c-pages">
-                        <ul class="pagination">
-                            <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❮</a></li>
-    
-                            <li><a href="#">1</a></li>
-                            <li><a class="active" href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-    
-                            <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❯</a></li>
-                        </ul>
-                    </div>
-                
-            <!--------------pages------------------->
-
                 </div>
 
             </div>

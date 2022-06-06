@@ -1,3 +1,6 @@
+<?php
+    require './part/connect-db.php';
+?>
 <?php include __DIR__ . './part/head.php'  ?>
 <style>
     body {
@@ -399,11 +402,11 @@
     
     <div class="c_button_section">
         <div class="c_button_left">
-            <button type="button" onclick="clearCanvas()" class="pc-button-FEAC00-180">清除資料</button>
+            <button type="button" onclick="clearCanvas()" class="pc-button-FEAC00-180" style="background-color:#F1EDEA">清除資料</button>
         </div>
         
             <div class="c_button_right">
-                <button onclick="saveCanvas()" class="pc-button-F4F4F4-180">送出</button>
+                <button onclick="saveCanvas()" class="pc-button-FEAC00-180">送出</button>
             </div>
         </form>
     </div>

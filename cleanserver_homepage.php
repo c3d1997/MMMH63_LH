@@ -39,7 +39,7 @@ $pageName = 'cleanserver_homepage';
         margin-top: 80px;
         margin-bottom: 30px;
         height: 60px;
-        background: url(imgs/五大區域清潔.svg) no-repeat center/contain;
+        background: url(imgs/6C.svg) no-repeat center/contain;
     }
 
     .x-cleanserver-price-content-object {
@@ -179,20 +179,21 @@ $pageName = 'cleanserver_homepage';
                 定期清潔
             </h2>
             <h3>
-                建立您個人的雲端服務紀錄
+            沒有時間整理家務、需要更潔淨的環境
             </h3>
             <h3>
-                建立您個人的雲端服務紀錄建立
+            穩定且專業的居家清潔服務
             </h3>
             <h3>
-                建立您個人的雲端服務紀錄
+            嚴格的人員篩選提供最好的服務品質
             </h3>
             <h3>
-                建立您個人的雲端服務紀錄建立您
+            完善的教育訓練及良好的服務態度
             </h3>
-            <button class="pc-button-FEAC00-280">
-                預約清潔
-            </button>
+            <h3>
+            不只滿足您的需求，更超越您的期待
+            </h3>
+            <a href="cleaning_services.php"><button class="pc-button-FEAC00-280">預約清潔</button></a>
         </div>
     </div>
 </div>
@@ -211,10 +212,10 @@ $pageName = 'cleanserver_homepage';
                         浴室
                     </h3>
                     <p>
-                        實坪 5坪~10坪：5,500元
+                        實坪 5坪~10坪：3,500元
                     </p>
                     <p>
-                        實坪10坪~15坪：5,500元
+                        實坪10坪~15坪：4,500元
                     </p>
                     <p>
                         (上項視現場髒污程度計價)
@@ -233,7 +234,7 @@ $pageName = 'cleanserver_homepage';
                         廚房
                     </h3>
                     <p>
-                        實坪 5坪~10坪：5,500元
+                        實坪 5坪~10坪：4,500元
                     </p>
                     <p>
                         實坪10坪~15坪：5,500元
@@ -255,10 +256,10 @@ $pageName = 'cleanserver_homepage';
                         臥室
                     </h3>
                     <p>
-                        實坪 5坪~10坪：5,500元
+                        實坪 5坪~10坪：2,500元
                     </p>
                     <p>
-                        實坪10坪~15坪：5,500元
+                        實坪10坪~15坪：3,500元
                     </p>
                     <p>
                         (上項視現場髒污程度計價)
@@ -280,7 +281,7 @@ $pageName = 'cleanserver_homepage';
                         實坪 5坪~10坪：5,500元
                     </p>
                     <p>
-                        實坪10坪~15坪：5,500元
+                        實坪10坪~15坪：6,500元
                     </p>
                     <p>
                         (上項視現場髒污程度計價)
@@ -299,10 +300,10 @@ $pageName = 'cleanserver_homepage';
                         陽台
                     </h3>
                     <p>
-                        實坪 5坪~10坪：5,500元
+                        實坪 5坪~10坪：3,500元
                     </p>
                     <p>
-                        實坪10坪~15坪：5,500元
+                        實坪10坪~15坪：4,500元
                     </p>
                     <p>
                         (上項視現場髒污程度計價)
@@ -321,10 +322,10 @@ $pageName = 'cleanserver_homepage';
                         樓梯
                     </h3>
                     <p>
-                        實坪 5坪~10坪：5,500元
+                        實坪 5坪~10坪：3,500元
                     </p>
                     <p>
-                        實坪10坪~15坪：5,500元
+                        實坪10坪~15坪：6,500元
                     </p>
                     <p>
                         (上項視現場髒污程度計價)

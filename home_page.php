@@ -5,6 +5,10 @@ $title = 'LittleHouse';
 ?>
 <?php include __DIR__ . './part/head.php'  ?>
 <style>
+    * a {
+        text-decoration: none;
+    }
+
     .x-home-page-scroll-top {
         width: 80px;
         height: 80px;
@@ -16,11 +20,14 @@ $title = 'LittleHouse';
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color:#F4F4F4;
+        background-color: #F4F4F4;
         /* border: 1px solid  #0E2E3D; */
         border-radius: 25%;
         cursor: pointer;
+        transition: .5s;
+
     }
+
 
     .x-home-page-scroll-top img {
         object-fit: contain;
@@ -29,13 +36,50 @@ $title = 'LittleHouse';
 
     }
 
-    
+    .x-home-page-chat {
+        width: 80px;
+        height: 80px;
+        /* border: 1px solid; */
+        position: fixed;
+        right: 4%;
+        bottom: 22%;
+        z-index: 9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #F4F4F4;
+        /* border: 1px solid  #0E2E3D; */
+        border-radius: 25%;
+        cursor: pointer;
+        transition: .5s;
+    }
+
+    .x-home-page-chat a {
+        width: 80px;
+        height: 80px;
+        /* border: 1px solid; */
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+    }
+
+    .x-home-page-chat img {
+        object-fit: contain;
+        width: 60%;
+        transition: .5s;
+
+    }
+
 
     .top-link-hide {
         visibility: hidden;
         opacity: 0;
-        transition:.5s ;
+        transition: .5s;
     }
+
     .top-link-show {
         visibility: visible;
         opacity: 1;
@@ -101,7 +145,8 @@ $title = 'LittleHouse';
     }
 
     .x-search-post button:nth-child(1) {
-        margin-right: 30px;
+        margin-right: 15px;
+        margin-left: 15px;
     }
 
     .mobile-button-FEAC00-162,
@@ -110,6 +155,55 @@ $title = 'LittleHouse';
     }
 
     @media screen and (max-width:376px) {
+        .x-home-page-scroll-top {
+            width: 60px;
+            height: 60px;
+            /* border: 1px solid; */
+            position: fixed;
+            right: 4%;
+            bottom: 10%;
+            z-index: 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #F4F4F4;
+            /* border: 1px solid  #0E2E3D; */
+            border-radius: 25%;
+            cursor: pointer;
+            transition: .5s;
+
+        }
+
+        .x-home-page-chat {
+            width: 60px;
+            height: 60px;
+            /* border: 1px solid; */
+            position: fixed;
+            right: 4%;
+            bottom: 22%;
+            z-index: 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #F4F4F4;
+            /* border: 1px solid  #0E2E3D; */
+            border-radius: 25%;
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        .x-home-page-chat a {
+            width: 60px;
+            height: 60px;
+            /* border: 1px solid; */
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
         .x-home-page-slogan {
             width: 100%;
             max-width: 375px;
@@ -1009,6 +1103,9 @@ $title = 'LittleHouse';
     <div class="x-home-page-scroll-top top-link-hide" id="sc-top-js">
         <img src="./imgs/arrow-up.svg" alt="">
     </div>
+    <div class="x-home-page-chat " id="chat-js">
+        <a href="customer_service.php"><img src="./imgs/support.png" alt=""></a>
+    </div>
     <div class="x-home-page-slogan">
         <div class="container">
             <div class="x-slogan">
@@ -1050,10 +1147,11 @@ $title = 'LittleHouse';
             </h2>
             <img src="imgs/espolon-tequila-xCsalofaxw4-unsplash.jpg" alt="">
             <p>
-                若發現問題比我們想像的還要深奧，那肯定不簡單。 所謂租屋，關鍵是租屋需要如何解讀。 租屋的出現，重寫了人生的意義。既然，租屋，到底應該如何實現。租屋因何而發生？ 話雖如此，做好租屋這件事，可以說已經成為了民運動。
+                共生租屋通常是由獨立的管理公司來經營。管理公司和房東簽訂好住房合約後,再分別與每一位租客簽訂住房協定。所以租客不需與房東聯繫,公司會處理好租客與房東間的所有問題。
+                每一位租客只需要對自己的租約負責,不需要承擔起其他人退租的壓力。
             </p>
             <p>
-                奧維德說過一句發人省思的話，習慣是在習慣中養 話雖如此，做好租屋這件事，可以說已經成為了民運動。奧維德說過一句發人省思的話，習慣是在習慣中養話雖如此，做好租屋這件事，可以說已經成為了民運動。奧維德說過一句發人省思的話，習慣是在習慣中養
+                如果有某位室友離開,也完全不會影響其他住戶們的租約。每一份單獨的合約都是依照每個人的計劃來簽訂不同的租期。適合不喜歡簽訂多人捆綁的合約,也不想要承擔其他人退租風險的住戶。
             </p>
         </div>
     </div>
@@ -1067,34 +1165,38 @@ $title = 'LittleHouse';
             </h2>
             <img src="imgs/espolon-tequila-xCsalofaxw4-unsplash.jpg" alt="">
             <p>
-                若發現問題比我們想像的還要深奧，那肯定不簡單。 所謂租屋，關鍵是租屋需要如何解讀。 租屋的出現，重寫了人生的意義。既然，租屋，到底應該如何實現。租屋因何而發生？ 話雖如此，做好租屋這件事，可以說已經成為了民運動。
+                分租是指一群認識的朋友共同承租整間公寓。房東會和每位房客或某位代表人簽訂整份合租協議,租期通常為一年或更長。而租屋的後續問題會需要自行解決或直接和房東進行溝通。租客們需要作出承諾來共同完成一個長期的租約。
 
             </p>
             <p>
-                奧維德說過一句發人省思的話，習慣是在習慣中養 話雖如此，做好租屋這件事，可以說已經成為了民運動。奧維德說過一句發人省思的話，習慣是在習慣中養話雖如此，做好租屋這件事，可以說已經成為了民運動。奧維德說過一句發人省思的話，習慣是在習慣中養
+                如果有某位室友因為個人原因提前離開,整份租約仍然有效。而住戶通常會需要承擔起空窗期的租金,並且需要花時間和精力再招一位新的室友來分擔租金。也不要設想買的傢俱,後面進來的承租者會心甘情願接收。
             </p>
         </div>
     </div>
 </div>
 <!-- 首頁刊登以及清潔 -->
 <div class="x-home-page-post-clean">
-    <div class="x-home-page-post-clean-left-post">
-        <div>
-            <h2>刊登房屋</h2>
-        </div>
-        <div>
+    <a href="publish_uploadimgx10.php">
+        <div class="x-home-page-post-clean-left-post">
+            <div>
+                <h2>刊登房屋</h2>
+            </div>
+            <div>
+
+            </div>
 
         </div>
+    </a>
+    <a href="cleanserver_homepage.php">
+        <div class="x-home-page-post-clean-right-clean">
+            <div>
+                <h2>清潔服務</h2>
+            </div>
+            <div>
 
-    </div>
-    <div class="x-home-page-post-clean-right-clean">
-        <div>
-            <h2>清潔服務</h2>
+            </div>
         </div>
-        <div>
-
-        </div>
-    </div>
+    </a>
 </div>
 <!-- 浮動卡片 -->
 <div class="x-home-page-hover-card">
@@ -1142,7 +1244,7 @@ $title = 'LittleHouse';
                         快速搜尋
                     </h3>
                     <p>
-                        若發現問題比我們想像的還要深奧，那肯定不簡單。 所謂租屋，關鍵是租屋需要如何解讀。租屋的出現，重寫了人生的意義。既然，租 屋，到底應該如何實現。租屋因何而發生？
+                        智慧搜尋設定，提供兩種截然不同的搜尋方式，就是讓不同的使用者可以按照自身習慣來進行快速搜尋！
                     </p>
                 </div>
                 <div class="x-home-page-three-element-txt-single">
@@ -1157,7 +1259,7 @@ $title = 'LittleHouse';
                         方便即時
                     </h3>
                     <p>
-                        若發現問題比我們想像的還要深奧，那肯定不簡單。 所謂租屋，關鍵是租屋需要如何解讀。租屋的出現，重寫了人生的意義。既然，租 屋，到底應該如何實現。租屋因何而發生？
+                        即刻顯示搜尋結果，快速找房豪不費力，同時擁有豐富的房源供您選擇，只為了讓您可以找到舒適的居家環境。
                     </p>
                 </div>
                 <div class="x-home-page-three-element-txt-single">
@@ -1171,7 +1273,7 @@ $title = 'LittleHouse';
                         定時提醒
                     </h3>
                     <p>
-                        若發現問題比我們想像的還要深奧，那肯定不簡單。 所謂租屋，關鍵是租屋需要如何解讀。租屋的出現，重寫了人生的意義。既然，租 屋，到底應該如何實現。租屋因何而發生？
+                        不必害怕忘記繳租，時間一到就會發送郵件進行提醒，並且可以直接使用線上繳租，信用卡累積優惠。
                     </p>
                 </div>
             </div>
@@ -1187,7 +1289,7 @@ $title = 'LittleHouse';
             <h2>簡單四步驟！快速租屋</h2>
             <div>
                 <h3>
-                    若發現問題比我們想像的還要深奧，那肯定不簡單。所謂租屋，關鍵是租屋需要如何解讀。租屋的出現，重寫了人生的意義。
+                    按照下列簡單四步驟，即可快速完成租屋動作，免除一切複雜流程，只為了提供您最快速的租屋體驗。
                 </h3>
             </div>
         </div>
@@ -1201,7 +1303,7 @@ $title = 'LittleHouse';
                         1.搜尋
                     </h3>
                     <p>
-                        若發現問題比我們想像 的還要深奧，那肯定不 簡單。
+                        快速搜尋，讓您找到滿意的房屋。
                     </p>
                 </div>
                 <div>
@@ -1215,7 +1317,7 @@ $title = 'LittleHouse';
                         2.預約
                     </h3>
                     <p>
-                        若發現問題比我們想像 的還要深奧，那肯定不 簡單。
+                        發現滿意的房屋後，即刻進行預約，選擇好時間進行看房！
                     </p>
                 </div>
             </div>
@@ -1233,7 +1335,7 @@ $title = 'LittleHouse';
                         3.簽約
                     </h3>
                     <p>
-                        若發現問題比我們想像 的還要深奧，那肯定不 簡單。
+                        決定進行入住後進行簽約流程，一切皆可在線上完成！
                     </p>
                 </div>
                 <div>
@@ -1247,7 +1349,7 @@ $title = 'LittleHouse';
                         4.支付
                     </h3>
                     <p>
-                        若發現問題比我們想像 的還要深奧，那肯定不 簡單。
+                        快速支付，定點取鑰，即刻入住，就是如此簡單！
                     </p>
                 </div>
             </div>
@@ -1263,11 +1365,11 @@ $title = 'LittleHouse';
         <div class="x-home-page-waterfall-img">
             <div class="x-home-page-waterfall-img-left">
                 <div class="x-home-page-waterfall-img-left-img">
-                    <img class="x-home-page-waterfall-img-left-img-only" src="imgs/spacejoy-umAXneH4GhA-unsplash.jpg" alt="">
+                    <img class="x-home-page-waterfall-img-left-img-only" src="imgs/items14/item3.jpg" alt="">
                     <div class="x-home-page-waterfall-img-left-img-hover">
                         <div class="x-home-page-waterfall-img-left-img-hover-txt">
                             <h3>
-                                三重地段豪華套房
+                                黃金地段豪華套房
                             </h3>
                             <h3>
                                 近三重國小捷運、旁有公園運動場
@@ -1279,14 +1381,14 @@ $title = 'LittleHouse';
                     </div>
                 </div>
                 <div class="x-home-page-waterfall-img-left-img">
-                    <img class="x-home-page-waterfall-img-left-img-only" src="imgs/spacejoy-umAXneH4GhA-unsplash.jpg" alt="">
+                    <img class="x-home-page-waterfall-img-left-img-only" src="imgs/items10/item9.jpg" alt="">
                     <div class="x-home-page-waterfall-img-left-img-hover">
                         <div class="x-home-page-waterfall-img-left-img-hover-txt">
                             <h3>
-                                三重地段豪華套房
+                                學府生活圈，學生族首選
                             </h3>
                             <h3>
-                                近三重國小捷運、旁有公園運動場
+                                近師大，大安捷運站
                             </h3>
                         </div>
                         <div class="x-home-page-waterfall-img-left-img-hover-img">
@@ -1295,14 +1397,14 @@ $title = 'LittleHouse';
                     </div>
                 </div>
                 <div class="x-home-page-waterfall-img-left-img-H">
-                    <img class="x-home-page-waterfall-img-left-img-only" src="imgs/spacejoy-umAXneH4GhA-unsplash.jpg" alt="">
+                    <img class="x-home-page-waterfall-img-left-img-only" src="imgs/home_P_IMG/02.jpg" alt="">
                     <div class="x-home-page-waterfall-img-left-img-hover">
                         <div class="x-home-page-waterfall-img-left-img-hover-txt">
                             <h3>
-                                三重地段豪華套房
+                                頂端套房，與朋友一同居住
                             </h3>
                             <h3>
-                                近三重國小捷運、旁有公園運動場
+                                大台北生活圈，進市政府捷運
                             </h3>
                         </div>
                         <div class="x-home-page-waterfall-img-left-img-hover-img">
@@ -1313,14 +1415,14 @@ $title = 'LittleHouse';
             </div>
             <div class="x-home-page-waterfall-img-right">
                 <div class="x-home-page-waterfall-img-right-img">
-                    <img class="x-home-page-waterfall-img-right-img-only" src="imgs/spacejoy-umAXneH4GhA-unsplash.jpg" alt="">
+                    <img class="x-home-page-waterfall-img-right-img-only" src="imgs/home_P_IMG/01.jpg" alt="">
                     <div class="x-home-page-waterfall-img-right-img-hover">
                         <div class="x-home-page-waterfall-img-right-img-hover-txt">
                             <h3>
-                                三重地段豪華套房
+                                五股生活新天地
                             </h3>
                             <h3>
-                                近三重國小捷運、旁有公園運動場
+                                旁有河堤、公園，健康生活圈
                             </h3>
                         </div>
                         <div class="x-home-page-waterfall-img-right-img-hover-img">
@@ -1329,14 +1431,14 @@ $title = 'LittleHouse';
                     </div>
                 </div>
                 <div class="x-home-page-waterfall-img-right-img-H">
-                    <img class="x-home-page-waterfall-img-right-img-only" src="imgs/spacejoy-umAXneH4GhA-unsplash.jpg" alt="">
+                    <img class="x-home-page-waterfall-img-right-img-only" src="imgs/home_P_IMG/04.jpeg" alt="">
                     <div class="x-home-page-waterfall-img-right-img-hover">
                         <div class="x-home-page-waterfall-img-right-img-hover-txt">
                             <h3>
-                                三重地段豪華套房
+                                南港套房，精緻生活
                             </h3>
                             <h3>
-                                近三重國小捷運、旁有公園運動場
+                                進南港科學園區，上班族首選
                             </h3>
                         </div>
                         <div class="x-home-page-waterfall-img-right-img-hover-img">
@@ -1345,14 +1447,14 @@ $title = 'LittleHouse';
                     </div>
                 </div>
                 <div class="x-home-page-waterfall-img-right-img">
-                    <img class="x-home-page-waterfall-img-right-img-only" src="imgs/spacejoy-umAXneH4GhA-unsplash.jpg" alt="">
+                    <img class="x-home-page-waterfall-img-right-img-only" src="imgs/home_P_IMG/03.jpg" alt="">
                     <div class="x-home-page-waterfall-img-right-img-hover">
                         <div class="x-home-page-waterfall-img-right-img-hover-txt">
                             <h3>
-                                三重地段豪華套房
+                                共生套房，快樂生活圈
                             </h3>
                             <h3>
-                                近三重國小捷運、旁有公園運動場
+                                進台北橋，通勤方便
                             </h3>
                         </div>
                         <div class="x-home-page-waterfall-img-right-img-hover-img">
@@ -1446,10 +1548,27 @@ $title = 'LittleHouse';
         }
     };
 
-    scrollTopButton.onclick = function(e){
+    scrollTopButton.onclick = function(e) {
         e.preventDefault();
         scrollToTop();
     }
+    // chat-js
+    $('#chat-js').mouseenter(function() {
+        $('#chat-js').css('transform', 'translateY(-5px)')
+
+    })
+    $('#chat-js').mouseleave(function() {
+        $('#chat-js').css('transform', 'translateY(0px)')
+
+    })
+    $('#sc-top-js').mouseenter(function() {
+        $('#sc-top-js').css('transform', 'translateY(-5px)')
+
+    })
+    $('#sc-top-js').mouseleave(function() {
+        $('#sc-top-js').css('transform', 'translateY(0px)')
+
+    })
 </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>

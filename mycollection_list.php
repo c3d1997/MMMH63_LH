@@ -1,3 +1,11 @@
+<?php
+require './part/connect-db.php';
+
+
+$hresql = "SELECT * FROM items WHERE sid IN (3,7,10,12,18,21)";
+$hrestmts = $pdo->query($hresql);
+$hre = $hrestmts->fetch();
+?>
 <?php include __DIR__ . './part/head.php'  ?>
 
 <style>
@@ -90,7 +98,7 @@
     }
 
     .x-title-content-txt {
-        width: 450px;
+        width: 540px;
         padding: 30px 30px;
     }
 
@@ -104,7 +112,7 @@
     }
 
     .x-title-content-price {
-        width: 280px;
+        width: 180px;
         height: 250px;
         display: flex;
         flex-direction: column;
@@ -209,6 +217,18 @@
         object-fit: cover;
     }
 
+    .c-list-active {
+        text-decoration: none;
+        list-style: none;
+        margin-bottom: 30px;
+    }
+
+    .c-list-active a {
+        text-decoration: none;
+        list-style: none;
+        margin-bottom: 30px;
+    }
+
     @media screen and (max-width:376px) {
         .x-title-card-all {
             display: flex;
@@ -268,7 +288,7 @@
                         <h3>我的租屋</h3>
                     </a>
                 </li>
-                <li class="c-list">
+                <li class="c-list-active">
                     <a href="mycollection_list.php">
                         <h3>我的收藏</h3>
                     </a>
@@ -306,579 +326,55 @@
                 <div class="x-title-txt">
                     <h3>我的收藏</h3>
                 </div>
-                <div class="x-title-icon">
-                    <div>
-                        <img class="x-title-list" src="imgs/橫列瀏覽.svg" alt="">
-                    </div>
-                    <div>
-                        <img class="x-title-card" src="imgs/方塊瀏覽.svg" alt="">
-                    </div>
-
-                </div>
+                
             </div>
             <div class="x-title-content-all ">
-                <div class="x-title-content">
-                    <div class="x-title-content-img">
-                        <img src="imgs/57 1.jpg" alt="">
-                    </div>
-                    <div class="x-title-content-txt">
-                        <h3>
-                            士林夜市近士林劍潭捷運小套房
-                        </h3>
-                        <p>
-                            <img src="imgs/捷運.svg" alt="">距離士林捷運站 500 公尺
-                        </p>
-                        <p>
-                            <img src="imgs/位置.svg" alt=""> 新北市三重區碧華街 900 號
-                        </p>
-                        <div>
+                <?php foreach ($hrestmts as $i) : ?>
+                    <div class="x-title-content">
+                        <div class="x-title-content-img">
+                            <img src="imgs/items<?= $i['sid'] ?>/item1.jpg" alt="">
+                        </div>
+                        <div class="x-title-content-txt">
+                            <h3>
+                                <?= $i['item_name'] ?>
+                            </h3>
                             <p>
-                                <img src="imgs/坪數.svg" alt=""> 30坪
+                                <img src="imgs/捷運.svg" alt=""><?= $i['close_station'] ?>
                             </p>
                             <p>
-                                <img src="imgs/格局.svg" alt=""> 整層住家 6 樓 3房 2 廳 2 衛浴
+                                <img src="imgs/位置.svg" alt=""> <?= $i['item_address'] ?>
                             </p>
-                        </div>
-                    </div>
-                    <div class="x-title-content-price">
-                        <div class="x-title-content-price-top">
-
-                            <img class="x-canser" src="imgs/取消.svg" alt="">
-
-                        </div>
-                        <div class="x-title-content-price-down">
                             <div>
-                                <img src="imgs/瀏覽.svg" alt="">
                                 <p>
-                                    瀏覽量：8999
+                                    <img src="imgs/坪數.svg" alt=""> <?= $i['ping_number'] ?>
+                                </p>
+                                <p>
+                                    <img src="imgs/格局.svg" alt=""> <?= $i['roomtype'] ?>
                                 </p>
                             </div>
-                            <h3>
-                                15,000/月
-                            </h3>
                         </div>
-                    </div>
-                </div>
-                <div class="x-title-content">
-                    <div class="x-title-content-img">
-                        <img src="imgs/57 1.jpg" alt="">
-                    </div>
-                    <div class="x-title-content-txt">
-                        <h3>
-                            士林夜市近士林劍潭捷運小套房
-                        </h3>
-                        <p>
-                            <img src="imgs/捷運.svg" alt="">距離士林捷運站 500 公尺
-                        </p>
-                        <p>
-                            <img src="imgs/位置.svg" alt=""> 新北市三重區碧華街 900 號
-                        </p>
-                        <div>
-                            <p>
-                                <img src="imgs/坪數.svg" alt=""> 30坪
-                            </p>
-                            <p>
-                                <img src="imgs/格局.svg" alt=""> 整層住家 6 樓 3房 2 廳 2 衛浴
-                            </p>
-                        </div>
-                    </div>
+                        <div class="x-title-content-price">
+                            <div class="x-title-content-price-top">
 
-                    <div class="x-title-content-price">
-                        <div class="x-title-content-price-top">
+                                <img class="x-canser" src="imgs/取消.svg" alt="">
 
-                            <img class="x-canser" src="imgs/取消.svg" alt="">
-
-                        </div>
-                        <div class="x-title-content-price-down">
-                            <div>
-                                <img src="imgs/瀏覽.svg" alt="">
-                                <p>
-                                    瀏覽量：8999
-                                </p>
                             </div>
-                            <h3>
-                                15,000/月
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="x-title-content">
-                    <div class="x-title-content-img">
-                        <img src="imgs/57 1.jpg" alt="">
-                    </div>
-                    <div class="x-title-content-txt">
-                        <h3>
-                            士林夜市近士林劍潭捷運小套房
-                        </h3>
-                        <p>
-                            <img src="imgs/捷運.svg" alt="">距離士林捷運站 500 公尺
-                        </p>
-                        <p>
-                            <img src="imgs/位置.svg" alt=""> 新北市三重區碧華街 900 號
-                        </p>
-                        <div>
-                            <p>
-                                <img src="imgs/坪數.svg" alt=""> 30坪
-                            </p>
-                            <p>
-                                <img src="imgs/格局.svg" alt=""> 整層住家 6 樓 3房 2 廳 2 衛浴
-                            </p>
-                        </div>
-                    </div>
-                    <div class="x-title-content-price">
-                        <div class="x-title-content-price-top">
-
-                            <img class="x-canser" src="imgs/取消.svg" alt="">
-
-                        </div>
-                        <div class="x-title-content-price-down">
-                            <div>
-                                <img src="imgs/瀏覽.svg" alt="">
-                                <p>
-                                    瀏覽量：8999
-                                </p>
+                            <div class="x-title-content-price-down">
+                                <div>
+                                    <img src="imgs/瀏覽.svg" alt="">
+                                    <p>
+                                        瀏覽量：<?= $i['view_log'] ?>
+                                    </p>
+                                </div>
+                                <h3>
+                                    $<?= number_format($i['price']) ?>/月
+                                </h3>
                             </div>
-                            <h3>
-                                15,000/月
-                            </h3>
                         </div>
                     </div>
-                </div>
-                <div class="x-title-content">
-                    <div class="x-title-content-img">
-                        <img src="imgs/57 1.jpg" alt="">
-                    </div>
-                    <div class="x-title-content-txt">
-                        <h3>
-                            士林夜市近士林劍潭捷運小套房
-                        </h3>
-                        <p>
-                            <img src="imgs/捷運.svg" alt="">距離士林捷運站 500 公尺
-                        </p>
-                        <p>
-                            <img src="imgs/位置.svg" alt=""> 新北市三重區碧華街 900 號
-                        </p>
-                        <div>
-                            <p>
-                                <img src="imgs/坪數.svg" alt=""> 30坪
-                            </p>
-                            <p>
-                                <img src="imgs/格局.svg" alt=""> 整層住家 6 樓 3房 2 廳 2 衛浴
-                            </p>
-                        </div>
-                    </div>
-                    <div class="x-title-content-price">
-                        <div class="x-title-content-price-top">
-
-                            <img class="x-canser" src="imgs/取消.svg" alt="">
-
-                        </div>
-                        <div class="x-title-content-price-down">
-                            <div>
-                                <img src="imgs/瀏覽.svg" alt="">
-                                <p>
-                                    瀏覽量：8999
-                                </p>
-                            </div>
-                            <h3>
-                                15,000/月
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="x-title-content">
-                    <div class="x-title-content-img">
-                        <img src="imgs/57 1.jpg" alt="">
-                    </div>
-                    <div class="x-title-content-txt">
-                        <h3>
-                            士林夜市近士林劍潭捷運小套房
-                        </h3>
-                        <p>
-                            <img src="imgs/捷運.svg" alt="">距離士林捷運站 500 公尺
-                        </p>
-                        <p>
-                            <img src="imgs/位置.svg" alt=""> 新北市三重區碧華街 900 號
-                        </p>
-                        <div>
-                            <p>
-                                <img src="imgs/坪數.svg" alt=""> 30坪
-                            </p>
-                            <p>
-                                <img src="imgs/格局.svg" alt=""> 整層住家 6 樓 3房 2 廳 2 衛浴
-                            </p>
-                        </div>
-                    </div>
-                    <div class="x-title-content-price">
-                        <div class="x-title-content-price-top">
-
-                            <img class="x-canser" src="imgs/取消.svg" alt="">
-
-                        </div>
-                        <div class="x-title-content-price-down">
-                            <div>
-                                <img src="imgs/瀏覽.svg" alt="">
-                                <p>
-                                    瀏覽量：8999
-                                </p>
-                            </div>
-                            <h3>
-                                15,000/月
-                            </h3>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach ?>
             </div>
-            <div class="x-title-card-all x-dislplaynone">
-
-                <div class="S-xs-card-wrap">
-
-                    <div class="S-xs-like">
-                        <img class="x-canser-card" src="imgs/取消.svg" alt="">
-                    </div>
-                    <div class="S-xs-card">
-                        <div class="S-xs-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-xs-card-info">
-                            <h4>
-                                <span>三重大樓</span>
-                            </h4>
-                            <div class="S-xs-card-info-2">
-                                <p>新北市三重區
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-xs-card-wrap">
-
-                    <div class="S-xs-like">
-                        <img class="x-canser-card" src="imgs/取消.svg" alt="">
-                    </div>
-                    <div class="S-xs-card">
-                        <div class="S-xs-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-xs-card-info">
-                            <h4>
-                                <span>三重大樓</span>
-                            </h4>
-                            <div class="S-xs-card-info-2">
-                                <p>新北市三重區
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-xs-card-wrap">
-
-                    <div class="S-xs-like">
-                        <img class="x-canser-card" src="imgs/取消.svg" alt="">
-                    </div>
-                    <div class="S-xs-card">
-                        <div class="S-xs-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-xs-card-info">
-                            <h4>
-                                <span>三重大樓</span>
-                            </h4>
-                            <div class="S-xs-card-info-2">
-                                <p>新北市三重區
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-xs-card-wrap">
-
-                    <div class="S-xs-like">
-                        <img class="x-canser-card" src="imgs/取消.svg" alt="">
-                    </div>
-                    <div class="S-xs-card">
-                        <div class="S-xs-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-xs-card-info">
-                            <h4>
-                                <span>三重大樓</span>
-                            </h4>
-                            <div class="S-xs-card-info-2">
-                                <p>新北市三重區
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-xs-card-wrap">
-
-                    <div class="S-xs-like">
-                        <img class="x-canser-card" src="imgs/取消.svg" alt="">
-                    </div>
-                    <div class="S-xs-card">
-                        <div class="S-xs-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-xs-card-info">
-                            <h4>
-                                <span>三重大樓</span>
-                            </h4>
-                            <div class="S-xs-card-info-2">
-                                <p>新北市三重區
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-xs-card-wrap">
-
-                    <div class="S-xs-like">
-                        <img class="x-canser-card" src="imgs/取消.svg" alt="">
-                    </div>
-                    <div class="S-xs-card">
-                        <div class="S-xs-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-xs-card-info">
-                            <h4>
-                                <span>三重大樓</span>
-                            </h4>
-                            <div class="S-xs-card-info-2">
-                                <p>新北市三重區
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-xs-card-wrap">
-
-                    <div class="S-xs-like">
-                        <img class="x-canser-card" src="imgs/取消.svg" alt="">
-                    </div>
-                    <div class="S-xs-card">
-                        <div class="S-xs-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-xs-card-info">
-                            <h4>
-                                <span>三重大樓</span>
-                            </h4>
-                            <div class="S-xs-card-info-2">
-                                <p>新北市三重區
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-xs-card-wrap">
-
-                    <div class="S-xs-like">
-                        <img class="x-canser-card" src="imgs/取消.svg" alt="">
-                    </div>
-                    <div class="S-xs-card">
-                        <div class="S-xs-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-xs-card-info">
-                            <h4>
-                                <span>三重大樓</span>
-                            </h4>
-                            <div class="S-xs-card-info-2">
-                                <p>新北市三重區
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-xs-card-wrap">
-
-                    <div class="S-xs-like">
-                        <img class="x-canser-card" src="imgs/取消.svg" alt="">
-                    </div>
-                    <div class="S-xs-card">
-                        <div class="S-xs-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-xs-card-info">
-                            <h4>
-                                <span>三重大樓</span>
-                            </h4>
-                            <div class="S-xs-card-info-2">
-                                <p>新北市三重區
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-xs-card-wrap">
-
-                    <div class="S-xs-like">
-                        <img class="x-canser-card" src="imgs/取消.svg" alt="">
-                    </div>
-                    <div class="S-xs-card">
-                        <div class="S-xs-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-xs-card-info">
-                            <h4>
-                                <span>三重大樓</span>
-                            </h4>
-                            <div class="S-xs-card-info-2">
-                                <p>新北市三重區
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-xs-card-wrap">
-
-                    <div class="S-xs-like">
-                        <img class="x-canser-card" src="imgs/取消.svg" alt="">
-                    </div>
-                    <div class="S-xs-card">
-                        <div class="S-xs-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-xs-card-info">
-                            <h4>
-                                <span>三重大樓</span>
-                            </h4>
-                            <div class="S-xs-card-info-2">
-                                <p>新北市三重區
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-xs-card-wrap">
-
-                    <div class="S-xs-like">
-                        <img class="x-canser-card" src="imgs/取消.svg" alt="">
-                    </div>
-                    <div class="S-xs-card">
-                        <div class="S-xs-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-xs-card-info">
-                            <h4>
-                                <span>三重大樓</span>
-                            </h4>
-                            <div class="S-xs-card-info-2">
-                                <p>新北市三重區
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-xs-card-wrap">
-
-                    <div class="S-xs-like">
-                        <img class="x-canser-card" src="imgs/取消.svg" alt="">
-                    </div>
-                    <div class="S-xs-card">
-                        <div class="S-xs-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-xs-card-info">
-                            <h4>
-                                <span>三重大樓</span>
-                            </h4>
-                            <div class="S-xs-card-info-2">
-                                <p>新北市三重區
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-xs-card-wrap">
-
-                    <div class="S-xs-like">
-                        <img class="x-canser-card" src="imgs/取消.svg" alt="">
-                    </div>
-                    <div class="S-xs-card">
-                        <div class="S-xs-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-xs-card-info">
-                            <h4>
-                                <span>三重大樓</span>
-                            </h4>
-                            <div class="S-xs-card-info-2">
-                                <p>新北市三重區
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="S-xs-card-wrap">
-
-                    <div class="S-xs-like">
-                        <img class="x-canser-card" src="imgs/取消.svg" alt="">
-                    </div>
-                    <div class="S-xs-card">
-                        <div class="S-xs-card-img">
-                            <img src="imgs/57 1.jpg">
-                        </div>
-                        <div class="S-xs-card-info">
-                            <h4>
-                                <span>三重大樓</span>
-                            </h4>
-                            <div class="S-xs-card-info-2">
-                                <p>新北市三重區
-                                </p>
-                                <h3>
-                                    15,000/月
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
+            
 
         </div>
 

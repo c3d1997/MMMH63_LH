@@ -1,3 +1,6 @@
+<?php
+    require './part/connect-db.php';
+?>
 <?php include __DIR__ . './part/head.php'  ?>
 
 <style>
@@ -250,6 +253,27 @@
         display: none;
     }
 
+    .z_select_dropdown_container {
+        flex-grow: 1;
+        position: relative;
+        display: flex;
+    }
+
+    select {
+        color: #0E2E3D;
+        height: 60px;
+        border: none;
+        outline: none;
+        appearance: none;
+        width: 100%;
+        font-size: 16px;
+        padding-left: 15px;
+    }
+
+    select option {
+        font-size: 16px;
+
+    }
 
     /* --------------------------------------------- */
 
@@ -388,7 +412,7 @@
         padding-left: 15px;
     }
 
-    .arrow_container {
+    .z_select_dropdown_container .arrow_container {
         top: 50%;
         transform: translateY(-50%);
         right: 15px;
@@ -396,6 +420,9 @@
         pointer-events: none;
     }
 
+    .downArrow {
+        transform: rotateX(180deg);
+    }
 
     /* --------------------------------------------- */
 </style>
@@ -534,17 +561,14 @@
 
             <div class="n-nmamu">
                 <p class="n-nffont">坪數大小</p>
-                <div class="dropdown_container">
-                    <select id="areaListBtn">
-                        <div class="dropdown">
-                            <span>坪數大小</span>
-                            <img src="imgs/down-arrow.svg" alt="">
-                            <option value=””>請選擇坪數</option>
-                            <option value=””>1 - 5 坪</option>
-                            <option value=””>5 - 10 坪</option>
-                            <option value=””>10 - 15 坪</option>
-                            <option value=””>15 - 20 坪</option>
-                            <option value=””>20 坪以上</option>
+                <div class="z_select_dropdown_container">
+                    <select id="bankSelect" name=”bankSelect” class="z_select_dropdown">
+                        <option selected disabled>--請選擇坪數--</option>
+                        <option value="1">1 - 5 坪</option>
+                        <option value="2">5 - 10 坪</option>
+                        <option value="3">10 - 15 坪</option>
+                        <option value="4">15 - 20 坪</option>
+                        <option value="5">20 坪以上</option>
                     </select>
                     <div class="arrow_container">
                         <img src="imgs/down-arrow.svg" alt="">
@@ -558,7 +582,7 @@
 
             <div class="n-nmamu">
                 <p class="n-nffont">應繳訂金</p>
-                <input class="n-inpupu" type="text" placeholder="應繳訂金">
+                <input class="n-inpupu" type="text" placeholder="應繳訂金" id='money'>
             </div>
 
             <div class="n-nOh">
@@ -567,7 +591,7 @@
 
             <div class="n-nmamu">
                 <p class="n-nffont">姓名</p>
-                <input class="n-inpupu" type="text" placeholder="請填寫您的本名">
+                <input class="n-inpupu" type="text" placeholder="請填寫您的本名" value="小皇子">
             </div>
 
             <div class="n-nOh">
@@ -576,7 +600,7 @@
 
             <div class="n-nmamu">
                 <p class="n-nffont">手機</p>
-                <input class="n-inpupu" type="text" placeholder="請填寫您的手機">
+                <input class="n-inpupu" type="text" placeholder="請填寫您的手機" value="0987666888">
             </div>
 
             <div class="n-nOh">
@@ -585,7 +609,7 @@
 
             <div class="n-nmamu">
                 <p class="n-nffont">地址</p>
-                <input class="n-inpupu" type="text" placeholder="請填寫您的地址">
+                <input class="n-inpupu" type="text" placeholder="請填寫您的地址" value="台北市中正區重慶南路一段122號" id="address">
             </div>
 
             <div class="n-nOh">
@@ -593,13 +617,12 @@
             </div>
 
             <div class="n-mmaps">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14581.032673915266!2d120.797665!3d23.9866589!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb1f377f8183a3bcf!2z5Yas5Yas546r55Gw5ZySKOeEoemWi-aUvuWPg-ingCk!5e0!3m2!1szh-TW!2stw!4v1648536536103!5m2!1szh-TW!2stw" width="522" height="375" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.825246449343!2d121.50976201432393!3d25.040003944206227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a90a8d497325%3A0x2876dc1b4d647f9!2z5Lit6I-v5rCR5ZyL57i957Wx5bqc!5e0!3m2!1szh-TW!2stw!4v1654287001679!5m2!1szh-TW!2stw" width="522" height="375" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
             <div class="n-nmamutwo">
                 <p class="n-nffont">詳細內容</p>
-                <input class="n-inpupu" type="text" placeholder="詳細描述清潔要求">
+                <input class="n-inpupu" type="text" placeholder="可詳細描述清潔要求">
 
             </div>
             <div class="n-nOh">
@@ -613,42 +636,22 @@
                 </h3>
             </div>
             <!--  -->
-
-            <div class="n-nmamu">
-                <p class="n-nffont">繳費方式</p>
-                <div class="dropdown_container">
-                    <button id="areaListBtn">
-                        <div class="dropdown">
-                            <span>繳費方式</span>
-                            <img src="imgs/down-arrow.svg" alt="">
-                        </div>
-                    </button>
-                    <div id="areaList" class="dropdown_list" hidden>
-                        <p class="">轉帳</p>
-                        <p class="">信用卡</p>
-
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="n-nOh">
-                <p>！錯誤</p>
-            </div>
-
             <div class="n-nmamu">
                 <p class="n-nffont">預約日期</p>
-                <div class="dropdown_container">
-                    <button id="areaListBtn">
-                        <div class="dropdown">
-                            <span>預約日期</span>
-                            <img src="imgs/down-arrow.svg" alt="">
-                        </div>
-                    </button>
-                    <div id="areaList" class="dropdown_list" hidden>
-                        <p class="">1-5坪</p>
-
-
+                <div class="z_select_dropdown_container">
+                    <select id="bankSelect" name=”bankSelect” class="z_select_dropdown">
+                        <option selected disabled>--預約日期--</option>
+                        <option>2022/06/09</option>
+                        <option>2022/06/10</option>
+                        <option>2022/06/11</option>
+                        <option>2022/06/12</option>
+                        <option>2022/06/13</option>
+                        <option>2022/06/14</option>
+                        <option>2022/06/15</option>
+                        <option>2022/06/16</option>
+                    </select>
+                    <div class="arrow_container">
+                        <img src="imgs/down-arrow.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -659,17 +662,14 @@
 
             <div class="n-nmamu">
                 <p class="n-nffont">預約時間</p>
-                <div class="dropdown_container">
-                    <button id="areaListBtn">
-                        <div class="dropdown">
-                            <span>預約時間</span>
-                            <img src="imgs/down-arrow.svg" alt="">
-                        </div>
-                    </button>
-                    <div id="areaList" class="dropdown_list" hidden>
-                        <p class="">1-5坪</p>
-
-
+                <div class="z_select_dropdown_container">
+                    <select id="bankSelect" name=”bankSelect” class="z_select_dropdown">
+                        <option selected disabled>--預約時間--</option>
+                        <option>上午9點到11點</option>
+                        <option>下午1點到6點</option>
+                    </select>
+                    <div class="arrow_container">
+                        <img src="imgs/down-arrow.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -681,7 +681,7 @@
 
         <div class="n-ntwobutton">
             <button class="pc-button-F4F4F4-180">清除資料</button>
-            <button class="pc-button-FEAC00-180"><a href="cleanpay_way.php" style="text-decoration:none; color:#0E2E3D;">確認送出</a></button>
+            <a href="cleanpay_way.php" style="text-decoration:none; color:#0E2E3D;"><button class="pc-button-FEAC00-180" onclick="transData()">確認送出</button></a>
         </div>
 
 
@@ -710,6 +710,35 @@
     $('.n-ncader').mouseleave(function() {
         $(this).css('transform', 'scale(1)')
     })
+    $("select").on({
+        mouseleave: function() {
+            $(this).next().children().removeClass("downArrow")
+        },
+        click: function() {
+            $(this).next().children().toggleClass("downArrow")
+        }
+    })
+
+    //  選擇坪數後自動顯示訂金金額
+    // $('#bankSelect').click(function() {
+    //     $('#money').val('10000')
+    // })
+    $('#bankSelect').on("change",function() {
+        if ($(this).val() == 1){
+            $('#money').val('10000')
+        }else if ($(this).val() == 2){
+            $('#money').val('20000')
+        }else if ($(this).val() == 3){
+            $('#money').val('30000')
+        }else {
+            $('#money').val('40000')
+        }
+    })
+    function transData() {
+        const money = $("#money").val()
+        // console.log(money);
+        localStorage.setItem("money", JSON.stringify(money))
+    }
 </script>
 
 <?php include __DIR__ . './part/javascript.php'  ?>

@@ -1,5 +1,7 @@
 <?php
-$title = '付款方式'
+$title = '付款方式';
+require './part/connect-db.php';
+
 
 ?>
 
@@ -777,7 +779,7 @@ $title = '付款方式'
                             <input class="z_input_text"   type="text" name="" id="coupon_container" placeholder="請輸入優惠碼">
                         </div>
                         <div class="z_coupon_container">
-                            <p class="coupon">帶入優惠碼</p>
+                            <p class="coupon" id="coupon">帶入優惠碼</p>
                         </div>
                     </div>
                     <div class="z_pay_alert">
@@ -789,7 +791,7 @@ $title = '付款方式'
                     <div class="z_text_intput ">
                         <p class="z_checkbox_option ">付款金額</p>
                         <div class="z_input_container">
-                            <p></p>
+                            <p id="willPay"></p>
                         </div>
                         <div class="z_payghost"></div>
                     </div>
@@ -799,7 +801,7 @@ $title = '付款方式'
                     <div class="z_text_intput ">
                         <p class="z_checkbox_option ">繳費日期</p>
                         <div class="z_input_container">
-                            <p></p>
+                            <p id="today"></p>
                         </div>
                         <div class="z_payghost"></div>
                     </div>
@@ -923,7 +925,7 @@ $title = '付款方式'
                         <div class="z_text_intput ">
                             <p class="z_checkbox_option ">　末三碼</p>
                             <div class="z_input_container">
-                                <input class="z_input_text" type="text" name="" id="lastThree" placeholder="XXX">
+                                <input class="z_input_text" type="text" name="" id="lastThree" placeholder="XXX" maxlength="3">
                             </div>
                             <img class="z_creditcard_img" src="imgs\creditcardback.png" alt="">
                         </div>
@@ -968,10 +970,47 @@ $title = '付款方式'
                 $(".bank_area").css("display","none")
                 $(".card_area").css("display","none")
             }
-            })
-
-            $("#bankSelect").click(function(){
-                $(".arrow_container img").toggleClass("downArrow")
         })
+        $("select").on({
+            mouseleave: function() {
+            $(this).next().children().removeClass("downArrow")
+            },  
+            click: function(){
+            $(this).next().children().toggleClass("downArrow")
+            }
+        })
+        let money = JSON.parse(localStorage.getItem("money"));
+        let date = new Date()
+
+        $(document).ready(function() {
+            $("#willPay").text(money)
+            $("#today").text(date.getFullYear() +"/"+ (date.getMonth()+1) +"/"+ date.getDate())
+            // console.log(date.getFullYear());
+        })
+
+
+        $("#coupon").click(function(){
+                $("#coupon_container").val("03uxf8")
+                if ($("#coupon_container").val() === "03uxf8") {
+                let discountPay = parseInt($("#willPay").text()*0.85) 
+                console.log(discountPay);
+                $("#willPay").text(discountPay)
+            }else{
+                $("#willPay").text(money)
+            }
+        })
+        $("#coupon_container").on("change",function(){
+
+            if ($(this).val() === "03uxf8") {
+                let discountPay = parseInt($("#willPay").text()*0.85) 
+                console.log(discountPay);
+                $("#willPay").text(discountPay)
+            }else{
+                $("#willPay").text(money)
+            }
+        })
+        
+
+
     </script>
 <?php include __DIR__ . './part/javascript.php' ?>

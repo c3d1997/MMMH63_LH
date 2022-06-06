@@ -339,39 +339,27 @@ ul.pagination li a:hover{
 
                     <tr class="active-row">
                         <td>
-                            <p>優惠碼_<?= $c['promo'] ?></p>
+                            <p></p>
                         </td>
                         <td>
-                            <p>清潔優惠85折</p>
+                            <p></p>
                         </td>
-                        <td><p>已使用</p></td>
+                        <td><p></p></td>
                     </tr>
                     <tr>
                         <td>
-                            <p>優惠碼_<?= $c['promo'] ?>    </p>
+                            <p></p>
                         </td>
                         <td>
-                            <p>清潔優惠85折</p>
+                            <p></p>
                         </td>
-                        <td><p>已使用</p></td>
+                        <td><p></p></td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         <!----------------pages------------------>
-        <div class="c-pages">
-            <ul class="pagination">
-                <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❮</a></li>
-
-                <li><a href="#">1</a></li>
-                <li><a class="active" href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-
-                <li><a href="tryit.asp-filename=trycss_ex_pagination_nav.html#">❯</a></li>
-            </ul>
-        </div>
 
         <!--------------pages------------------->
 

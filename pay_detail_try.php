@@ -719,43 +719,43 @@ $img = $pdo->query($sql)->fetch();
             <h2 class="z_pay_detail_title">租屋明細</h2>
             <div class="z_pay_detail_container">
                 <div class="z_pay_detail_img">
-                    <img src="imgs/items<?= 1 ?>/item4.jpg">
+                    <img src="imgs\myitems\1.jpg">
 
                 </div>
                 <div class="z_pay_detail_text">
                     <div class=" z_people_info_container">
                         <h3 class="bold z_detail_mb">租屋人資訊</h3>
-                        <p class="z_detail_mb">姓名：<?= $m['name'] ?></p>
-                        <p class="z_detail_mb">手機：<?= $m['mobile'] ?></p>
-                        <p>身分證：<?= $m['Id_number'] ?></p>
+                        <p class="z_detail_mb">姓名：小皇子</p>
+                        <p class="z_detail_mb">手機：0987666888</p>
+                        <p>身分證：A123456789</p>
                     </div>
                     <div class="z_pay_info_container">
                         <h3 class="bold z_detail_mb">付款資訊</h3>
-                        <p class="z_detail_mb">付款方式：<?= $p['payway'] ?></p>
+                        <p class="z_detail_mb">付款方式：信用卡</p>
                     </div>
                     <div class="z_detail_info_container">
-                        <p class="z_detail_cost_phone z_detail_mb ">$<?= number_format($i['price'])?>/月</p>
-                        <p class="z_detail_items_name z_detail_mb"><?= $i['item_name'] ?></p>
-                        <div class="z_detail_mb z_detail_icon_items_center">
+                        <p class="z_detail_cost_phone z_detail_mb ">$20,000/月</p>
+                        <p class="z_detail_items_name z_detail_mb">近捷運板橋站，市中心生活圈</p>
+                        <!-- <div class="z_detail_mb z_detail_icon_items_center">
                             <img class="z_mr-5" src="imgs/bus.svg" alt="">
                             <span class="z_detail_mb z_ml-5"><?= $i['close_station'] ?></span>
-                        </div>
+                        </div> -->
                         <div class="z_detail_mb z_detail_icon_items_center">
                             <img class="z_mr-5" src="imgs/position.svg" alt="">
-                            <span class="z_detail_mb z_ml-5"><?= $i['item_area'], $i['item_dist'] ,$i['item_address'] ?></span>
+                            <span class="z_detail_mb z_ml-5">新北市板橋區中山路一段161號</span>
                         </div>
                         <div class="z_detail_icon_items_center">
                             <img class="z_mr-5" src="imgs/ping.svg" alt="">
-                            <span class="z_icon_type_mr z_ml-5"><?= $i['ping_number'] ?></span>
+                            <span class="z_icon_type_mr z_ml-5">30坪</span>
                             <img src="imgs/type.svg" alt="">
-                            <span class="z_icon_type_mr z_icon_type_nomr z_ml-5"><?= $i['rentaltype'], $i['floor']?></span>
-                            <p class="z_detail_cost z_ml-5">$<?= number_format($i['price']) ?>/月</p>
+                            <span class="z_icon_type_mr z_icon_type_nomr z_ml-5">整層住家,電梯大樓3F/12F</span>
+                            <p class="z_detail_cost z_ml-5">$20,000/月</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="z_d_flex z_justify-content_center z_grow " >
-                <button class="z_maxbtn pc-button-FEAC00-180 z_phone_162 ">繼續</button>
+                <a href="home_page.php"><button class="z_maxbtn pc-button-FEAC00-180 z_phone_162 ">完成租屋</button></a>
             </div>
         </div>
     </section>

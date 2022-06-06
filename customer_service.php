@@ -1,3 +1,8 @@
+<?php
+
+require './part/connect-db.php';
+
+?>
 <?php include __DIR__ . './part/head.php'  ?>
 
 <style>
@@ -97,7 +102,7 @@
 
     .input_option.S-big textarea {
         width: 100%;
-        outline: none;
+        /* outline: none; */
         /* border: #75BBE3 1px solid; */
         font-size: 16px;
         /* line-height: 2rem; */
@@ -122,10 +127,37 @@
     .input_container textarea[placeholder] {
         font-size: 16px;
         padding: 20px;
+        border: none;
+    }
+
+    textarea {
+        outline: none;
     }
 
     .alert {
         text-align: left;
+    }
+
+    .z_upload_item_img_btn {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+    }
+
+    .z_upload_item_img_btn label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        color: #0E2E3D;
+    }
+
+    .z_upload_item_img_btn label img {
+        width: 18px;
+        margin-bottom: -4px;
+        margin-right: 5px;
+        text-decoration: none;
+        color: #0E2E3D;
     }
 
     .z_upload_item_img_btn button {
@@ -365,8 +397,7 @@
         }
 
 
-        }
-
+    }
 </style>
 
 <?php include __DIR__ . './part/nav.php'  ?>
@@ -414,14 +445,14 @@
                     <!-- 請輸入您的姓名 -->
                     <div class="input_option">
                         <div class="fullinput_container ">
-                            <input type="text" name="" id="" placeholder="請輸入您的姓名">
+                            <input type="text" name="" id="name" placeholder="請輸入您的姓名">
 
                         </div>
                     </div>
                     <!-- 請輸入您的郵件 -->
                     <div class="input_option">
                         <div class="fullinput_container ">
-                            <input type="text" name="" id="" placeholder="請輸入您的郵件">
+                            <input type="text" name="" id="email" placeholder="請輸入您的郵件">
 
                         </div>
                     </div>
@@ -444,22 +475,29 @@
                     <!-- 請詳細描述您的問題或是上傳相關圖片，
                                 我們將會盡快已郵件回覆您 -->
                     <div class="input_option S-big">
-                        <div class="fullinput_container id=" nowimg">
-                            <textarea name="question" id="clean" cols="30" rows="10" placeholder="請詳細描述您的問題或是上傳相關圖片，我們將會盡快已郵件回覆您" style="outline: none;"></textarea>
+                        <div class="fullinput_container" id="nowimg">
+                            <textarea name="question" id="clean" cols="30" rows="10" placeholder="請詳細描述您的問題或是上傳相關圖片，我們將會盡快已郵件回覆您"></textarea>
                             <!-- <div class="alert">*錯誤
                             </div> -->
                         </div>
                     </div>
                     <div class="z_upload_item_img_btn">
-                        <label class="" id="" for="filename"><img src="imgs/uploadicon.svg" alt="">點此上傳</label>
+
+                        <label class="" id="" for="filename">
+                            <a href="mailto:littlehouse6302@gmail.com?subject=我有問題&body=Little_House 您好：我想問租金事宜%0D%0A回信請再次確認信箱" style="text-decoration: none;color:#0E2E3D;">
+                                <img src="imgs/envelope-solid.svg" alt="">使用郵件寄送
+                        </label></a>
+                        
                         <input type="file" id="filename" class="" name="" style="display: none;">
                     </div>
 
                     <div class="S-btn">
                         <button type="button" onclick="cleantext()" class="pc-button-F4F4F4-272 mobile-button-F4F4F4-162">清除資料</button>
                         <!-- 行內元素 height:60px -->
-                        <button class="pc-button-FEAC00-272 
-                            mobile-button-FEAC00-162 h-60" style="width: 162.5px; height:60px;font-size: 20px;" id="show">確認送出</button>
+
+                            <button class="pc-button-FEAC00-272 
+                            mobile-button-FEAC00-162 h-60" style="width: 162.5px; height:60px;font-size: 20px;" id="show">送出</button>
+                        
                     </div>
                     <!-- 以下是"客服送出成功"CustomerService -->
                     <dialog id="infoModal">
@@ -470,7 +508,10 @@
                                 </div>
                                 <h3>送出成功<br>
                                     將會盡快以郵件回覆您</h3>
-                                <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">返回
+
+                                    
+                                <button class="pc-button-FEAC00-272 mobile-button-FEAC00-162" id="close">返回</button>
+
                             </div>
                             <div class="CustomerService-x" id="close2">
                                 <img src="imgs/X.svg" alt="">
@@ -517,7 +558,10 @@
 
 <script>
     const cleantext = () => {
-        $("#clean").val("")
+        $("#clean").val("");
+        $("#bankSelect").val("");
+        $("#email").val("");
+        $("#name").val("");
     };
 </script>
 
