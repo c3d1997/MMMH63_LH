@@ -1294,11 +1294,7 @@ $two = $twostmts->fetch();
                 </div>
 
 
-<<<<<<< HEAD
-                <button type="button" class="pc-button-F4F4F4-280 S-btn-conect" id="x-sendtotxt"><a href="FinalCheck_page.php?sid=<?= $x ?>">我要租屋</a></button>
-=======
                 <a href="FinalCheck_page.php?sid=<?= $x ?>"><button type="button" class="pc-button-F4F4F4-280 S-btn-conect" id="x-sendtotxt">我要租屋</button></a>
->>>>>>> df8831ea280c9f6f4cc1f7711ee34969ff6bf258
 
                 <!-- </form> -->
 
