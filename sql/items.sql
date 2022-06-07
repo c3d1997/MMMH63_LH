@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-06-06 12:42:53
+-- 產生時間： 2022-06-07 11:53:11
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 7.4.29
 
@@ -43,10 +43,10 @@ CREATE TABLE `items` (
   `close_station` varchar(255) NOT NULL DEFAULT '距板橋捷運站200公尺',
   `equipment` varchar(255) DEFAULT '有附傢俱',
   `feature` varchar(255) DEFAULT NULL,
-  `feature__N1` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `feature__N1` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '可養寵',
   `feature__N2` varchar(255) CHARACTER SET utf8 NOT NULL,
   `feature__N3` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `feature_1` int(50) DEFAULT NULL,
+  `feature_1` int(50) DEFAULT 1,
   `feature_2` int(50) DEFAULT NULL,
   `feature_3` int(50) DEFAULT NULL,
   `equipment_detail` varchar(255) DEFAULT NULL,

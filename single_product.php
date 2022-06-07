@@ -1120,7 +1120,7 @@ $two = $twostmts->fetch();
             <div class="S-lg-viewer-g">
                 <div class="S-lg-viewer">
                     <i class="fa-solid fa-eye"></i>
-                    <p>瀏覽量: 5555 人</p>
+                    <p>瀏覽量: 1 人</p>
                 </div>
                 <div class="S-lg-link-g">
                     <div class="S-lg-share" id="share-show">
@@ -1185,7 +1185,7 @@ $two = $twostmts->fetch();
                 </div>
                 <div class="S-product-img-right-down-g">
                     <div class="S-product-img-right-down column">
-                        <img src="imgs/items<?= $k['sid'] ?>/item1.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                        <img src="imgs/items<?= $k['sid'] ?>/item2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
 
                     </div>
                     <button class="more-img">+7</button>
