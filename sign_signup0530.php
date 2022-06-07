@@ -1265,8 +1265,8 @@ $pageName = 'signin_signup';
         }
 
 
-        if (!validateEmail($email.val())) {
-            // if (!validateEmail($email.val()) || !$email.val()) {
+        // if (!validateEmail($email.val())) {
+        if (!validateEmail($email.val()) || !$email.val()) {
             $email.next().html('請填寫正確的email');
             $email.css('border', 'red 1px solid');
             isPass = false;
