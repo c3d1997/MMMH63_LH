@@ -3,7 +3,7 @@ $title = '付款成功';
 require './part/connect-db.php';
 ?>
 
-<?php include __DIR__ . './part/payhead.php'  ?>
+<?php include __DIR__ . './part/head.php'  ?>
 
     <style>
         * {
