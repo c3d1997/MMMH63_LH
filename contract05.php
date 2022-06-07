@@ -385,17 +385,15 @@ ul {
             <br><br>
 
             承租人 <br>
-            姓名(名稱)： <?= $n['name'] ?><br>
+            姓名(名稱)：小皇子<br>
             <div class="sign_container">
                 <p>簽章 ：</p>
                 <img src="" alt="" id="sign" style="width:30%;">
             </div>
             戶籍地址： 台北市中正區重慶南路一段122號<br>
             通訊地址： 台北市中正區重慶南路一段122號<br>
-            聯絡電話： <?= $n['mobile'] ?><br>
-            電子郵件信箱： <?= $n['email'] ?><br>
-
-            西元 2022 年 06 月 08 日
+            聯絡電話： 0987666888<br>
+            電子郵件信箱： littlehouse6302@gmail.com<br>
 
         </div>
     </div>

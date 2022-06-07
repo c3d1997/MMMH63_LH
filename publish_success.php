@@ -33,7 +33,7 @@ unset($_SESSION['roommate_info']);
 
 ?>
 
-<?php include __DIR__ . './part/payhead.php'  ?>
+<?php include __DIR__ . './part/head.php'  ?>
 
 <style>
     * {

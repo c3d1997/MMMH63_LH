@@ -9,29 +9,16 @@
  body {
      background-color: #F4F4F4;
  }
+ /* ---------SSSSSSSS---------------- */
  
-
-
-
+ .x-log.active {
+     background-color: #6666FF;
+     border-radius: 10px;
+     color: white;
+     font-weight: 600;
+ }
  /* ---------SSSSSSSS---------------- */
- .x-log.active{
-
-    background-color: #6666FF;
-    border-radius: 10px;
-    color: white;
-    font-weight: 600;
-
-
-
-
-}
-
-
-
-
- /* ---------SSSSSSSS---------------- */
-
-
+ 
  h1,
  h2,
  h3,
@@ -91,10 +78,11 @@
  /* .log-change{
     display: none;
 } */
-li.x-log.S-nav-logout{
-    display: none;
-}
-
+ 
+ li.x-log.S-nav-logout {
+     display: none;
+ }
+ 
  .nav .container ul {
      width: 100%;
      display: flex;
@@ -149,8 +137,6 @@ li.x-log.S-nav-logout{
      display: flex;
      align-items: center;
  }
- 
- 
  
  .x-log-show {
      display: none;
@@ -208,13 +194,26 @@ li.x-log.S-nav-logout{
  /* nav手機 */
  
  @media screen and (max-width:376px) {
+     .nav .container ul .phone-nav-link li:nth-child(4) img {
+         display: block;
+         width: 30px;
+         height: 30px;
+         margin-left: 0px;
+         /* border: 1px solid red; */
+     }
+     .x-log {
+         display: flex;
+     }
+     .x-log a {
+         line-height: 30px;
+     }
      .nav ul div a:before {
          content: '';
-         width: 150%;
-         height: 40px;
+         width: 0%;
+         height: 0px;
          position: absolute;
-         top: -8px;
-         left: -25%;
+         top: -0px;
+         left: -0%;
      }
      .nav .container ul {
          justify-content: space-between;

@@ -3,9 +3,12 @@ $title = '付款成功';
 require './part/connect-db.php';
 ?>
 
-<?php include __DIR__ . './part/payhead.php'  ?>
+<?php include __DIR__ . './part/head.php'  ?>
 
     <style>
+        .nav .container a{
+            font-weight: bold;
+        }
         * {
         margin: 0;
         }
@@ -687,6 +690,7 @@ require './part/connect-db.php';
                 display: none;
             }
         }
+        
     </style>
 
 <?php include __DIR__ . './part/nav.php'  ?>
