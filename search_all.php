@@ -953,7 +953,7 @@ $hre = $hrestmts->fetch();
             display: flex;
             flex-wrap: nowrap;
             justify-content: flex-start;
-            width: 600%;
+            width: 485%;
         }
 
         .x-search-month-nice-object-product-scroll {

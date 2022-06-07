@@ -890,7 +890,7 @@ require './part/connect-db.php';
                         </div>
                         <div class="z_text_intput_last">
                             <p class="z_checkbox_option ">銀行帳號</p>
-                            <input class="z_input_text" type="text" name="" id="" placeholder="請輸入銀行帳號">
+                            <input class="z_input_text" type="text" name="" id="" placeholder="請輸入銀行帳號" maxlength="16">
                             <div class="z_payghost"></div>
                         </div>
                         <div class="z_pay_alert">

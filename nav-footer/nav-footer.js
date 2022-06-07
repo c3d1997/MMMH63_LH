@@ -3,7 +3,7 @@ $('.x-log-show').click(function() {
     $('.x-log-show').toggleClass('close')
     $('.phone-nav-link').toggleClass('open')
 })
-$('.x-hidden-flip').click(function() {
+$('.x-log').click(function() {
     console.log(1);
     $('.x-hidden-personaal').toggleClass('x-hidden-click')
 })

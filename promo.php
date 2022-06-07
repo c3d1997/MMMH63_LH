@@ -272,7 +272,7 @@ ul.pagination li a:hover{
         <!-- --------------手機板的下拉--- -->
 
         <div class="flip">
-            <p>士林夜市近士林劍潭捷運小套房</p>
+            <p>優惠碼_03uxf8</p>
             <img src="../imgs/down-arrow.svg" alt="">
 
         </div>
